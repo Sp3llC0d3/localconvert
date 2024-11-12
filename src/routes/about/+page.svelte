@@ -61,7 +61,7 @@
 
 	<h2
 		class="font-display text-3xl mt-12 text-transition"
-		style="--delay: {5.1 * multiplier}ms"
+		style="--delay: {5 * multiplier}ms"
 	>
 		👨‍💻 source code
 	</h2>
