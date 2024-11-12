@@ -299,7 +299,9 @@
 										<Dropdown
 											options={converter.supportedFormats}
 											bind:selected={files
-												.conversionTypes[i]}
+												.conversionTypes[
+												files.files.length - i - 1
+											]}
 											onselect={() => {
 												file.result = null;
 											}}
