@@ -55,8 +55,8 @@
 	</h2>
 	<p class="mt-6 text-transition" style="--delay: {4 * multiplier}ms">
 		As of right now, VERT only supports image conversion of most popular
-		formats. Don't worry though, as we'll add support for more formats in
-		the future!
+		formats. Don't worry though, as we'll add more options and support for
+		more formats in the future!
 	</p>
 
 	<h2
