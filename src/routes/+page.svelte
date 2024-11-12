@@ -82,7 +82,10 @@
 
 <div class="mt-20">
 	<h1 class="text-3xl text-center font-display header-fly-in">
-		Free, fast, and awesome file converting
+		Free, fast, and awesome file converting <span
+			class="px-2 py-1 text-xl bg-accent-background text-accent-foreground rounded-lg"
+			>BETA</span
+		>
 	</h1>
 	<div class="flex justify-center mt-10">
 		<div class="grid gap-4">
