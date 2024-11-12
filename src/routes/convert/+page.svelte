@@ -8,7 +8,6 @@
 	import { ArrowRight, XIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
-	import { downloadZip } from "client-zip";
 
 	const reversed = $derived(files.files.slice().reverse());
 
@@ -144,6 +143,7 @@
 			a.remove();
 			return;
 		}
+		const { downloadZip } = await import("client-zip");
 		const blob = await downloadZip(dlFiles, "converted.zip").blob();
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement("a");
