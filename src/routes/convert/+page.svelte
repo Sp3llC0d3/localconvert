@@ -136,7 +136,7 @@
 			);
 			const a = document.createElement("a");
 			a.href = blob;
-			a.download = `${new Date().toISOString()}-vert-converted${
+			a.download = `VERT-Converted_${new Date().toISOString()}${
 				files.conversionTypes[0]
 			}`;
 			a.click();
