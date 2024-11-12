@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
-	import { transition } from "$lib/animation";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { converters } from "$lib/converters";
 	import { files } from "$lib/store/index.svelte";
