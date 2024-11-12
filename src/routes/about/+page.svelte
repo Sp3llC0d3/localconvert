@@ -20,6 +20,13 @@
 	];
 </script>
 
+<svelte:head>
+	<title>About VERT</title>
+	<meta name="title" content="About VERT — VERT.sh" />
+	<meta property="og:title" content="About VERT — VERT.sh" />
+	<meta property="twitter:title" content="About VERT — VERT.sh" />
+</svelte:head>
+
 <div class="text-lg mx-auto max-w-screen-md">
 	<h1
 		class="font-display text-3xl text-transition"

@@ -1,15 +1,14 @@
 <script lang="ts">
-	import { blur, duration, flip, transition } from "$lib/animation";
+	import { blur, duration, flip } from "$lib/animation";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
 	import { converters } from "$lib/converters";
 	import { files } from "$lib/store/index.svelte";
 	import clsx from "clsx";
-	import { ArrowBigRight, ArrowRight, XIcon } from "lucide-svelte";
+	import { ArrowRight, XIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import { downloadZip } from "client-zip";
-	import { browser } from "$app/environment";
 
 	const reversed = $derived(files.files.slice().reverse());
 
@@ -155,6 +154,13 @@
 		a.remove();
 	};
 </script>
+
+<svelte:head>
+	<title>Your Conversions</title>
+	<meta name="title" content="Your Conversions — VERT.sh" />
+	<meta property="og:title" content="Your Conversions — VERT.sh" />
+	<meta property="twitter:title" content="Your Conversions — VERT.sh" />
+</svelte:head>
 
 <div class="grid grid-cols-1 grid-rows-1 w-full">
 	{#if files.files.length === 0}
