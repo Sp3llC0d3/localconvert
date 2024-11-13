@@ -9,13 +9,13 @@
 			name: "nullptr",
 			avatar: avatarNullptr,
 			url: "https://nullp.tr",
-			description: "car mrrow 🐱🐱🐱",
+			description: "conversion backend, UI, animations, promotion",
 		},
 		{
 			name: "Realmy",
 			avatar: avatarRealmy,
 			url: "https://realmy.net",
-			description: "scayr dragon 😱 (grrr)",
+			description: "idea, UI, branding, operational costs",
 		},
 	];
 </script>
@@ -80,7 +80,7 @@
 	</h2>
 	<div class="flex gap-4 mt-8">
 		{#each credits as credit, i}
-			<div class="hover:scale-105 w-48 transition-transform">
+			<div class="hover:scale-105 w-56 transition-transform">
 				<div
 					class="border-2 credit-transition border-solid border-foreground-muted-alt rounded-2xl overflow-hidden"
 					style="--delay: {i * 50 + multiplier * 8}ms;"
