@@ -12,6 +12,7 @@ class Files {
 		}[]
 	>([]);
 	public conversionTypes = $state<string[]>([]);
+	public conversionTypesReverse = $derived(this.conversionTypes.reverse());
 	public beenToConverterPage = $state(false);
 	public shouldShowAlert = $derived(
 		!this.beenToConverterPage && this.files.length > 0,

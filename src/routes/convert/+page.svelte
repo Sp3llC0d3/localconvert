@@ -8,7 +8,6 @@
 	import { ArrowRight, XIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
-	import { downloadZip } from "client-zip";
 
 	const reversed = $derived(files.files.slice().reverse());
 
@@ -144,6 +143,7 @@
 			a.remove();
 			return;
 		}
+		const { downloadZip } = await import("client-zip");
 		const blob = await downloadZip(dlFiles, "converted.zip").blob();
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement("a");
@@ -299,7 +299,9 @@
 										<Dropdown
 											options={converter.supportedFormats}
 											bind:selected={files
-												.conversionTypes[i]}
+												.conversionTypes[
+												files.files.length - i - 1
+											]}
 											onselect={() => {
 												file.result = null;
 											}}
@@ -323,7 +325,9 @@
 										<Dropdown
 											options={converter.supportedFormats}
 											bind:selected={files
-												.conversionTypes[i]}
+												.conversionTypes[
+												files.files.length - 1 - i
+											]}
 											onselect={() => {
 												file.result = null;
 											}}

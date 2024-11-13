@@ -7,6 +7,7 @@
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
 	import { fly } from "svelte/transition";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
+	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	let { children, data } = $props();
 
 	let navWidth = $state(1);
@@ -40,6 +41,11 @@
 	<meta name="theme-color" content="#F2ABEE" />
 	<meta property="og:image" content={featuredImage} />
 	<meta property="twitter:image" content={featuredImage} />
+	{#if PUB_PLAUSIBLE_URL}<script
+			defer
+			data-domain={PUB_HOSTNAME || "vert.sh"}
+			src="{PUB_PLAUSIBLE_URL}/js/script.js"
+		></script>{/if}
 </svelte:head>
 
 <div
