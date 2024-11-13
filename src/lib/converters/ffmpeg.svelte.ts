@@ -21,7 +21,7 @@ export class FFmpegConverter extends Converter {
 		".m4a",
 		".amr",
 		".ac3",
-		"alac",
+		".alac",
 		".aiff",
 	];
 
