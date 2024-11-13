@@ -38,7 +38,7 @@
 	{/if}
 	{#each links as { name, url } (url)}
 		<a
-			class="w-1/2 px-2 h-[calc(100%-16px)] mt-2 flex items-center justify-center rounded-xl relative font-display overflow-hidden"
+			class="w-1/2 px-2 h-[calc(100%-16px)] mt-2 flex items-center justify-center rounded-xl relative overflow-hidden font-medium"
 			href={url}
 			onclick={() => {
 				if (shouldGoBack) {
@@ -55,7 +55,7 @@
 			<div class="grid grid-cols-1 grid-rows-1">
 				{#key name}
 					<span
-						class="mix-blend-difference invert col-start-1 row-start-1 text-center"
+						class="mix-blend-difference invert dynadark:invert-0 col-start-1 row-start-1 text-center"
 						in:fly={{
 							duration,
 							easing: quintOut,
