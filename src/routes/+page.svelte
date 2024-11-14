@@ -2,10 +2,12 @@
 	import { goto } from "$app/navigation";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { converters } from "$lib/converters";
-	import { log } from "$lib/logger/index.js";
+	import { log } from "$lib/logger";
 	import { files } from "$lib/store/index.svelte";
-	import { VertFile } from "$lib/types/file.svelte.js";
+	import { VertFile } from "$lib/types/file.svelte";
 	import { Check } from "lucide-svelte";
+	import jsmediatags from "jsmediatags";
+	import type { TagType } from "jsmediatags/types/index.js";
 
 	const { data } = $props();
 
@@ -48,6 +50,7 @@
 									new VertFile(
 										f,
 										to,
+										converter,
 										URL.createObjectURL(blob!),
 									),
 								);
@@ -58,7 +61,39 @@
 					};
 
 					img.onerror = async () => {
-						resolve(new VertFile(f, to));
+						// resolve(new VertFile(f, to, converter));
+						const reader = new FileReader();
+						const file = new VertFile(f, to, converter);
+						resolve(file);
+						reader.onload = async (e) => {
+							const tags = await new Promise<TagType>(
+								(resolve, reject) => {
+									jsmediatags.read(
+										new Blob([
+											new Uint8Array(
+												e.target?.result as ArrayBuffer,
+											),
+										]),
+										{
+											onSuccess: (tag) => resolve(tag),
+											onError: (error) => reject(error),
+										},
+									);
+								},
+							);
+							const picture = tags.tags.picture;
+							if (!picture) return;
+
+							const blob = new Blob(
+								[new Uint8Array(picture.data)],
+								{
+									type: picture.format,
+								},
+							);
+							const url = URL.createObjectURL(blob);
+							file.blobUrl = url;
+						};
+						reader.readAsArrayBuffer(f);
 					};
 				},
 			);

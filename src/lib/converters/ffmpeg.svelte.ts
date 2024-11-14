@@ -24,6 +24,8 @@ export class FFmpegConverter extends Converter {
 		".aiff",
 	];
 
+	public readonly reportsProgress = true;
+
 	constructor() {
 		super();
 		log(["converters", this.name], `created converter`);
@@ -45,10 +47,6 @@ export class FFmpegConverter extends Converter {
 		if (!to.startsWith(".")) to = `.${to}`;
 		const ffmpeg = new FFmpeg();
 		ffmpeg.on("progress", (progress) => {
-			log(
-				["converters", this.name],
-				`progress for "${input.name}": ${progress.progress * 100}%`,
-			);
 			input.progress = progress.progress * 100;
 		});
 		const baseURL =
