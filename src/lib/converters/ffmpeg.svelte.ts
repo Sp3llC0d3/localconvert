@@ -3,6 +3,7 @@ import { Converter } from "./converter.svelte";
 import type { OmitBetterStrict } from "$lib/types";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { browser } from "$app/environment";
+import { log } from "$lib/logger";
 
 export class FFmpegConverter extends Converter {
 	private ffmpeg: FFmpeg = null!;
@@ -16,7 +17,6 @@ export class FFmpegConverter extends Converter {
 		".ogg",
 		".aac",
 		".m4a",
-		".opus",
 		".wma",
 		".m4a",
 		".amr",
@@ -27,6 +27,7 @@ export class FFmpegConverter extends Converter {
 
 	constructor() {
 		super();
+		log(["converters", this.name], `created converter`);
 		if (!browser) return;
 		this.ffmpeg = new FFmpeg();
 		(async () => {
@@ -36,7 +37,6 @@ export class FFmpegConverter extends Converter {
 				coreURL: `${baseURL}/ffmpeg-core.js`,
 				wasmURL: `${baseURL}/ffmpeg-core.wasm`,
 			});
-
 			this.ready = true;
 		})();
 	}
@@ -46,13 +46,21 @@ export class FFmpegConverter extends Converter {
 		to: string,
 	): Promise<IFile> {
 		if (!to.startsWith(".")) to = `.${to}`;
-		// clone input.buffer
 		const buf = new Uint8Array(input.buffer);
 		await this.ffmpeg.writeFile("input", buf);
+		log(
+			["converters", this.name],
+			`wrote ${input.name} to ffmpeg virtual fs`,
+		);
 		await this.ffmpeg.exec(["-i", "input", "output" + to]);
+		log(["converters", this.name], `executed ffmpeg command`);
 		const output = (await this.ffmpeg.readFile(
 			"output" + to,
 		)) as unknown as Uint8Array;
+		log(
+			["converters", this.name],
+			`read ${input.name.split(".").slice(0, -1).join(".") + to} from ffmpeg virtual fs`,
+		);
 		return {
 			...input,
 			buffer: output.buffer,

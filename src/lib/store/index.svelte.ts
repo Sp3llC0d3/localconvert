@@ -1,3 +1,4 @@
+import { log } from "$lib/logger";
 import type { IFile } from "$lib/types";
 
 class Files {
@@ -21,7 +22,7 @@ class Theme {
 	public dark = $state(false);
 	public toggle = () => {
 		this.dark = !this.dark;
-		console.log(this.dark);
+		log(["theme"], `set to ${this.dark ? "dark" : "light"}`);
 	};
 }
 
