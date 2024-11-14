@@ -17,8 +17,7 @@ VERT is built in Svelte and TypeScript.
 
 Make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (version 14 or higher)
-- [pnpm](https://pnpm.io/) (version 6 or higher)
+- [Bun](https://bun.sh/)
 
 ### Installation
 ```sh
@@ -26,12 +25,12 @@ Make sure you have the following installed:
 git clone https://github.com/yourusername/vert.git
 cd vert
 # Install dependencies
-pnpm install
+bun i
 ```
 
 ### Running Locally
 
-To run the project locally, run `pnpm run dev`.
+To run the project locally, run `bun dev`.
 
 This will start a development server. Open your browser and navigate to `http://localhost:5173` to see the application.
 
@@ -44,7 +43,7 @@ PUB_HOSTNAME=vert.sh # change to your domain
 PUB_PLAUSIBLE_URL=https://plausible.example.com # can be empty if not using Plausible
 ```
 
-To build the project for production, run `pnpm run build`
+To build the project for production, run `bun run build`
 
 This will build the site to the `build` folder. You can then start the server with `bun ./build/index.js` and navigate to `http://localhost:3000` to see the application.
 
