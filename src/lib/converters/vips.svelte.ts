@@ -1,12 +1,16 @@
 import { VertFile } from "$lib/types";
 import { Converter } from "./converter.svelte";
-import VipsWorker from "$lib/workers/vips?worker";
+import VipsWorker from "$lib/workers/vips?url";
 import { browser } from "$app/environment";
 import type { WorkerMessage, OmitBetterStrict } from "$lib/types";
 import { log } from "$lib/logger";
 
 export class VipsConverter extends Converter {
-	private worker: Worker = browser ? new VipsWorker() : null!;
+	private worker: Worker = browser
+		? new Worker(VipsWorker, {
+				type: "module",
+			})
+		: null!;
 	private id = 0;
 	public name = "libvips";
 	public ready = $state(false);
