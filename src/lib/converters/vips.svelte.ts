@@ -39,6 +39,7 @@ export class VipsConverter extends Converter {
 		super();
 		log(["converters", this.name], `created converter`);
 		if (!browser) return;
+		log(["converters", this.name], `loading worker @ ${VipsWorker}`);
 		this.worker.onmessage = (e) => {
 			const message: WorkerMessage = e.data;
 			log(["converters", this.name], `received message ${message.type}`);
