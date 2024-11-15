@@ -280,7 +280,9 @@
 				{#each reversedFiles as file, i (file.id)}
 					{@const converter = (() => {
 						return converters.find((c) =>
-							c.supportedFormats.includes(file.from),
+							c.supportedFormats.includes(
+								file.from.toLowerCase(),
+							),
 						);
 					})()}
 					<div
@@ -395,7 +397,7 @@
 											<div
 												class="flex items-center justify-center gap-3 w-full pb-4"
 											>
-												{#if converter && converter.supportedFormats.includes(file.from)}
+												{#if converter && converter.supportedFormats.includes(file.from.toLowerCase())}
 													<span>from</span>
 													<span
 														class="py-2 px-3 font-display bg-foreground text-background rounded-xl"
@@ -452,7 +454,7 @@
 									</div>
 								</div>
 							</div>
-							{#if converter && converter.supportedFormats.includes(file.from)}
+							{#if converter && converter.supportedFormats.includes(file.from.toLowerCase())}
 								<!-- god knows why, but setting opacity > 0.98 causes a z-ordering issue in firefox ??? -->
 								<div
 									class="absolute top-[0px] -z-50 left-0 w-full h-full opacity-[0.98] rounded-xl overflow-hidden"
