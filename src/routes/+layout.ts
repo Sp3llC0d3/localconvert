@@ -16,5 +16,8 @@ export const load = ({ data }) => {
 		theme.dark = themeStr === "dark";
 	}
 	theme.dark = JSCookie.get("theme") === "dark";
+	window.plausible("Theme set", {
+		props: { theme: theme.dark ? "dark" : "light" },
+	});
 	return data;
 };

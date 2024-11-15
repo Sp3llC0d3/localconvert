@@ -110,7 +110,6 @@
 	{#if PUB_PLAUSIBLE_URL}<script
 			defer
 			data-domain={PUB_HOSTNAME || "vert.sh"}
-			event-Theme={theme.dark ? "dark" : "light"}
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
 </svelte:head>

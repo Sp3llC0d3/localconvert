@@ -16,6 +16,9 @@ class Theme {
 			expires: 2147483647,
 		});
 		log(["theme"], `set to ${this.dark ? "dark" : "light"}`);
+		window.plausible("Theme set", {
+			props: { theme: theme.dark ? "dark" : "light" },
+		});
 	};
 }
 
