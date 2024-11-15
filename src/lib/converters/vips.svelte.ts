@@ -1,12 +1,16 @@
 import { VertFile } from "$lib/types";
 import { Converter } from "./converter.svelte";
-import VipsWorker from "$lib/workers/vips?worker";
+import VipsWorker from "$lib/workers/vips?worker&url";
 import { browser } from "$app/environment";
 import type { WorkerMessage, OmitBetterStrict } from "$lib/types";
 import { log } from "$lib/logger";
 
 export class VipsConverter extends Converter {
-	private worker: Worker = browser ? new VipsWorker() : null!;
+	private worker: Worker = browser
+		? new Worker(VipsWorker, {
+				type: "module",
+			})
+		: null!;
 	private id = 0;
 	public name = "libvips";
 	public ready = $state(false);
@@ -35,8 +39,10 @@ export class VipsConverter extends Converter {
 		super();
 		log(["converters", this.name], `created converter`);
 		if (!browser) return;
+		log(["converters", this.name], `loading worker @ ${VipsWorker}`);
 		this.worker.onmessage = (e) => {
 			const message: WorkerMessage = e.data;
+			log(["converters", this.name], `received message ${message.type}`);
 			if (message.type === "loaded") this.ready = true;
 		};
 	}
