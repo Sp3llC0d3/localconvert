@@ -6,7 +6,11 @@
 	import { files, theme } from "$lib/store/index.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
-	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
+	import {
+		PUB_ENV,
+		PUB_HOSTNAME,
+		PUB_PLAUSIBLE_URL,
+	} from "$env/static/public";
 	import FancyMenu from "$lib/components/functional/FancyMenu.svelte";
 	import { writable } from "svelte/store";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
@@ -110,8 +114,16 @@
 			href="/"
 			class="px-4 relative h-14 mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:hidden flex"
 		>
-			<div class="h-6 w-24 items-center flex justify-center">
+			<div class="h-6 relative w-24 items-center flex justify-center">
 				<Logo />
+				{#if PUB_ENV === "nightly"}
+					<div
+						class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
+						style="font-family: Comic Sans MS, sans-serif;"
+					>
+						NIGHTLY
+					</div>
+				{/if}
 			</div>
 		</a>
 	</div>
@@ -125,8 +137,16 @@
 				href="/"
 				class="px-3 relative w-full h-full mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:flex hidden"
 			>
-				<div class="h-6 w-24 items-center flex justify-center">
+				<div class="h-6 w-24 items-center flex justify-center relative">
 					<Logo />
+					{#if PUB_ENV === "nightly"}
+						<div
+							class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
+							style="font-family: Comic Sans MS, sans-serif;"
+						>
+							NIGHTLY
+						</div>
+					{/if}
 				</div>
 			</a>
 		</div>
