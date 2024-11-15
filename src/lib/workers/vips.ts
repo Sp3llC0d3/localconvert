@@ -1,3 +1,4 @@
+import { log } from "$lib/logger";
 import { type WorkerMessage, type OmitBetterStrict } from "$lib/types";
 import Vips from "wasm-vips";
 
@@ -33,6 +34,8 @@ const handleMessage = async (
 		}
 	}
 };
+
+log(["libvips", "worker"], "worker loaded");
 
 onmessage = async (e) => {
 	const message: WorkerMessage = e.data;
