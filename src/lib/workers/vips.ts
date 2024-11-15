@@ -34,7 +34,7 @@ const handleMessage = async (
 	}
 };
 
-console.log("worker loaded");
+console.log(Vips, vipsPromise);
 
 onmessage = async (e) => {
 	const message: WorkerMessage = e.data;
