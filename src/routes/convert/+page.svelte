@@ -23,7 +23,7 @@
 			{:else}
 				<ImageIcon size="24" class="flex-shrink-0" />
 			{/if}
-			<div class="flex-grow">
+			<div class="flex-grow overflow-hidden">
 				{#if file.processing}
 					<ProgressBar
 						min={0}
