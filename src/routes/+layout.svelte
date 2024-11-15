@@ -90,6 +90,16 @@
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
 	});
+
+	onMount(() => {
+		window.plausible =
+			window.plausible ||
+			((_, opts) => {
+				opts?.callback?.({
+					status: 200,
+				});
+			});
+	});
 </script>
 
 <svelte:head>
@@ -100,7 +110,8 @@
 	{#if PUB_PLAUSIBLE_URL}<script
 			defer
 			data-domain={PUB_HOSTNAME || "vert.sh"}
-			src="{PUB_PLAUSIBLE_URL}/js/script.js"
+			event-Theme={theme.dark ? "dark" : "light"}
+			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
 </svelte:head>
 
