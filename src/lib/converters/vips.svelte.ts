@@ -1,6 +1,6 @@
 import { VertFile } from "$lib/types";
 import { Converter } from "./converter.svelte";
-import VipsWorker from "$lib/workers/vips?url";
+import VipsWorker from "$lib/workers/vips?worker&url";
 import { browser } from "$app/environment";
 import type { WorkerMessage, OmitBetterStrict } from "$lib/types";
 import { log } from "$lib/logger";
