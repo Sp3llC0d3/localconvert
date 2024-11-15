@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
+	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import { files } from "$lib/store/index.svelte";
@@ -93,7 +94,16 @@
 		style="grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; gap: 16px"
 	>
 		{#each files.files as file, i (file.id)}
+			{#if files.files.length >= 2 && i === 1}
+				<Uploader class="w-full h-full" />
+			{/if}
 			{@render fileItem(file, i)}
+			{#if files.files.length < 2}
+				<Uploader class="w-full h-full" />
+			{/if}
 		{/each}
+		{#if files.files.length === 0}
+			<Uploader class="w-full h-full" />
+		{/if}
 	</div>
 </div>
