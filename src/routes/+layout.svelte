@@ -90,16 +90,6 @@
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
 	});
-
-	onMount(() => {
-		window.plausible =
-			window.plausible ||
-			((_, opts) => {
-				opts?.callback?.({
-					status: 200,
-				});
-			});
-	});
 </script>
 
 <svelte:head>

@@ -4,6 +4,13 @@ import JSCookie from "js-cookie";
 
 export const load = ({ data }) => {
 	if (!browser) return;
+	window.plausible =
+		window.plausible ||
+		((_, opts) => {
+			opts?.callback?.({
+				status: 200,
+			});
+		});
 	const themeStr = JSCookie.get("theme");
 	if (typeof themeStr === "undefined") {
 		theme.dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
