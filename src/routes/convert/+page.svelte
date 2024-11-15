@@ -72,13 +72,14 @@
 		for (let i = 0; i < files.files.length; i++) {
 			promises.push(
 				(async (i) => {
-					await convert(files.files[i], i);
 					window.plausible("Convert", {
 						props: {
-							"Format from": files.files[i].from,
-							"Format to": files.files[i].to,
+							"Format from": files.files[i].from.toLowerCase(),
+							"Format to": files.files[i].to.toLowerCase(),
+							Conversion: `${files.files[i].from.toLowerCase()} to ${files.files[i].to.toLowerCase()}`,
 						},
 					});
+					await convert(files.files[i], i);
 				})(i),
 			);
 		}
