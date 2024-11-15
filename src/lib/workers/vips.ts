@@ -14,6 +14,14 @@ vipsPromise
 		postMessage({ type: "error", error });
 	});
 
+(async () => {
+	const v = await import("wasm-vips");
+	const res = await v.default({
+		dynamicLibraries: [],
+	});
+	console.log(res, "sigma");
+})();
+
 const handleMessage = async (
 	message: WorkerMessage,
 ): Promise<OmitBetterStrict<WorkerMessage, "id"> | undefined> => {
@@ -33,8 +41,6 @@ const handleMessage = async (
 		}
 	}
 };
-
-console.log(Vips, vipsPromise);
 
 onmessage = async (e) => {
 	const message: WorkerMessage = e.data;
