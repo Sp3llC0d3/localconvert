@@ -74,8 +74,8 @@
 				(async (i) => {
 					window.plausible("Convert", {
 						props: {
-							"Format from": files.files[i].from.toLowerCase(),
-							"Format to": files.files[i].to.toLowerCase(),
+							"Convert from": files.files[i].from.toLowerCase(),
+							"Convert to": files.files[i].to.toLowerCase(),
 							Conversion: `${files.files[i].from.toLowerCase()} to ${files.files[i].to.toLowerCase()}`,
 						},
 					});
