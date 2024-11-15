@@ -32,7 +32,7 @@
 		class="font-display text-3xl text-transition"
 		style="--delay: {0 * multiplier}ms"
 	>
-		⁉️ about VERT
+		⁉️ about VERT NIGHTLY TEST!!!!
 	</h1>
 	<p class="mt-6 text-transition" style="--delay: {1 * multiplier}ms">
 		You know what sucks? File converters! They're usually riddled with ads,
