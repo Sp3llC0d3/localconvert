@@ -13,27 +13,39 @@
 	} from "$env/static/public";
 	import FancyMenu from "$lib/components/functional/FancyMenu.svelte";
 	import { writable } from "svelte/store";
-	import { MoonIcon, SunIcon } from "lucide-svelte";
+	import {
+		InfoIcon,
+		MoonIcon,
+		RefreshCwIcon,
+		SettingsIcon,
+		SunIcon,
+		UploadIcon,
+	} from "lucide-svelte";
 	import { browser } from "$app/environment";
 	import JSCookie from "js-cookie";
 	import { onMount } from "svelte";
+	import Panel from "$lib/components/visual/Panel.svelte";
+	import Navbar from "$lib/components/functional/Navbar.svelte";
+	import Footer from "$lib/components/visual/Footer.svelte";
 	let { children, data } = $props();
 
 	let shouldGoBack = writable(false);
 	let navbar = $state<HTMLDivElement>();
 	let hover = $state(false);
 
-	const links = $derived<
+	const items = $derived<
 		{
 			name: string;
 			url: string;
 			activeMatch: (pathname: string) => boolean;
+			icon: any;
 		}[]
 	>([
 		{
 			name: "Upload",
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
+			icon: UploadIcon,
 		},
 		{
 			name:
@@ -42,11 +54,19 @@
 					: `Convert`,
 			url: "/convert",
 			activeMatch: (pathname) => pathname === "/convert",
+			icon: RefreshCwIcon,
+		},
+		{
+			name: "Settings",
+			url: "/settings",
+			activeMatch: (pathname) => pathname.startsWith("/settings"),
+			icon: SettingsIcon,
 		},
 		{
 			name: "About",
 			url: "/about",
 			activeMatch: (pathname) => pathname.startsWith("/about"),
+			icon: InfoIcon,
 		},
 	]);
 
@@ -56,27 +76,6 @@
 			goto("/");
 		}
 	};
-
-	$effect(() => {
-		if (!browser) return;
-		if (theme.dark) {
-			document.documentElement.classList.add("dark");
-			document.documentElement.classList.remove("light");
-			JSCookie.set("theme", "dark", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
-		} else {
-			document.documentElement.classList.add("light");
-			document.documentElement.classList.remove("dark");
-			JSCookie.set("theme", "light", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
-		}
-	});
 
 	onMount(() => {
 		const mouseEnter = () => {
@@ -104,182 +103,21 @@
 		></script>{/if}
 </svelte:head>
 
-<div
-	role="main"
-	class="w-full h-full max-w-screen-lg mx-auto p-4"
-	ondragenter={maybeNavToHome}
->
-	<div class="flex justify-center mb-5 lg:hidden">
-		<a
-			href="/"
-			class="px-4 relative h-14 mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:hidden flex"
-		>
-			<div class="h-6 relative w-24 items-center flex justify-center">
-				<Logo />
-				{#if PUB_ENV === "nightly"}
-					<div
-						class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
-						style="font-family: Comic Sans MS, sans-serif;"
-					>
-						NIGHTLY
-					</div>
-				{/if}
-			</div>
-		</a>
-	</div>
+<div class="fixed top-8 left-0 w-full flex justify-center">
+	<Navbar {items} />
+</div>
 
-	<div
-		class="w-full max-w-screen-md p-1 border-solid border-2 rounded-2xl border-foreground-muted-alt flex mb-10 mx-auto lg:mt-5"
-		bind:this={navbar}
-	>
-		<div class="md:p-1">
-			<a
-				href="/"
-				class="px-3 relative w-full h-full mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:flex hidden"
-			>
-				<div class="h-6 w-24 items-center flex justify-center relative">
-					<Logo />
-					{#if PUB_ENV === "nightly"}
-						<div
-							class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
-							style="font-family: Comic Sans MS, sans-serif;"
-						>
-							NIGHTLY
-						</div>
-					{/if}
-				</div>
-			</a>
-		</div>
+<div class="w-screen h-screen">
+	{@render children()}
+</div>
 
-		<FancyMenu {links} {shouldGoBack} />
-		<div class="h-16 px-4 flex items-center">
-			<button onclick={theme.toggle} class="grid-cols-1 grid-rows-1 grid">
-				<!-- {#if theme.dark}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-					>
-						<MoonIcon />
-					</div>
-				{:else}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-					>
-						<SunIcon />
-					</div>
-				{/if} -->
-				{#if browser}
-					{#if theme.dark}
-						<div
-							in:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 0.5,
-									end: 1,
-								},
-							}}
-							out:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 1,
-									end: 1.5,
-								},
-							}}
-							class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-						>
-							<MoonIcon class="w-8" />
-						</div>
-					{:else}
-						<div
-							in:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 0.5,
-									end: 1,
-								},
-							}}
-							out:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 1,
-									end: 1.5,
-								},
-							}}
-							class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-						>
-							<SunIcon class="w-8" />
-						</div>
-					{/if}
-				{:else}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1 dynadark:hidden"
-					>
-						<SunIcon class="w-8" />
-					</div>
-					<div
-						class="w-full h-full hidden items-center justify-center row-start-1 col-start-1 dynadark:flex"
-					>
-						<MoonIcon class="w-8" />
-					</div>
-				{/if}
-			</button>
-		</div>
-	</div>
-	<div class="w-full max-w-screen-lg grid grid-cols-1 grid-rows-1 relative">
-		{#key data.pathname}
-			<div class="w-full">
-				<div
-					class="absolute top-0 left-0 w-full"
-					style={hover ? "will-change: opacity, blur, transform" : ""}
-					in:blur={{
-						duration,
-						easing: quintOut,
-						blurMultiplier: 12,
-						x: {
-							start: !$shouldGoBack ? 250 : -250,
-							end: 0,
-						},
-						y: {
-							start: 100,
-							end: 0,
-						},
-						scale: {
-							start: 0.75,
-							end: 1,
-						},
-						origin: "top center",
-					}}
-					out:blur={{
-						duration,
-						easing: quintOut,
-						blurMultiplier: 12,
-						x: {
-							start: 0,
-							end: !$shouldGoBack ? -250 : 250,
-						},
-						y: {
-							start: 0,
-							end: 100,
-						},
-						scale: {
-							start: 1,
-							end: 0.75,
-						},
-						origin: "top center",
-					}}
-				>
-					<div class="pb-20">
-						{@render children()}
-					</div>
-				</div>
-			</div>
-		{/key}
-	</div>
+<div class="-mt-14 w-full h-14">
+	<Footer
+		class="w-full h-full"
+		items={{
+			"Privacy Policy": "#",
+			"Source Code": "#",
+			"Discord Server": "#",
+		}}
+	/>
 </div>

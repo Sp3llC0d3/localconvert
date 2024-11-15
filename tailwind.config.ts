@@ -5,15 +5,21 @@ export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
 		extend: {
-			colors: {
-				background: "var(--bg)",
+			backgroundColor: {
+				panel: "var(--bg-panel)",
+				"panel-accented": "var(--bg-panel-accented)",
+				separator: "var(--bg-separator)",
+			},
+			textColor: {
 				foreground: "var(--fg)",
-				"foreground-muted": "var(--fg-muted)",
-				"foreground-muted-alt": "var(--fg-muted-alt)",
-				"foreground-failure": "var(--fg-failure)",
-				"foreground-highlight": "var(--fg-highlight)",
-				"accent-background": "var(--accent-bg)",
-				"accent-foreground": "var(--accent-fg)",
+				muted: "var(--fg-muted)",
+				"on-accent": "var(--fg-on-accent)",
+			},
+			colors: {
+				accent: "var(--accent)",
+			},
+			boxShadow: {
+				panel: "var(--shadow-panel)",
 			},
 			fontFamily: {
 				display: "var(--font-display)",
@@ -21,6 +27,9 @@ export default {
 			},
 			blur: {
 				xs: "2px",
+			},
+			borderRadius: {
+				"2.5xl": "1.25rem",
 			},
 		},
 	},

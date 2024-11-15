@@ -8,20 +8,42 @@ class Files {
 }
 
 class Theme {
-	public dark = $state(false);
-	public toggle = () => {
-		this.dark = !this.dark;
+	private _dark = $state(false);
+	public get dark() {
+		return this._dark;
+	}
+	public set dark(value: boolean) {
+		this._dark = value;
+		if (!browser) return;
 		JSCookie.set("theme", this.dark ? "dark" : "light", {
 			path: "/",
 			sameSite: "lax",
 			expires: 2147483647,
 		});
 		log(["theme"], `set to ${this.dark ? "dark" : "light"}`);
-		if (browser) {
-			window.plausible("Theme set", {
-				props: { theme: theme.dark ? "dark" : "light" },
+		window.plausible("Theme set", {
+			props: { theme: theme.dark ? "dark" : "light" },
+		});
+		if (value) {
+			document.documentElement.classList.add("dark");
+			document.documentElement.classList.remove("light");
+			JSCookie.set("theme", "dark", {
+				path: "/",
+				sameSite: "lax",
+				expires: 2147483647,
+			});
+		} else {
+			document.documentElement.classList.add("light");
+			document.documentElement.classList.remove("dark");
+			JSCookie.set("theme", "light", {
+				path: "/",
+				sameSite: "lax",
+				expires: 2147483647,
 			});
 		}
+	}
+	public toggle = () => {
+		this.dark = !this.dark;
 	};
 }
 
