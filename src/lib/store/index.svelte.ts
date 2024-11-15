@@ -16,7 +16,8 @@ class Files {
 	public ready = $derived(
 		this.files.length === 0
 			? false
-			: this.requiredConverters.every((f) => f?.ready),
+			: this.requiredConverters.every((f) => f?.ready) &&
+					this.files.every((f) => !f.processing),
 	);
 	public results = $derived(
 		this.files.length === 0 ? false : this.files.every((f) => f.result),
@@ -133,9 +134,6 @@ class Files {
 
 	public async downloadAll() {
 		if (files.files.length === 0) return;
-		if (files.files.length === 1) {
-			return await files.files[0].download();
-		}
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const dlFiles: any[] = [];
 		for (let i = 0; i < files.files.length; i++) {
