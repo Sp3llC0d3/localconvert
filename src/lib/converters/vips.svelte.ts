@@ -37,6 +37,7 @@ export class VipsConverter extends Converter {
 		if (!browser) return;
 		this.worker.onmessage = (e) => {
 			const message: WorkerMessage = e.data;
+			log(["converters", this.name], `received message ${message.type}`);
 			if (message.type === "loaded") this.ready = true;
 		};
 	}
