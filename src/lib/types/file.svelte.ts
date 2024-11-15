@@ -18,6 +18,8 @@ export class VertFile {
 
 	public blobUrl = $state<string>();
 
+	public processing = $state(false);
+
 	public converter: Converter | null = null;
 
 	constructor(
@@ -37,7 +39,9 @@ export class VertFile {
 		if (!this.converter) throw new Error("No converter found");
 		this.result = null;
 		this.progress = 0;
+		this.processing = true;
 		const res = await this.converter.convert(this, this.to);
+		this.processing = false;
 		this.result = res;
 		return res;
 	}

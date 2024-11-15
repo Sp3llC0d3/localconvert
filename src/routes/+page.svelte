@@ -11,12 +11,12 @@
 </script>
 
 <div
-	class="fixed -z-50 top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
+	class="absolute -z-50 top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
 >
 	<VertVBig class="fill-[--fg] opacity-50" />
 </div>
 
-<div class="w-full h-full flex items-center justify-center">
+<div class="w-screen h-screen flex items-center justify-center">
 	<div class="max-w-5xl w-full">
 		<div class="flex items-center h-[266px] gap-24">
 			<div class="flex-grow w-full">

@@ -11,7 +11,10 @@
 	const links = $derived(Object.entries(items));
 </script>
 
-<footer class={classList}>
+<footer
+	class={classList}
+	style="background: linear-gradient(to bottom, transparent, var(--bg) 100%)"
+>
 	<div
 		class="w-full h-full flex items-center justify-center text-muted gap-3"
 	>

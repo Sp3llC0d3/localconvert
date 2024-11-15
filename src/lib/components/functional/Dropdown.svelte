@@ -11,7 +11,11 @@
 		onselect?: (option: string) => void;
 	};
 
-	let { options, selected = $bindable(), onselect }: Props = $props();
+	let {
+		options,
+		selected = $bindable(options[0]),
+		onselect,
+	}: Props = $props();
 
 	let open = $state(false);
 	let hover = $state(false);
@@ -31,10 +35,6 @@
 		toggle();
 	};
 
-	$effect(() => {
-		selected = selected || options[0];
-	});
-
 	onMount(() => {
 		const click = (e: MouseEvent) => {
 			if (dropdown && !dropdown.contains(e.target as Node)) {
@@ -49,15 +49,13 @@
 
 <div class="relative w-full min-w-fit" bind:this={dropdown}>
 	<button
-		class="font-display w-full min-w-fit justify-between overflow-hidden relative cursor-pointer px-3 border-2 border-solid flex items-center bg-background border-foreground-muted-alt rounded-xl p-2 focus:!outline-none"
+		class="font-display w-full min-w-fit justify-between overflow-hidden relative cursor-pointer px-3 bg-button flex items-center rounded-full p-2 focus:!outline-none"
 		onclick={toggle}
 		onmouseenter={() => (hover = true)}
 		onmouseleave={() => (hover = false)}
 	>
 		<!-- <p>{selected}</p> -->
-		<div
-			class="grid grid-cols-1 grid-rows-1 w-fit text-left flex-grow-0 pr-12"
-		>
+		<div class="grid grid-cols-1 grid-rows-1 w-fit text-left flex-grow-0">
 			{#key selected}
 				<p
 					in:blur={{
@@ -123,11 +121,11 @@
 				},
 				origin: "top center",
 			}}
-			class="w-full shadow-xl shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background border-2 border-solid border-foreground-muted-alt rounded-xl"
+			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background rounded-xl"
 		>
 			{#each options as option}
 				<button
-					class="w-full p-2 px-4 text-left hover:bg-foreground-muted-alt brightness-125"
+					class="w-full p-2 px-4 text-left hover:bg-panel"
 					onclick={() => select(option)}
 				>
 					{option}

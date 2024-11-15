@@ -9,6 +9,11 @@ export default {
 				panel: "var(--bg-panel)",
 				"panel-accented": "var(--bg-panel-accented)",
 				separator: "var(--bg-separator)",
+				button: "var(--bg-button)",
+				"panel-alt": "var(--bg-panel-alt)",
+			},
+			borderColor: {
+				separator: "var(--bg-separator)",
 			},
 			textColor: {
 				foreground: "var(--fg)",

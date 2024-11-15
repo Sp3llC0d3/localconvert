@@ -16,7 +16,7 @@
 	import {
 		InfoIcon,
 		MoonIcon,
-		RefreshCwIcon,
+		RotateCw,
 		SettingsIcon,
 		SunIcon,
 		UploadIcon,
@@ -27,6 +27,8 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
+	import { page } from "$app/stores";
+	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	let { children, data } = $props();
 
 	let shouldGoBack = writable(false);
@@ -54,7 +56,7 @@
 					: `Convert`,
 			url: "/convert",
 			activeMatch: (pathname) => pathname === "/convert",
-			icon: RefreshCwIcon,
+			icon: RotateCw,
 		},
 		{
 			name: "Settings",
@@ -103,15 +105,27 @@
 		></script>{/if}
 </svelte:head>
 
-<div class="fixed top-8 left-0 w-full flex justify-center">
-	<Navbar {items} />
+<div class="absolute top-8 left-0 w-full flex justify-center">
+	<div class="flex flex-col gap-4">
+		<Navbar {items} />
+		{#if items
+			.find((i) => i.url === "/convert")
+			?.activeMatch($page.url.pathname)}
+			<ConversionPanel />
+		{/if}
+	</div>
 </div>
 
-<div class="w-screen h-screen">
+<div
+	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none"
+	style="background: var(--bg-gradient);"
+></div>
+
+<div class="min-h-screen">
 	{@render children()}
 </div>
 
-<div class="-mt-14 w-full h-14">
+<div class="-mt-14 -z-50 w-full h-14 border-t border-separator">
 	<Footer
 		class="w-full h-full"
 		items={{

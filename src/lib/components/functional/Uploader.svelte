@@ -1,16 +1,77 @@
 <script lang="ts">
 	import { UploadIcon } from "lucide-svelte";
 	import Panel from "../visual/Panel.svelte";
+	import clsx from "clsx";
+	import { onMount } from "svelte";
+	import { files } from "$lib/store/index.svelte";
+	import { converters } from "$lib/converters";
+	import { goto } from "$app/navigation";
 
 	type Props = {
 		class?: string;
 	};
 
 	const { class: classList }: Props = $props();
+
+	let dropping = $state(false);
+	let uploaderButton = $state<HTMLButtonElement>();
+
+	const dropFiles = (e: DragEvent) => {
+		e.preventDefault();
+		dropping = false;
+		const oldLength = files.files.length;
+		files.add(e.dataTransfer?.files);
+		if (oldLength !== files.files.length) goto("/convert");
+	};
+
+	const uploadFiles = () => {
+		const input = document.createElement("input");
+		input.type = "file";
+		input.multiple = true;
+		input.accept = converters
+			.map((c) => c.supportedFormats.join(","))
+			.join(",");
+		input.onchange = (e) => {
+			const oldLength = files.files.length;
+			files.add(input.files);
+			if (oldLength !== files.files.length) goto("/convert");
+		};
+		input.click();
+	};
+
+	onMount(() => {
+		const handler = (e: Event) => {
+			e.preventDefault();
+			return false;
+		};
+
+		uploaderButton?.addEventListener("dragover", handler);
+		uploaderButton?.addEventListener("dragenter", handler);
+		uploaderButton?.addEventListener("dragleave", handler);
+		uploaderButton?.addEventListener("drop", handler);
+
+		return () => {
+			uploaderButton?.removeEventListener("dragover", handler);
+			uploaderButton?.removeEventListener("dragenter", handler);
+			uploaderButton?.removeEventListener("dragleave", handler);
+			uploaderButton?.removeEventListener("drop", handler);
+		};
+	});
 </script>
 
-<button class={classList}>
-	<Panel class="flex justify-center items-center w-full h-full flex-col">
+<button
+	ondragenter={() => (dropping = true)}
+	ondragleave={() => (dropping = false)}
+	ondrop={dropFiles}
+	onclick={uploadFiles}
+	bind:this={uploaderButton}
+	class={clsx(`hover:scale-105 active:scale-100 duration-200 ${classList}`, {
+		"scale-105": dropping,
+	})}
+>
+	<Panel
+		class="flex justify-center items-center w-full h-full flex-col pointer-events-none"
+	>
 		<div
 			class="w-16 h-16 bg-accent rounded-full flex items-center justify-center p-4"
 		>

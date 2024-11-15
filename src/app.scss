@@ -31,16 +31,36 @@
 }
 
 @mixin light {
-	--accent-bg: hsl(303, 73%, 81%);
-	--accent-fg: hsl(0, 0, 10%);
-	--bg: hsl(0, 0%, 100%);
-	--bg-transparent: hsla(0, 0%, 100%, 0.6);
-	--fg: hsl(0, 0%, 10%);
+	// general
+	--accent: hsl(303, 73%, 81%);
+
+	// foregrounds
+	--fg: hsl(0, 0%, 0%);
 	--fg-muted: hsl(0, 0%, 50%);
-	--fg-muted-alt: hsl(0, 0%, 75%);
-	--fg-highlight: hsl(303, 61%, 47%);
-	--fg-failure: hsl(0, 67%, 49%);
-	color-scheme: light;
+	--fg-on-accent: hsl(0, 0%, 0%);
+
+	// backgrounds
+	--bg: hsl(0, 0%, 100%);
+	--bg-gradient: linear-gradient(
+			to bottom left,
+			hsla(235, 100%, 50%, 0.3),
+			hsla(235, 100%, 50%, 0) 75%
+		),
+		linear-gradient(
+			to bottom right,
+			hsla(353, 100%, 50%, 0.4),
+			hsla(353, 100%, 50%, 0) 50%
+		),
+		linear-gradient(
+			to bottom,
+			hsla(287, 100%, 50%, 0.2),
+			hsla(287, 100%, 50%, 0)
+		);
+	--bg-panel: hsl(0, 0%, 100%);
+	--bg-panel-alt: hsl(0, 0%, 95%);
+	--bg-panel-accented: color-mix(in srgb, var(--accent) 35%, transparent);
+	--bg-separator: hsl(0, 0%, 88%);
+	--bg-button: var(--bg-panel-accented);
 }
 
 @mixin dark {
@@ -69,10 +89,12 @@
 			hsla(353, 100%, 50%, 0.07),
 			hsla(353, 100%, 50%, 0) 50%
 		);
-	color-scheme: dark;
 	--bg-panel: hsl(225, 4%, 18%);
 	--bg-panel-accented: color-mix(in srgb, var(--accent) 12%, transparent);
+	--bg-panel-alt: hsl(220, 5%, 16%);
 	--bg-separator: hsl(214, 4%, 32%);
+
+	color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,7 +120,6 @@
 body {
 	@apply text-foreground font-body font-semibold overflow-x-hidden;
 	width: 100vw;
-	background: var(--bg-gradient);
 	background-color: var(--bg);
 	background-size: 100vw 100vh;
 }
@@ -109,15 +130,15 @@ body {
 	}
 
 	.btn {
-		@apply font-display flex items-center justify-center overflow-hidden relative cursor-pointer px-4 border-2 border-solid bg-background border-foreground-muted-alt rounded-xl p-2 focus:!outline-none hover:scale-105 duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+		@apply bg-button flex items-center justify-center overflow-hidden relative cursor-pointer px-6 py-3 rounded-full focus:!outline-none hover:scale-105 duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
 		transition:
 			opacity 0.2s ease,
 			transform 0.2s ease,
 			background-color 0.2s ease;
 	}
 
-	.btn-highlight {
-		@apply bg-accent-background text-accent-foreground border-accent-background;
+	.btn.highlight {
+		@apply bg-accent text-on-accent;
 	}
 
 	h1,

@@ -6,6 +6,8 @@
 	import { page } from "$app/stores";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
 	import { theme } from "$lib/store/index.svelte";
+	import { blur, duration } from "$lib/animation";
+	import { quintOut } from "svelte/easing";
 
 	type Props = {
 		items: {
@@ -19,6 +21,49 @@
 	let { items }: Props = $props();
 </script>
 
+{#snippet link(item: (typeof items)[0])}
+	{@const Icon = item.icon}
+	<a
+		href={item.url}
+		aria-label={item.name}
+		class={clsx(
+			"px-4 h-full rounded-xl flex items-center justify-center gap-3 overflow-hidden",
+			{
+				"bg-panel-accented": item.activeMatch($page.url.pathname),
+			},
+		)}
+	>
+		<Icon />
+		<div class="grid grid-rows-1 grid-cols-1">
+			{#key item.name}
+				<p
+					class="row-start-1 col-start-1"
+					in:blur={{
+						blurMultiplier: 6,
+						duration,
+						easing: quintOut,
+						y: {
+							start: -48,
+							end: 0,
+						},
+					}}
+					out:blur={{
+						blurMultiplier: 6,
+						duration,
+						easing: quintOut,
+						y: {
+							start: 0,
+							end: 48,
+						},
+					}}
+				>
+					{item.name}
+				</p>
+			{/key}
+		</div>
+	</a>
+{/snippet}
+
 <Panel class="w-fit h-20 flex items-center gap-3">
 	<div
 		class="w-32 h-full bg-accent rounded-xl flex items-center justify-center"
@@ -28,20 +73,7 @@
 		</div>
 	</div>
 	{#each items as item (item.url)}
-		{@const Icon = item.icon}
-		<a
-			href={item.url}
-			aria-label={item.name}
-			class={clsx(
-				"w-32 h-full rounded-xl flex items-center justify-center gap-3",
-				{
-					"bg-panel-accented": item.activeMatch($page.url.pathname),
-				},
-			)}
-		>
-			<Icon />
-			<p>{item.name}</p>
-		</a>
+		{@render link(item)}
 	{/each}
 	<div class="w-0.5 bg-separator h-full"></div>
 	<button
