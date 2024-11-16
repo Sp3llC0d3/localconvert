@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount, type SvelteComponentTyped } from "svelte";
 	import Panel from "../visual/Panel.svelte";
 	import Logo from "../visual/svg/Logo.svelte";
 	import clsx from "clsx";
@@ -15,6 +14,7 @@
 			url: string;
 			activeMatch: (pathname: string) => boolean;
 			icon: any;
+			badge?: number;
 		}[];
 	};
 
@@ -33,11 +33,10 @@
 			},
 		)}
 	>
-		<Icon />
 		<div class="grid grid-rows-1 grid-cols-1">
 			{#key item.name}
-				<p
-					class="row-start-1 col-start-1 font-medium"
+				<div
+					class="w-full row-start-1 col-start-1 h-full flex items-center justify-center gap-3"
 					in:blur={{
 						blurMultiplier: 6,
 						duration,
@@ -57,8 +56,30 @@
 						},
 					}}
 				>
-					{item.name}
-				</p>
+					<div class="relative">
+						<Icon />
+						{#if item.badge}
+							<div
+								class="absolute -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge flex items-center justify-center font-medium"
+								style="font-size: 0.7rem;"
+								transition:blur={{
+									blurMultiplier: 4,
+									duration,
+									easing: quintOut,
+									scale: {
+										start: 0.5,
+										end: 1,
+									},
+								}}
+							>
+								{item.badge}
+							</div>
+						{/if}
+					</div>
+					<p class=" font-medium">
+						{item.name}
+					</p>
+				</div>
 			{/key}
 		</div>
 	</a>

@@ -41,6 +41,7 @@
 			url: string;
 			activeMatch: (pathname: string) => boolean;
 			icon: any;
+			badge?: number;
 		}[]
 	>([
 		{
@@ -50,13 +51,11 @@
 			icon: UploadIcon,
 		},
 		{
-			name:
-				files.files.length > 0
-					? `Convert (${files.files.length})`
-					: `Convert`,
+			name: "Convert",
 			url: "/convert",
 			activeMatch: (pathname) => pathname === "/convert",
 			icon: RefreshCw,
+			badge: files.files.length,
 		},
 		{
 			name: "Settings",
@@ -105,7 +104,7 @@
 		></script>{/if}
 </svelte:head>
 
-<div class="absolute top-8 left-0 w-full flex justify-center">
+<div class="absolute top-8 left-0 w-screen flex justify-center">
 	<div class="flex flex-col gap-4">
 		<Navbar {items} />
 		{#if items

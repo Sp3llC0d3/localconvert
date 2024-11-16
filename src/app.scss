@@ -36,6 +36,7 @@
 	--fg: hsl(0, 0%, 0%);
 	--fg-muted: hsl(0, 0%, 50%);
 	--fg-on-accent: hsl(0, 0%, 0%);
+	--fg-on-badge: hsl(0, 0%, 100%);
 
 	// backgrounds
 	--bg: hsl(0, 0%, 95%);
@@ -59,6 +60,7 @@
 	--bg-panel-accented: hsl(300, 25%, 91%);
 	--bg-separator: hsl(0, 0%, 88%);
 	--bg-button: var(--bg-panel-accented);
+	--bg-badge: hsl(0, 0%, 0%);
 
 	--shadow-panel: 0 2px 4px 0 hsla(0, 0%, 0%, 0.15);
 }
@@ -71,6 +73,7 @@
 	--fg: hsl(0, 0%, 100%);
 	--fg-muted: hsl(0, 0%, 50%);
 	--fg-on-accent: hsl(0, 0%, 0%);
+	--fg-on-badge: hsl(0, 0%, 0%);
 
 	// backgrounds
 	--bg: hsl(220, 5%, 12%);
@@ -93,6 +96,7 @@
 	--bg-panel-accented: color-mix(in srgb, var(--accent) 12%, transparent);
 	--bg-panel-alt: hsl(220, 6%, 25%);
 	--bg-separator: hsl(220, 4%, 28%);
+	--bg-badge: hsl(0, 0%, 100%);
 
 	--shadow-panel: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
 

@@ -11,6 +11,7 @@ export default {
 				separator: "var(--bg-separator)",
 				button: "var(--bg-button)",
 				"panel-alt": "var(--bg-panel-alt)",
+				badge: "var(--bg-badge)",
 			},
 			borderColor: {
 				separator: "var(--bg-separator)",
@@ -19,6 +20,7 @@ export default {
 				foreground: "var(--fg)",
 				muted: "var(--fg-muted)",
 				"on-accent": "var(--fg-on-accent)",
+				"on-badge": "var(--fg-on-badge)",
 			},
 			colors: {
 				accent: "var(--accent)",
