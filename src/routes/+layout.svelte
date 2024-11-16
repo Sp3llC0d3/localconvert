@@ -29,6 +29,7 @@
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import { page } from "$app/stores";
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
+	import { fade } from "svelte/transition";
 	let { children, data } = $props();
 
 	let shouldGoBack = writable(false);
@@ -104,22 +105,68 @@
 		></script>{/if}
 </svelte:head>
 
-<div class="absolute top-8 left-0 w-screen flex justify-center">
+<div class="absolute top-8 left-0 w-screen flex justify-center z-50">
 	<div class="flex flex-col gap-4">
 		<Navbar {items} />
 		{#if items
 			.find((i) => i.url === "/convert")
 			?.activeMatch($page.url.pathname)}
-			<ConversionPanel />
+			<div
+				in:blur={{
+					blurMultiplier: 8,
+					duration: duration + 50,
+					delay: 50,
+					easing: quintOut,
+					y: {
+						start: -24,
+						end: 0,
+					},
+					scale: {
+						start: 0.95,
+						end: 1,
+					},
+				}}
+				out:blur={{
+					blurMultiplier: 8,
+					duration,
+					easing: quintOut,
+					y: {
+						start: 0,
+						end: 24,
+					},
+					scale: {
+						start: 1,
+						end: 1.05,
+					},
+				}}
+			>
+				<ConversionPanel />
+			</div>
 		{/if}
 	</div>
 </div>
 
-<div class="min-h-screen">
-	{@render children()}
+<div class="min-h-screen grid grid-rows-1 grid-cols-1">
+	{#key data.pathname}
+		<div
+			class="row-start-1 col-start-1"
+			in:blur={{
+				blurMultiplier: 8,
+				duration,
+				easing: quintOut,
+			}}
+			out:blur={{
+				blurMultiplier: 8,
+				duration,
+				easing: quintOut,
+			}}
+		>
+			{@render children()}
+		</div>
+	{/key}
 </div>
 
-<div class="-mt-14 -z-50 w-full h-14 border-t border-separator">
+<div class="-mt-14 w-full h-14 border-t border-separator relative z-50">
 	<Footer
 		class="w-full h-full"
 		items={{
