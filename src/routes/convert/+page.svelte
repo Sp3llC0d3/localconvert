@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { blur, duration } from "$lib/animation";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
+	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import { files } from "$lib/store/index.svelte";
@@ -12,6 +14,7 @@
 		RotateCwIcon,
 		XIcon,
 	} from "lucide-svelte";
+	import { quintOut } from "svelte/easing";
 </script>
 
 {#snippet fileItem(file: VertFile, index: number)}
@@ -106,4 +109,37 @@
 			<Uploader class="w-full h-full" />
 		{/if}
 	</div>
+</div>
+
+<div
+	class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1"
+>
+	{#if files.files.length === 1}
+		<div
+			class="w-full relative"
+			transition:blur={{
+				blurMultiplier: 24,
+				duration,
+				easing: quintOut,
+				scale: {
+					start: 1.02,
+					end: 1,
+				},
+			}}
+		>
+			<img
+				class="object-cover w-full h-full blur-xs"
+				src={files.files[0].blobUrl}
+				alt={files.files[0].name}
+			/>
+			<div class="absolute bottom-0 left-0 w-full h-full">
+				<ProgressiveBlur
+					direction="bottom"
+					endIntensity={256}
+					iterations={8}
+					fadeTo="var(--bg)"
+				/>
+			</div>
+		</div>
+	{/if}
 </div>

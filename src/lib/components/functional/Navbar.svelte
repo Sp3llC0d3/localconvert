@@ -7,6 +7,8 @@
 	import { theme } from "$lib/store/index.svelte";
 	import { blur, duration } from "$lib/animation";
 	import { quintOut } from "svelte/easing";
+	import { browser } from "$app/environment";
+	import type { SvelteComponent } from "svelte";
 
 	type Props = {
 		items: {
@@ -19,17 +21,32 @@
 	};
 
 	let { items }: Props = $props();
+
+	let links = $state<HTMLAnchorElement[]>([]);
+	let container = $state<HTMLDivElement>();
+	let containerRect = $derived(container?.getBoundingClientRect());
+	$effect(() => {
+		$inspect(containerRect);
+	});
+
+	const linkRects = $derived(links.map((l) => l.getBoundingClientRect()));
+
+	const selectedIndex = $derived(
+		items.findIndex((i) => i.activeMatch($page.url.pathname)),
+	);
 </script>
 
-{#snippet link(item: (typeof items)[0])}
+{#snippet link(item: (typeof items)[0], index: number)}
 	{@const Icon = item.icon}
 	<a
+		bind:this={links[index]}
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"w-32 h-full rounded-xl flex items-center justify-center gap-3 overflow-hidden",
+			"w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
 			{
-				"bg-panel-accented": item.activeMatch($page.url.pathname),
+				"bg-panel-accented":
+					item.activeMatch($page.url.pathname) && !browser,
 			},
 		)}
 	>
@@ -117,23 +134,36 @@
 	</a>
 {/snippet}
 
-<Panel class="w-fit h-20 flex items-center gap-3">
-	<div
-		class="w-32 h-full bg-accent rounded-xl flex items-center justify-center"
-	>
-		<div class="h-5 w-full">
-			<Logo />
+<div bind:this={container}>
+	<Panel class="w-fit h-20 flex items-center gap-3 relative">
+		{#if linkRects[selectedIndex]}
+			<div
+				class="absolute bg-panel-accented rounded-xl"
+				style="width: {linkRects[selectedIndex]
+					.width}px; height: {linkRects[selectedIndex]
+					.height}px; top: {linkRects[selectedIndex].top -
+					32}px; left: {linkRects[selectedIndex].left -
+					(containerRect?.left ||
+						0)}px; transition: left var(--transition) {duration}ms,  top var(--transition) {duration}ms;"
+			></div>
+		{/if}
+		<div
+			class="w-32 h-full bg-accent rounded-xl flex items-center justify-center"
+		>
+			<div class="h-5 w-full">
+				<Logo />
+			</div>
 		</div>
-	</div>
-	{#each items as item (item.url)}
-		{@render link(item)}
-	{/each}
-	<div class="w-0.5 bg-separator h-full"></div>
-	<button
-		onclick={theme.toggle}
-		class="w-14 h-full flex items-center justify-center"
-	>
-		<SunIcon class="dynadark:hidden block" />
-		<MoonIcon class="dynadark:block hidden" />
-	</button>
-</Panel>
+		{#each items as item, i (item.url)}
+			{@render link(item, i)}
+		{/each}
+		<div class="w-0.5 bg-separator h-full"></div>
+		<button
+			onclick={theme.toggle}
+			class="w-14 h-full flex items-center justify-center"
+		>
+			<SunIcon class="dynadark:hidden block" />
+			<MoonIcon class="dynadark:block hidden" />
+		</button>
+	</Panel>
+</div>
