@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FolderArchiveIcon, RotateCw } from "lucide-svelte";
+	import { FolderArchiveIcon, RefreshCw } from "lucide-svelte";
 	import Panel from "../visual/Panel.svelte";
 	import { files } from "$lib/store/index.svelte";
 	import Dropdown from "./Dropdown.svelte";
@@ -12,7 +12,7 @@
 			class="btn highlight flex gap-3"
 			disabled={!files.ready}
 		>
-			<RotateCw size="24" />
+			<RefreshCw size="24" />
 			<p>Convert all</p>
 		</button>
 		<button

@@ -16,6 +16,11 @@
 	<VertVBig class="fill-[--fg] opacity-50" />
 </div>
 
+<div
+	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none"
+	style="background: var(--bg-gradient);"
+></div>
+
 <div class="w-screen h-screen flex items-center justify-center">
 	<div class="max-w-5xl w-full">
 		<div class="flex items-center h-[266px] gap-24">

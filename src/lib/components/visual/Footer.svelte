@@ -22,7 +22,9 @@
 		{#each links as [name, url] (name)}
 			<!-- bullet point -->
 			<p>•</p>
-			<a target="_blank" class="hover:underline" href={url}>{name}</a>
+			<a target="_blank" class="hover:underline font-normal" href={url}
+				>{name}</a
+			>
 		{/each}
 	</div>
 </footer>

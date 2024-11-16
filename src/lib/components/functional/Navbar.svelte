@@ -27,7 +27,7 @@
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"px-4 h-full rounded-xl flex items-center justify-center gap-3 overflow-hidden",
+			"w-32 h-full rounded-xl flex items-center justify-center gap-3 overflow-hidden",
 			{
 				"bg-panel-accented": item.activeMatch($page.url.pathname),
 			},
@@ -37,7 +37,7 @@
 		<div class="grid grid-rows-1 grid-cols-1">
 			{#key item.name}
 				<p
-					class="row-start-1 col-start-1"
+					class="row-start-1 col-start-1 font-medium"
 					in:blur={{
 						blurMultiplier: 6,
 						duration,

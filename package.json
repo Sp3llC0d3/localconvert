@@ -40,6 +40,7 @@
 		"@ffmpeg/util": "^0.12.1",
 		"@fontsource/azeret-mono": "^5.1.0",
 		"@fontsource/lexend": "^5.1.1",
+		"@fontsource/radio-canada-big": "^5.1.0",
 		"@imagemagick/magick-wasm": "^0.0.31",
 		"client-zip": "^2.4.5",
 		"clsx": "^2.1.1",

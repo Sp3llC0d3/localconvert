@@ -16,7 +16,7 @@
 	import {
 		InfoIcon,
 		MoonIcon,
-		RotateCw,
+		RefreshCw,
 		SettingsIcon,
 		SunIcon,
 		UploadIcon,
@@ -56,7 +56,7 @@
 					: `Convert`,
 			url: "/convert",
 			activeMatch: (pathname) => pathname === "/convert",
-			icon: RotateCw,
+			icon: RefreshCw,
 		},
 		{
 			name: "Settings",
@@ -115,11 +115,6 @@
 		{/if}
 	</div>
 </div>
-
-<div
-	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none"
-	style="background: var(--bg-gradient);"
-></div>
 
 <div class="min-h-screen">
 	{@render children()}
