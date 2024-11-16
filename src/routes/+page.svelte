@@ -11,14 +11,18 @@
 </script>
 
 <div
-	class="absolute -z-50 top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
+	class="absolute -z-30 top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
 >
 	<VertVBig class="fill-[--fg] opacity-50" />
 </div>
 
 <div
-	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none"
+	class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 	style="background: var(--bg-gradient);"
+></div>
+
+<div
+	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none bg-panel"
 ></div>
 
 <div class="w-screen h-screen flex items-center justify-center">
