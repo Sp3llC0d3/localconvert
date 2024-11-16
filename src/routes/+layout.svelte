@@ -1,6 +1,6 @@
 <script lang="ts">
 	import "../app.scss";
-	import { goto } from "$app/navigation";
+	import { afterNavigate, beforeNavigate, goto } from "$app/navigation";
 	import { blur, duration } from "$lib/animation";
 	import { quintOut } from "svelte/easing";
 	import { files, theme } from "$lib/store/index.svelte";
@@ -91,6 +91,22 @@
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
 	});
+
+	let goingLeft = $state(false);
+
+	beforeNavigate((e) => {
+		const oldIndex = items.findIndex((i) =>
+			i.activeMatch(e.from?.url.pathname || ""),
+		);
+		const newIndex = items.findIndex((i) =>
+			i.activeMatch(e.to?.url.pathname || ""),
+		);
+		if (newIndex < oldIndex) {
+			goingLeft = true;
+		} else {
+			goingLeft = false;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -154,25 +170,57 @@
 				blurMultiplier: 8,
 				duration,
 				easing: quintOut,
+				x: {
+					start: goingLeft ? -100 : 100,
+					end: 0,
+				},
+				y: {
+					start: 72,
+					end: 0,
+				},
+				origin: "top center",
 			}}
 			out:blur={{
 				blurMultiplier: 8,
 				duration,
 				easing: quintOut,
+				x: {
+					start: 0,
+					end: goingLeft ? 100 : -100,
+				},
+				y: {
+					start: 0,
+					end: 72,
+				},
+				origin: "top center",
 			}}
 		>
-			{@render children()}
+			<div class="min-h-screen">
+				{@render children()}
+			</div>
+			<div
+				class="-mt-14 w-full h-14 border-t border-separator relative -z-50"
+			>
+				<Footer
+					class="w-full h-full"
+					items={{
+						"Privacy Policy": "#",
+						"Source Code": "#",
+						"Discord Server": "#",
+					}}
+				/>
+			</div>
 		</div>
 	{/key}
 </div>
 
-<div class="-mt-14 w-full h-14 border-t border-separator relative z-50">
-	<Footer
-		class="w-full h-full"
-		items={{
-			"Privacy Policy": "#",
-			"Source Code": "#",
-			"Discord Server": "#",
+{#if data.pathname === "/"}
+	<div
+		transition:fade={{
+			duration,
+			easing: quintOut,
 		}}
-	/>
-</div>
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient);"
+	></div>
+{/if}

@@ -11,35 +11,52 @@
 </script>
 
 <div
-	class="absolute -z-30 top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
+	class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 >
 	<VertVBig class="fill-[--fg] opacity-50" />
 </div>
-
-<div
-	class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-	style="background: var(--bg-gradient);"
-></div>
-
-<div
-	class="fixed top-0 left-0 w-screen h-screen -z-50 pointer-events-none bg-panel"
-></div>
 
 <div class="w-screen h-screen flex items-center justify-center">
 	<div class="max-w-5xl w-full">
 		<div class="flex items-center h-[266px] gap-24">
 			<div class="flex-grow w-full">
-				<h1 class="text-6xl tracking-tight leading-[72px] mb-6">
+				<h1
+					class="text-6xl tracking-tight leading-[72px] mb-6 blur-in"
+					style:--delay="20ms"
+				>
 					The file converter you'll love.
 				</h1>
-				<p class="font-normal text-xl text-muted">
+				<p
+					class="font-normal text-xl text-muted blur-in"
+					style:--delay="60ms"
+				>
 					All processing done on your device. No file size limit, no
 					ads, and completely open source.
 				</p>
 			</div>
-			<div class="flex-grow w-full h-full">
+			<div class="flex-grow w-full h-full blur-in" style:--delay="60ms">
 				<Uploader class="w-full h-full" />
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	@keyframes blur-in {
+		0% {
+			filter: blur(8px);
+			transform: translateY(-8px) scale(0.9);
+			opacity: 0;
+		}
+		100% {
+			filter: blur(0);
+			transform: translateY(0) scale(1);
+			opacity: 1;
+		}
+	}
+
+	.blur-in {
+		animation: blur-in 0.75s var(--transition) var(--delay, 0ms) forwards;
+		opacity: 0;
+	}
+</style>
