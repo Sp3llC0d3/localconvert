@@ -60,7 +60,7 @@
 						<Icon />
 						{#if item.badge}
 							<div
-								class="absolute -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge flex items-center justify-center font-medium"
+								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
 								style="font-size: 0.7rem;"
 								transition:blur={{
 									blurMultiplier: 4,
@@ -72,7 +72,39 @@
 									},
 								}}
 							>
-								{item.badge}
+								{#key item.badge}
+									<div
+										class="flex items-center justify-center w-full h-full col-start-1 row-start-1"
+										in:blur={{
+											duration,
+											easing: quintOut,
+											blurMultiplier: 3,
+											y: {
+												start: -12,
+												end: 0,
+											},
+											scale: {
+												start: 0.75,
+												end: 1,
+											},
+										}}
+										out:blur={{
+											duration,
+											easing: quintOut,
+											blurMultiplier: 3,
+											y: {
+												start: 0,
+												end: 12,
+											},
+											scale: {
+												start: 1,
+												end: 0.75,
+											},
+										}}
+									>
+										{item.badge}
+									</div>
+								{/key}
 							</div>
 						{/if}
 					</div>
