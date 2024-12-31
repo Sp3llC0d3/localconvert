@@ -12,9 +12,9 @@
 
 	interface Contributor {
 		name: string;
-		github?: string;
-		role?: string;
+		github: string;
 		avatar: string;
+		role?: string;
 	}
 
 	const donors: Donator[] = [];
@@ -22,20 +22,20 @@
 	const mainContribs: Contributor[] = [
 		{
 			name: "nullptr",
-			github: "not-nullptr",
+			github: "https://github.com/not-nullptr",
 			role: "Lead developer; conversion backend, UI implementation",
 			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
 		},
 		{
 			name: "Realmy",
-			github: "RealmyTheMan",
+			github: "https://github.com/RealmyTheMan",
 			role: "Lead designer; logo and branding, user interface design",
 			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
 		},
 		{
 			name: "JovannMC",
-			github: "JovannMC",
-			role: "Developer; lorem ipsum, UI implementation",
+			github: "https://github.com/JovannMC",
+			role: "Developer; UI implementation",
 			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
 		},
 	];
@@ -54,18 +54,25 @@
 			const allContribs = await response.json();
 
 			// Filter out main contributors
-			const mainContribNames = mainContribs.map(
-				(contrib) => contrib.github,
+			const mainContribNames = mainContribs.map((contrib) =>
+				contrib.github.split("/").pop(),
 			);
 			ghContribs = allContribs
 				.filter(
 					(contrib: { login: string }) =>
 						!mainContribNames.includes(contrib.login),
 				)
-				.map((contrib: { login: string; avatar_url: string }) => ({
-					name: contrib.login,
-					avatar: contrib.avatar_url,
-				}));
+				.map(
+					(contrib: {
+						login: string;
+						avatar_url: string;
+						html_url: string;
+					}) => ({
+						name: contrib.login,
+						avatar: contrib.avatar_url,
+						github: contrib.html_url,
+					}),
+				);
 		} catch (e) {
 			error(["general"], `Error fetching GitHub contributors: ${e}`);
 		}

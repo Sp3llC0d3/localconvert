@@ -5,18 +5,27 @@
 	let { mainContribs, ghContribs } = $props();
 </script>
 
-{#snippet contributor(name: string, role: string, avatar: string)}
+{#snippet contributor(
+	name: string,
+	github: string,
+	avatar: string,
+	role?: string,
+)}
 	<div class="flex items-center gap-4">
-		<img
-			src={avatar}
-			alt={name}
-			title={name}
-			class="w-14 h-14 rounded-full"
-		/>
-		<div class="flex flex-col gap-1">
-			<p class="text-xl font-semibold">{name}</p>
-			<p class="text-sm font-normal text-muted">{role}</p>
-		</div>
+		<a href={github} target="_blank" rel="noopener noreferrer">
+			<img
+				src={avatar}
+				alt={name}
+				title={name}
+				class="{role ? 'w-14 h-14' : 'w-10 h-10'} rounded-full"
+			/>
+		</a>
+		{#if role}
+			<div class="flex flex-col gap-1">
+				<p class="text-xl font-semibold">{name}</p>
+				<p class="text-sm font-normal text-muted">{role}</p>
+			</div>
+		{/if}
 	</div>
 {/snippet}
 
@@ -34,8 +43,8 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-row flex-wrap gap-2">
 			{#each mainContribs as contrib}
-				{@const { name, role, avatar } = contrib}
-				{@render contributor(name, role, avatar)}
+				{@const { name, github, avatar, role } = contrib}
+				{@render contributor(name, github, avatar, role)}
 			{/each}
 		</div>
 	</div>
@@ -74,13 +83,8 @@
 		{#if ghContribs && ghContribs.length > 0}
 			<div class="flex flex-row flex-wrap gap-2">
 				{#each ghContribs as contrib}
-					{@const { name, avatar } = contrib}
-					<img
-						src={avatar}
-						alt={name}
-						title={name}
-						class="w-10 h-10 rounded-full"
-					/>
+					{@const { name, github, avatar } = contrib}
+					{@render contributor(name, github, avatar)}
 				{/each}
 			</div>
 		{/if}
