@@ -131,6 +131,18 @@ body {
 	background-size: 100vw 100vh;
 }
 
+.hoverable {
+	@apply hover:scale-105 duration-200;
+}
+
+.hoverable-md {
+	@apply hover:scale-110 duration-200;
+}
+
+.hoverable-lg {
+	@apply hover:scale-[1.15] duration-200;
+}
+
 @layer components {
 	select {
 		@apply appearance-none;

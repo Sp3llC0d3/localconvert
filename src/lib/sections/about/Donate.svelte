@@ -16,7 +16,7 @@
 			src={avatar}
 			alt={name}
 			title={name}
-			class="w-9 h-9 rounded-full"
+			class="w-9 h-9 rounded-full hoverable-lg"
 		/>
 		<p class="text-sm text-black dynadark:text-white px-4">${amount}</p>
 	</div>
@@ -38,31 +38,31 @@
 	</div>
 
 	<div class="flex flex-col gap-3 w-full">
-		<div class="flex gap-2 w-full">
+		<div class="flex gap-3 w-full">
 			<button
-				class="flex-1 p-4 rounded-lg bg-rose-300 text-black flex items-center justify-center"
+				class="btn flex-1 p-4 rounded-lg bg-rose-300 text-black flex items-center justify-center"
 			>
 				<HandCoinsIcon size="24" class="inline-block mr-2" />
 				One-time
 			</button>
 
 			<button
-				class="flex-1 p-4 rounded-lg bg-button text-black dynadark:text-white flex items-center justify-center"
+				class="btn flex-1 p-4 rounded-lg bg-button text-black dynadark:text-white flex items-center justify-center hoverable"
 			>
 				<CalendarHeartIcon size="24" class="inline-block mr-2" />
 				Monthly
 			</button>
 		</div>
 		<div class="flex gap-3 w-full">
-			<button class="bg-rose-300 text-black p-4 rounded-lg flex-1"
+			<button class="bg-rose-300 text-black p-4 rounded-lg flex-1 hoverable-md"
 				>$1 USD</button
 			>
 			<button
-				class="bg-button text-black dynadark:text-white p-4 rounded-lg flex-1"
+				class="bg-button text-black dynadark:text-white p-4 rounded-lg flex-1 hoverable-md"
 				>$5 USD</button
 			>
 			<button
-				class="bg-button text-black dynadark:text-white p-4 rounded-lg flex-1"
+				class="bg-button text-black dynadark:text-white p-4 rounded-lg flex-1 hoverable-md"
 				>$10 USD</button
 			>
 			<div class="relative flex items-center flex-[2]">
@@ -82,10 +82,10 @@
 		</p>
 
 		<button
-			class="flex-1 p-3 rounded-3xl bg-rose-300 text-black flex items-center justify-center"
+			class="flex-1 p-3 rounded-3xl bg-rose-300 text-black flex items-center justify-center hoverable"
 		>
 			<WalletIcon size="24" class="inline-block mr-2" />
-			Pay Now
+			Pay now
 		</button>
 	</div>
 

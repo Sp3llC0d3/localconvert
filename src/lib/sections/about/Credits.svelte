@@ -17,7 +17,7 @@
 				src={avatar}
 				alt={name}
 				title={name}
-				class="{role ? 'w-14 h-14' : 'w-10 h-10'} rounded-full"
+				class="{role ? 'w-14 h-14 hoverable-md' : 'w-10 h-10 hoverable-lg'} rounded-full"
 			/>
 		</a>
 		{#if role}
