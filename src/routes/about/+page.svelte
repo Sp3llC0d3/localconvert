@@ -1,102 +1,74 @@
 <script lang="ts">
+	import { log } from "$lib/logger";
 	import * as About from "$lib/sections/about";
 	import { InfoIcon } from "lucide-svelte";
+	import { onMount } from "svelte";
 
-	const donors = [
-		{
-			name: "John Doe",
-			amount: "5",
-			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
-		},
-		{
-			name: "John Smith",
-			amount: "1",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "Jane Doe",
-			amount: "10",
-			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
-		},
-		{
-			name: "John Smith",
-			amount: "1",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "John Doe",
-			amount: "5",
-			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
-		},
-		{
-			name: "John Smith",
-			amount: "1",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "Jane Doe",
-			amount: "10",
-			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
-		},
-		{
-			name: "John Smith",
-			amount: "1",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-	];
+	interface Donator {
+		name: string;
+		amount?: string | number;
+		avatar: string;
+	}
 
-	const mainContribs = [
+	interface Contributor {
+		name: string;
+		github?: string;
+		role?: string;
+		avatar: string;
+	}
+
+	const donors: Donator[] = [];
+
+	const mainContribs: Contributor[] = [
 		{
 			name: "nullptr",
+			github: "not-nullptr",
 			role: "Lead developer; conversion backend, UI implementation",
 			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
 		},
 		{
 			name: "Realmy",
+			github: "RealmyTheMan",
 			role: "Lead designer; logo and branding, user interface design",
 			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
 		},
 		{
 			name: "JovannMC",
+			github: "JovannMC",
 			role: "Developer; lorem ipsum, UI implementation",
 			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
 		},
 	];
 
-	const ghContribs = [
-		{
-			name: "John Doe",
-			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
-		},
-		{
-			name: "John Smith",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "Jane Doe",
-			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
-		},
-		{
-			name: "John Smith",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "John Doe",
-			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
-		},
-		{
-			name: "John Smith",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-		{
-			name: "Jane Doe",
-			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
-		},
-		{
-			name: "John Smith",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
-		},
-	];
+	let ghContribs: Contributor[] = [];
+
+	onMount(async () => {
+		try {
+			const response = await fetch(
+				"https://api.github.com/repos/not-nullptr/VERT/contributors",
+			);
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			const allContribs = await response.json();
+
+			// Filter out main contributors
+			const mainContribNames = mainContribs.map(
+				(contrib) => contrib.github,
+			);
+			ghContribs = allContribs
+				.filter(
+					(contrib: { login: string }) =>
+						!mainContribNames.includes(contrib.login),
+				)
+				.map((contrib: { login: string; avatar_url: string }) => ({
+					name: contrib.login,
+					avatar: contrib.avatar_url,
+				}));
+		} catch (error) {
+			log("general", `Error fetching GitHub contributors: ${error}`);
+		}
+	});
 </script>
 
 <div class="flex flex-col h-full items-center">
