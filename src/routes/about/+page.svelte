@@ -99,16 +99,19 @@
 	];
 </script>
 
-<div class="flex flex-col h-full items-center blur-in">
+<div class="flex flex-col h-full items-center">
 	<h1
-		class="text-3xl tracking-tight leading-[72px] mb-6"
-		style:--delay="20ms"
+		class="text-3xl tracking-tight leading-[72px] mb-6 blur-in"
+		style="--delay: 20ms;"
 	>
 		<InfoIcon size="40" class="inline-block -mt-2 mr-2" />
 		About
 	</h1>
 
-	<div class="w-full max-w-[1280px] flex flex-row gap-4">
+	<div
+		class="w-full max-w-[1280px] flex flex-row gap-4 blur-in"
+		style="--delay: 60ms"
+	>
 		<!-- Why VERT? & Credits -->
 		<div class="flex flex-col gap-4 flex-1">
 			<About.Why />

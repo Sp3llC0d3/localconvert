@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { files } from "$lib/store/index.svelte";
 	import { FolderArchiveIcon, RefreshCw } from "lucide-svelte";
 	import Panel from "../visual/Panel.svelte";
-	import { files } from "$lib/store/index.svelte";
 	import Dropdown from "./Dropdown.svelte";
 </script>
 
@@ -28,7 +28,10 @@
 		{#if files.requiredConverters.length === 1}
 			<p class="whitespace-nowrap">Set all to</p>
 			<Dropdown
-				onselect={(r) => files.files.forEach((f) => (f.to = r))}
+				onselect={(r) => files.files.forEach((f) => {
+					f.to = r;
+					f.result = null;
+				})}
 				options={files.files[0]?.converter?.supportedFormats || []}
 			/>
 		{/if}

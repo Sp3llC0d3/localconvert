@@ -23,7 +23,7 @@
                 size="24"
                 class="inline-block mr-2"
             />
-            Discord Server
+            Discord server
         </a>
         <a
             href="https://github.com/not-nullptr/VERT"
@@ -32,7 +32,7 @@
             class="flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
         >
             <GithubIcon size="24" class="inline-block mr-2" />
-            Source Code
+            Source code
         </a>
     </div>
 </Panel>

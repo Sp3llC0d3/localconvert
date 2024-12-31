@@ -69,6 +69,7 @@
 				<Dropdown
 					options={file.converter?.supportedFormats || []}
 					bind:selected={file.to}
+					onselect={() => file.result && (file.result = null)}
 				/>
 				<div class="w-full flex items-center justify-around">
 					<button
@@ -91,7 +92,7 @@
 	</Panel>
 {/snippet}
 
-<div class="w-full h-full flex justify-center pt-60 pb-20">
+<div class="w-full h-full flex justify-center">
 	<div
 		class="w-[794px] grid"
 		style="grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; gap: 16px"

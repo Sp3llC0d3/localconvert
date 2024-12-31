@@ -33,8 +33,8 @@
 						class="font-normal text-xl text-muted blur-in"
 						style:--delay="60ms"
 					>
-						All processing done on your device. No file size limit,
-						no ads, and completely open source.
+						All processing is done on your device. No file size
+						limit, no ads, and completely open source.
 					</p>
 				</div>
 				<div

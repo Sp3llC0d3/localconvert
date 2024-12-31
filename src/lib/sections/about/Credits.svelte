@@ -47,7 +47,7 @@
             <p class="text-sm text-muted font-normal">
                 Big thanks to all these people for helping out!
                 <a
-                    class="text-blue-500 font-normal"
+                    class="text-blue-500 font-normal hover:underline"
                     href="https://github.com/not-nullptr/VERT"
                     target="_blank"
                     rel="noopener noreferrer"
