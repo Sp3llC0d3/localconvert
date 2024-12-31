@@ -11,31 +11,38 @@
 </script>
 
 <div
-	class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+	class="w-screen h-full flex items-center justify-center overflow-hidden -mt-20"
 >
-	<VertVBig class="fill-[--fg] opacity-50" />
-</div>
+	<div
+		class="absolute -z-30 top-0 left-0 w-screen flex items-center justify-center overflow-hidden"
+	>
+		<VertVBig class="fill-[--fg] opacity-50" />
+	</div>
 
-<div class="w-screen h-screen flex items-center justify-center">
-	<div class="max-w-5xl w-full">
-		<div class="flex items-center h-[266px] gap-24">
-			<div class="flex-grow w-full">
-				<h1
-					class="text-6xl tracking-tight leading-[72px] mb-6 blur-in"
-					style:--delay="20ms"
-				>
-					The file converter you'll love.
-				</h1>
-				<p
-					class="font-normal text-xl text-muted blur-in"
+	<div class="w-screen flex items-center justify-center flex-grow">
+		<div class="max-w-5xl w-full">
+			<div class="flex items-center h-[266px] gap-24">
+				<div class="flex-grow w-full">
+					<h1
+						class="text-6xl tracking-tight leading-[72px] mb-6 blur-in"
+						style:--delay="20ms"
+					>
+						The file converter you'll love.
+					</h1>
+					<p
+						class="font-normal text-xl text-muted blur-in"
+						style:--delay="60ms"
+					>
+						All processing done on your device. No file size limit,
+						no ads, and completely open source.
+					</p>
+				</div>
+				<div
+					class="flex-grow w-full h-full blur-in"
 					style:--delay="60ms"
 				>
-					All processing done on your device. No file size limit, no
-					ads, and completely open source.
-				</p>
-			</div>
-			<div class="flex-grow w-full h-full blur-in" style:--delay="60ms">
-				<Uploader class="w-full h-full" />
+					<Uploader class="w-full h-full" />
+				</div>
 			</div>
 		</div>
 	</div>

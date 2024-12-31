@@ -1,35 +1,24 @@
 <script lang="ts">
-	import "../app.scss";
-	import { afterNavigate, beforeNavigate, goto } from "$app/navigation";
+	import { beforeNavigate, goto } from "$app/navigation";
+	import { page } from "$app/stores";
+	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { blur, duration } from "$lib/animation";
-	import { quintOut } from "svelte/easing";
-	import { files, theme } from "$lib/store/index.svelte";
-	import Logo from "$lib/components/visual/svg/Logo.svelte";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
-	import {
-		PUB_ENV,
-		PUB_HOSTNAME,
-		PUB_PLAUSIBLE_URL,
-	} from "$env/static/public";
-	import FancyMenu from "$lib/components/functional/FancyMenu.svelte";
-	import { writable } from "svelte/store";
-	import {
-		InfoIcon,
-		MoonIcon,
-		RefreshCw,
-		SettingsIcon,
-		SunIcon,
-		UploadIcon,
-	} from "lucide-svelte";
-	import { browser } from "$app/environment";
-	import JSCookie from "js-cookie";
-	import { onMount } from "svelte";
-	import Panel from "$lib/components/visual/Panel.svelte";
+	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
-	import { page } from "$app/stores";
-	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
+	import { files } from "$lib/store/index.svelte";
+	import {
+		InfoIcon,
+		RefreshCw,
+		SettingsIcon,
+		UploadIcon,
+	} from "lucide-svelte";
+	import { onMount } from "svelte";
+	import { quintOut } from "svelte/easing";
+	import { writable } from "svelte/store";
 	import { fade } from "svelte/transition";
+	import "../app.scss";
 	let { children, data } = $props();
 
 	let shouldGoBack = writable(false);
@@ -121,97 +110,101 @@
 		></script>{/if}
 </svelte:head>
 
-<div class="absolute top-8 left-0 w-screen flex justify-center z-50">
-	<div class="flex flex-col gap-4">
-		<Navbar {items} />
-		{#if items
-			.find((i) => i.url === "/convert")
-			?.activeMatch($page.url.pathname)}
+<div class="flex flex-col h-screen">
+	<div class="p-8 w-screen flex justify-center z-50">
+		<div class="flex flex-col gap-4">
+			<Navbar {items} />
+			{#if items
+				.find((i) => i.url === "/convert")
+				?.activeMatch($page.url.pathname)}
+				<div
+					in:blur={{
+						blurMultiplier: 8,
+						duration: duration + 50,
+						delay: 50,
+						easing: quintOut,
+						y: {
+							start: -24,
+							end: 0,
+						},
+						scale: {
+							start: 0.95,
+							end: 1,
+						},
+					}}
+					out:blur={{
+						blurMultiplier: 8,
+						duration,
+						easing: quintOut,
+						y: {
+							start: 0,
+							end: 24,
+						},
+						scale: {
+							start: 1,
+							end: 1.05,
+						},
+					}}
+				>
+					<ConversionPanel />
+				</div>
+			{/if}
+		</div>
+	</div>
+
+	<div class="grid grid-rows-1 grid-cols-1 h-full">
+		{#key data.pathname}
 			<div
+				class="row-start-1 col-start-1"
 				in:blur={{
 					blurMultiplier: 8,
-					duration: duration + 50,
-					delay: 50,
+					duration,
 					easing: quintOut,
-					y: {
-						start: -24,
+					x: {
+						start: goingLeft ? -100 : 100,
 						end: 0,
 					},
-					scale: {
-						start: 0.95,
-						end: 1,
+					y: {
+						start: 72,
+						end: 0,
 					},
+					origin: "top center",
 				}}
 				out:blur={{
 					blurMultiplier: 8,
 					duration,
 					easing: quintOut,
+					x: {
+						start: 0,
+						end: goingLeft ? 100 : -100,
+					},
 					y: {
 						start: 0,
-						end: 24,
+						end: 72,
 					},
-					scale: {
-						start: 1,
-						end: 1.05,
-					},
+					origin: "top center",
 				}}
 			>
-				<ConversionPanel />
+				<div class="flex flex-col h-full">
+					<div class="flex-grow">
+						{@render children()}
+					</div>
+					<div
+						class="w-full h-14 border-t border-separator relative -z-50"
+					>
+						<Footer
+							class="w-full h-full"
+							items={{
+								"Privacy Policy": "#",
+								"Source Code": "#",
+								"Discord Server": "#",
+							}}
+						/>
+					</div>
+				</div>
 			</div>
-		{/if}
+		{/key}
 	</div>
-</div>
-
-<div class="min-h-screen grid grid-rows-1 grid-cols-1">
-	{#key data.pathname}
-		<div
-			class="row-start-1 col-start-1"
-			in:blur={{
-				blurMultiplier: 8,
-				duration,
-				easing: quintOut,
-				x: {
-					start: goingLeft ? -100 : 100,
-					end: 0,
-				},
-				y: {
-					start: 72,
-					end: 0,
-				},
-				origin: "top center",
-			}}
-			out:blur={{
-				blurMultiplier: 8,
-				duration,
-				easing: quintOut,
-				x: {
-					start: 0,
-					end: goingLeft ? 100 : -100,
-				},
-				y: {
-					start: 0,
-					end: 72,
-				},
-				origin: "top center",
-			}}
-		>
-			<div class="min-h-screen">
-				{@render children()}
-			</div>
-			<div
-				class="-mt-14 w-full h-14 border-t border-separator relative -z-50"
-			>
-				<Footer
-					class="w-full h-full"
-					items={{
-						"Privacy Policy": "#",
-						"Source Code": "#",
-						"Discord Server": "#",
-					}}
-				/>
-			</div>
-		</div>
-	{/key}
 </div>
 
 {#if data.pathname === "/"}
