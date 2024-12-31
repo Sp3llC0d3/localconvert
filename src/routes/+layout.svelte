@@ -189,15 +189,15 @@
 					<div class="flex-grow">
 						{@render children()}
 					</div>
-					<div
-						class="w-full h-14 border-t border-separator relative"
-					>
+					<div class="w-full h-14 border-t border-separator relative">
 						<Footer
 							class="w-full h-full"
 							items={{
 								"Privacy policy": "#",
-								"Source code": "https://github.com/not-nullptr/VERT",
-								"Discord server": "https://discord.gg/kqevGxYPak",
+								"Source code":
+									"https://github.com/not-nullptr/VERT",
+								"Discord server":
+									"https://discord.gg/kqevGxYPak",
 							}}
 						/>
 					</div>

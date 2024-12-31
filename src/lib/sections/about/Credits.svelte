@@ -2,7 +2,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { HeartHandshakeIcon } from "lucide-svelte";
 
-    let { mainContribs, ghContribs } = $props();
+	let { mainContribs, ghContribs } = $props();
 </script>
 
 {#snippet contributor(name: string, role: string, avatar: string)}
@@ -21,51 +21,68 @@
 {/snippet}
 
 <Panel class="flex flex-col gap-8 p-6">
-    <h2 class="text-2xl font-bold">
-        <HeartHandshakeIcon
-            size="40"
-            class="inline-block -mt-1 mr-2 bg-blue-300 p-1.5 rounded-full"
-            color="black"
-        />
-        Credits
-    </h2>
+	<h2 class="text-2xl font-bold">
+		<HeartHandshakeIcon
+			size="40"
+			class="inline-block -mt-1 mr-2 bg-blue-300 p-1.5 rounded-full"
+			color="black"
+		/>
+		Credits
+	</h2>
 
-    <!-- Main Contributors -->
-    <div class="flex flex-col gap-4">
-        <div class="flex flex-row flex-wrap gap-2">
-            {#each mainContribs as contrib}
-                {@const { name, role, avatar } = contrib}
-                {@render contributor(name, role, avatar)}
-            {/each}
-        </div>
-    </div>
+	<!-- Main Contributors -->
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-row flex-wrap gap-2">
+			{#each mainContribs as contrib}
+				{@const { name, role, avatar } = contrib}
+				{@render contributor(name, role, avatar)}
+			{/each}
+		</div>
+	</div>
 
-    <!-- GitHub Contributors -->
-    <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-1">
-            <h2 class="text-base font-bold">GitHub Contributors</h2>
-            <p class="text-sm text-muted font-normal">
-                Big thanks to all these people for helping out!
-                <a
-                    class="text-blue-500 font-normal hover:underline"
-                    href="https://github.com/not-nullptr/VERT"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Want to help too?
-                </a>
-            </p>
-        </div>
-        <div class="flex flex-row flex-wrap gap-2">
-            {#each ghContribs as contrib}
-                {@const { name, avatar } = contrib}
-                <img
-                    src={avatar}
-                    alt={name}
-                    title={name}
-                    class="w-10 h-10 rounded-full"
-                />
-            {/each}
-        </div>
-    </div>
+	<!-- GitHub Contributors -->
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-1">
+			<h2 class="text-base font-bold">GitHub Contributors</h2>
+			{#if ghContribs && ghContribs.length > 0}
+				<p class="text-base text-muted font-normal">
+					Big thanks to all these people for helping out!
+					<a
+						class="text-blue-500 font-normal hover:underline"
+						href="https://github.com/not-nullptr/VERT"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Want to help too?
+					</a>
+				</p>
+			{:else}
+				<p class="text-base text-muted font-normal italic">
+					Seems like no one has contributed yet...
+					<a
+						class="text-blue-500 font-normal hover:underline"
+						href="https://github.com/not-nullptr/VERT"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						be the first to contribute!
+					</a>
+				</p>
+			{/if}
+		</div>
+
+		{#if ghContribs && ghContribs.length > 0}
+			<div class="flex flex-row flex-wrap gap-2">
+				{#each ghContribs as contrib}
+					{@const { name, avatar } = contrib}
+					<img
+						src={avatar}
+						alt={name}
+						title={name}
+						class="w-10 h-10 rounded-full"
+					/>
+				{/each}
+			</div>
+		{/if}
+	</div>
 </Panel>
