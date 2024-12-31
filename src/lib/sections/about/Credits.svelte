@@ -1,0 +1,71 @@
+<script lang="ts">
+	import Panel from "$lib/components/visual/Panel.svelte";
+	import { HeartHandshakeIcon } from "lucide-svelte";
+
+    let { mainContribs, ghContribs } = $props();
+</script>
+
+{#snippet contributor(name: string, role: string, avatar: string)}
+	<div class="flex items-center gap-4">
+		<img
+			src={avatar}
+			alt={name}
+			title={name}
+			class="w-14 h-14 rounded-full"
+		/>
+		<div class="flex flex-col gap-1">
+			<p class="text-xl font-semibold">{name}</p>
+			<p class="text-sm font-normal text-muted">{role}</p>
+		</div>
+	</div>
+{/snippet}
+
+<Panel class="flex flex-col gap-8 p-6">
+    <h2 class="text-2xl font-bold">
+        <HeartHandshakeIcon
+            size="40"
+            class="inline-block -mt-1 mr-2 bg-blue-300 p-1.5 rounded-full"
+            color="black"
+        />
+        Credits
+    </h2>
+
+    <!-- Main Contributors -->
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-row flex-wrap gap-2">
+            {#each mainContribs as contrib}
+                {@const { name, role, avatar } = contrib}
+                {@render contributor(name, role, avatar)}
+            {/each}
+        </div>
+    </div>
+
+    <!-- GitHub Contributors -->
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+            <h2 class="text-base font-bold">GitHub Contributors</h2>
+            <p class="text-sm text-muted font-normal">
+                Big thanks to all these people for helping out!
+                <a
+                    class="text-blue-500 font-normal"
+                    href="https://github.com/not-nullptr/VERT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Want to help too?
+                </a>
+            </p>
+        </div>
+        <div class="flex flex-row flex-wrap gap-2">
+            {#each ghContribs as contrib}
+                {@const { name, avatar } = contrib}
+                <img
+                    src={avatar}
+                    alt={name}
+                    title={name}
+                    class="w-10 h-10 rounded-full"
+                />
+            {/each}
+        </div>
+    </div>
+</Panel>

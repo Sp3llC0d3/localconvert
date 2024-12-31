@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="w-screen h-full flex items-center justify-center overflow-hidden -mt-20"
+	class="w-screen h-full flex items-center justify-center overflow-hidden -mt-14"
 >
 	<div
 		class="absolute -z-30 top-0 left-0 w-screen flex items-center justify-center overflow-hidden"
