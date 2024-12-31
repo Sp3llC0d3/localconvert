@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { log } from "$lib/logger";
+	import { error } from "$lib/logger";
 	import * as About from "$lib/sections/about";
 	import { InfoIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
@@ -43,12 +43,13 @@
 	let ghContribs: Contributor[] = [];
 
 	onMount(async () => {
+		// Fetch GitHub contributors
 		try {
 			const response = await fetch(
 				"https://api.github.com/repos/not-nullptr/VERT/contributors",
 			);
 			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
+				throw new Error(`HTTP error, status: ${response.status}`);
 			}
 			const allContribs = await response.json();
 
@@ -65,8 +66,8 @@
 					name: contrib.login,
 					avatar: contrib.avatar_url,
 				}));
-		} catch (error) {
-			log("general", `Error fetching GitHub contributors: ${error}`);
+		} catch (e) {
+			error(["general"], `Error fetching GitHub contributors: ${e}`);
 		}
 	});
 </script>

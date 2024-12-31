@@ -1,6 +1,6 @@
 import { browser } from "$app/environment";
 import { converters } from "$lib/converters";
-import { log } from "$lib/logger";
+import { error, log } from "$lib/logger";
 import { VertFile } from "$lib/types";
 import JSCookie from "js-cookie";
 import jsmediatags from "jsmediatags";
@@ -68,8 +68,8 @@ class Files {
 				file.blobUrl = url;
 				canvas.remove();
 			}
-		} catch (error) {
-			console.error(error);
+		} catch (e) {
+			error(["files"], e);
 		}
 	};
 
