@@ -111,8 +111,9 @@
 </svelte:head>
 
 <div class="flex flex-col h-screen">
+	<!-- TODO add logo -->
 	<div class="p-8 w-screen flex justify-center z-50">
-		<div class="flex flex-col gap-4">
+		<div class="flex flex-col justify-center items-center gap-4">
 			<Navbar {items} />
 			{#if items
 				.find((i) => i.url === "/convert")

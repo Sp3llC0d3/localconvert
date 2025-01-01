@@ -1,14 +1,13 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
+	import { page } from "$app/stores";
+	import { blur, duration } from "$lib/animation";
+	import { theme } from "$lib/store/index.svelte";
+	import clsx from "clsx";
+	import { MoonIcon, SunIcon } from "lucide-svelte";
+	import { quintOut } from "svelte/easing";
 	import Panel from "../visual/Panel.svelte";
 	import Logo from "../visual/svg/Logo.svelte";
-	import clsx from "clsx";
-	import { page } from "$app/stores";
-	import { MoonIcon, SunIcon } from "lucide-svelte";
-	import { theme } from "$lib/store/index.svelte";
-	import { blur, duration } from "$lib/animation";
-	import { quintOut } from "svelte/easing";
-	import { browser } from "$app/environment";
-	import type { SvelteComponent } from "svelte";
 
 	type Props = {
 		items: {
@@ -43,7 +42,7 @@
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
+			"w-16 md:w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
 			{
 				"bg-panel-accented":
 					item.activeMatch($page.url.pathname) && !browser,
@@ -125,7 +124,7 @@
 							</div>
 						{/if}
 					</div>
-					<p class=" font-medium">
+					<p class="font-medium hidden md:flex">
 						{item.name}
 					</p>
 				</div>
@@ -148,7 +147,7 @@
 			></div>
 		{/if}
 		<div
-			class="w-32 h-full bg-accent rounded-xl flex items-center justify-center"
+			class="w-32 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
 		>
 			<div class="h-5 w-full">
 				<Logo />
@@ -157,10 +156,10 @@
 		{#each items as item, i (item.url)}
 			{@render link(item, i)}
 		{/each}
-		<div class="w-0.5 bg-separator h-full"></div>
+		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 		<button
 			onclick={theme.toggle}
-			class="w-14 h-full flex items-center justify-center"
+			class="w-14 h-full items-center justify-center hidden md:flex"
 		>
 			<SunIcon class="dynadark:hidden block" />
 			<MoonIcon class="dynadark:block hidden" />
