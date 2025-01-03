@@ -81,7 +81,7 @@
 
 <div class="flex flex-col h-full items-center">
 	<h1
-		class="text-3xl tracking-tight leading-[72px] mb-6 blur-in"
+		class="hidden md:block text-3xl tracking-tight leading-[72px] mb-6 blur-in"
 		style="--delay: 20ms;"
 	>
 		<InfoIcon size="40" class="inline-block -mt-2 mr-2" />

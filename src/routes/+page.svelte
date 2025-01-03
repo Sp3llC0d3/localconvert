@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="w-screen h-full flex items-center justify-center overflow-hidden -mt-14"
+	class="w-screen h-full flex items-center justify-center overflow-hidden md:-mt-14 -mt-24"
 >
 	<div
 		class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
@@ -21,16 +21,18 @@
 
 	<div class="w-screen flex items-center justify-center flex-grow">
 		<div class="max-w-5xl w-full">
-			<div class="flex items-center h-[266px] gap-24">
-				<div class="flex-grow w-full">
+			<div
+				class="flex items-center h-auto gap-12 md:gap-24 md:flex-row flex-col"
+			>
+				<div class="flex-grow w-full text-center md:text-left">
 					<h1
-						class="text-6xl tracking-tight leading-[72px] mb-6 blur-in"
+						class="text-4xl px-16 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6 blur-in"
 						style:--delay="20ms"
 					>
 						The file converter you'll love.
 					</h1>
 					<p
-						class="font-normal text-xl text-muted blur-in"
+						class="font-normal px-4 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60 blur-in"
 						style:--delay="60ms"
 					>
 						All processing is done on your device. No file size
@@ -38,7 +40,7 @@
 					</p>
 				</div>
 				<div
-					class="flex-grow w-full h-full blur-in"
+					class="flex-grow w-11/12 md:w-full h-72 md:h-full blur-in"
 					style:--delay="60ms"
 				>
 					<Uploader class="w-full h-full" />
