@@ -132,7 +132,7 @@
 
 	<!-- Mobile logo -->
 	{#if isMobile}
-		<div class="flex justify-center items-center p-8">
+		<div class="flex md:hidden justify-center items-center p-8">
 			<div
 				class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
 			>
