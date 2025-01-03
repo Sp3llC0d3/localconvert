@@ -14,7 +14,7 @@
 	class="w-screen h-full flex items-center justify-center overflow-hidden -mt-14"
 >
 	<div
-		class="absolute -z-30 top-0 left-0 w-screen flex items-center justify-center overflow-hidden"
+		class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
 		<VertVBig class="fill-[--fg] opacity-50" />
 	</div>
