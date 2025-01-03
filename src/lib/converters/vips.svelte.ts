@@ -63,7 +63,7 @@ export class VipsConverter extends Converter {
 
 		if (res.type === "finished") {
 			log(["converters", this.name], `converted ${input.name} to ${to}`);
-			return new VertFile(new File([res.output], input.name), to);
+			return new VertFile(new File([new Blob([new Uint8Array(res.output)])], input.name), to);
 		}
 
 		if (res.type === "error") {
