@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
@@ -25,7 +24,6 @@
 
 	let shouldGoBack = writable(false);
 	let navbar = $state<HTMLDivElement>();
-	let isMobile = $state(false);
 	let hover = $state(false);
 
 	const items = $derived<
@@ -82,20 +80,6 @@
 
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
-
-		if (browser) {
-			isMobile = window.innerWidth < 768;
-
-			const handleResize = () => {
-				isMobile = window.innerWidth < 768;
-			};
-
-			window.addEventListener("resize", handleResize);
-
-			return () => {
-				window.removeEventListener("resize", handleResize);
-			};
-		}
 	});
 
 	let goingLeft = $state(false);
@@ -128,68 +112,64 @@
 </svelte:head>
 
 <div class="flex flex-col h-screen">
-	<!-- TODO add logo -->
+	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 
 	<!-- Mobile logo -->
-	{#if isMobile}
-		<div class="flex md:hidden justify-center items-center p-8">
+	<div class="flex md:hidden justify-center items-center p-8">
+		<div
+			class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
+		>
 			<div
-				class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
+				class="w-[120px] h-14 bg-accent rounded-xl flex items-center justify-center"
 			>
-				<div
-					class="w-[120px] h-14 bg-accent rounded-xl flex items-center justify-center"
-				>
-					<div class="h-5 w-full">
-						<Logo />
-					</div>
+				<div class="h-5 w-full">
+					<Logo />
 				</div>
 			</div>
 		</div>
-	{/if}
+	</div>
 
 	<!-- Desktop navbar -->
-	{#if !isMobile}
-		<div class="flex p-8 w-screen justify-center z-50">
-			<div class="flex flex-col justify-center items-center gap-4">
-				<Navbar {items} />
-				{#if items
-					.find((i) => i.url === "/convert")
-					?.activeMatch($page.url.pathname)}
-					<div
-						in:blur={{
-							blurMultiplier: 8,
-							duration: duration + 50,
-							delay: 50,
-							easing: quintOut,
-							y: {
-								start: -24,
-								end: 0,
-							},
-							scale: {
-								start: 0.95,
-								end: 1,
-							},
-						}}
-						out:blur={{
-							blurMultiplier: 8,
-							duration,
-							easing: quintOut,
-							y: {
-								start: 0,
-								end: 24,
-							},
-							scale: {
-								start: 1,
-								end: 1.05,
-							},
-						}}
-					>
-						<ConversionPanel />
-					</div>
-				{/if}
-			</div>
+	<div class="hidden md:flex p-8 w-screen justify-center z-50">
+		<div class="flex flex-col justify-center items-center gap-4">
+			<Navbar {items} />
+			{#if items
+				.find((i) => i.url === "/convert")
+				?.activeMatch($page.url.pathname)}
+				<div
+					in:blur={{
+						blurMultiplier: 8,
+						duration: duration + 50,
+						delay: 50,
+						easing: quintOut,
+						y: {
+							start: -24,
+							end: 0,
+						},
+						scale: {
+							start: 0.95,
+							end: 1,
+						},
+					}}
+					out:blur={{
+						blurMultiplier: 8,
+						duration,
+						easing: quintOut,
+						y: {
+							start: 0,
+							end: 24,
+						},
+						scale: {
+							start: 1,
+							end: 1.05,
+						},
+					}}
+				>
+					<ConversionPanel />
+				</div>
+			{/if}
 		</div>
-	{/if}
+	</div>
 
 	<div class="grid grid-rows-1 grid-cols-1 h-full">
 		{#key data.pathname}
@@ -247,48 +227,49 @@
 		{/key}
 	</div>
 
-	{#if isMobile}
-		<div class="fixed bottom-0 left-0 w-screen p-8 justify-center z-50">
-			<div class="flex flex-col justify-center items-center gap-4">
-				{#if items
-					.find((i) => i.url === "/convert")
-					?.activeMatch($page.url.pathname)}
-					<div
-						in:blur={{
-							blurMultiplier: 8,
-							duration: duration + 50,
-							delay: 50,
-							easing: quintOut,
-							y: {
-								start: -24,
-								end: 0,
-							},
-							scale: {
-								start: 0.95,
-								end: 1,
-							},
-						}}
-						out:blur={{
-							blurMultiplier: 8,
-							duration,
-							easing: quintOut,
-							y: {
-								start: 0,
-								end: 24,
-							},
-							scale: {
-								start: 1,
-								end: 1.05,
-							},
-						}}
-					>
-						<ConversionPanel />
-					</div>
-				{/if}
-				<Navbar {items} />
-			</div>
+	<!-- Mobile navbar -->
+	<div
+		class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
+	>
+		<div class="flex flex-col justify-center items-center gap-4">
+			{#if items
+				.find((i) => i.url === "/convert")
+				?.activeMatch($page.url.pathname)}
+				<div
+					in:blur={{
+						blurMultiplier: 8,
+						duration: duration + 50,
+						delay: 50,
+						easing: quintOut,
+						y: {
+							start: -24,
+							end: 0,
+						},
+						scale: {
+							start: 0.95,
+							end: 1,
+						},
+					}}
+					out:blur={{
+						blurMultiplier: 8,
+						duration,
+						easing: quintOut,
+						y: {
+							start: 0,
+							end: 24,
+						},
+						scale: {
+							start: 1,
+							end: 1.05,
+						},
+					}}
+				>
+					<ConversionPanel />
+				</div>
+			{/if}
+			<Navbar {items} />
 		</div>
-	{/if}
+	</div>
 </div>
 
 {#if data.pathname === "/"}
