@@ -138,13 +138,14 @@
 		{#if linkRects[selectedIndex]}
 			<div
 				class="absolute bg-panel-accented rounded-xl"
-				style="width: {linkRects[selectedIndex]
-					.width}px; height: {linkRects[selectedIndex]
-					.height}px; top: {linkRects[selectedIndex].top -
-					32}px; left: {linkRects[selectedIndex].left -
-					(containerRect?.left ||
-						0)}px; transition: left var(--transition) {duration}ms,  top var(--transition) {duration}ms;"
+				style="width: {linkRects[selectedIndex].width}px; height: {linkRects[selectedIndex].height}px; top: {linkRects[selectedIndex].top - (containerRect?.top || 0)}px; left: {linkRects[selectedIndex].left - (containerRect?.left || 0)}px; transition: left var(--transition) {duration}ms, top var(--transition) {duration}ms;"
 			></div>
+			{#if browser && window.innerWidth < 768}
+				<div
+					class="absolute bg-panel-accented rounded-xl"
+					style="width: {linkRects[selectedIndex].width}px; height: {linkRects[selectedIndex].height / 2}px; bottom: {window.innerHeight - linkRects[selectedIndex].bottom}px; left: {linkRects[selectedIndex].left - (containerRect?.left || 0)}px; transition: left var(--transition) {duration}ms, bottom var(--transition) {duration}ms;"
+				></div>
+			{/if}
 		{/if}
 		<div
 			class="w-32 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
