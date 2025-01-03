@@ -12,12 +12,19 @@
 	role?: string,
 )}
 	<div class="flex items-center gap-4">
-		<a href={github} target="_blank" rel="noopener noreferrer">
+		<a
+			href={github}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="flex-shrink-0"
+		>
 			<img
 				src={avatar}
 				alt={name}
 				title={name}
-				class="{role ? 'w-14 h-14 hoverable-md' : 'w-10 h-10 hoverable-lg'} rounded-full"
+				class="{role
+					? 'w-14 h-14 hoverable-md'
+					: 'w-10 h-10 hoverable-lg'} rounded-full"
 			/>
 		</a>
 		{#if role}

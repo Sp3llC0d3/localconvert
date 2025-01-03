@@ -89,7 +89,7 @@
 	</h1>
 
 	<div
-		class="w-full max-w-[1280px] flex flex-row gap-4 blur-in"
+		class="w-full max-w-[1280px] flex flex-col md:flex-row gap-4 blur-in p-4 md:p-0"
 		style="--delay: 60ms"
 	>
 		<!-- Why VERT? & Credits -->
