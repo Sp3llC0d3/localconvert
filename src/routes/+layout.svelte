@@ -205,7 +205,7 @@
 				}}
 			>
 				<div class="flex flex-col h-full">
-					<div class="flex-grow">
+					<div class="flex-grow pb-36">
 						{@render children()}
 					</div>
 					<div
