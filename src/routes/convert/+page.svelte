@@ -94,8 +94,7 @@
 
 <div class="w-full h-full flex justify-center">
 	<div
-		class="w-[794px] grid"
-		style="grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; gap: 16px"
+		class="w-[794px] grid grid-cols-1 md:grid-cols-2 px-4 md:p-0 auto-rows-[240px] gap-4"
 	>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}

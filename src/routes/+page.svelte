@@ -40,7 +40,7 @@
 					</p>
 				</div>
 				<div
-					class="flex-grow w-11/12 md:w-full h-72 md:h-full blur-in"
+					class="flex-grow w-11/12 md:w-full h-72 blur-in"
 					style:--delay="60ms"
 				>
 					<Uploader class="w-full h-full" />

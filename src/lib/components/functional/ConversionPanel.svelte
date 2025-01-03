@@ -5,18 +5,18 @@
 	import Dropdown from "./Dropdown.svelte";
 </script>
 
-<Panel class="w-full h-20 flex items-center justify-between">
-	<div class="flex items-center gap-2.5">
+<Panel class="w-full h-auto flex items-center justify-between flex-col md:flex-row gap-4">
+	<div class="flex items-center flex-col md:flex-row gap-2.5 max-md:w-full">
 		<button
 			onclick={() => files.convertAll()}
-			class="btn highlight flex gap-3"
+			class="btn highlight flex gap-3 max-md:w-full"
 			disabled={!files.ready}
 		>
 			<RefreshCw size="24" />
 			<p>Convert all</p>
 		</button>
 		<button
-			class="btn flex gap-3"
+			class="btn flex gap-3 max-md:w-full"
 			disabled={!files.ready || !files.results}
 			onclick={() => files.downloadAll()}
 		>
@@ -24,9 +24,10 @@
 			<p>Download all as .zip</p>
 		</button>
 	</div>
+	<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 	<div class="flex items-center gap-2">
 		{#if files.requiredConverters.length === 1}
-			<p class="whitespace-nowrap">Set all to</p>
+			<p class="whitespace-nowrap text-xl md:text-base">Set all to</p>
 			<Dropdown
 				onselect={(r) => files.files.forEach((f) => {
 					f.to = r;

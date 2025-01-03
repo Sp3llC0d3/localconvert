@@ -131,7 +131,7 @@
 
 	<!-- Desktop navbar -->
 	<div class="hidden md:flex p-8 w-screen justify-center z-50">
-		<div class="flex flex-col justify-center items-center gap-4">
+		<div class="flex flex-col gap-4">
 			<Navbar {items} />
 			{#if items
 				.find((i) => i.url === "/convert")
@@ -263,6 +263,7 @@
 							end: 1.05,
 						},
 					}}
+					class="w-full"
 				>
 					<ConversionPanel />
 				</div>
