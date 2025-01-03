@@ -231,43 +231,7 @@
 	<div
 		class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
 	>
-		<div class="flex flex-col justify-center items-center gap-4">
-			{#if items
-				.find((i) => i.url === "/convert")
-				?.activeMatch($page.url.pathname)}
-				<div
-					in:blur={{
-						blurMultiplier: 8,
-						duration: duration + 50,
-						delay: 50,
-						easing: quintOut,
-						y: {
-							start: -24,
-							end: 0,
-						},
-						scale: {
-							start: 0.95,
-							end: 1,
-						},
-					}}
-					out:blur={{
-						blurMultiplier: 8,
-						duration,
-						easing: quintOut,
-						y: {
-							start: 0,
-							end: 24,
-						},
-						scale: {
-							start: 1,
-							end: 1.05,
-						},
-					}}
-					class="w-full"
-				>
-					<ConversionPanel />
-				</div>
-			{/if}
+		<div class="flex flex-col justify-center items-center">
 			<Navbar {items} />
 		</div>
 	</div>

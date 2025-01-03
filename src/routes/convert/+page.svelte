@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { blur, duration } from "$lib/animation";
+	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
@@ -96,6 +97,9 @@
 	<div
 		class="w-[794px] grid grid-cols-1 md:grid-cols-2 px-4 md:p-0 auto-rows-[240px] gap-4"
 	>
+		<div class="flex md:hidden">
+			<ConversionPanel />
+		</div>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}
 				<Uploader class="w-full h-full" />

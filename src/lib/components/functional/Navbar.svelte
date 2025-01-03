@@ -158,10 +158,10 @@
 		{#each items as item, i (item.url)}
 			{@render link(item, i)}
 		{/each}
-		<div class="w-0.5 bg-separator h-full flex"></div>
+		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 		<button
 			onclick={theme.toggle}
-			class="w-14 h-full items-center justify-center flex"
+			class="w-14 h-full items-center justify-center hidden md:flex"
 		>
 			<SunIcon class="dynadark:hidden block" />
 			<MoonIcon class="dynadark:block hidden" />
