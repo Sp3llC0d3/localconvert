@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="w-screen h-full flex items-center justify-center overflow-hidden"
+	class="w-screen px-8 h-full flex items-center justify-center overflow-hidden"
 >
 	<div
 		class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
@@ -26,13 +26,13 @@
 			>
 				<div class="flex-grow w-full text-center md:text-left">
 					<h1
-						class="text-4xl px-16 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6 blur-in"
+						class="text-4xl px-12 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6 blur-in"
 						style:--delay="20ms"
 					>
 						The file converter you'll love.
 					</h1>
 					<p
-						class="font-normal px-4 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60 blur-in"
+						class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60 blur-in"
 						style:--delay="60ms"
 					>
 						All processing is done on your device. No file size

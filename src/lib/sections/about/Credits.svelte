@@ -46,7 +46,7 @@
 		Credits
 	</h2>
 
-	<!-- Main Contributors -->
+	<!-- Main contributors -->
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-row flex-wrap gap-2">
 			{#each mainContribs as contrib}
@@ -56,10 +56,10 @@
 		</div>
 	</div>
 
-	<!-- GitHub Contributors -->
+	<!-- GitHub contributors -->
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-1">
-			<h2 class="text-base font-bold">GitHub Contributors</h2>
+			<h2 class="text-base font-bold">GitHub contributors</h2>
 			{#if ghContribs && ghContribs.length > 0}
 				<p class="text-base text-muted font-normal">
 					Big thanks to all these people for helping out!
