@@ -1,20 +1,21 @@
 <script lang="ts">
-	import { blur, duration, flip, transition } from "$lib/animation";
+	import { blur, duration, transition } from "$lib/animation";
 	import { ChevronDown } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
-	import { fade } from "svelte/transition";
 
 	type Props = {
 		options: string[];
 		selected?: string;
 		onselect?: (option: string) => void;
+		disabled?: boolean
 	};
 
 	let {
 		options,
 		selected = $bindable(options[0]),
 		onselect,
+		disabled
 	}: Props = $props();
 
 	let open = $state(false);
@@ -49,10 +50,11 @@
 
 <div class="relative w-full min-w-fit" bind:this={dropdown}>
 	<button
-		class="font-display w-full min-w-fit justify-between overflow-hidden relative cursor-pointer px-3 bg-button flex items-center rounded-full p-2 focus:!outline-none"
+		class="font-display w-full min-w-fit justify-between overflow-hidden relative cursor-pointer px-3 bg-button {disabled ?  'opacity-50' : ''} flex items-center rounded-full p-2 focus:!outline-none"
 		onclick={toggle}
 		onmouseenter={() => (hover = true)}
 		onmouseleave={() => (hover = false)}
+		{disabled}
 	>
 		<!-- <p>{selected}</p> -->
 		<div class="grid grid-cols-1 grid-rows-1 w-fit text-left flex-grow-0">

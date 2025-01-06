@@ -5,7 +5,9 @@
 	import Dropdown from "./Dropdown.svelte";
 </script>
 
-<Panel class="w-full h-auto flex items-center justify-between flex-col md:flex-row gap-4">
+<Panel
+	class="w-full h-auto flex items-center justify-between flex-col md:flex-row gap-4"
+>
 	<div class="flex items-center flex-col md:flex-row gap-2.5 max-md:w-full">
 		<button
 			onclick={() => files.convertAll()}
@@ -26,15 +28,18 @@
 	</div>
 	<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 	<div class="flex items-center gap-2">
+		<p class="whitespace-nowrap text-xl md:text-base">Set all to</p>
 		{#if files.requiredConverters.length === 1}
-			<p class="whitespace-nowrap text-xl md:text-base">Set all to</p>
 			<Dropdown
-				onselect={(r) => files.files.forEach((f) => {
-					f.to = r;
-					f.result = null;
-				})}
+				onselect={(r) =>
+					files.files.forEach((f) => {
+						f.to = r;
+						f.result = null;
+					})}
 				options={files.files[0]?.converter?.supportedFormats || []}
 			/>
+		{:else}
+			<Dropdown options={["N/A"]} disabled />
 		{/if}
 	</div>
 </Panel>
