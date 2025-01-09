@@ -26,46 +26,21 @@
 			>
 				<div class="flex-grow w-full text-center md:text-left">
 					<h1
-						class="text-4xl px-12 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6 blur-in"
-						style:--delay="20ms"
+						class="text-4xl px-12 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6"
 					>
 						The file converter you'll love.
 					</h1>
 					<p
-						class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60 blur-in"
-						style:--delay="60ms"
+						class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60"
 					>
 						All processing is done on your device. No file size
 						limit, no ads, and completely open source.
 					</p>
 				</div>
-				<div
-					class="flex-grow w-11/12 md:w-full h-72 blur-in"
-					style:--delay="60ms"
-				>
+				<div class="flex-grow w-11/12 md:w-full h-72">
 					<Uploader class="w-full h-full" />
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<style>
-	@keyframes blur-in {
-		0% {
-			filter: blur(8px);
-			transform: translateY(-8px) scale(0.9);
-			opacity: 0;
-		}
-		100% {
-			filter: blur(0);
-			transform: translateY(0) scale(1);
-			opacity: 1;
-		}
-	}
-
-	.blur-in {
-		animation: blur-in 0.75s var(--transition) var(--delay, 0ms) forwards;
-		opacity: 0;
-	}
-</style>

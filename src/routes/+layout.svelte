@@ -18,7 +18,6 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import { writable } from "svelte/store";
-	import { fade } from "svelte/transition";
 	import "../app.scss";
 	let { children, data } = $props();
 
@@ -239,10 +238,6 @@
 
 {#if data.pathname === "/"}
 	<div
-		transition:fade={{
-			duration,
-			easing: quintOut,
-		}}
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient);"
 	></div>

@@ -81,7 +81,7 @@
 
 <div class="flex flex-col h-full items-center">
 	<h1
-		class="hidden md:block text-3xl tracking-tight leading-[72px] mb-6 blur-in"
+		class="hidden md:block text-3xl tracking-tight leading-[72px] mb-6"
 		style="--delay: 20ms;"
 	>
 		<InfoIcon size="40" class="inline-block -mt-2 mr-2" />
@@ -89,7 +89,7 @@
 	</h1>
 
 	<div
-		class="w-full max-w-[1280px] flex flex-col md:flex-row gap-4 blur-in p-4 md:p-0"
+		class="w-full max-w-[1280px] flex flex-col md:flex-row gap-4 p-4 md:p-0"
 		style="--delay: 60ms"
 	>
 		<!-- Why VERT? & Credits -->
@@ -105,23 +105,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	@keyframes blur-in {
-		0% {
-			filter: blur(8px);
-			transform: translateY(-8px) scale(0.9);
-			opacity: 0;
-		}
-		100% {
-			filter: blur(0);
-			transform: translateY(0) scale(1);
-			opacity: 1;
-		}
-	}
-
-	.blur-in {
-		animation: blur-in 0.75s var(--transition) var(--delay, 0ms) forwards;
-		opacity: 0;
-	}
-</style>
