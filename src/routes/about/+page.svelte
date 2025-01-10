@@ -17,7 +17,7 @@
 		role?: string;
 	}
 
-	const donors: Donator[] = [];
+	// const donors: Donator[] = [];
 
 	const mainContribs: Contributor[] = [
 		{
@@ -91,13 +91,13 @@
 		<!-- Why VERT? & Credits -->
 		<div class="flex flex-col gap-4 flex-1">
 			<About.Why />
-			<About.Credits {mainContribs} {ghContribs} />
 		</div>
 
 		<!-- Resources & Donate to VERT -->
 		<div class="flex flex-col gap-4 flex-1">
 			<About.Resources />
-			<About.Donate {donors} />
+			<About.Credits {mainContribs} {ghContribs} />
+			<!-- <About.Donate {donors} /> -->
 		</div>
 	</div>
 </div>
