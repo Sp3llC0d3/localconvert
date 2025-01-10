@@ -19,7 +19,7 @@
 		<VertVBig class="fill-[--fg] opacity-50" />
 	</div>
 
-	<div class="w-screen flex items-center justify-center flex-grow">
+	<div class="w-screen flex items-center justify-center flex-grow -mt-0 md:-mt-36">
 		<div class="max-w-5xl w-full">
 			<div
 				class="flex items-center h-auto gap-12 md:gap-24 md:flex-row flex-col"

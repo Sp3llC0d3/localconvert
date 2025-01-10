@@ -108,71 +108,69 @@
 		></script>{/if}
 </svelte:head>
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col min-h-screen h-full">
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 
-	<!-- Mobile logo -->
-	<div class="flex md:hidden justify-center items-center p-8">
-		<div
-			class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
-		>
+	<div class="flex flex-col">
+		<!-- Mobile logo -->
+		<div class="flex md:hidden justify-center items-center p-8">
 			<div
-				class="w-[120px] h-14 bg-accent rounded-xl flex items-center justify-center"
+				class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
 			>
-				<div class="h-5 w-full">
-					<Logo />
+				<div
+					class="w-[120px] h-14 bg-accent rounded-xl flex items-center justify-center"
+				>
+					<div class="h-5 w-full">
+						<Logo />
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Desktop navbar -->
+		<div class="hidden md:flex p-8 w-screen justify-center z-50">
+			<Navbar {items} />
+		</div>
 	</div>
 
-	<!-- Desktop navbar -->
-	<div class="hidden md:flex p-8 w-screen justify-center z-50">
-		<Navbar {items} />
-	</div>
-
-	<div class="grid grid-rows-1 grid-cols-1 h-full">
+	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow">
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
-				in:fade={{
-					duration,
-					easing: quintOut,
-				}}
-				out:fade={{
+				transition:fade={{
 					duration,
 					easing: quintOut,
 				}}
 			>
-				<div class="flex flex-col h-full">
-					<div class="flex-grow pb-36">
-						{@render children()}
-					</div>
-					<div
-						class="hidden md:block w-full h-14 border-t border-separator relative"
-					>
-						<Footer
-							class="w-full h-full"
-							items={{
-								"Privacy policy": "#",
-								"Source code":
-									"https://github.com/not-nullptr/VERT",
-								"Discord server":
-									"https://discord.gg/kqevGxYPak",
-							}}
-						/>
-					</div>
+				<div class="flex flex-col h-full pb-36 md:pb-0">
+					{@render children()}
 				</div>
 			</div>
 		{/key}
 	</div>
 
 	<!-- Mobile navbar -->
-	<div
-		class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
-	>
-		<div class="flex flex-col justify-center items-center">
-			<Navbar {items} />
+
+	<div class="flex flex-col">
+		<div
+			class="hidden md:block w-full h-14 border-t border-separator relative"
+		>
+			<Footer
+				class="w-full h-full"
+				items={{
+					"Privacy policy": "#",
+					"Source code": "https://github.com/not-nullptr/VERT",
+					"Discord server": "https://discord.gg/kqevGxYPak",
+				}}
+			/>
+		</div>
+
+		<div
+			class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
+		>
+			<div class="flex flex-col justify-center items-center">
+				<Navbar {items} />
+			</div>
 		</div>
 	</div>
 </div>
