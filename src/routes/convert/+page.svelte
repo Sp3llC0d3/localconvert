@@ -93,13 +93,36 @@
 	</Panel>
 {/snippet}
 
-<div class="w-full h-full flex justify-center">
+<div
+	class="flex justify-center items-center -mt-4 pb-8"
+	in:fade={{
+		duration,
+		easing: quintOut,
+	}}
+	out:fade={{
+		duration,
+		easing: quintOut,
+	}}
+>
+	<div class="max-w-[796px] w-full px-4 md:p-0">
+		<ConversionPanel />
+	</div>
+</div>
+
+<div
+	class="w-full h-full flex justify-center"
+	in:fade={{
+		duration,
+		easing: quintOut,
+	}}
+	out:fade={{
+		duration,
+		easing: quintOut,
+	}}
+>
 	<div
 		class="w-[794px] grid grid-cols-1 md:grid-cols-2 px-4 md:p-0 auto-rows-[240px] gap-4"
 	>
-		<div class="flex md:hidden">
-			<ConversionPanel />
-		</div>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}
 				<Uploader class="w-full h-full" />

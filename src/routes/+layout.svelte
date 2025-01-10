@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { beforeNavigate, goto } from "$app/navigation";
-	import { page } from "$app/stores";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { duration, fade } from "$lib/animation";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
-	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
@@ -130,26 +128,7 @@
 
 	<!-- Desktop navbar -->
 	<div class="hidden md:flex p-8 w-screen justify-center z-50">
-		<div class="flex flex-col gap-4">
-			<Navbar {items} />
-			{#if items
-				.find((i) => i.url === "/convert")
-				?.activeMatch($page.url.pathname)}
-				<div
-					in:fade={{
-						duration: duration + 50,
-						delay: 50,
-						easing: quintOut,
-					}}
-					out:fade={{
-						duration,
-						easing: quintOut,
-					}}
-				>
-					<ConversionPanel />
-				</div>
-			{/if}
-		</div>
+		<Navbar {items} />
 	</div>
 
 	<div class="grid grid-rows-1 grid-cols-1 h-full">

@@ -101,7 +101,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="w-fit h-20 flex items-center gap-3 relative">
+	<Panel class="max-w-[796px] w-full h-20 flex items-center gap-3 relative">
 		{#if linkRects[selectedIndex]}
 			<div
 				class="absolute bg-panel-accented rounded-xl"
