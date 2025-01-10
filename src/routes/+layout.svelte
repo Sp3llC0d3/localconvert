@@ -110,6 +110,7 @@
 
 <div class="flex flex-col min-h-screen h-full">
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
+	<!-- FIXME: if user has to scroll in a page, transitioning to a page that fits users viewport makes the elements jump after transition ends -->
 
 	<div class="flex flex-col">
 		<!-- Mobile logo -->

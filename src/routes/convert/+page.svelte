@@ -93,19 +93,13 @@
 	</Panel>
 {/snippet}
 
-<div
-	class="flex justify-center items-center -mt-4 pb-8"
->
-	<div class="max-w-[796px] w-full px-4 md:p-0">
+<div class="flex flex-col justify-center items-center gap-8 -mt-4 px-4 md:p-0">
+	<div class="max-w-[796px] w-full">
 		<ConversionPanel />
 	</div>
-</div>
 
-<div
-	class="w-full h-full flex justify-center"
->
 	<div
-		class="w-[794px] grid grid-cols-1 md:grid-cols-2 px-4 md:p-0 auto-rows-[240px] gap-4"
+		class="w-full max-w-[794px] grid grid-cols-1 md:grid-cols-2 auto-rows-[240px] gap-4 md:p-0"
 	>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}
