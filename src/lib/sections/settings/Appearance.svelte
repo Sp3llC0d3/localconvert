@@ -1,14 +1,38 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { MoonIcon, RefreshCwIcon, SunIcon } from "lucide-svelte";
+	import { theme } from "$lib/store/index.svelte";
+	import { MoonIcon, PaletteIcon, SunIcon } from "lucide-svelte";
 
-	let value = $state("");
+	let lightElement: HTMLButtonElement;
+	let darkElement: HTMLButtonElement;
+
+	function setDark(dark: boolean) {
+		theme.dark = dark;
+
+		if (dark) {
+			lightElement.classList.remove("bg-violet-400");
+			darkElement.classList.add("bg-violet-400");
+		} else {
+			darkElement.classList.remove("bg-violet-400");
+			lightElement.classList.add("bg-violet-400");
+		}
+	}
+
+	$effect(() => {
+		if (theme.dark) {
+			lightElement.classList.remove("bg-violet-400");
+			darkElement.classList.add("bg-violet-400");
+		} else {
+			darkElement.classList.remove("bg-violet-400");
+			lightElement.classList.add("bg-violet-400");
+		}
+	});
 </script>
 
 <Panel class="flex flex-col gap-8 p-6">
 	<div class="flex flex-col gap-3">
 		<h2 class="text-2xl font-bold">
-			<RefreshCwIcon
+			<PaletteIcon
 				size="40"
 				class="inline-block -mt-1 mr-2 bg-violet-400 p-2 rounded-full"
 				color="black"
@@ -26,22 +50,20 @@
 				<div class="flex flex-col gap-3 w-full">
 					<div class="flex gap-3 w-full">
 						<button
-							class="btn flex-1 p-4 rounded-lg bg-violet-400 text-black flex items-center justify-center"
+							bind:this={lightElement}
+							onclick={() => setDark(false)}
+							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
-							<SunIcon
-								size="24"
-								class="inline-block mr-2"
-							/>
+							<SunIcon size="24" class="inline-block mr-2" />
 							Light
 						</button>
 
 						<button
-							class="btn flex-1 p-4 rounded-lg bg-button text-black dynadark:text-white flex items-center justify-center"
+							bind:this={darkElement}
+							onclick={() => setDark(true)}
+							class="btn flex-1 p-4 rounded-lg bg-button text-black flex items-center justify-center"
 						>
-							<MoonIcon
-								size="24"
-								class="inline-block mr-2"
-							/>
+							<MoonIcon size="24" class="inline-block mr-2" />
 							Dark
 						</button>
 					</div>
