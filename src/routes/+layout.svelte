@@ -112,7 +112,7 @@
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 	<!-- FIXME: if user has to scroll in a page, transitioning to a page that fits users viewport makes the elements jump after transition ends -->
 
-	<div class="flex flex-col">
+	<div>
 		<!-- Mobile logo -->
 		<div class="flex md:hidden justify-center items-center p-8">
 			<div
@@ -152,7 +152,7 @@
 
 	<!-- Mobile navbar -->
 
-	<div class="flex flex-col">
+	<div>
 		<div
 			class="hidden md:block w-full h-14 border-t border-separator relative"
 		>
