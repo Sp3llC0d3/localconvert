@@ -52,41 +52,43 @@
 				<XIcon size="24" class="text-muted" />
 			</button>
 		</div>
-		<div class="flex gap-4 w-full h-full overflow-hidden relative">
-			<div class="w-1/2 h-full overflow-hidden rounded-xl">
-				<img
-					class="object-cover w-full h-full"
-					src={file.blobUrl}
-					alt={file.name}
-				/>
+		<div class="flex flex-row justify-between">
+			<div class="flex gap-4 w-full h-[152px] overflow-hidden relative">
+				<div class="w-1/2 h-full overflow-hidden rounded-xl">
+					<img
+						class="object-cover w-full h-full"
+						src={file.blobUrl}
+						alt={file.name}
+					/>
+				</div>
 			</div>
-		</div>
-		<div
-			class="absolute top-16 right-0 mr-4 pl-2 h-[calc(100%-83px)] w-[calc(50%-32px)] pr-4 pb-5"
-		>
 			<div
-				class="w-full h-full flex flex-col gap-2 items-center justify-center"
+				class="absolute top-16 right-0 mr-4 pl-2 h-[calc(100%-83px)] w-[calc(50%-38px)] pr-4 pb-1 flex items-center justify-center aspect-square"
 			>
-				<Dropdown
-					options={file.converter?.supportedFormats || []}
-					bind:selected={file.to}
-					onselect={() => file.result && (file.result = null)}
-				/>
-				<div class="w-full flex items-center justify-around">
-					<button
-						class="btn p-0 w-14 h-14"
-						disabled={!files.ready}
-						onclick={file.convert}
-					>
-						<RotateCwIcon size="24" />
-					</button>
-					<button
-						class="btn p-0 w-14 h-14"
-						onclick={file.download}
-						disabled={!file.result}
-					>
-						<DownloadIcon size="24" />
-					</button>
+				<div
+					class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
+				>
+					<Dropdown
+						options={file.converter?.supportedFormats || []}
+						bind:selected={file.to}
+						onselect={() => file.result && (file.result = null)}
+					/>
+					<div class="w-full flex items-center justify-between">
+						<button
+							class="btn p-0 w-14 h-14"
+							disabled={!files.ready}
+							onclick={file.convert}
+						>
+							<RotateCwIcon size="24" />
+						</button>
+						<button
+							class="btn p-0 w-14 h-14"
+							onclick={file.download}
+							disabled={!file.result}
+						>
+							<DownloadIcon size="24" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

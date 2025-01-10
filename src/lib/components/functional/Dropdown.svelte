@@ -8,14 +8,14 @@
 		options: string[];
 		selected?: string;
 		onselect?: (option: string) => void;
-		disabled?: boolean
+		disabled?: boolean;
 	};
 
 	let {
 		options,
 		selected = $bindable(options[0]),
 		onselect,
-		disabled
+		disabled,
 	}: Props = $props();
 
 	let open = $state(false);
@@ -48,16 +48,21 @@
 	});
 </script>
 
-<div class="relative w-full min-w-fit" bind:this={dropdown}>
+<div
+	class="relative w-full min-w-fit text-xl font-medium text-center"
+	bind:this={dropdown}
+>
 	<button
-		class="font-display w-full min-w-fit justify-between overflow-hidden relative cursor-pointer px-3 bg-button {disabled ?  'opacity-50' : ''} flex items-center rounded-full p-2 focus:!outline-none"
+		class="font-display w-full justify-center overflow-hidden relative cursor-pointer px-3 py-3.5 bg-button {disabled
+			? 'opacity-50'
+			: ''} flex items-center rounded-full focus:!outline-none"
 		onclick={toggle}
 		onmouseenter={() => (hover = true)}
 		onmouseleave={() => (hover = false)}
 		{disabled}
 	>
 		<!-- <p>{selected}</p> -->
-		<div class="grid grid-cols-1 grid-rows-1 w-fit text-left flex-grow-0">
+		<div class="grid grid-cols-1 grid-rows-1 w-fit flex-grow-0">
 			{#key selected}
 				<p
 					in:fade={{
@@ -68,7 +73,7 @@
 						duration,
 						easing: quintOut,
 					}}
-					class="col-start-1 row-start-1 text-left"
+					class="col-start-1 row-start-1 text-center font-body font-medium"
 				>
 					{selected}
 				</p>

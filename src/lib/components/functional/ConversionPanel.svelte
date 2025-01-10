@@ -28,7 +28,7 @@
 	</div>
 	<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 	<div class="flex items-center gap-2">
-		<p class="whitespace-nowrap text-xl md:text-base">Set all to</p>
+		<p class="whitespace-nowrap text-xl">Set all to</p>
 		{#if files.requiredConverters.length === 1}
 			<Dropdown
 				onselect={(r) =>
