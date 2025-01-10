@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { blur, duration, transition } from "$lib/animation";
+	import { duration, fade, transition } from "$lib/animation";
 	import { ChevronDown } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
@@ -60,31 +60,13 @@
 		<div class="grid grid-cols-1 grid-rows-1 w-fit text-left flex-grow-0">
 			{#key selected}
 				<p
-					in:blur={{
+					in:fade={{
 						duration,
 						easing: quintOut,
-						blurMultiplier: 6,
-						scale: {
-							start: 0.9,
-							end: 1,
-						},
-						y: {
-							start: isUp ? -50 : 50,
-							end: 0,
-						},
 					}}
-					out:blur={{
+					out:fade={{
 						duration,
 						easing: quintOut,
-						blurMultiplier: 6,
-						scale: {
-							start: 1,
-							end: 0.9,
-						},
-						y: {
-							start: 0,
-							end: isUp ? 50 : -50,
-						},
 					}}
 					class="col-start-1 row-start-1 text-left"
 				>
@@ -108,20 +90,10 @@
 	</button>
 	{#if open}
 		<div
-			style={hover ? "will-change: opacity, blur, transform" : ""}
-			transition:blur={{
+			style={hover ? "will-change: opacity, fade, transform" : ""}
+			transition:fade={{
 				duration,
 				easing: quintOut,
-				blurMultiplier: 6,
-				scale: {
-					start: 0.9,
-					end: 1,
-				},
-				y: {
-					start: -10,
-					end: 0,
-				},
-				origin: "top center",
 			}}
 			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background rounded-xl"
 		>

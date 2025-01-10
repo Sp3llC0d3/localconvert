@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { blur, duration } from "$lib/animation";
+	import { duration, fade } from "$lib/animation";
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
@@ -121,14 +121,9 @@
 	{#if files.files.length === 1}
 		<div
 			class="w-full relative"
-			transition:blur={{
-				blurMultiplier: 24,
+			transition:fade={{
 				duration,
 				easing: quintOut,
-				scale: {
-					start: 1.02,
-					end: 1,
-				},
 			}}
 		>
 			<img

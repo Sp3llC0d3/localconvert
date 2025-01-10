@@ -2,7 +2,7 @@
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
-	import { blur, duration } from "$lib/animation";
+	import { duration, fade } from "$lib/animation";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
@@ -136,32 +136,14 @@
 				.find((i) => i.url === "/convert")
 				?.activeMatch($page.url.pathname)}
 				<div
-					in:blur={{
-						blurMultiplier: 8,
+					in:fade={{
 						duration: duration + 50,
 						delay: 50,
 						easing: quintOut,
-						y: {
-							start: -24,
-							end: 0,
-						},
-						scale: {
-							start: 0.95,
-							end: 1,
-						},
 					}}
-					out:blur={{
-						blurMultiplier: 8,
+					out:fade={{
 						duration,
 						easing: quintOut,
-						y: {
-							start: 0,
-							end: 24,
-						},
-						scale: {
-							start: 1,
-							end: 1.05,
-						},
 					}}
 				>
 					<ConversionPanel />
@@ -174,33 +156,13 @@
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
-				in:blur={{
-					blurMultiplier: 8,
+				in:fade={{
 					duration,
 					easing: quintOut,
-					x: {
-						start: goingLeft ? -100 : 100,
-						end: 0,
-					},
-					y: {
-						start: 72,
-						end: 0,
-					},
-					origin: "top center",
 				}}
-				out:blur={{
-					blurMultiplier: 8,
+				out:fade={{
 					duration,
 					easing: quintOut,
-					x: {
-						start: 0,
-						end: goingLeft ? 100 : -100,
-					},
-					y: {
-						start: 0,
-						end: 72,
-					},
-					origin: "top center",
 				}}
 			>
 				<div class="flex flex-col h-full">

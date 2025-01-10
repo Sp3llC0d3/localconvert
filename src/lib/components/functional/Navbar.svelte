@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
-	import { blur, duration } from "$lib/animation";
+	import { duration, fade } from "$lib/animation";
 	import { theme } from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
@@ -53,23 +53,13 @@
 			{#key item.name}
 				<div
 					class="w-full row-start-1 col-start-1 h-full flex items-center justify-center gap-3"
-					in:blur={{
-						blurMultiplier: 6,
+					in:fade={{
 						duration,
 						easing: quintOut,
-						y: {
-							start: -48,
-							end: 0,
-						},
 					}}
-					out:blur={{
-						blurMultiplier: 6,
+					out:fade={{
 						duration,
 						easing: quintOut,
-						y: {
-							start: 0,
-							end: 48,
-						},
 					}}
 				>
 					<div class="relative">
@@ -78,44 +68,21 @@
 							<div
 								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
 								style="font-size: 0.7rem;"
-								transition:blur={{
-									blurMultiplier: 4,
+								transition:fade={{
 									duration,
 									easing: quintOut,
-									scale: {
-										start: 0.5,
-										end: 1,
-									},
 								}}
 							>
 								{#key item.badge}
 									<div
 										class="flex items-center justify-center w-full h-full col-start-1 row-start-1"
-										in:blur={{
+										in:fade={{
 											duration,
 											easing: quintOut,
-											blurMultiplier: 3,
-											y: {
-												start: -12,
-												end: 0,
-											},
-											scale: {
-												start: 0.75,
-												end: 1,
-											},
 										}}
-										out:blur={{
+										out:fade={{
 											duration,
 											easing: quintOut,
-											blurMultiplier: 3,
-											y: {
-												start: 0,
-												end: 12,
-											},
-											scale: {
-												start: 1,
-												end: 0.75,
-											},
 										}}
 									>
 										{item.badge}
