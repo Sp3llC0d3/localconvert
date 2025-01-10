@@ -90,6 +90,7 @@ class Files {
 			);
 			if (!converter) {
 				log(["files"], `no converter found for ${file.name}`);
+				this.files.push(new VertFile(file, format, null));
 				return;
 			}
 			const to = converter.supportedFormats.find((f) => f !== format);

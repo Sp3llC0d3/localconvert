@@ -11,6 +11,7 @@
 	import {
 		Disc2Icon,
 		DownloadIcon,
+		FileQuestionIcon,
 		ImageIcon,
 		RotateCwIcon,
 		XIcon,
@@ -22,7 +23,9 @@
 	{@const isAudio = file.converter?.name === "ffmpeg" || false}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
-			{#if isAudio}
+			{#if !file.converter}
+				<FileQuestionIcon size="24" class="flex-shrink-0" />
+			{:else if isAudio}
 				<Disc2Icon size="24" class="flex-shrink-0" />
 			{:else}
 				<ImageIcon size="24" class="flex-shrink-0" />
@@ -52,46 +55,59 @@
 				<XIcon size="24" class="text-muted" />
 			</button>
 		</div>
-		<div class="flex flex-row justify-between">
-			<div class="flex gap-4 w-full h-[152px] overflow-hidden relative">
-				<div class="w-1/2 h-full overflow-hidden rounded-xl">
-					<img
-						class="object-cover w-full h-full"
-						src={file.blobUrl}
-						alt={file.name}
-					/>
-				</div>
-			</div>
+		{#if !file.converter}
 			<div
-				class="absolute top-16 right-0 mr-4 pl-2 h-[calc(100%-83px)] w-[calc(50%-38px)] pr-4 pb-1 flex items-center justify-center aspect-square"
+				class="h-full flex flex-col text-center justify-center text-red-600"
 			>
+				<p class="font-body font-bold">We can't convert this file.</p>
+				<p class="font-normal">
+					Only image and audio files are supported
+				</p>
+			</div>
+		{:else}
+			<div class="flex flex-row justify-between">
 				<div
-					class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
+					class="flex gap-4 w-full h-[152px] overflow-hidden relative"
 				>
-					<Dropdown
-						options={file.converter?.supportedFormats || []}
-						bind:selected={file.to}
-						onselect={() => file.result && (file.result = null)}
-					/>
-					<div class="w-full flex items-center justify-between">
-						<button
-							class="btn p-0 w-14 h-14"
-							disabled={!files.ready}
-							onclick={file.convert}
-						>
-							<RotateCwIcon size="24" />
-						</button>
-						<button
-							class="btn p-0 w-14 h-14"
-							onclick={file.download}
-							disabled={!file.result}
-						>
-							<DownloadIcon size="24" />
-						</button>
+					<div class="w-1/2 h-full overflow-hidden rounded-xl">
+						<img
+							class="object-cover w-full h-full"
+							src={file.blobUrl}
+							alt={file.name}
+						/>
+					</div>
+				</div>
+				<div
+					class="absolute top-16 right-0 mr-4 pl-2 h-[calc(100%-83px)] w-[calc(50%-38px)] pr-4 pb-1 flex items-center justify-center aspect-square"
+				>
+					<div
+						class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
+					>
+						<Dropdown
+							options={file.converter?.supportedFormats || []}
+							bind:selected={file.to}
+							onselect={() => file.result && (file.result = null)}
+						/>
+						<div class="w-full flex items-center justify-between">
+							<button
+								class="btn p-0 w-14 h-14"
+								disabled={!files.ready}
+								onclick={file.convert}
+							>
+								<RotateCwIcon size="24" />
+							</button>
+							<button
+								class="btn p-0 w-14 h-14"
+								onclick={file.download}
+								disabled={!file.result}
+							>
+								<DownloadIcon size="24" />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		{/if}
 	</Panel>
 {/snippet}
 
@@ -113,7 +129,7 @@
 <div
 	class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1"
 >
-	{#if files.files.length === 1}
+	{#if files.files.length === 1 && files.files[0].blobUrl}
 		<div
 			class="w-full relative"
 			transition:fade={{

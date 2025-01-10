@@ -25,7 +25,7 @@ export class VertFile {
 	constructor(
 		public readonly file: File,
 		to: string,
-		converter?: Converter,
+		converter?: Converter | null,
 		blobUrl?: string,
 	) {
 		this.to = to;
