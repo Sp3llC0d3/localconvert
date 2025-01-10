@@ -31,7 +31,7 @@
 						The file converter you'll love.
 					</h1>
 					<p
-						class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-opacity-60 dynadark:text-white dynadark:text-opacity-60"
+						class="font-normal px-5 md:p-0 text-lg md:text-xl text-black opacity-60 dynadark:text-white dynadark:opacity-60"
 					>
 						All processing is done on your device. No file size
 						limit, no ads, and completely open source.

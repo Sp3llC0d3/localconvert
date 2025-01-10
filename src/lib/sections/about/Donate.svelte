@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FancyInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
 		CalendarHeartIcon,
@@ -27,7 +28,7 @@
 		<h2 class="text-2xl font-bold">
 			<HeartIcon
 				size="40"
-				class="inline-block -mt-1 mr-2 bg-rose-300 p-1.5 rounded-full"
+				class="inline-block -mt-1 mr-2 bg-rose-300 p-2 rounded-full"
 				color="black"
 			/>
 			Donate to VERT
@@ -65,13 +66,16 @@
 				class="btn bg-button text-black dynadark:text-white p-4 rounded-lg flex-1"
 				>$10 USD</button
 			>
-			<div class="relative flex items-center flex-[2]">
+			<!-- <div class="relative flex items-center flex-[2]">
 				<span class="absolute left-3 text-gray-500">$</span>
 				<input
 					type="number"
 					class="pl-8 pr-2 rounded-lg border border-gray-300 dynadark:border-gray-500 w-full h-full bg-button text-black dynadark:text-white"
 					placeholder="Custom"
 				/>
+			</div> -->
+			<div class="flex-[2] flex items-center justify-center">
+				<FancyInput placeholder="Custom" prefix="$" type="number" />
 			</div>
 		</div>
 	</div>

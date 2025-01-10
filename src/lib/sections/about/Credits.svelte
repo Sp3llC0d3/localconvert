@@ -40,7 +40,7 @@
 	<h2 class="text-2xl font-bold">
 		<HeartHandshakeIcon
 			size="40"
-			class="inline-block -mt-1 mr-2 bg-blue-300 p-1.5 rounded-full"
+			class="inline-block -mt-1 mr-2 bg-blue-300 p-2 rounded-full"
 			color="black"
 		/>
 		Credits

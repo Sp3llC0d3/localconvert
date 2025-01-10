@@ -7,7 +7,7 @@
 	<h2 class="text-2xl font-bold">
 		<MessageCircleQuestionIcon
 			size="40"
-			class="inline-block -mt-1 mr-2 bg-accent p-1.5 rounded-full"
+			class="inline-block -mt-1 mr-2 bg-accent p-2 rounded-full"
 			color="black"
 		/>
 		Why VERT?
