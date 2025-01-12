@@ -43,7 +43,14 @@ export class VipsConverter extends Converter {
 		this.worker.onmessage = (e) => {
 			const message: WorkerMessage = e.data;
 			log(["converters", this.name], `received message ${message.type}`);
-			if (message.type === "loaded") this.ready = true;
+            if (message.type === "loaded") {
+                this.ready = true;
+            } else if (message.type === "error") {
+                error(["converters", this.name], `error in worker: ${message.error}`);
+				throw new Error(message.error);
+			} else {
+                error(["converters", this.name], `unknown message type ${message.type}`);
+            }
 		};
 	}
 
