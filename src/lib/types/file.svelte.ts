@@ -48,6 +48,20 @@ export class VertFile {
 
 	public async download() {
 		if (!this.result) throw new Error("No result found");
+
+		const filenameFormat =
+			localStorage.getItem("filenameFormat") ?? "VERT_%name%";
+
+		const format = (name: string) => {
+			const date = new Date().toISOString();
+			const baseName = this.file.name.replace(/\.[^/.]+$/, "");
+			const originalExtension = this.file.name.split('.').pop()!;
+			return name
+				.replace(/%date%/g, date)
+				.replace(/%name%/g, baseName)
+				.replace(/%extension%/g, originalExtension);
+		};
+
 		const blob = URL.createObjectURL(
 			new Blob([await this.result.file.arrayBuffer()], {
 				type: this.to.slice(1),
@@ -55,7 +69,7 @@ export class VertFile {
 		);
 		const a = document.createElement("a");
 		a.href = blob;
-		a.download = `VERT-Converted_${new Date().toISOString()}${this.to}`;
+		a.download = `${format(filenameFormat)}${this.to}`;
 		// force it to not open in a new tab
 		a.target = "_blank";
 		a.style.display = "none";

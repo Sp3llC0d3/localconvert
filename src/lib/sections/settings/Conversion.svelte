@@ -1,9 +1,24 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
+	import { log } from "$lib/logger";
 	import { RefreshCwIcon, SaveAllIcon } from "lucide-svelte";
+	import { onMount } from "svelte";
 
-	let value = $state("");
+	let filenameFormat = "VERT_%name%";
+
+	function save() {
+		log(["settings"], "Saving settings");
+		if (!browser) return;
+		localStorage.setItem("filenameFormat", filenameFormat);
+		log(["settings"], `Saving filename format: ${filenameFormat}`);
+	}
+
+	onMount(() => {
+		const format = localStorage.getItem("filenameFormat");
+		if (format) filenameFormat = format;
+	});
 </script>
 
 <Panel class="flex flex-col gap-8 p-6">
@@ -37,7 +52,7 @@
 				</div>
 				<FancyTextInput
 					placeholder="VERT_%name%"
-					bind:value
+					bind:value={filenameFormat}
 					extension=".ext"
 					type="text"
 				/>
@@ -56,6 +71,7 @@
 
 			<div class="flex justify-end">
 				<button
+					onclick={save}
 					class="w-fit btn px-6 py-4 rounded-3xl bg-accent text-black flex items-center justify-center"
 				>
 					<SaveAllIcon size="24" class="inline-block mr-2" />
