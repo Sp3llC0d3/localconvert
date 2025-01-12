@@ -106,6 +106,7 @@
 			data-domain={PUB_HOSTNAME || "vert.sh"}
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
+		<script src="/coi-serviceworker.min.js"></script>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen h-full">
