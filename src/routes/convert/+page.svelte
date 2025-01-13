@@ -119,10 +119,18 @@
 	<div
 		class="w-full max-w-[794px] grid grid-cols-1 md:grid-cols-2 auto-rows-[240px] gap-4 md:p-0"
 	>
-		<Uploader class="w-full h-full" />
 		{#each files.files as file, i (file.id)}
+			{#if files.files.length >= 2 && i === 1}
+				<Uploader class="w-full h-full col-start-1 row-start-1 md:col-start-2" />
+			{/if}
 			{@render fileItem(file, i)}
+			{#if files.files.length < 2}
+				<Uploader class="w-full h-full" />
+			{/if}
 		{/each}
+		{#if files.files.length === 0}
+			<Uploader class="w-full h-full" />
+		{/if}
 	</div>
 </div>
 
