@@ -181,4 +181,19 @@
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient);"
 	></div>
+{:else if data.pathname === "/convert"}
+	<div
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-pink);"
+	></div>
+{:else if data.pathname === "/settings"}
+	<div
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-blue);"
+	></div>
+{:else if data.pathname === "/about"}
+	<div
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-pink);"
+	></div>
 {/if}

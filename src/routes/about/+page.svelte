@@ -44,6 +44,7 @@
 
 	onMount(async () => {
 		// Fetch GitHub contributors
+		// TODO: cache it, so we don't have to fetch it every time the page is loaded
 		try {
 			const response = await fetch(
 				"https://api.github.com/repos/not-nullptr/VERT/contributors",
