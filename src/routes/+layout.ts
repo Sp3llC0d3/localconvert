@@ -28,3 +28,5 @@ export const load = ({ data }) => {
 	});
 	return data;
 };
+
+export const prerender = true;
