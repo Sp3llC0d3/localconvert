@@ -151,11 +151,9 @@
 		{/key}
 	</div>
 
-	<!-- Mobile navbar -->
-
 	<div>
 		<div
-			class="hidden md:block w-full h-14 border-t border-separator relative"
+			class="hidden md:block w-full h-14 border-t border-separator relative mt-12"
 		>
 			<Footer
 				class="w-full h-full"
@@ -167,6 +165,7 @@
 			/>
 		</div>
 
+		<!-- Mobile navbar -->
 		<div
 			class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
 		>
