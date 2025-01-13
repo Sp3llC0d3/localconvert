@@ -48,9 +48,7 @@ export class VipsConverter extends Converter {
             } else if (message.type === "error") {
                 error(["converters", this.name], `error in worker: ${message.error}`);
 				throw new Error(message.error);
-			} else {
-                error(["converters", this.name], `unknown message type ${message.type}`);
-            }
+			}
 		};
 	}
 

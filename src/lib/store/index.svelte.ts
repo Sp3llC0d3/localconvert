@@ -153,9 +153,21 @@ class Files {
 		const { downloadZip } = await import("client-zip");
 		const blob = await downloadZip(dlFiles, "converted.zip").blob();
 		const url = URL.createObjectURL(blob);
+
+		const filenameFormat =
+			localStorage.getItem("filenameFormat") ?? "VERT_%name%";
+
+		const format = (name: string) => {
+			const date = new Date().toISOString();
+			return name
+				.replace(/%date%/g, date)
+				.replace(/%name%/g, 'Multi')
+				.replace(/%extension%/g, '');
+		};
+
 		const a = document.createElement("a");
 		a.href = url;
-		a.download = `VERT-Converted_${new Date().toISOString()}.zip`;
+		a.download = `${format(filenameFormat)}.zip`;
 		a.click();
 		URL.revokeObjectURL(url);
 		a.remove();
