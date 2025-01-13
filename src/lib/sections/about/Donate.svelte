@@ -27,7 +27,7 @@
 	<div class="flex flex-col gap-3">
 		<h2 class="text-2xl font-bold flex items-center">
 			<div
-				class="rounded-full bg-rose-300 p-2 inline-block mr-3 w-10 h-10"
+				class="rounded-full bg-accent-red p-2 inline-block mr-3 w-10 h-10"
 			>
 				<HeartIcon color="black" />
 			</div>
@@ -41,7 +41,7 @@
 	<div class="flex flex-col gap-3 w-full">
 		<div class="flex gap-3 w-full">
 			<button
-				class="btn flex-1 p-4 rounded-lg bg-rose-300 text-black flex items-center justify-center"
+				class="btn flex-1 p-4 rounded-lg bg-accent-red text-black flex items-center justify-center"
 			>
 				<HandCoinsIcon size="24" class="inline-block mr-2" />
 				One-time
@@ -55,7 +55,7 @@
 			</button>
 		</div>
 		<div class="flex gap-3 w-full">
-			<button class="btn bg-rose-300 text-black p-4 rounded-lg flex-1"
+			<button class="btn bg-accent-red text-black p-4 rounded-lg flex-1"
 				>$1 USD</button
 			>
 			<button
@@ -86,7 +86,7 @@
 		</p>
 
 		<button
-			class="btn flex-1 p-3 rounded-3xl bg-rose-300 text-black flex items-center justify-center"
+			class="btn flex-1 p-3 rounded-3xl bg-accent-red text-black flex items-center justify-center"
 		>
 			<WalletIcon size="24" class="inline-block mr-2" />
 			Pay now

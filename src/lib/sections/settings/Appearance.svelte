@@ -10,21 +10,21 @@
 		theme.dark = dark;
 
 		if (dark) {
-			lightElement.classList.remove("bg-violet-400");
-			darkElement.classList.add("bg-violet-400");
+			lightElement.classList.remove("bg-accent-purple");
+			darkElement.classList.add("bg-accent-purple");
 		} else {
-			darkElement.classList.remove("bg-violet-400");
-			lightElement.classList.add("bg-violet-400");
+			darkElement.classList.remove("bg-accent-purple");
+			lightElement.classList.add("bg-accent-purple");
 		}
 	}
 
 	$effect(() => {
 		if (theme.dark) {
-			lightElement.classList.remove("bg-violet-400");
-			darkElement.classList.add("bg-violet-400");
+			lightElement.classList.remove("bg-accent-purple");
+			darkElement.classList.add("bg-accent-purple");
 		} else {
-			darkElement.classList.remove("bg-violet-400");
-			lightElement.classList.add("bg-violet-400");
+			darkElement.classList.remove("bg-accent-purple");
+			lightElement.classList.add("bg-accent-purple");
 		}
 	});
 </script>
@@ -34,7 +34,7 @@
 		<h2 class="text-2xl font-bold">
 			<PaletteIcon
 				size="40"
-				class="inline-block -mt-1 mr-2 bg-violet-400 p-2 rounded-full"
+				class="inline-block -mt-1 mr-2 bg-accent-purple p-2 rounded-full"
 				color="black"
 			/>
 			Appearance
@@ -61,7 +61,7 @@
 						<button
 							bind:this={darkElement}
 							onclick={() => setDark(true)}
-							class="btn flex-1 p-4 rounded-lg bg-button text-black flex items-center justify-center"
+							class="btn flex-1 p-4 rounded-lg text-black flex items-center justify-center"
 						>
 							<MoonIcon size="24" class="inline-block mr-2" />
 							Dark

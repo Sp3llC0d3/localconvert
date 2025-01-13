@@ -30,7 +30,11 @@
 
 @mixin light {
 	// general
-	--accent: hsl(303, 73%, 81%);
+	--accent-pink: hsl(303, 73%, 81%);
+	--accent-red: hsl(348, 71%, 81%);
+	--accent-purple: hsl(264, 71%, 81%);
+	--accent-blue: hsl(220, 73%, 81%);
+	--accent: var(--accent-pink);
 
 	// foregrounds
 	--fg: hsl(0, 0%, 0%);
@@ -56,18 +60,22 @@
 			hsla(287, 100%, 50%, 0)
 		);
 	--bg-panel: hsl(0, 0%, 100%);
-	--bg-panel-alt: hsl(0, 0%, 92%);
-	--bg-panel-accented: #EBEBEB;
+	--bg-panel-accented: hsl(0, 0%, 92%);
 	--bg-separator: hsl(0, 0%, 88%);
 	--bg-button: var(--bg-panel-accented);
 	--bg-badge: hsl(0, 0%, 0%);
-
+	--bg-input: #E0E0E0;
+	
 	--shadow-panel: 0 2px 4px 0 hsla(0, 0%, 0%, 0.15);
 }
 
 @mixin dark {
 	// general
-	--accent: hsl(303, 73%, 81%);
+	--accent-pink: hsl(303, 73%, 81%);
+	--accent-red: hsl(348, 71%, 81%);
+	--accent-purple: hsl(264, 71%, 81%);
+	--accent-blue: hsl(220, 73%, 81%);
+	--accent: var(--accent-pink);
 
 	// foregrounds
 	--fg: hsl(0, 0%, 100%);
@@ -94,9 +102,8 @@
 		);
 	--bg-panel: hsl(220, 4%, 18%);
 	--bg-panel-accented: color-mix(in srgb, var(--accent) 12%, transparent);
-	--bg-panel-alt: hsl(220, 6%, 25%);
 	--bg-separator: hsl(220, 4%, 28%);
-	--bg-button: #43464C;
+	--bg-button: hsl(220, 6%, 28%);
 	--bg-badge: hsl(0, 0%, 100%);
 
 	--shadow-panel: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
