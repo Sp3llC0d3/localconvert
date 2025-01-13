@@ -97,7 +97,7 @@
 		<div class="flex flex-col gap-4 flex-1">
 			<About.Resources />
 			<About.Credits {mainContribs} {ghContribs} />
-			<About.Donate />
+			<!-- <About.Donate /> -->
 		</div>
 	</div>
 </div>

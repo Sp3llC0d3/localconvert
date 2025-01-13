@@ -38,7 +38,7 @@
 
 	// foregrounds
 	--fg: hsl(0, 0%, 0%);
-	--fg-muted: hsl(0, 0%, 50%);
+	--fg-muted: hsla(0, 0%, 0%, 0.6);
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 100%);
 
@@ -79,7 +79,7 @@
 
 	// foregrounds
 	--fg: hsl(0, 0%, 100%);
-	--fg-muted: hsl(0, 0%, 50%);
+	--fg-muted: hsla(0, 0%, 100%, 0.6);
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 0%);
 

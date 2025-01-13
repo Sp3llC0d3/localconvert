@@ -43,7 +43,7 @@
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
 					<p class="text-base font-bold">Brightness theme</p>
-					<p class="text-sm opacity-60 font-normal italic">
+					<p class="text-sm text-muted font-normal italic">
 						Want a sunny flash-bang, or a quiet lonely night?
 					</p>
 				</div>

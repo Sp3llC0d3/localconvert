@@ -35,7 +35,7 @@
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
 					<p class="text-base font-bold">File name format</p>
-					<p class="text-sm opacity-60 font-normal">
+					<p class="text-sm text-muted font-normal">
 						This will determine the name of the file on download, <span
 							class="font-bold italic"
 							>not including the file extension.</span
@@ -61,7 +61,7 @@
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
 					<p class="text-base font-bold">Second option</p>
-					<p class="text-sm opacity-60 font-normal">
+					<p class="text-sm text-muted font-normal">
 						This is just a sample option. This should not show up on
 						the live website. JOVANN, DO NOT ADD THIS TO THE LIVE
 						WEBSITE. PLEASE. JOVANN!!!!
