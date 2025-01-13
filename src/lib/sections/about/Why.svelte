@@ -4,12 +4,12 @@
 </script>
 
 <Panel class="flex flex-col gap-3 p-6">
-	<h2 class="text-2xl font-bold">
-		<MessageCircleQuestionIcon
-			size="40"
-			class="inline-block -mt-1 mr-2 bg-accent p-2 rounded-full"
-			color="black"
-		/>
+	<h2 class="text-2xl font-bold flex items-center">
+		<div
+			class="rounded-full bg-accent p-2 inline-block mr-3 w-10 h-10"
+		>
+			<MessageCircleQuestionIcon color="black" />
+		</div>
 		Why VERT?
 	</h2>
 	<p class="text-lg font-normal">

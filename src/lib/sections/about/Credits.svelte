@@ -37,12 +37,10 @@
 {/snippet}
 
 <Panel class="flex flex-col gap-8 p-6">
-	<h2 class="text-2xl font-bold">
-		<HeartHandshakeIcon
-			size="40"
-			class="inline-block -mt-1 mr-2 bg-blue-300 p-2 rounded-full"
-			color="black"
-		/>
+	<h2 class="text-2xl font-bold flex items-center">
+		<div class="rounded-full bg-blue-300 p-2 inline-block mr-3 w-10 h-10">
+			<HeartHandshakeIcon />
+		</div>
 		Credits
 	</h2>
 

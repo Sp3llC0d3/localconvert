@@ -25,12 +25,12 @@
 
 <Panel class="flex flex-col gap-8 p-6">
 	<div class="flex flex-col gap-3">
-		<h2 class="text-2xl font-bold">
-			<HeartIcon
-				size="40"
-				class="inline-block -mt-1 mr-2 bg-rose-300 p-2 rounded-full"
-				color="black"
-			/>
+		<h2 class="text-2xl font-bold flex items-center">
+			<div
+				class="rounded-full bg-rose-300 p-2 inline-block mr-3 w-10 h-10"
+			>
+				<HeartIcon color="black" />
+			</div>
 			Donate to VERT
 		</h2>
 		<p class="text-base font-normal">
