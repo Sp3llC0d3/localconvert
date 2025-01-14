@@ -6,7 +6,8 @@
 	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
-	import { files } from "$lib/store/index.svelte";
+	import { log } from "$lib/logger";
+	import { files, showGradient } from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
 	import {
 		Disc2Icon,
@@ -17,6 +18,16 @@
 		XIcon,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
+
+	$effect(() => {
+		if (files.files.length === 1 && files.files[0].blobUrl) {
+			log("blur", "Applying blur effect");
+			showGradient.set(false);
+		} else {
+			log("blur", "Removing blur effect");
+			showGradient.set(true);
+		}
+	});
 </script>
 
 {#snippet fileItem(file: VertFile, index: number)}
@@ -121,7 +132,9 @@
 	>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}
-				<Uploader class="w-full h-full col-start-1 row-start-1 md:col-start-2" />
+				<Uploader
+					class="w-full h-full col-start-1 row-start-1 md:col-start-2"
+				/>
 			{/if}
 			{@render fileItem(file, i)}
 			{#if files.files.length < 2}

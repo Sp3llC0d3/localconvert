@@ -6,7 +6,7 @@
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
-	import { files } from "$lib/store/index.svelte";
+	import { files, showGradient } from "$lib/store/index.svelte";
 	import {
 		InfoIcon,
 		RefreshCw,
@@ -106,7 +106,7 @@
 			data-domain={PUB_HOSTNAME || "vert.sh"}
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
-		<script src="/coi-serviceworker.min.js"></script>
+	<script src="/coi-serviceworker.min.js"></script>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen h-full">
@@ -176,24 +176,31 @@
 	</div>
 </div>
 
-{#if data.pathname === "/"}
-	<div
-		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-		style="background: var(--bg-gradient);"
-	></div>
-{:else if data.pathname === "/convert"}
-	<div
-		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-		style="background: var(--bg-gradient-pink);"
-	></div>
-{:else if data.pathname === "/settings"}
-	<div
-		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-		style="background: var(--bg-gradient-blue);"
-	></div>
-{:else if data.pathname === "/about"}
-	<div
-		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-		style="background: var(--bg-gradient-pink);"
-	></div>
+<!-- Gradients placed here to prevent it overlapping in transitions -->
+{#if $showGradient}
+	{#if data.pathname === "/"}
+		<div
+			id="gradient-bg"
+			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+			style="background: var(--bg-gradient);"
+		></div>
+	{:else if data.pathname === "/convert"}
+		<div
+			id="gradient-bg"
+			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+			style="background: var(--bg-gradient-pink);"
+		></div>
+	{:else if data.pathname === "/settings"}
+		<div
+			id="gradient-bg"
+			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+			style="background: var(--bg-gradient-blue);"
+		></div>
+	{:else if data.pathname === "/about"}
+		<div
+			id="gradient-bg"
+			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+			style="background: var(--bg-gradient-pink);"
+		></div>
+	{/if}
 {/if}

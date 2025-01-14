@@ -5,6 +5,7 @@ import { VertFile } from "$lib/types";
 import JSCookie from "js-cookie";
 import jsmediatags from "jsmediatags";
 import type { TagType } from "jsmediatags/types";
+import { writable } from "svelte/store";
 
 class Files {
 	public files = $state<VertFile[]>([]);
@@ -161,8 +162,8 @@ class Files {
 			const date = new Date().toISOString();
 			return name
 				.replace(/%date%/g, date)
-				.replace(/%name%/g, 'Multi')
-				.replace(/%extension%/g, '');
+				.replace(/%name%/g, "Multi")
+				.replace(/%extension%/g, "");
 		};
 
 		const a = document.createElement("a");
@@ -216,3 +217,4 @@ class Theme {
 
 export const files = new Files();
 export const theme = new Theme();
+export const showGradient = writable(true);
