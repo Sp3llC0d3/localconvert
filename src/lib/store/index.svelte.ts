@@ -218,3 +218,4 @@ class Theme {
 export const files = new Files();
 export const theme = new Theme();
 export const showGradient = writable(true);
+export const gradientColor = writable("");

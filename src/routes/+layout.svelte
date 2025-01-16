@@ -6,7 +6,7 @@
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
-	import { files, showGradient } from "$lib/store/index.svelte";
+	import { files, gradientColor, showGradient } from "$lib/store/index.svelte";
 	import {
 		InfoIcon,
 		RefreshCw,
@@ -188,7 +188,7 @@
 		<div
 			id="gradient-bg"
 			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-			style="background: var(--bg-gradient-pink);"
+			style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
 		></div>
 	{:else if data.pathname === "/settings"}
 		<div

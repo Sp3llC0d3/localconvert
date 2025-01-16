@@ -6,8 +6,11 @@
 	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
-	import { log } from "$lib/logger";
-	import { files, showGradient } from "$lib/store/index.svelte";
+	import {
+		files,
+		gradientColor,
+		showGradient,
+	} from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
 	import {
 		Disc2Icon,
@@ -21,17 +24,26 @@
 
 	$effect(() => {
 		if (files.files.length === 1 && files.files[0].blobUrl) {
-			log("blur", "Applying blur effect");
 			showGradient.set(false);
 		} else {
-			log("blur", "Removing blur effect");
 			showGradient.set(true);
+		}
+
+		// Set gradient color depending on the file types
+		// TODO: if more file types added, add a "fileType" property to the file object
+		const allAudio = files.files.every((file) => file.converter?.name === "ffmpeg");
+		const allImages = files.files.every((file) => file.converter?.name !== "ffmpeg");
+
+		if (files.files.length === 0 || (!allAudio && !allImages)) {
+			gradientColor.set("");
+		} else {
+			gradientColor.set(allAudio ? "purple" : "blue");
 		}
 	});
 </script>
 
 {#snippet fileItem(file: VertFile, index: number)}
-	{@const isAudio = file.converter?.name === "ffmpeg" || false}
+	{@const isAudio = file.converter?.name === "ffmpeg"}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !file.converter}
@@ -101,7 +113,9 @@
 						/>
 						<div class="w-full flex items-center justify-between">
 							<button
-								class="btn p-0 w-14 h-14"
+								class="btn p-0 w-14 h-14 {isAudio
+									? 'bg-accent-purple'
+									: 'bg-accent-blue'}"
 								disabled={!files.ready}
 								onclick={file.convert}
 							>
