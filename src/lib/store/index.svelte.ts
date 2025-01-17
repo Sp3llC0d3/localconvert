@@ -1,4 +1,3 @@
-import { browser } from "$app/environment";
 import { converters } from "$lib/converters";
 import { error, log } from "$lib/logger";
 import { VertFile } from "$lib/types";
@@ -174,34 +173,6 @@ class Files {
 	}
 }
 
-class Theme {
-	private _dark = $state(false);
-	public get dark() {
-		return this._dark;
-	}
-	public set dark(value: boolean) {
-		this._dark = value;
-		if (!browser) return;
-		log(["theme"], `set to ${this.dark ? "dark" : "light"}`);
-		window.plausible("Theme set", {
-			props: { theme: theme.dark ? "dark" : "light" },
-		});
-		if (value) {
-			document.documentElement.classList.add("dark");
-			document.documentElement.classList.remove("light");
-			localStorage.setItem("theme", "dark");
-		} else {
-			document.documentElement.classList.add("light");
-			document.documentElement.classList.remove("dark");
-			localStorage.setItem("theme", "light");
-		}
-	}
-	public toggle = () => {
-		this.dark = !this.dark;
-	};
-}
-
 export const files = new Files();
-export const theme = new Theme();
 export const showGradient = writable(true);
 export const gradientColor = writable("");

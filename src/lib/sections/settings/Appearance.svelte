@@ -1,31 +1,48 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { theme } from "$lib/store/index.svelte";
 	import { MoonIcon, PaletteIcon, SunIcon } from "lucide-svelte";
+	import { onMount } from "svelte";
 
 	let lightElement: HTMLButtonElement;
 	let darkElement: HTMLButtonElement;
 
 	function setDark(dark: boolean) {
-		theme.dark = dark;
+		document.documentElement.classList.remove("light", "dark");
 
 		if (dark) {
 			lightElement.classList.remove("bg-accent-purple");
 			darkElement.classList.add("bg-accent-purple");
+			document.documentElement.classList.add("dark");
 		} else {
 			darkElement.classList.remove("bg-accent-purple");
 			lightElement.classList.add("bg-accent-purple");
+			document.documentElement.classList.add("light");
 		}
 	}
 
-	$effect(() => {
-		if (theme.dark) {
-			lightElement.classList.remove("bg-accent-purple");
-			darkElement.classList.add("bg-accent-purple");
-		} else {
-			darkElement.classList.remove("bg-accent-purple");
-			lightElement.classList.add("bg-accent-purple");
-		}
+	onMount(() => {
+		const updateClasses = () => {
+			const list = document.documentElement.classList;
+			if (list.contains("dark")) {
+				lightElement.classList.remove("bg-accent-purple");
+				darkElement.classList.add("bg-accent-purple");
+			} else {
+				darkElement.classList.remove("bg-accent-purple");
+				lightElement.classList.add("bg-accent-purple");
+			}
+		};
+
+		updateClasses();
+
+		// use MutationObserver to check when theme is changed (<html> classes)
+		const observer = new MutationObserver(updateClasses);
+
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		});
+
+		return () => observer.disconnect();
 	});
 </script>
 

@@ -2,7 +2,6 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import { duration, fade } from "$lib/animation";
-	import { theme } from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
@@ -127,7 +126,18 @@
 		{/each}
 		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 		<button
-			onclick={theme.toggle}
+			onclick={() => {
+				const isDark = document.documentElement.classList.contains("dark");
+				if (isDark) {
+					document.documentElement.classList.add("light");
+					document.documentElement.classList.remove("dark");
+					localStorage.setItem("theme", "light");
+				} else {
+					document.documentElement.classList.add("dark");
+					document.documentElement.classList.remove("light");
+					localStorage.setItem("theme", "dark");
+				}
+			}}
 			class="w-14 h-full items-center justify-center hidden md:flex"
 		>
 			<SunIcon class="dynadark:hidden block" />
