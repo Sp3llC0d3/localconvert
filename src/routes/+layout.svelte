@@ -115,8 +115,19 @@
 		// Apply theme before DOM is loaded
 		let theme = localStorage.getItem("theme");
 		if (theme !== "light" && theme !== "dark") {
-			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			const prefersDark = window.matchMedia(
+				"(prefers-color-scheme: dark)",
+			).matches;
 			theme = prefersDark ? "dark" : "light";
+
+			if (!theme) {
+				// first time visitor
+				window.addEventListener("load", () => {
+					window.plausible("Theme set", {
+						props: { theme: theme.dark ? "dark" : "light" },
+					});
+				});
+			}
 		}
 
 		document.documentElement.classList.add(theme);
