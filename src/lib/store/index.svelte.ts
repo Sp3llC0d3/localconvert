@@ -173,6 +173,16 @@ class Files {
 	}
 }
 
+export function setTheme(theme: "light" | "dark") {
+	document.documentElement.classList.remove("light", "dark");
+	document.documentElement.classList.add(theme);
+	localStorage.setItem("theme", theme);
+	window.plausible("Theme set", {
+		props: { theme },
+	});
+	log(["theme"], `set to ${theme}`);
+}
+
 export const files = new Files();
 export const showGradient = writable(true);
 export const gradientColor = writable("");

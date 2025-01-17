@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
+	import { log } from "$lib/logger";
+	import { setTheme } from "$lib/store/index.svelte";
 	import { MoonIcon, PaletteIcon, SunIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
@@ -12,12 +14,14 @@
 		if (dark) {
 			lightElement.classList.remove("bg-accent-purple");
 			darkElement.classList.add("bg-accent-purple");
-			document.documentElement.classList.add("dark");
+			setTheme("dark");
 		} else {
 			darkElement.classList.remove("bg-accent-purple");
 			lightElement.classList.add("bg-accent-purple");
-			document.documentElement.classList.add("light");
+			setTheme("light");
 		}
+
+		log
 	}
 
 	onMount(() => {
