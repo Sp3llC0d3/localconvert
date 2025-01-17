@@ -44,7 +44,6 @@
 		"@imagemagick/magick-wasm": "^0.0.31",
 		"client-zip": "^2.4.5",
 		"clsx": "^2.1.1",
-		"js-cookie": "^3.0.5",
 		"jsmediatags": "^3.9.7",
 		"lucide-svelte": "^0.456.0",
 		"wasm-vips": "^0.0.11"

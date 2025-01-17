@@ -6,7 +6,11 @@
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
-	import { files, gradientColor, showGradient } from "$lib/store/index.svelte";
+	import {
+		files,
+		gradientColor,
+		showGradient,
+	} from "$lib/store/index.svelte";
 	import {
 		InfoIcon,
 		RefreshCw,
@@ -107,6 +111,16 @@
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
 	<script src="/coi-serviceworker.min.js"></script>
+	<script>
+		// Apply theme before DOM is loaded
+		let theme = localStorage.getItem("theme");
+		if (theme !== "light" && theme !== "dark") {
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			theme = prefersDark ? "dark" : "light";
+		}
+
+		document.documentElement.classList.add(theme);
+	</script>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen h-full">

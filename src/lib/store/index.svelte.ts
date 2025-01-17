@@ -2,7 +2,6 @@ import { browser } from "$app/environment";
 import { converters } from "$lib/converters";
 import { error, log } from "$lib/logger";
 import { VertFile } from "$lib/types";
-import JSCookie from "js-cookie";
 import jsmediatags from "jsmediatags";
 import type { TagType } from "jsmediatags/types";
 import { writable } from "svelte/store";
@@ -183,11 +182,6 @@ class Theme {
 	public set dark(value: boolean) {
 		this._dark = value;
 		if (!browser) return;
-		JSCookie.set("theme", this.dark ? "dark" : "light", {
-			path: "/",
-			sameSite: "lax",
-			expires: 2147483647,
-		});
 		log(["theme"], `set to ${this.dark ? "dark" : "light"}`);
 		window.plausible("Theme set", {
 			props: { theme: theme.dark ? "dark" : "light" },
@@ -195,19 +189,11 @@ class Theme {
 		if (value) {
 			document.documentElement.classList.add("dark");
 			document.documentElement.classList.remove("light");
-			JSCookie.set("theme", "dark", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
+			localStorage.setItem("theme", "dark");
 		} else {
 			document.documentElement.classList.add("light");
 			document.documentElement.classList.remove("dark");
-			JSCookie.set("theme", "light", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
+			localStorage.setItem("theme", "light");
 		}
 	}
 	public toggle = () => {
