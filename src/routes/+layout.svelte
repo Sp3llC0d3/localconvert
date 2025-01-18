@@ -111,9 +111,13 @@
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
 	<script src="/coi-serviceworker.min.js"></script>
-	<script>
+	<script type="module">
 		// Apply theme before DOM is loaded
 		let theme = localStorage.getItem("theme");
+		const prefersDark = window.matchMedia(
+			"(prefers-color-scheme: dark)",
+		).matches;
+
 		if (theme !== "light" && theme !== "dark") {
 			if (!theme) {
 				// first time visitor
@@ -125,10 +129,8 @@
 			}
 
 			// invalid theme or first time visitor, set to default
-			const prefersDark = window.matchMedia(
-				"(prefers-color-scheme: dark)",
-			).matches;
-			localStorage.setItem("theme", prefersDark ? "dark" : "light");
+			theme = prefersDark ? "dark" : "light";
+			localStorage.setItem("theme", theme);
 		}
 
 		document.documentElement.classList.add(theme);
