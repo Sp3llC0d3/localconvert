@@ -6,15 +6,8 @@
 	// ship fast n break things !!
 	// -- nullptr
 
-	import VertVBig from "$lib/assets/vert-bg.svg?component";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 </script>
-
-<div
-	class="absolute -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
->
-	<VertVBig class="fill-[--fg] opacity-50" />
-</div>
 
 <div
 	class="w-screen px-8 h-full flex items-start justify-center overflow-hidden max-h-screen"
@@ -54,38 +47,38 @@
 		}
 	}
 
-    @media screen and (min-width: 768px) and (min-height: 576px) {
-        .content {
-            padding-top: 15vh;
-            padding-bottom: 15vh;
-        }
-    }
+	@media screen and (min-width: 768px) and (min-height: 576px) {
+		.content {
+			padding-top: 15vh;
+			padding-bottom: 15vh;
+		}
+	}
 
-    @media screen and (min-width: 768px) and (min-height: 720px) {
-        .content {
-            padding-top: 20vh;
-            padding-bottom: 20vh;
-        }
-    }
+	@media screen and (min-width: 768px) and (min-height: 720px) {
+		.content {
+			padding-top: 20vh;
+			padding-bottom: 20vh;
+		}
+	}
 
-    @media screen and (min-width: 768px) and (min-height: 1080px) {
-        .content {
-            padding-top: 25vh;
-            padding-bottom: 25vh;
-        }
-    }
+	@media screen and (min-width: 768px) and (min-height: 1080px) {
+		.content {
+			padding-top: 25vh;
+			padding-bottom: 25vh;
+		}
+	}
 
-    @media screen and (min-width: 768px) and (min-height: 1440px) {
-        .content {
-            padding-top: 30vh;
-            padding-bottom: 30vh;
-        }
-    }
+	@media screen and (min-width: 768px) and (min-height: 1440px) {
+		.content {
+			padding-top: 30vh;
+			padding-bottom: 30vh;
+		}
+	}
 
-    @media screen and (min-width: 768px) and (min-height: 2160px) {
-        .content {
-            padding-top: 35vh;
-            padding-bottom: 35vh;
-        }
-    }
+	@media screen and (min-width: 768px) and (min-height: 2160px) {
+		.content {
+			padding-top: 35vh;
+			padding-bottom: 35vh;
+		}
+	}
 </style>

@@ -2,10 +2,12 @@
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { duration } from "$lib/animation";
+	import VertVBig from "$lib/assets/vert-bg.svg?component";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
+
 	import {
 		files,
 		gradientColor,
@@ -181,7 +183,7 @@
 			<Footer
 				class="w-full h-full"
 				items={{
-					"Privacy policy": "#",
+					//"Privacy policy": "#",
 					"Source code": "https://github.com/not-nullptr/VERT",
 					"Discord server": "https://discord.gg/kqevGxYPak",
 				}}
@@ -202,6 +204,11 @@
 <!-- Gradients placed here to prevent it overlapping in transitions -->
 {#if $showGradient}
 	{#if data.pathname === "/"}
+		<div
+			class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+		>
+			<VertVBig class="fill-[--fg] opacity-50" />
+		</div>
 		<div
 			id="gradient-bg"
 			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
