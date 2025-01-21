@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
-	import { duration } from "$lib/animation";
+	import { duration, fly } from "$lib/animation";
 	import clsx from "clsx";
 	import { onMount, tick } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import type { Writable } from "svelte/store";
-	import { fly } from "svelte/transition";
 
 	interface Props {
 		links: {

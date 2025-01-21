@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
-	import { duration } from "$lib/animation";
+	import { duration, fade } from "$lib/animation";
 	import { setTheme } from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
-	import { fade } from "svelte/transition";
 	import Panel from "../visual/Panel.svelte";
 	import Logo from "../visual/svg/Logo.svelte";
 

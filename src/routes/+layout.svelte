@@ -8,6 +8,7 @@
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
 
+	import { fade, fly } from "$lib/animation";
 	import {
 		files,
 		gradientColor,
@@ -22,7 +23,6 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import { writable } from "svelte/store";
-	import { fade, fly } from "svelte/transition";
 	import "../app.scss";
 	let { children, data } = $props();
 

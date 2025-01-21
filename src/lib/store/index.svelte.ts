@@ -183,6 +183,14 @@ export function setTheme(theme: "light" | "dark") {
 	log(["theme"], `set to ${theme}`);
 }
 
+export function setMotion(motion: boolean) {
+	localStorage.setItem("motion", motion.toString());
+	window.plausible("Motion set", {
+		props: { motion },
+	});
+	log(["motion"], `set to ${motion}`);
+}
+
 export const files = new Files();
 export const showGradient = writable(true);
 export const gradientColor = writable("");

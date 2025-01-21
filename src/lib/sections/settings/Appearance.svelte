@@ -1,12 +1,13 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { log } from "$lib/logger";
-	import { setTheme } from "$lib/store/index.svelte";
+	import { setMotion, setTheme } from "$lib/store/index.svelte";
 	import { MoonIcon, PaletteIcon, SunIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
 	let lightElement: HTMLButtonElement;
 	let darkElement: HTMLButtonElement;
+	let enableMotionElement: HTMLButtonElement;
+	let disableMotionElement: HTMLButtonElement;
 
 	function setDark(dark: boolean) {
 		document.documentElement.classList.remove("light", "dark");
@@ -20,12 +21,22 @@
 			lightElement.classList.add("bg-accent-purple");
 			setTheme("light");
 		}
+	}
 
-		log
+	function setAnimation(motion: boolean) {
+		if (motion) {
+			enableMotionElement.classList.add("bg-accent-purple");
+			disableMotionElement.classList.remove("bg-accent-purple");
+			setMotion(true);
+		} else {
+			disableMotionElement.classList.add("bg-accent-purple");
+			enableMotionElement.classList.remove("bg-accent-purple");
+			setMotion(false);
+		}
 	}
 
 	onMount(() => {
-		const updateClasses = () => {
+		const updateTheme = () => {
 			const list = document.documentElement.classList;
 			if (list.contains("dark")) {
 				lightElement.classList.remove("bg-accent-purple");
@@ -36,10 +47,18 @@
 			}
 		};
 
-		updateClasses();
+		updateTheme();
 
-		// use MutationObserver to check when theme is changed (<html> classes)
-		const observer = new MutationObserver(updateClasses);
+		if (localStorage.getItem("motion") === "true") {
+			enableMotionElement.classList.add("bg-accent-purple");
+			disableMotionElement.classList.remove("bg-accent-purple");
+		} else {
+			disableMotionElement.classList.add("bg-accent-purple");
+			enableMotionElement.classList.remove("bg-accent-purple");
+		}
+
+		// use MutationObserver to check when theme is changed (<html> class changes)
+		const observer = new MutationObserver(updateTheme);
 
 		observer.observe(document.documentElement, {
 			attributes: true,
@@ -86,6 +105,36 @@
 						>
 							<MoonIcon size="24" class="inline-block mr-2" />
 							Dark
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-4">
+				<div class="flex flex-col gap-2">
+					<p class="text-base font-bold">Motion settings</p>
+					<p class="text-sm text-muted font-normal italic">
+						Would you like fancy animations, or a more static
+						experience?
+					</p>
+				</div>
+				<div class="flex flex-col gap-3 w-full">
+					<div class="flex gap-3 w-full">
+						<button
+							bind:this={enableMotionElement}
+							onclick={() => setAnimation(true)}
+							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-centerr"
+						>
+							<SunIcon size="24" class="inline-block mr-2" />
+							Enable Animations
+						</button>
+
+						<button
+							bind:this={disableMotionElement}
+							onclick={() => setAnimation(false)}
+							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-centerr"
+						>
+							<MoonIcon size="24" class="inline-block mr-2" />
+							Disable Animations
 						</button>
 					</div>
 				</div>

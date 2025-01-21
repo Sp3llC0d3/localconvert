@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { duration, transition } from "$lib/animation";
+	import { duration, fade, transition } from "$lib/animation";
 	import { ChevronDown } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
-	import { fade } from "svelte/transition";
 
 	type Props = {
 		options: string[];

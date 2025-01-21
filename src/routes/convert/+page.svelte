@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { duration } from "$lib/animation";
+	import { duration, fade } from "$lib/animation";
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
@@ -21,7 +21,6 @@
 		XIcon,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
-	import { fade } from "svelte/transition";
 
 	$effect(() => {
 		if (files.files.length === 1 && files.files[0].blobUrl) {
