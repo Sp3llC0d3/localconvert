@@ -190,6 +190,10 @@ body {
 	@apply hover:scale-[1.15] duration-200;
 }
 
+.selected {
+	@apply bg-accent-purple !text-black;
+}
+
 @layer components {
 	select {
 		@apply appearance-none;

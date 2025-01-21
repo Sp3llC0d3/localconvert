@@ -1,7 +1,13 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { setMotion, setTheme } from "$lib/store/index.svelte";
-	import { MoonIcon, PaletteIcon, SunIcon } from "lucide-svelte";
+	import {
+		MoonIcon,
+		PaletteIcon,
+		PauseIcon,
+		PlayIcon,
+		SunIcon,
+	} from "lucide-svelte";
 	import { onMount } from "svelte";
 
 	let lightElement: HTMLButtonElement;
@@ -13,24 +19,24 @@
 		document.documentElement.classList.remove("light", "dark");
 
 		if (dark) {
-			lightElement.classList.remove("bg-accent-purple");
-			darkElement.classList.add("bg-accent-purple");
+			lightElement.classList.remove("selected");
+			darkElement.classList.add("selected");
 			setTheme("dark");
 		} else {
-			darkElement.classList.remove("bg-accent-purple");
-			lightElement.classList.add("bg-accent-purple");
+			darkElement.classList.remove("selected");
+			lightElement.classList.add("selected");
 			setTheme("light");
 		}
 	}
 
 	function setAnimation(motion: boolean) {
 		if (motion) {
-			enableMotionElement.classList.add("bg-accent-purple");
-			disableMotionElement.classList.remove("bg-accent-purple");
+			enableMotionElement.classList.add("selected");
+			disableMotionElement.classList.remove("selected");
 			setMotion(true);
 		} else {
-			disableMotionElement.classList.add("bg-accent-purple");
-			enableMotionElement.classList.remove("bg-accent-purple");
+			disableMotionElement.classList.add("selected");
+			enableMotionElement.classList.remove("selected");
 			setMotion(false);
 		}
 	}
@@ -39,22 +45,22 @@
 		const updateTheme = () => {
 			const list = document.documentElement.classList;
 			if (list.contains("dark")) {
-				lightElement.classList.remove("bg-accent-purple");
-				darkElement.classList.add("bg-accent-purple");
+				lightElement.classList.remove("selected");
+				darkElement.classList.add("selected");
 			} else {
-				darkElement.classList.remove("bg-accent-purple");
-				lightElement.classList.add("bg-accent-purple");
+				darkElement.classList.remove("selected");
+				lightElement.classList.add("selected");
 			}
 		};
 
 		updateTheme();
 
 		if (localStorage.getItem("motion") === "true") {
-			enableMotionElement.classList.add("bg-accent-purple");
-			disableMotionElement.classList.remove("bg-accent-purple");
+			enableMotionElement.classList.add("selected");
+			disableMotionElement.classList.remove("selected");
 		} else {
-			disableMotionElement.classList.add("bg-accent-purple");
-			enableMotionElement.classList.remove("bg-accent-purple");
+			disableMotionElement.classList.add("selected");
+			enableMotionElement.classList.remove("selected");
 		}
 
 		// use MutationObserver to check when theme is changed (<html> class changes)
@@ -122,19 +128,19 @@
 						<button
 							bind:this={enableMotionElement}
 							onclick={() => setAnimation(true)}
-							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-centerr"
+							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
-							<SunIcon size="24" class="inline-block mr-2" />
-							Enable Animations
+							<PlayIcon size="24" class="inline-block mr-2" />
+							Enable animations
 						</button>
 
 						<button
 							bind:this={disableMotionElement}
 							onclick={() => setAnimation(false)}
-							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-centerr"
+							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
-							<MoonIcon size="24" class="inline-block mr-2" />
-							Disable Animations
+							<PauseIcon size="24" class="inline-block mr-2" />
+							Disable animations
 						</button>
 					</div>
 				</div>
