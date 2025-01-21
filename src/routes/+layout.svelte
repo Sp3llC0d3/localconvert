@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
-	import { duration, fade } from "$lib/animation";
+	import { duration } from "$lib/animation";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
@@ -20,6 +20,7 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import { writable } from "svelte/store";
+	import { fade, fly } from "svelte/transition";
 	import "../app.scss";
 	let { children, data } = $props();
 
@@ -111,35 +112,10 @@
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
 	<script src="/coi-serviceworker.min.js"></script>
-	<script type="module">
-		// Apply theme before DOM is loaded
-		let theme = localStorage.getItem("theme");
-		const prefersDark = window.matchMedia(
-			"(prefers-color-scheme: dark)",
-		).matches;
-
-		if (theme !== "light" && theme !== "dark") {
-			if (!theme) {
-				// first time visitor
-				window.addEventListener("load", () => {
-					window.plausible("Theme set", {
-						props: { theme: prefersDark ? "dark" : "light" },
-					});
-				});
-			}
-
-			// invalid theme or first time visitor, set to default
-			theme = prefersDark ? "dark" : "light";
-			localStorage.setItem("theme", theme);
-		}
-
-		document.documentElement.classList.add(theme);
-	</script>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen h-full">
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
-	<!-- FIXME: if user has to scroll in a page, transitioning to a page that fits users viewport makes the elements jump after transition ends -->
 
 	<div>
 		<!-- Mobile logo -->
@@ -167,12 +143,31 @@
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
-				transition:fade={{
+				in:fly={{
+					x: goingLeft ? -window.innerWidth : window.innerWidth,
+					duration,
+					easing: quintOut,
+					delay: 25,
+				}}
+				out:fly={{
+					x: goingLeft ? window.innerWidth : -window.innerWidth,
 					duration,
 					easing: quintOut,
 				}}
 			>
-				<div class="flex flex-col h-full pb-36 md:pb-0">
+				<div
+					class="flex flex-col h-full pb-36 md:pb-0"
+					in:fade={{
+						duration,
+						easing: quintOut,
+						delay: 100,
+					}}
+					out:fade={{
+						duration,
+						easing: quintOut,
+						delay: 200,
+					}}
+				>
 					{@render children()}
 				</div>
 			</div>

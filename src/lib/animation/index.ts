@@ -6,25 +6,6 @@ export const transition =
 
 export const duration = 500;
 
-interface FadeOptions {
-    delay?: number;
-    duration?: number;
-    easing?: (t: number) => number;
-    type?: "in" | "out";
-}
-
-export function fade(
-    node: HTMLElement,
-    { delay = 0, duration = 400, easing = cubicOut, type = "in" }: FadeOptions = {}
-): AnimationConfig {
-    return {
-        delay,
-        duration,
-        easing,
-        css: (t) => `opacity: ${type === "in" ? t : 1 - t};`,
-    };
-}
-
 // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export function is_function(thing: unknown): thing is Function {
 	return typeof thing === "function";
