@@ -49,6 +49,7 @@
 					item.activeMatch($page.url.pathname) && !browser,
 			},
 		)}
+		draggable={false}
 	>
 		<div class="grid grid-rows-1 grid-cols-1">
 			{#key item.name}
@@ -129,7 +130,8 @@
 		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 		<button
 			onclick={() => {
-				const isDark = document.documentElement.classList.contains("dark");
+				const isDark =
+					document.documentElement.classList.contains("dark");
 				setTheme(isDark ? "light" : "dark");
 			}}
 			class="w-14 h-full items-center justify-center hidden md:flex"
