@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	import { page } from "$app/state";
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { duration, fly } from "$lib/animation";
@@ -26,7 +26,7 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import "../app.scss";
-	import { writable } from 'svelte/store';
+	import { writable } from "svelte/store";
 	let { children } = $props();
 
 	let shouldGoBack = writable(false);
@@ -231,6 +231,32 @@
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
 	></div>
+{:else if page.url.pathname === "/convert" && files.files.length === 1 && files.files[0].blobUrl}
+	<div
+		class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1"
+	>
+		<div
+			class="w-full relative"
+			transition:fade={{
+				duration,
+				easing: quintOut,
+			}}
+		>
+			<img
+				class="object-cover w-full {!isMobile ? "h-[calc(100%-66px)]" : "h-full"} blur-md"
+				src={files.files[0].blobUrl}
+				alt={files.files[0].name}
+			/>
+			<!-- <div class="absolute bottom-0 left-0 w-full h-full">
+				<ProgressiveBlur
+					direction="bottom"
+					endIntensity={256}
+					iterations={8}
+					fadeTo="var(--bg)"
+				/>
+			</div> -->
+		</div>
+	</div>
 {:else if page.url.pathname === "/settings"}
 	<div
 		id="gradient-bg"

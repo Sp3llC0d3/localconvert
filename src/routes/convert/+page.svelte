@@ -160,31 +160,3 @@
 		{/if}
 	</div>
 </div>
-
-<div
-	class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1"
->
-	{#if files.files.length === 1 && files.files[0].blobUrl}
-		<div
-			class="w-full relative"
-			transition:fade={{
-				duration,
-				easing: quintOut,
-			}}
-		>
-			<img
-				class="object-cover w-full h-[calc(100%-66px)] blur-md"
-				src={files.files[0].blobUrl}
-				alt={files.files[0].name}
-			/>
-			<!-- <div class="absolute bottom-0 left-0 w-full h-full">
-				<ProgressiveBlur
-					direction="bottom"
-					endIntensity={256}
-					iterations={8}
-					fadeTo="var(--bg)"
-				/>
-			</div> -->
-		</div>
-	{/if}
-</div>
