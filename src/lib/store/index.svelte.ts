@@ -194,3 +194,5 @@ export function setMotion(motion: boolean) {
 export const files = new Files();
 export const showGradient = writable(true);
 export const gradientColor = writable("");
+
+export const isMobile = writable(false);

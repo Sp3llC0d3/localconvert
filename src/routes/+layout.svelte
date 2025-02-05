@@ -1,17 +1,19 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { beforeNavigate, goto } from "$app/navigation";
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
-	import { duration } from "$lib/animation";
+	import { duration, fly } from "$lib/animation";
 	import VertVBig from "$lib/assets/vert-bg.svg?component";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
 	import Navbar from "$lib/components/functional/Navbar.svelte";
 	import Footer from "$lib/components/visual/Footer.svelte";
 	import Logo from "$lib/components/visual/svg/Logo.svelte";
 
-	import { fade, fly } from "$lib/animation";
+	import { fade } from "$lib/animation";
 	import {
 		files,
 		gradientColor,
+		isMobile,
 		showGradient,
 	} from "$lib/store/index.svelte";
 	import {
@@ -84,6 +86,11 @@
 
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
+
+		isMobile.set(window.innerWidth <= 768);
+		document.addEventListener("resize", () => {
+			isMobile.set(window.innerWidth <= 768);
+		});
 	});
 
 	let goingLeft = $state(false);
@@ -142,13 +149,7 @@
 	</div>
 
 	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow">
-		{#key data.pathname}
-			<div
-				class="row-start-1 col-start-1"
-				transition:fade={{ duration, easing: quintOut }}
-			>
-				<!--
-			FIXME fly animations cause issues for some reason (page height extending during transition, causing scrollbar to disappear briefly (on mobile) & ability to scroll)
+		{#key page.url.pathname}
 			<div
 				class="row-start-1 col-start-1"
 				in:fly={{
@@ -162,6 +163,7 @@
 					duration,
 					easing: quintOut,
 				}}
+			>
 				<div
 					class="flex flex-col h-full pb-36 md:pb-0"
 					in:fade={{
@@ -175,9 +177,9 @@
 						delay: 200,
 					}}
 				>
-			>-->
-				<div class="flex flex-col h-full pb-36 md:pb-0">
-					{@render children()}
+					<div class="flex flex-col h-full pb-36 md:pb-0">
+						{@render children()}
+					</div>
 				</div>
 			</div>
 		{/key}
@@ -209,7 +211,7 @@
 </div>
 
 <!-- Gradients placed here to prevent it overlapping in transitions -->
-{#if data.pathname === "/"}
+{#if page.url.pathname === "/"}
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
@@ -220,19 +222,19 @@
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient);"
 	></div>
-{:else if data.pathname === "/convert" && $showGradient}
+{:else if page.url.pathname === "/convert" && $showGradient}
 	<div
 		id="gradient-bg"
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
 	></div>
-{:else if data.pathname === "/settings"}
+{:else if page.url.pathname === "/settings"}
 	<div
 		id="gradient-bg"
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
 		style="background: var(--bg-gradient-blue);"
 	></div>
-{:else if data.pathname === "/about"}
+{:else if page.url.pathname === "/about"}
 	<div
 		id="gradient-bg"
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"

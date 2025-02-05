@@ -1,3 +1,4 @@
+import { isMobile } from "$lib/store/index.svelte";
 import type { AnimationConfig, FlipParams } from "svelte/animate";
 import { cubicOut } from "svelte/easing";
 import {
@@ -19,7 +20,7 @@ export function fade(node: HTMLElement, options: FadeParams) {
 }
 
 export function fly(node: HTMLElement, options: FlyParams) {
-	if (localStorage.getItem("motion") === "false") return {};
+	if (localStorage.getItem("motion") === "false" || isMobile) return {};
 	const animation = svelteFly(node, options);
 	return animation;
 }
