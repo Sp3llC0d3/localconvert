@@ -180,9 +180,7 @@
 						delay: isMobile ? 0 : 200,
 					}}
 				>
-					<div class="flex flex-col h-full pb-36 md:pb-0">
-						{@render children()}
-					</div>
+					{@render children()}
 				</div>
 			</div>
 		{/key}
@@ -243,7 +241,9 @@
 			}}
 		>
 			<img
-				class="object-cover w-full {!isMobile ? "h-[calc(100%-66px)]" : "h-full"} blur-md"
+				class="object-cover w-full {!isMobile
+					? 'h-[calc(100%-66px)]'
+					: 'h-full'} blur-md"
 				src={files.files[0].blobUrl}
 				alt={files.files[0].name}
 			/>
