@@ -173,18 +173,18 @@
 			}}
 		>
 			<img
-				class="object-cover w-full h-full blur-xs"
+				class="object-cover w-full h-[calc(100%-66px)] blur-md"
 				src={files.files[0].blobUrl}
 				alt={files.files[0].name}
 			/>
-			<div class="absolute bottom-0 left-0 w-full h-full">
+			<!-- <div class="absolute bottom-0 left-0 w-full h-full">
 				<ProgressiveBlur
 					direction="bottom"
 					endIntensity={256}
 					iterations={8}
 					fadeTo="var(--bg)"
 				/>
-			</div>
+			</div> -->
 		</div>
 	{/if}
 </div>
