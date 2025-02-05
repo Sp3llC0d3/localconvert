@@ -29,8 +29,8 @@
 		}
 	}
 
-	function setAnimation(motion: boolean) {
-		if (motion) {
+	function setEffects(effects: boolean) {
+		if (effects) {
 			enableMotionElement.classList.add("selected");
 			disableMotionElement.classList.remove("selected");
 			setMotion(true);
@@ -127,7 +127,7 @@
 					<div class="flex gap-3 w-full">
 						<button
 							bind:this={enableMotionElement}
-							onclick={() => setAnimation(true)}
+							onclick={() => setEffects(true)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
@@ -136,7 +136,7 @@
 
 						<button
 							bind:this={disableMotionElement}
-							onclick={() => setAnimation(false)}
+							onclick={() => setEffects(false)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />

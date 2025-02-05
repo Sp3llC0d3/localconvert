@@ -173,12 +173,12 @@
 					in:fade={{
 						duration,
 						easing: quintOut,
-						delay: isMobile ? 0 : 100,
+						delay: $isMobile ? 0 : 100,
 					}}
 					out:fade={{
 						duration,
 						easing: quintOut,
-						delay: isMobile ? 0 : 200,
+						delay: $isMobile ? 0 : 200,
 					}}
 				>
 					{@render children()}
@@ -217,7 +217,7 @@
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
-		<VertVBig class="fill-[--fg] opacity-50" />
+		<VertVBig class="fill-[--fg] opacity-10 w-[108%] h-[108%]"/>
 	</div>
 	<div
 		id="gradient-bg"
@@ -242,7 +242,7 @@
 			}}
 		>
 			<img
-				class="object-cover w-full {!isMobile
+				class="object-cover w-full {!$isMobile
 					? 'h-[calc(100%-66px)]'
 					: 'h-full'} blur-md"
 				src={files.files[0].blobUrl}

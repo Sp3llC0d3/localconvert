@@ -45,20 +45,10 @@
 	// backgrounds
 	--bg: hsl(0, 0%, 95%);
 	--bg-gradient: linear-gradient(
-			to bottom left,
-			hsla(235, 100%, 50%, 0.3),
-			hsla(235, 100%, 50%, 0) 75%
-		),
-		linear-gradient(
-			to bottom right,
-			hsla(353, 100%, 50%, 0.4),
-			hsla(353, 100%, 50%, 0) 50%
-		),
-		linear-gradient(
-			to bottom,
-			hsla(287, 100%, 50%, 0.2),
-			hsla(287, 100%, 50%, 0)
-		);
+		to bottom,
+		var(--accent-pink),
+		hsla(303, 100%, 50%, 0) 100%
+	);
 	--bg-gradient-pink: linear-gradient(
 		to bottom,
 		var(--accent-pink),
@@ -106,20 +96,10 @@
 	// backgrounds
 	--bg: hsl(220, 5%, 12%);
 	--bg-gradient: linear-gradient(
-			to bottom,
-			hsla(287, 100%, 50%, 0.1),
-			hsla(287, 100%, 50%, 0)
-		),
-		linear-gradient(
-			to bottom left,
-			hsla(235, 100%, 50%, 0.07),
-			hsla(235, 100%, 50%, 0) 50%
-		),
-		linear-gradient(
-			to bottom right,
-			hsla(353, 100%, 50%, 0.07),
-			hsla(353, 100%, 50%, 0) 50%
-		);
+		to bottom,
+		hsla(303, 100%, 50%, 0.1),
+		hsla(303, 100%, 50%, 0) 100%
+	);
 	--bg-gradient-pink: linear-gradient(
 		to bottom,
 		hsla(303, 100%, 50%, 0.1),

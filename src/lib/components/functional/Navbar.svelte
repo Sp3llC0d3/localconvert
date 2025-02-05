@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 	import { duration, fade } from "$lib/animation";
 	import { setTheme } from "$lib/store/index.svelte";
 	import clsx from "clsx";
@@ -31,7 +31,7 @@
 	const linkRects = $derived(links.map((l) => l.getBoundingClientRect()));
 
 	const selectedIndex = $derived(
-		items.findIndex((i) => i.activeMatch($page.url.pathname)),
+		items.findIndex((i) => i.activeMatch(page.url.pathname)),
 	);
 </script>
 
@@ -45,7 +45,7 @@
 			"w-16 md:w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
 			{
 				"bg-panel-accented":
-					item.activeMatch($page.url.pathname) && !browser,
+					item.activeMatch(page.url.pathname) && !browser,
 			},
 		)}
 		draggable={false}
@@ -116,13 +116,14 @@
 						0)}px; transition: left var(--transition) {duration}ms, top var(--transition) {duration}ms;"
 			></div>
 		{/if}
-		<div
+		<a
 			class="w-32 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
+			href="/"
 		>
 			<div class="h-5 w-full">
 				<Logo />
 			</div>
-		</div>
+		</a>
 		{#each items as item, i (item.url)}
 			{@render link(item, i)}
 		{/each}
