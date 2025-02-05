@@ -131,7 +131,7 @@
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
-							Enable animations
+							Enable
 						</button>
 
 						<button
@@ -140,7 +140,7 @@
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />
-							Disable animations
+							Disable
 						</button>
 					</div>
 				</div>

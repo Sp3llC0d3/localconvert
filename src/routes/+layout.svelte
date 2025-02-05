@@ -145,6 +145,12 @@
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
+				transition:fade={{ duration, easing: quintOut }}
+			>
+				<!--
+			FIXME fly animations cause issues for some reason (page height extending during transition, causing scrollbar to disappear briefly (on mobile) & ability to scroll)
+			<div
+				class="row-start-1 col-start-1"
 				in:fly={{
 					x: goingLeft ? -window.innerWidth : window.innerWidth,
 					duration,
@@ -156,7 +162,6 @@
 					duration,
 					easing: quintOut,
 				}}
-			>
 				<div
 					class="flex flex-col h-full pb-36 md:pb-0"
 					in:fade={{
@@ -170,6 +175,8 @@
 						delay: 200,
 					}}
 				>
+			>-->
+				<div class="flex flex-col h-full pb-36 md:pb-0">
 					{@render children()}
 				</div>
 			</div>
@@ -202,35 +209,33 @@
 </div>
 
 <!-- Gradients placed here to prevent it overlapping in transitions -->
-{#if $showGradient}
-	{#if data.pathname === "/"}
-		<div
-			class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
-		>
-			<VertVBig class="fill-[--fg] opacity-50" />
-		</div>
-		<div
-			id="gradient-bg"
-			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-			style="background: var(--bg-gradient);"
-		></div>
-	{:else if data.pathname === "/convert"}
-		<div
-			id="gradient-bg"
-			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-			style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
-		></div>
-	{:else if data.pathname === "/settings"}
-		<div
-			id="gradient-bg"
-			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-			style="background: var(--bg-gradient-blue);"
-		></div>
-	{:else if data.pathname === "/about"}
-		<div
-			id="gradient-bg"
-			class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
-			style="background: var(--bg-gradient-pink);"
-		></div>
-	{/if}
+{#if data.pathname === "/"}
+	<div
+		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+	>
+		<VertVBig class="fill-[--fg] opacity-50" />
+	</div>
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient);"
+	></div>
+{:else if data.pathname === "/convert" && $showGradient}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
+	></div>
+{:else if data.pathname === "/settings"}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-blue);"
+	></div>
+{:else if data.pathname === "/about"}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-pink);"
+	></div>
 {/if}

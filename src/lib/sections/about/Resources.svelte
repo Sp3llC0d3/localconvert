@@ -20,7 +20,7 @@
 			class="btn flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<MessageCircleMoreIcon size="24" class="inline-block mr-2" />
-			Discord server
+			Discord
 		</a>
 		<a
 			href="https://github.com/not-nullptr/VERT"
@@ -29,7 +29,7 @@
 			class="btn flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<GithubIcon size="24" class="inline-block mr-2" />
-			Source code
+			Source
 		</a>
 	</div>
 </Panel>
