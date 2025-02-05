@@ -113,7 +113,7 @@
 						/>
 						<div class="w-full flex items-center justify-between">
 							<button
-								class="btn p-0 w-14 h-14 {isAudio
+								class="btn p-0 w-14 h-14 text-black {isAudio
 									? 'bg-accent-purple'
 									: 'bg-accent-blue'}"
 								disabled={!files.ready}

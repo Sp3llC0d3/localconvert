@@ -132,17 +132,18 @@
 	<div>
 		<!-- Mobile logo -->
 		<div class="flex md:hidden justify-center items-center p-8">
-			<div
-				class="flex items-center justify-center w-36 h-20 bg-panel p-4 rounded-2xl"
+			<a
+				class="flex items-center justify-center w-36 h-[72px] bg-panel p-4 rounded-[20px] shadow-panel"
+				href="/"
 			>
 				<div
-					class="w-[120px] h-14 bg-accent rounded-xl flex items-center justify-center"
+					class="h-14 bg-accent rounded-[14px] flex items-center justify-center"
 				>
-					<div class="h-5 w-full">
+					<div class="w-[128px] h-5">
 						<Logo />
 					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 
 		<!-- Desktop navbar -->
