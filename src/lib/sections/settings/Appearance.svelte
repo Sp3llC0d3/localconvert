@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { setMotion, setTheme } from "$lib/store/index.svelte";
+	import { motion, setMotion, setTheme } from "$lib/store/index.svelte";
 	import {
 		MoonIcon,
 		PaletteIcon,
@@ -55,7 +55,7 @@
 
 		updateTheme();
 
-		if (localStorage.getItem("motion") === "true") {
+		if ($motion) {
 			enableMotionElement.classList.add("selected");
 			disableMotionElement.classList.remove("selected");
 		} else {

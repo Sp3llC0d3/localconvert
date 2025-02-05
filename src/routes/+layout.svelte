@@ -14,6 +14,7 @@
 		files,
 		gradientColor,
 		isMobile,
+		motion,
 		showGradient,
 	} from "$lib/store/index.svelte";
 	import {
@@ -24,9 +25,9 @@
 	} from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
-	import { writable } from "svelte/store";
 	import "../app.scss";
-	let { children, data } = $props();
+	import { writable } from 'svelte/store';
+	let { children } = $props();
 
 	let shouldGoBack = writable(false);
 	let navbar = $state<HTMLDivElement>();
@@ -88,9 +89,11 @@
 		navbar?.addEventListener("mouseleave", mouseLeave);
 
 		isMobile.set(window.innerWidth <= 768);
-		document.addEventListener("resize", () => {
+		window.addEventListener("resize", () => {
 			isMobile.set(window.innerWidth <= 768);
 		});
+
+		motion.set(localStorage.getItem("motion") === "true");
 	});
 
 	let goingLeft = $state(false);
@@ -169,12 +172,12 @@
 					in:fade={{
 						duration,
 						easing: quintOut,
-						delay: 100,
+						delay: isMobile ? 0 : 100,
 					}}
 					out:fade={{
 						duration,
 						easing: quintOut,
-						delay: 200,
+						delay: isMobile ? 0 : 200,
 					}}
 				>
 					<div class="flex flex-col h-full pb-36 md:pb-0">
