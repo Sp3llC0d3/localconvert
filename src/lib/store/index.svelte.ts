@@ -173,14 +173,15 @@ class Files {
 	}
 }
 
-export function setTheme(theme: "light" | "dark") {
+export function setTheme(themeTo: "light" | "dark") {
 	document.documentElement.classList.remove("light", "dark");
-	document.documentElement.classList.add(theme);
-	localStorage.setItem("theme", theme);
+	document.documentElement.classList.add(themeTo);
+	localStorage.setItem("theme", themeTo);
 	window.plausible("Theme set", {
-		props: { theme },
+		props: { theme: themeTo },
 	});
-	log(["theme"], `set to ${theme}`);
+	log(["theme"], `set to ${themeTo}`);
+	theme.set(themeTo);
 }
 
 export function setMotion(motionEnabled: boolean) {
@@ -198,3 +199,4 @@ export const gradientColor = writable("");
 
 export const isMobile = writable(false);
 export const motion = writable(true);
+export const theme = writable<"light" | "dark">("light");

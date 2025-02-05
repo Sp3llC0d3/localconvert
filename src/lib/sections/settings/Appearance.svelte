@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { motion, setMotion, setTheme } from "$lib/store/index.svelte";
+	import {
+		theme,
+		motion,
+		setMotion,
+		setTheme,
+	} from "$lib/store/index.svelte";
 	import {
 		MoonIcon,
 		PaletteIcon,
@@ -8,70 +13,47 @@
 		PlayIcon,
 		SunIcon,
 	} from "lucide-svelte";
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
 
 	let lightElement: HTMLButtonElement;
 	let darkElement: HTMLButtonElement;
 	let enableMotionElement: HTMLButtonElement;
 	let disableMotionElement: HTMLButtonElement;
 
-	function setDark(dark: boolean) {
-		document.documentElement.classList.remove("light", "dark");
+	let motionUnsubscribe: () => void;
+	let themeUnsubscribe: () => void;
 
-		if (dark) {
-			lightElement.classList.remove("selected");
-			darkElement.classList.add("selected");
-			setTheme("dark");
-		} else {
-			darkElement.classList.remove("selected");
-			lightElement.classList.add("selected");
-			setTheme("light");
-		}
-	}
-
-	function setEffects(effects: boolean) {
-		if (effects) {
+	const updateMotionClasses = (value: boolean) => {
+		if (value) {
 			enableMotionElement.classList.add("selected");
 			disableMotionElement.classList.remove("selected");
-			setMotion(true);
 		} else {
 			disableMotionElement.classList.add("selected");
 			enableMotionElement.classList.remove("selected");
-			setMotion(false);
 		}
-	}
+	};
+
+	const updateThemeClasses = (value: string) => {
+		document.documentElement.classList.remove("light", "dark");
+		document.documentElement.classList.add(value);
+
+		if (value === "dark") {
+			darkElement.classList.add("selected");
+			lightElement.classList.remove("selected");
+		} else {
+			lightElement.classList.add("selected");
+			darkElement.classList.remove("selected");
+		}
+	};
 
 	onMount(() => {
-		const updateTheme = () => {
-			const list = document.documentElement.classList;
-			if (list.contains("dark")) {
-				lightElement.classList.remove("selected");
-				darkElement.classList.add("selected");
-			} else {
-				darkElement.classList.remove("selected");
-				lightElement.classList.add("selected");
-			}
-		};
+		motionUnsubscribe = motion.subscribe(updateMotionClasses);
+		themeUnsubscribe = theme.subscribe(updateThemeClasses);
+	});
 
-		updateTheme();
-
-		if ($motion) {
-			enableMotionElement.classList.add("selected");
-			disableMotionElement.classList.remove("selected");
-		} else {
-			disableMotionElement.classList.add("selected");
-			enableMotionElement.classList.remove("selected");
-		}
-
-		// use MutationObserver to check when theme is changed (<html> class changes)
-		const observer = new MutationObserver(updateTheme);
-
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["class"],
-		});
-
-		return () => observer.disconnect();
+	onDestroy(() => {
+		if (motionUnsubscribe) motionUnsubscribe();
+		if (themeUnsubscribe) themeUnsubscribe();
 	});
 </script>
 
@@ -97,7 +79,7 @@
 					<div class="flex gap-3 w-full">
 						<button
 							bind:this={lightElement}
-							onclick={() => setDark(false)}
+							onclick={() => setTheme("light")}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<SunIcon size="24" class="inline-block mr-2" />
@@ -106,7 +88,7 @@
 
 						<button
 							bind:this={darkElement}
-							onclick={() => setDark(true)}
+							onclick={() => setTheme("dark")}
 							class="btn flex-1 p-4 rounded-lg text-black flex items-center justify-center"
 						>
 							<MoonIcon size="24" class="inline-block mr-2" />
@@ -127,7 +109,7 @@
 					<div class="flex gap-3 w-full">
 						<button
 							bind:this={enableMotionElement}
-							onclick={() => setEffects(true)}
+							onclick={() => setMotion(true)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
@@ -136,7 +118,7 @@
 
 						<button
 							bind:this={disableMotionElement}
-							onclick={() => setEffects(false)}
+							onclick={() => setMotion(false)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />

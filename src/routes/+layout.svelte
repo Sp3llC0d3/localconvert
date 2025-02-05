@@ -93,7 +93,8 @@
 			isMobile.set(window.innerWidth <= 768);
 		});
 
-		motion.set(localStorage.getItem("motion") === "true");
+		// defaults to true if not set
+		motion.set(localStorage.getItem("motion") !== "false");
 	});
 
 	let goingLeft = $state(false);
