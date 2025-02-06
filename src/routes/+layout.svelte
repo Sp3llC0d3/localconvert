@@ -16,6 +16,7 @@
 		isMobile,
 		motion,
 		showGradient,
+		theme,
 	} from "$lib/store/index.svelte";
 	import {
 		InfoIcon,
@@ -93,8 +94,8 @@
 			isMobile.set(window.innerWidth <= 768);
 		});
 
-		// defaults to true if not set
-		motion.set(localStorage.getItem("motion") !== "false");
+		motion.set(localStorage.getItem("motion") !== "false"); // defaults to true if not set
+		theme.set(localStorage.getItem("theme") as "light" | "dark" || "light");
 	});
 
 	let goingLeft = $state(false);
@@ -218,7 +219,7 @@
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
-		<VertVBig class="fill-[--fg] opacity-10 w-[108%] h-[108%]"/>
+		<VertVBig class="fill-[--fg] opacity-10 w-[108%] h-[108%]" />
 	</div>
 	<div
 		id="gradient-bg"

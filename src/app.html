@@ -8,13 +8,15 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		%sveltekit.head%
 		<script>
-			(function() {
+			(function () {
 				// Apply theme before DOM is loaded
 				let theme = localStorage.getItem("theme");
 				const prefersDark = window.matchMedia(
 					"(prefers-color-scheme: dark)",
 				).matches;
-				console.log(`Theme: ${theme || "default"}, prefers dark: ${prefersDark}`);
+				console.log(
+					`Theme: ${theme || "N/A"}, prefers dark: ${prefersDark}`,
+				);
 
 				if (theme !== "light" && theme !== "dark") {
 					console.log("Invalid theme, setting to default");
@@ -23,14 +25,15 @@
 						// first time visitor
 						window.addEventListener("load", () => {
 							window.plausible("Theme set", {
-								props: { theme: prefersDark ? "dark" : "light" },
+								props: {
+									theme: prefersDark ? "dark" : "light",
+								},
 							});
 						});
 					}
 
 					// invalid theme or first time visitor, set to default
 					theme = prefersDark ? "dark" : "light";
-					console.log(`Setting theme to ${theme}`);
 					localStorage.setItem("theme", theme);
 				}
 
