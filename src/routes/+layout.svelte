@@ -95,7 +95,9 @@
 		});
 
 		motion.set(localStorage.getItem("motion") !== "false"); // defaults to true if not set
-		theme.set(localStorage.getItem("theme") as "light" | "dark" || "light");
+		theme.set(
+			(localStorage.getItem("theme") as "light" | "dark") || "light",
+		);
 	});
 
 	let goingLeft = $state(false);
@@ -234,7 +236,7 @@
 	></div>
 {:else if page.url.pathname === "/convert" && files.files.length === 1 && files.files[0].blobUrl}
 	<div
-		class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1"
+		class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1 scale-105"
 	>
 		<div
 			class="w-full relative"
@@ -244,12 +246,14 @@
 			}}
 		>
 			<img
-				class="object-cover w-full {!$isMobile
-					? 'h-[calc(100%-66px)]'
-					: 'h-full'} blur-md"
+				class="object-cover w-full h-full blur-md"
 				src={files.files[0].blobUrl}
 				alt={files.files[0].name}
 			/>
+			<div
+				class="absolute top-0 left-0 w-full h-full"
+				style="background: var(--bg-gradient-image);"
+			></div>
 			<!-- <div class="absolute bottom-0 left-0 w-full h-full">
 				<ProgressiveBlur
 					direction="bottom"
