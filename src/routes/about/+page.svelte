@@ -3,6 +3,9 @@
 	import * as About from "$lib/sections/about";
 	import { InfoIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
+	import avatarNullptr from "$lib/assets/avatars/nullptr.jpg";
+	import avatarRealmy from "$lib/assets/avatars/realmy.jpg";
+	import avatarJovannMC from "$lib/assets/avatars/jovannmc.jpg";
 
 	interface Donator {
 		name: string;
@@ -24,27 +27,34 @@
 			name: "nullptr",
 			github: "https://github.com/not-nullptr",
 			role: "Lead developer; conversion backend, UI implementation",
-			avatar: "https://avatars.githubusercontent.com/u/62841684?v=4",
+			avatar: avatarNullptr,
 		},
 		{
 			name: "Realmy",
 			github: "https://github.com/RealmyTheMan",
 			role: "Lead designer; logo and branding, user interface design",
-			avatar: "https://avatars.githubusercontent.com/u/163438634?v=4",
+			avatar: avatarRealmy,
 		},
 		{
 			name: "JovannMC",
 			github: "https://github.com/JovannMC",
 			role: "Developer; UI implementation",
-			avatar: "https://avatars.githubusercontent.com/u/45893380?v=4",
+			avatar: avatarJovannMC,
 		},
 	];
 
 	let ghContribs: Contributor[] = [];
 
 	onMount(async () => {
+		// Check if the data is already in sessionStorage
+		const cachedContribs = sessionStorage.getItem("ghContribs");
+		if (cachedContribs) {
+			ghContribs = JSON.parse(cachedContribs);
+			console.log("Loaded GitHub contributors from cache");
+			return;
+		}
+	
 		// Fetch GitHub contributors
-		// TODO: cache it, so we don't have to fetch it every time the page is loaded
 		try {
 			const response = await fetch(
 				"https://api.github.com/repos/not-nullptr/VERT/contributors",
@@ -53,27 +63,38 @@
 				throw new Error(`HTTP error, status: ${response.status}`);
 			}
 			const allContribs = await response.json();
-
+	
 			// Filter out main contributors
 			const mainContribNames = mainContribs.map((contrib) =>
 				contrib.github.split("/").pop(),
 			);
-			ghContribs = allContribs
-				.filter(
-					(contrib: { login: string }) =>
-						!mainContribNames.includes(contrib.login),
-				)
-				.map(
-					(contrib: {
-						login: string;
-						avatar_url: string;
-						html_url: string;
-					}) => ({
-						name: contrib.login,
-						avatar: contrib.avatar_url,
-						github: contrib.html_url,
-					}),
-				);
+			const filteredContribs = allContribs.filter(
+				(contrib: { login: string }) =>
+					!mainContribNames.includes(contrib.login),
+			);
+	
+			// Fetch and cache avatar images as Base64
+			const fetchAvatar = async (url: string) => {
+				const res = await fetch(url);
+				const blob = await res.blob();
+				return new Promise<string>((resolve, reject) => {
+					const reader = new FileReader();
+					reader.onloadend = () => resolve(reader.result as string);
+					reader.onerror = reject;
+					reader.readAsDataURL(blob);
+				});
+			};
+	
+			ghContribs = await Promise.all(
+				filteredContribs.map(async (contrib: { login: string; avatar_url: string; html_url: string }) => ({
+					name: contrib.login,
+					avatar: await fetchAvatar(contrib.avatar_url),
+					github: contrib.html_url,
+				})),
+			);
+	
+			// Cache the data in sessionStorage
+			sessionStorage.setItem("ghContribs", JSON.stringify(ghContribs));
 		} catch (e) {
 			error(["general"], `Error fetching GitHub contributors: ${e}`);
 		}
