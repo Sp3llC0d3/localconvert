@@ -54,20 +54,40 @@
 		var(--accent-pink),
 		hsla(303, 100%, 50%, 0) 25%
 	);
+	--bg-gradient-pink-alt: linear-gradient(
+		to top,
+		var(--accent-pink),
+		hsl(303, 100%, 91%) 100%
+	);
 	--bg-gradient-red: linear-gradient(
 		to bottom,
 		var(--accent-red),
 		hsla(348, 100%, 50%, 0) 25%
+	);
+	--bg-gradient-red-alt: linear-gradient(
+		to top,
+		var(--accent-red),
+		hsl(348, 100%, 91%) 100%
 	);
 	--bg-gradient-purple: linear-gradient(
 		to bottom,
 		var(--accent-purple),
 		hsla(264, 100%, 50%, 0) 25%
 	);
+	--bg-gradient-purple-alt: linear-gradient(
+		to top,
+		var(--accent-purple),
+		hsl(264, 100%, 91%) 100%
+	);
 	--bg-gradient-blue: linear-gradient(
 		to bottom,
 		var(--accent-blue),
 		hsla(220, 100%, 50%, 0) 25%
+	);
+	--bg-gradient-blue-alt: linear-gradient(
+		to top,
+		var(--accent-blue),
+		hsl(220, 100%, 91%) 100%
 	);
 	--bg-panel: hsl(0, 0%, 100%);
 	--bg-panel-accented: hsl(0, 0%, 92%);

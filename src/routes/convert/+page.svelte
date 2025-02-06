@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { duration, fade } from "$lib/animation";
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
-	import ProgressiveBlur from "$lib/components/visual/effects/ProgressiveBlur.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import {
@@ -13,14 +11,15 @@
 	} from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
 	import {
-		Disc2Icon,
+		AudioLines,
 		DownloadIcon,
+		FileMusicIcon,
 		FileQuestionIcon,
 		ImageIcon,
+		ImageOffIcon,
 		RotateCwIcon,
 		XIcon,
 	} from "lucide-svelte";
-	import { quintOut } from "svelte/easing";
 
 	$effect(() => {
 		if (files.files.length === 1 && files.files[0].blobUrl) {
@@ -31,8 +30,12 @@
 
 		// Set gradient color depending on the file types
 		// TODO: if more file types added, add a "fileType" property to the file object
-		const allAudio = files.files.every((file) => file.converter?.name === "ffmpeg");
-		const allImages = files.files.every((file) => file.converter?.name !== "ffmpeg");
+		const allAudio = files.files.every(
+			(file) => file.converter?.name === "ffmpeg",
+		);
+		const allImages = files.files.every(
+			(file) => file.converter?.name !== "ffmpeg",
+		);
 
 		if (files.files.length === 0 || (!allAudio && !allImages)) {
 			gradientColor.set("");
@@ -49,7 +52,7 @@
 			{#if !file.converter}
 				<FileQuestionIcon size="24" class="flex-shrink-0" />
 			{:else if isAudio}
-				<Disc2Icon size="24" class="flex-shrink-0" />
+				<AudioLines size="24" class="flex-shrink-0" />
 			{:else}
 				<ImageIcon size="24" class="flex-shrink-0" />
 			{/if}
@@ -93,11 +96,26 @@
 					class="flex gap-4 w-full h-[152px] overflow-hidden relative"
 				>
 					<div class="w-1/2 h-full overflow-hidden rounded-xl">
-						<img
-							class="object-cover w-full h-full"
-							src={file.blobUrl}
-							alt={file.name}
-						/>
+						{#if file.blobUrl}
+							<img
+								class="object-cover w-full h-full"
+								src={file.blobUrl}
+								alt={file.name}
+							/>
+						{:else}
+							<div
+								class="w-full h-full flex items-center justify-center"
+								style="background: var({isAudio
+									? '--bg-gradient-purple-alt'
+									: '--bg-gradient-blue-alt'})"
+							>
+								{#if isAudio}
+									<FileMusicIcon size="56" />
+								{:else}
+									<ImageOffIcon size="56" />
+								{/if}
+							</div>
+						{/if}
 					</div>
 				</div>
 				<div
