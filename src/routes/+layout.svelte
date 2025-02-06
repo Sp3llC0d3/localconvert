@@ -219,7 +219,7 @@
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
-		<VertVBig class="fill-[--fg] opacity-10 w-[108%] h-[108%]" />
+		<VertVBig class="fill-[--fg] opacity-10 scale-[200%] md:scale-[80%]" />
 	</div>
 	<div
 		id="gradient-bg"
