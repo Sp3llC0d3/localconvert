@@ -100,7 +100,7 @@
 				duration,
 				easing: quintOut,
 			}}
-			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background rounded-xl"
+			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background rounded-xl max-h-[30vh] overflow-y-auto"
 		>
 			{#each options as option}
 				<button
