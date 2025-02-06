@@ -120,7 +120,33 @@
 <svelte:head>
 	<title>VERT.sh</title>
 	<meta name="theme-color" content="#F2ABEE" />
+	<meta
+		name="title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		name="description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		property="og:description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
 	<meta property="og:image" content={featuredImage} />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta
+		property="twitter:title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		property="twitter:description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
 	<meta property="twitter:image" content={featuredImage} />
 	{#if PUB_PLAUSIBLE_URL}<script
 			defer
@@ -221,7 +247,9 @@
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 	>
-		<VertVBig class="fill-[--fg] opacity-10 dynadark:opacity-5 scale-[200%] md:scale-[80%]" />
+		<VertVBig
+			class="fill-[--fg] opacity-10 dynadark:opacity-5 scale-[200%] md:scale-[80%]"
+		/>
 	</div>
 	<div
 		id="gradient-bg"
