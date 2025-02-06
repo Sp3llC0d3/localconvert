@@ -31,6 +31,7 @@ export class VipsConverter extends Converter {
 		".raw",
 		".tif",
 		".tiff",
+		".jfif",
 	];
 
 	public readonly reportsProgress = false;
@@ -63,7 +64,10 @@ export class VipsConverter extends Converter {
 
 		if (res.type === "finished") {
 			log(["converters", this.name], `converted ${input.name} to ${to}`);
-			return new VertFile(new File([res.output], input.name), to);
+			return new VertFile(
+				new File([res.output as unknown as BlobPart], input.name),
+				to,
+			);
 		}
 
 		if (res.type === "error") {
