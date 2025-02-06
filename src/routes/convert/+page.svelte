@@ -104,7 +104,7 @@
 							/>
 						{:else}
 							<div
-								class="w-full h-full flex items-center justify-center"
+								class="w-full h-full flex items-center justify-center text-black"
 								style="background: var({isAudio
 									? '--bg-gradient-purple-alt'
 									: '--bg-gradient-blue-alt'})"
