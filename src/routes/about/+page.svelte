@@ -6,6 +6,7 @@
 	import avatarNullptr from "$lib/assets/avatars/nullptr.jpg";
 	import avatarRealmy from "$lib/assets/avatars/realmy.jpg";
 	import avatarJovannMC from "$lib/assets/avatars/jovannmc.jpg";
+	import { GITHUB_API_URL } from "$lib/consts";
 
 	interface Donator {
 		name: string;
@@ -53,17 +54,15 @@
 			console.log("Loaded GitHub contributors from cache");
 			return;
 		}
-	
+
 		// Fetch GitHub contributors
 		try {
-			const response = await fetch(
-				"https://api.github.com/repos/not-nullptr/VERT/contributors",
-			);
+			const response = await fetch(`${GITHUB_API_URL}/contributors`);
 			if (!response.ok) {
 				throw new Error(`HTTP error, status: ${response.status}`);
 			}
 			const allContribs = await response.json();
-	
+
 			// Filter out main contributors
 			const mainContribNames = mainContribs.map((contrib) =>
 				contrib.github.split("/").pop(),
@@ -72,7 +71,7 @@
 				(contrib: { login: string }) =>
 					!mainContribNames.includes(contrib.login),
 			);
-	
+
 			// Fetch and cache avatar images as Base64
 			const fetchAvatar = async (url: string) => {
 				const res = await fetch(url);
@@ -84,15 +83,21 @@
 					reader.readAsDataURL(blob);
 				});
 			};
-	
+
 			ghContribs = await Promise.all(
-				filteredContribs.map(async (contrib: { login: string; avatar_url: string; html_url: string }) => ({
-					name: contrib.login,
-					avatar: await fetchAvatar(contrib.avatar_url),
-					github: contrib.html_url,
-				})),
+				filteredContribs.map(
+					async (contrib: {
+						login: string;
+						avatar_url: string;
+						html_url: string;
+					}) => ({
+						name: contrib.login,
+						avatar: await fetchAvatar(contrib.avatar_url),
+						github: contrib.html_url,
+					}),
+				),
 			);
-	
+
 			// Cache the data in sessionStorage
 			sessionStorage.setItem("ghContribs", JSON.stringify(ghContribs));
 		} catch (e) {

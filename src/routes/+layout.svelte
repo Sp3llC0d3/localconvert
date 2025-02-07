@@ -28,6 +28,7 @@
 	import { quintOut } from "svelte/easing";
 	import "../app.scss";
 	import { writable } from "svelte/store";
+	import { DISCORD_URL, GITHUB_URL } from "$lib/consts";
 	let { children } = $props();
 
 	let shouldGoBack = writable(false);
@@ -225,8 +226,8 @@
 				class="w-full h-full"
 				items={{
 					//"Privacy policy": "#",
-					"Source code": "https://github.com/not-nullptr/VERT",
-					"Discord server": "https://discord.gg/kqevGxYPak",
+					"Source code": GITHUB_URL,
+					"Discord server": DISCORD_URL,
 				}}
 			/>
 		</div>

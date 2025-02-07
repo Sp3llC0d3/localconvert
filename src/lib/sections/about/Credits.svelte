@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { HeartHandshakeIcon } from "lucide-svelte";
+	import { GITHUB_URL } from "$lib/consts";
 
 	let { mainContribs, ghContribs } = $props();
 </script>
@@ -63,7 +64,7 @@
 					Big thanks to all these people for helping out!
 					<a
 						class="text-blue-500 font-normal hover:underline"
-						href="https://github.com/not-nullptr/VERT"
+						href={GITHUB_URL}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -75,7 +76,7 @@
 					Seems like no one has contributed yet...
 					<a
 						class="text-blue-500 font-normal hover:underline"
-						href="https://github.com/not-nullptr/VERT"
+						href={GITHUB_URL}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
