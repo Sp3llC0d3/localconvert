@@ -72,7 +72,7 @@
 			<div class="flex justify-end">
 				<button
 					onclick={save}
-					class="w-fit btn px-6 py-4 rounded-3xl bg-accent text-black flex items-center justify-center"
+					class="w-fit btn px-6 py-4 bg-accent text-black flex items-center justify-center"
 				>
 					<SaveAllIcon size="24" class="inline-block mr-2" />
 					Save
