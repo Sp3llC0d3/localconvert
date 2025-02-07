@@ -102,7 +102,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="max-w-[796px] w-full h-20 flex items-center gap-3 relative">
+	<Panel class="max-w-[778px] w-full h-20 flex items-center gap-3 relative">
 		{#if linkRects[selectedIndex]}
 			<div
 				class="absolute bg-panel-accented rounded-xl"
@@ -117,7 +117,7 @@
 			></div>
 		{/if}
 		<a
-			class="w-32 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
+			class="w-28 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
 			href="/"
 		>
 			<div class="h-5 w-full">

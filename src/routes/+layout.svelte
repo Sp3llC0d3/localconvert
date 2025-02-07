@@ -163,13 +163,13 @@
 		<!-- Mobile logo -->
 		<div class="flex md:hidden justify-center items-center p-8">
 			<a
-				class="flex items-center justify-center w-36 h-[72px] bg-panel p-4 rounded-[20px] shadow-panel"
+				class="flex items-center justify-center bg-panel p-2 rounded-[20px] shadow-panel"
 				href="/"
 			>
 				<div
 					class="h-14 bg-accent rounded-[14px] flex items-center justify-center"
 				>
-					<div class="w-[128px] h-5">
+					<div class="w-28 h-5">
 						<Logo />
 					</div>
 				</div>
