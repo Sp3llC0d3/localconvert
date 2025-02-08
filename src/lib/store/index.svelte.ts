@@ -186,8 +186,8 @@ class Files {
 		const blob = await downloadZip(dlFiles, "converted.zip").blob();
 		const url = URL.createObjectURL(blob);
 
-		const filenameFormat =
-			localStorage.getItem("filenameFormat") ?? "VERT_%name%";
+		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
+		const filenameFormat = settings.filenameFormat ?? "VERT_%name%";
 
 		const format = (name: string) => {
 			const date = new Date().toISOString();

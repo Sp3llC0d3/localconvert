@@ -52,7 +52,7 @@
 		const cachedContribs = sessionStorage.getItem("ghContribs");
 		if (cachedContribs) {
 			ghContribs = JSON.parse(cachedContribs);
-			log(["about"], "Loaded GitHub contributors from cache");
+			log(["about"], "loaded GitHub contributors from cache");
 			return;
 		}
 

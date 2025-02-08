@@ -57,8 +57,8 @@ export class VertFile {
 	public async download() {
 		if (!this.result) throw new Error("No result found");
 
-		const filenameFormat =
-			localStorage.getItem("filenameFormat") ?? "VERT_%name%";
+		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
+		const filenameFormat = settings.filenameFormat ?? "VERT_%name%";
 
 		const format = (name: string) => {
 			const date = new Date().toISOString();

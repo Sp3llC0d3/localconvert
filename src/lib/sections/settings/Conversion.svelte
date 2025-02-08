@@ -7,24 +7,32 @@
 	import { RefreshCwIcon, SaveAllIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
-	let filenameFormat = "VERT_%name%";
+	// let filenameFormat = "VERT_%name%";
+	let settings = $state({
+		filenameFormat: "VERT_%name%",
+	});
 
 	function save() {
-		log(["settings"], "Saving settings");
+		log(["settings"], "saving settings");
 		if (!browser) return;
 		try {
-			localStorage.setItem("filenameFormat", filenameFormat);
-			log(["settings"], `Saving filename format: ${filenameFormat}`);
-			addToast("success", "Settings saved!");
+			localStorage.setItem("settings", JSON.stringify(settings));
+			addToast("success", "settings saved!");
 		} catch (error) {
-			log(["settings", "error"], `Failed to save settings: ${error}`);
+			log(["settings", "error"], `failed to save settings: ${error}`);
 			addToast("error", "Failed to save settings!");
 		}
 	}
 
 	onMount(() => {
-		const format = localStorage.getItem("filenameFormat");
-		if (format) filenameFormat = format;
+		const savedSettings = localStorage.getItem("settings");
+		if (savedSettings) {
+			const parsedSettings = JSON.parse(savedSettings);
+			settings = {
+				...settings,
+				...parsedSettings,
+			};
+		}
 	});
 </script>
 
@@ -59,7 +67,7 @@
 				</div>
 				<FancyTextInput
 					placeholder="VERT_%name%"
-					bind:value={filenameFormat}
+					bind:value={settings.filenameFormat}
 					extension=".ext"
 					type="text"
 				/>
