@@ -51,6 +51,8 @@ export class VipsConverter extends Converter {
                 error(["converters", this.name], `error in worker: ${message.error}`);
 				addToast("error", `Error in VIPS worker, some features may not work.`);
 				throw new Error(message.error);
+			} else {
+				error(["converters", this.name], `unknown message type: ${message.type}`);
 			}
 		};
 	}
