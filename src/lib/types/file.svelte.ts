@@ -18,12 +18,14 @@ export class VertFile {
 
 	public blobUrl = $state<string>();
 
+	public processing = $state(false);
+
 	public converter: Converter | null = null;
 
 	constructor(
 		public readonly file: File,
 		to: string,
-		converter?: Converter,
+		converter?: Converter | null,
 		blobUrl?: string,
 	) {
 		this.to = to;
@@ -37,13 +39,29 @@ export class VertFile {
 		if (!this.converter) throw new Error("No converter found");
 		this.result = null;
 		this.progress = 0;
+		this.processing = true;
 		const res = await this.converter.convert(this, this.to);
+		this.processing = false;
 		this.result = res;
 		return res;
 	}
 
 	public async download() {
 		if (!this.result) throw new Error("No result found");
+
+		const filenameFormat =
+			localStorage.getItem("filenameFormat") ?? "VERT_%name%";
+
+		const format = (name: string) => {
+			const date = new Date().toISOString();
+			const baseName = this.file.name.replace(/\.[^/.]+$/, "");
+			const originalExtension = this.file.name.split('.').pop()!;
+			return name
+				.replace(/%date%/g, date)
+				.replace(/%name%/g, baseName)
+				.replace(/%extension%/g, originalExtension);
+		};
+
 		const blob = URL.createObjectURL(
 			new Blob([await this.result.file.arrayBuffer()], {
 				type: this.to.slice(1),
@@ -51,7 +69,7 @@ export class VertFile {
 		);
 		const a = document.createElement("a");
 		a.href = blob;
-		a.download = `VERT-Converted_${new Date().toISOString()}${this.to}`;
+		a.download = `${format(filenameFormat)}${this.to}`;
 		// force it to not open in a new tab
 		a.target = "_blank";
 		a.style.display = "none";

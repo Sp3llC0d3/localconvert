@@ -1,52 +1,80 @@
 <script lang="ts">
-	import "../app.scss";
-	import { goto } from "$app/navigation";
-	import { blur, duration } from "$lib/animation";
-	import { quintOut } from "svelte/easing";
-	import { files, theme } from "$lib/store/index.svelte";
-	import Logo from "$lib/components/visual/svg/Logo.svelte";
+	import { page } from "$app/state";
+	import { beforeNavigate, goto } from "$app/navigation";
+	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
+	import { duration, fly } from "$lib/animation";
+	import VertVBig from "$lib/assets/vert-bg.svg?component";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
+	import Navbar from "$lib/components/functional/Navbar.svelte";
+	import Footer from "$lib/components/visual/Footer.svelte";
+	import Logo from "$lib/components/visual/svg/Logo.svelte";
+
+	import { fade } from "$lib/animation";
 	import {
-		PUB_ENV,
-		PUB_HOSTNAME,
-		PUB_PLAUSIBLE_URL,
-	} from "$env/static/public";
-	import FancyMenu from "$lib/components/functional/FancyMenu.svelte";
-	import { writable } from "svelte/store";
-	import { MoonIcon, SunIcon } from "lucide-svelte";
-	import { browser } from "$app/environment";
-	import JSCookie from "js-cookie";
+		files,
+		gradientColor,
+		isMobile,
+		motion,
+		showGradient,
+		theme,
+	} from "$lib/store/index.svelte";
+	import {
+		InfoIcon,
+		RefreshCw,
+		SettingsIcon,
+		UploadIcon,
+	} from "lucide-svelte";
 	import { onMount } from "svelte";
-	let { children, data } = $props();
+	import { quintOut } from "svelte/easing";
+	import "../app.scss";
+	import { writable } from "svelte/store";
+	import { DISCORD_URL, GITHUB_URL } from "$lib/consts";
+	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
+	import Toast from "$lib/components/visual/Toast.svelte";
+	let { children } = $props();
 
 	let shouldGoBack = writable(false);
 	let navbar = $state<HTMLDivElement>();
 	let hover = $state(false);
+	let toastList = $state<ToastType[]>([]);
 
-	const links = $derived<
+	toasts.subscribe((value) => {
+		toastList = value as ToastType[];
+	});
+
+	const items = $derived<
 		{
 			name: string;
 			url: string;
 			activeMatch: (pathname: string) => boolean;
+			icon: any;
+			badge?: number;
 		}[]
 	>([
 		{
 			name: "Upload",
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
+			icon: UploadIcon,
 		},
 		{
-			name:
-				files.files.length > 0
-					? `Convert (${files.files.length})`
-					: `Convert`,
+			name: "Convert",
 			url: "/convert",
 			activeMatch: (pathname) => pathname === "/convert",
+			icon: RefreshCw,
+			badge: files.files.length,
+		},
+		{
+			name: "Settings",
+			url: "/settings",
+			activeMatch: (pathname) => pathname.startsWith("/settings"),
+			icon: SettingsIcon,
 		},
 		{
 			name: "About",
 			url: "/about",
 			activeMatch: (pathname) => pathname.startsWith("/about"),
+			icon: InfoIcon,
 		},
 	]);
 
@@ -56,27 +84,6 @@
 			goto("/");
 		}
 	};
-
-	$effect(() => {
-		if (!browser) return;
-		if (theme.dark) {
-			document.documentElement.classList.add("dark");
-			document.documentElement.classList.remove("light");
-			JSCookie.set("theme", "dark", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
-		} else {
-			document.documentElement.classList.add("light");
-			document.documentElement.classList.remove("dark");
-			JSCookie.set("theme", "light", {
-				path: "/",
-				sameSite: "lax",
-				expires: 2147483647,
-			});
-		}
-	});
 
 	onMount(() => {
 		const mouseEnter = () => {
@@ -89,197 +96,226 @@
 
 		navbar?.addEventListener("mouseenter", mouseEnter);
 		navbar?.addEventListener("mouseleave", mouseLeave);
+
+		isMobile.set(window.innerWidth <= 768);
+		window.addEventListener("resize", () => {
+			isMobile.set(window.innerWidth <= 768);
+		});
+
+		motion.set(localStorage.getItem("motion") !== "false"); // defaults to true if not set
+		theme.set(
+			(localStorage.getItem("theme") as "light" | "dark") || "light",
+		);
+	});
+
+	let goingLeft = $state(false);
+
+	beforeNavigate((e) => {
+		const oldIndex = items.findIndex((i) =>
+			i.activeMatch(e.from?.url.pathname || ""),
+		);
+		const newIndex = items.findIndex((i) =>
+			i.activeMatch(e.to?.url.pathname || ""),
+		);
+		if (newIndex < oldIndex) {
+			goingLeft = true;
+		} else {
+			goingLeft = false;
+		}
 	});
 </script>
 
 <svelte:head>
 	<title>VERT.sh</title>
 	<meta name="theme-color" content="#F2ABEE" />
+	<meta
+		name="title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		name="description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		property="og:description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
 	<meta property="og:image" content={featuredImage} />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta
+		property="twitter:title"
+		content="VERT.sh — Free, fast, and awesome file convert"
+	/>
+	<meta
+		property="twitter:description"
+		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
+	/>
 	<meta property="twitter:image" content={featuredImage} />
 	{#if PUB_PLAUSIBLE_URL}<script
 			defer
 			data-domain={PUB_HOSTNAME || "vert.sh"}
 			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>{/if}
+	<script src="/coi-serviceworker.min.js"></script>
 </svelte:head>
 
-<div
-	role="main"
-	class="w-full h-full max-w-screen-lg mx-auto p-4"
-	ondragenter={maybeNavToHome}
->
-	<div class="flex justify-center mb-5 lg:hidden">
-		<a
-			href="/"
-			class="px-4 relative h-14 mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:hidden flex"
-		>
-			<div class="h-6 relative w-24 items-center flex justify-center">
-				<Logo />
-				{#if PUB_ENV === "nightly"}
-					<div
-						class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
-						style="font-family: Comic Sans MS, sans-serif;"
-					>
-						NIGHTLY
-					</div>
-				{/if}
-			</div>
-		</a>
-	</div>
+<div class="flex flex-col min-h-screen h-full">
+	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 
-	<div
-		class="w-full max-w-screen-md p-1 border-solid border-2 rounded-2xl border-foreground-muted-alt flex mb-10 mx-auto lg:mt-5"
-		bind:this={navbar}
-	>
-		<div class="md:p-1">
+	<div>
+		<!-- Mobile logo -->
+		<div class="flex md:hidden justify-center items-center p-8">
 			<a
+				class="flex items-center justify-center bg-panel p-2 rounded-[20px] shadow-panel"
 				href="/"
-				class="px-3 relative w-full h-full mr-3 justify-center items-center bg-accent-background fill-accent-foreground rounded-xl md:flex hidden"
 			>
-				<div class="h-6 w-24 items-center flex justify-center relative">
-					<Logo />
-					{#if PUB_ENV === "nightly"}
-						<div
-							class="absolute -top-6 -left-10 px-2 py-1 w-fit bg-foreground-highlight text-accent-background rotate-[-10deg] rounded-xl"
-							style="font-family: Comic Sans MS, sans-serif;"
-						>
-							NIGHTLY
-						</div>
-					{/if}
+				<div
+					class="h-14 bg-accent rounded-[14px] flex items-center justify-center"
+				>
+					<div class="w-28 h-5">
+						<Logo />
+					</div>
 				</div>
 			</a>
 		</div>
 
-		<FancyMenu {links} {shouldGoBack} />
-		<div class="h-16 px-4 flex items-center">
-			<button onclick={theme.toggle} class="grid-cols-1 grid-rows-1 grid">
-				<!-- {#if theme.dark}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-					>
-						<MoonIcon />
-					</div>
-				{:else}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-					>
-						<SunIcon />
-					</div>
-				{/if} -->
-				{#if browser}
-					{#if theme.dark}
-						<div
-							in:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 0.5,
-									end: 1,
-								},
-							}}
-							out:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 1,
-									end: 1.5,
-								},
-							}}
-							class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-						>
-							<MoonIcon class="w-8" />
-						</div>
-					{:else}
-						<div
-							in:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 0.5,
-									end: 1,
-								},
-							}}
-							out:blur={{
-								blurMultiplier: 1,
-								duration,
-								easing: quintOut,
-								scale: {
-									start: 1,
-									end: 1.5,
-								},
-							}}
-							class="w-full h-full flex items-center justify-center row-start-1 col-start-1"
-						>
-							<SunIcon class="w-8" />
-						</div>
-					{/if}
-				{:else}
-					<div
-						class="w-full h-full flex items-center justify-center row-start-1 col-start-1 dynadark:hidden"
-					>
-						<SunIcon class="w-8" />
-					</div>
-					<div
-						class="w-full h-full hidden items-center justify-center row-start-1 col-start-1 dynadark:flex"
-					>
-						<MoonIcon class="w-8" />
-					</div>
-				{/if}
-			</button>
+		<!-- Desktop navbar -->
+		<div class="hidden md:flex p-8 w-screen justify-center z-50">
+			<Navbar {items} />
 		</div>
 	</div>
-	<div class="w-full max-w-screen-lg grid grid-cols-1 grid-rows-1 relative">
-		{#key data.pathname}
-			<div class="w-full">
+
+	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow">
+		{#key page.url.pathname}
+			<div
+				class="row-start-1 col-start-1"
+				in:fly={{
+					x: goingLeft ? -window.innerWidth : window.innerWidth,
+					duration,
+					easing: quintOut,
+					delay: 25,
+				}}
+				out:fly={{
+					x: goingLeft ? window.innerWidth : -window.innerWidth,
+					duration,
+					easing: quintOut,
+				}}
+			>
 				<div
-					class="absolute top-0 left-0 w-full"
-					style={hover ? "will-change: opacity, blur, transform" : ""}
-					in:blur={{
+					class="flex flex-col h-full pb-36 md:pb-0"
+					in:fade={{
 						duration,
 						easing: quintOut,
-						blurMultiplier: 12,
-						x: {
-							start: !$shouldGoBack ? 250 : -250,
-							end: 0,
-						},
-						y: {
-							start: 100,
-							end: 0,
-						},
-						scale: {
-							start: 0.75,
-							end: 1,
-						},
-						origin: "top center",
+						delay: $isMobile ? 0 : 100,
 					}}
-					out:blur={{
+					out:fade={{
 						duration,
 						easing: quintOut,
-						blurMultiplier: 12,
-						x: {
-							start: 0,
-							end: !$shouldGoBack ? -250 : 250,
-						},
-						y: {
-							start: 0,
-							end: 100,
-						},
-						scale: {
-							start: 1,
-							end: 0.75,
-						},
-						origin: "top center",
+						delay: $isMobile ? 0 : 200,
 					}}
 				>
-					<div class="pb-20">
-						{@render children()}
-					</div>
+					{@render children()}
 				</div>
 			</div>
 		{/key}
 	</div>
+
+	<div class="fixed bottom-0 right-0 p-4 z-50 space-y-4">
+		{#each toastList as { id, type, message, durations }}
+			<Toast {id} {type} {message} {durations} />
+		{/each}
+	</div>
+
+	<div>
+		<div
+			class="hidden md:block w-full h-14 border-t border-separator relative mt-12"
+		>
+			<Footer
+				class="w-full h-full"
+				items={{
+					//"Privacy policy": "#",
+					"Source code": GITHUB_URL,
+					"Discord server": DISCORD_URL,
+				}}
+			/>
+		</div>
+
+		<!-- Mobile navbar -->
+		<div
+			class="fixed md:hidden bottom-0 left-0 w-screen p-8 justify-center z-50"
+		>
+			<div class="flex flex-col justify-center items-center">
+				<Navbar {items} />
+			</div>
+		</div>
+	</div>
 </div>
+
+<!-- Gradients placed here to prevent it overlapping in transitions -->
+{#if page.url.pathname === "/"}
+	<div
+		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+	>
+		<VertVBig
+			class="fill-[--fg] opacity-10 dynadark:opacity-5 scale-[200%] md:scale-[80%]"
+		/>
+	</div>
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient);"
+	></div>
+{:else if page.url.pathname === "/convert" && $showGradient}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-{$gradientColor || 'pink'});"
+	></div>
+{:else if page.url.pathname === "/convert" && files.files.length === 1 && files.files[0].blobUrl}
+	<div
+		class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1 scale-105"
+	>
+		<div
+			class="w-full relative"
+			transition:fade={{
+				duration,
+				easing: quintOut,
+			}}
+		>
+			<img
+				class="object-cover w-full h-full blur-md"
+				src={files.files[0].blobUrl}
+				alt={files.files[0].name}
+			/>
+			<div
+				class="absolute top-0 left-0 w-full h-full"
+				style="background: var(--bg-gradient-image);"
+			></div>
+			<!-- <div class="absolute bottom-0 left-0 w-full h-full">
+				<ProgressiveBlur
+					direction="bottom"
+					endIntensity={256}
+					iterations={8}
+					fadeTo="var(--bg)"
+				/>
+			</div> -->
+		</div>
+	</div>
+{:else if page.url.pathname === "/settings"}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-blue);"
+	></div>
+{:else if page.url.pathname === "/about"}
+	<div
+		id="gradient-bg"
+		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
+		style="background: var(--bg-gradient-pink);"
+	></div>
+{/if}
