@@ -1,11 +1,7 @@
 <script lang="ts">
 	import * as Settings from "$lib/sections/settings";
-	import { addToast } from "$lib/store/ToastProvider";
 	import { SettingsIcon } from "lucide-svelte";
 
-    function showToast() {
-        addToast("success", "This is a success message!");
-    }
 </script>
 
 <div class="flex flex-col h-full items-center">
@@ -26,6 +22,4 @@
             <Settings.Appearance />
 		</div>
 	</div>
-
-	<button onclick={showToast}>Show Toast</button>
 </div>

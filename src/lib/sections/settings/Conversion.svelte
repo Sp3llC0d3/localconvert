@@ -3,6 +3,7 @@
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { log } from "$lib/logger";
+	import { addToast } from "$lib/store/ToastProvider";
 	import { RefreshCwIcon, SaveAllIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
@@ -11,8 +12,14 @@
 	function save() {
 		log(["settings"], "Saving settings");
 		if (!browser) return;
-		localStorage.setItem("filenameFormat", filenameFormat);
-		log(["settings"], `Saving filename format: ${filenameFormat}`);
+		try {
+			localStorage.setItem("filenameFormat", filenameFormat);
+			log(["settings"], `Saving filename format: ${filenameFormat}`);
+			addToast("success", "Settings saved!");
+		} catch (error) {
+			log(["settings", "error"], `Failed to save settings: ${error}`);
+			addToast("error", "Failed to save settings!");
+		}
 	}
 
 	onMount(() => {

@@ -7,6 +7,7 @@
 	import avatarRealmy from "$lib/assets/avatars/realmy.jpg";
 	import avatarJovannMC from "$lib/assets/avatars/jovannmc.jpg";
 	import { GITHUB_API_URL } from "$lib/consts";
+	import { addToast } from "$lib/store/ToastProvider";
 
 	interface Donator {
 		name: string;
@@ -59,6 +60,7 @@
 		try {
 			const response = await fetch(`${GITHUB_API_URL}/contributors`);
 			if (!response.ok) {
+				addToast("error", "Error fetching GitHub contributors");
 				throw new Error(`HTTP error, status: ${response.status}`);
 			}
 			const allContribs = await response.json();

@@ -1,4 +1,6 @@
 import type { Converter } from "$lib/converters/converter.svelte";
+import { error } from "$lib/logger";
+import { addToast } from "$lib/store/ToastProvider";
 
 export class VertFile {
 	public id: string = Math.random().toString(36).slice(2, 8);
@@ -40,9 +42,16 @@ export class VertFile {
 		this.result = null;
 		this.progress = 0;
 		this.processing = true;
-		const res = await this.converter.convert(this, this.to);
+		let res;
+		try {
+			res = await this.converter.convert(this, this.to);
+			this.result = res;
+		} catch (err) {
+			error(["files"], "Error converting file", err);
+			addToast("error", `Error converting file: ${this.file.name}`);
+			this.result = null;
+		}
 		this.processing = false;
-		this.result = res;
 		return res;
 	}
 
@@ -55,7 +64,7 @@ export class VertFile {
 		const format = (name: string) => {
 			const date = new Date().toISOString();
 			const baseName = this.file.name.replace(/\.[^/.]+$/, "");
-			const originalExtension = this.file.name.split('.').pop()!;
+			const originalExtension = this.file.name.split(".").pop()!;
 			return name
 				.replace(/%date%/g, date)
 				.replace(/%name%/g, baseName)

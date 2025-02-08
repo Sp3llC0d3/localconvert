@@ -1,5 +1,6 @@
 import { browser } from "$app/environment";
 import { error, log } from "$lib/logger";
+import { addToast } from "$lib/store/ToastProvider";
 import type { OmitBetterStrict, WorkerMessage } from "$lib/types";
 import { VertFile } from "$lib/types";
 import VipsWorker from "$lib/workers/vips?worker&url";
@@ -48,6 +49,7 @@ export class VipsConverter extends Converter {
                 this.ready = true;
             } else if (message.type === "error") {
                 error(["converters", this.name], `error in worker: ${message.error}`);
+				addToast("error", `Error in VIPS worker, some features may not work.`);
 				throw new Error(message.error);
 			}
 		};

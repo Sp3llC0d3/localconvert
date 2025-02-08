@@ -28,7 +28,7 @@ function addToast(
 
 	durations = durations ?? {
 		enter: 300,
-		stay: disappearing || disappearing === undefined ? 5000 : Infinity,
+		stay: disappearing || disappearing === undefined ? 5000 : 86400000, // 24h cause why not
 		exit: 500,
 	};
 
@@ -37,7 +37,7 @@ function addToast(
 		switch (type) {
 			case "error":
 			case "warning":
-				durations.stay = Infinity;
+				durations.stay = 86400000; // 24h cause why not
 				break;
 		}
 	}
