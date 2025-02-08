@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { error } from "$lib/logger";
+	import { error, log } from "$lib/logger";
 	import * as About from "$lib/sections/about";
 	import { InfoIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
@@ -52,7 +52,7 @@
 		const cachedContribs = sessionStorage.getItem("ghContribs");
 		if (cachedContribs) {
 			ghContribs = JSON.parse(cachedContribs);
-			console.log("Loaded GitHub contributors from cache");
+			log(["about"], "Loaded GitHub contributors from cache");
 			return;
 		}
 

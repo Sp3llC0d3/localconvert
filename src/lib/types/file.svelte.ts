@@ -1,5 +1,4 @@
 import type { Converter } from "$lib/converters/converter.svelte";
-import { error } from "$lib/logger";
 import { addToast } from "$lib/store/ToastProvider";
 
 export class VertFile {
@@ -47,7 +46,7 @@ export class VertFile {
 			res = await this.converter.convert(this, this.to);
 			this.result = res;
 		} catch (err) {
-			error(["files"], "Error converting file", err);
+			console.error(err);
 			addToast("error", `Error converting file: ${this.file.name}`);
 			this.result = null;
 		}
