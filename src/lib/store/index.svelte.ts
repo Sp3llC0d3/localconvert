@@ -23,12 +23,15 @@ class Files {
 	);
 
 	private _addThumbnail = async (file: VertFile) => {
+		const isAudio = converters
+			.find((c) => c.name === "ffmpeg")
+			?.supportedFormats?.includes(file.from.toLowerCase());
+		const isVideo = converters
+			.find((c) => c.name === "vertd")
+			?.supportedFormats?.includes(file.from.toLowerCase());
+
 		try {
-			if (
-				converters
-					.find((c) => c.name === "ffmpeg")
-					?.supportedFormats?.includes(file.from.toLowerCase())
-			) {
+			if (isAudio) {
 				// try to get the thumbnail from the audio via jsmmediatags
 				const tags = await new Promise<TagType>((resolve, reject) => {
 					jsmediatags.read(file.file, {
@@ -46,31 +49,61 @@ class Files {
 					const url = URL.createObjectURL(blob);
 					file.blobUrl = url;
 				}
-			} else {
-				const img = new Image();
-				img.src = URL.createObjectURL(file.file);
-				await new Promise((resolve) => {
-					img.onload = resolve;
-				});
-				const canvas = document.createElement("canvas");
-				const ctx = canvas.getContext("2d");
-				if (!ctx) return;
-				const maxSize = 180;
-				const scale = Math.max(
-					maxSize / img.width,
-					maxSize / img.height,
+			} else if (isVideo) {
+				// video
+				file.blobUrl = await this._generateThumbnailFromMedia(
+					file.file,
+					true,
 				);
-				canvas.width = img.width * scale;
-				canvas.height = img.height * scale;
-				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-				const url = canvas.toDataURL();
-				file.blobUrl = url;
-				canvas.remove();
+			} else {
+				// image
+				file.blobUrl = await this._generateThumbnailFromMedia(
+					file.file,
+					false,
+				);
 			}
 		} catch (e) {
 			error(["files"], e);
 		}
 	};
+
+	private async _generateThumbnailFromMedia(
+		file: File,
+		isVideo: boolean,
+	): Promise<string | undefined> {
+		const maxSize = 180;
+		const mediaElement = isVideo
+			? document.createElement("video")
+			: new Image();
+		mediaElement.src = URL.createObjectURL(file);
+
+		await new Promise((resolve) => {
+			if (isVideo) {
+				(mediaElement as HTMLVideoElement).onloadeddata = resolve;
+			} else {
+				(mediaElement as HTMLImageElement).onload = resolve;
+			}
+		});
+
+		const canvas = document.createElement("canvas");
+		const ctx = canvas.getContext("2d");
+		if (!ctx) return undefined;
+
+		const width = isVideo
+			? (mediaElement as HTMLVideoElement).videoWidth
+			: (mediaElement as HTMLImageElement).width;
+		const height = isVideo
+			? (mediaElement as HTMLVideoElement).videoHeight
+			: (mediaElement as HTMLImageElement).height;
+
+		const scale = Math.max(maxSize / width, maxSize / height);
+		canvas.width = width * scale;
+		canvas.height = height * scale;
+		ctx.drawImage(mediaElement, 0, 0, canvas.width, canvas.height);
+		const url = canvas.toDataURL();
+		canvas.remove();
+		return url;
+	}
 
 	private _add(file: VertFile | File) {
 		if (file instanceof VertFile) {
