@@ -15,6 +15,8 @@
 		DownloadIcon,
 		FileMusicIcon,
 		FileQuestionIcon,
+		FileVideo2,
+		FilmIcon,
 		ImageIcon,
 		ImageOffIcon,
 		RotateCwIcon,
@@ -47,12 +49,15 @@
 
 {#snippet fileItem(file: VertFile, index: number)}
 	{@const isAudio = file.converter?.name === "ffmpeg"}
+	{@const isVideo = file.converter?.name === "vertd"}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !file.converter}
 				<FileQuestionIcon size="24" class="flex-shrink-0" />
 			{:else if isAudio}
 				<AudioLines size="24" class="flex-shrink-0" />
+			{:else if isVideo}
+				<FilmIcon size="24" class="flex-shrink-0" />
 			{:else}
 				<ImageIcon size="24" class="flex-shrink-0" />
 			{/if}
@@ -87,7 +92,7 @@
 			>
 				<p class="font-body font-bold">We can't convert this file.</p>
 				<p class="font-normal">
-					Only image and audio files are supported
+					Only image, video, and audio files are supported
 				</p>
 			</div>
 		{:else}
@@ -107,10 +112,14 @@
 								class="w-full h-full flex items-center justify-center text-black"
 								style="background: var({isAudio
 									? '--bg-gradient-purple-alt'
+									: isVideo
+									? '--bg-gradient-red-alt'
 									: '--bg-gradient-blue-alt'})"
 							>
 								{#if isAudio}
 									<FileMusicIcon size="56" />
+								{:else if isVideo}
+									<FileVideo2 size="56" />
 								{:else}
 									<ImageOffIcon size="56" />
 								{/if}
@@ -133,6 +142,8 @@
 							<button
 								class="btn p-0 w-14 h-14 text-black {isAudio
 									? 'bg-accent-purple'
+									: isVideo
+									? 'bg-accent-red'
 									: 'bg-accent-blue'}"
 								disabled={!files.ready}
 								onclick={file.convert}
@@ -174,7 +185,7 @@
 			{/if}
 		{/each}
 		{#if files.files.length === 0}
-			<Uploader class="w-full h-full" />
+			<Uploader class="w-full h-full col-span-2" />
 		{/if}
 	</div>
 </div>
