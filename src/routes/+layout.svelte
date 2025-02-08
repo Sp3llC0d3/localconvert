@@ -29,11 +29,18 @@
 	import "../app.scss";
 	import { writable } from "svelte/store";
 	import { DISCORD_URL, GITHUB_URL } from "$lib/consts";
+	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
+	import Toast from "$lib/components/visual/Toast.svelte";
 	let { children } = $props();
 
 	let shouldGoBack = writable(false);
 	let navbar = $state<HTMLDivElement>();
 	let hover = $state(false);
+	let toastList = $state<ToastType[]>([]);
+
+	toasts.subscribe((value) => {
+		toastList = value as ToastType[];
+	});
 
 	const items = $derived<
 		{
@@ -216,6 +223,12 @@
 				</div>
 			</div>
 		{/key}
+	</div>
+
+	<div class="fixed bottom-0 right-0 p-4 z-50 space-y-4">
+		{#each toastList as { id, type, message, durations }}
+			<Toast {id} {type} {message} {durations} />
+		{/each}
 	</div>
 
 	<div>

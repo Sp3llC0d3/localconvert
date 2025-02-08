@@ -31,10 +31,15 @@
 @mixin light {
 	// general
 	--accent-pink: hsl(302, 100%, 76%);
+	--accent-pink-alt: hsl(302, 100%, 50%);
 	--accent-red: hsl(348, 100%, 80%);
+	--accent-red-alt: hsl(348, 100%, 50%);
 	--accent-purple: hsl(264, 100%, 81%);
+	--accent-purple-alt: hsl(264, 100%, 50%);
 	--accent-blue: hsl(220, 100%, 78%);
+	--accent-blue-alt: hsl(220, 100%, 50%);
 	--accent: var(--accent-pink);
+	--accent-alt: var(--accent-pink-alt);
 
 	// foregrounds
 	--fg: hsl(0, 0%, 0%);
@@ -107,10 +112,15 @@
 @mixin dark {
 	// general
 	--accent-pink: hsl(302, 100%, 76%);
+	--accent-pink-alt: hsl(302, 100%, 50%);
 	--accent-red: hsl(348, 100%, 80%);
+	--accent-red-alt: hsl(348, 100%, 50%);
 	--accent-purple: hsl(264, 100%, 81%);
+	--accent-purple-alt: hsl(264, 100%, 50%);
 	--accent-blue: hsl(220, 100%, 78%);
+	--accent-blue-alt: hsl(220, 100%, 50%);
 	--accent: var(--accent-pink);
+	--accent-alt: var(--accent-pink-alt);
 
 	// foregrounds
 	--fg: hsl(0, 0%, 100%);

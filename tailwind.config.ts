@@ -25,10 +25,15 @@ export default {
 			},
 			colors: {
 				accent: "var(--accent)",
+				"accent-alt": "var(--accent-alt)",
 				"accent-pink": "var(--accent-pink)",
+				"accent-pink-alt": "var(--accent-pink-alt)",
 				"accent-red": "var(--accent-red)",
+				"accent-red-alt": "var(--accent-red-alt)",
+				"accent-purple-alt": "var(--accent-purple-alt)",
 				"accent-purple": "var(--accent-purple)",
 				"accent-blue": "var(--accent-blue)",
+				"accent-blue-alt": "var(--accent-blue-alt)",
 			},
 			boxShadow: {
 				panel: "var(--shadow-panel)",
