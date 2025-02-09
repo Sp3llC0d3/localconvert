@@ -111,7 +111,7 @@ export class VertdConverter extends Converter {
 	public name = "vertd";
 	public ready = $state(false);
 	public reportsProgress = true;
-	public supportedFormats = [".mkv", ".mp4", ".webm", ".avi"];
+	public supportedFormats = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".mov"];
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private log: (...msg: any[]) => void = () => {};
 
