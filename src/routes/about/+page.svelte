@@ -9,11 +9,11 @@
 	import { GITHUB_API_URL } from "$lib/consts";
 	import { addToast } from "$lib/store/ToastProvider";
 
-	interface Donator {
+	/* interface Donator {
 		name: string;
 		amount?: string | number;
 		avatar: string;
-	}
+	} */
 
 	interface Contributor {
 		name: string;

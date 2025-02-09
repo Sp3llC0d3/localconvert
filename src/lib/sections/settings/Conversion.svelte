@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { GITHUB_URL_VERTD } from "$lib/consts";
-	import { log } from "$lib/logger";
-	import { addToast } from "$lib/store/ToastProvider";
-	import { RefreshCwIcon, SaveAllIcon } from "lucide-svelte";
-	import { onMount } from "svelte";
+	import { RefreshCwIcon } from "lucide-svelte";
 	import type { Settings } from "./index.svelte";
 
 	const { settings }: { settings: Settings } = $props();

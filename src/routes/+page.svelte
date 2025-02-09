@@ -6,6 +6,9 @@
 	// ship fast n break things !!
 	// -- nullptr
 
+	// that definitely happened
+	// -- JovannMC
+
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 </script>
 
