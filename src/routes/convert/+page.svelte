@@ -36,13 +36,16 @@
 			(file) => file.converter?.name === "ffmpeg",
 		);
 		const allImages = files.files.every(
-			(file) => file.converter?.name !== "ffmpeg",
+			(file) => file.converter?.name !== "ffmpeg" && file.converter?.name !== "vertd",
+		);
+		const allVideos = files.files.every(
+			(file) => file.converter?.name === "vertd",
 		);
 
-		if (files.files.length === 0 || (!allAudio && !allImages)) {
+		if (files.files.length === 0 || (!allAudio && !allImages && !allVideos)) {
 			gradientColor.set("");
 		} else {
-			gradientColor.set(allAudio ? "purple" : "blue");
+			gradientColor.set(allAudio ? "purple" : allVideos ? "red" : "blue");
 		}
 	});
 </script>
