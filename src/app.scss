@@ -32,6 +32,7 @@
 	// general
 	--accent-pink: hsl(302, 100%, 76%);
 	--accent-pink-alt: hsl(302, 100%, 50%);
+	--accent-pink-muted: hsl(302, 98%, 42%);
 	--accent-red: hsl(348, 100%, 80%);
 	--accent-red-alt: hsl(348, 100%, 50%);
 	--accent-purple: hsl(264, 100%, 81%);
@@ -46,6 +47,8 @@
 	--fg-muted: hsla(0, 0%, 0%, 0.6);
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 0%);
+	/* readable version of the accent color */
+	--fg-accent: var(--accent-pink-muted);
 
 	// backgrounds
 	--bg: hsl(0, 0%, 95%);
@@ -127,6 +130,7 @@
 	--fg-muted: hsla(0, 0%, 100%, 0.6);
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 0%);
+	--fg-accent: var(--accent);
 
 	// backgrounds
 	--bg: hsl(220, 5%, 12%);
@@ -274,5 +278,9 @@ body {
 
 	input[type="text"]::placeholder {
 		@apply text-muted font-normal;
+	}
+
+	input[type=text]:focus {
+		@apply outline outline-accent outline-2;
 	}
 }

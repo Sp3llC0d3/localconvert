@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { GITHUB_URL_VERTD } from "$lib/consts";
-	import { RefreshCwIcon, SaveAllIcon, ServerIcon } from "lucide-svelte";
+	import { ServerIcon } from "lucide-svelte";
 	import type { Settings } from "./index.svelte";
 	import clsx from "clsx";
 
@@ -45,7 +43,7 @@
 				class="inline-block -mt-1 mr-2 bg-accent-red p-2 rounded-full overflow-visible"
 				color="black"
 			/>
-			<code>vertd</code>
+			Converting Video
 		</h2>
 		<p
 			class={clsx("text-sm font-normal", {
@@ -63,20 +61,26 @@
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<p class="text-sm text-muted font-normal">
-					VERT allows fully functional video conversion via the
-					<code>vertd</code> project. It acts as an FFmpeg wrapper on
-					a given server, allowing for GPU accelerated local* video
-					conversion. We currently don't provide our own instance due
-					to upkeep costs of servers with the necessary hardware for
-					speedy conversion. You can host your own instance by
-					downloading the binaries
-					<a href={GITHUB_URL_VERTD} target="_blank">here</a>.
+					The <code>vertd</code> project is a server wrapper for FFmpeg.
+					This allows you to convert videos through the convenience of
+					VERT's web interface, while still being able to harness the power
+					of your GPU to do it as quickly as possible.
+				</p>
+				<p class="text-sm text-muted font-normal">
+					We currently don't provide an hosted instance due to the
+					upkeep costs. However, it's quite easy to host one on your
+					own PC or server if you know what you're doing. You can
+					download the server binaries <a
+						href={GITHUB_URL_VERTD}
+						target="_blank">here</a
+					>. The process of setting this up will become easier in the
+					future, so stay tuned!
 				</p>
 				<div class="flex flex-col gap-2">
 					<p class="text-base font-bold">Instance URL</p>
 					<input
 						type="text"
-						placeholder="http://localhost:24153"
+						placeholder="Example: http://localhost:24153"
 						bind:value={settings.settings.vertdURL}
 					/>
 				</div>
