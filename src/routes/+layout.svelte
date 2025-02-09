@@ -168,8 +168,10 @@
 >
 	{#if dropping}
 		<div
-			class="dragoverlay fixed w-screen h-screen opacity-50 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl"
-			class:_dragover={dropping}
+			class="fixed w-screen h-screen opacity-50 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl {$effects
+				? 'dragoverlay'
+				: 'bg-accent-blue'}"
+			class:_dragover={dropping && $effects}
 			transition:fade={{
 				duration,
 				easing: quintOut,
