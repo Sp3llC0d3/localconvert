@@ -7,7 +7,7 @@ export default {
 		extend: {
 			backgroundColor: {
 				panel: "var(--bg-panel)",
-				"panel-accented": "var(--bg-panel-accented)",
+				"panel-highlight": "var(--bg-panel-highlight)",
 				separator: "var(--bg-separator)",
 				button: "var(--bg-button)",
 				"panel-alt": "var(--bg-button)",

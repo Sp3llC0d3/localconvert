@@ -44,7 +44,7 @@
 		class={clsx(
 			"w-16 md:w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
 			{
-				"bg-panel-accented":
+				"bg-panel-highlight":
 					item.activeMatch(page.url.pathname) && !browser,
 			},
 		)}
@@ -105,7 +105,7 @@
 	<Panel class="max-w-[778px] w-full h-20 flex items-center gap-3 relative">
 		{#if linkRects[selectedIndex]}
 			<div
-				class="absolute bg-panel-accented rounded-xl"
+				class="absolute bg-panel-highlight rounded-xl"
 				style="width: {linkRects[selectedIndex]
 					.width}px; height: {linkRects[selectedIndex]
 					.height}px; top: {linkRects[selectedIndex].top -
