@@ -24,11 +24,19 @@
 		if (oldLength !== files.files.length) goto("/convert");
 	};
 
-	const uploadFiles = () => {
+	const uploadFiles = async () => {
 		const input = document.createElement("input");
 		input.type = "file";
 		input.multiple = true;
-		input.accept = converters
+		// filter converters to ones where await converter.valid() is true
+		const filteredConverters = (
+			await Promise.all(
+				converters.map(async (c) => {
+					if (await c.valid()) return c;
+				}),
+			)
+		).filter((c) => typeof c !== "undefined");
+		input.accept = filteredConverters
 			.map((c) => c.supportedFormats.join(","))
 			.join(",");
 		input.onchange = (e) => {

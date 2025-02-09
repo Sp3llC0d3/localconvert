@@ -1,7 +1,47 @@
 <script lang="ts">
-	import * as Settings from "$lib/sections/settings";
+	import { browser } from "$app/environment";
+	import { log } from "$lib/logger";
+	import * as Settings from "$lib/sections/settings/index.svelte";
+	import { addToast } from "$lib/store/ToastProvider";
 	import { SettingsIcon } from "lucide-svelte";
+	import { onMount } from "svelte";
 
+	let isInitial = $state(true);
+
+	$effect(() => {
+		if (!browser) return;
+		if (isInitial) {
+			isInitial = false;
+			return;
+		}
+		const savedSettings = localStorage.getItem("settings");
+		if (savedSettings) {
+			const parsedSettings = JSON.parse(savedSettings);
+			if (parsedSettings === Settings.Settings.instance.settings) return;
+		}
+
+		log(["settings"], "saving settings");
+		try {
+			localStorage.setItem(
+				"settings",
+				JSON.stringify(Settings.Settings.instance.settings),
+			);
+		} catch (error) {
+			log(["settings", "error"], `failed to save settings: ${error}`);
+			addToast("error", "Failed to save settings!");
+		}
+	});
+
+	onMount(() => {
+		const savedSettings = localStorage.getItem("settings");
+		if (savedSettings) {
+			const parsedSettings = JSON.parse(savedSettings);
+			Settings.Settings.instance.settings = {
+				...Settings.Settings.instance.settings,
+				...parsedSettings,
+			};
+		}
+	});
 </script>
 
 <div class="flex flex-col h-full items-center">
@@ -13,13 +53,13 @@
 	<div
 		class="w-full max-w-[1280px] flex flex-col md:flex-row gap-4 p-4 md:px-4 md:py-0"
 	>
-		<!-- Why VERT? & Credits -->
 		<div class="flex flex-col gap-4 flex-1">
-            <Settings.Conversion />
+			<Settings.Conversion settings={Settings.Settings.instance} />
+			<Settings.Vertd settings={Settings.Settings.instance} />
 		</div>
-        
-        <div class="flex flex-col gap-4 flex-1">
-            <Settings.Appearance />
+
+		<div class="flex flex-col gap-4 flex-1">
+			<Settings.Appearance />
 		</div>
 	</div>
 </div>

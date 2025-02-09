@@ -2,38 +2,14 @@
 	import { browser } from "$app/environment";
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
+	import { GITHUB_URL_VERTD } from "$lib/consts";
 	import { log } from "$lib/logger";
 	import { addToast } from "$lib/store/ToastProvider";
 	import { RefreshCwIcon, SaveAllIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
+	import type { Settings } from "./index.svelte";
 
-	// let filenameFormat = "VERT_%name%";
-	let settings = $state({
-		filenameFormat: "VERT_%name%",
-	});
-
-	function save() {
-		log(["settings"], "saving settings");
-		if (!browser) return;
-		try {
-			localStorage.setItem("settings", JSON.stringify(settings));
-			addToast("success", "settings saved!");
-		} catch (error) {
-			log(["settings", "error"], `failed to save settings: ${error}`);
-			addToast("error", "Failed to save settings!");
-		}
-	}
-
-	onMount(() => {
-		const savedSettings = localStorage.getItem("settings");
-		if (savedSettings) {
-			const parsedSettings = JSON.parse(savedSettings);
-			settings = {
-				...settings,
-				...parsedSettings,
-			};
-		}
-	});
+	const { settings }: { settings: Settings } = $props();
 </script>
 
 <Panel class="flex flex-col gap-8 p-6">
@@ -67,31 +43,10 @@
 				</div>
 				<FancyTextInput
 					placeholder="VERT_%name%"
-					bind:value={settings.filenameFormat}
+					bind:value={settings.settings.filenameFormat}
 					extension=".ext"
 					type="text"
 				/>
-			</div>
-
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">Second option</p>
-					<p class="text-sm text-muted font-normal">
-						This is just a sample option. This should not show up on
-						the live website. JOVANN, DO NOT ADD THIS TO THE LIVE
-						WEBSITE. PLEASE. JOVANN!!!!
-					</p>
-				</div>
-			</div>
-
-			<div class="flex justify-end">
-				<button
-					onclick={save}
-					class="w-fit btn px-6 py-4 bg-accent text-black flex items-center justify-center"
-				>
-					<SaveAllIcon size="24" class="inline-block mr-2" />
-					Save
-				</button>
 			</div>
 		</div>
 	</div>

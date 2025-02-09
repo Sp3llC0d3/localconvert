@@ -28,9 +28,10 @@
 	import { quintOut } from "svelte/easing";
 	import "../app.scss";
 	import { writable } from "svelte/store";
-	import { DISCORD_URL, GITHUB_URL } from "$lib/consts";
+	import { DISCORD_URL, GITHUB_URL_VERT } from "$lib/consts";
 	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
 	import Toast from "$lib/components/visual/Toast.svelte";
+	import { Settings } from "$lib/sections/settings/index.svelte";
 	let { children } = $props();
 
 	let shouldGoBack = writable(false);
@@ -122,6 +123,10 @@
 		} else {
 			goingLeft = false;
 		}
+	});
+
+	onMount(() => {
+		Settings.instance.load();
 	});
 </script>
 
@@ -239,7 +244,7 @@
 				class="w-full h-full"
 				items={{
 					//"Privacy policy": "#",
-					"Source code": GITHUB_URL,
+					"Source code": GITHUB_URL_VERT,
 					"Discord server": DISCORD_URL,
 				}}
 			/>

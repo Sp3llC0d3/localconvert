@@ -1,4 +1,5 @@
 import { log } from "$lib/logger";
+import { Settings } from "$lib/sections/settings/index.svelte";
 import { VertFile } from "$lib/types";
 import { Converter } from "./converter.svelte";
 
@@ -25,13 +26,15 @@ interface UploadResponse {
 
 interface RouteMap {
 	"/api/upload": UploadResponse;
+	"/api/version": string;
 }
 
 const vertdFetch = async <U extends keyof RouteMap>(
 	url: U,
 	options: RequestInit,
 ): Promise<RouteMap[U]> => {
-	const res = await fetch(`http://127.0.0.1:8080${url}`, options);
+	const domain = Settings.instance.settings.vertdURL;
+	const res = await fetch(`${domain}${url}`, options);
 	const text = await res.text();
 	let json: VertdResponse<RouteMap[U]> = null!;
 	try {
@@ -99,7 +102,8 @@ export class VertdConverter extends Converter {
 	public ready = $state(false);
 	public reportsProgress = true;
 	public supportedFormats = [".mkv", ".mp4", ".webm", ".avi"];
-	private log: (msg: string) => void = () => {};
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	private log: (...msg: any[]) => void = () => {};
 
 	constructor() {
 		super();
@@ -126,7 +130,10 @@ export class VertdConverter extends Converter {
 		});
 
 		return new Promise((resolve, reject) => {
-			const ws = new WebSocket(`ws://localhost:8080/api/ws`);
+			const apiUrl = Settings.instance.settings.vertdURL;
+			const ws = new WebSocket(
+				`ws://${apiUrl.replace("http://", "").replace("https://", "")}/api/ws`,
+			);
 			ws.onopen = () => {
 				this.log("opened ws connection to vertd");
 				const msg: StartJobMessage = {
@@ -156,7 +163,7 @@ export class VertdConverter extends Converter {
 					case "jobFinished": {
 						this.log("job finished");
 						ws.close();
-						const url = `http://localhost:8080/api/download/${msg.data.jobId}/${uploadRes.auth}`;
+						const url = `${apiUrl}/api/download/${msg.data.jobId}/${uploadRes.auth}`;
 						this.log(`downloading from ${url}`);
 						const res = await fetch(url).then((res) => res.blob());
 						resolve(
@@ -177,5 +184,21 @@ export class VertdConverter extends Converter {
 				}
 			};
 		});
+	}
+
+	public async valid(): Promise<boolean> {
+		if (!Settings.instance.settings.vertdURL) {
+			return false;
+		}
+
+		try {
+			await vertdFetch("/api/version", {
+				method: "GET",
+			});
+			return true;
+		} catch (e) {
+			this.log(e as unknown as string);
+			return false;
+		}
 	}
 }
