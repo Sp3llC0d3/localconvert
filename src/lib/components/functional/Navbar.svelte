@@ -2,7 +2,7 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/state";
 	import { duration, fade } from "$lib/animation";
-	import { motion, setTheme } from "$lib/store/index.svelte";
+	import { effects, setTheme } from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import { MoonIcon, SunIcon } from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
@@ -111,7 +111,7 @@
 					.height}px; top: {linkRects[selectedIndex].top -
 					(containerRect?.top || 0)}px; left: {linkRects[
 					selectedIndex
-				].left - (containerRect?.left || 0)}px; {$motion
+				].left - (containerRect?.left || 0)}px; {$effects
 					? `transition: left var(--transition) ${duration}ms, top var(--transition) ${duration}ms;`
 					: ''}"
 			></div>

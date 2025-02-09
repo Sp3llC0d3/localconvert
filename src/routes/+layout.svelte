@@ -14,7 +14,7 @@
 		files,
 		gradientColor,
 		isMobile,
-		motion,
+		effects,
 		showGradient,
 		theme,
 	} from "$lib/store/index.svelte";
@@ -96,7 +96,7 @@
 			isMobile.set(window.innerWidth <= 768);
 		});
 
-		motion.set(localStorage.getItem("motion") !== "false"); // defaults to true if not set
+		effects.set(localStorage.getItem("effects") !== "false"); // defaults to true if not set
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);

@@ -217,13 +217,13 @@ export function setTheme(themeTo: "light" | "dark") {
 	theme.set(themeTo);
 }
 
-export function setMotion(motionEnabled: boolean) {
-	localStorage.setItem("motion", motionEnabled.toString());
-	window.plausible("Motion set", {
-		props: { motion: motionEnabled },
+export function setEffects(effectsEnabled: boolean) {
+	localStorage.setItem("effects", effectsEnabled.toString());
+	window.plausible("Effects set", {
+		props: { effects: effectsEnabled },
 	});
-	log(["motion"], `set to ${motionEnabled}`);
-	motion.set(motionEnabled);
+	log(["effects"], `set to ${effectsEnabled}`);
+	effects.set(effectsEnabled);
 }
 
 export const files = new Files();
@@ -231,5 +231,5 @@ export const showGradient = writable(true);
 export const gradientColor = writable("");
 
 export const isMobile = writable(false);
-export const motion = writable(true);
+export const effects = writable(true);
 export const theme = writable<"light" | "dark">("light");

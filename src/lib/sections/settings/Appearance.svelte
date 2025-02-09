@@ -2,8 +2,8 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
 		theme,
-		motion,
-		setMotion,
+		effects,
+		setEffects,
 		setTheme,
 	} from "$lib/store/index.svelte";
 	import {
@@ -17,19 +17,19 @@
 
 	let lightElement: HTMLButtonElement;
 	let darkElement: HTMLButtonElement;
-	let enableMotionElement: HTMLButtonElement;
-	let disableMotionElement: HTMLButtonElement;
+	let enableEffectsElement: HTMLButtonElement;
+	let disableEffectsElement: HTMLButtonElement;
 
-	let motionUnsubscribe: () => void;
+	let effectsUnsubscribe: () => void;
 	let themeUnsubscribe: () => void;
 
-	const updateMotionClasses = (value: boolean) => {
+	const updateEffectsClasses = (value: boolean) => {
 		if (value) {
-			enableMotionElement.classList.add("selected");
-			disableMotionElement.classList.remove("selected");
+			enableEffectsElement.classList.add("selected");
+			disableEffectsElement.classList.remove("selected");
 		} else {
-			disableMotionElement.classList.add("selected");
-			enableMotionElement.classList.remove("selected");
+			disableEffectsElement.classList.add("selected");
+			enableEffectsElement.classList.remove("selected");
 		}
 	};
 
@@ -47,12 +47,12 @@
 	};
 
 	onMount(() => {
-		motionUnsubscribe = motion.subscribe(updateMotionClasses);
+		effectsUnsubscribe = effects.subscribe(updateEffectsClasses);
 		themeUnsubscribe = theme.subscribe(updateThemeClasses);
 	});
 
 	onDestroy(() => {
-		if (motionUnsubscribe) motionUnsubscribe();
+		if (effectsUnsubscribe) effectsUnsubscribe();
 		if (themeUnsubscribe) themeUnsubscribe();
 	});
 </script>
@@ -99,17 +99,17 @@
 			</div>
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">Motion settings</p>
+					<p class="text-base font-bold">Effect settings</p>
 					<p class="text-sm text-muted font-normal italic">
-						Would you like fancy animations, or a more static
+						Would you like fancy effects, or a more static
 						experience?
 					</p>
 				</div>
 				<div class="flex flex-col gap-3 w-full">
 					<div class="flex gap-3 w-full">
 						<button
-							bind:this={enableMotionElement}
-							onclick={() => setMotion(true)}
+							bind:this={enableEffectsElement}
+							onclick={() => setEffects(true)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
@@ -117,8 +117,8 @@
 						</button>
 
 						<button
-							bind:this={disableMotionElement}
-							onclick={() => setMotion(false)}
+							bind:this={disableEffectsElement}
+							onclick={() => setEffects(false)}
 							class="btn flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />

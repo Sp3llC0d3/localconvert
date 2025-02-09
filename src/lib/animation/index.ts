@@ -1,4 +1,4 @@
-import { isMobile, motion } from "$lib/store/index.svelte";
+import { isMobile, effects } from "$lib/store/index.svelte";
 import type { AnimationConfig, FlipParams } from "svelte/animate";
 import { cubicOut } from "svelte/easing";
 import {
@@ -9,11 +9,11 @@ import {
 } from "svelte/transition";
 
 // Subscribe to stores
-let motionEnabled = true;
+let effectsEnabled = true;
 let isMobileDevice = false;
 
-motion.subscribe(value => {
-    motionEnabled = value;
+effects.subscribe(value => {
+    effectsEnabled = value;
 });
 
 isMobile.subscribe(value => {
@@ -26,13 +26,13 @@ export const transition =
 export const duration = 500;
 
 export function fade(node: HTMLElement, options: FadeParams) {
-	if (!motionEnabled) return {};
+	if (!effectsEnabled) return {};
 	const animation = svelteFade(node, options);
 	return animation;
 }
 
 export function fly(node: HTMLElement, options: FlyParams) {
-	if (!motionEnabled || isMobileDevice) return {};
+	if (!effectsEnabled || isMobileDevice) return {};
 	const animation = svelteFly(node, options);
 	return animation;
 }
