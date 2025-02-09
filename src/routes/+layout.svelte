@@ -180,7 +180,7 @@
 	{/if}
 
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
-	<div class="z-50">
+	<div>
 		<!-- Mobile logo -->
 		<div class="flex md:hidden justify-center items-center pb-8 pt-4">
 			<a
@@ -203,7 +203,7 @@
 		</div>
 	</div>
 
-	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow z-50">
+	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow">
 		{#key page.url.pathname}
 			<div
 				class="row-start-1 col-start-1"
@@ -244,7 +244,7 @@
 		{/each}
 	</div>
 
-	<div class="z-50">
+	<div>
 		<div
 			class="hidden md:block w-full h-14 border-t border-separator fixed bottom-0 mt-12"
 		>
