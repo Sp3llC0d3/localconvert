@@ -2,23 +2,23 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { GITHUB_URL_VERTD } from "$lib/consts";
 	import { ServerIcon } from "lucide-svelte";
-	import type { Settings } from "./index.svelte";
+	import type { ISettings } from "./index.svelte";
 	import clsx from "clsx";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 
 	let vertdCommit = $state<string | null>(null);
 	let abortController: AbortController | null = null;
 
-	const { settings }: { settings: Settings } = $props();
+	const { settings }: { settings: ISettings } = $props();
 
 	$effect(() => {
-		if (settings.settings.vertdURL) {
+		if (settings.vertdURL) {
 			if (abortController) abortController.abort();
 			abortController = new AbortController();
 			const { signal } = abortController;
 
 			vertdCommit = "loading";
-			fetch(`${settings.settings.vertdURL}/api/version`, { signal })
+			fetch(`${settings.vertdURL}/api/version`, { signal })
 				.then((res) => {
 					if (!res.ok) throw new Error("bad response");
 					return res.json();
@@ -33,6 +33,10 @@
 			if (abortController) abortController.abort();
 			vertdCommit = null;
 		}
+
+		return () => {
+			if (abortController) abortController.abort();
+		};
 	});
 </script>
 
@@ -82,7 +86,7 @@
 					<input
 						type="text"
 						placeholder="Example: http://localhost:24153"
-						bind:value={settings.settings.vertdURL}
+						bind:value={settings.vertdURL}
 					/>
 				</div>
 				<div class="flex flex-col gap-4">
@@ -94,17 +98,6 @@
 							but will get the job done quicker.
 						</p>
 					</div>
-					<!-- <select
-						bind:value={settings.settings.vertdSpeed}
-						class="w-1/2 dropdown"
-					>
-						<option value="verySlow">Very Slow</option>
-						<option value="slower">Slower</option>
-						<option value="slow">Slow</option>
-						<option value="medium">Medium</option>
-						<option value="fast">Fast</option>
-						<option value="ultraFast">Ultra Fast</option>
-					</select> -->
 					<Dropdown
 						options={[
 							"Very Slow",
@@ -115,25 +108,42 @@
 							"Ultra Fast",
 						]}
 						settingsStyle
+						selected={(() => {
+							switch (settings.vertdSpeed) {
+								case "verySlow":
+									return "Very Slow";
+								case "slower":
+									return "Slower";
+								case "slow":
+									return "Slow";
+								case "medium":
+									return "Medium";
+								case "fast":
+									return "Fast";
+								case "ultraFast":
+									return "Ultra Fast";
+							}
+						})()}
 						onselect={(selected) => {
+							console.log(selected);
 							switch (selected) {
 								case "Very Slow":
-									settings.settings.vertdSpeed = "verySlow";
+									settings.vertdSpeed = "verySlow";
 									break;
 								case "Slower":
-									settings.settings.vertdSpeed = "slower";
+									settings.vertdSpeed = "slower";
 									break;
 								case "Slow":
-									settings.settings.vertdSpeed = "slow";
+									settings.vertdSpeed = "slow";
 									break;
 								case "Medium":
-									settings.settings.vertdSpeed = "medium";
+									settings.vertdSpeed = "medium";
 									break;
 								case "Fast":
-									settings.settings.vertdSpeed = "fast";
+									settings.vertdSpeed = "fast";
 									break;
 								case "Ultra Fast":
-									settings.settings.vertdSpeed = "ultraFast";
+									settings.vertdSpeed = "ultraFast";
 									break;
 							}
 						}}

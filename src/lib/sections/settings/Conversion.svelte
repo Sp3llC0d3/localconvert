@@ -2,9 +2,9 @@
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { RefreshCwIcon } from "lucide-svelte";
-	import type { Settings } from "./index.svelte";
+	import type { ISettings } from "./index.svelte";
 
-	const { settings }: { settings: Settings } = $props();
+	const { settings }: { settings: ISettings } = $props();
 </script>
 
 <Panel class="flex flex-col gap-8 p-6">
@@ -38,7 +38,7 @@
 				</div>
 				<FancyTextInput
 					placeholder="VERT_%name%"
-					bind:value={settings.settings.filenameFormat}
+					bind:value={settings.filenameFormat}
 					extension=".ext"
 					type="text"
 				/>

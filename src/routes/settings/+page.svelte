@@ -6,6 +6,8 @@
 	import { SettingsIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
+	let settings = $state(Settings.Settings.instance.settings);
+
 	let isInitial = $state(true);
 
 	$effect(() => {
@@ -14,18 +16,17 @@
 			isInitial = false;
 			return;
 		}
+		settings;
 		const savedSettings = localStorage.getItem("settings");
 		if (savedSettings) {
 			const parsedSettings = JSON.parse(savedSettings);
-			if (parsedSettings === Settings.Settings.instance.settings) return;
+			if (parsedSettings === settings) return;
 		}
 
 		log(["settings"], "saving settings");
 		try {
-			localStorage.setItem(
-				"settings",
-				JSON.stringify(Settings.Settings.instance.settings),
-			);
+			Settings.Settings.instance.settings = settings;
+			Settings.Settings.instance.save();
 		} catch (error) {
 			log(["settings", "error"], `failed to save settings: ${error}`);
 			addToast("error", "Failed to save settings!");
@@ -54,8 +55,8 @@
 		class="w-full max-w-[1280px] flex flex-col md:flex-row gap-4 p-4 md:px-4 md:py-0"
 	>
 		<div class="flex flex-col gap-4 flex-1">
-			<Settings.Conversion settings={Settings.Settings.instance} />
-			<Settings.Vertd settings={Settings.Settings.instance} />
+			<Settings.Conversion {settings} />
+			<Settings.Vertd {settings} />
 		</div>
 
 		<div class="flex flex-col gap-4 flex-1">
