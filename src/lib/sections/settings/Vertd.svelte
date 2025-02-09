@@ -47,7 +47,7 @@
 		</h2>
 		<p
 			class={clsx("text-sm font-normal", {
-				"text-red-700 dynadark:text-red-100": vertdCommit === null,
+				"text-failure": vertdCommit === null,
 				"text-green-700 dynadark:text-green-300": vertdCommit !== null,
 				"!text-muted": vertdCommit === "loading",
 			})}

@@ -47,8 +47,9 @@
 	--fg-muted: hsla(0, 0%, 0%, 0.6);
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 0%);
-	/* readable version of the accent color */
+	// readable version of the accent color
 	--fg-accent: var(--accent-pink-muted);
+	--fg-failure: var(--accent-red-alt);
 
 	// backgrounds
 	--bg: hsl(0, 0%, 95%);
@@ -131,6 +132,7 @@
 	--fg-on-accent: hsl(0, 0%, 0%);
 	--fg-on-badge: hsl(0, 0%, 0%);
 	--fg-accent: var(--accent);
+	--fg-failure: var(--accent-red);
 
 	// backgrounds
 	--bg: hsl(220, 5%, 15%);

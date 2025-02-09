@@ -36,13 +36,18 @@
 			(file) => file.converter?.name === "ffmpeg",
 		);
 		const allImages = files.files.every(
-			(file) => file.converter?.name !== "ffmpeg" && file.converter?.name !== "vertd",
+			(file) =>
+				file.converter?.name !== "ffmpeg" &&
+				file.converter?.name !== "vertd",
 		);
 		const allVideos = files.files.every(
 			(file) => file.converter?.name === "vertd",
 		);
 
-		if (files.files.length === 0 || (!allAudio && !allImages && !allVideos)) {
+		if (
+			files.files.length === 0 ||
+			(!allAudio && !allImages && !allVideos)
+		) {
 			gradientColor.set("");
 		} else {
 			gradientColor.set(allAudio ? "purple" : allVideos ? "red" : "blue");
@@ -91,7 +96,7 @@
 		</div>
 		{#if !file.converter}
 			<div
-				class="h-full flex flex-col text-center justify-center text-red-600"
+				class="h-full flex flex-col text-center justify-center text-failure"
 			>
 				<p class="font-body font-bold">We can't convert this file.</p>
 				<p class="font-normal">
@@ -116,8 +121,8 @@
 								style="background: var({isAudio
 									? '--bg-gradient-purple-alt'
 									: isVideo
-									? '--bg-gradient-red-alt'
-									: '--bg-gradient-blue-alt'})"
+										? '--bg-gradient-red-alt'
+										: '--bg-gradient-blue-alt'})"
 							>
 								{#if isAudio}
 									<FileMusicIcon size="56" />
@@ -146,8 +151,8 @@
 								class="btn p-0 w-14 h-14 text-black {isAudio
 									? 'bg-accent-purple'
 									: isVideo
-									? 'bg-accent-red'
-									: 'bg-accent-blue'}"
+										? 'bg-accent-red'
+										: 'bg-accent-blue'}"
 								disabled={!files.ready}
 								onclick={file.convert}
 							>

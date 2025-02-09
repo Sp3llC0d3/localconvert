@@ -21,6 +21,7 @@ export default {
 				foreground: "var(--fg)",
 				muted: "var(--fg-muted)",
 				accent: "var(--fg-accent)",
+				failure: "var(--fg-failure)",
 				"on-accent": "var(--fg-on-accent)",
 				"on-badge": "var(--fg-on-badge)",
 			},
