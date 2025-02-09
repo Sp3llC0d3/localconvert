@@ -8,25 +8,30 @@
 	import clsx from "clsx";
 
 	let vertdCommit = $state<string | null>(null);
+	let abortController: AbortController | null = null;
+
 	const { settings }: { settings: Settings } = $props();
 
 	$effect(() => {
 		if (settings.settings.vertdURL) {
+			if (abortController) abortController.abort();
+			abortController = new AbortController();
+			const { signal } = abortController;
+
 			vertdCommit = "loading";
-			fetch(`${settings.settings.vertdURL}/api/version`)
+			fetch(`${settings.settings.vertdURL}/api/version`, { signal })
 				.then((res) => {
-					if (res.ok) {
-						res.json().then((data) => {
-							vertdCommit = data.data;
-						});
-					} else {
-						vertdCommit = null;
-					}
+					if (!res.ok) throw new Error("bad response");
+					return res.json();
 				})
-				.catch(() => {
-					vertdCommit = null;
+				.then((data) => {
+					vertdCommit = data.data;
+				})
+				.catch((err) => {
+					if (err.name !== "AbortError") vertdCommit = null;
 				});
 		} else {
+			if (abortController) abortController.abort();
 			vertdCommit = null;
 		}
 	});
