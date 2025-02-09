@@ -27,16 +27,14 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import "../app.scss";
-	import { writable } from "svelte/store";
 	import { DISCORD_URL, GITHUB_URL_VERT } from "$lib/consts";
 	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
 	import Toast from "$lib/components/visual/Toast.svelte";
 	import { Settings } from "$lib/sections/settings/index.svelte";
 	let { children } = $props();
 
-	let shouldGoBack = writable(false);
-	let navbar = $state<HTMLDivElement>();
-	let hover = $state(false);
+	let dropping = $state(false);
+	let goingLeft = $state(false);
 	let toastList = $state<ToastType[]>([]);
 
 	toasts.subscribe((value) => {
@@ -79,25 +77,20 @@
 		},
 	]);
 
-	const maybeNavToHome = (e: DragEvent) => {
-		if (e.dataTransfer?.types.includes("Files")) {
-			e.preventDefault();
-			goto("/");
-		}
+	const dropFiles = (e: DragEvent) => {
+		e.preventDefault();
+		dropping = false;
+		const oldLength = files.files.length;
+		files.add(e.dataTransfer?.files);
+		if (oldLength !== files.files.length) goto("/convert");
+	};
+
+	const handleDrag = (e: DragEvent, drag: boolean) => {
+		e.preventDefault();
+		dropping = drag;
 	};
 
 	onMount(() => {
-		const mouseEnter = () => {
-			hover = true;
-		};
-
-		const mouseLeave = () => {
-			hover = false;
-		};
-
-		navbar?.addEventListener("mouseenter", mouseEnter);
-		navbar?.addEventListener("mouseleave", mouseLeave);
-
 		isMobile.set(window.innerWidth <= 768);
 		window.addEventListener("resize", () => {
 			isMobile.set(window.innerWidth <= 768);
@@ -107,9 +100,9 @@
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);
-	});
 
-	let goingLeft = $state(false);
+		Settings.instance.load();
+	});
 
 	beforeNavigate((e) => {
 		const oldIndex = items.findIndex((i) =>
@@ -123,10 +116,6 @@
 		} else {
 			goingLeft = false;
 		}
-	});
-
-	onMount(() => {
-		Settings.instance.load();
 	});
 </script>
 
@@ -169,10 +158,22 @@
 	<script src="/coi-serviceworker.min.js"></script>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen h-full">
-	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
+<div
+	class="flex flex-col min-h-screen h-full"
+	ondrop={dropFiles}
+	ondragenter={(e) => handleDrag(e, true)}
+	ondragover={(e) => handleDrag(e, true)}
+	ondragleave={(e) => handleDrag(e, false)}
+	role="region"
+>
+	{#if dropping}
+		<div
+			class="fixed w-screen h-screen bg-accent-blue opacity-40 dynadark:opacity-20 z-[100] pointer-events-none"
+		></div>
+	{/if}
 
-	<div>
+	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
+	<div class="z-50">
 		<!-- Mobile logo -->
 		<div class="flex md:hidden justify-center items-center p-8">
 			<a
@@ -190,12 +191,16 @@
 		</div>
 
 		<!-- Desktop navbar -->
-		<div class="hidden md:flex p-8 w-screen justify-center z-50">
+		<div class="hidden md:flex p-8 w-screen justify-center">
 			<Navbar {items} />
 		</div>
 	</div>
 
-	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow">
+	<div
+		class="grid grid-rows-1 grid-cols-1 h-full flex-grow z-50 {dropping
+			? 'pointer-events-none'
+			: ''}"
+	>
 		{#key page.url.pathname}
 			<div
 				class="row-start-1 col-start-1"
@@ -230,13 +235,13 @@
 		{/key}
 	</div>
 
-	<div class="fixed bottom-0 right-0 p-4 z-50 space-y-4">
+	<div class="fixed bottom-0 right-0 p-4 space-y-4 z-50">
 		{#each toastList as { id, type, message, durations }}
 			<Toast {id} {type} {message} {durations} />
 		{/each}
 	</div>
 
-	<div>
+	<div class="z-50">
 		<div
 			class="hidden md:block w-full h-14 border-t border-separator relative mt-12"
 		>
