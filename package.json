@@ -20,7 +20,7 @@
 		"@types/jsmediatags": "^3.9.6",
 		"autoprefixer": "^10.4.20",
 		"eslint": "^9.18.0",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
 		"globals": "^15.14.0",
 		"prettier": "^3.4.2",
@@ -40,11 +40,11 @@
 		"@fontsource/azeret-mono": "^5.1.1",
 		"@fontsource/lexend": "^5.1.2",
 		"@fontsource/radio-canada-big": "^5.1.1",
-		"@imagemagick/magick-wasm": "^0.0.31",
+		"@imagemagick/magick-wasm": "^0.0.32",
 		"client-zip": "^2.4.6",
 		"clsx": "^2.1.1",
 		"jsmediatags": "^3.9.7",
-		"lucide-svelte": "^0.456.0",
+		"lucide-svelte": "^0.475.0",
 		"wasm-vips": "^0.0.11"
 	},
 	"patchedDependencies": {
