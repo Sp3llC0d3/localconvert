@@ -72,7 +72,7 @@
 					of your GPU to do it as quickly as possible.
 				</p>
 				<p class="text-sm text-muted font-normal">
-					We currently don't provide an hosted instance due to the
+					We currently don't provide a hosted instance due to the
 					upkeep costs. However, it's quite easy to host one on your
 					own PC or server if you know what you're doing. You can
 					download the server binaries <a
@@ -125,7 +125,6 @@
 							}
 						})()}
 						onselect={(selected) => {
-							console.log(selected);
 							switch (selected) {
 								case "Very Slow":
 									settings.vertdSpeed = "verySlow";
