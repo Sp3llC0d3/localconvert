@@ -222,6 +222,10 @@ body {
 	background-size: 100vw 100vh;
 }
 
+::selection, ::-moz-selection {
+	@apply bg-accent-blue text-on-accent;
+}
+
 .hoverable {
 	@apply hover:scale-105 duration-200;
 }
