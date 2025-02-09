@@ -51,12 +51,22 @@ const vertdFetch = async <U extends keyof RouteMap>(
 };
 
 // ws types
+
+export type ConversionSpeed =
+	| "verySlow"
+	| "slower"
+	| "slow"
+	| "medium"
+	| "fast"
+	| "ultraFast";
+
 interface StartJobMessage {
 	type: "startJob";
 	data: {
 		token: string;
 		jobId: string;
 		to: string;
+		speed: ConversionSpeed;
 	};
 }
 
@@ -135,6 +145,7 @@ export class VertdConverter extends Converter {
 				`ws://${apiUrl.replace("http://", "").replace("https://", "")}/api/ws`,
 			);
 			ws.onopen = () => {
+				const speed = Settings.instance.settings.vertdSpeed;
 				this.log("opened ws connection to vertd");
 				const msg: StartJobMessage = {
 					type: "startJob",
@@ -142,6 +153,7 @@ export class VertdConverter extends Converter {
 						jobId: uploadRes.id,
 						token: uploadRes.auth,
 						to,
+						speed,
 					},
 				};
 				ws.send(JSON.stringify(msg));

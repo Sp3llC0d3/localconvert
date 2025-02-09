@@ -1,3 +1,5 @@
+import type { ConversionSpeed } from "$lib/converters/vertd.svelte";
+
 export { default as Appearance } from "./Appearance.svelte";
 export { default as Conversion } from "./Conversion.svelte";
 export { default as Vertd } from "./Vertd.svelte";
@@ -5,6 +7,7 @@ export { default as Vertd } from "./Vertd.svelte";
 export interface ISettings {
 	filenameFormat: string;
 	vertdURL: string;
+	vertdSpeed: ConversionSpeed;
 }
 
 export class Settings {
@@ -13,6 +16,7 @@ export class Settings {
 	public settings: ISettings = $state({
 		filenameFormat: "VERT_%name%",
 		vertdURL: "",
+		vertdSpeed: "slow",
 	});
 
 	public save() {

@@ -224,7 +224,8 @@ body {
 	background-size: 100vw 100vh;
 }
 
-::selection, ::-moz-selection {
+::selection,
+::-moz-selection {
 	@apply bg-accent-blue text-on-accent;
 }
 
@@ -278,7 +279,8 @@ body {
 		@apply text-accent underline;
 	}
 
-	input[type="text"] {
+	input[type="text"],
+	select.dropdown {
 		@apply w-full p-3 rounded-lg bg-panel border-2 border-button pl-3 pr-[4rem];
 	}
 
@@ -286,7 +288,7 @@ body {
 		@apply text-muted font-normal;
 	}
 
-	input[type=text]:focus {
+	input[type="text"]:focus {
 		@apply outline outline-accent outline-2;
 	}
 }

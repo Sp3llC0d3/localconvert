@@ -9,6 +9,7 @@
 		selected?: string;
 		onselect?: (option: string) => void;
 		disabled?: boolean;
+		settingsStyle?: boolean;
 	};
 
 	let {
@@ -16,6 +17,7 @@
 		selected = $bindable(options[0]),
 		onselect,
 		disabled,
+		settingsStyle,
 	}: Props = $props();
 
 	let open = $state(false);
@@ -49,13 +51,21 @@
 </script>
 
 <div
-	class="relative w-full min-w-fit text-xl font-medium text-center"
+	class="relative w-full min-w-fit {settingsStyle
+		? 'font-normal'
+		: 'text-xl font-medium'} text-center"
 	bind:this={dropdown}
 >
 	<button
-		class="font-display w-full justify-center overflow-hidden relative cursor-pointer px-3 py-3.5 bg-button {disabled
+		class="font-display w-full {settingsStyle
+			? 'justify-between'
+			: 'justify-center'} overflow-hidden relative cursor-pointer {settingsStyle
+			? 'px-4'
+			: 'px-3'} py-3.5 bg-button {disabled
 			? 'opacity-50'
-			: ''} flex items-center rounded-full focus:!outline-none"
+			: ''} flex items-center {settingsStyle
+			? 'rounded-xl'
+			: 'rounded-full'} focus:!outline-none"
 		onclick={toggle}
 		onmouseenter={() => (hover = true)}
 		onmouseleave={() => (hover = false)}
@@ -73,7 +83,11 @@
 						duration,
 						easing: quintOut,
 					}}
-					class="col-start-1 row-start-1 text-center font-body font-medium"
+					class="col-start-1 row-start-1 {settingsStyle
+						? 'text-left'
+						: 'text-center'} font-body {settingsStyle
+						? 'font-normal'
+						: 'font-medium'}"
 				>
 					{selected}
 				</p>

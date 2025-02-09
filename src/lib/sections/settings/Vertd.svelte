@@ -4,6 +4,7 @@
 	import { ServerIcon } from "lucide-svelte";
 	import type { Settings } from "./index.svelte";
 	import clsx from "clsx";
+	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 
 	let vertdCommit = $state<string | null>(null);
 	let abortController: AbortController | null = null;
@@ -82,6 +83,60 @@
 						type="text"
 						placeholder="Example: http://localhost:24153"
 						bind:value={settings.settings.vertdURL}
+					/>
+				</div>
+				<div class="flex flex-col gap-4">
+					<div class="flex flex-col gap-2">
+						<p class="text-base font-bold">Conversion speed</p>
+						<p class="text-sm text-muted font-normal">
+							This describes the tradeoff between speed and
+							quality. Faster speeds will result in lower quality,
+							but will get the job done quicker.
+						</p>
+					</div>
+					<!-- <select
+						bind:value={settings.settings.vertdSpeed}
+						class="w-1/2 dropdown"
+					>
+						<option value="verySlow">Very Slow</option>
+						<option value="slower">Slower</option>
+						<option value="slow">Slow</option>
+						<option value="medium">Medium</option>
+						<option value="fast">Fast</option>
+						<option value="ultraFast">Ultra Fast</option>
+					</select> -->
+					<Dropdown
+						options={[
+							"Very Slow",
+							"Slower",
+							"Slow",
+							"Medium",
+							"Fast",
+							"Ultra Fast",
+						]}
+						settingsStyle
+						onselect={(selected) => {
+							switch (selected) {
+								case "Very Slow":
+									settings.settings.vertdSpeed = "verySlow";
+									break;
+								case "Slower":
+									settings.settings.vertdSpeed = "slower";
+									break;
+								case "Slow":
+									settings.settings.vertdSpeed = "slow";
+									break;
+								case "Medium":
+									settings.settings.vertdSpeed = "medium";
+									break;
+								case "Fast":
+									settings.settings.vertdSpeed = "fast";
+									break;
+								case "Ultra Fast":
+									settings.settings.vertdSpeed = "ultraFast";
+									break;
+							}
+						}}
 					/>
 				</div>
 			</div>
