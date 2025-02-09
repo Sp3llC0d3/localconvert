@@ -27,7 +27,7 @@
 	import { onMount } from "svelte";
 	import { quintOut } from "svelte/easing";
 	import "../app.scss";
-	import { DISCORD_URL, GITHUB_URL_VERT } from "$lib/consts";
+	import { DISCORD_URL, GITHUB_URL_VERT, VERT_NAME } from "$lib/consts";
 	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
 	import Toast from "$lib/components/visual/Toast.svelte";
 	import { Settings } from "$lib/sections/settings/index.svelte";
@@ -120,11 +120,11 @@
 </script>
 
 <svelte:head>
-	<title>VERT.sh</title>
+	<title>{VERT_NAME}</title>
 	<meta name="theme-color" content="#F2ABEE" />
 	<meta
 		name="title"
-		content="VERT.sh — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file convert"
 	/>
 	<meta
 		name="description"
@@ -133,7 +133,7 @@
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="VERT.sh — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file convert"
 	/>
 	<meta
 		property="og:description"
@@ -143,7 +143,7 @@
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta
 		property="twitter:title"
-		content="VERT.sh — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file convert"
 	/>
 	<meta
 		property="twitter:description"
