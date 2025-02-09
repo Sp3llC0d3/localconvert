@@ -200,11 +200,7 @@
 		</div>
 	</div>
 
-	<div
-		class="grid grid-rows-1 grid-cols-1 h-full flex-grow z-50 {dropping
-			? 'pointer-events-none'
-			: ''}"
-	>
+	<div class="grid grid-rows-1 grid-cols-1 h-full flex-grow z-50">
 		{#key page.url.pathname}
 			<div
 				class="row-start-1 col-start-1"

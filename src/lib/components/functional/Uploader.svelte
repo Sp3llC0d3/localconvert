@@ -13,16 +13,7 @@
 
 	const { class: classList }: Props = $props();
 
-	let dropping = $state(false);
 	let uploaderButton = $state<HTMLButtonElement>();
-
-	const dropFiles = (e: DragEvent) => {
-		e.preventDefault();
-		dropping = false;
-		const oldLength = files.files.length;
-		files.add(e.dataTransfer?.files);
-		if (oldLength !== files.files.length) goto("/convert");
-	};
 
 	const uploadFiles = async () => {
 		const input = document.createElement("input");
@@ -68,14 +59,9 @@
 </script>
 
 <button
-	ondragenter={() => (dropping = true)}
-	ondragleave={() => (dropping = false)}
-	ondrop={dropFiles}
 	onclick={uploadFiles}
 	bind:this={uploaderButton}
-	class={clsx(`hover:scale-105 active:scale-100 duration-200 ${classList}`, {
-		"scale-105": dropping,
-	})}
+	class={clsx(`hover:scale-105 active:scale-100 duration-200 ${classList}`)}
 >
 	<Panel
 		class="flex justify-center items-center w-full h-full flex-col pointer-events-none"
