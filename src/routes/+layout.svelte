@@ -168,7 +168,7 @@
 >
 	{#if dropping}
 		<div
-			class="fixed w-screen h-screen opacity-50 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl {$effects
+			class="fixed w-screen h-screen opacity-40 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl {$effects
 				? 'dragoverlay'
 				: 'bg-accent-blue'}"
 			class:_dragover={dropping && $effects}
