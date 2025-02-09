@@ -180,7 +180,7 @@
 	<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 	<div class="z-50">
 		<!-- Mobile logo -->
-		<div class="flex md:hidden justify-center items-center p-8">
+		<div class="flex md:hidden justify-center items-center pb-8 pt-4">
 			<a
 				class="flex items-center justify-center bg-panel p-2 rounded-[20px] shadow-panel"
 				href="/"
@@ -218,7 +218,7 @@
 				}}
 			>
 				<div
-					class="flex flex-col h-full pb-36 md:pb-0"
+					class="flex flex-col h-full pb-32"
 					in:fade={{
 						duration,
 						easing: quintOut,
@@ -244,7 +244,7 @@
 
 	<div class="z-50">
 		<div
-			class="hidden md:block w-full h-14 border-t border-separator relative mt-12"
+			class="hidden md:block w-full h-14 border-t border-separator fixed bottom-0 mt-12"
 		>
 			<Footer
 				class="w-full h-full"

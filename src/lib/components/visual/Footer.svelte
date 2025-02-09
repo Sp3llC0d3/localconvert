@@ -11,12 +11,9 @@
 	const links = $derived(Object.entries(items));
 </script>
 
-<footer
-	class={classList}
-	style="background: linear-gradient(to bottom, transparent, var(--bg) 100%)"
->
+<footer class={classList}>
 	<div
-		class="w-full h-full flex items-center justify-center text-muted gap-3"
+		class="w-full h-full flex items-center justify-center text-muted gap-3 relative"
 	>
 		<p>© {year} VERT.</p>
 		{#each links as [name, url] (name)}
@@ -31,4 +28,9 @@
 			</a>
 		{/each}
 	</div>
+
+	<div
+		class="absolute bottom-0 left-0 w-full h-24 -z-10"
+		style="background: linear-gradient(to bottom, transparent, var(--bg) 100%)"
+	></div>
 </footer>

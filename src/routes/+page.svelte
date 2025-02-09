@@ -13,7 +13,7 @@
 </script>
 
 <div
-	class="w-screen px-8 h-full flex items-start justify-center overflow-hidden max-h-screen"
+	class="w-screen px-2 md:px-8 h-full flex items-start justify-center overflow-hidden max-h-screen"
 >
 	<div class="content w-screen flex items-center justify-center flex-grow">
 		<div class="max-w-5xl w-full">
