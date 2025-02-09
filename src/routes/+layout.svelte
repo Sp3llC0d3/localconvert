@@ -168,7 +168,8 @@
 >
 	{#if dropping}
 		<div
-			class="fixed w-screen h-screen bg-accent-blue opacity-40 dynadark:opacity-20 z-[100] pointer-events-none"
+			class="dragoverlay fixed w-screen h-screen opacity-50 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl"
+			class:_dragover={dropping}
 			transition:fade={{
 				duration,
 				easing: quintOut,
@@ -329,3 +330,31 @@
 		style="background: var(--bg-gradient-pink);"
 	></div>
 {/if}
+
+<style>
+	.dragoverlay {
+		animation: dragoverlay-animation 3s infinite linear;
+	}
+
+	@keyframes dragoverlay-animation {
+		0% {
+			@apply bg-accent-pink;
+		}
+
+		25% {
+			@apply bg-accent-blue;
+		}
+
+		50% {
+			@apply bg-accent-purple;
+		}
+
+		75% {
+			@apply bg-accent-red;
+		}
+
+		100% {
+			@apply bg-accent-pink;
+		}
+	}
+</style>
