@@ -169,6 +169,10 @@
 	{#if dropping}
 		<div
 			class="fixed w-screen h-screen bg-accent-blue opacity-40 dynadark:opacity-20 z-[100] pointer-events-none"
+			transition:fade={{
+				duration,
+				easing: quintOut,
+			}}
 		></div>
 	{/if}
 
