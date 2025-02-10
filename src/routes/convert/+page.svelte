@@ -5,6 +5,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import {
+		effects,
 		files,
 		gradientColor,
 		showGradient,
@@ -148,7 +149,9 @@
 						/>
 						<div class="w-full flex items-center justify-between">
 							<button
-								class="btn p-0 w-14 h-14 text-black {isAudio
+								class="btn {$effects
+									? ''
+									: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
 									? 'bg-accent-purple'
 									: isVideo
 										? 'bg-accent-red'
@@ -159,7 +162,9 @@
 								<RotateCwIcon size="24" />
 							</button>
 							<button
-								class="btn p-0 w-14 h-14"
+								class="btn {$effects
+									? ''
+									: '!scale-100'} p-0 w-14 h-14"
 								onclick={file.download}
 								disabled={!file.result}
 							>
