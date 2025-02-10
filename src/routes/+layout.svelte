@@ -1,25 +1,26 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { quintOut } from "svelte/easing";
 	import { goto } from "$app/navigation";
 
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
-	import { duration } from "$lib/animation";
-	import featuredImage from "$lib/assets/VERT_Feature.webp";
+	import { VERT_NAME } from "$lib/consts";
+	import Toast from "$lib/components/visual/Toast.svelte";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
-	import Toast from "$lib/components/visual/Toast.svelte";
-
-	import { fade } from "$lib/animation";
-	import { files, isMobile, effects, theme } from "$lib/store/index.svelte";
-	import { VERT_NAME } from "$lib/consts";
+	import featuredImage from "$lib/assets/VERT_Feature.webp";
 	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
 	import { Settings } from "$lib/sections/settings/index.svelte";
+	import {
+		files,
+		isMobile,
+		effects,
+		theme,
+		dropping,
+	} from "$lib/store/index.svelte";
 	import "../app.scss";
-	
+
 	let { children } = $props();
 
-	let dropping = $state(false);
 	let toastList = $state<ToastType[]>([]);
 
 	toasts.subscribe((value) => {
@@ -28,7 +29,7 @@
 
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
-		dropping = false;
+		dropping.set(false);
 		const oldLength = files.files.length;
 		files.add(e.dataTransfer?.files);
 		if (oldLength !== files.files.length) goto("/convert");
@@ -36,7 +37,7 @@
 
 	const handleDrag = (e: DragEvent, drag: boolean) => {
 		e.preventDefault();
-		dropping = drag;
+		dropping.set(drag);
 	};
 
 	onMount(() => {
@@ -102,24 +103,17 @@
 	ondragleave={(e) => handleDrag(e, false)}
 	role="region"
 >
-	{#if dropping}
-		<div
-			class="fixed w-screen h-screen opacity-40 dynadark:opacity-20 z-[100] pointer-events-none blur-2xl {$effects
-				? 'dragoverlay'
-				: 'bg-accent-blue'}"
-			class:_dragover={dropping && $effects}
-			transition:fade={{
-				duration,
-				easing: quintOut,
-			}}
-		></div>
-	{/if}
+	<Layout.UploadRegion />
 
 	<div>
 		<Layout.MobileLogo />
 		<Navbar.Desktop />
 	</div>
 
+	<!-- 
+		SvelteKit throws the following warning when developing - safe to ignore as we render the children in this component:
+		`<slot />` or `{@render ...}` tag missing — inner content will not be rendered
+	-->
 	<Layout.PageContent {children} />
 
 	<div class="fixed bottom-28 md:bottom-0 right-0 p-4 space-y-4 z-50">
@@ -136,31 +130,3 @@
 
 <!-- Gradients placed here to prevent it overlapping in transitions -->
 <Layout.Gradients />
-
-<style>
-	.dragoverlay {
-		animation: dragoverlay-animation 3s infinite linear;
-	}
-
-	@keyframes dragoverlay-animation {
-		0% {
-			@apply bg-accent-pink;
-		}
-
-		25% {
-			@apply bg-accent-blue;
-		}
-
-		50% {
-			@apply bg-accent-purple;
-		}
-
-		75% {
-			@apply bg-accent-red;
-		}
-
-		100% {
-			@apply bg-accent-pink;
-		}
-	}
-</style>
