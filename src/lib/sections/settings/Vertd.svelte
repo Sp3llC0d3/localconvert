@@ -55,7 +55,7 @@
 				class="inline-block -mt-1 mr-2 bg-accent-red p-2 rounded-full overflow-visible"
 				color="black"
 			/>
-			Converting Video
+			Video conversion
 		</h2>
 		<p
 			class={clsx("text-sm font-normal", {
