@@ -4,11 +4,13 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
+	import { converters } from "$lib/converters";
 	import {
 		effects,
 		files,
 		gradientColor,
 		showGradient,
+		vertdLoaded,
 	} from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
 	import {
@@ -96,12 +98,38 @@
 			</button>
 		</div>
 		{#if !file.converter}
+			{#if file.name.startsWith("vertd")}
+				<div
+					class="h-full flex flex-col text-center justify-center text-failure"
+				>
+					<p class="font-body font-bold">
+						We can't convert this file.
+					</p>
+					<p class="font-normal">
+						what are you doing..? you're supposed to run the vertd
+						server!
+					</p>
+				</div>
+			{:else}
+				<div
+					class="h-full flex flex-col text-center justify-center text-failure"
+				>
+					<p class="font-body font-bold">
+						We can't convert this file.
+					</p>
+					<p class="font-normal">
+						Only image, video, and audio files are supported
+					</p>
+				</div>
+			{/if}
+		{:else if isVideo && !$vertdLoaded}
 			<div
 				class="h-full flex flex-col text-center justify-center text-failure"
 			>
 				<p class="font-body font-bold">We can't convert this file.</p>
 				<p class="font-normal">
-					Only image, video, and audio files are supported
+					Could not find the vertd instance to start video conversion.
+					Are you sure the instance URL is set correctly?
 				</p>
 			</div>
 		{:else}
