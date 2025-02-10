@@ -229,6 +229,7 @@ export function setEffects(effectsEnabled: boolean) {
 export const files = new Files();
 export const showGradient = writable(true);
 export const gradientColor = writable("");
+export const goingLeft = writable(false);
 
 export const isMobile = writable(false);
 export const effects = writable(true);
