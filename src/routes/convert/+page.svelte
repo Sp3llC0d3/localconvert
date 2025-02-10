@@ -27,12 +27,6 @@
 	} from "lucide-svelte";
 
 	$effect(() => {
-		if (files.files.length === 1 && files.files[0].blobUrl) {
-			showGradient.set(false);
-		} else {
-			showGradient.set(true);
-		}
-
 		// Set gradient color depending on the file types
 		// TODO: if more file types added, add a "fileType" property to the file object
 		const allAudio = files.files.every(
@@ -46,6 +40,12 @@
 		const allVideos = files.files.every(
 			(file) => file.converter?.name === "vertd",
 		);
+
+		if (files.files.length === 1 && files.files[0].blobUrl && !allVideos) {
+			showGradient.set(false);
+		} else {
+			showGradient.set(true);
+		}
 
 		if (
 			files.files.length === 0 ||
