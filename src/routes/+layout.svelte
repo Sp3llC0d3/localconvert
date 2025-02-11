@@ -18,7 +18,6 @@
 		dropping,
 	} from "$lib/store/index.svelte";
 	import "../app.scss";
-	import { log, error } from "$lib/logger";
 
 	let { children } = $props();
 
@@ -53,23 +52,6 @@
 		);
 
 		Settings.instance.load();
-
-		if ("serviceWorker" in navigator) {
-			navigator.serviceWorker
-				.register("/service-worker.js")
-				.then((registration) => {
-					log(
-						["PWA"],
-						`Service Worker registration successful with scope: ${registration.scope}`,
-					);
-				})
-				.catch((err) => {
-					error(
-						["PWA"],
-						`Service Worker registration failed: ${err}`,
-					);
-				});
-		}
 	});
 </script>
 

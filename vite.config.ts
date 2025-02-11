@@ -9,7 +9,7 @@ export default defineConfig({
 		{
 			name: "vips-request-middleware",
 			configureServer(server) {
-				server.middlewares.use((req, res, next) => {
+				server.middlewares.use((_req, res, next) => {
 					res.setHeader(
 						"Cross-Origin-Embedder-Policy",
 						"require-corp",
