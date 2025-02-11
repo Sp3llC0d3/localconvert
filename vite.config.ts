@@ -6,6 +6,19 @@ import svg from "@poppanator/sveltekit-svg";
 export default defineConfig({
 	plugins: [
 		sveltekit(),
+		{
+			name: "vips-request-middleware",
+			configureServer(server) {
+				server.middlewares.use((req, res, next) => {
+					res.setHeader(
+						"Cross-Origin-Embedder-Policy",
+						"require-corp",
+					);
+					res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+					next();
+				});
+			},
+		},
 		svg({
 			includePaths: ["./src/lib/assets"],
 			svgoOptions: {
@@ -20,13 +33,13 @@ export default defineConfig({
 			},
 		}),
 		viteStaticCopy({
-            targets: [
-                {
-                    src: '_headers',
-                    dest: ''
-                }
-            ]
-        })
+			targets: [
+				{
+					src: "_headers",
+					dest: "",
+				},
+			],
+		}),
 	],
 	optimizeDeps: {
 		exclude: [
