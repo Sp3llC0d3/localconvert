@@ -2,8 +2,6 @@ import { type WorkerMessage, type OmitBetterStrict } from "$lib/types";
 import Vips from "wasm-vips";
 
 const vipsPromise = Vips({
-	// see https://github.com/kleisauke/wasm-vips/issues/85
-	dynamicLibraries: [],
 });
 
 vipsPromise
