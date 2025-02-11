@@ -1,8 +1,7 @@
 import { type WorkerMessage, type OmitBetterStrict } from "$lib/types";
 import Vips from "wasm-vips";
 
-const vipsPromise = Vips({
-});
+const vipsPromise = Vips({});
 
 vipsPromise
 	.then(() => {
@@ -21,6 +20,7 @@ const handleMessage = async (
 			if (!message.to.startsWith(".")) message.to = `.${message.to}`;
 			const image = vips.Image.newFromBuffer(
 				await message.input.file.arrayBuffer(),
+				`${message.to === ".gif" || message.to === ".webp" ? "[n=-1]" : ""}`,
 			);
 			const output = image.writeToBuffer(message.to);
 			image.delete();
