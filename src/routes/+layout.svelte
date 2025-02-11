@@ -18,6 +18,7 @@
 		dropping,
 	} from "$lib/store/index.svelte";
 	import "../app.scss";
+	import { log, error } from "$lib/logger";
 
 	let { children } = $props();
 
@@ -52,6 +53,23 @@
 		);
 
 		Settings.instance.load();
+
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker
+				.register("/service-worker.js")
+				.then((registration) => {
+					log(
+						["PWA"],
+						`Service Worker registration successful with scope: ${registration.scope}`,
+					);
+				})
+				.catch((err) => {
+					error(
+						["PWA"],
+						`Service Worker registration failed: ${err}`,
+					);
+				});
+		}
 	});
 </script>
 
@@ -86,6 +104,7 @@
 		content="With VERT you can convert image and audio files to and from PNG, JPG, WEBP, MP3, WAV, FLAC, and more. No ads, no tracking, open source, and all processing is done on your device."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
+	<link rel="manifest" href="/manifest.json" />
 	{#if PUB_PLAUSIBLE_URL}<script
 			defer
 			data-domain={PUB_HOSTNAME || "vert.sh"}
