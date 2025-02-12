@@ -173,7 +173,7 @@ class Files {
 			const file = files.files[i];
 			const result = file.result;
 			if (!result) {
-				console.error("No result found");
+				error(["files"], "No result found");
 				continue;
 			}
 			dlFiles.push({
