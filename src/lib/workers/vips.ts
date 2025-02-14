@@ -1,4 +1,3 @@
-import { type WorkerMessage, type OmitBetterStrict } from "$lib/types";
 import Vips from "wasm-vips";
 
 const vipsPromise = Vips({});
@@ -11,9 +10,8 @@ vipsPromise
 		postMessage({ type: "error", error });
 	});
 
-const handleMessage = async (
-	message: WorkerMessage,
-): Promise<OmitBetterStrict<WorkerMessage, "id"> | undefined> => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleMessage = async (message: any): Promise<any> => {
 	const vips = await vipsPromise;
 	switch (message.type) {
 		case "convert": {
@@ -33,7 +31,7 @@ const handleMessage = async (
 };
 
 onmessage = async (e) => {
-	const message: WorkerMessage = e.data;
+	const message = e.data;
 	try {
 		const res = await handleMessage(message);
 		if (!res) return;
