@@ -141,8 +141,9 @@ export class VertdConverter extends Converter {
 
 		return new Promise((resolve, reject) => {
 			const apiUrl = Settings.instance.settings.vertdURL;
+			const protocol = apiUrl.startsWith("https") ? "wss:" : "ws:";
 			const ws = new WebSocket(
-				`ws://${apiUrl.replace("http://", "").replace("https://", "")}/api/ws`,
+				`${protocol}//${apiUrl.replace("http://", "").replace("https://", "")}/api/ws`,
 			);
 			ws.onopen = () => {
 				const speed = Settings.instance.settings.vertdSpeed;
