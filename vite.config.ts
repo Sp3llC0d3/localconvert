@@ -38,6 +38,10 @@ export default defineConfig({
 					src: "_headers",
 					dest: "",
 				},
+				{
+					src: "node_modules/wasm-vips/lib/vips-*.wasm",
+					dest: "_app/immutable/workers",
+				},
 			],
 		}),
 	],

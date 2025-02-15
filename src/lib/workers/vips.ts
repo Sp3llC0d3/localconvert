@@ -1,6 +1,6 @@
 import Vips from "wasm-vips";
 
-const vipsPromise = Vips({ dynamicLibraries: [] });
+const vipsPromise = Vips();
 
 vipsPromise
 	.then(() => {

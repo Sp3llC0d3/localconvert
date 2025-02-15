@@ -34,8 +34,8 @@ export class VipsConverter extends Converter {
 		".tiff",
 		".jfif",
 		//".heif", HEIF files that are encoded like HEIC files (and HEIC files in general) aren't supported due to https://github.com/kleisauke/wasm-vips/issues/3
-		//".avif", there is an issue with vite not bundling the wasm-vips' dynamicLibraries wasm files correctly
-		//".jxl",
+		".avif",
+		".jxl",
 	];
 
 	public readonly reportsProgress = false;
