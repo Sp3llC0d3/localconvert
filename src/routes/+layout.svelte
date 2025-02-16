@@ -122,6 +122,8 @@
 		{/each}
 	</div>
 
+	<Layout.Dialogs />
+
 	<div>
 		<Layout.Footer />
 		<Navbar.Mobile />
