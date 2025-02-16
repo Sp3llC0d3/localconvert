@@ -44,7 +44,7 @@ This will start a development server. Open your browser and navigate to `http://
 Before building for production, make sure you create a `.env` file in the root of the project with the following content:
 
 ```sh
-PUB_HOSTNAME=vert.sh # change to your domain, only gets used for Plausible (for now)
+PUB_HOSTNAME=example.com # change to your domain, only gets used for Plausible (for now)
 PUB_PLAUSIBLE_URL=https://plausible.example.com # can be empty if not using Plausible
 PUB_ENV=production # "production", "development" or "nightly"
 ```
