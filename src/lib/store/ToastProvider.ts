@@ -47,6 +47,8 @@ function addToast(
 		},
 		durations.enter + durations.stay + durations.exit,
 	);
+
+	return id;
 }
 
 function removeToast(id: number) {

@@ -4,11 +4,9 @@
 
 	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { VERT_NAME } from "$lib/consts";
-	import Toast from "$lib/components/visual/Toast.svelte";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
 	import featuredImage from "$lib/assets/VERT_Feature.webp";
-	import { type Toast as ToastType, toasts } from "$lib/store/ToastProvider";
 	import { Settings } from "$lib/sections/settings/index.svelte";
 	import {
 		files,
@@ -20,12 +18,6 @@
 	import "../app.scss";
 
 	let { children } = $props();
-
-	let toastList = $state<ToastType[]>([]);
-
-	toasts.subscribe((value) => {
-		toastList = value as ToastType[];
-	});
 
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
@@ -116,12 +108,7 @@
 	-->
 	<Layout.PageContent {children} />
 
-	<div class="fixed bottom-28 md:bottom-0 right-0 p-4 space-y-4 z-50">
-		{#each toastList as { id, type, message, durations }}
-			<Toast {id} {type} {message} {durations} />
-		{/each}
-	</div>
-
+	<Layout.Toasts />
 	<Layout.Dialogs />
 
 	<div>

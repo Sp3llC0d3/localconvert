@@ -16,17 +16,18 @@
 			isInitial = false;
 			return;
 		}
-		settings;
+
 		const savedSettings = localStorage.getItem("settings");
 		if (savedSettings) {
 			const parsedSettings = JSON.parse(savedSettings);
-			if (parsedSettings === settings) return;
+			if (JSON.stringify(parsedSettings) === JSON.stringify(settings))
+				return;
 		}
 
-		log(["settings"], "saving settings");
 		try {
 			Settings.Settings.instance.settings = settings;
 			Settings.Settings.instance.save();
+			log(["settings"], "saving settings");
 		} catch (error) {
 			log(["settings", "error"], `failed to save settings: ${error}`);
 			addToast("error", "Failed to save settings!");
