@@ -12,12 +12,12 @@ import {
 let effectsEnabled = true;
 let isMobileDevice = false;
 
-effects.subscribe(value => {
-    effectsEnabled = value;
+effects.subscribe((value) => {
+	effectsEnabled = value;
 });
 
-isMobile.subscribe(value => {
-    isMobileDevice = value;
+isMobile.subscribe((value) => {
+	isMobileDevice = value;
 });
 
 export const transition =

@@ -4,6 +4,7 @@ import { VertFile } from "$lib/types";
 import jsmediatags from "jsmediatags";
 import type { TagType } from "jsmediatags/types";
 import { writable } from "svelte/store";
+import { addDialog } from "./DialogProvider";
 
 class Files {
 	public files = $state<VertFile[]>([]);
@@ -105,6 +106,7 @@ class Files {
 		return url;
 	}
 
+	private _warningShown = false;
 	private _add(file: VertFile | File) {
 		if (file instanceof VertFile) {
 			this.files.push(file);
@@ -133,6 +135,42 @@ class Files {
 			const vf = new VertFile(file, to, converter);
 			this.files.push(vf);
 			this._addThumbnail(vf);
+
+			const isVideo = converter.name === "vertd";
+			const acceptedExternalWarning =
+				localStorage.getItem("acceptedExternalWarning") === "true";
+			if (isVideo && !acceptedExternalWarning && !this._warningShown) {
+				this._warningShown = true;
+				const message =
+					"Some of your files will be uploaded to an external server to be converted. Do you want to continue?";
+				const buttons = [
+					{
+						text: "No",
+						action: () => {
+							this.files = this.files.filter(
+								(f) => f.converter?.name !== "vertd",
+							);
+							this._warningShown = false;
+						},
+					},
+					{
+						text: "Yes",
+						action: () => {
+							localStorage.setItem(
+								"acceptedExternalWarning",
+								"true",
+							);
+							this._warningShown = false;
+						},
+					},
+				];
+				addDialog(
+					"External server warning",
+					message,
+					buttons,
+					"warning",
+				);
+			}
 		}
 	}
 
@@ -218,8 +256,8 @@ export function setTheme(themeTo: "light" | "dark") {
 
 	// Lock dark reader if it's set to dark mode
 	if (themeTo === "dark") {
-		const lock = document.createElement('meta');
-		lock.name = 'darkreader-lock';
+		const lock = document.createElement("meta");
+		lock.name = "darkreader-lock";
 		document.head.appendChild(lock);
 	} else {
 		const lock = document.querySelector('meta[name="darkreader-lock"]');

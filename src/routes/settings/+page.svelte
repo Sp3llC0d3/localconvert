@@ -2,7 +2,6 @@
 	import { browser } from "$app/environment";
 	import { log } from "$lib/logger";
 	import * as Settings from "$lib/sections/settings/index.svelte";
-	import { addDialog, removeDialog } from "$lib/store/DialogProvider";
 	import { addToast } from "$lib/store/ToastProvider";
 	import { SettingsIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
@@ -62,38 +61,6 @@
 
 		<div class="flex flex-col gap-4 flex-1">
 			<Settings.Appearance />
-			<button class="hidden md:block btn btn-primary" onclick={() => {
-				const id = addDialog(
-					"Test dialog",
-					"This is a test dialog",
-					[
-						{
-							text: "Close",
-							action: () => {
-								addToast("info", "Dialog closed");
-							},
-						},
-					],
-					"info"
-				);
-
-				const id2 = addDialog(
-					"Test 2 dialog",
-					"This is a test dialog 2",
-					[
-						{
-							text: "meow",
-							action: () => {
-								addToast("info", "Dialog 2 closed");
-							},
-						},
-					],
-					"success"
-				);
-		
-				console.log(`Dialog ID: ${id}`);
-				console.log(`Dialog ID2: ${id2}`);
-			}}>Test dialogs</button>
 		</div>
 	</div>
 </div>
