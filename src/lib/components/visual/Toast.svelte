@@ -23,19 +23,22 @@
 
 	let { id, type, message, durations }: Props = $props();
 
-	const color = {
+	const colors = {
 		success: "purple",
 		error: "red",
 		info: "blue",
 		warning: "pink",
-	}[type];
+	};
 
-	const Icon = {
+	const Icons = {
 		success: CheckIcon,
 		error: BanIcon,
 		info: InfoIcon,
 		warning: TriangleAlert,
-	}[type];
+	};
+
+	let color = $derived(colors[type]);
+	let Icon = $derived(Icons[type]);
 
 	// intentionally unused. this is so tailwind can generate the css for these colours as it doesn't detect if it's dynamically loaded
 	// this would lead to the colours not being generated in the final css file by tailwind
@@ -48,7 +51,7 @@
 </script>
 
 <div
-	class="flex items-center justify-between w-full max-w-sm p-4 gap-4 bg-accent-{color} border-accent-{color}-alt border-l-4 rounded-lg shadow-md"
+	class="flex items-center justify-between max-w-sm p-4 gap-4 bg-accent-{color} border-accent-{color}-alt border-l-4 rounded-lg shadow-md"
 	in:fly={{
 		duration: durations.enter,
 		easing: quintOut,
@@ -70,7 +73,7 @@
 		<p class="text-black font-normal">{message}</p>
 	</div>
 	<button
-		class="text-gray-600 hover:text-black"
+		class="text-gray-600 hover:text-black flex-shrink-0"
 		onclick={() => removeToast(id)}
 	>
 		<XIcon size="16" />

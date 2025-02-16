@@ -33,8 +33,6 @@
 
 	let color = $derived(colors[type]);
 	let Icon = $derived(Icons[type]);
-
-	console.log(`ID: ${id}, type: ${type}`);
 </script>
 
 <div

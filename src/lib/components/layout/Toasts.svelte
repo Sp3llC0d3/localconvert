@@ -8,8 +8,12 @@
 	});
 </script>
 
-<div class="fixed bottom-28 md:bottom-0 right-0 p-4 space-y-4 z-50">
+<div
+	class="fixed bottom-28 md:bottom-0 right-0 p-4 flex flex-col-reverse gap-4 z-50"
+>
 	{#each toastList as { id, type, message, durations }}
-		<Toast {id} {type} {message} {durations} />
+		<div class="flex justify-end">
+			<Toast {id} {type} {message} {durations} />
+		</div>
 	{/each}
 </div>
