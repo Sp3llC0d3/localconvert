@@ -36,7 +36,7 @@
 </script>
 
 <div
-	class="flex flex-col items-center justify-between w-full max-w-sm p-4 gap-6 bg-panel border-accent-{color}-alt border-l-4 rounded-lg shadow-md"
+	class="flex flex-col items-center justify-between w-full max-w-sm p-4 gap-6 bg-panel border-accent-{color}-alt rounded-lg shadow-md"
 	in:fly={{
 		duration,
 		easing: quintOut,
