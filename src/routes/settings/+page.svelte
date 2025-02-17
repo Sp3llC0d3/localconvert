@@ -3,7 +3,7 @@
 	import { log } from "$lib/logger";
 	import * as Settings from "$lib/sections/settings/index.svelte";
 	import { addToast } from "$lib/store/ToastProvider";
-	import { env } from "$env/dynamic/public";
+	import { PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { SettingsIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 
@@ -63,7 +63,7 @@
 
 		<div class="flex flex-col gap-4 flex-1">
 			<Settings.Appearance />
-			{#if env.PUB_PLAUSIBLE_URL}
+			{#if PUB_PLAUSIBLE_URL}
 				<Settings.Privacy {settings} />
 			{/if}
 		</div>

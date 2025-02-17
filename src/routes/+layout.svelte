@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
 
-	import { env } from "$env/dynamic/public";
+	import { PUB_PLAUSIBLE_URL, PUB_HOSTNAME } from "$env/static/public";
 	import { VERT_NAME } from "$lib/consts";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
@@ -49,7 +49,7 @@
 
 	$effect(() => {
 		// Enable plausible if enabled
-		enablePlausible = !!env.PUB_PLAUSIBLE_URL && Settings.instance.settings.plausible;
+		enablePlausible = !!PUB_PLAUSIBLE_URL && Settings.instance.settings.plausible;
 	});
 </script>
 
@@ -88,8 +88,8 @@
 	{#if enablePlausible}
 		<script
 			defer
-			data-domain={env.PUB_HOSTNAME || "vert.sh"}
-			src="{env.PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
+			data-domain={PUB_HOSTNAME || "vert.sh"}
+			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
 		></script>
 	{/if}
 </svelte:head>
