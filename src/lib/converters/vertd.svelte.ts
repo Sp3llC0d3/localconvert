@@ -178,6 +178,11 @@ export class VertdConverter extends Converter {
 						ws.close();
 						const url = `${apiUrl}/api/download/${msg.data.jobId}/${uploadRes.auth}`;
 						this.log(`downloading from ${url}`);
+						window.plausible("convert", {
+							props: {
+								type: "video",
+							}
+						});
 						const res = await fetch(url).then((res) => res.blob());
 						resolve(
 							new VertFile(
