@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
 
-	import { PUB_HOSTNAME, PUB_PLAUSIBLE_URL } from "$env/static/public";
+	import { env } from "$env/dynamic/public";
 	import { VERT_NAME } from "$lib/consts";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
@@ -18,6 +18,7 @@
 	import "../app.scss";
 
 	let { children } = $props();
+	let enablePlausible = $state(false);
 
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
@@ -44,6 +45,11 @@
 		);
 
 		Settings.instance.load();
+	});
+
+	$effect(() => {
+		// Enable plausible if enabled
+		enablePlausible = !!env.PUB_PLAUSIBLE_URL && Settings.instance.settings.plausible;
 	});
 </script>
 
@@ -79,11 +85,13 @@
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
-	{#if PUB_PLAUSIBLE_URL}<script
+	{#if enablePlausible}
+		<script
 			defer
-			data-domain={PUB_HOSTNAME || "vert.sh"}
-			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
-		></script>{/if}
+			data-domain={env.PUB_HOSTNAME || "vert.sh"}
+			src="{env.PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
+		></script>
+	{/if}
 </svelte:head>
 
 <!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->

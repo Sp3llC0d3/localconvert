@@ -12,6 +12,8 @@ import {
 let effectsEnabled = true;
 let isMobileDevice = false;
 
+// FIXME: there is sometimes an issue in dev where subscribing to the store just breaks everything? (.subscribe() not existing on effects, somehow)
+// you gotta restart the dev server to fix and it only seems to happen in dev. somehow effects being called before its defined?
 effects.subscribe((value) => {
 	effectsEnabled = value;
 });
