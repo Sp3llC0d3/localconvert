@@ -1,6 +1,8 @@
 import Vips from "wasm-vips";
 
-const vipsPromise = Vips();
+const vipsPromise = Vips({
+	dynamicLibraries: ["vips-jxl.wasm", "vips-heif.wasm", "vips-resvg.wasm"],
+});
 
 vipsPromise
 	.then(() => {

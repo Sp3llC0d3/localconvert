@@ -11,14 +11,16 @@
 	<div class="flex items-center flex-col md:flex-row gap-2.5 max-md:w-full">
 		<button
 			onclick={() => files.convertAll()}
-			class="btn {$effects ? "" : "!scale-100"} highlight flex gap-3 max-md:w-full"
+			class="btn {$effects
+				? ''
+				: '!scale-100'} highlight flex gap-3 max-md:w-full"
 			disabled={!files.ready}
 		>
 			<RefreshCw size="24" />
 			<p>Convert all</p>
 		</button>
 		<button
-			class="btn {$effects ? "" : "!scale-100"} flex gap-3 max-md:w-full"
+			class="btn {$effects ? '' : '!scale-100'} flex gap-3 max-md:w-full"
 			disabled={!files.ready || !files.results}
 			onclick={() => files.downloadAll()}
 		>
@@ -30,13 +32,18 @@
 	<div class="flex items-center gap-2">
 		<p class="whitespace-nowrap text-xl">Set all to</p>
 		{#if files.requiredConverters.length === 1}
+			<!-- cannot convert to svg or heif -->
+			{@const supported =
+				files.files[0]?.converter?.supportedFormats?.filter(
+					(format) => format !== ".svg" && format !== ".heif",
+				)}
 			<Dropdown
 				onselect={(r) =>
 					files.files.forEach((f) => {
 						f.to = r;
 						f.result = null;
 					})}
-				options={files.files[0]?.converter?.supportedFormats || []}
+				options={supported || []}
 			/>
 		{:else}
 			<Dropdown options={["N/A"]} disabled />

@@ -182,8 +182,12 @@
 					<div
 						class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
 					>
+						<!-- cannot convert to svg or heif -->
 						<Dropdown
-							options={file.converter?.supportedFormats || []}
+							options={file.converter?.supportedFormats?.filter(
+								(format) =>
+									format !== ".svg" && format !== ".heif",
+							) || []}
 							bind:selected={file.to}
 							onselect={(option) => handleSelect(option, file)}
 						/>

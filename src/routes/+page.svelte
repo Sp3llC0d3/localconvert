@@ -63,7 +63,9 @@
 				</div>
 
 				<div class="flex flex-col text-center justify-center">
-					<p>Animated images are not supported (yet).</p>
+					<p class="flex items-center justify-center gap-2">
+						<Check size="20" /> Fully supported
+					</p>
 					<p>
 						<b>Supported formats:</b>
 						{supportedFormats.images}
