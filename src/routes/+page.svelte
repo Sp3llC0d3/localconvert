@@ -11,17 +11,29 @@
 
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { converters } from "$lib/converters";
+	import { vertdLoaded } from "$lib/store/index.svelte";
 	import { AudioLines, Check, Film, Image } from "lucide-svelte";
 
 	const getSupportedFormats = (name: string) =>
 		converters.find((c) => c.name === name)?.supportedFormats.join(", ") ||
 		"none";
 
-	const supportedFormats = {
-		images: getSupportedFormats("libvips"),
-		audio: getSupportedFormats("ffmpeg"),
-		video: getSupportedFormats("vertd"),
-	};
+	const status = $derived({
+		images: {
+			ready: converters.find((c) => c.name === "libvips")?.ready,
+			formats: getSupportedFormats("libvips"),
+		},
+		audio: {
+			ready: converters.find((c) => c.name === "ffmpeg")?.ready,
+			formats: getSupportedFormats("ffmpeg"),
+		},
+		video: {
+			ready:
+				converters.find((c) => c.name === "vertd")?.ready &&
+				$vertdLoaded,
+			formats: getSupportedFormats("vertd"),
+		},
+	});
 </script>
 
 <div class="max-w-6xl w-full mx-auto px-6 md:px-8">
@@ -67,8 +79,12 @@
 						<Check size="20" /> Fully supported
 					</p>
 					<p>
+						<b>Status: </b>
+						{status.images.ready ? "ready" : "not ready"}
+					</p>
+					<p>
 						<b>Supported formats:</b>
-						{supportedFormats.images}
+						{status.images.formats}
 					</p>
 				</div>
 			</div>
@@ -86,8 +102,12 @@
 						<Check size="20" /> Fully supported
 					</p>
 					<p>
+						<b>Status: </b>
+						{status.audio.ready ? "ready" : "not ready"}
+					</p>
+					<p>
 						<b>Supported formats:</b>
-						{supportedFormats.audio}
+						{status.audio.formats}
 					</p>
 				</div>
 			</div>
@@ -107,7 +127,14 @@
 							>Learn more</a
 						>.
 					</p>
-					<p><b>Supported formats:</b> {supportedFormats.video}</p>
+					<p>
+						<b>Status: </b>
+						{status.video.ready ? "ready" : "not ready"}
+					</p>
+					<p>
+						<b>Supported formats:</b>
+						{status.video.formats}
+					</p>
 				</div>
 			</div>
 		</div>
