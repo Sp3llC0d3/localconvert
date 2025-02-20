@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { goto } from "$app/navigation";
+	import { goto, beforeNavigate, afterNavigate } from "$app/navigation";
 
 	import { PUB_PLAUSIBLE_URL, PUB_HOSTNAME } from "$env/static/public";
 	import { VERT_NAME } from "$lib/consts";
@@ -19,6 +19,21 @@
 
 	let { children } = $props();
 	let enablePlausible = $state(false);
+
+	let scrollPositions = new Map<string, number>();
+
+	beforeNavigate((nav) => {
+		if (!nav.from || !$isMobile) return;
+		scrollPositions.set(nav.from.url.pathname, window.scrollY);
+	});
+
+	afterNavigate((nav) => {
+		if (!$isMobile) return;
+		const scrollY = nav.to
+			? scrollPositions.get(nav.to.url.pathname) || 0
+			: 0;
+		window.scrollTo(0, scrollY);
+	});
 
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
@@ -49,7 +64,8 @@
 
 	$effect(() => {
 		// Enable plausible if enabled
-		enablePlausible = !!PUB_PLAUSIBLE_URL && Settings.instance.settings.plausible;
+		enablePlausible =
+			!!PUB_PLAUSIBLE_URL && Settings.instance.settings.plausible;
 	});
 </script>
 
