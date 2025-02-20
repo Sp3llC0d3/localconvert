@@ -32,6 +32,7 @@ export class FFmpegConverter extends Converter {
 		log(["converters", this.name], `created converter`);
 		if (!browser) return;
 		try {
+			// this is just to cache the wasm and js for when we actually use it. we're not using this ffmpeg instance
 			this.ffmpeg = new FFmpeg();
 			(async () => {
 				const baseURL =
@@ -40,7 +41,6 @@ export class FFmpegConverter extends Converter {
 					coreURL: `${baseURL}/ffmpeg-core.js`,
 					wasmURL: `${baseURL}/ffmpeg-core.wasm`,
 				});
-				// this is just to cache the wasm and js for when we actually use it. we're not using this ffmpeg instance
 				this.ready = true;
 			})();
 		} catch (err) {

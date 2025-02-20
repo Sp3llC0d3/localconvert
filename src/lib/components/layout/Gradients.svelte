@@ -2,7 +2,11 @@
 	import { page } from "$app/state";
 	import { duration } from "$lib/animation";
 	import VertVBig from "$lib/assets/vert-bg.svg?component";
-	import { files, gradientColor, showGradient } from "$lib/store/index.svelte";
+	import {
+		files,
+		gradientColor,
+		showGradient,
+	} from "$lib/store/index.svelte";
 	import { quintOut } from "svelte/easing";
 	import { fade } from "$lib/animation";
 </script>

@@ -1,8 +1,26 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
-	import { PiggyBankIcon } from "lucide-svelte";
+	import { PiggyBankIcon, CopyIcon, CheckIcon } from "lucide-svelte";
 	import HotMilk from "$lib/assets/hotmilk.svg?component";
 	import { DISCORD_URL } from "$lib/consts";
+	import { error } from "$lib/logger";
+	import { addToast } from "$lib/store/ToastProvider";
+
+	let copied = false;
+	let timeoutId: number | undefined;
+
+	function copyToClipboard() {
+		try {
+			navigator.clipboard.writeText("hello@vert.sh");
+			copied = true;
+			addToast("success", "Email copied to clipboard!");
+
+			if (timeoutId) clearTimeout(timeoutId);
+			timeoutId = setTimeout(() => (copied = false), 2000);
+		} catch (err) {
+			error(`Failed to copy email: ${err}`);
+		}
+	}
 </script>
 
 <Panel class="flex flex-col gap-3 p-6 min-h-[280px]">
@@ -28,7 +46,33 @@
 			Want to support us? Contact a developer in the <a
 				href={DISCORD_URL}
 				target="_blank">Discord</a
-			> server!
+			>
+			server, or send an email to
+			<span class="inline-block mx-[2px] relative top-[2px]">
+				<button
+					id="email"
+					class="flex items-center gap-[6px] cursor-pointer"
+					onclick={copyToClipboard}
+					aria-label="Copy email to clipboard"
+				>
+					{#if copied}
+						<CheckIcon size="14"></CheckIcon>
+					{:else}
+						<CopyIcon size="14"></CopyIcon>
+					{/if}
+					hello@vert.sh
+				</button>
+			</span>!
 		</p>
 	</div>
 </Panel>
+
+<style>
+	#email {
+		@apply font-mono bg-gray-200 rounded-md px-1 text-inherit no-underline dynadark:bg-panel-alt dynadark:text-white;
+	}
+
+	#email:hover {
+		@apply font-mono !bg-accent !text-black rounded-md px-1 duration-200;
+	}
+</style>
