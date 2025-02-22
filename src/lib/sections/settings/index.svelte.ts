@@ -17,8 +17,8 @@ export class Settings {
 
 	public settings: ISettings = $state({
 		filenameFormat: "VERT_%name%",
-		plausible: true, 
-		vertdURL: "",
+		plausible: true,
+		vertdURL: "https://vertd.vert.sh",
 		vertdSpeed: "slow",
 	});
 
