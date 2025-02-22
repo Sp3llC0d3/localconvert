@@ -14,6 +14,7 @@
 		effects,
 		theme,
 		dropping,
+		vertdLoaded,
 	} from "$lib/store/index.svelte";
 	import "../app.scss";
 
@@ -60,6 +61,12 @@
 		);
 
 		Settings.instance.load();
+
+		fetch(`${Settings.instance.settings.vertdURL}/api/version`).then(
+			(res) => {
+				if (res.ok) $vertdLoaded = true;
+			},
+		);
 	});
 
 	$effect(() => {
