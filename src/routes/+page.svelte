@@ -74,7 +74,7 @@
 					<span>Images</span>
 				</div>
 
-				<div class="flex flex-col text-center justify-center">
+				<div class="file-category-card-content">
 					<p class="flex items-center justify-center gap-2">
 						<Check size="20" /> Fully supported
 					</p>
@@ -97,7 +97,7 @@
 					<span>Audio</span>
 				</div>
 
-				<div class="flex flex-col text-center justify-between">
+				<div class="file-category-card-content">
 					<p class="flex items-center justify-center gap-2">
 						<Check size="20" /> Fully supported
 					</p>
@@ -119,12 +119,13 @@
 					</div>
 					<span>Video *</span>
 				</div>
-				<div class="flex flex-col text-center justify-between">
+				<div class="file-category-card-content">
 					<p>
-						Video requires special setup. <a
+						Video uploads to a server for processing by default,
+						learn how to set it up locally <a
 							target="_blank"
 							href="https://github.com/VERT-sh/VERT/wiki/How-to-convert-video-with-VERT"
-							>Learn more</a
+							>here</a
 						>.
 					</p>
 					<p>
@@ -152,6 +153,10 @@
 
 	.file-category-card-inner {
 		@apply flex items-center justify-center gap-3 text-xl;
+	}
+
+	.file-category-card-content {
+		@apply flex flex-col text-center justify-between;
 	}
 
 	.icon-container {
