@@ -18,7 +18,6 @@ export class FFmpegConverter extends Converter {
 		".aac",
 		".m4a",
 		".wma",
-		".m4a",
 		".amr",
 		".ac3",
 		".alac",
