@@ -47,8 +47,12 @@ export class VertFile {
 			res = await this.converter.convert(this, this.to);
 			this.result = res;
 		} catch (err) {
-			error(["files"], err);
-			addToast("error", `Error converting file: ${this.file.name}`);
+			const castedErr = err as Error;
+			error(["files"], castedErr.message);
+			addToast(
+				"error",
+				`Error converting file ${this.file.name}: ${castedErr.message}`,
+			);
 			this.result = null;
 		}
 		this.processing = false;
