@@ -18,10 +18,14 @@ const handleMessage = async (message: any): Promise<any> => {
 	switch (message.type) {
 		case "convert": {
 			if (!message.to.startsWith(".")) message.to = `.${message.to}`;
-			const image = vips.Image.newFromBuffer(
-				await message.input.file.arrayBuffer(),
-				`${message.to === ".gif" || message.to === ".webp" ? "[n=-1]" : ""}`,
-			);
+			const buffer = await message.input.file.arrayBuffer();
+			let image = vips.Image.newFromBuffer(buffer, "");
+
+			// check if animated image & keep it animated when converting
+			if (image.getTypeof("n-pages") > 0) {
+				image = vips.Image.newFromBuffer(buffer, "[n=-1]");
+			}
+
 			const output = image.writeToBuffer(message.to);
 			image.delete();
 			return {
