@@ -107,6 +107,88 @@ type VertdMessage =
 	| ProgressMessage
 	| CompletedMessage;
 
+const progressEstimates = {
+	upload: 25,
+	convert: 50,
+	download: 25,
+};
+
+const progressEstimate = (
+	progress: number,
+	type: keyof typeof progressEstimates,
+) => {
+	const previousValues = Object.values(progressEstimates)
+		.filter((_, i) => i < Object.keys(progressEstimates).indexOf(type))
+		.reduce((a, b) => a + b, 0);
+	return progress * progressEstimates[type] + previousValues;
+};
+
+const uploadFile = async (file: VertFile): Promise<UploadResponse> => {
+	const apiUrl = Settings.instance.settings.vertdURL;
+	const formData = new FormData();
+	formData.append("file", file.file, file.name);
+	const xhr = new XMLHttpRequest();
+	xhr.open("POST", `${apiUrl}/api/upload`, true);
+
+	return new Promise((resolve, reject) => {
+		xhr.upload.addEventListener("progress", (e) => {
+			if (e.lengthComputable) {
+				file.progress = progressEstimate(e.loaded / e.total, "upload");
+			}
+		});
+
+		xhr.onload = () => {
+			try {
+				const res = JSON.parse(xhr.responseText);
+				if (res.type === "error") {
+					reject(res.data);
+					return;
+				}
+				resolve(res.data);
+			} catch {
+				reject(xhr.statusText);
+			}
+		};
+
+		xhr.onerror = () => {
+			reject(xhr.statusText);
+		};
+
+		xhr.send(formData);
+	});
+};
+
+const downloadFile = async (url: string, file: VertFile): Promise<Blob> => {
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.responseType = "blob";
+
+	return new Promise((resolve, reject) => {
+		xhr.addEventListener("progress", (e) => {
+			if (e.lengthComputable) {
+				file.progress = progressEstimate(
+					e.loaded / e.total,
+					"download",
+				);
+			}
+		});
+
+		xhr.onload = () => {
+			if (xhr.status === 200) {
+				resolve(xhr.response);
+			} else {
+				reject(xhr.statusText);
+			}
+		};
+
+		xhr.onerror = () => {
+			reject(xhr.statusText);
+		};
+
+		xhr.send();
+	});
+};
+
 export class VertdConverter extends Converter {
 	public name = "vertd";
 	public ready = $state(false);
@@ -125,19 +207,9 @@ export class VertdConverter extends Converter {
 
 	public async convert(input: VertFile, to: string): Promise<VertFile> {
 		if (to.startsWith(".")) to = to.slice(1);
-		// POST http://localhost:8080/api/upload
-		// multipart body, key is "file", value is the file
-		const formData = new FormData();
-		formData.append("file", input.file, input.name);
-		// const uploadRes = await fetch("http://localhost:8080/api/upload", {
-		// 	method: "POST",
-		// 	body: formData,
-		// });
 
-		const uploadRes = await vertdFetch("/api/upload", {
-			method: "POST",
-			body: formData,
-		});
+		const uploadRes = await uploadFile(input);
+		console.log(uploadRes);
 
 		return new Promise((resolve, reject) => {
 			const apiUrl = Settings.instance.settings.vertdURL;
@@ -169,7 +241,10 @@ export class VertdConverter extends Converter {
 						const data = msg.data;
 						if (data.type !== "frame") break;
 						const frame = data.data;
-						input.progress = (frame / uploadRes.totalFrames) * 100;
+						input.progress = progressEstimate(
+							frame / uploadRes.totalFrames,
+							"convert",
+						);
 						break;
 					}
 
@@ -181,9 +256,10 @@ export class VertdConverter extends Converter {
 						window.plausible("convert", {
 							props: {
 								type: "video",
-							}
+							},
 						});
-						const res = await fetch(url).then((res) => res.blob());
+						// const res = await fetch(url).then((res) => res.blob());
+						const res = await downloadFile(url, input);
 						resolve(
 							new VertFile(
 								new File([res], input.name),
