@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { effects, files } from "$lib/store/index.svelte";
+	import { effects, files, isMobile } from "$lib/store/index.svelte";
 	import { FolderArchiveIcon, RefreshCw, Trash2Icon } from "lucide-svelte";
 	import Panel from "../visual/Panel.svelte";
 	import Dropdown from "./Dropdown.svelte";
+	import Tooltip from "../visual/Tooltip.svelte";
 </script>
 
 <Panel
@@ -27,13 +28,30 @@
 			<FolderArchiveIcon size="24" />
 			<p>Download all as .zip</p>
 		</button>
-		<button
-			class="btn p-4 {$effects ? '' : '!scale-100'} flex gap-3 max-md:w-full"
-			disabled={files.files.length === 0}
-			onclick={() => files.files = []}
-		>
-			<Trash2Icon size="24" />
-		</button>
+		{#if $isMobile}
+			<button
+				class="btn p-4 {$effects
+					? ''
+					: '!scale-100'} flex gap-3 max-md:w-full"
+				disabled={files.files.length === 0}
+				onclick={() => (files.files = [])}
+			>
+				<Trash2Icon size="24" />
+				<p>Remove all files</p>
+			</button>
+		{:else}
+			<Tooltip text="Remove all files" position="right">
+				<button
+					class="btn p-4 {$effects
+						? ''
+						: '!scale-100'} flex gap-3 max-md:w-full"
+					disabled={files.files.length === 0}
+					onclick={() => (files.files = [])}
+				>
+					<Trash2Icon size="24" />
+				</button>
+			</Tooltip>
+		{/if}
 	</div>
 	<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 	<div class="flex items-center gap-2">

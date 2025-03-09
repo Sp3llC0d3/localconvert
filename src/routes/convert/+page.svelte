@@ -4,6 +4,7 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
+	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import {
 		effects,
 		files,
@@ -192,28 +193,35 @@
 							onselect={(option) => handleSelect(option, file)}
 						/>
 						<div class="w-full flex items-center justify-between">
-							<button
-								class="btn {$effects
-									? ''
-									: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
-									? 'bg-accent-purple'
-									: isVideo
-										? 'bg-accent-red'
-										: 'bg-accent-blue'}"
-								disabled={!files.ready}
-								onclick={file.convert}
+							<Tooltip text="Convert this file" position="bottom">
+								<button
+									class="btn {$effects
+										? ''
+										: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
+										? 'bg-accent-purple'
+										: isVideo
+											? 'bg-accent-red'
+											: 'bg-accent-blue'}"
+									disabled={!files.ready}
+									onclick={file.convert}
+								>
+									<RotateCwIcon size="24" />
+								</button>
+							</Tooltip>
+							<Tooltip
+								text="Download this file"
+								position="bottom"
 							>
-								<RotateCwIcon size="24" />
-							</button>
-							<button
-								class="btn {$effects
-									? ''
-									: '!scale-100'} p-0 w-14 h-14"
-								onclick={file.download}
-								disabled={!file.result}
-							>
-								<DownloadIcon size="24" />
-							</button>
+								<button
+									class="btn {$effects
+										? ''
+										: '!scale-100'} p-0 w-14 h-14"
+									onclick={file.download}
+									disabled={!file.result}
+								>
+									<DownloadIcon size="24" />
+								</button>
+							</Tooltip>
 						</div>
 					</div>
 				</div>
