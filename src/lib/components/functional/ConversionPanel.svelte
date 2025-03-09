@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { effects, files } from "$lib/store/index.svelte";
-	import { FolderArchiveIcon, RefreshCw } from "lucide-svelte";
+	import { FolderArchiveIcon, RefreshCw, Trash2Icon } from "lucide-svelte";
 	import Panel from "../visual/Panel.svelte";
 	import Dropdown from "./Dropdown.svelte";
 </script>
@@ -26,6 +26,13 @@
 		>
 			<FolderArchiveIcon size="24" />
 			<p>Download all as .zip</p>
+		</button>
+		<button
+			class="btn p-4 {$effects ? '' : '!scale-100'} flex gap-3 max-md:w-full"
+			disabled={files.files.length === 0}
+			onclick={() => files.files = []}
+		>
+			<Trash2Icon size="24" />
 		</button>
 	</div>
 	<div class="w-full bg-separator h-0.5 flex md:hidden"></div>

@@ -2,7 +2,12 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/state";
 	import { duration, fade } from "$lib/animation";
-	import { effects, files, goingLeft, setTheme } from "$lib/store/index.svelte";
+	import {
+		effects,
+		files,
+		goingLeft,
+		setTheme,
+	} from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import {
 		InfoIcon,
@@ -74,9 +79,9 @@
 			i.activeMatch(e.to?.url.pathname || ""),
 		);
 		if (newIndex < oldIndex) {
-			goingLeft.set(true)
+			goingLeft.set(true);
 		} else {
-			goingLeft.set(false)
+			goingLeft.set(false);
 		}
 	});
 </script>
@@ -88,7 +93,7 @@
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"w-16 md:w-32 h-full relative z-10 rounded-xl flex items-center justify-center gap-3 overflow-hidden",
+			"min-w-16 md:min-w-32 h-full relative z-10 rounded-xl flex flex-1 items-center justify-center gap-3 overflow-hidden",
 			{
 				"bg-panel-highlight":
 					item.activeMatch(page.url.pathname) && !browser,
@@ -148,7 +153,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="max-w-[778px] w-full h-20 flex items-center gap-3 relative">
+	<Panel class="max-w-[778px] w-screen h-20 flex items-center gap-3 relative">
 		{#if linkRects[selectedIndex]}
 			<div
 				class="absolute bg-panel-highlight rounded-xl"
