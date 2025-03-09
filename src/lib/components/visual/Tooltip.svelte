@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade } from "$lib/animation";
+
 	interface Props {
 		children: () => any;
 		text: string;
@@ -33,7 +35,12 @@
 >
 	{@render children()}
 	{#if showTooltip}
-		<div class="tooltip tooltip-{position}">
+		<div
+			class="tooltip tooltip-{position}"
+			transition:fade={{
+				duration: 100,
+			}}
+		>
 			{text}
 		</div>
 	{/if}
@@ -41,7 +48,8 @@
 
 <style>
 	.tooltip {
-		@apply absolute z-10 bg-panel-alt text-foreground border-2 border-stone-400 dynadark:border-white drop-shadow-lg text-xs px-4 py-2 rounded-full whitespace-nowrap pointer-events-none;
+		--border-size: 1px;
+		@apply absolute z-10 bg-panel-alt text-foreground border border-stone-400 dynadark:border-white drop-shadow-lg text-xs px-4 py-2 rounded-full whitespace-nowrap pointer-events-none;
 	}
 
 	.tooltip-top {
@@ -49,7 +57,7 @@
 	}
 
 	.tooltip-top::after {
-		@apply content-[""] absolute top-full left-1/2 -ml-2 border-8 border-x-transparent border-b-transparent border-t-inherit;
+		@apply content-[""] absolute top-full left-1/2 -ml-2 border-x-transparent border-b-transparent border-t-inherit;
 	}
 
 	.tooltip-bottom {
@@ -57,7 +65,13 @@
 	}
 
 	.tooltip-bottom::after {
-		@apply content-[""] absolute bottom-full left-1/2 -ml-2 border-8 border-x-transparent border-t-transparent border-b-inherit;
+		@apply content-[""] absolute bottom-full left-1/2 -ml-2 border-8 border-x-transparent border-t-transparent;
+	}
+
+	.tooltip-bottom::before {
+		border-width: calc(var(--border-size) + 8px);
+		margin-left: calc(-1 * (var(--border-size) + 8px));
+		@apply content-[""] absolute bottom-full left-1/2 border-x-transparent border-t-transparent border-b-inherit;
 	}
 
 	.tooltip-left {
@@ -73,6 +87,14 @@
 	}
 
 	.tooltip-right::after {
-		@apply content-[""] absolute top-1/2 right-full -mt-2 border-8 border-y-transparent border-l-transparent border-r-inherit;
+		margin-right: -2px;
+		@apply content-[""] absolute top-1/2 right-full -mt-2 border-8 border-y-transparent border-l-transparent;
+	}
+
+	.tooltip-right::before {
+		margin-right: -2px;
+		border-width: calc(var(--border-size) + 8px);
+		margin-top: calc(-1 * (var(--border-size) + 8px));
+		@apply content-[""] absolute top-1/2 right-full border-y-transparent border-l-transparent border-r-inherit;
 	}
 </style>
