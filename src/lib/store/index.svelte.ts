@@ -9,7 +9,7 @@ class Files {
 	public files = $state<VertFile[]>([]);
 
 	public requiredConverters = $derived(
-		Array.from(new Set(files.files.map((f) => f.converter))),
+		Array.from(new Set(files.files.map((f) => f.converters).flat())),
 	);
 
 	public ready = $derived(
@@ -33,15 +33,14 @@ class Files {
 		try {
 			if (isAudio) {
 				// try to get the thumbnail from the audio via music-metadata
-				const {common} = await parseBlob(file.file, {skipPostHeaders: true});
+				const { common } = await parseBlob(file.file, {
+					skipPostHeaders: true,
+				});
 				const cover = selectCover(common.picture);
 				if (cover) {
-					const blob = new Blob(
-						[cover.data],
-						{
-							type: cover.format,
-						},
-					);
+					const blob = new Blob([cover.data], {
+						type: cover.format,
+					});
 					file.blobUrl = URL.createObjectURL(blob);
 				}
 			} else if (isVideo) {
@@ -118,7 +117,7 @@ class Files {
 			);
 			if (!converter) {
 				log(["files"], `no converter found for ${file.name}`);
-				this.files.push(new VertFile(file, format, null));
+				this.files.push(new VertFile(file, format));
 				return;
 			}
 			const to = converter.supportedFormats.find((f) => f !== format);
@@ -126,7 +125,7 @@ class Files {
 				log(["files"], `no output format found for ${file.name}`);
 				return;
 			}
-			const vf = new VertFile(file, to, converter);
+			const vf = new VertFile(file, to);
 			this.files.push(vf);
 			this._addThumbnail(vf);
 
@@ -136,13 +135,15 @@ class Files {
 			if (isVideo && !acceptedExternalWarning && !this._warningShown) {
 				this._warningShown = true;
 				const message =
-					"Some of your files will be uploaded to an external server to be converted. Do you want to continue?";
+					"If you choose to convert into a video format, some of your files will be uploaded to an external server to be converted. Do you want to continue?";
 				const buttons = [
 					{
 						text: "No",
 						action: () => {
-							this.files = this.files.filter(
-								(f) => f.converter?.name !== "vertd",
+							this.files = this.files.filter((f) =>
+								f.converters
+									.map((c) => c.name)
+									.includes("vertd"),
 							);
 							this._warningShown = false;
 						},

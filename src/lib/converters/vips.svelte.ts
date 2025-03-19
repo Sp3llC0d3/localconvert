@@ -36,7 +36,7 @@ export class VipsConverter extends Converter {
 		".heif", // HEIF files that are encoded like HEIC files (and HEIC files in general) aren't supported due to https://github.com/kleisauke/wasm-vips/issues/3
 		".avif",
 		".jxl",
-		".svg"
+		".svg",
 	];
 
 	public readonly reportsProgress = false;
@@ -49,11 +49,17 @@ export class VipsConverter extends Converter {
 		this.worker.onmessage = (e) => {
 			const message: WorkerMessage = e.data;
 			log(["converters", this.name], `received message ${message.type}`);
-            if (message.type === "loaded") {
-                this.ready = true;
-            } else if (message.type === "error") {
-                error(["converters", this.name], `error in worker: ${message.error}`);
-				addToast("error", `Error in VIPS worker, some features may not work.`);
+			if (message.type === "loaded") {
+				this.ready = true;
+			} else if (message.type === "error") {
+				error(
+					["converters", this.name],
+					`error in worker: ${message.error}`,
+				);
+				addToast(
+					"error",
+					`Error in VIPS worker, some features may not work.`,
+				);
 				throw new Error(message.error);
 			}
 		};
@@ -78,7 +84,7 @@ export class VipsConverter extends Converter {
 			window.plausible("convert", {
 				props: {
 					type: "image",
-				}
+				},
 			});
 			return new VertFile(
 				new File([res.output as unknown as BlobPart], input.name),

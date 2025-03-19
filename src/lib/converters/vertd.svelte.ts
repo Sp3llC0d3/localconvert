@@ -193,7 +193,15 @@ export class VertdConverter extends Converter {
 	public name = "vertd";
 	public ready = $state(false);
 	public reportsProgress = true;
-	public supportedFormats = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".mov"];
+	public supportedFormats = [
+		".mkv",
+		".mp4",
+		".webm",
+		".avi",
+		".wmv",
+		".mov",
+		".gif",
+	];
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private log: (...msg: any[]) => void = () => {};
 
@@ -260,14 +268,7 @@ export class VertdConverter extends Converter {
 						});
 						// const res = await fetch(url).then((res) => res.blob());
 						const res = await downloadFile(url, input);
-						resolve(
-							new VertFile(
-								new File([res], input.name),
-								to,
-								this,
-								undefined,
-							),
-						);
+						resolve(new VertFile(new File([res], input.name), to));
 						break;
 					}
 

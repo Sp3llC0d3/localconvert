@@ -81,7 +81,7 @@ export class FFmpegConverter extends Converter {
 		window.plausible("convert", {
 			props: {
 				type: "audio",
-			}
+			},
 		});
 		ffmpeg.terminate();
 		return new VertFile(new File([output], input.name), to);

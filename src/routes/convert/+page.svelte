@@ -5,6 +5,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
+	import { converters } from "$lib/converters";
 	import {
 		effects,
 		files,
@@ -43,15 +44,15 @@
 		// Set gradient color depending on the file types
 		// TODO: if more file types added, add a "fileType" property to the file object
 		const allAudio = files.files.every(
-			(file) => file.converter?.name === "ffmpeg",
+			(file) => file.findConverter()?.name === "ffmpeg",
 		);
 		const allImages = files.files.every(
 			(file) =>
-				file.converter?.name !== "ffmpeg" &&
-				file.converter?.name !== "vertd",
+				file.findConverter()?.name !== "ffmpeg" &&
+				file.findConverter()?.name !== "vertd",
 		);
 		const allVideos = files.files.every(
-			(file) => file.converter?.name === "vertd",
+			(file) => file.findConverter()?.name === "vertd",
 		);
 
 		if (files.files.length === 1 && files.files[0].blobUrl && !allVideos) {
@@ -72,11 +73,21 @@
 </script>
 
 {#snippet fileItem(file: VertFile, index: number)}
-	{@const isAudio = file.converter?.name === "ffmpeg"}
-	{@const isVideo = file.converter?.name === "vertd"}
+	{@const availableConverters = file.findConverters()}
+	{@const currentConverter = converters.find(
+		(c) =>
+			c.supportedFormats.includes(file.from) &&
+			c.supportedFormats.includes(file.to),
+	)}
+	{@const isAudio = converters
+		.find((c) => c.name === "ffmpeg")
+		?.supportedFormats.includes(file.from)}
+	{@const isVideo = converters
+		.find((c) => c.name === "vertd")
+		?.supportedFormats.includes(file.from)}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
-			{#if !file.converter}
+			{#if !converters.length}
 				<FileQuestionIcon size="24" class="flex-shrink-0" />
 			{:else if isAudio}
 				<AudioLines size="24" class="flex-shrink-0" />
@@ -90,7 +101,7 @@
 					<ProgressBar
 						min={0}
 						max={100}
-						progress={file.converter?.reportsProgress
+						progress={currentConverter?.reportsProgress
 							? file.progress
 							: null}
 					/>
@@ -110,7 +121,7 @@
 				<XIcon size="24" class="text-muted" />
 			</button>
 		</div>
-		{#if !file.converter}
+		{#if !currentConverter}
 			{#if file.name.startsWith("vertd")}
 				<div
 					class="h-full flex flex-col text-center justify-center text-failure"
@@ -185,10 +196,12 @@
 					>
 						<!-- cannot convert to svg or heif -->
 						<Dropdown
-							options={file.converter?.supportedFormats?.filter(
-								(format) =>
-									format !== ".svg" && format !== ".heif",
-							) || []}
+							options={availableConverters
+								.flatMap((c) => c.supportedFormats)
+								.filter(
+									(format) =>
+										format !== ".svg" && format !== ".heif",
+								) || []}
 							bind:selected={file.to}
 							onselect={(option) => handleSelect(option, file)}
 						/>

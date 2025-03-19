@@ -1,3 +1,4 @@
+import { converters } from "$lib/converters";
 import type { Converter } from "$lib/converters/converter.svelte";
 import { error } from "$lib/logger";
 import { addToast } from "$lib/store/ToastProvider";
@@ -22,29 +23,49 @@ export class VertFile {
 
 	public processing = $state(false);
 
-	public converter: Converter | null = null;
+	public converters: Converter[] = [];
+
+	public findConverters(supportedFormats: string[] = [this.from]) {
+		const converter = this.converters.filter((converter) =>
+			converter.supportedFormats.map((f) => supportedFormats.includes(f)),
+		);
+		console.log(this.converters, supportedFormats);
+		return converter;
+	}
+
+	public findConverter() {
+		const converter = this.converters.find(
+			(converter) =>
+				converter.supportedFormats.includes(this.from) &&
+				converter.supportedFormats.includes(this.to),
+		);
+		return converter;
+	}
 
 	constructor(
 		public readonly file: File,
 		to: string,
-		converter?: Converter | null,
 		blobUrl?: string,
 	) {
 		this.to = to;
-		this.converter = converter ?? null;
+		this.converters = converters.filter((c) =>
+			c.supportedFormats.includes(this.from),
+		);
 		this.convert = this.convert.bind(this);
 		this.download = this.download.bind(this);
 		this.blobUrl = blobUrl;
 	}
 
 	public async convert() {
-		if (!this.converter) throw new Error("No converter found");
+		if (!this.converters.length) throw new Error("No converters found");
+		const converter = this.findConverter();
+		if (!converter) throw new Error("No converter found");
 		this.result = null;
 		this.progress = 0;
 		this.processing = true;
 		let res;
 		try {
-			res = await this.converter.convert(this, this.to);
+			res = await converter.convert(this, this.to);
 			this.result = res;
 		} catch (err) {
 			const castedErr = err as Error;
