@@ -25,19 +25,6 @@
 
 				if (theme !== "light" && theme !== "dark") {
 					console.log("Invalid theme, setting to default");
-					if (!theme) {
-						console.log("First time visitor, setting theme");
-						// first time visitor
-						window.addEventListener("load", () => {
-							window.plausible("Theme set", {
-								props: {
-									theme: prefersDark ? "dark" : "light",
-								},
-							});
-						});
-					}
-
-					// invalid theme or first time visitor, set to default
 					theme = prefersDark ? "dark" : "light";
 					localStorage.setItem("theme", theme);
 				}

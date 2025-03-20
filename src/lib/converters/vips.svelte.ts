@@ -78,11 +78,6 @@ export class VipsConverter extends Converter {
 
 		if (res.type === "finished") {
 			log(["converters", this.name], `converted ${input.name} to ${to}`);
-			window.plausible("convert", {
-				props: {
-					type: "image",
-				},
-			});
 			return new VertFile(
 				new File([res.output as unknown as BlobPart], input.name),
 				to,

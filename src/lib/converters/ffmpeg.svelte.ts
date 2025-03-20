@@ -78,11 +78,6 @@ export class FFmpegConverter extends Converter {
 			["converters", this.name],
 			`read ${input.name.split(".").slice(0, -1).join(".") + to} from ffmpeg virtual fs`,
 		);
-		window.plausible("convert", {
-			props: {
-				type: "audio",
-			},
-		});
 		ffmpeg.terminate();
 		return new VertFile(new File([output], input.name), to);
 	}

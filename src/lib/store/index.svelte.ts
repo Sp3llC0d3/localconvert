@@ -253,9 +253,6 @@ export function setTheme(themeTo: "light" | "dark") {
 	document.documentElement.classList.remove("light", "dark");
 	document.documentElement.classList.add(themeTo);
 	localStorage.setItem("theme", themeTo);
-	window.plausible("Theme set", {
-		props: { theme: themeTo },
-	});
 	log(["theme"], `set to ${themeTo}`);
 	theme.set(themeTo);
 
@@ -272,9 +269,6 @@ export function setTheme(themeTo: "light" | "dark") {
 
 export function setEffects(effectsEnabled: boolean) {
 	localStorage.setItem("effects", effectsEnabled.toString());
-	window.plausible("Effects set", {
-		props: { effects: effectsEnabled },
-	});
 	log(["effects"], `set to ${effectsEnabled}`);
 	effects.set(effectsEnabled);
 }
