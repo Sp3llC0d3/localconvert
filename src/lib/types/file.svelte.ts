@@ -29,7 +29,6 @@ export class VertFile {
 		const converter = this.converters.filter((converter) =>
 			converter.supportedFormats.map((f) => supportedFormats.includes(f)),
 		);
-		console.log(this.converters, supportedFormats);
 		return converter;
 	}
 

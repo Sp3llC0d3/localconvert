@@ -23,43 +23,49 @@ class Files {
 		this.files.length === 0 ? false : this.files.every((f) => f.result),
 	);
 
-	private _addThumbnail = async (file: VertFile) => {
-		const isAudio = converters
-			.find((c) => c.name === "ffmpeg")
-			?.supportedFormats?.includes(file.from.toLowerCase());
-		const isVideo = converters
-			.find((c) => c.name === "vertd")
-			?.supportedFormats?.includes(file.from.toLowerCase());
+	private thumbnailQueue = new PQueue({
+		concurrency: navigator.hardwareConcurrency || 4,
+	});
 
-		try {
-			if (isAudio) {
-				// try to get the thumbnail from the audio via music-metadata
-				const { common } = await parseBlob(file.file, {
-					skipPostHeaders: true,
-				});
-				const cover = selectCover(common.picture);
-				if (cover) {
-					const blob = new Blob([cover.data], {
-						type: cover.format,
+	private _addThumbnail = async (file: VertFile) => {
+		this.thumbnailQueue.add(async () => {
+			const isAudio = converters
+				.find((c) => c.name === "ffmpeg")
+				?.supportedFormats?.includes(file.from.toLowerCase());
+			const isVideo = converters
+				.find((c) => c.name === "vertd")
+				?.supportedFormats?.includes(file.from.toLowerCase());
+
+			try {
+				if (isAudio) {
+					// try to get the thumbnail from the audio via music-metadata
+					const { common } = await parseBlob(file.file, {
+						skipPostHeaders: true,
 					});
-					file.blobUrl = URL.createObjectURL(blob);
+					const cover = selectCover(common.picture);
+					if (cover) {
+						const blob = new Blob([cover.data], {
+							type: cover.format,
+						});
+						file.blobUrl = URL.createObjectURL(blob);
+					}
+				} else if (isVideo) {
+					// video
+					file.blobUrl = await this._generateThumbnailFromMedia(
+						file.file,
+						true,
+					);
+				} else {
+					// image
+					file.blobUrl = await this._generateThumbnailFromMedia(
+						file.file,
+						false,
+					);
 				}
-			} else if (isVideo) {
-				// video
-				file.blobUrl = await this._generateThumbnailFromMedia(
-					file.file,
-					true,
-				);
-			} else {
-				// image
-				file.blobUrl = await this._generateThumbnailFromMedia(
-					file.file,
-					false,
-				);
+			} catch (e) {
+				error(["files"], e);
 			}
-		} catch (e) {
-			error(["files"], e);
-		}
+		});
 	};
 
 	private async _generateThumbnailFromMedia(
