@@ -112,7 +112,7 @@
 		<script
 			defer
 			data-domain={PUB_HOSTNAME || "vert.sh"}
-			src="{PUB_PLAUSIBLE_URL}/js/script.pageview-props.tagged-events.js"
+			src="{PUB_PLAUSIBLE_URL}/js/script.js"
 		></script>
 	{/if}
 </svelte:head>
