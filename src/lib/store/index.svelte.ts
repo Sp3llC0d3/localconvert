@@ -4,6 +4,7 @@ import { VertFile } from "$lib/types";
 import { parseBlob, selectCover } from "music-metadata";
 import { writable } from "svelte/store";
 import { addDialog } from "./DialogProvider";
+import PQueue from "p-queue";
 
 class Files {
 	public files = $state<VertFile[]>([]);
@@ -195,7 +196,10 @@ class Files {
 	}
 
 	public async convertAll() {
-		await Promise.all(this.files.map((f) => f.convert()));
+		const promiseFns = this.files.map((f) => () => f.convert());
+		const coreCount = navigator.hardwareConcurrency || 4;
+		const queue = new PQueue({ concurrency: coreCount });
+		await Promise.all(promiseFns.map((fn) => queue.add(fn)));
 	}
 
 	public async downloadAll() {

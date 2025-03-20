@@ -85,6 +85,9 @@
 	{@const isVideo = converters
 		.find((c) => c.name === "vertd")
 		?.supportedFormats.includes(file.from)}
+	{@const isImage = converters
+		.find((c) => c.name === "libvips")
+		?.supportedFormats.includes(file.from)}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !converters.length}
@@ -146,7 +149,7 @@
 					</p>
 				</div>
 			{/if}
-		{:else if isVideo && !$vertdLoaded}
+		{:else if isVideo && !isAudio && !isImage && !$vertdLoaded}
 			<div
 				class="h-full flex flex-col text-center justify-center text-failure"
 			>

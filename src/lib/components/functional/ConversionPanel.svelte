@@ -58,10 +58,9 @@
 		<p class="whitespace-nowrap text-xl">Set all to</p>
 		{#if files.requiredConverters.length === 1}
 			<!-- cannot convert to svg or heif -->
-			{@const supported =
-				files.files[0]?.converter?.supportedFormats?.filter(
-					(format) => format !== ".svg" && format !== ".heif",
-				)}
+			{@const supported = files.files[0]?.converters
+				.flatMap((c) => c.supportedFormats)
+				?.filter((format) => format !== ".svg" && format !== ".heif")}
 			<Dropdown
 				onselect={(r) =>
 					files.files.forEach((f) => {
