@@ -71,7 +71,7 @@ export class VertFile {
 			error(["files"], castedErr.message);
 			addToast(
 				"error",
-				`Error converting file ${this.file.name}: ${castedErr.message}`,
+				`Error converting file ${this.file.name}: ${castedErr.message || castedErr}`,
 			);
 			this.result = null;
 		}

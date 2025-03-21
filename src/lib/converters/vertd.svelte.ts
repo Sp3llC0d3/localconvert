@@ -132,13 +132,17 @@ const uploadFile = async (file: VertFile): Promise<UploadResponse> => {
 
 	return new Promise((resolve, reject) => {
 		xhr.upload.addEventListener("progress", (e) => {
+			console.log(e);
 			if (e.lengthComputable) {
 				file.progress = progressEstimate(e.loaded / e.total, "upload");
 			}
 		});
 
+		console.log("meow");
+
 		xhr.onload = () => {
 			try {
+				console.log("xhr.responseText");
 				const res = JSON.parse(xhr.responseText);
 				if (res.type === "error") {
 					reject(res.data);
@@ -146,15 +150,18 @@ const uploadFile = async (file: VertFile): Promise<UploadResponse> => {
 				}
 				resolve(res.data);
 			} catch {
+				console.log(xhr.responseText);
 				reject(xhr.statusText);
 			}
 		};
 
 		xhr.onerror = () => {
+			console.log(xhr.statusText);
 			reject(xhr.statusText);
 		};
 
 		xhr.send(formData);
+		console.log("sent!");
 	});
 };
 
@@ -201,6 +208,7 @@ export class VertdConverter extends Converter {
 		".wmv",
 		".mov",
 		".gif",
+		".mts",
 	];
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private log: (...msg: any[]) => void = () => {};
