@@ -64,9 +64,10 @@ export class PandocConverter extends Converter {
 
 	public supportedFormats = [
 		".docx",
-		".md",
-		".rtf",
 		".doc",
+		".md",
+		".html",
+		".rtf",
 		".csv",
 		".tsv",
 		".json",
@@ -74,7 +75,6 @@ export class PandocConverter extends Converter {
 		".epub",
 		".odt",
 		".docbook",
-		".html",
 	];
 }
 
