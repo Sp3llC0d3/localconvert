@@ -148,11 +148,14 @@ class Files {
 					{
 						text: "No",
 						action: () => {
-							this.files = this.files.filter((f) =>
-								f.converters
-									.map((c) => c.name)
-									.includes("vertd"),
-							);
+							this.files = [
+								...this.files.filter(
+									(f) =>
+										!f.converters
+											.map((c) => c.name)
+											.includes("vertd"),
+								),
+							];
 							this._warningShown = false;
 						},
 					},
