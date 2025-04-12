@@ -2,7 +2,8 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { converters } from "$lib/converters";
 	import { vertdLoaded } from "$lib/store/index.svelte";
-	import { AudioLines, Check, Film, Image } from "lucide-svelte";
+	import clsx from "clsx";
+	import { AudioLines, BookText, Check, Film, Image } from "lucide-svelte";
 
 	const { data } = $props();
 
@@ -30,7 +31,7 @@
 		Documents: {
 			ready: converters.find((c) => c.name === "pandoc")?.ready || false,
 			formats: getSupportedFormats("pandoc"),
-			icon: Image,
+			icon: BookText,
 		},
 		Video: {
 			ready:
@@ -77,7 +78,14 @@
 				{@const Icon = s.icon}
 				<div class="file-category-card w-full">
 					<div class="file-category-card-inner">
-						<div class="icon-container bg-accent-blue">
+						<div
+							class={clsx("icon-container", {
+								"bg-accent-blue": key === "Images",
+								"bg-accent-purple": key === "Audio",
+								"bg-accent-green": key === "Documents",
+								"bg-accent-red": key === "Video",
+							})}
+						>
 							<Icon size="20" />
 						</div>
 						<span>{key}</span>

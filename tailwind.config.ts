@@ -36,6 +36,8 @@ export default {
 				"accent-purple": "var(--accent-purple)",
 				"accent-blue": "var(--accent-blue)",
 				"accent-blue-alt": "var(--accent-blue-alt)",
+				"accent-green": "var(--accent-green)",
+				"accent-green-alt": "var(--accent-green-alt)",
 			},
 			boxShadow: {
 				panel: "var(--shadow-panel)",

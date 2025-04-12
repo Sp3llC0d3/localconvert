@@ -17,6 +17,7 @@
 	import { VertFile } from "$lib/types";
 	import {
 		AudioLines,
+		BookText,
 		DownloadIcon,
 		FileMusicIcon,
 		FileQuestionIcon,
@@ -55,6 +56,10 @@
 			(file) => file.findConverter()?.name === "vertd",
 		);
 
+		const allDocuments = files.files.every(
+			(file) => file.findConverter()?.name === "pandoc",
+		);
+
 		if (files.files.length === 1 && files.files[0].blobUrl && !allVideos) {
 			showGradient.set(false);
 		} else {
@@ -67,7 +72,15 @@
 		) {
 			gradientColor.set("");
 		} else {
-			gradientColor.set(allAudio ? "purple" : allVideos ? "red" : "blue");
+			gradientColor.set(
+				allAudio
+					? "purple"
+					: allVideos
+						? "red"
+						: allDocuments
+							? "green"
+							: "blue",
+			);
 		}
 	});
 </script>
@@ -88,6 +101,9 @@
 	{@const isImage = converters
 		.find((c) => c.name === "libvips")
 		?.supportedFormats.includes(file.from)}
+	{@const isDocument = converters
+		.find((c) => c.name === "pandoc")
+		?.supportedFormats.includes(file.from)}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !converters.length}
@@ -96,6 +112,8 @@
 				<AudioLines size="24" class="flex-shrink-0" />
 			{:else if isVideo}
 				<FilmIcon size="24" class="flex-shrink-0" />
+			{:else if isDocument}
+				<BookText size="24" class="flex-shrink-0" />
 			{:else}
 				<ImageIcon size="24" class="flex-shrink-0" />
 			{/if}
@@ -149,7 +167,7 @@
 					</p>
 				</div>
 			{/if}
-		{:else if isVideo && !isAudio && !isImage && !$vertdLoaded}
+		{:else if isVideo && !isAudio && !isImage && !isDocument && !$vertdLoaded}
 			<div
 				class="h-full flex flex-col text-center justify-center text-failure"
 			>
@@ -178,12 +196,16 @@
 									? '--bg-gradient-purple-alt'
 									: isVideo
 										? '--bg-gradient-red-alt'
-										: '--bg-gradient-blue-alt'})"
+										: isDocument
+											? '--bg-gradient-green-alt'
+											: '--bg-gradient-blue-alt'})"
 							>
 								{#if isAudio}
 									<FileMusicIcon size="56" />
 								{:else if isVideo}
 									<FileVideo2 size="56" />
+								{:else if isDocument}
+									<BookText size="56" />
 								{:else}
 									<ImageOffIcon size="56" />
 								{/if}
@@ -217,7 +239,9 @@
 										? 'bg-accent-purple'
 										: isVideo
 											? 'bg-accent-red'
-											: 'bg-accent-blue'}"
+											: isDocument
+												? 'bg-accent-green'
+												: 'bg-accent-blue'}"
 									disabled={!files.ready}
 									onclick={file.convert}
 								>
