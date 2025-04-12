@@ -90,7 +90,7 @@
 	/>
 	<meta
 		name="description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing is done on your device."
+		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
 	/>
 	<meta property="og:type" content="website" />
 	<meta
@@ -99,7 +99,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing is done on your device."
+		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
 	/>
 	<meta property="og:image" content={featuredImage} />
 	<meta property="twitter:card" content="summary_large_image" />
@@ -109,7 +109,7 @@
 	/>
 	<meta
 		property="twitter:description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing is done on your device."
+		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
