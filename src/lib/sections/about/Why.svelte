@@ -18,8 +18,13 @@
 		problem once and for all by making an alternative that solves all those
 		problems, and more.<br />
 		<br />
-		All your files are converted completely on-device; this means that there's
+		All non-video files are converted completely on-device; this means that there's
 		no delay between sending and receiving the files from a server, and we never
 		get to snoop on the files you convert.
+		<br />
+		<br />
+		Your videos stay on there for an hour, or after they're converted (in the
+		case of the input which you upload) or downloaded (in the case of the output
+		which is to be downloaded), whichever comes first.
 	</p>
 </Panel>
