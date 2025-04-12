@@ -23,8 +23,9 @@
 		get to snoop on the files you convert.
 		<br />
 		<br />
-		Your videos stay on there for an hour, or after they're converted (in the
-		case of the input which you upload) or downloaded (in the case of the output
-		which is to be downloaded), whichever comes first.
+		Video files get uploaded to our lightning-fast RTX 4000 Ada server. Your
+		videos stay on there for an hour, or after they're converted (in the case
+		of the input which you upload) or downloaded (in the case of the output which
+		is to be downloaded), whichever comes first.
 	</p>
 </Panel>
