@@ -47,7 +47,7 @@
 
 	<!-- Main contributors -->
 	<div class="flex flex-col gap-4">
-		<div class="flex flex-row flex-wrap gap-2">
+		<div class="flex flex-col flex-wrap gap-2">
 			{#each mainContribs as contrib}
 				{@const { name, github, avatar, role } = contrib}
 				{@render contributor(name, github, avatar, role)}
@@ -94,5 +94,12 @@
 				{/each}
 			</div>
 		{/if}
+
+		<h2 class="mt-2 -mb-2">Libraries</h2>
+		<p class="font-normal">
+			A big thanks to FFmpeg (audio, video), libvips (images) and Pandoc
+			(documents) for maintaining such excellent libraries for so many
+			years. VERT relies on them to provide you with your conversions.
+		</p>
 	</div>
 </Panel>

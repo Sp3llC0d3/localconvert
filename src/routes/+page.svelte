@@ -10,20 +10,34 @@
 		converters.find((c) => c.name === name)?.supportedFormats.join(", ") ||
 		"none";
 
-	const status = $derived({
-		images: {
-			ready: converters.find((c) => c.name === "libvips")?.ready,
+	const status: {
+		[key: string]: {
+			ready: boolean;
+			formats: string;
+			icon: typeof Image;
+		};
+	} = $derived({
+		Images: {
+			ready: converters.find((c) => c.name === "libvips")?.ready || false,
 			formats: getSupportedFormats("libvips"),
+			icon: Image,
 		},
-		audio: {
-			ready: converters.find((c) => c.name === "ffmpeg")?.ready,
+		Audio: {
+			ready: converters.find((c) => c.name === "ffmpeg")?.ready || false,
 			formats: getSupportedFormats("ffmpeg"),
+			icon: AudioLines,
 		},
-		video: {
+		Documents: {
+			ready: converters.find((c) => c.name === "pandoc")?.ready || false,
+			formats: getSupportedFormats("pandoc"),
+			icon: Image,
+		},
+		Video: {
 			ready:
-				converters.find((c) => c.name === "vertd")?.ready &&
-				$vertdLoaded,
+				converters.find((c) => c.name === "vertd")?.ready ||
+				(false && $vertdLoaded),
 			formats: getSupportedFormats("vertd"),
+			icon: Film,
 		},
 	});
 </script>
@@ -58,79 +72,43 @@
 	<div class="mt-10 md:mt-16">
 		<h2 class="text-center text-4xl">VERT supports...</h2>
 
-		<div class="grid gap-4 md:grid-cols-3 mt-8">
-			<div class="file-category-card">
-				<div class="file-category-card-inner">
-					<div class="icon-container bg-accent-blue">
-						<Image size="20" />
+		<div class="flex gap-4 mt-8 md:flex-row flex-col">
+			{#each Object.entries(status) as [key, s]}
+				{@const Icon = s.icon}
+				<div class="file-category-card w-full">
+					<div class="file-category-card-inner">
+						<div class="icon-container bg-accent-blue">
+							<Icon size="20" />
+						</div>
+						<span>{key}</span>
 					</div>
-					<span>Images</span>
-				</div>
 
-				<div class="file-category-card-content">
-					<p class="flex items-center justify-center gap-2">
-						<Check size="20" /> Fully supported
-					</p>
-					<p>
-						<b>Status: </b>
-						{status.images.ready ? "ready" : "not ready"}
-					</p>
-					<p>
-						<b>Supported formats:</b>
-						{status.images.formats}
-					</p>
-				</div>
-			</div>
-
-			<div class="file-category-card">
-				<div class="file-category-card-inner">
-					<div class="icon-container bg-accent-purple">
-						<AudioLines size="20" />
+					<div class="file-category-card-content">
+						{#if key === "Video"}
+							<p>
+								Video uploads to a server for processing by
+								default, learn how to set it up locally <a
+									target="_blank"
+									href="https://github.com/VERT-sh/VERT/wiki/How-to-convert-video-with-VERT"
+									>here</a
+								>.
+							</p>
+						{:else}
+							<p class="flex items-center justify-center gap-2">
+								<Check size="20" /> Fully supported
+							</p>
+						{/if}
+						<p>
+							<b>Status: </b>
+							{s.ready ? "ready" : "not ready"}
+						</p>
+						<p>
+							<b>Supported formats:</b>
+							{s.formats}
+						</p>
 					</div>
-					<span>Audio</span>
 				</div>
-
-				<div class="file-category-card-content">
-					<p class="flex items-center justify-center gap-2">
-						<Check size="20" /> Fully supported
-					</p>
-					<p>
-						<b>Status: </b>
-						{status.audio.ready ? "ready" : "not ready"}
-					</p>
-					<p>
-						<b>Supported formats:</b>
-						{status.audio.formats}
-					</p>
-				</div>
-			</div>
-
-			<div class="file-category-card">
-				<div class="file-category-card-inner">
-					<div class="icon-container bg-accent-red">
-						<Film size="20" />
-					</div>
-					<span>Video *</span>
-				</div>
-				<div class="file-category-card-content">
-					<p>
-						Video uploads to a server for processing by default,
-						learn how to set it up locally <a
-							target="_blank"
-							href="https://github.com/VERT-sh/VERT/wiki/How-to-convert-video-with-VERT"
-							>here</a
-						>.
-					</p>
-					<p>
-						<b>Status: </b>
-						{status.video.ready ? "ready" : "not ready"}
-					</p>
-					<p>
-						<b>Supported formats:</b>
-						{status.video.formats}
-					</p>
-				</div>
-			</div>
+			{/each}
 		</div>
 	</div>
 </div>

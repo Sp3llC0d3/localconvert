@@ -46,7 +46,11 @@ export class PandocConverter extends Converter {
 				}
 
 				default:
-					throw new Error(`[${result.errorKind}] ${result.error}`);
+					if (result.errorKind)
+						throw new Error(
+							`[${result.errorKind}] ${result.error}`,
+						);
+					else throw new Error(result.error);
 			}
 		}
 		worker.terminate();

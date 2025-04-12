@@ -70,7 +70,7 @@
 			stroke="2"
 			fill="none"
 		/>
-		<p class="text-black font-normal">{message}</p>
+		<p class="text-black font-normal whitespace-pre-wrap">{message}</p>
 	</div>
 	<button
 		class="text-gray-600 hover:text-black flex-shrink-0"

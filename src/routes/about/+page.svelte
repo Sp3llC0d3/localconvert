@@ -4,7 +4,7 @@
 	import { InfoIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import avatarNullptr from "$lib/assets/avatars/nullptr.jpg";
-	import avatarRealmy from "$lib/assets/avatars/realmy.jpg";
+	import avatarLiam from "$lib/assets/avatars/liam.jpg";
 	import avatarJovannMC from "$lib/assets/avatars/jovannmc.jpg";
 	import { GITHUB_API_URL } from "$lib/consts";
 	import { addToast } from "$lib/store/ToastProvider";
@@ -32,16 +32,16 @@
 			avatar: avatarNullptr,
 		},
 		{
-			name: "Realmy",
-			github: "https://github.com/RealmyTheMan",
-			role: "Lead designer; logo and branding, user interface design",
-			avatar: avatarRealmy,
-		},
-		{
 			name: "JovannMC",
 			github: "https://github.com/JovannMC",
 			role: "Developer; UI implementation",
 			avatar: avatarJovannMC,
+		},
+		{
+			name: "Liam",
+			github: "https://x.com/z2rMC",
+			role: "Designer; UX, branding, marketing",
+			avatar: avatarLiam,
 		},
 	];
 

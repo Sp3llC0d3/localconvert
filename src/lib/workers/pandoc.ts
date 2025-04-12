@@ -48,10 +48,15 @@ const handleMessage = async (message: any): Promise<any> => {
 			try {
 				// eslint-disable-next-line prefer-const
 				let { to, file }: { to: Format; file: File } = message;
+				if (to === ".rtf") {
+					throw new Error(
+						"Converting into RTF is currently not supported.",
+					);
+				}
 				const buf = new Uint8Array(await file.arrayBuffer());
 				const args = `-f ${formatToReader(`.${file.name.split(".").pop() || ""}` as Format)} -t ${formatToReader(to)}`;
 				const [result, stderr] = await pandoc(args, buf);
-				if (stderr) {
+				if (result.length === 0) {
 					return {
 						type: "error",
 						error: stderr
