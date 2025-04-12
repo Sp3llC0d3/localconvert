@@ -13,7 +13,7 @@
 	const { settings }: { settings: ISettings } = $props();
 
 	$effect(() => {
-		if (settings.vertdURL) {			
+		if (settings.vertdURL) {
 			if (abortController) abortController.abort();
 			abortController = new AbortController();
 			const { signal } = abortController;
@@ -79,13 +79,12 @@
 					of your GPU to do it as quickly as possible.
 				</p>
 				<p class="text-sm text-muted font-normal">
-					We currently don't provide a hosted instance due to the
-					upkeep costs. However, it's quite easy to host one on your
-					own PC or server if you know what you're doing. You can
-					download the server binaries <a
+					We host a public instance for your convenience, but it is
+					quite easy to host your own on your PC or server if you know
+					what you are doing. You can download the server binaries <a
 						href={GITHUB_URL_VERTD}
 						target="_blank">here</a
-					>. The process of setting this up will become easier in the
+					> - the process of setting this up will become easier in the
 					future, so stay tuned!
 				</p>
 				<div class="flex flex-col gap-2">
