@@ -1,3 +1,4 @@
+import { browser } from "$app/environment";
 import { converters } from "$lib/converters";
 import { error, log } from "$lib/logger";
 import { VertFile } from "$lib/types";
@@ -24,7 +25,7 @@ class Files {
 	);
 
 	private thumbnailQueue = new PQueue({
-		concurrency: navigator.hardwareConcurrency || 4,
+		concurrency: browser ? navigator.hardwareConcurrency || 4 : 4,
 	});
 
 	private _addThumbnail = async (file: VertFile) => {
