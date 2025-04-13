@@ -79,6 +79,7 @@
 		const newIndex = items.findIndex((i) =>
 			i.activeMatch(e.to?.url.pathname || ""),
 		);
+		console.log(oldIndex, newIndex);
 		if (newIndex < oldIndex) {
 			goingLeft.set(true);
 		} else {
