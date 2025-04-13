@@ -32,7 +32,7 @@
 			easing: quintOut,
 		}}
 	></div>
-{:else if page.url.pathname === "/convert/" && $showGradient}
+{:else if page.url.pathname === "/convert" && $showGradient}
 	{#key $gradientColor}
 		<div
 			id="gradient-bg"
@@ -44,7 +44,7 @@
 			}}
 		></div>
 	{/key}
-{:else if page.url.pathname === "/convert/" && files.files.length === 1 && files.files[0].blobUrl}
+{:else if page.url.pathname === "/convert" && files.files.length === 1 && files.files[0].blobUrl}
 	<div
 		class="fixed w-screen h-screen opacity-75 overflow-hidden top-0 left-0 -z-50 pointer-events-none grid grid-cols-1 grid-rows-1 scale-105"
 	>
@@ -74,7 +74,7 @@
 			</div> -->
 		</div>
 	</div>
-{:else if page.url.pathname === "/settings/"}
+{:else if page.url.pathname === "/settings"}
 	<div
 		id="gradient-bg"
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
@@ -84,7 +84,7 @@
 			easing: quintOut,
 		}}
 	></div>
-{:else if page.url.pathname === "/about/"}
+{:else if page.url.pathname === "/about"}
 	<div
 		id="gradient-bg"
 		class="fixed top-0 left-0 w-screen h-screen -z-40 pointer-events-none"
