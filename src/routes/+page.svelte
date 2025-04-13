@@ -76,7 +76,7 @@
 		<div class="flex gap-4 mt-8 md:flex-row flex-col">
 			{#each Object.entries(status) as [key, s]}
 				{@const Icon = s.icon}
-				<div class="file-category-card w-full">
+				<div class="file-category-card w-full flex flex-col">
 					<div class="file-category-card-inner">
 						<div
 							class={clsx("icon-container", {
@@ -91,7 +91,7 @@
 						<span>{key}</span>
 					</div>
 
-					<div class="file-category-card-content">
+					<div class="file-category-card-content flex-grow">
 						{#if key === "Video"}
 							<p>
 								Video uploads to a server for processing by
@@ -102,7 +102,9 @@
 								>.
 							</p>
 						{:else}
-							<p class="flex items-center justify-center gap-2">
+							<p
+								class="flex items-center justify-center gap-2 h-full"
+							>
 								<Check size="20" /> Fully supported
 							</p>
 						{/if}

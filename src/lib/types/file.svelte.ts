@@ -5,9 +5,10 @@ import { addToast } from "$lib/store/ToastProvider";
 
 export class VertFile {
 	public id: string = Math.random().toString(36).slice(2, 8);
+	public readonly file: File;
 
 	public get from() {
-		return "." + this.file.name.split(".").pop()!;
+		return ("." + this.file.name.split(".").pop() || "").toLowerCase();
 	}
 
 	public get name() {
@@ -41,11 +42,13 @@ export class VertFile {
 		return converter;
 	}
 
-	constructor(
-		public readonly file: File,
-		to: string,
-		blobUrl?: string,
-	) {
+	constructor(file: File, to: string, blobUrl?: string) {
+		const ext = file.name.split(".").pop();
+		const newFile = new File(
+			[file.slice(0, file.size, file.type)],
+			`${file.name.split(".").slice(0, -1).join(".")}.${ext?.toLowerCase()}`,
+		);
+		this.file = newFile;
 		this.to = to;
 		this.converters = converters.filter((c) =>
 			c.supportedFormats.includes(this.from),
