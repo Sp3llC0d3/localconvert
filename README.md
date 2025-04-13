@@ -27,7 +27,7 @@ Make sure you have the following installed:
 ### Installation
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/vert.git
+git clone https://github.com/VERT-sh/vert.git
 cd vert
 # Install dependencies
 bun i
