@@ -39,20 +39,21 @@
 		},
 		{
 			name: "Convert",
-			url: "/convert",
-			activeMatch: (pathname) => pathname === "/convert",
+			url: "/convert/",
+			activeMatch: (pathname) =>
+				pathname === "/convert/" || pathname === "/convert",
 			icon: RefreshCw,
 			badge: files.files.length,
 		},
 		{
 			name: "Settings",
-			url: "/settings",
+			url: "/settings/",
 			activeMatch: (pathname) => pathname.startsWith("/settings"),
 			icon: SettingsIcon,
 		},
 		{
 			name: "About",
-			url: "/about",
+			url: "/about/",
 			activeMatch: (pathname) => pathname.startsWith("/about"),
 			icon: InfoIcon,
 		},
@@ -78,6 +79,7 @@
 		const newIndex = items.findIndex((i) =>
 			i.activeMatch(e.to?.url.pathname || ""),
 		);
+		console.log(oldIndex, newIndex);
 		if (newIndex < oldIndex) {
 			goingLeft.set(true);
 		} else {
