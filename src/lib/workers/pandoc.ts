@@ -154,7 +154,7 @@ async function pandoc(
 		new wasiShim.PreopenDirectory("/tmp", new Map()),
 	];
 
-	const wasi = new wasiShim.WASI(args, env, fds, { debug: true });
+	const wasi = new wasiShim.WASI(args, env, fds, { debug: false });
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const { instance }: { instance: any } = await WebAssembly.instantiate(
 		wasm,
