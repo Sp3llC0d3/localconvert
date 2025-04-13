@@ -85,6 +85,10 @@ export class VertFile {
 	public async download() {
 		if (!this.result) throw new Error("No result found");
 
+		// give the freedom to the converter to set the extension (ie. pandoc uses this to output zips)
+		let to = this.result.to;
+		if (!to.startsWith(".")) to = `.${to}`;
+
 		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
 		const filenameFormat = settings.filenameFormat ?? "VERT_%name%";
 
@@ -100,12 +104,12 @@ export class VertFile {
 
 		const blob = URL.createObjectURL(
 			new Blob([await this.result.file.arrayBuffer()], {
-				type: this.to.slice(1),
+				type: to.slice(1),
 			}),
 		);
 		const a = document.createElement("a");
 		a.href = blob;
-		a.download = `${format(filenameFormat)}${this.to}`;
+		a.download = `${format(filenameFormat)}${to}`;
 		// force it to not open in a new tab
 		a.target = "_blank";
 		a.style.display = "none";

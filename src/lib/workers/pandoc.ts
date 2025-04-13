@@ -1,4 +1,5 @@
 import * as wasiShim from "@bjorn3/browser_wasi_shim";
+import * as zip from "client-zip";
 
 self.onmessage = async (e) => {
 	const message = e.data;
@@ -54,8 +55,13 @@ const handleMessage = async (message: any): Promise<any> => {
 					);
 				}
 				const buf = new Uint8Array(await file.arrayBuffer());
-				const args = `-f ${formatToReader(`.${file.name.split(".").pop() || ""}` as Format)} -t ${formatToReader(to)}`;
-				const [result, stderr] = await pandoc(args, buf);
+				const args = `-f ${formatToReader(`.${file.name.split(".").pop() || ""}` as Format)} -t ${formatToReader(to)} --extract-media=.`;
+				const [result, stderr, zip] = await pandoc(
+					args,
+					buf,
+					file.name,
+					to,
+				);
 				if (result.length === 0) {
 					return {
 						type: "error",
@@ -71,6 +77,7 @@ const handleMessage = async (message: any): Promise<any> => {
 				return {
 					type: "finished",
 					output: result,
+					isZip: zip,
 				};
 			} catch (e) {
 				console.error(e);
@@ -114,7 +121,9 @@ const formatToReader = (format: Format): string => {
 async function pandoc(
 	args_str: string,
 	in_data: Uint8Array,
-): Promise<[Uint8Array, string]> {
+	in_name: string,
+	out_ext: string,
+): Promise<[Uint8Array, string, boolean]> {
 	if (!wasm) throw new Error("WASM not loaded");
 	let stderr = "";
 	const args = ["pandoc.wasm", "+RTS", "-H64m", "-RTS"];
@@ -129,6 +138,7 @@ async function pandoc(
 		["in", in_file],
 		["out", out_file],
 	]);
+	const root = new wasiShim.PreopenDirectory("/", map);
 	const fds = [
 		new wasiShim.OpenFile(
 			new wasiShim.File(new Uint8Array(), { readonly: true }),
@@ -140,7 +150,7 @@ async function pandoc(
 			console.warn(`[WASI stderr] ${msg}`);
 			stderr += msg + "\n";
 		}),
-		new wasiShim.PreopenDirectory("/", map),
+		root,
 		new wasiShim.PreopenDirectory("/tmp", new Map()),
 	];
 
@@ -190,5 +200,136 @@ async function pandoc(
 	);
 
 	instance.exports.wasm_main(args_ptr, args_str.length);
-	return [out_file.data, stderr];
+	// list all files in /
+	const openedPath = root.dir.path_open(0, BigInt(0), 0).fd_obj;
+	const dirRet = openedPath.path_lookup(".", 0);
+	const dir = dirRet.inode_obj;
+	if (dir) {
+		const opened = dir.path_open(0, BigInt(0), 0).fd_obj;
+		if (!opened) {
+			return [out_file.data, stderr, false];
+		}
+
+		const fs = readRecursive(opened);
+		const media = fs.get("media");
+		if (media && media.type === "folder") {
+			const file = new File(
+				[out_file.data],
+				`${in_name.split(".").slice(0, -1).join(".")}${out_ext}`,
+			);
+			const zipped = await zipFiles(file, media.entries);
+			return [zipped, stderr, true];
+		}
+	}
+	return [out_file.data, stderr, false];
 }
+
+const zipFiles = async (
+	output: File,
+	entries: PandocEntries,
+): Promise<Uint8Array> => {
+	const zipFormatted = pandocToFiles(entries, "media");
+	const zipped = zip.makeZip([...zipFormatted, output]);
+	// read the ReadableStream to the end
+	const reader = zipped.getReader();
+	const chunks: Uint8Array[] = [];
+	let done = false;
+	while (!done) {
+		const { done: d, value } = await reader.read();
+		done = d;
+		if (value) {
+			chunks.push(value);
+		}
+	}
+	const totalLength = chunks.reduce((acc, chunk) => acc + chunk.length, 0);
+	const result = new Uint8Array(totalLength);
+	let offset = 0;
+	for (const chunk of chunks) {
+		result.set(chunk, offset);
+		offset += chunk.length;
+	}
+	return result;
+};
+
+const pandocToFiles = (entries: PandocEntries, parent = ""): File[] => {
+	const flattened: File[] = [];
+
+	for (const [name, entry] of entries) {
+		const fullPath = parent ? `${parent}/${name}` : name;
+
+		if (entry.type === "folder") {
+			const nestedFiles = pandocToFiles(entry.entries, fullPath);
+			flattened.push(...nestedFiles);
+		} else {
+			const file = new File([entry.data], fullPath);
+			flattened.push(file);
+		}
+	}
+
+	return flattened;
+};
+
+const readRecursive = (fd: wasiShim.Fd): PandocEntries => {
+	const entries = new Map<string, PandocFsEntry>();
+	const stat = fd.fd_filestat_get().filestat;
+	if (!stat) return entries;
+	const isDirectory = stat.filetype === 3;
+	if (!isDirectory) {
+		const data = fd.fd_read(Number(stat.size));
+		console.log(data.data.length);
+		return entries;
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const dir: any = fd.path_lookup(".", 0).inode_obj;
+	if (!dir) return entries;
+	const dirEntries: Map<string, wasiShim.File | wasiShim.Directory> =
+		dir.contents;
+	const results = readRecursiveInternal(dirEntries);
+	for (const [name, entry] of results) {
+		entries.set(name, entry);
+	}
+
+	return entries;
+};
+
+const readRecursiveInternal = (
+	contents: Map<string, wasiShim.File | wasiShim.Directory>,
+): PandocEntries => {
+	const entries = new Map<string, PandocFsEntry>();
+	for (const [name, entry] of contents) {
+		if (entry instanceof wasiShim.File) {
+			const file: PandocFile = {
+				data: entry.data,
+				type: "file",
+			};
+			entries.set(name, file);
+		} else {
+			const folder: PandocFolder = {
+				entries: readRecursiveInternal(
+					entry.contents as unknown as Map<
+						string,
+						wasiShim.File | wasiShim.Directory
+					>,
+				),
+				type: "folder",
+			};
+			entries.set(name, folder);
+		}
+	}
+	return entries;
+};
+
+type PandocEntries = Map<string, PandocFsEntry>;
+
+interface PandocFile {
+	data: Uint8Array;
+	type: "file";
+}
+
+interface PandocFolder {
+	entries: PandocEntries;
+	type: "folder";
+}
+
+type PandocFsEntry = PandocFile | PandocFolder;

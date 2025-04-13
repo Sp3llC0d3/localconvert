@@ -55,7 +55,10 @@ export class PandocConverter extends Converter {
 		}
 		worker.terminate();
 		if (!to.startsWith(".")) to = `.${to}`;
-		return new VertFile(new File([result.output], input.name), to);
+		return new VertFile(
+			new File([result.output], input.name),
+			result.isZip ? ".zip" : to,
+		);
 	}
 
 	// public name = "pandoc";
