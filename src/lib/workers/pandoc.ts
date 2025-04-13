@@ -211,13 +211,29 @@ async function pandoc(
 		}
 
 		const fs = readRecursive(opened);
-		const media = fs.get("media");
-		if (media && media.type === "folder") {
+		// const media = fs.get("media");
+		// if (media && media.type === "folder") {
+		// 	const file = new File(
+		// 		[out_file.data],
+		// 		`${in_name.split(".").slice(0, -1).join(".")}${out_ext}`,
+		// 	);
+		// 	const zipped = await zipFiles(file, media.entries);
+		// 	return [zipped, stderr, true];
+		// }
+		// filter to folders
+		const folders = [...fs.entries()].filter(
+			(f) => f[0] !== "in" && f[0] !== "out",
+		);
+		if (folders.length > 0) {
 			const file = new File(
 				[out_file.data],
 				`${in_name.split(".").slice(0, -1).join(".")}${out_ext}`,
 			);
-			const zipped = await zipFiles(file, media.entries);
+			const filteredMap = new Map<string, PandocFsEntry>();
+			for (const [name, entry] of folders) {
+				filteredMap.set(name, entry);
+			}
+			const zipped = await zipFiles(file, filteredMap);
 			return [zipped, stderr, true];
 		}
 	}
@@ -273,12 +289,6 @@ const readRecursive = (fd: wasiShim.Fd): PandocEntries => {
 	const entries = new Map<string, PandocFsEntry>();
 	const stat = fd.fd_filestat_get().filestat;
 	if (!stat) return entries;
-	const isDirectory = stat.filetype === 3;
-	if (!isDirectory) {
-		const data = fd.fd_read(Number(stat.size));
-		console.log(data.data.length);
-		return entries;
-	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const dir: any = fd.path_lookup(".", 0).inode_obj;
