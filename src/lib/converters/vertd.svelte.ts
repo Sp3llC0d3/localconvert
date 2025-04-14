@@ -1,7 +1,7 @@
 import { log } from "$lib/logger";
 import { Settings } from "$lib/sections/settings/index.svelte";
 import { VertFile } from "$lib/types";
-import { Converter } from "./converter.svelte";
+import { Converter, FormatInfo } from "./converter.svelte";
 
 interface VertdError {
 	type: "error";
@@ -200,16 +200,18 @@ export class VertdConverter extends Converter {
 	public name = "vertd";
 	public ready = $state(false);
 	public reportsProgress = true;
+
 	public supportedFormats = [
-		".mkv",
-		".mp4",
-		".webm",
-		".avi",
-		".wmv",
-		".mov",
-		".gif",
-		".mts",
+		new FormatInfo("mkv", true, true),
+		new FormatInfo("mp4", true, true),
+		new FormatInfo("webm", true, true),
+		new FormatInfo("avi", true, true),
+		new FormatInfo("wmv", true, true),
+		new FormatInfo("mov", true, true),
+		new FormatInfo("gif", true, true),
+		new FormatInfo("mts", true, true),
 	];
+
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private log: (...msg: any[]) => void = () => {};
 

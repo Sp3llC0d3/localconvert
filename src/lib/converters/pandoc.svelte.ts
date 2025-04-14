@@ -1,5 +1,5 @@
 import { VertFile } from "$lib/types";
-import { Converter } from "./converter.svelte";
+import { Converter, FormatInfo } from "./converter.svelte";
 import { browser } from "$app/environment";
 import PandocWorker from "$lib/workers/pandoc?worker";
 
@@ -61,23 +61,19 @@ export class PandocConverter extends Converter {
 		);
 	}
 
-	// public name = "pandoc";
-	// public ready = $state(false);
-	// public wasm: ArrayBuffer = null!;
-
 	public supportedFormats = [
-		".docx",
-		".doc",
-		".md",
-		".html",
-		".rtf",
-		".csv",
-		".tsv",
-		".json",
-		".rst",
-		".epub",
-		".odt",
-		".docbook",
+		new FormatInfo("docx", true, true),
+		new FormatInfo("doc", true, true),
+		new FormatInfo("md", true, true),
+		new FormatInfo("html", true, true),
+		new FormatInfo("rtf", true, true),
+		new FormatInfo("csv", true, true),
+		new FormatInfo("tsv", true, true),
+		new FormatInfo("json", true, true),
+		new FormatInfo("rst", true, true),
+		new FormatInfo("epub", true, true),
+		new FormatInfo("odt", true, true),
+		new FormatInfo("docbook", true, true),
 	];
 }
 

@@ -32,10 +32,12 @@ class Files {
 		this.thumbnailQueue.add(async () => {
 			const isAudio = converters
 				.find((c) => c.name === "ffmpeg")
-				?.supportedFormats?.includes(file.from.toLowerCase());
+				?.formatStrings()
+				?.includes(file.from.toLowerCase());
 			const isVideo = converters
 				.find((c) => c.name === "vertd")
-				?.supportedFormats?.includes(file.from.toLowerCase());
+				?.formatStrings()
+				?.includes(file.from.toLowerCase());
 
 			try {
 				if (isAudio) {
@@ -119,16 +121,16 @@ class Files {
 				return;
 			}
 			const converter = converters.find((c) =>
-				c.supportedFormats.includes(
-					format || ".somenonexistentextension",
-				),
+				c
+					.formatStrings()
+					.includes(format || ".somenonexistentextension"),
 			);
 			if (!converter) {
 				log(["files"], `no converter found for ${file.name}`);
 				this.files.push(new VertFile(file, format));
 				return;
 			}
-			const to = converter.supportedFormats.find((f) => f !== format);
+			const to = converter.formatStrings().find((f) => f !== format);
 			if (!to) {
 				log(["files"], `no output format found for ${file.name}`);
 				return;

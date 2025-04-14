@@ -28,7 +28,7 @@ export class VertFile {
 
 	public findConverters(supportedFormats: string[] = [this.from]) {
 		const converter = this.converters.filter((converter) =>
-			converter.supportedFormats.map((f) => supportedFormats.includes(f)),
+			converter.formatStrings().map((f) => supportedFormats.includes(f)),
 		);
 		return converter;
 	}
@@ -36,8 +36,8 @@ export class VertFile {
 	public findConverter() {
 		const converter = this.converters.find(
 			(converter) =>
-				converter.supportedFormats.includes(this.from) &&
-				converter.supportedFormats.includes(this.to),
+				converter.formatStrings().includes(this.from) &&
+				converter.formatStrings().includes(this.to),
 		);
 		return converter;
 	}
@@ -51,7 +51,7 @@ export class VertFile {
 		this.file = newFile;
 		this.to = to;
 		this.converters = converters.filter((c) =>
-			c.supportedFormats.includes(this.from),
+			c.formatStrings().includes(this.from),
 		);
 		this.convert = this.convert.bind(this);
 		this.download = this.download.bind(this);

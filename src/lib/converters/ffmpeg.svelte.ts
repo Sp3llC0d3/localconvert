@@ -1,5 +1,5 @@
 import { VertFile } from "$lib/types";
-import { Converter } from "./converter.svelte";
+import { Converter, FormatInfo } from "./converter.svelte";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { browser } from "$app/environment";
 import { error, log } from "$lib/logger";
@@ -11,17 +11,17 @@ export class FFmpegConverter extends Converter {
 	public ready = $state(false);
 
 	public supportedFormats = [
-		".mp3",
-		".wav",
-		".flac",
-		".ogg",
-		".aac",
-		".m4a",
-		".wma",
-		".amr",
-		".ac3",
-		".alac",
-		".aiff",
+		new FormatInfo("mp3", true, true),
+		new FormatInfo("wav", true, true),
+		new FormatInfo("flac", true, true),
+		new FormatInfo("ogg", true, true),
+		new FormatInfo("aac", true, true),
+		new FormatInfo("m4a", true, true),
+		new FormatInfo("wma", true, true),
+		new FormatInfo("amr", true, true),
+		new FormatInfo("ac3", true, true),
+		new FormatInfo("alac", true, true),
+		new FormatInfo("aiff", true, true),
 	];
 
 	public readonly reportsProgress = true;

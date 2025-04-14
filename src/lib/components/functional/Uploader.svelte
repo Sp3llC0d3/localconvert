@@ -31,7 +31,7 @@
 			)
 		).filter((c) => typeof c !== "undefined");
 		acceptedTypes = filteredConverters
-			.map((c) => c.supportedFormats.join(","))
+			.map((c) => c.formatStrings((f) => f.fromSupported).join(","))
 			.join(",");
 	};
 

@@ -69,7 +69,7 @@
 			{#if files.requiredConverters.length === 1}
 				<!-- cannot convert to svg or heif -->
 				{@const supported = files.files[0]?.converters
-					.flatMap((c) => c.supportedFormats)
+					.flatMap((c) => c.formatStrings((f) => f.toSupported))
 					?.filter(
 						(format) => format !== ".svg" && format !== ".heif",
 					)}

@@ -1,5 +1,24 @@
 import type { VertFile } from "$lib/types";
 
+export class FormatInfo {
+	public name: string;
+
+	constructor(
+		name: string,
+		public fromSupported: boolean,
+		public toSupported: boolean,
+	) {
+		this.name = name;
+		if (!this.name.startsWith(".")) {
+			this.name = `.${this.name}`;
+		}
+
+		if (!this.fromSupported && !this.toSupported) {
+			throw new Error("Format must support at least one direction");
+		}
+	}
+}
+
 /**
  * Base class for all converters.
  */
@@ -11,7 +30,7 @@ export class Converter {
 	/**
 	 * List of supported formats.
 	 */
-	public supportedFormats: string[] = [];
+	public supportedFormats: FormatInfo[] = [];
 	/**
 	 * Convert a file to a different format.
 	 * @param input The input file.
@@ -33,5 +52,12 @@ export class Converter {
 
 	public async valid(): Promise<boolean> {
 		return true;
+	}
+
+	public formatStrings(predicate?: (f: FormatInfo) => boolean) {
+		if (predicate) {
+			return this.supportedFormats.filter(predicate).map((f) => f.name);
+		}
+		return this.supportedFormats.map((f) => f.name);
 	}
 }

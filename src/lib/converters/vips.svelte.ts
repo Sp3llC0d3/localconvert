@@ -4,7 +4,7 @@ import { addToast } from "$lib/store/ToastProvider";
 import type { OmitBetterStrict, WorkerMessage } from "$lib/types";
 import { VertFile } from "$lib/types";
 import VipsWorker from "$lib/workers/vips?worker&url";
-import { Converter } from "./converter.svelte";
+import { Converter, FormatInfo } from "./converter.svelte";
 
 export class VipsConverter extends Converter {
 	private worker: Worker = browser
@@ -15,34 +15,32 @@ export class VipsConverter extends Converter {
 	private id = 0;
 	public name = "libvips";
 	public ready = $state(false);
-	public static supportedFormatsStatic = [
-		...new Set([
-			".png",
-			".jpeg",
-			".jpg",
-			".webp",
-			".gif",
-			".ico",
-			".cur",
-			".ani",
-			".heic",
-			".hdr",
-			".jpe",
-			".dng",
-			".mat",
-			".pbm",
-			".pfm",
-			".pgm",
-			".pnm",
-			".ppm",
-			".raw",
-			".tif",
-			".tiff",
-			".jfif",
-		]),
-	];
 
-	public supportedFormats = VipsConverter.supportedFormatsStatic;
+	public supportedFormats = [
+		new FormatInfo("png", true, true),
+		new FormatInfo("jpeg", true, true),
+		new FormatInfo("jpg", true, true),
+		new FormatInfo("webp", true, true),
+		new FormatInfo("gif", true, true),
+		new FormatInfo("ico", true, false),
+		new FormatInfo("cur", true, false),
+		new FormatInfo("ani", true, false),
+		new FormatInfo("heic", true, false),
+		new FormatInfo("hdr", true, true),
+		new FormatInfo("jpe", true, true),
+		new FormatInfo("dng", true, false),
+		new FormatInfo("mat", true, true),
+		new FormatInfo("pbm", true, true),
+		new FormatInfo("pfm", true, true),
+		new FormatInfo("pgm", true, true),
+		new FormatInfo("pnm", true, true),
+		new FormatInfo("ppm", true, true),
+		new FormatInfo("raw", false, true),
+		new FormatInfo("tif", true, true),
+		new FormatInfo("tiff", true, true),
+		new FormatInfo("jfif", true, true),
+		new FormatInfo("avif", true, true),
+	];
 
 	public readonly reportsProgress = false;
 

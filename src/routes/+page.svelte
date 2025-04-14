@@ -8,8 +8,13 @@
 	const { data } = $props();
 
 	const getSupportedFormats = (name: string) =>
-		converters.find((c) => c.name === name)?.supportedFormats.join(", ") ||
-		"none";
+		converters
+			.find((c) => c.name === name)
+			?.supportedFormats.map(
+				(f) =>
+					`${f.name}${f.fromSupported && f.toSupported ? "" : "*"}`,
+			)
+			.join(", ") || "none";
 
 	const status: {
 		[key: string]: {

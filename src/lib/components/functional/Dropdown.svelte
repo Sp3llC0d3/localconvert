@@ -62,8 +62,8 @@
 			: 'justify-center'} overflow-hidden relative cursor-pointer {settingsStyle
 			? 'px-4'
 			: 'px-3'} py-3.5 bg-button {disabled
-			? 'opacity-50'
-			: ''} flex items-center {settingsStyle
+			? 'opacity-50 cursor-auto'
+			: 'cursor-pointer'} flex items-center {settingsStyle
 			? 'rounded-xl'
 			: 'rounded-full'} focus:!outline-none"
 		onclick={toggle}

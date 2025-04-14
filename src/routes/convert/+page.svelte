@@ -89,21 +89,25 @@
 	{@const availableConverters = file.findConverters()}
 	{@const currentConverter = converters.find(
 		(c) =>
-			c.supportedFormats.includes(file.from) &&
-			c.supportedFormats.includes(file.to),
+			c.formatStrings((f) => f.fromSupported).includes(file.from) &&
+			c.formatStrings((f) => f.toSupported).includes(file.to),
 	)}
 	{@const isAudio = converters
 		.find((c) => c.name === "ffmpeg")
-		?.supportedFormats.includes(file.from)}
+		?.formatStrings((f) => f.fromSupported)
+		.includes(file.from)}
 	{@const isVideo = converters
 		.find((c) => c.name === "vertd")
-		?.supportedFormats.includes(file.from)}
+		?.formatStrings((f) => f.fromSupported)
+		.includes(file.from)}
 	{@const isImage = converters
 		.find((c) => c.name === "libvips")
-		?.supportedFormats.includes(file.from)}
+		?.formatStrings((f) => f.fromSupported)
+		.includes(file.from)}
 	{@const isDocument = converters
 		.find((c) => c.name === "pandoc")
-		?.supportedFormats.includes(file.from)}
+		?.formatStrings((f) => f.fromSupported)
+		.includes(file.from)}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !converters.length}
@@ -222,7 +226,9 @@
 						<!-- cannot convert to svg or heif -->
 						<Dropdown
 							options={availableConverters
-								.flatMap((c) => c.supportedFormats)
+								.flatMap((c) =>
+									c.formatStrings((f) => f.toSupported),
+								)
 								.filter(
 									(format) =>
 										format !== ".svg" && format !== ".heif",
