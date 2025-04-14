@@ -1,10 +1,24 @@
 import Vips from "wasm-vips";
+import {
+	initializeImageMagick,
+	MagickFormat,
+	MagickImage,
+	MagickReadSettings,
+} from "@imagemagick/magick-wasm";
+import wasm from "@imagemagick/magick-wasm/magick.wasm?url";
 
 const vipsPromise = Vips({
 	dynamicLibraries: [],
 });
 
+const magickPromise = initializeImageMagick(new URL(wasm, import.meta.url));
+
+const magickRequiredFormats = [".dng"];
+const unsupportedFrom: string[] = [];
+const unsupportedTo = [".dng"];
+
 vipsPromise
+	.then(() => magickPromise)
 	.then(() => {
 		postMessage({ type: "loaded" });
 	})
@@ -18,7 +32,45 @@ const handleMessage = async (message: any): Promise<any> => {
 	switch (message.type) {
 		case "convert": {
 			if (!message.to.startsWith(".")) message.to = `.${message.to}`;
+			if (unsupportedFrom.includes(message.input.from)) {
+				return {
+					type: "error",
+					error: `Unsupported input format ${message.input.from}`,
+				};
+			}
+
+			if (unsupportedTo.includes(message.to)) {
+				return {
+					type: "error",
+					error: `Unsupported output format ${message.to}`,
+				};
+			}
+
 			const buffer = await message.input.file.arrayBuffer();
+			if (
+				magickRequiredFormats.includes(message.input.from) ||
+				magickRequiredFormats.includes(message.to)
+			) {
+				const magick = MagickImage.create(
+					new Uint8Array(buffer),
+					new MagickReadSettings({
+						format: message.input.from
+							.slice(1)
+							.toUpperCase() as MagickFormat,
+					}),
+				);
+
+				const dngBuffer = await new Promise<Uint8Array>((resolve) =>
+					magick.write(message.to.slice(1).toUpperCase(), (data) => {
+						resolve(data);
+					}),
+				);
+
+				return {
+					type: "finished",
+					output: dngBuffer,
+				};
+			}
 			let image = vips.Image.newFromBuffer(buffer, "");
 
 			// check if animated image & keep it animated when converting

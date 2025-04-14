@@ -40,7 +40,7 @@
 		"@fontsource/azeret-mono": "^5.1.1",
 		"@fontsource/lexend": "^5.1.2",
 		"@fontsource/radio-canada-big": "^5.1.1",
-		"@imagemagick/magick-wasm": "^0.0.32",
+		"@imagemagick/magick-wasm": "^0.0.34",
 		"client-zip": "^2.4.6",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.475.0",

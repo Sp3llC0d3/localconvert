@@ -23,6 +23,7 @@ export class VipsConverter extends Converter {
 		".gif",
 		".hdr",
 		".jpe",
+		".dng",
 		".mat",
 		".pbm",
 		".pfm",

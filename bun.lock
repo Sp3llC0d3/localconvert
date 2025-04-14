@@ -10,7 +10,7 @@
         "@fontsource/azeret-mono": "^5.1.1",
         "@fontsource/lexend": "^5.1.2",
         "@fontsource/radio-canada-big": "^5.1.1",
-        "@imagemagick/magick-wasm": "^0.0.32",
+        "@imagemagick/magick-wasm": "^0.0.34",
         "client-zip": "^2.4.6",
         "clsx": "^2.1.1",
         "lucide-svelte": "^0.475.0",
@@ -132,7 +132,7 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
 
-    "@imagemagick/magick-wasm": ["@imagemagick/magick-wasm@0.0.32", "", {}, "sha512-+niNRuJk4ZPE9PDzBg19Kjyl+CEdAgaJBXQSFXmO1CTDoYOxrZ3DBdstfs1+8r77hjoiph+4Wu4qpldfcrKm7A=="],
+    "@imagemagick/magick-wasm": ["@imagemagick/magick-wasm@0.0.34", "", {}, "sha512-vSTe4cfR8U8r2Ityo6s3iRFVK903W4fhur3t/ixc6vLSAJXmqXC9cKXz2NkkDBUVU7ssJTYMiTKAb1S9RY+ZdQ=="],
 
     "@isaacs/cliui": ["@isaacs/cliui@8.0.2", "", { "dependencies": { "string-width": "^5.1.2", "string-width-cjs": "npm:string-width@^4.2.0", "strip-ansi": "^7.0.1", "strip-ansi-cjs": "npm:strip-ansi@^6.0.1", "wrap-ansi": "^8.1.0", "wrap-ansi-cjs": "npm:wrap-ansi@^7.0.0" } }, "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA=="],
 
