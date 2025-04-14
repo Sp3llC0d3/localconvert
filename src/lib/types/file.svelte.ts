@@ -58,7 +58,8 @@ export class VertFile {
 		this.blobUrl = blobUrl;
 	}
 
-	public async convert() {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	public async convert(...args: any[]) {
 		if (!this.converters.length) throw new Error("No converters found");
 		const converter = this.findConverter();
 		if (!converter) throw new Error("No converter found");
@@ -67,7 +68,7 @@ export class VertFile {
 		this.processing = true;
 		let res;
 		try {
-			res = await converter.convert(this, this.to);
+			res = await converter.convert(this, this.to, ...args);
 			this.result = res;
 		} catch (err) {
 			const castedErr = err as Error;

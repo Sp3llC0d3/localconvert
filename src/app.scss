@@ -317,6 +317,18 @@ body {
 		@apply outline outline-accent outline-2;
 	}
 
+	input[type="range"] {
+		@apply appearance-none bg-panel h-2 rounded-lg;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		@apply appearance-none w-4 h-4 bg-accent rounded-full cursor-pointer;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		@apply w-4 h-4 bg-accent rounded-full cursor-pointer;
+	}
+
 	hr {
 		@apply border-separator;
 	}

@@ -32,7 +32,7 @@
 			easing: quintOut,
 		}}
 	></div>
-{:else if page.url.pathname === "/convert/" && $showGradient}
+{:else if (page.url.pathname === "/convert/" || page.url.pathname === "/jpegify/") && $showGradient}
 	{#key $gradientColor}
 		<div
 			id="gradient-bg"

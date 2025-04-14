@@ -26,7 +26,12 @@ const handleMessage = async (message: any): Promise<any> => {
 				image = vips.Image.newFromBuffer(buffer, "[n=-1]");
 			}
 
-			const output = image.writeToBuffer(message.to);
+			const opts: { [key: string]: string } = {};
+			if (typeof message.compression !== "undefined") {
+				opts["Q"] = Math.min(100, message.compression + 1).toString();
+			}
+
+			const output = image.writeToBuffer(message.to, opts);
 			image.delete();
 			return {
 				type: "finished",

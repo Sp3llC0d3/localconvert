@@ -4,6 +4,7 @@ interface ConvertMessage {
 	type: "convert";
 	input: VertFile;
 	to: string;
+	compression: number | null;
 }
 
 interface FinishedMessage {

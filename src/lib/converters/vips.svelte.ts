@@ -61,7 +61,13 @@ export class VipsConverter extends Converter {
 		};
 	}
 
-	public async convert(input: VertFile, to: string): Promise<VertFile> {
+	public async convert(
+		input: VertFile,
+		to: string,
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		...args: any[]
+	): Promise<VertFile> {
+		const compression: number | undefined = args.at(0);
 		log(["converters", this.name], `converting ${input.name} to ${to}`);
 		const msg = {
 			type: "convert",
@@ -72,6 +78,7 @@ export class VipsConverter extends Converter {
 				from: input.from,
 			},
 			to,
+			compression,
 		} as WorkerMessage;
 		const res = await this.sendMessage(msg);
 

@@ -6,12 +6,14 @@
 	import { effects, files } from "$lib/store/index.svelte";
 	import { converters } from "$lib/converters";
 	import { goto } from "$app/navigation";
+	import { page } from "$app/state";
 
 	type Props = {
 		class?: string;
+		jpegify?: boolean;
 	};
 
-	const { class: classList }: Props = $props();
+	const { class: classList, jpegify }: Props = $props();
 
 	let uploaderButton = $state<HTMLButtonElement>();
 	let fileInput = $state<HTMLInputElement>();
@@ -40,10 +42,13 @@
 
 	const handleFileChange = (e: Event) => {
 		if (!fileInput) return;
-
-		const oldLength = files.files.length;
-		files.add(fileInput.files);
-		if (oldLength !== files.files.length) goto("/convert");
+		if (page.url.pathname !== "/jpegify/") {
+			const oldLength = files.files.length;
+			files.add(fileInput.files);
+			if (oldLength !== files.files.length) goto("/convert");
+		} else {
+			files.add(fileInput.files);
+		}
 	};
 
 	onMount(() => {
@@ -93,7 +98,7 @@
 			<UploadIcon class="w-full h-full text-on-accent" />
 		</div>
 		<h2 class="text-center text-2xl font-semibold mt-4">
-			Drop or click to convert
+			Drop or click to {jpegify ? "JPEGIFY" : "convert"}
 		</h2>
 	</Panel>
 </button>

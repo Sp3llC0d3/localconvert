@@ -243,7 +243,7 @@
 												? 'bg-accent-green'
 												: 'bg-accent-blue'}"
 									disabled={!files.ready}
-									onclick={file.convert}
+									onclick={() => file.convert()}
 								>
 									<RotateCwIcon size="24" />
 								</button>

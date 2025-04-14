@@ -61,7 +61,11 @@
 			<h2 class="text-base font-bold">GitHub contributors</h2>
 			{#if ghContribs && ghContribs.length > 0}
 				<p class="text-base text-muted font-normal">
-					Big thanks to all these people for helping out!
+					Big <a
+						class="text-black dynadark:text-white"
+						href="/jpegify">thanks</a
+					>
+					to all these people for helping out!
 					<a
 						class="text-blue-500 font-normal hover:underline"
 						href={GITHUB_URL_VERT}

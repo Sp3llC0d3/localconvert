@@ -18,6 +18,7 @@
 	} from "$lib/store/index.svelte";
 	import "../app.scss";
 	import { browser } from "$app/environment";
+	import { page } from "$app/state";
 
 	let { children, data } = $props();
 	let enablePlausible = $state(false);
@@ -40,9 +41,13 @@
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
 		dropping.set(false);
-		const oldLength = files.files.length;
-		files.add(e.dataTransfer?.files);
-		if (oldLength !== files.files.length) goto("/convert");
+		if (page.url.pathname !== "/jpegify/") {
+			const oldLength = files.files.length;
+			files.add(e.dataTransfer?.files);
+			if (oldLength !== files.files.length) goto("/convert");
+		} else {
+			files.add(e.dataTransfer?.files);
+		}
 	};
 
 	const handleDrag = (e: DragEvent, drag: boolean) => {

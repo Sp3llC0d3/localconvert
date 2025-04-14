@@ -72,6 +72,8 @@
 		items.findIndex((i) => i.activeMatch(page.url.pathname)),
 	);
 
+	const isSecretPage = $derived(selectedIndex === -1);
+
 	beforeNavigate((e) => {
 		const oldIndex = items.findIndex((i) =>
 			i.activeMatch(e.from?.url.pathname || ""),
@@ -155,16 +157,16 @@
 
 <div bind:this={container}>
 	<Panel class="max-w-[778px] w-screen h-20 flex items-center gap-3 relative">
-		{#if linkRects[selectedIndex]}
+		{@const linkRect = linkRects.at(selectedIndex) || linkRects[0]}
+		{#if linkRect}
 			<div
 				class="absolute bg-panel-highlight rounded-xl"
-				style="width: {linkRects[selectedIndex]
-					.width}px; height: {linkRects[selectedIndex]
-					.height}px; top: {linkRects[selectedIndex].top -
-					(containerRect?.top || 0)}px; left: {linkRects[
-					selectedIndex
-				].left - (containerRect?.left || 0)}px; {$effects
-					? `transition: left var(--transition) ${duration}ms, top var(--transition) ${duration}ms;`
+				style="width: {linkRect.width}px; height: {linkRect.height}px; top: {linkRect.top -
+					(containerRect?.top || 0)}px; left: {linkRect.left -
+					(containerRect?.left || 0)}px; opacity: {isSecretPage
+					? 0
+					: 1}; {$effects
+					? `transition: left var(--transition) ${duration}ms, top var(--transition) ${duration}ms, opacity var(--transition) ${duration}ms;`
 					: ''}"
 			></div>
 		{/if}

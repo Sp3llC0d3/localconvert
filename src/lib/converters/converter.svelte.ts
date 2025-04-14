@@ -25,6 +25,8 @@ export class Converter {
 		input: VertFile,
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		to: string,
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+		...args: any[]
 	): Promise<VertFile> {
 		throw new Error("Not implemented");
 	}
