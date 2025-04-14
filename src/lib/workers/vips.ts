@@ -18,7 +18,6 @@ const unsupportedFrom: string[] = [];
 const unsupportedTo = [".dng"];
 
 vipsPromise
-	.then(() => magickPromise)
 	.then(() => {
 		postMessage({ type: "loaded" });
 	})
@@ -51,6 +50,8 @@ const handleMessage = async (message: any): Promise<any> => {
 				magickRequiredFormats.includes(message.input.from) ||
 				magickRequiredFormats.includes(message.to)
 			) {
+				// only wait when we need to
+				await magickPromise;
 				const magick = MagickImage.create(
 					new Uint8Array(buffer),
 					new MagickReadSettings({
