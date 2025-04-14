@@ -224,7 +224,7 @@ class Files {
 				continue;
 			}
 			dlFiles.push({
-				name: file.file.name.replace(/\.[^/.]+$/, "") + file.to,
+				name: file.file.name.replace(/\.[^/.]+$/, "") + result.to,
 				lastModified: Date.now(),
 				input: await result.file.arrayBuffer(),
 			});
