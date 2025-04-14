@@ -26,6 +26,8 @@ export class VipsConverter extends Converter {
 		new FormatInfo("cur", true, false),
 		new FormatInfo("ani", true, false),
 		new FormatInfo("heic", true, false),
+		new FormatInfo("nef", true, false),
+		new FormatInfo("cr2", true, false),
 		new FormatInfo("hdr", true, true),
 		new FormatInfo("jpe", true, true),
 		new FormatInfo("dng", true, false),

@@ -17,7 +17,15 @@ const vipsPromise = Vips({
 
 const magickPromise = initializeImageMagick(new URL(wasm, import.meta.url));
 
-const magickRequiredFormats = [".dng", ".heic", ".ico", ".cur", ".ani"];
+const magickRequiredFormats = [
+	".dng",
+	".heic",
+	".ico",
+	".cur",
+	".ani",
+	".cr2",
+	".nef",
+];
 const unsupportedFrom: string[] = [];
 const unsupportedTo = [...magickRequiredFormats];
 
