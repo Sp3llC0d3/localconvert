@@ -41,11 +41,13 @@
 		"@fontsource/lexend": "^5.1.2",
 		"@fontsource/radio-canada-big": "^5.1.1",
 		"@imagemagick/magick-wasm": "^0.0.34",
+		"byte-data": "^19.0.1",
 		"client-zip": "^2.4.6",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.475.0",
 		"music-metadata": "^11.0.0",
 		"p-queue": "^8.1.0",
+		"riff-file": "^1.0.3",
 		"vite-plugin-static-copy": "^2.2.0",
 		"wasm-vips": "^0.0.11"
 	}

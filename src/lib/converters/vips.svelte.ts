@@ -15,26 +15,34 @@ export class VipsConverter extends Converter {
 	private id = 0;
 	public name = "libvips";
 	public ready = $state(false);
-	public supportedFormats = [
-		".png",
-		".jpeg",
-		".jpg",
-		".webp",
-		".gif",
-		".hdr",
-		".jpe",
-		".dng",
-		".mat",
-		".pbm",
-		".pfm",
-		".pgm",
-		".pnm",
-		".ppm",
-		".raw",
-		".tif",
-		".tiff",
-		".jfif",
+	public static supportedFormatsStatic = [
+		...new Set([
+			".png",
+			".jpeg",
+			".jpg",
+			".webp",
+			".gif",
+			".ico",
+			".cur",
+			".ani",
+			".heic",
+			".hdr",
+			".jpe",
+			".dng",
+			".mat",
+			".pbm",
+			".pfm",
+			".pgm",
+			".pnm",
+			".ppm",
+			".raw",
+			".tif",
+			".tiff",
+			".jfif",
+		]),
 	];
+
+	public supportedFormats = VipsConverter.supportedFormatsStatic;
 
 	public readonly reportsProgress = false;
 
@@ -87,7 +95,7 @@ export class VipsConverter extends Converter {
 			log(["converters", this.name], `converted ${input.name} to ${to}`);
 			return new VertFile(
 				new File([res.output as unknown as BlobPart], input.name),
-				to,
+				res.zip ? ".zip" : to,
 			);
 		}
 

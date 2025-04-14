@@ -10,6 +10,7 @@ interface ConvertMessage {
 interface FinishedMessage {
 	type: "finished";
 	output: ArrayBufferLike;
+	zip?: boolean;
 }
 
 interface LoadedMessage {
