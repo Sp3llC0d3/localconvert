@@ -154,11 +154,20 @@
 			"custom_instance": "Custom"
 		},
 		"privacy": {
-			"title": "Privacy",
+			"title": "Privacy & data",
 			"plausible_title": "Plausible analytics",
 			"plausible_description": "We use [plausible_link]Plausible[/plausible_link], a privacy-focused analytics tool, to gather completely anonymous statistics. All data is anonymized and aggregated, and no identifiable information is ever sent or stored. You can view the analytics [analytics_link]here[/analytics_link] and choose to opt out below.",
 			"opt_in": "Opt-in",
-			"opt_out": "Opt-out"
+			"opt_out": "Opt-out",
+			"cache_title": "Cache management",
+			"cache_description": "We cache the converter files on your browser so you don't have to re-download them every time, improving performance and reducing data usage.",
+			"refresh_cache": "Refresh cache",
+			"clear_cache": "Clear cache",
+			"files_cached": "{size} ({count} files)",
+			"loading_cache": "Loading...",
+			"total_size": "Total Size",
+			"files_cached_label": "Files Cached",
+			"cache_cleared": "Cache cleared successfully!"
 		},
 		"language": {
 			"title": "Language",
