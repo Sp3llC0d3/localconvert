@@ -1,3 +1,5 @@
+import { browser } from "$app/environment";
+
 export interface IpInfo {
 	ip: string;
 	network: string;
@@ -29,5 +31,17 @@ export interface IpInfo {
 }
 
 export const ip = async (): Promise<IpInfo> => {
-	return await fetch("https://ipapi.co/json/").then((r) => r.json());
+	if (browser) {
+		const item = localStorage.getItem("ipinfo");
+		if (item) {
+			return JSON.parse(item);
+		}
+	}
+
+	const res = await fetch("https://ipapi.co/json/").then((r) => r.json());
+	if (browser) {
+		localStorage.setItem("ipinfo", JSON.stringify(res));
+	}
+
+	return res;
 };
