@@ -194,7 +194,7 @@
 									{m["settings.conversion.metadata"]()}
 								</p>
 								<p
-									class="text-sm text-muted font-normal italic"
+									class="text-sm text-muted font-normal"
 								>
 									{m[
 										"settings.conversion.metadata_description"
