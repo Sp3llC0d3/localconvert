@@ -121,7 +121,7 @@
 	<meta name="theme-color" content="#F2ABEE" />
 	<meta
 		name="title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
 	/>
 	<meta
 		name="description"
@@ -130,7 +130,7 @@
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
 	/>
 	<meta
 		property="og:description"
@@ -140,7 +140,7 @@
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta
 		property="twitter:title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
 	/>
 	<meta
 		property="twitter:description"

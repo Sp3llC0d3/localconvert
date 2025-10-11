@@ -31,6 +31,10 @@
 	const processing = $derived(images.map((f) => f.processing).includes(true));
 </script>
 
+<svelte:head>
+	<meta name="robots" content="noindex" />
+</svelte:head>
+
 <div class="mx-auto w-full max-w-[778px] flex flex-col gap-8">
 	<h1 class="text-5xl text-center">{m["jpegify.title"]()}</h1>
 	<p class="text-muted text-center -mt-4 font-normal italic">
