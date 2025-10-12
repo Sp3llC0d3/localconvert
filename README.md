@@ -15,9 +15,11 @@ VERT is built in Svelte and TypeScript.
 
 ## Features
 
-- Convert files directly on your device using WebAssembly \*
-- No file size limits
-- Supports multiple file formats
+- Convert files directly on your device using WebAssembly\*
+- No file or file size limits
+- Convert images, audio, documents, and video\*
+- Supports over **250+** file formats
+- Conversion settings
 - User-friendly interface built with Svelte
 
 <sup>\* Non-local video conversion is available with our official instance, but the [daemon](https://github.com/VERT-sh/vertd) is easily self-hostable to maintain privacy and fully local functionality.</sup>
@@ -32,3 +34,13 @@ VERT is built in Svelte and TypeScript.
 ## License
 
 This project is licensed under the AGPL-3.0 License, please see the [LICENSE](LICENSE) file for details.
+
+## Star History
+
+<a href="https://www.star-history.com/#VERT-sh/VERT&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=VERT-sh/VERT&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=VERT-sh/VERT&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=VERT-sh/VERT&type=Date" />
+ </picture>
+</a>
