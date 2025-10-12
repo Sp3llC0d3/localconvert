@@ -16,7 +16,7 @@
 		"title": "Sevdiğiniz dosya dönüştürücü.",
 		"subtitle": "Tüm görüntü, ses ve belge işlemleri cihazınızda gerçekleştirilir. Videolar, ışık hızındaki sunucularımızda dönüştürülür. Dosya boyutu sınırı ve reklam yoktur. Tamamen açık kaynaklıdır.",
 		"uploader": {
-			"text": "{action} için sürükleyin veya tıklayın",
+			"text": "{action} için sürükleyip bırakın veya dosya seçin",
 			"convert": "dönüştür",
 			"jpegify": "jpegify"
 		},
@@ -26,8 +26,8 @@
 			"audio": "Ses",
 			"documents": "Belge",
 			"video": "Video",
-			"video_server_processing": "Sunucu destekli",
-			"local_supported": "Local destekli",
+			"video_server_processing": "Sunucuda gerçekleşir",
+			"local_supported": "Lokalde gerçekleşir",
 			"status": {
 				"text": "<b>Durum:</b> {status}",
 				"ready": "hazır",
@@ -97,14 +97,14 @@
 		},
 		"appearance": {
 			"title": "Görünüm",
-			"brightness_theme": "Açık Tema",
+			"brightness_theme": "Tema seçimi",
 			"brightness_description": "Güneşli bir gün mü istersiniz, yoksa sessiz ve yalnız bir gece mi?",
 			"light": "Açık",
 			"dark": "Koyu",
 			"effect_settings": "Efekt ayarları",
 			"effect_description": "Süslü efektler mi istersiniz, yoksa daha sade bir deneyim mi?",
 			"enable": "Etkinleştir",
-			"disable": "Kapat"
+			"disable": "Devre dışı bırak"
 		},
 		"conversion": {
 			"title": "Dönüştürme",
