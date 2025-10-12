@@ -111,7 +111,7 @@
 			"filename_format": "ファイル名フォーマット",
 			"filename_description": "これはダウンロード時のファイル名を決定します（拡張子を除く）。以下のテンプレートを使用できます：<b>%name%</b>（元のファイル名）、<b>%extension%</b>（元の拡張子）、<b>%date%</b>（変換日時）。",
 			"placeholder": "VERT_%name%",
-			"default_format": "デフォルト変換形式",
+			"default_format": "デフォルト変換フォーマット",
 			"default_format_description": "このファイルタイプをアップロードしたときに自動で選択される形式を変更します。",
 			"default_format_image": "画像",
 			"default_format_video": "動画",
@@ -130,7 +130,7 @@
 		},
 		"vertd": {
 			"title": "動画変換",
-			"status": "状態：",
+			"status": "ステータス：",
 			"loading": "読み込み中...",
 			"available": "利用可能（コミットID {commitId}）",
 			"unavailable": "利用不可（URLが正しいですか？）",
