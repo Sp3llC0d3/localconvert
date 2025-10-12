@@ -323,6 +323,7 @@ export const availableLocales = {
 	fr: "Français",
 	de: "Deutsch",
 	hr: "Hrvatski",
+    ja: "日本語"
 };
 
 export function updateLocale(newLocale: string) {
