@@ -24,8 +24,6 @@
 	import { initStores as initAnimStores } from "$lib/animation/index.js";
 	import { locales, localizeHref } from "$lib/paraglide/runtime";
 	import { VertdInstance } from "$lib/sections/settings/vertdSettings.svelte.js";
-	import { ToastManager } from "$lib/toast/index.svelte.js";
-	import VertdError from "$lib/components/functional/VertdError.svelte";
 
 	let { children, data } = $props();
 	let enablePlausible = $state(false);
@@ -129,6 +127,7 @@
 		name="description"
 		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
 	/>
+	<meta property="og:url" content="https://vert.sh">
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
@@ -139,7 +138,9 @@
 		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
 	/>
 	<meta property="og:image" content={featuredImage} />
-	<meta property="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="vert.sh">
+	<meta property="twitter:url" content="https://vert.sh">
 	<meta
 		property="twitter:title"
 		content="{VERT_NAME} — Free, fast, and awesome file converter"
