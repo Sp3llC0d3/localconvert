@@ -31,7 +31,11 @@
 			"status": {
 				"text": "<b>Estado:</b> {status}",
 				"ready": "listo",
-				"not_ready": "no listo"
+				"not_ready": "no listo",
+				"not_initialized": "no inicializado",
+				"downloading": "descargando...",
+				"initializing": "inicializando...",
+				"unknown": "estado desconocido"
 			},
 			"supported_formats": "Formatos soportados:"
 		},
@@ -43,6 +47,12 @@
 		}
 	},
 	"convert": {
+		"external_warning": {
+			"title": "Advertencia del servidor externo",
+			"text": "Si eliges convertir a un formato de video, esos archivos se cargarán en un servidor externo para convertirlos. ¿Quieres continuar?",
+			"yes": "Sí",
+			"no": "No"
+		},
 		"panel": {
 			"convert_all": "Convertir todo",
 			"download_all": "Comprimir todo",
@@ -70,7 +80,13 @@
 			"cant_convert": "No podemos convertir este archivo.",
 			"vertd_server": "¿Qué estás haciendo..? ¡Debes ejecutar el servidor de vertd!",
 			"unsupported_format": "Solo aceptamos imágenes, vídeos, audios y documentos.",
-			"vertd_not_found": "No se encontró la instancia de vertd para iniciar la conversión de vídeos. ¿Estás seguro de que la URL es correcta?"
+			"vertd_not_found": "No se encontró la instancia de vertd para iniciar la conversión de vídeos. ¿Estás seguro de que la URL es correcta?",
+			"worker_downloading": "El convertidor {type} se está inicializando actualmente, espere unos momentos.",
+			"worker_error": "El convertidor {type} tuvo un error durante la inicialización, inténtelo nuevamente más tarde.",
+			"worker_timeout": "El convertidor {type} está tardando más de lo esperado en inicializarse. Espere unos momentos más o actualice la página.",
+			"audio": "audio",
+			"doc": "documento",
+			"image": "imagen"
 		}
 	},
 	"settings": {
@@ -91,9 +107,20 @@
 		},
 		"conversion": {
 			"title": "Conversión",
+			"advanced_settings": "Configuraciones avanzadas",
 			"filename_format": "Formato del nombre de archivo",
 			"filename_description": "Esto va a determinar el nombre del archivo al ser descargado <b>sin incluir la extensión</b>. Puedes poner las siguientes plantillas en el formato, las cuales serán reemplazadas con la información que les corresponde: <b>%name%</b> para el nombre original, <b>%extension%</b> para la extensión original del archivo y <b>%date%</b> para la fecha de cuando el archivo fue convertido.",
 			"placeholder": "VERT_%name%",
+			"default_format": "Formato de conversión predeterminado",
+			"default_format_description": "Esto cambiará el formato predeterminado seleccionado cuando subes un archivo de este tipo.",
+			"default_format_image": "Imágenes",
+			"default_format_video": "Vídeos",
+			"default_format_audio": "Audio",
+			"default_format_document": "Documentos",
+			"metadata": "Metadatos del archivo",
+			"metadata_description": "Esto cambia si los metadatos (EXIF, información de la canción, etc.) del archivo original se conservan en los archivos convertidos.",
+			"keep": "Mantener",
+			"remove": "Eliminar",
 			"quality": "Calidad de la conversión",
 			"quality_description": "Esto cambia la calidad por defecto de los archivos convertidos (en su categoría). Valores más altos pueden resultar en tiempos de conversión y tamaños de archivo más largos.",
 			"quality_video": "Esto cambia la calidad por defecto de los vídeos convertidos. Valores más altos pueden resultar en tiempos de conversión y tamaños de archivo más largos.",
@@ -120,14 +147,27 @@
 				"medium": "Medio",
 				"fast": "Rápido",
 				"ultra_fast": "Súper rápido"
-			}
+			},
+			"auto_instance": "Automático (recomendado)",
+			"eu_instance": "Falkenstein, Alemania",
+			"us_instance": "Washington, EE. UU.",
+			"custom_instance": "Personalizado"
 		},
 		"privacy": {
 			"title": "Privacidad",
 			"plausible_title": "Analíticas de Plausible",
 			"plausible_description": "Usamos [plausible_link]Plausible[/plausible_link], una herramienta de analíticas orientada a la privacidad para recopilar estadísticas completamente anónimas. Toda la información que recopilamos es anonimizada y agregada, y en ningún momento se envía ni se almacena información que permita identificarte. Puedes ver las estadísticas [analytics_link]aquí[/analytics_link] y excluirte de ellas a continuación:",
 			"opt_in": "Participar",
-			"opt_out": "No participar"
+			"opt_out": "No participar",
+			"cache_title": "Administración de caché",
+			"cache_description": "Guardamos en caché los archivos del convertidor en su navegador para que no tenga que volver a descargarlos cada vez, mejorando el rendimiento y reduciendo el uso de datos.",
+			"refresh_cache": "Actualizar caché",
+			"clear_cache": "Borrar caché",
+			"files_cached": "{size} ({count} archivos)",
+			"loading_cache": "Cargando...",
+			"total_size": "Tamaño total",
+			"files_cached_label": "Archivos en caché",
+			"cache_cleared": "¡Caché borrada exitosamente!"
 		},
 		"language": {
 			"title": "Lenguaje",
@@ -189,6 +229,7 @@
 	"workers": {
 		"errors": {
 			"general": "Ocurrió un error mientras se convertía {file}: {message}",
+            "cancel": "Error al cancelar la conversión para {file}: {message}",
 			"magick": "Ocurrió un error en el módulo de Magick, la conversión de imágenes puede que no funcione correctamente.",
 			"ffmpeg": "No se pudo cargar FFmpeg, algunas funciones podrían no funcionar.",
 			"no_audio": "No se encontró una pista de audio.",
