@@ -1,5 +1,6 @@
 import { ip, type IpInfo } from "$lib/ip";
 import { Settings } from "./index.svelte";
+import { PUB_VERTD_URL } from "$env/static/public";
 
 const LOCATIONS = [
 	{
@@ -51,6 +52,16 @@ export class VertdInstance {
 
 	public load() {
 		const ls = localStorage.getItem("vertdInstance");
+
+		// if custom vertd url and no saved setting, default to the custom url
+		if (!ls) {
+			const isCustomUrl = PUB_VERTD_URL !== "https://vertd.vert.sh";
+			if (isCustomUrl) {
+				this.inner = { type: "custom" };
+				return;
+			}
+		}
+
 		if (!ls) return;
 		const inner: VertdInner = JSON.parse(ls);
 		this.inner = {
