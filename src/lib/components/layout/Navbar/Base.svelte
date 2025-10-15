@@ -157,7 +157,9 @@
 							</div>
 						{/if}
 					</div>
-					<p class="font-medium hidden md:flex min-w-0">
+					<p
+						class="font-medium hidden hyphens-auto break-all md:flex min-w-0"
+					>
 						{item.name}
 					</p>
 				</div>
