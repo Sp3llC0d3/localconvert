@@ -89,7 +89,8 @@
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);
-		updateLocale(localStorage.getItem("locale") || "en");
+		const storedLocale = localStorage.getItem("locale");
+		if (storedLocale) updateLocale(storedLocale);
 
 		Settings.instance.load();
 

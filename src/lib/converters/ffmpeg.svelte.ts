@@ -96,7 +96,7 @@ export class FFmpegConverter extends Converter {
 				this.status = "ready";
 			})();
 		} catch (err) {
-			error(["converters", this.name], `error loading ffmpeg: ${err}`);
+			error(["converters", this.name], `Error loading ffmpeg: ${err}`);
 			this.status = "error";
 			ToastManager.add({
 				type: "error",
