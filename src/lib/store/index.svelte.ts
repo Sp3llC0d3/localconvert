@@ -322,6 +322,7 @@ export const availableLocales = {
 	es: "Español",
 	fr: "Français",
 	de: "Deutsch",
+	it: "Italiano",
 	hr: "Hrvatski",
 	tr: "Türkçe",
 	ja: "日本語",
