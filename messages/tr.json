@@ -17,7 +17,7 @@
 		"subtitle": "Tüm görüntü, ses ve belge işlemleri cihazınızda gerçekleştirilir. Videolar, ışık hızındaki sunucularımızda dönüştürülür. Dosya boyutu sınırı ve reklam yoktur. Tamamen açık kaynaklıdır.",
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
-			"convert": "dönüştür",
+			"convert": "dönüştürmek",
 			"jpegify": "jpegify"
 		},
 		"cards": {
@@ -27,7 +27,7 @@
 			"documents": "Belge",
 			"video": "Video",
 			"video_server_processing": "Sunucuda gerçekleşir",
-			"local_supported": "Lokalde gerçekleşir",
+			"local_supported": "Cihazınızda gerçekleşir",
 			"status": {
 				"text": "<b>Durum:</b> {status}",
 				"ready": "hazır",
@@ -110,7 +110,7 @@
 			"title": "Dönüştürme",
 			"advanced_settings": "Gelişmiş ayarlar",
 			"filename_format": "Dosya adı formatı",
-			"filename_description": "Bu ayar, <b>dosya uzantısını etkilemeden</b>indirilen dosyanın adını belirleyecektir. Aşağıdaki şablonları formata ekleyebilirsiniz, bunlar ilgili bilgilerle değiştirilecektir: orijinal dosya adı için <b>%name%</b>, orijinal dosya uzantısı için <b>%extension%</b> ve dosyanın dönüştürüldüğü tarihin tarih için <b>%date%</b>.",
+			"filename_description": "Bu ayar, <b>dosya uzantısını etkilemeden</b> indirilen dosyanın adını belirleyecektir. Aşağıdaki şablonları formata ekleyebilirsiniz, bunlar ilgili bilgilerle değiştirilecektir: orijinal dosya adı için <b>%name%</b>, orijinal dosya uzantısı için <b>%extension%</b> ve dosyanın dönüştürüldüğü tarihin tarih için <b>%date%</b>.",
 			"placeholder": "VERT_%name%",
 			"default_format": "Varsayılan dönüştürme formatı",
 			"default_format_description": "Bu ayar, bu dosya türünde bir dosya yüklediğinizde seçili olan varsayılan formatı değiştirecektir.",
@@ -194,7 +194,7 @@
 		},
 		"donate": {
 			"title": "VERT'e bağış yapın",
-			"description": "Sizin desteğinizle VERT'i çalıştırmaya ve geliştirmeye devam edebiliriz.",
+			"description": "Desteğinizle VERT'i çalıştırmaya ve geliştirmeye devam edebiliriz.",
 			"one_time": "Tek seferlik",
 			"monthly": "Aylık",
 			"custom": "Özel",
@@ -214,7 +214,7 @@
 			"github_description": "Yardımcı olan herkese çok [jpegify_link]teşekkürler[/jpegify_link]! [github_link]Sen de yardım etmek ister misin?[/github_link]",
 			"no_contributors": "Henüz kimse katkıda bulunmamış gibi görünüyor... [contribute_link]ilk katkıda bulunan sen ol![/contribute_link]",
 			"libraries": "Kütüphaneler",
-			"libraries_description": "Bu mükemmel kütüphaneleri yıllardır geliştirdikleri için FFmpeg (ses, video), ImageMagick (görseller) ve Pandoc (belgeler)'a çok teşekkür ederiz. VERT, dönüştürme işlemlerini için bu kütüphaneleri kullanmaktadır.",
+			"libraries_description": "Bu mükemmel kütüphaneleri yıllardır geliştirdikleri için FFmpeg (ses, video), ImageMagick (görseller) ve Pandoc (belgeler)'a çok teşekkür ederiz. VERT, dönüştürme işlemleri için bu kütüphaneleri kullanmaktadır.",
 			"roles": {
 				"lead_developer": "Lead developer; conversion backend, UI implementation",
 				"developer": "Developer; UI implementation",
