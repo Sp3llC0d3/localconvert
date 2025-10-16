@@ -2,6 +2,12 @@
 
 This file covers how to get started with VERT.
 
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running Locally](#running-locally)
+- [Building for Production](#building-for-production)
+- [Using Docker](#using-docker)
+
 ### Prerequisites
 Make sure you have the following installed:
 - [Bun](https://bun.sh/)
@@ -36,3 +42,7 @@ PUB_VERTD_URL=https://vertd.vert.sh # default vertd instance
 To build the project for production, run `bun run build`.
 
 This will build the site to the `build` folder. You should then use a web server like [nginx](https://nginx.org) to serve the files inside that folder.
+
+### Using Docker
+
+Check the dedicated [Docker](./DOCKER.md) page.

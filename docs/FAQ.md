@@ -2,6 +2,12 @@
 
 This file covers frequently asked questions.
 
+- [Why VERT?](#why-vert)
+- [What happens with video files?](#what-happens-with-video-files)
+- [Can I host my own video file converter?](#can-i-host-my-own-video-file-converter)
+- [What about analytics?](#what-about-analytics)
+- [What libraries does VERT use?](#what-libraries-does-vert-use)
+
 ### Why VERT?
 **File converters have always disappointed us.** They're ugly, riddled with ads, and most importantly; slow. We decided to solve this problem once and for all by making an alternative that solves all those problems, and more.
 
