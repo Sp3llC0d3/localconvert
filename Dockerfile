@@ -26,6 +26,8 @@ RUN bun run build
 
 FROM nginx:stable-alpine
 
+EXPOSE 80/tcp
+
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /app/build /usr/share/nginx/html
