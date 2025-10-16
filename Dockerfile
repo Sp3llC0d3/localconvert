@@ -29,3 +29,6 @@ FROM nginx:stable-alpine
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /app/build /usr/share/nginx/html
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl --fail --silent --output /dev/null http://localhost || exit 1
