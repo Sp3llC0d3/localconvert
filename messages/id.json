@@ -216,7 +216,7 @@
 			"notable_contributors": "Kontributor penting",
 			"notable_description": "Kami ingin berterima kasih kepada orang-orang ini atas kontribusi besar mereka untuk VERT.",
 			"github_contributors": "Kontributor GitHub",
-			"github_description": "Terima kasih banyak kepada semua orang yang telah membantu! [github_link]Ingin membantu juga?[/github_link]",
+			"github_description": "[jpegify_link]Terima kasih[/jpegify_link] banyak kepada semua orang yang telah membantu! [github_link]Ingin membantu juga?[/github_link]",
 			"no_contributors": "Sepertinya belum ada yang berkontribusi... [contribute_link]jadilah yang pertama berkontribusi![/contribute_link]",
 			"libraries": "Pustaka",
 			"libraries_description": "Terima kasih besar kepada FFmpeg (audio, video), ImageMagick (gambar), dan Pandoc (dokumen) atas pemeliharaannya selama bertahun-tahun. VERT bergantung pada mereka untuk menyediakan konversi berkas.",
