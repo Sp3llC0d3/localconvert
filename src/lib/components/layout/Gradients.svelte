@@ -37,7 +37,7 @@
 			at: 25,
 		},
 		{
-			matcher: (path) => path === "/jpegify/",
+			matcher: (path) => path === "/privacy/",
 			color: "var(--bg-gradient-red-from)",
 			at: 100,
 		},

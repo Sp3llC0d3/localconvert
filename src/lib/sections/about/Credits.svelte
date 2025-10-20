@@ -6,7 +6,7 @@
 		GITHUB_URL_VERT,
 	} from "$lib/consts";
 	import { m } from "$lib/paraglide/messages";
-	import { link } from "$lib/store/index.svelte";
+	import { link, sanitize } from "$lib/store/index.svelte";
 
 	let { mainContribs, notableContribs, ghContribs } = $props();
 </script>
@@ -101,23 +101,24 @@
 					</h2>
 					{#if ghContribs && ghContribs.length > 0}
 						<p class="text-base text-muted font-normal">
-							{@html link(
-								["jpegify_link", "github_link"],
-								m["about.credits.github_description"](),
-								["/jpegify", GITHUB_URL_VERT],
-								[false, true],
-								[
-									"text-black dynadark:text-white",
-									"text-blue-500 font-normal hover:underline",
-								],
+							{@html sanitize(
+								link(
+									"github_link",
+									m["about.credits.github_description"](),
+									GITHUB_URL_VERT,
+									true,
+								),
 							)}
 						</p>
 					{:else}
 						<p class="text-base text-muted font-normal italic">
-							{@html link(
-								"contribute_link",
-								m["about.credits.no_contributors"](),
-								GITHUB_URL_VERT,
+							{@html sanitize(
+								link(
+									"contribute_link",
+									m["about.credits.no_contributors"](),
+									GITHUB_URL_VERT,
+									true,
+								),
 							)}
 						</p>
 					{/if}
@@ -131,12 +132,12 @@
 						{/each}
 					</div>
 				{/if}
-
-				<h2 class="mt-2 -mb-2">{m["about.credits.libraries"]()}</h2>
-				<p class="font-normal">
-					{m["about.credits.libraries_description"]()}
-				</p>
 			</div>
+
+			<h2 class="mt-2 -mb-2">{m["about.credits.libraries"]()}</h2>
+			<p class="font-normal">
+				{m["about.credits.libraries_description"]()}
+			</p>
 		{/if}
-	</div></Panel
->
+	</div>
+</Panel>

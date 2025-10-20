@@ -46,13 +46,9 @@
 	const dropFiles = (e: DragEvent) => {
 		e.preventDefault();
 		dropping.set(false);
-		if (page.url.pathname !== "/jpegify/") {
-			const oldLength = files.files.length;
-			files.add(e.dataTransfer?.files);
-			if (oldLength !== files.files.length) goto("/convert");
-		} else {
-			files.add(e.dataTransfer?.files);
-		}
+		const oldLength = files.files.length;
+		files.add(e.dataTransfer?.files);
+		if (oldLength !== files.files.length) goto("/convert");
 	};
 
 	const handleDrag = (e: DragEvent, drag: boolean) => {
@@ -64,14 +60,9 @@
 		const clipboardData = e.clipboardData;
 		if (!clipboardData || !clipboardData.files.length) return;
 		e.preventDefault();
-
-		if (page.url.pathname !== "/jpegify/") {
-			const oldLength = files.files.length;
-			files.add(clipboardData.files);
-			if (oldLength !== files.files.length) goto("/convert");
-		} else {
-			files.add(clipboardData.files);
-		}
+		const oldLength = files.files.length;
+		files.add(clipboardData.files);
+		if (oldLength !== files.files.length) goto("/convert");
 	};
 
 	onMount(() => {
@@ -156,6 +147,7 @@
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
+	<link rel="canonical" href="https://vert.sh/" />
 	{#if enablePlausible}
 		<script
 			defer
