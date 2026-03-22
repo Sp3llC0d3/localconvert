@@ -75,7 +75,7 @@
 			</p>
 			<div class="w-48 md:max-w-[6.5rem]">
 				<!-- check if all files have the same converters -->
-				<!-- video and audio together still have this dropdown disabled because audio has just ffmpeg (video has vertd & ffmpeg), even tho it can convert between video and audio  -->
+				<!-- video and audio share the ffmpeg converter -->
 				{#if files.files.length > 0 && files.files.every((f) => f.converters.length) && files.files.every((f) => JSON.stringify(f.converters) === JSON.stringify(files.files[0].converters))}
 					<FormatDropdown
 						onselect={(r) =>

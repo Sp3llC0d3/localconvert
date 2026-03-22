@@ -73,10 +73,8 @@ export class VertFile {
 	}
 
 	public supportsStreaming(): boolean {
-		// only vertd (video/gif -> video/gif) supports streaming
-		// rest of converters need entire file in memory, limited by ArrayBuffer limits
-		const converter = this.findConverter();
-		return converter?.name === "vertd";
+		// LocalConvert: all conversions are local, no streaming support
+		return false;
 	}
 
 	constructor(file: File, to: string, blobUrl?: string) {
@@ -275,7 +273,7 @@ export class VertFile {
 		if (!to.startsWith(".")) to = `.${to}`;
 
 		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-		const filenameFormat = settings.filenameFormat || "VERT_%name%";
+		const filenameFormat = settings.filenameFormat || "LocalConvert_%name%";
 
 		const format = (name: string) => {
 			const date = new Date().toISOString();

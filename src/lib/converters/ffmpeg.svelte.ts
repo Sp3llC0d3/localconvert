@@ -427,8 +427,25 @@ export class FFmpegConverter extends Converter {
 			}
 		}
 
+		// video to video (LocalConvert: replaces vertd server-side conversion)
+		if (videoFormats.includes(inputFormat) && videoFormats.includes(outputFormat)) {
+			log(
+				["converters", this.name],
+				`Converting video ${input.from} to video ${to}`,
+			);
+			const codecs = getCodecs(to);
+			const videoArgs = toArgs(to);
+			return [
+				"-i",
+				"input",
+				...videoArgs,
+				...metadataArgs,
+				"output" + to,
+			];
+		}
+
 		// video to audio
-		if (videoFormats.includes(inputFormat)) {
+		if (videoFormats.includes(inputFormat) && !videoFormats.includes(outputFormat)) {
 			log(
 				["converters", this.name],
 				`Converting video ${input.from} to audio ${to}`,

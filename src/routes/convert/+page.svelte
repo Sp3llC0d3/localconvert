@@ -11,7 +11,6 @@
 		files,
 		gradientColor,
 		showGradient,
-		vertdLoaded,
 		dropdownStates,
 	} from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
@@ -34,6 +33,14 @@
 	import { GB } from "$lib/util/consts";
 	import { log } from "$lib/util/logger";
 
+	// LocalConvert: video formats are non-native ffmpeg formats
+	const videoFormatNames = converters
+		.find((c) => c.name === "ffmpeg")
+		?.supportedFormats.filter((f) => !f.isNative)
+		.map((f) => f.name) || [];
+
+	const isVideoFormat = (format: string) => videoFormatNames.includes(format);
+
 	let processedFileIds = $state(new Set<string>());
 
 	$effect(() => {
@@ -48,8 +55,8 @@
 
 			let category: string | undefined;
 			const isImage = converter.name === "imagemagick";
-			const isAudio = converter.name === "ffmpeg";
-			const isVideo = converter.name === "vertd";
+			const isAudio = converter.name === "ffmpeg" && !isVideoFormat(file.from);
+			const isVideo = converter.name === "ffmpeg" && isVideoFormat(file.from);
 			const isDocument = converter.name === "pandoc";
 
 			if (isImage) category = "image";
@@ -108,16 +115,19 @@
 		// Set gradient color depending on the file types
 		let type = "";
 		if (files.files.length) {
-			const converters = files.files.map(
+			const converterNames = files.files.map(
 				(file) => file.findConverter()?.name,
 			);
-			const uniqueTypes = new Set(converters);
+			const uniqueTypes = new Set(converterNames);
 
 			if (uniqueTypes.size === 1) {
-				const onlyType = converters[0];
+				const onlyType = converterNames[0];
 				if (onlyType === "imagemagick") type = "blue";
-				else if (onlyType === "ffmpeg") type = "purple";
-				else if (onlyType === "vertd") type = "red";
+				else if (onlyType === "ffmpeg") {
+					// check if all files are video or all audio
+					const allVideo = files.files.every((f) => isVideoFormat(f.from));
+					type = allVideo ? "red" : "purple";
+				}
 				else if (onlyType === "pandoc") type = "green";
 			}
 		}
@@ -133,8 +143,8 @@
 {#snippet fileItem(file: VertFile, index: number)}
 	{@const currentConverter = file.findConverter()}
 	{@const isImage = currentConverter?.name === "imagemagick"}
-	{@const isAudio = currentConverter?.name === "ffmpeg"}
-	{@const isVideo = currentConverter?.name === "vertd"}
+	{@const isAudio = currentConverter?.name === "ffmpeg" && !isVideoFormat(file.from)}
+	{@const isVideo = currentConverter?.name === "ffmpeg" && isVideoFormat(file.from)}
 	{@const isDocument = currentConverter?.name === "pandoc"}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
@@ -203,29 +213,16 @@
 			</button>
 		</div>
 		{#if !currentConverter}
-			{#if file.name.startsWith("vertd")}
-				<div
-					class="h-full flex flex-col text-center justify-center text-failure"
-				>
-					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
-					</p>
-					<p class="font-normal">
-						{m["convert.errors.vertd_server"]()}
-					</p>
-				</div>
-			{:else}
-				<div
-					class="h-full flex flex-col text-center justify-center text-failure"
-				>
-					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
-					</p>
-					<p class="font-normal">
-						{m["convert.errors.unsupported_format"]()}
-					</p>
-				</div>
-			{/if}
+			<div
+				class="h-full flex flex-col text-center justify-center text-failure"
+			>
+				<p class="font-body font-bold">
+					{m["convert.errors.cant_convert"]()}
+				</p>
+				<p class="font-normal">
+					{m["convert.errors.unsupported_format"]()}
+				</p>
+			</div>
 		{:else}
 			{@const formatInfo = currentConverter.supportedFormats.find(
 				(f) => f.name === file.from,
@@ -264,13 +261,13 @@
 					</p>
 					<p class="font-normal">
 						{m["convert.errors.worker_downloading"]({
-							type: isAudio
-								? m["convert.errors.audio"]()
-								: isVideo
+							type: isAudio || isVideo
+								? isVideo
 									? "Video"
-									: isDocument
-										? m["convert.errors.doc"]()
-										: m["convert.errors.image"](),
+									: m["convert.errors.audio"]()
+								: isDocument
+									? m["convert.errors.doc"]()
+									: m["convert.errors.image"](),
 						})}
 					</p>
 				</div>
@@ -283,13 +280,13 @@
 					</p>
 					<p class="font-normal">
 						{m["convert.errors.worker_error"]({
-							type: isAudio
-								? m["convert.errors.audio"]()
-								: isVideo
+							type: isAudio || isVideo
+								? isVideo
 									? "Video"
-									: isDocument
-										? m["convert.errors.doc"]()
-										: m["convert.errors.image"](),
+									: m["convert.errors.audio"]()
+								: isDocument
+									? m["convert.errors.doc"]()
+									: m["convert.errors.image"](),
 						})}
 					</p>
 				</div>
@@ -302,25 +299,14 @@
 					</p>
 					<p class="font-normal">
 						{m["convert.errors.worker_timeout"]({
-							type: isAudio
-								? m["convert.errors.audio"]()
-								: isVideo
+							type: isAudio || isVideo
+								? isVideo
 									? "Video"
-									: isDocument
-										? m["convert.errors.doc"]()
-										: m["convert.errors.image"](),
+									: m["convert.errors.audio"]()
+								: isDocument
+									? m["convert.errors.doc"]()
+									: m["convert.errors.image"](),
 						})}
-					</p>
-				</div>
-			{:else if isVideo && !$vertdLoaded && !isAudio && !isImage && !isDocument}
-				<div
-					class="h-full flex flex-col text-center justify-center text-failure"
-				>
-					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
-					</p>
-					<p class="font-normal">
-						{m["convert.errors.vertd_not_found"]()}
 					</p>
 				</div>
 			{:else}

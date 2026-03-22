@@ -2,7 +2,6 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { converters } from "$lib/converters";
-	import { vertdLoaded } from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import { AudioLines, BookText, Check, Film, Image } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
@@ -12,12 +11,12 @@
 	import { onMount } from "svelte";
 	import type { WorkerStatus } from "$lib/converters/converter.svelte";
 	import { sanitize } from "$lib/store/index.svelte";
-	import { DISABLE_ALL_EXTERNAL_REQUESTS } from "$lib/util/consts";
 
-	const getSupportedFormats = (name: string) =>
+	const getSupportedFormats = (name: string, nativeOnly?: boolean) =>
 		converters
 			.find((c) => c.name === name)
-			?.supportedFormats.map(
+			?.supportedFormats.filter((f) => (nativeOnly === undefined ? true : nativeOnly ? f.isNative : !f.isNative))
+			.map(
 				(f) =>
 					`${f.name}${f.fromSupported && f.toSupported ? "" : "*"}`,
 			)
@@ -48,9 +47,17 @@
 					"not-ready",
 			},
 			Audio: {
-				formats: getSupportedFormats("ffmpeg"),
+				formats: getSupportedFormats("ffmpeg", true),
 				icon: AudioLines,
 				title: m["upload.cards.audio"](),
+				status:
+					converters.find((c) => c.name === "ffmpeg")?.status ||
+					"not-ready",
+			},
+			Video: {
+				formats: getSupportedFormats("ffmpeg", false),
+				icon: Film,
+				title: m["upload.cards.video"](),
 				status:
 					converters.find((c) => c.name === "ffmpeg")?.status ||
 					"not-ready",
@@ -64,15 +71,6 @@
 					"not-ready",
 			},
 		};
-
-		if (!DISABLE_ALL_EXTERNAL_REQUESTS) {
-			output.Video = {
-				formats: getSupportedFormats("vertd"),
-				icon: Film,
-				title: m["upload.cards.video"](),
-				status: $vertdLoaded === true ? "ready" : "not-ready", // not using converter.status for this
-			};
-		}
 
 		return output;
 	});
@@ -193,43 +191,14 @@
 									class="flex flex-col gap-4 h-[12.25rem] relative"
 									bind:this={scrollContainers[i]}
 								>
-									{#if key === "Video"}
-										<p
-											class="flex tems-center justify-center gap-2"
-										>
-											<Check size="20" />
-											<Tooltip
-												text={m[
-													"upload.tooltip.video_server_processing"
-												]()}
-											>
-												<span>
-													<a
-														href="https://github.com/VERT-sh/VERT/blob/main/docs/VIDEO_CONVERSION.md"
-														target="_blank"
-														rel="noopener noreferrer"
-													>
-														{m[
-															"upload.cards.video_server_processing"
-														]()}
-													</a>
-													<span
-														class="text-red-500 -ml-0.5"
-														>*</span
-													>
-												</span>
-											</Tooltip>
-										</p>
-									{:else}
-										<p
-											class="flex tems-center justify-center gap-2"
-										>
-											<Check size="20" />
-											{m[
-												"upload.cards.local_supported"
-											]()}
-										</p>
-									{/if}
+									<p
+										class="flex tems-center justify-center gap-2"
+									>
+										<Check size="20" />
+										{m[
+											"upload.cards.local_supported"
+										]()}
+									</p>
 									<p>
 										{@html sanitize(m["upload.cards.status.text"]({
 											status: getStatusText(s.status),
@@ -258,12 +227,12 @@
 													{#if isPartial}
 														<Tooltip
 															text={getTooltip(
-																formatName,
+															  formatName,
 															)}
 														>
 															{formatName}<span
-																class="text-red-500"
-																>*</span
+															  class="text-red-500"
+															  >*</span
 															>
 														</Tooltip>
 													{:else}

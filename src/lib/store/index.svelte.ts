@@ -41,8 +41,8 @@ class Files {
 				.map((f) => f.name)
 				?.includes(file.from.toLowerCase());
 			const isVideo = converters
-				.find((c) => c.name === "vertd")
-				?.supportedFormats.filter((f) => f.isNative)
+				.find((c) => c.name === "ffmpeg")
+				?.supportedFormats.filter((f) => !f.isNative)
 				.map((f) => f.name)
 				?.includes(file.from.toLowerCase());
 
@@ -234,7 +234,6 @@ class Files {
 		}
 	}
 
-	private _warningShown = false;
 	private async _add(file: VertFile | File) {
 		if (file instanceof VertFile) {
 			this.files.push(file);
@@ -286,8 +285,8 @@ class Files {
 			this.files.push(vf);
 			this._addThumbnail(vf);
 
-			const convName = converter.name;
-			if (file.size > MAX_ARRAY_BUFFER_SIZE && convName === "vertd") {
+			// LocalConvert: all conversions are local, no server upload warning needed
+			if (file.size > MAX_ARRAY_BUFFER_SIZE) {
 				ToastManager.add({
 					type: "warning",
 					message: m["convert.large_file_warning"]({
@@ -297,36 +296,6 @@ class Files {
 						stay: 10000,
 					},
 				});
-			}
-
-			const isVideo = convName === "vertd";
-			const acceptedExternalWarning =
-				localStorage.getItem("acceptedExternalWarning") === "true";
-			if (isVideo && !acceptedExternalWarning && !this._warningShown) {
-				this._warningShown = true;
-				const title = m["convert.external_warning.title"]();
-				const message = m["convert.external_warning.text"]();
-				const buttons = [
-					{
-						text: m["convert.external_warning.no"](),
-						action: () => {
-							this.files = [
-								...this.files.filter(
-									(f) => !f.converters.map((c) => c.name).includes("vertd"),
-								),
-							];
-							this._warningShown = false;
-						},
-					},
-					{
-						text: m["convert.external_warning.yes"](),
-						action: () => {
-							localStorage.setItem("acceptedExternalWarning", "true");
-							this._warningShown = false;
-						},
-					},
-				];
-				addDialog(title, message, buttons, "warning");
 			}
 		}
 	}
@@ -383,7 +352,7 @@ class Files {
 		const url = URL.createObjectURL(blob);
 
 		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-		const filenameFormat = settings.filenameFormat || "VERT_%name%";
+		const filenameFormat = settings.filenameFormat || "LocalConvert_%name%";
 
 		const format = (name: string) => {
 			const date = new Date().toISOString();
@@ -431,7 +400,6 @@ export const showGradient = writable(true);
 export const gradientColor = writable("");
 export const goingLeft = writable(false);
 export const dropping = writable(false);
-export const vertdLoaded = writable(false);
 export const dropdownStates = writable<Record<string, string>>({});
 
 export const isMobile = writable(false);

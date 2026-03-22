@@ -64,9 +64,7 @@
 	>
 		<div class="flex flex-col gap-4 flex-1">
 			<Settings.Conversion bind:settings />
-			{#if !DISABLE_ALL_EXTERNAL_REQUESTS}
-				<Settings.Vertd bind:settings />
-			{:else if PUB_PLAUSIBLE_URL}
+			{#if PUB_PLAUSIBLE_URL}
 				<Settings.Privacy bind:settings />
 			{/if}
 		</div>

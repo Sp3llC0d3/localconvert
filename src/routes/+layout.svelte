@@ -14,14 +14,12 @@
 		effects,
 		theme,
 		dropping,
-		vertdLoaded,
 		locale,
 		updateLocale,
 	} from "$lib/store/index.svelte";
 	import "$lib/css/app.scss";
 	import { browser } from "$app/environment";
 	import { initStores as initAnimStores } from "$lib/util/animation.js";
-	import { VertdInstance } from "$lib/sections/settings/vertdSettings.svelte.js";
 	import { ToastManager } from "$lib/util/toast.svelte.js";
 	import { m } from "$lib/paraglide/messages.js";
 	import { log } from "$lib/util/logger.js";
@@ -73,11 +71,11 @@
 			isMobile.set(window.innerWidth <= 768);
 		};
 
-		isMobile.set(window.innerWidth <= 768); // initial page load
-		window.addEventListener("resize", handleResize); // handle window resize
+		isMobile.set(window.innerWidth <= 768);
+		window.addEventListener("resize", handleResize);
 		window.addEventListener("paste", handlePaste);
 
-		effects.set(localStorage.getItem("effects") !== "false"); // defaults to true if not set
+		effects.set(localStorage.getItem("effects") !== "false");
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);
@@ -86,18 +84,8 @@
 
 		Settings.instance.load();
 
-		if (!DISABLE_ALL_EXTERNAL_REQUESTS) {
-			VertdInstance.instance
-				.url()
-				.then((u) => fetch(`${u}/api/version`))
-				.then((res) => {
-					if (res.ok) $vertdLoaded = true;
-				});
-		}
-
-		// detect if insecure context
 		if (!window.isSecureContext) {
-			log(["layout"], "Insecure context (HTTP) detected, some features may not work as expected -- you may want to enable \"PUB_DISABLE_FAILURE_BLOCKS\" on local deployments.");
+			log(["layout"], "Insecure context (HTTP) detected, some features may not work as expected.");
 			ToastManager.add({
 				type: "warning",
 				message: m["toast.insecure_context"](),
@@ -117,7 +105,6 @@
 			Settings.instance.settings.plausible &&
 			!DISABLE_ALL_EXTERNAL_REQUESTS;
 		if (!enablePlausible && browser) {
-			// reset pushState on opt-out so that plausible stops firing events on page navigation
 			history.pushState = History.prototype.pushState;
 		}
 	});
@@ -175,7 +162,6 @@
 	{/if}
 </svelte:head>
 
-<!-- FIXME: if user resizes between desktop/mobile, highlight of page disappears (only shows on original size) -->
 {#key $locale}
 	<div
 		class="flex flex-col min-h-screen h-full w-full overflow-x-hidden"
@@ -192,10 +178,6 @@
 			<Navbar.Desktop />
 		</div>
 
-		<!-- 
-		SvelteKit throws the following warning when developing - safe to ignore as we render the children in this component:
-		`<slot />` or `{@render ...}` tag missing — inner content will not be rendered
-		-->
 		<Layout.PageContent {children} />
 
 		<Layout.Toasts />
@@ -208,5 +190,4 @@
 	</div>
 {/key}
 
-<!-- Gradients placed here to prevent it overlapping in transitions -->
 <Layout.Gradients />
