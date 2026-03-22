@@ -20,7 +20,7 @@
 					link(
 						["vert_link"],
 						m["privacy.summary.description"](),
-						["https://vert.sh"],
+						["https://github.com/VERT-sh/VERT"],
 						[true],
 					),
 				)}
@@ -93,7 +93,7 @@
 					link(
 						["email_link"],
 						m["privacy.contact.description"](),
-						["mailto:hello@vert.sh"],
+						["mailto:hello@localconvert.app"],
 						[false],
 					),
 				)}
