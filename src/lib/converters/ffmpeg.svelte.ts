@@ -433,15 +433,19 @@ export class FFmpegConverter extends Converter {
 				["converters", this.name],
 				`Converting video ${input.from} to video ${to}`,
 			);
-			const codecs = getCodecs(to);
-			const videoArgs = toArgs(to);
-			return [
-				"-i",
-				"input",
-				...videoArgs,
-				...metadataArgs,
-				"output" + to,
-			];
+			const { video: vCodec, audio: aCodec } = getCodecs(to);
+			const args = ["-i", "input"];
+			if (vCodec === "libvpx") {
+				args.push("-c:v", "libvpx", "-b:v", "1M", "-c:a", "libvorbis");
+			} else if (vCodec === "libx264") {
+				args.push("-c:v", "libx264", "-preset", "ultrafast", "-crf", "23");
+			} else {
+				args.push("-c:v", vCodec);
+			}
+			args.push("-c:a", aCodec);
+			if (aCodec === "aac") args.push("-strict", "experimental");
+			args.push(...metadataArgs, "output" + to);
+			return args;
 		}
 
 		// video to audio

@@ -62,7 +62,7 @@ export class VertFile {
 				(f) => f.name === this.to,
 			);
 			if (!theirFrom || !theirTo) return false;
-			if (!theirFrom.isNative && !theirTo.isNative) return false;
+			// LocalConvert: all formats are handled locally, no native check needed
 			return true;
 		});
 		return converter;
