@@ -219,7 +219,7 @@
 		"title": "About",
 		"why": {
 			"title": "Why LocalConvert?",
-			"description": "<b>File converters have always disappointed us.</b> They're ugly, riddled with ads, and most importantly; slow. We decided to solve this problem once and for all by making an alternative that solves all those problems, and more.<br/><br/>Every single file you convert — images, audio, video, and documents — is processed entirely on your device. Nothing ever leaves your browser. There are no servers involved, no uploads, and no one can ever see your files.<br/><br/>LocalConvert is based on [vert_link]VERT.sh[/vert_link] (AGPL-3.0). We're grateful to the VERT team for building the foundation that makes this possible."
+			"description": "<b>File converters have always disappointed us.</b> They're ugly, riddled with ads, and most importantly; slow. We decided to solve this problem once and for all by making an alternative that solves all those problems, and more.<br/><br/>Every single file you convert — images, audio, video, and documents — is processed entirely on your device. Nothing ever leaves your browser. There are no servers involved, no uploads, and no one can ever see your files."
 		},
 		"sponsors": {
 			"title": "Support",
