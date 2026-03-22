@@ -121,7 +121,7 @@
 		name="description"
 		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
 	/>
-	<meta property="og:url" content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source." />
+	<meta property="og:url" content="https://localconvert.app" />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
@@ -134,7 +134,7 @@
 	<meta property="og:image" content={featuredImage} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="localconvert.app" />
-	<meta property="twitter:url" content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source." />
+	<meta property="twitter:url" content="https://localconvert.app" />
 	<meta
 		property="twitter:title"
 		content="{VERT_NAME} — Free, fast, and awesome file converter"
