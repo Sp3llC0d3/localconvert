@@ -111,6 +111,24 @@ export class FFmpegConverter extends Converter {
 		const isAlac = to === ".alac";
 		if (isAlac) to = ".m4a";
 
+		// Try WebCodecs GPU acceleration for video-to-video conversions
+		const inputFormat = input.from.slice(1);
+		const outputFormat = to.slice(1);
+		if (
+			videoFormats.includes(inputFormat) &&
+			videoFormats.includes(outputFormat) &&
+			typeof VideoDecoder !== "undefined" &&
+			typeof VideoEncoder !== "undefined"
+		) {
+			try {
+				log(["converters", this.name], `Attempting WebCodecs GPU acceleration for ${input.from} → ${to}`);
+				const result = await this.tryWebCodecs(input, to);
+				if (result) return result;
+			} catch (err: any) {
+				log(["converters", this.name], `WebCodecs failed (${err.message}), falling back to FFmpeg WASM`);
+			}
+		}
+
 		let conversionError: string | null = null;
 		const ffmpeg = await this.setupFFmpeg(input);
 
@@ -594,6 +612,50 @@ export class FFmpegConverter extends Converter {
 			"No album art found, will create solid color background",
 		);
 		return false;
+	}
+
+	private async tryWebCodecs(input: VertFile, to: string): Promise<VertFile | null> {
+		const { Input, Output, Conversion, ALL_FORMATS, BlobSource, BufferTarget } = await import("mediabunny");
+		const mediabunny = await import("mediabunny");
+
+		// Pick the right output format
+		let outputFormat: any;
+		switch (to) {
+			case ".mp4": case ".m4v": case ".mov": case ".3gp":
+				outputFormat = new (mediabunny as any).Mp4OutputFormat();
+				break;
+			case ".webm":
+				outputFormat = new (mediabunny as any).WebMOutputFormat();
+				break;
+			case ".mkv":
+				outputFormat = new (mediabunny as any).MatroskaOutputFormat();
+				break;
+			default:
+				log(["converters", this.name], `WebCodecs: no output format for ${to}`);
+				return null;
+		}
+
+		const target = new BufferTarget();
+		const inputObj = new Input({
+			source: new BlobSource(input.file),
+			formats: ALL_FORMATS,
+		});
+		const outputObj = new Output({
+			format: outputFormat,
+			target: target,
+		});
+
+		const conversion = await Conversion.init({ input: inputObj, output: outputObj });
+
+		await conversion.execute();
+
+		const buffer = target.buffer;
+		if (!buffer) return null;
+
+		const outputFileName = input.name.split(".").slice(0, -1).join(".") + to;
+		log(["converters", this.name], `WebCodecs GPU conversion succeeded: ${input.name} → ${to}`);
+
+		return new VertFile(new File([buffer], outputFileName), to);
 	}
 
 	private async tryExtractAlbumArt(
