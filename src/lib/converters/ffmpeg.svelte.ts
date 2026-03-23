@@ -636,7 +636,8 @@ export class FFmpegConverter extends Converter {
 			const result = await this.tryWebDemuxerPipeline(input, to);
 			if (result) return result;
 		} catch (err: any) {
-			log(["converters", this.name], `web-demuxer pipeline failed: ${err.message}`);
+			log(["converters", this.name], `web-demuxer pipeline failed: ${err?.message || err || 'unknown error'}`);
+			console.error("web-demuxer full error:", err);
 		}
 
 		return null;
@@ -681,8 +682,11 @@ export class FFmpegConverter extends Converter {
 		const { Output, BufferTarget } = mediabunny;
 
 		// Initialize web-demuxer with WASM file
+		log(["converters", this.name], "web-demuxer: initializing with /web-demuxer.wasm");
 		const demuxer = new WebDemuxer({ wasmFilePath: "/web-demuxer.wasm" });
+		log(["converters", this.name], "web-demuxer: loading file...");
 		await demuxer.load(input.file);
+		log(["converters", this.name], "web-demuxer: file loaded successfully");
 
 		// Get video decoder config from the file
 		const videoConfig = await demuxer.getDecoderConfig("video");
