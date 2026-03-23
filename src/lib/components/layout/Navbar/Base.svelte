@@ -34,26 +34,29 @@
 			installPrompt = e;
 			(window as any).__installPrompt = e;
 		});
+
+		// Check for early-captured prompt every second until found
+		const checkPrompt = setInterval(() => {
+			if ((window as any).__installPrompt && !installPrompt) {
+				installPrompt = (window as any).__installPrompt;
+			}
+			if (installPrompt) clearInterval(checkPrompt);
+		}, 1000);
+
+		// Stop checking after 30 seconds
+		setTimeout(() => clearInterval(checkPrompt), 30000);
 	}
 
 	async function handleInstall() {
 		if (!installPrompt && browser) {
 			installPrompt = (window as any).__installPrompt || null;
 		}
-		if (installPrompt) {
-			installPrompt.prompt();
-			const result = await installPrompt.userChoice;
-			if (result.outcome === "accepted") {
-				installPrompt = null;
-				(window as any).__installPrompt = null;
-			}
-		} else {
-			const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-			if (isIOS) {
-				alert("To install: tap the Share button, then 'Add to Home Screen'");
-			} else {
-				alert("To install: click the browser menu (⋮), then 'Install app' or 'Add to Home Screen'");
-			}
+		if (!installPrompt) return;
+		installPrompt.prompt();
+		const result = await installPrompt.userChoice;
+		if (result.outcome === "accepted") {
+			installPrompt = null;
+			(window as any).__installPrompt = null;
 		}
 	}
 
@@ -240,13 +243,15 @@
 				<MoonIcon class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
-		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-		<button
-			onclick={handleInstall}
-			class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
-		>
-			<DownloadIcon size={18} />
-			<span class="hidden md:inline">Install App</span>
-		</button>
+		{#if installPrompt}
+			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+			<button
+				onclick={handleInstall}
+				class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
+			>
+				<DownloadIcon size={18} />
+				<span class="hidden md:inline">Install App</span>
+			</button>
+		{/if}
 	</Panel>
 </div>
