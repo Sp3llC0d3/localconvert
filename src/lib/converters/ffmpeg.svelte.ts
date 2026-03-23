@@ -682,8 +682,9 @@ export class FFmpegConverter extends Converter {
 		const { Output, BufferTarget } = mediabunny;
 
 		// Initialize web-demuxer with WASM file
-		log(["converters", this.name], "web-demuxer: initializing with /web-demuxer.wasm");
-		const demuxer = new WebDemuxer({ wasmFilePath: "/web-demuxer.wasm" });
+		const wasmUrl = `${window.location.origin}/web-demuxer.wasm`;
+		log(["converters", this.name], `web-demuxer: initializing with ${wasmUrl}`);
+		const demuxer = new WebDemuxer({ wasmFilePath: wasmUrl });
 		log(["converters", this.name], "web-demuxer: loading file...");
 		await demuxer.load(input.file);
 		log(["converters", this.name], "web-demuxer: file loaded successfully");
