@@ -850,21 +850,6 @@ export class FFmpegConverter extends Converter {
 		}
 	}
 
-			await output.finalize();
-		} else {
-			// Mediabunny version doesn't support EncodedVideoPacketSource
-			log(["converters", this.name], "web-demuxer: Mediabunny EncodedVideoPacketSource not available");
-			return null;
-		}
-
-		const buffer = target.buffer;
-		if (!buffer) return null;
-
-		const outputFileName = input.name.split(".").slice(0, -1).join(".") + to;
-		log(["converters", this.name], `WebCodecs GPU conversion succeeded (web-demuxer): ${input.name} → ${to}`);
-		return new VertFile(new File([buffer], outputFileName), to);
-	}
-
 	private async tryExtractAlbumArt(
 		ffmpeg: FFmpeg,
 		command: string[],
