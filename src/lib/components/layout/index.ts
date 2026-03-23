@@ -5,3 +5,4 @@ export { default as Dialogs } from "./Dialogs.svelte";
 export { default as PageContent } from "./PageContent.svelte";
 export { default as MobileLogo } from "./MobileLogo.svelte";
 export { default as Footer } from "./Footer.svelte";
+export { default as IOSInstallBanner } from "./IOSInstallBanner.svelte";
