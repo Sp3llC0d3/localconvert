@@ -615,10 +615,37 @@ export class FFmpegConverter extends Converter {
 	}
 
 	private async tryWebCodecs(input: VertFile, to: string): Promise<VertFile | null> {
-		const { Input, Output, Conversion, ALL_FORMATS, BlobSource, BufferTarget } = await import("mediabunny");
-		const mediabunny = await import("mediabunny");
+		// Only MP4 and WebM output are supported by WebCodecs muxers
+		if (![".mp4", ".m4v", ".mov", ".3gp", ".webm"].includes(to)) {
+			log(["converters", this.name], `WebCodecs: no muxer for ${to}, skipping`);
+			return null;
+		}
 
-		// Pick the right output format
+		// Step 1: Try Mediabunny's built-in Conversion API (handles MP4/WebM input natively)
+		try {
+			log(["converters", this.name], "WebCodecs: trying Mediabunny Conversion API");
+			const result = await this.tryMediabunnyConversion(input, to);
+			if (result) return result;
+		} catch (err: any) {
+			log(["converters", this.name], `Mediabunny Conversion failed: ${err.message}`);
+		}
+
+		// Step 2: Try web-demuxer for broader input format support (MKV, AVI, FLV, etc.)
+		try {
+			log(["converters", this.name], "WebCodecs: trying web-demuxer + WebCodecs pipeline");
+			const result = await this.tryWebDemuxerPipeline(input, to);
+			if (result) return result;
+		} catch (err: any) {
+			log(["converters", this.name], `web-demuxer pipeline failed: ${err.message}`);
+		}
+
+		return null;
+	}
+
+	private async tryMediabunnyConversion(input: VertFile, to: string): Promise<VertFile | null> {
+		const mediabunny = await import("mediabunny");
+		const { Input, Output, Conversion, ALL_FORMATS, BlobSource, BufferTarget } = mediabunny;
+
 		let outputFormat: any;
 		switch (to) {
 			case ".mp4": case ".m4v": case ".mov": case ".3gp":
@@ -627,11 +654,7 @@ export class FFmpegConverter extends Converter {
 			case ".webm":
 				outputFormat = new (mediabunny as any).WebMOutputFormat();
 				break;
-			case ".mkv":
-				outputFormat = new (mediabunny as any).MatroskaOutputFormat();
-				break;
 			default:
-				log(["converters", this.name], `WebCodecs: no output format for ${to}`);
 				return null;
 		}
 
@@ -640,21 +663,142 @@ export class FFmpegConverter extends Converter {
 			source: new BlobSource(input.file),
 			formats: ALL_FORMATS,
 		});
-		const outputObj = new Output({
-			format: outputFormat,
-			target: target,
-		});
-
+		const outputObj = new Output({ format: outputFormat, target });
 		const conversion = await Conversion.init({ input: inputObj, output: outputObj });
-
 		await conversion.execute();
 
 		const buffer = target.buffer;
 		if (!buffer) return null;
 
 		const outputFileName = input.name.split(".").slice(0, -1).join(".") + to;
-		log(["converters", this.name], `WebCodecs GPU conversion succeeded: ${input.name} → ${to}`);
+		log(["converters", this.name], `WebCodecs GPU conversion succeeded (Mediabunny): ${input.name} → ${to}`);
+		return new VertFile(new File([buffer], outputFileName), to);
+	}
 
+	private async tryWebDemuxerPipeline(input: VertFile, to: string): Promise<VertFile | null> {
+		const { WebDemuxer } = await import("web-demuxer");
+		const mediabunny = await import("mediabunny");
+		const { Output, BufferTarget } = mediabunny;
+
+		// Initialize web-demuxer
+		const demuxer = new WebDemuxer({ wasmLoaderPath: "/web-demuxer.wasm" });
+		await demuxer.load(input.file);
+
+		// Get video decoder config
+		const videoConfig = await demuxer.getDecoderConfig("video");
+		if (!videoConfig) {
+			log(["converters", this.name], "web-demuxer: no video track found");
+			return null;
+		}
+
+		// Check if browser can decode this codec
+		const decoderSupport = await VideoDecoder.isConfigSupported(videoConfig);
+		if (!decoderSupport.supported) {
+			log(["converters", this.name], `web-demuxer: browser cannot decode ${videoConfig.codec}`);
+			return null;
+		}
+
+		// Pick output codec based on target format
+		const outputVideoCodec = to === ".webm" ? "vp8" : "avc1.42001E";
+		const outputAudioCodec = to === ".webm" ? "opus" : "mp4a.40.2";
+
+		// Check encoder support
+		const encoderSupport = await VideoEncoder.isConfigSupported({
+			codec: outputVideoCodec,
+			width: videoConfig.codedWidth || 1920,
+			height: videoConfig.codedHeight || 1080,
+			bitrate: 2_000_000,
+			hardwareAcceleration: "prefer-hardware",
+		});
+		if (!encoderSupport.supported) {
+			log(["converters", this.name], `web-demuxer: browser cannot encode ${outputVideoCodec}`);
+			return null;
+		}
+
+		// Collect encoded chunks
+		const encodedVideoChunks: { chunk: EncodedVideoChunk; meta?: EncodedVideoChunkMetadata }[] = [];
+		const encodedAudioChunks: EncodedAudioChunk[] = [];
+
+		// Set up video decoder → encoder pipeline
+		const videoEncoder = new VideoEncoder({
+			output: (chunk, meta) => {
+				encodedVideoChunks.push({ chunk, meta });
+			},
+			error: (e) => { throw e; },
+		});
+
+		videoEncoder.configure({
+			codec: outputVideoCodec,
+			width: videoConfig.codedWidth || 1920,
+			height: videoConfig.codedHeight || 1080,
+			bitrate: 2_000_000,
+			hardwareAcceleration: "prefer-hardware",
+		});
+
+		const videoDecoder = new VideoDecoder({
+			output: (frame) => {
+				videoEncoder.encode(frame);
+				frame.close();
+			},
+			error: (e) => { throw e; },
+		});
+
+		videoDecoder.configure(videoConfig);
+
+		// Read and decode all video chunks
+		const videoStream = demuxer.readStream("video");
+		const reader = videoStream.getReader();
+
+		while (true) {
+			const { done, value } = await reader.read();
+			if (done) break;
+			videoDecoder.decode(value);
+		}
+
+		await videoDecoder.flush();
+		await videoEncoder.flush();
+		videoDecoder.close();
+		videoEncoder.close();
+
+		// Mux with Mediabunny using EncodedVideoPacketSource
+		let outputFormat: any;
+		switch (to) {
+			case ".mp4": case ".m4v": case ".mov": case ".3gp":
+				outputFormat = new (mediabunny as any).Mp4OutputFormat();
+				break;
+			case ".webm":
+				outputFormat = new (mediabunny as any).WebMOutputFormat();
+				break;
+			default:
+				return null;
+		}
+
+		const target = new BufferTarget();
+		const output = new Output({ format: outputFormat, target });
+
+		// Add video track from encoded chunks
+		const { EncodedVideoPacketSource } = mediabunny as any;
+		if (EncodedVideoPacketSource) {
+			const videoSource = new EncodedVideoPacketSource();
+			output.addVideoTrack(videoSource);
+			await output.start();
+
+			for (const { chunk, meta } of encodedVideoChunks) {
+				videoSource.addEncodedChunk(chunk, meta);
+			}
+
+			await output.finalize();
+		} else {
+			// Mediabunny version doesn't support EncodedVideoPacketSource
+			log(["converters", this.name], "web-demuxer: Mediabunny EncodedVideoPacketSource not available");
+			return null;
+		}
+
+		const buffer = target.buffer;
+		if (!buffer) return null;
+
+		const outputFileName = input.name.split(".").slice(0, -1).join(".") + to;
+		log(["converters", this.name], `WebCodecs GPU conversion succeeded (web-demuxer): ${input.name} → ${to}`);
 		return new VertFile(new File([buffer], outputFileName), to);
 	}
 
