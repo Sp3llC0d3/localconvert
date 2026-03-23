@@ -1,7 +1,7 @@
 {
-	"name": "VERT",
-	"short_name": "VERT",
-	"description": "The file converter you'll love",
+	"name": "LocalConvert",
+	"short_name": "LocalConvert",
+	"description": "Convert anything. Your files never leave your device.",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",

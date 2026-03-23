@@ -1,7 +1,7 @@
-const CACHE_NAME = "vert-wasm-cache-v2"; // updated when workers update
+const CACHE_NAME = "localconvert-wasm-cache-v1"; // updated when workers update
 
 const WASM_FILES = [
-	"/pandoc.wasm",
+	"https://pub-a63702e42341425494caded68a9378bd.r2.dev/pandoc.wasm",
 	"https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.js",
 	"https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.wasm",
 ];

@@ -10,6 +10,7 @@
 	} from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import {
+		DownloadIcon,
 		InfoIcon,
 		MoonIcon,
 		RefreshCw,
@@ -24,6 +25,24 @@
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { m } from "$lib/paraglide/messages";
+
+	let installPrompt: any = $state(null);
+
+	if (browser) {
+		window.addEventListener("beforeinstallprompt", (e: Event) => {
+			e.preventDefault();
+			installPrompt = e;
+		});
+	}
+
+	async function handleInstall() {
+		if (!installPrompt) return;
+		installPrompt.prompt();
+		const result = await installPrompt.userChoice;
+		if (result.outcome === "accepted") {
+			installPrompt = null;
+		}
+	}
 
 	const items = $derived<
 		{
@@ -208,5 +227,15 @@
 				<MoonIcon class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
+		{#if installPrompt}
+			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+			<button
+				onclick={handleInstall}
+				class="h-full items-center justify-center gap-2 hidden md:flex px-3 text-sm font-medium hover:text-accent transition-colors"
+			>
+				<DownloadIcon size={18} />
+				Install App
+			</button>
+		{/if}
 	</Panel>
 </div>
