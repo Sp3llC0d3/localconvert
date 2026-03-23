@@ -680,14 +680,15 @@ export class FFmpegConverter extends Converter {
 		const mediabunny = await import("mediabunny");
 		const { Output, BufferTarget } = mediabunny;
 
-		// Initialize web-demuxer
-		const demuxer = new WebDemuxer({ wasmLoaderPath: "/web-demuxer.wasm" });
+		// Initialize web-demuxer with WASM file
+		const demuxer = new WebDemuxer({ wasmFilePath: "/web-demuxer.wasm" });
 		await demuxer.load(input.file);
 
-		// Get video decoder config
+		// Get video decoder config from the file
 		const videoConfig = await demuxer.getDecoderConfig("video");
 		if (!videoConfig) {
 			log(["converters", this.name], "web-demuxer: no video track found");
+			demuxer.destroy();
 			return null;
 		}
 
@@ -695,72 +696,101 @@ export class FFmpegConverter extends Converter {
 		const decoderSupport = await VideoDecoder.isConfigSupported(videoConfig);
 		if (!decoderSupport.supported) {
 			log(["converters", this.name], `web-demuxer: browser cannot decode ${videoConfig.codec}`);
+			demuxer.destroy();
 			return null;
 		}
 
 		// Pick output codec based on target format
 		const outputVideoCodec = to === ".webm" ? "vp8" : "avc1.42001E";
-		const outputAudioCodec = to === ".webm" ? "opus" : "mp4a.40.2";
+		const width = (videoConfig as any).codedWidth || 1920;
+		const height = (videoConfig as any).codedHeight || 1080;
 
-		// Check encoder support
+		// Check encoder support with hardware acceleration
 		const encoderSupport = await VideoEncoder.isConfigSupported({
 			codec: outputVideoCodec,
-			width: videoConfig.codedWidth || 1920,
-			height: videoConfig.codedHeight || 1080,
+			width,
+			height,
 			bitrate: 2_000_000,
 			hardwareAcceleration: "prefer-hardware",
 		});
 		if (!encoderSupport.supported) {
 			log(["converters", this.name], `web-demuxer: browser cannot encode ${outputVideoCodec}`);
+			demuxer.destroy();
 			return null;
 		}
 
-		// Collect encoded chunks
-		const encodedVideoChunks: { chunk: EncodedVideoChunk; meta?: EncodedVideoChunkMetadata }[] = [];
-		const encodedAudioChunks: EncodedAudioChunk[] = [];
+		log(["converters", this.name], `web-demuxer: decoding ${videoConfig.codec}, re-encoding to ${outputVideoCodec} (${width}x${height})`);
 
-		// Set up video decoder → encoder pipeline
+		// Collect re-encoded video chunks
+		const reEncodedChunks: Uint8Array[] = [];
+		let totalDuration = 0;
+
+		// Set up video encoder (GPU-accelerated)
 		const videoEncoder = new VideoEncoder({
-			output: (chunk, meta) => {
-				encodedVideoChunks.push({ chunk, meta });
+			output: (chunk) => {
+				const buf = new Uint8Array(chunk.byteLength);
+				chunk.copyTo(buf);
+				reEncodedChunks.push(buf);
+				totalDuration = Math.max(totalDuration, chunk.timestamp + (chunk.duration || 0));
 			},
-			error: (e) => { throw e; },
+			error: (e) => {
+				log(["converters", this.name], `web-demuxer: encoder error: ${e.message}`);
+			},
 		});
 
 		videoEncoder.configure({
 			codec: outputVideoCodec,
-			width: videoConfig.codedWidth || 1920,
-			height: videoConfig.codedHeight || 1080,
+			width,
+			height,
 			bitrate: 2_000_000,
 			hardwareAcceleration: "prefer-hardware",
 		});
 
+		// Set up video decoder
 		const videoDecoder = new VideoDecoder({
 			output: (frame) => {
 				videoEncoder.encode(frame);
 				frame.close();
 			},
-			error: (e) => { throw e; },
+			error: (e) => {
+				log(["converters", this.name], `web-demuxer: decoder error: ${e.message}`);
+			},
 		});
 
 		videoDecoder.configure(videoConfig);
 
-		// Read and decode all video chunks
-		const videoStream = demuxer.readStream("video");
+		// Read encoded chunks from input file and feed to decoder
+		const videoStream = demuxer.read("video");
 		const reader = videoStream.getReader();
 
+		let frameCount = 0;
 		while (true) {
 			const { done, value } = await reader.read();
 			if (done) break;
 			videoDecoder.decode(value);
+			frameCount++;
 		}
+
+		log(["converters", this.name], `web-demuxer: decoded ${frameCount} video frames`);
 
 		await videoDecoder.flush();
 		await videoEncoder.flush();
 		videoDecoder.close();
 		videoEncoder.close();
+		demuxer.destroy();
 
-		// Mux with Mediabunny using EncodedVideoPacketSource
+		if (reEncodedChunks.length === 0) {
+			log(["converters", this.name], "web-demuxer: no frames were encoded");
+			return null;
+		}
+
+		// Mux the re-encoded chunks into output container using Mediabunny
+		// We use Mediabunny's Conversion API with a raw buffer approach
+		// Since we have raw encoded chunks, combine them into a blob and use Mediabunny
+		log(["converters", this.name], `web-demuxer: muxing ${reEncodedChunks.length} encoded chunks into ${to}`);
+
+		// For now, create output using Mediabunny's simple file conversion
+		// Feed the re-encoded data as a new input
 		let outputFormat: any;
 		switch (to) {
 			case ".mp4": case ".m4v": case ".mov": case ".3gp":
@@ -773,19 +803,52 @@ export class FFmpegConverter extends Converter {
 				return null;
 		}
 
-		const target = new BufferTarget();
-		const output = new Output({ format: outputFormat, target });
+		// Use Mediabunny's Output with EncodedVideoPacketSource if available
+		try {
+			const target = new BufferTarget();
+			const output = new Output({ format: outputFormat, target });
 
-		// Add video track from encoded chunks
-		const { EncodedVideoPacketSource } = mediabunny as any;
-		if (EncodedVideoPacketSource) {
-			const videoSource = new EncodedVideoPacketSource();
+			const EncodedVideoPacketSource = (mediabunny as any).EncodedVideoPacketSource;
+			if (!EncodedVideoPacketSource) {
+				log(["converters", this.name], "web-demuxer: Mediabunny EncodedVideoPacketSource not available, cannot mux");
+				return null;
+			}
+
+			const videoSource = new EncodedVideoPacketSource({
+				codec: outputVideoCodec,
+				width,
+				height,
+			});
 			output.addVideoTrack(videoSource);
 			await output.start();
 
-			for (const { chunk, meta } of encodedVideoChunks) {
-				videoSource.addEncodedChunk(chunk, meta);
+			// Re-create EncodedVideoChunks from our stored buffers for the muxer
+			let timestamp = 0;
+			const frameDuration = 33333; // ~30fps in microseconds
+			for (const buf of reEncodedChunks) {
+				const chunk = new EncodedVideoChunk({
+					type: timestamp === 0 ? "key" : "delta",
+					timestamp,
+					duration: frameDuration,
+					data: buf,
+				});
+				videoSource.addEncodedChunk(chunk);
+				timestamp += frameDuration;
 			}
+
+			await output.finalize();
+
+			const buffer = target.buffer;
+			if (!buffer) return null;
+
+			const outputFileName = input.name.split(".").slice(0, -1).join(".") + to;
+			log(["converters", this.name], `WebCodecs GPU conversion succeeded (web-demuxer): ${input.name} → ${to}`);
+			return new VertFile(new File([buffer], outputFileName), to);
+		} catch (err: any) {
+			log(["converters", this.name], `web-demuxer: muxing failed: ${err.message}`);
+			return null;
+		}
+	}
 
 			await output.finalize();
 		} else {
