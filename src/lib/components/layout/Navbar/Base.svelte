@@ -36,11 +36,19 @@
 	}
 
 	async function handleInstall() {
-		if (!installPrompt) return;
-		installPrompt.prompt();
-		const result = await installPrompt.userChoice;
-		if (result.outcome === "accepted") {
-			installPrompt = null;
+		if (installPrompt) {
+			installPrompt.prompt();
+			const result = await installPrompt.userChoice;
+			if (result.outcome === "accepted") {
+				installPrompt = null;
+			}
+		} else {
+			const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+			if (isIOS) {
+				alert("To install: tap the Share button, then 'Add to Home Screen'");
+			} else {
+				alert("To install: click the browser menu (⋮), then 'Install app' or 'Add to Home Screen'");
+			}
 		}
 	}
 
@@ -227,15 +235,13 @@
 				<MoonIcon class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
-		{#if installPrompt}
-			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-			<button
-				onclick={handleInstall}
-				class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
-			>
-				<DownloadIcon size={18} />
-				<span class="hidden md:inline">Install App</span>
-			</button>
-		{/if}
+		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+		<button
+			onclick={handleInstall}
+			class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
+		>
+			<DownloadIcon size={18} />
+			<span class="hidden md:inline">Install App</span>
+		</button>
 	</Panel>
 </div>
