@@ -1,257 +1,194 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+	import { goto, beforeNavigate, afterNavigate } from "$app/navigation";
+
+	import { PUB_PLAUSIBLE_URL, PUB_HOSTNAME } from "$env/static/public";
+	import { DISABLE_ALL_EXTERNAL_REQUESTS, VERT_NAME } from "$lib/util/consts.js";
 	import { browser } from "$app/environment";
-	import { page } from "$app/state";
-	import { duration, fade } from "$lib/util/animation";
+	import * as Layout from "$lib/components/layout";
+	import * as Navbar from "$lib/components/layout/Navbar";
+	import featuredImage from "$lib/assets/VERT_Feature.webp";
+	import { Settings } from "$lib/sections/settings/index.svelte";
 	import {
-		effects,
 		files,
-		goingLeft,
-		setTheme,
+		isMobile,
+		effects,
+		theme,
+		dropping,
+		locale,
+		updateLocale,
 	} from "$lib/store/index.svelte";
-	import clsx from "clsx";
-	import {
-		DownloadIcon,
-		InfoIcon,
-		MoonIcon,
-		RefreshCw,
-		SettingsIcon,
-		SunIcon,
-		UploadIcon,
-		type Icon as IconType,
-	} from "lucide-svelte";
-	import { quintOut } from "svelte/easing";
-	import Panel from "../../visual/Panel.svelte";
-	import Logo from "../../visual/svg/Logo.svelte";
-	import { beforeNavigate } from "$app/navigation";
-	import Tooltip from "$lib/components/visual/Tooltip.svelte";
-	import { m } from "$lib/paraglide/messages";
+	import "$lib/css/app.scss";
+	import { initStores as initAnimStores } from "$lib/util/animation.js";
+	import { ToastManager } from "$lib/util/toast.svelte.js";
+	import { m } from "$lib/paraglide/messages.js";
+	import { log } from "$lib/util/logger.js";
 
-	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
+	let { children, data } = $props();
+	let enablePlausible = $state(false);
 
-	if (browser) {
-		window.addEventListener("beforeinstallprompt", (e: Event) => {
-			e.preventDefault();
-			installPrompt = e;
-			(window as any).__installPrompt = e;
-		});
+	let scrollPositions = new Map<string, number>();
 
-		// Check for early-captured prompt every second until found
-		const checkPrompt = setInterval(() => {
-			if ((window as any).__installPrompt && !installPrompt) {
-				installPrompt = (window as any).__installPrompt;
-			}
-			if (installPrompt) clearInterval(checkPrompt);
-		}, 1000);
+	beforeNavigate((nav) => {
+		if (!nav.from || !$isMobile) return;
+		scrollPositions.set(nav.from.url.pathname, window.scrollY);
+	});
 
-		// Stop checking after 30 seconds
-		setTimeout(() => clearInterval(checkPrompt), 30000);
-	}
+	afterNavigate((nav) => {
+		if (!$isMobile) return;
+		const scrollY = nav.to
+			? scrollPositions.get(nav.to.url.pathname) || 0
+			: 0;
+		window.scrollTo(0, scrollY);
+	});
 
-	async function handleInstall() {
-		if (!installPrompt && browser) {
-			installPrompt = (window as any).__installPrompt || null;
+	const dropFiles = (e: DragEvent) => {
+		e.preventDefault();
+		dropping.set(false);
+		const oldLength = files.files.length;
+		files.add(e.dataTransfer?.files);
+		if (oldLength !== files.files.length) goto("/convert");
+	};
+
+	const handleDrag = (e: DragEvent, drag: boolean) => {
+		e.preventDefault();
+		dropping.set(drag);
+	};
+
+	const handlePaste = (e: ClipboardEvent) => {
+		const clipboardData = e.clipboardData;
+		if (!clipboardData || !clipboardData.files.length) return;
+		e.preventDefault();
+		const oldLength = files.files.length;
+		files.add(clipboardData.files);
+		if (oldLength !== files.files.length) goto("/convert");
+	};
+
+	onMount(() => {
+		initAnimStores();
+
+		const handleResize = () => {
+			isMobile.set(window.innerWidth <= 768);
+		};
+
+		isMobile.set(window.innerWidth <= 768);
+		window.addEventListener("resize", handleResize);
+		window.addEventListener("paste", handlePaste);
+
+		effects.set(localStorage.getItem("effects") !== "false");
+		theme.set(
+			(localStorage.getItem("theme") as "light" | "dark") || "light",
+		);
+		const storedLocale = localStorage.getItem("locale");
+		if (storedLocale) updateLocale(storedLocale);
+
+		Settings.instance.load();
+
+		if (!window.isSecureContext) {
+			log(["layout"], "Insecure context (HTTP) detected, some features may not work as expected.");
+			ToastManager.add({
+				type: "warning",
+				message: m["toast.insecure_context"](),
+				disappearing: false,
+			});
 		}
-		if (!installPrompt) return;
-		installPrompt.prompt();
-		const result = await installPrompt.userChoice;
-		if (result.outcome === "accepted") {
-			installPrompt = null;
-			(window as any).__installPrompt = null;
-		}
-	}
 
-	const items = $derived<
-		{
-			name: string;
-			url: string;
-			activeMatch: (pathname: string) => boolean;
-			icon: typeof IconType;
-			badge?: number;
-		}[]
-	>([
-		{
-			name: m["navbar.upload"](),
-			url: "/",
-			activeMatch: (pathname) => pathname === "/",
-			icon: UploadIcon,
-		},
-		{
-			name: m["navbar.convert"](),
-			url: "/convert/",
-			activeMatch: (pathname) =>
-				pathname === "/convert/" || pathname === "/convert",
-			icon: RefreshCw,
-			badge: files.files.length,
-		},
-		{
-			name: m["navbar.settings"](),
-			url: "/settings/",
-			activeMatch: (pathname) => pathname.startsWith("/settings"),
-			icon: SettingsIcon,
-		},
-		{
-			name: m["navbar.about"](),
-			url: "/about/",
-			activeMatch: (pathname) => pathname.startsWith("/about"),
-			icon: InfoIcon,
-		},
-	]);
-
-	let links = $state<HTMLAnchorElement[]>([]);
-	let container = $state<HTMLDivElement>();
-	let containerRect = $derived(container?.getBoundingClientRect());
-	let isInitialized = $state(false);
-
-	const linkRects = $derived(links.map((l) => l.getBoundingClientRect()));
-
-	const selectedIndex = $derived(
-		items.findIndex((i) => i.activeMatch(page.url.pathname)),
-	);
-
-	const isSecretPage = $derived(selectedIndex === -1);
+		return () => {
+			window.removeEventListener("paste", handlePaste);
+			window.removeEventListener("resize", handleResize);
+		};
+	});
 
 	$effect(() => {
-		if (containerRect && linkRects.length > 0 && links.length > 0) {
-			setTimeout(() => {
-				isInitialized = true;
-			}, 10);
-		} else {
-			isInitialized = false;
+		enablePlausible =
+			!!PUB_PLAUSIBLE_URL &&
+			Settings.instance.settings.plausible &&
+			!DISABLE_ALL_EXTERNAL_REQUESTS;
+		if (!enablePlausible && browser) {
+			history.pushState = History.prototype.pushState;
 		}
 	});
-
-	beforeNavigate((e) => {
-		const oldIndex = items.findIndex((i) =>
-			i.activeMatch(e.from?.url.pathname || ""),
-		);
-		const newIndex = items.findIndex((i) =>
-			i.activeMatch(e.to?.url.pathname || ""),
-		);
-		if (newIndex < oldIndex) {
-			goingLeft.set(true);
-		} else {
-			goingLeft.set(false);
-		}
-	});
+	
 </script>
 
-{#snippet link(item: (typeof items)[0], index: number)}
-	{@const Icon = item.icon}
-	<a
-		bind:this={links[index]}
-		href={item.url}
-		aria-label={item.name}
-		class={clsx(
-			"min-w-16 md:min-w-32 h-full relative z-10 rounded-xl flex flex-1 items-center justify-center gap-3 overflow-hidden",
-			{
-				"bg-panel-highlight":
-					item.activeMatch(page.url.pathname) && !browser,
-			},
-		)}
-		draggable={false}
-	>
-		<div class="grid grid-rows-1 grid-cols-1">
-			{#key item.name}
-				<div
-					class="w-full row-start-1 col-start-1 h-full flex items-center justify-center gap-3"
-					in:fade={{
-						duration,
-						easing: quintOut,
-					}}
-					out:fade={{
-						duration,
-						easing: quintOut,
-					}}
-				>
-					<div class="relative">
-						<Icon />
-						{#if item.badge}
-							<div
-								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
-								style="font-size: 0.7rem;"
-								transition:fade={{
-									duration,
-									easing: quintOut,
-								}}
-							>
-								{#key item.badge}
-									<div
-										class="flex items-center justify-center w-full h-full col-start-1 row-start-1"
-										in:fade={{
-											duration,
-											easing: quintOut,
-										}}
-										out:fade={{
-											duration,
-											easing: quintOut,
-										}}
-									>
-										{item.badge}
-									</div>
-								{/key}
-							</div>
-						{/if}
-					</div>
-					<p
-						class="font-medium hidden hyphens-auto break-all md:flex min-w-0"
-					>
-						{item.name}
-					</p>
-				</div>
-			{/key}
-		</div>
-	</a>
-{/snippet}
+<svelte:head>
+	<title>{VERT_NAME}</title>
+	<meta name="theme-color" content="#F2ABEE" />
+	<meta
+		name="title"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
+	/>
+	<meta
+		name="description"
+		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+	/>
+	<meta property="og:url" content="https://localconvert.app" />
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:title"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
+	/>
+	<meta
+		property="og:description"
+		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+	/>
+	<meta property="og:image" content={featuredImage} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="localconvert.app" />
+	<meta property="twitter:url" content="https://localconvert.app" />
+	<meta
+		property="twitter:title"
+		content="{VERT_NAME} — Free, fast, and awesome file converter"
+	/>
+	<meta
+		property="twitter:description"
+		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+	/>
+	<meta property="twitter:image" content={featuredImage} />
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="canonical" href="https://localconvert.app/" />
+	{#if enablePlausible}
+		<script
+			defer
+			data-domain={PUB_HOSTNAME || "localconvert.app"}
+			src="{PUB_PLAUSIBLE_URL}/js/script.js"
+		></script>
+	{/if}
+	{#if data.isAprilFools}
+		<style>
+			* {
+				font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+			}
+		</style>
+	{/if}
+</svelte:head>
 
-<div bind:this={container}>
-	<Panel class="max-w-[778px] w-screen h-20 flex items-center gap-3 relative">
-		{@const linkRect = linkRects.at(selectedIndex) || linkRects[0]}
-		{#if linkRect && isInitialized}
-			<div
-				class="absolute bg-panel-highlight rounded-xl"
-				style="width: {linkRect.width}px; height: {linkRect.height}px; top: {linkRect.top -
-					(containerRect?.top || 0)}px; left: {linkRect.left -
-					(containerRect?.left || 0)}px; opacity: {isSecretPage
-					? 0
-					: 1}; {$effects
-					? `transition: left var(--transition) ${duration}ms, top var(--transition) ${duration}ms, opacity var(--transition) ${duration}ms;`
-					: ''}"
-			></div>
-		{/if}
-		<a
-			class="w-28 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
-			href="/"
-		>
-			<div class="h-5 w-full">
-				<Logo />
-			</div>
-		</a>
-		{#each items as item, i (item.url)}
-			{@render link(item, i)}
-		{/each}
-		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-		<Tooltip text={m["navbar.toggle_theme"]()} position="right">
-			<button
-				onclick={() => {
-					const isDark =
-						document.documentElement.classList.contains("dark");
-					setTheme(isDark ? "light" : "dark");
-				}}
-				class="w-14 h-full items-center justify-center hidden md:flex"
-			>
-				<SunIcon class="dynadark:hidden block" />
-				<MoonIcon class="dynadark:block hidden" />
-			</button>
-		</Tooltip>
-		{#if installPrompt}
-			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-			<button
-				onclick={handleInstall}
-				class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
-			>
-				<DownloadIcon size={18} />
-				<span class="hidden md:inline">Install App</span>
-			</button>
-		{/if}
-	</Panel>
-</div>
+{#key $locale}
+	<div
+		class="flex flex-col min-h-screen h-full w-full overflow-x-hidden"
+		ondrop={dropFiles}
+		ondragenter={(e) => handleDrag(e, true)}
+		ondragover={(e) => handleDrag(e, true)}
+		ondragleave={(e) => handleDrag(e, false)}
+		role="region"
+	>
+		<Layout.UploadRegion />
+
+		<div>
+			<Layout.MobileLogo />
+			<Navbar.Desktop />
+		</div>
+
+		<Layout.PageContent {children} />
+
+		<Layout.Toasts />
+		<Layout.Dialogs />
+
+		<div>
+			<Layout.Footer />
+			<Navbar.Mobile />
+		</div>
+	</div>
+{/key}
+
+<Layout.Gradients />
