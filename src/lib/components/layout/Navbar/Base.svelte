@@ -26,21 +26,26 @@
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { m } from "$lib/paraglide/messages";
 
-	let installPrompt: any = $state(null);
+	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
 
 	if (browser) {
 		window.addEventListener("beforeinstallprompt", (e: Event) => {
 			e.preventDefault();
 			installPrompt = e;
+			(window as any).__installPrompt = e;
 		});
 	}
 
 	async function handleInstall() {
+		if (!installPrompt && browser) {
+			installPrompt = (window as any).__installPrompt || null;
+		}
 		if (installPrompt) {
 			installPrompt.prompt();
 			const result = await installPrompt.userChoice;
 			if (result.outcome === "accepted") {
 				installPrompt = null;
+				(window as any).__installPrompt = null;
 			}
 		} else {
 			const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
