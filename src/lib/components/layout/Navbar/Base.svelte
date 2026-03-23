@@ -231,10 +231,10 @@
 			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 			<button
 				onclick={handleInstall}
-				class="h-full items-center justify-center gap-2 hidden md:flex px-3 text-sm font-medium hover:text-accent transition-colors"
+				class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
 			>
 				<DownloadIcon size={18} />
-				Install App
+				<span class="hidden md:inline">Install App</span>
 			</button>
 		{/if}
 	</Panel>
