@@ -109,12 +109,7 @@
 			history.pushState = History.prototype.pushState;
 		}
 	});
-	if (browser) {
-		window.addEventListener("beforeinstallprompt", (e: Event) => {
-			e.preventDefault();
-			(window as any).__installPrompt = e;
-		});
-	}
+	
 </script>
 
 <svelte:head>
