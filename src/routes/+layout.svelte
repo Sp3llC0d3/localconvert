@@ -7,7 +7,7 @@
 	import { browser } from "$app/environment";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
-	import featuredImage from "$lib/assets/VERT_Feature.webp";
+	import featuredImage from "$lib/assets/og-image.png";
 	import { Settings } from "$lib/sections/settings/index.svelte";
 	import {
 		files,
@@ -113,7 +113,7 @@
 
 <svelte:head>
 	<title>{VERT_NAME}</title>
-	<meta name="theme-color" content="#F2ABEE" />
+	<meta name="theme-color" content="#0F6E56" />
 	<meta
 		name="title"
 		content="{VERT_NAME} — Free, fast, and awesome file converter"
@@ -183,6 +183,7 @@
 
 		<Layout.Toasts />
 		<Layout.Dialogs />
+		<Layout.IOSInstallBanner />
 
 		<div>
 			<Layout.Footer />

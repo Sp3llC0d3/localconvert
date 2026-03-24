@@ -5,17 +5,23 @@
 	"start_url": "/",
 	"id": "/",
 	"display": "standalone",
-	"background_color": "#1a1a2e",
-	"theme_color": "#F2ABEE",
+	"background_color": "#0a0a0a",
+	"theme_color": "#0F6E56",
 	"icons": [
 		{
-			"src": "lettermark_maskable.png",
+			"src": "icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icon-512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "any"
 		},
 		{
-			"src": "lettermark_maskable.png",
+			"src": "icon-maskable-512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "maskable"
