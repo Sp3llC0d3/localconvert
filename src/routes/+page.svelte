@@ -348,12 +348,12 @@
 	}
 
 	:global(.light) .hero-bg {
-		background-image: url('/bg-mesh.png');
+		background-image: none;
 	}
 
 	@media (prefers-color-scheme: light) {
 		:global(:root:not(.dark)) .hero-bg {
-			background-image: url('/bg-mesh.png');
+			background-image: none;
 		}
 	}
 
@@ -368,8 +368,8 @@
 	:global(.light) .hero-overlay {
 		background: linear-gradient(
 			to bottom,
-			hsla(158, 75%, 34%, 0.15) 0%,
-			var(--bg) 85%
+			hsl(158, 60%, 88%) 0%,
+			var(--bg) 65%
 		);
 	}
 
@@ -377,8 +377,8 @@
 		:global(:root:not(.dark)) .hero-overlay {
 			background: linear-gradient(
 				to bottom,
-				hsla(158, 75%, 34%, 0.15) 0%,
-				var(--bg) 85%
+				hsl(158, 60%, 88%) 0%,
+				var(--bg) 65%
 			);
 		}
 	}
@@ -402,7 +402,7 @@
 	}
 
 	.step-img {
-		@apply w-full max-w-[10rem] h-32 object-contain mx-auto;
+		@apply w-full max-w-[12rem] h-44 object-contain mx-auto;
 	}
 
 	/* ── Format cards (kept from original) ── */
