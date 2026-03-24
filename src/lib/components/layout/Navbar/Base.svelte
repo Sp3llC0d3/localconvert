@@ -204,7 +204,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="max-w-[778px] w-screen h-20 flex items-center gap-3 relative">
+	<Panel class="max-w-[960px] w-screen h-20 flex items-center gap-3 relative">
 		{@const linkRect = linkRects.at(selectedIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}
 			<div

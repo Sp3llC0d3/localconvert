@@ -2,6 +2,12 @@
 	import Navbar from "./Base.svelte";
 </script>
 
-<div class="hidden md:flex p-8 w-screen justify-center">
+<div class="hidden md:flex p-6 w-screen justify-center sticky top-0 z-50 nav-sticky">
 	<Navbar />
 </div>
+
+<style>
+	.nav-sticky {
+		background: var(--bg);
+	}
+</style>
