@@ -99,10 +99,26 @@
 
 	let links = $state<HTMLAnchorElement[]>([]);
 	let container = $state<HTMLDivElement>();
-	let containerRect = $derived(container?.getBoundingClientRect());
 	let isInitialized = $state(false);
 
-	const linkRects = $derived(links.map((l) => l.getBoundingClientRect()));
+	// measureTick forces linkRects/containerRect to re-read the DOM after
+	// installPrompt changes (the flex items shift when the button appears/disappears)
+	let measureTick = $state(0);
+
+	$effect(() => {
+		void installPrompt; // depend on installPrompt
+		setTimeout(() => measureTick++, 15);
+	});
+
+	const containerRect = $derived.by(() => {
+		void measureTick;
+		return container?.getBoundingClientRect();
+	});
+
+	const linkRects = $derived.by(() => {
+		void measureTick;
+		return links.map((l) => l.getBoundingClientRect());
+	});
 
 	const selectedIndex = $derived(
 		items.findIndex((i) => i.activeMatch(page.url.pathname)),
