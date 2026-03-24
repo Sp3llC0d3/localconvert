@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { UploadIcon } from "lucide-svelte";
-	import Panel from "../visual/Panel.svelte";
 	import clsx from "clsx";
 	import { onMount } from "svelte";
 	import { effects, files } from "$lib/store/index.svelte";
@@ -8,6 +6,8 @@
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 	import { m } from "$lib/paraglide/messages";
+	import dropzoneDark from "$lib/assets/dropzone-dark.png";
+	import dropzoneLight from "$lib/assets/dropzone-light.png";
 
 	type Props = {
 		class?: string;
@@ -64,19 +64,16 @@
 	class={clsx(
 		`hover:scale-105 active:scale-100 ${$effects ? "" : "!scale-100"} duration-200 ${classList}`,
 	)}
+	aria-label={m["upload.uploader.text"]({ action: m["upload.uploader.convert"]() })}
 >
-	<Panel
-		class="flex justify-center items-center w-full h-full flex-col pointer-events-none"
-	>
-		<div
-			class="w-16 h-16 bg-accent rounded-full flex items-center justify-center p-4"
-		>
-			<UploadIcon class="w-full h-full text-on-accent" />
-		</div>
-		<h2 class="text-center text-2xl font-semibold mt-4">
-			{m["upload.uploader.text"]({
-				action: m["upload.uploader.convert"]()
-			})}
-		</h2>
-	</Panel>
+	<img
+		src={dropzoneLight}
+		alt=""
+		class="w-full h-full object-contain pointer-events-none dynadark:hidden"
+	/>
+	<img
+		src={dropzoneDark}
+		alt=""
+		class="w-full h-full object-contain pointer-events-none hidden dynadark:block"
+	/>
 </button>
