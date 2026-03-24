@@ -5,6 +5,7 @@
 
 	let { data } = $props();
 	const { info } = data;
+	const validFormats = new Set(data.validFormats);
 
 	const typeLabel: Record<string, string> = {
 		image: "Image",
@@ -83,12 +84,11 @@
 	</h2>
 	<div class="flex flex-wrap justify-center gap-2">
 		{#each info.inputFormats as fmt}
-			<a
-				href="/{fmt}-converter"
-				class="format-chip"
-			>
-				.{fmt.toUpperCase()}
-			</a>
+			{#if validFormats.has(fmt)}
+				<a href="/{fmt}-converter" class="format-chip">.{fmt.toUpperCase()}</a>
+			{:else}
+				<span class="format-chip">.{fmt.toUpperCase()}</span>
+			{/if}
 		{/each}
 	</div>
 </section>
