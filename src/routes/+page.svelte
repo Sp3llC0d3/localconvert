@@ -3,7 +3,7 @@
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { converters } from "$lib/converters";
 	import clsx from "clsx";
-	import { AudioLines, BookText, Check, Film, Image } from "lucide-svelte";
+	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Zap, Ban } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
 	import { OverlayScrollbarsComponent } from "overlayscrollbars-svelte";
 	import { browser } from "$app/environment";
@@ -11,6 +11,11 @@
 	import { onMount } from "svelte";
 	import type { WorkerStatus } from "$lib/converters/converter.svelte";
 	import { sanitize } from "$lib/store/index.svelte";
+
+	import step1 from "$lib/assets/steps/step-1-choose.png";
+	import step2 from "$lib/assets/steps/step-2-convert.png";
+	import step3 from "$lib/assets/steps/step-3-download.png";
+	import privacyBadge from "$lib/assets/privacy-badge.png";
 
 	const getSupportedFormats = (name: string, nativeOnly?: boolean) =>
 		converters
@@ -100,7 +105,6 @@
 			case "ready":
 				return m["upload.cards.status.ready"]();
 			default:
-				// "not-ready", "error" and other statuses (somehow)
 				return m["upload.cards.status.not_ready"]();
 		}
 	};
@@ -112,7 +116,6 @@
 	onMount(() => {
 		const handleResize = () => {
 			for (let i = 0; i < scrollContainers.length; i++) {
-				// show bottom blur if scrollable
 				const container = scrollContainers[i];
 				if (!container) return;
 				showBlur[i] = container.scrollHeight > container.clientHeight;
@@ -126,143 +129,283 @@
 			window.removeEventListener("resize", handleResize);
 		};
 	});
+
+	const pills = [
+		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
+		{ icon: Zap, label: m["landing.pills.gpu"]() },
+		{ icon: Code, label: m["landing.pills.open_source"]() },
+		{ icon: ShieldCheck, label: m["landing.pills.no_limit"]() },
+	];
+
+	const steps = [
+		{ img: step1, title: m["landing.how_it_works.step1_title"](), desc: m["landing.how_it_works.step1_desc"]() },
+		{ img: step2, title: m["landing.how_it_works.step2_title"](), desc: m["landing.how_it_works.step2_desc"]() },
+		{ img: step3, title: m["landing.how_it_works.step3_title"](), desc: m["landing.how_it_works.step3_desc"]() },
+	];
+
+	const faqs = [
+		{ q: m["landing.faq.q1"](), a: m["landing.faq.a1"]() },
+		{ q: m["landing.faq.q2"](), a: m["landing.faq.a2"]() },
+		{ q: m["landing.faq.q3"](), a: m["landing.faq.a3"]() },
+		{ q: m["landing.faq.q4"](), a: m["landing.faq.a4"]() },
+		{ q: m["landing.faq.q5"](), a: m["landing.faq.a5"]() },
+	];
 </script>
 
-<div class="max-w-6xl w-full mx-auto px-6 md:px-8">
-	<div class="flex items-center justify-center pb-10 md:py-16">
-		<div
-			class="flex items-center h-auto gap-12 md:gap-24 md:flex-row flex-col"
-		>
-			<div class="flex-grow w-full text-center md:text-left">
-				<h1
-					class="text-4xl px-12 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6"
-				>
-					{m["upload.title"]()}
-				</h1>
-				<p
-					class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-muted dynadark:text-muted"
-				>
-					{m["upload.subtitle"]()}
-				</p>
-			</div>
-			<div class="flex-grow w-full h-72">
-				<Uploader class="w-full h-full" />
-			</div>
+<!-- ═══════════════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="hero-section relative w-full overflow-hidden">
+	<div class="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
+	<div class="hero-overlay absolute inset-0"></div>
+
+	<div class="relative max-w-6xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-20 md:pb-28 flex flex-col items-center">
+		<!-- Feature pills -->
+		<div class="flex flex-wrap justify-center gap-2 mb-8">
+			{#each pills as pill}
+				{@const Icon = pill.icon}
+				<span class="pill">
+					<Icon size="14" />
+					{pill.label}
+				</span>
+			{/each}
+		</div>
+
+		<!-- Headline -->
+		<h1 class="text-4xl md:text-6xl text-center font-display tracking-tight leading-tight md:leading-[1.15] mb-5 max-w-3xl">
+			{m["upload.title"]()}
+		</h1>
+		<p class="text-lg md:text-xl text-center max-w-2xl mb-10 dynadark:text-muted text-muted">
+			{m["upload.subtitle"]()}
+		</p>
+
+		<!-- Uploader -->
+		<div class="w-full max-w-xl h-56">
+			<Uploader class="w-full h-full" />
 		</div>
 	</div>
+</section>
 
-	<hr />
+<!-- ═══════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════ -->
+<section class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
+	<h2 class="text-3xl md:text-4xl text-center mb-12">{m["landing.how_it_works.title"]()}</h2>
 
-	<div class="mt-10 md:mt-16">
-		<h2 class="text-center text-4xl">{m["upload.cards.title"]()}</h2>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+		{#each steps as step, i}
+			<div class="step-card">
+				<div class="step-number">{i + 1}</div>
+				<img src={step.img} alt={step.title} class="step-img" />
+				<h3 class="text-xl font-semibold mt-5 mb-2">{step.title}</h3>
+				<p class="text-sm font-normal text-muted">{step.desc}</p>
+			</div>
+		{/each}
+	</div>
+</section>
 
-		<div class="flex gap-4 mt-8 md:flex-row flex-col">
-			{#if browser}
-				{#each Object.entries(worker) as [key, s], i}
-					{@const Icon = s.icon}
-					<div class="file-category-card w-full flex flex-col gap-4">
-						<div class="file-category-card-inner">
-							<div
-								class={clsx("icon-container", {
-									"bg-accent-blue": key === "Images",
-									"bg-accent-purple": key === "Audio",
-									"bg-accent-green": key === "Documents",
-									"bg-accent-red": key === "Video",
-								})}
-							>
-								<Icon size="20" />
-							</div>
-							<span>{s.title}</span>
-						</div>
+<!-- ═══════════════════════════════════════════════════════
+     SUPPORTED FORMATS
+═══════════════════════════════════════════════════════ -->
+<section class="max-w-6xl mx-auto px-6 md:px-8 pb-16 md:pb-24 w-full">
+	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.formats.title"]()}</h2>
 
+	<div class="flex gap-4 md:flex-row flex-col">
+		{#if browser}
+			{#each Object.entries(worker) as [key, s], i}
+				{@const Icon = s.icon}
+				<div class="file-category-card w-full flex flex-col gap-4">
+					<div class="file-category-card-inner">
 						<div
-							class="file-category-card-content flex-grow relative"
+							class={clsx("icon-container", {
+								"bg-accent-blue": key === "Images",
+								"bg-accent-purple": key === "Audio",
+								"bg-accent-green": key === "Documents",
+								"bg-accent-red": key === "Video",
+							})}
 						>
-							<OverlayScrollbarsComponent
-								options={{
-									scrollbars: {
-										autoHide: "move",
-										autoHideDelay: 1500,
-									},
-								}}
-								defer
-							>
-								<div
-									class="flex flex-col gap-4 h-[12.25rem] relative"
-									bind:this={scrollContainers[i]}
-								>
-									<p
-										class="flex tems-center justify-center gap-2"
-									>
-										<Check size="20" />
-										{m[
-											"upload.cards.local_supported"
-										]()}
-									</p>
-									<p>
-										{@html sanitize(m["upload.cards.status.text"]({
-											status: getStatusText(s.status),
-										}))}
-									</p>
-									<div
-										class="flex flex-col items-center relative"
-									>
-										<b
-											>{m[
-												"upload.cards.supported_formats"
-											]()}&nbsp;</b
-										>
-										<p
-											class="flex flex-wrap justify-center leading-tight px-2"
-										>
-											{#each s.formats.split(", ") as format, index}
-												{@const isPartial =
-													format.endsWith("*")}
-												{@const formatName = isPartial
-													? format.slice(0, -1)
-													: format}
-												<span
-													class="text-sm font-normal flex items-center relative"
-												>
-													{#if isPartial}
-														<Tooltip
-															text={getTooltip(
-															  formatName,
-															)}
-														>
-															{formatName}<span
-															  class="text-red-500"
-															  >*</span
-															>
-														</Tooltip>
-													{:else}
-														{formatName}
-													{/if}
-													{#if index < s.formats.split(", ").length - 1}
-														<span>,&nbsp;</span>
-													{/if}
-												</span>
-											{/each}
-										</p>
-									</div>
-								</div>
-							</OverlayScrollbarsComponent>
-							<!-- blur at bottom if scrollable - positioned relative to the card container -->
-							{#if showBlur[i]}
-								<div
-									class="absolute left-0 bottom-0 w-full h-10 pointer-events-none"
-									style={`background: linear-gradient(to top, var(--bg-panel), transparent 100%);`}
-								></div>
-							{/if}
+							<Icon size="20" />
 						</div>
+						<span>{s.title}</span>
 					</div>
+
+					<div class="file-category-card-content flex-grow relative">
+						<OverlayScrollbarsComponent
+							options={{
+								scrollbars: {
+									autoHide: "move",
+									autoHideDelay: 1500,
+								},
+							}}
+							defer
+						>
+							<div
+								class="flex flex-col gap-4 h-[12.25rem] relative"
+								bind:this={scrollContainers[i]}
+							>
+								<p class="flex items-center justify-center gap-2">
+									<Check size="20" />
+									{m["upload.cards.local_supported"]()}
+								</p>
+								<p>
+									{@html sanitize(m["upload.cards.status.text"]({
+										status: getStatusText(s.status),
+									}))}
+								</p>
+								<div class="flex flex-col items-center relative">
+									<b>{m["upload.cards.supported_formats"]()}&nbsp;</b>
+									<p class="flex flex-wrap justify-center leading-tight px-2">
+										{#each s.formats.split(", ") as format, index}
+											{@const isPartial = format.endsWith("*")}
+											{@const formatName = isPartial ? format.slice(0, -1) : format}
+											<span class="text-sm font-normal flex items-center relative">
+												{#if isPartial}
+													<Tooltip text={getTooltip(formatName)}>
+														{formatName}<span class="text-red-500">*</span>
+													</Tooltip>
+												{:else}
+													{formatName}
+												{/if}
+												{#if index < s.formats.split(", ").length - 1}
+													<span>,&nbsp;</span>
+												{/if}
+											</span>
+										{/each}
+									</p>
+								</div>
+							</div>
+						</OverlayScrollbarsComponent>
+						{#if showBlur[i]}
+							<div
+								class="absolute left-0 bottom-0 w-full h-10 pointer-events-none"
+								style={`background: linear-gradient(to top, var(--bg-panel), transparent 100%);`}
+							></div>
+						{/if}
+					</div>
+				</div>
+			{/each}
+		{/if}
+	</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRIVACY SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="privacy-section w-full py-16 md:py-20">
+	<div class="max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+		<div class="flex-shrink-0">
+			<img
+				src={privacyBadge}
+				alt="Privacy badge"
+				class="w-40 h-40 md:w-52 md:h-52 object-contain"
+			/>
+		</div>
+		<div>
+			<h2 class="text-3xl md:text-4xl mb-6">{m["landing.privacy.title"]()}</h2>
+			<ul class="flex flex-col gap-4">
+				{#each [m["landing.privacy.point1"](), m["landing.privacy.point2"](), m["landing.privacy.point3"]()] as point}
+					<li class="flex items-start gap-3">
+						<span class="privacy-check-icon flex-shrink-0 mt-0.5">
+							<Check size="18" />
+						</span>
+						<span class="text-lg font-normal">{point}</span>
+					</li>
 				{/each}
-			{/if}
+			</ul>
 		</div>
 	</div>
-</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FAQ SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
+	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.faq.title"]()}</h2>
+
+	<div class="faq-list flex flex-col gap-3 max-w-3xl mx-auto">
+		{#each faqs as faq}
+			<details class="faq-item">
+				<summary class="faq-question">
+					<span>{faq.q}</span>
+					<span class="faq-chevron">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</span>
+				</summary>
+				<p class="faq-answer">{faq.a}</p>
+			</details>
+		{/each}
+	</div>
+</section>
 
 <style lang="postcss">
+	/* ── Hero ── */
+	.hero-bg {
+		background-image: url('/bg-dark.png');
+		background-size: cover;
+		background-position: center top;
+	}
+
+	:global(.light) .hero-bg {
+		background-image: url('/bg-mesh.png');
+	}
+
+	@media (prefers-color-scheme: light) {
+		:global(:root:not(.dark)) .hero-bg {
+			background-image: url('/bg-mesh.png');
+		}
+	}
+
+	.hero-overlay {
+		background: linear-gradient(
+			to bottom,
+			hsla(0, 0%, 7%, 0.45) 0%,
+			var(--bg) 100%
+		);
+	}
+
+	:global(.light) .hero-overlay {
+		background: linear-gradient(
+			to bottom,
+			hsla(158, 75%, 34%, 0.15) 0%,
+			var(--bg) 85%
+		);
+	}
+
+	@media (prefers-color-scheme: light) {
+		:global(:root:not(.dark)) .hero-overlay {
+			background: linear-gradient(
+				to bottom,
+				hsla(158, 75%, 34%, 0.15) 0%,
+				var(--bg) 85%
+			);
+		}
+	}
+
+	/* ── Pills ── */
+	.pill {
+		@apply flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium;
+		background-color: var(--bg-badge);
+		color: var(--fg-on-badge);
+	}
+
+	/* ── How It Works ── */
+	.step-card {
+		@apply bg-panel rounded-2xl p-6 shadow-panel text-center flex flex-col items-center relative;
+	}
+
+	.step-number {
+		@apply absolute top-4 right-4 w-7 h-7 rounded-full flex items-center justify-center text-sm font-semibold;
+		background-color: var(--bg-badge);
+		color: var(--fg-on-badge);
+	}
+
+	.step-img {
+		@apply w-full max-w-[10rem] h-32 object-contain mx-auto;
+	}
+
+	/* ── Format cards (kept from original) ── */
 	.file-category-card {
 		@apply bg-panel rounded-2xl p-5 shadow-panel relative;
 	}
@@ -281,5 +424,45 @@
 
 	.icon-container {
 		@apply p-2 rounded-full text-on-accent;
+	}
+
+	/* ── Privacy section ── */
+	.privacy-section {
+		background-color: var(--bg-panel);
+	}
+
+	.privacy-check-icon {
+		@apply flex items-center justify-center w-6 h-6 rounded-full flex-shrink-0;
+		background-color: var(--bg-badge);
+		color: var(--fg-on-badge);
+	}
+
+	/* ── FAQ ── */
+	.faq-item {
+		@apply bg-panel rounded-2xl shadow-panel overflow-hidden;
+	}
+
+	.faq-question {
+		@apply flex items-center justify-between gap-4 px-6 py-4 cursor-pointer select-none list-none;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-chevron {
+		@apply flex-shrink-0 transition-transform duration-200;
+		color: var(--fg-muted);
+	}
+
+	details[open] .faq-chevron {
+		transform: rotate(180deg);
+	}
+
+	.faq-answer {
+		@apply px-6 pb-5 text-sm font-normal leading-relaxed;
+		color: var(--fg-muted);
 	}
 </style>
