@@ -215,8 +215,6 @@ const converterMap: Record<string, ConverterInfo> = {
 	},
 };
 
-export const validFormats = new Set(Object.keys(converterMap));
-
 export const entries = () =>
 	Object.keys(converterMap).map((format) => ({
 		converter: `${format}-converter`,
@@ -233,5 +231,5 @@ export const load: PageLoad = ({ params }) => {
 		error(404, `No converter found for "${slug}"`);
 	}
 
-	return { info, slug, validFormats: [...validFormats] };
+	return { info, slug, validFormats: Object.keys(converterMap) };
 };
