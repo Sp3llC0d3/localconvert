@@ -28,6 +28,8 @@ export class VertFile {
 
 	public cancelled = $state(false);
 
+	public conversionError = $state(false);
+
 	public converters: Converter[] = [];
 
 	public isZip = $state(() => this.from === ".zip");
@@ -102,6 +104,7 @@ export class VertFile {
 		this.progress = 0;
 		this.processing = true;
 		this.cancelled = false;
+		this.conversionError = false;
 		let res;
 		try {
 			// for zips: extract > convert each > re-zip
@@ -111,7 +114,10 @@ export class VertFile {
 				: await converter.convert(this, this.to, ...args);
 			this.result = res;
 		} catch (err) {
-			if (!this.cancelled) this.toastErr(err);
+			if (!this.cancelled) {
+				this.toastErr(err);
+				this.conversionError = true;
+			}
 			this.result = null;
 		}
 		this.processing = false;

@@ -172,7 +172,7 @@
 		</div>
 
 		<!-- Headline -->
-		<h1 class="text-4xl md:text-6xl text-center font-display tracking-tight leading-tight md:leading-[1.15] mb-5 max-w-3xl">
+		<h1 class="text-3xl md:text-6xl text-center font-display tracking-tight leading-tight md:leading-[1.15] mb-5 max-w-3xl">
 			{m["upload.title"]()}
 		</h1>
 		<p class="text-lg md:text-xl text-center max-w-2xl mb-10 dynadark:text-muted text-muted">
@@ -180,7 +180,7 @@
 		</p>
 
 		<!-- Uploader -->
-		<div class="w-full max-w-xl h-56">
+		<div class="w-full max-w-xl h-44 md:h-56">
 			<Uploader class="w-full h-full" />
 		</div>
 	</div>
@@ -292,12 +292,12 @@
      PRIVACY SECTION
 ═══════════════════════════════════════════════════════ -->
 <section class="privacy-section w-full py-16 md:py-20">
-	<div class="max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+	<div class="max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
 		<div class="flex-shrink-0">
 			<img
 				src={privacyBadge}
 				alt="Privacy badge"
-				class="w-40 h-40 md:w-52 md:h-52 object-contain"
+				class="w-32 h-32 md:w-52 md:h-52 object-contain"
 			/>
 		</div>
 		<div>

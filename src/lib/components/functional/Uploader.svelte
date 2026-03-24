@@ -11,9 +11,10 @@
 
 	type Props = {
 		class?: string;
+		redirectSuffix?: string;
 	};
 
-	const { class: classList }: Props = $props();
+	const { class: classList, redirectSuffix = "" }: Props = $props();
 
 	let uploaderButton = $state<HTMLButtonElement>();
 	let fileInput = $state<HTMLInputElement>();
@@ -27,7 +28,7 @@
 		if (!fileInput) return;
 		const oldLength = files.files.length;
 		files.add(fileInput.files);
-		if (oldLength !== files.files.length) goto("/convert");
+		if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
 	};
 
 	onMount(() => {

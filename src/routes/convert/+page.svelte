@@ -32,6 +32,8 @@
 	import { MAX_ARRAY_BUFFER_SIZE } from "$lib/store/index.svelte";
 	import { GB } from "$lib/util/consts";
 	import { log } from "$lib/util/logger";
+	import errorConversion from "$lib/assets/errors/error-conversion.png";
+	import { page } from "$app/state";
 
 	// LocalConvert: video formats are non-native ffmpeg formats
 	const videoFormatNames = converters
@@ -66,6 +68,16 @@
 			if (!category) return;
 
 			let targetFormat: string | undefined;
+
+			// check for ?to= URL param (used by converter landing pages)
+			const urlTo = page.url.searchParams.get("to");
+			if (
+				urlTo &&
+				urlTo !== file.from.replace(".", "") &&
+				categories[category]?.formats.includes(urlTo)
+			) {
+				targetFormat = urlTo;
+			}
 
 			// restore saved format (if navigated back to page for example)
 			const savedFormat = $dropdownStates[file.name];
@@ -308,6 +320,12 @@
 									: m["convert.errors.image"](),
 						})}
 					</p>
+				</div>
+			{:else if file.conversionError}
+				<div class="flex flex-col items-center justify-center gap-3 py-2">
+					<img src={errorConversion} alt="" class="w-20 h-20 object-contain" />
+					<p class="text-sm text-failure font-medium">{m["convert.errors.cant_convert"]()}</p>
+					<button class="btn text-sm px-4 py-2" onclick={() => file.convert()}>Try again</button>
 				</div>
 			{:else}
 				<div class="flex flex-row justify-between">
