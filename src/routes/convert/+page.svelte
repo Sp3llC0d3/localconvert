@@ -34,6 +34,7 @@
 	import { log } from "$lib/util/logger";
 	import errorConversion from "$lib/assets/errors/error-conversion.png";
 	import { page } from "$app/state";
+	import { CONVERSION_BITRATES } from "$lib/converters/ffmpeg.svelte";
 
 	// LocalConvert: video formats are non-native ffmpeg formats
 	const videoFormatNames = converters
@@ -328,10 +329,9 @@
 					<button class="btn text-sm px-4 py-2" onclick={() => file.convert()}>Try again</button>
 				</div>
 			{:else}
-				<div class="flex flex-row justify-between">
-					<div
-						class="flex gap-4 w-full h-[152px] overflow-hidden relative"
-					>
+				<!-- preview area — relative so absolute controls scope to this 152px box -->
+				<div class="relative h-[152px]">
+					<div class="flex gap-4 w-full h-full overflow-hidden">
 						<div class="w-1/2 h-full overflow-hidden rounded-xl">
 							{#if file.blobUrl}
 								<img
@@ -364,7 +364,7 @@
 						</div>
 					</div>
 					<div
-						class="absolute top-16 right-0 mr-4 pl-2 h-[calc(100%-83px)] w-[calc(50%-38px)] pr-4 pb-1 flex items-center justify-center aspect-square"
+						class="absolute top-0 right-0 mr-4 pl-2 h-full w-[calc(50%-38px)] pr-4 flex items-center justify-center"
 					>
 						<div
 							class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
@@ -418,6 +418,81 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Per-file quality controls -->
+				{#if isImage || isAudio || isVideo}
+					<div class="file-options">
+						{#if isImage}
+							{@const effectiveQuality = file.optQuality ?? Settings.instance.settings.magickQuality}
+							<div class="opt-group">
+								<span class="opt-label">Quality</span>
+								<div class="opt-control">
+									<input
+										type="range" min={1} max={100}
+										value={effectiveQuality}
+										oninput={(e) => { file.optQuality = Number((e.target as HTMLInputElement).value); }}
+										class="quality-slider"
+									/>
+									<span class="opt-value">{effectiveQuality}%</span>
+								</div>
+							</div>
+							<div class="opt-group">
+								<span class="opt-label">Resize</span>
+								<div class="opt-control gap-1">
+									<input
+										type="number" min={1} placeholder="W"
+										bind:value={file.optWidth}
+										class="dim-input"
+									/>
+									<span class="opt-value">×</span>
+									<input
+										type="number" min={1} placeholder="H"
+										bind:value={file.optHeight}
+										class="dim-input"
+									/>
+									<span class="opt-value">px</span>
+								</div>
+							</div>
+						{/if}
+						{#if isAudio}
+							<div class="opt-group">
+								<span class="opt-label">Bitrate</span>
+								<div class="opt-control">
+									<select
+										class="opt-select"
+										value={file.optBitrate ?? Settings.instance.settings.ffmpegQuality.toString()}
+										onchange={(e) => { file.optBitrate = (e.target as HTMLSelectElement).value; }}
+									>
+										{#each CONVERSION_BITRATES as br}
+											<option value={br.toString()}>
+												{br === "auto" ? "Auto" : `${br} kbps`}
+											</option>
+										{/each}
+									</select>
+								</div>
+							</div>
+						{/if}
+						{#if isAudio || isVideo}
+							<div class="opt-group">
+								<span class="opt-label">Trim</span>
+								<div class="opt-control gap-1">
+									<input
+										type="number" min={0} step={1} placeholder="0"
+										bind:value={file.optTrimStart}
+										class="time-input"
+									/>
+									<span class="opt-value">s →</span>
+									<input
+										type="number" min={0} step={1} placeholder="end"
+										bind:value={file.optTrimEnd}
+										class="time-input"
+									/>
+									<span class="opt-value">s</span>
+								</div>
+							</div>
+						{/if}
+					</div>
+				{/if}
 			{/if}
 		{/if}
 	</Panel>
@@ -429,7 +504,7 @@
 	</div>
 
 	<div
-		class="w-full max-w-[778px] grid grid-cols-1 md:grid-cols-2 auto-rows-[240px] gap-4 md:p-0"
+		class="w-full max-w-[778px] grid grid-cols-1 md:grid-cols-2 auto-rows-auto gap-4 md:p-0"
 	>
 		{#each files.files as file, i (file.id)}
 			{#if files.files.length >= 2 && i === 1}
@@ -443,7 +518,60 @@
 			{/if}
 		{/each}
 		{#if files.files.length === 0}
-			<Uploader class="w-full h-full col-span-2" />
+			<Uploader class="w-full min-h-[240px] col-span-2" />
 		{/if}
 	</div>
 </div>
+
+<style lang="postcss">
+	/* ── Per-file options strip ── */
+	.file-options {
+		@apply flex flex-col gap-2 pt-2 border-t border-separator;
+	}
+
+	.opt-group {
+		@apply flex items-center gap-2 text-sm;
+	}
+
+	.opt-label {
+		@apply w-14 flex-shrink-0 text-xs font-semibold;
+		color: var(--fg-muted);
+	}
+
+	.opt-control {
+		@apply flex items-center gap-2 flex-1 min-w-0;
+	}
+
+	.opt-value {
+		@apply text-xs flex-shrink-0;
+		color: var(--fg-muted);
+	}
+
+	.quality-slider {
+		@apply flex-1 h-1.5 appearance-none rounded-full cursor-pointer;
+		background: var(--bg-separator);
+		accent-color: var(--accent-pink);
+	}
+
+	.dim-input,
+	.time-input {
+		@apply w-14 rounded-lg px-2 py-1 text-xs text-center border border-separator;
+		background: var(--bg-panel-alt, var(--bg-panel));
+		color: var(--fg);
+	}
+
+	.dim-input:focus,
+	.time-input:focus {
+		outline: 1.5px solid var(--accent-pink);
+	}
+
+	.opt-select {
+		@apply rounded-lg px-2 py-1 text-xs border border-separator cursor-pointer;
+		background: var(--bg-panel-alt, var(--bg-panel));
+		color: var(--fg);
+	}
+
+	.opt-select:focus {
+		outline: 1.5px solid var(--accent-pink);
+	}
+</style>

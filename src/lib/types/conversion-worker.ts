@@ -11,6 +11,7 @@ interface ConvertMessage {
 	to: string;
 	compression: number | null;
 	keepMetadata?: boolean;
+	resize?: { width: number; height: number } | null;
 }
 
 interface FinishedMessage {

@@ -350,7 +350,10 @@ export class FFmpegConverter extends Converter {
 			"dsf",
 			"dff",
 		];
-		const userSetting = Settings.instance.settings.ffmpegQuality;
+		// per-file bitrate override takes priority over global setting
+		const userSetting = (input.optBitrate !== null && input.optBitrate !== undefined)
+			? input.optBitrate as ConversionBitrate
+			: Settings.instance.settings.ffmpegQuality;
 		const userSampleRate = Settings.instance.settings.ffmpegSampleRate;
 		const customSampleRate =
 			Settings.instance.settings.ffmpegCustomSampleRate ?? 44100;
@@ -360,6 +363,12 @@ export class FFmpegConverter extends Converter {
 		let sampleRateArgs: string[] = [];
 		let metadataArgs: string[] = [];
 		let m4aArgs: string[] = [];
+
+		// per-file trim
+		const trimStart = input.optTrimStart > 0 ? input.optTrimStart : null;
+		const trimEnd = input.optTrimEnd > 0 ? input.optTrimEnd : null;
+		const trimStartArgs = trimStart !== null ? ["-ss", String(trimStart)] : [];
+		const trimEndArgs = trimEnd !== null ? ["-to", String(trimEnd)] : [];
 
 		log(["converters", this.name], `keep metadata: ${keepMetadata}`);
 		if (!keepMetadata) {
@@ -452,7 +461,7 @@ export class FFmpegConverter extends Converter {
 				`Converting video ${input.from} to video ${to}`,
 			);
 			const { video: vCodec, audio: aCodec } = getCodecs(to);
-			const args = ["-i", "input"];
+			const args = [...trimStartArgs, "-i", "input"];
 			if (vCodec === "libvpx") {
 				args.push("-c:v", "libvpx", "-b:v", "1M", "-c:a", "libvorbis");
 			} else if (vCodec === "libx264") {
@@ -462,7 +471,7 @@ export class FFmpegConverter extends Converter {
 			}
 			args.push("-c:a", aCodec);
 			if (aCodec === "aac") args.push("-strict", "experimental");
-			args.push(...metadataArgs, "output" + to);
+			args.push(...metadataArgs, ...trimEndArgs, "output" + to);
 			return args;
 		}
 
@@ -473,6 +482,7 @@ export class FFmpegConverter extends Converter {
 				`Converting video ${input.from} to audio ${to}`,
 			);
 			return [
+				...trimStartArgs,
 				"-i",
 				"input",
 				"-map",
@@ -480,6 +490,7 @@ export class FFmpegConverter extends Converter {
 				...metadataArgs,
 				...audioBitrateArgs,
 				...sampleRateArgs,
+				...trimEndArgs,
 				"output" + to,
 			];
 		}
@@ -506,6 +517,7 @@ export class FFmpegConverter extends Converter {
 					"1",
 					"-i",
 					"cover.jpg",
+					...trimStartArgs,
 					"-i",
 					"input",
 					"-vf",
@@ -519,6 +531,7 @@ export class FFmpegConverter extends Converter {
 					...metadataArgs,
 					...audioBitrateArgs,
 					...sampleRateArgs,
+					...trimEndArgs,
 					"output" + to,
 				];
 			} else {
@@ -528,6 +541,7 @@ export class FFmpegConverter extends Converter {
 					"lavfi",
 					"-i",
 					"color=c=black:s=512x512:rate=1",
+					...trimStartArgs,
 					"-i",
 					"input",
 					"-shortest",
@@ -539,6 +553,7 @@ export class FFmpegConverter extends Converter {
 					...metadataArgs,
 					...audioBitrateArgs,
 					...sampleRateArgs,
+					...trimEndArgs,
 					"output" + to,
 				];
 			}
@@ -553,6 +568,7 @@ export class FFmpegConverter extends Converter {
 		if (m4a && keepMetadata) m4aArgs = ["-c:v", "copy"]; // for album art
 
 		return [
+			...trimStartArgs,
 			"-i",
 			"input",
 			...m4aArgs,
@@ -561,6 +577,7 @@ export class FFmpegConverter extends Converter {
 			...metadataArgs,
 			...audioBitrateArgs,
 			...sampleRateArgs,
+			...trimEndArgs,
 			"output" + to,
 		];
 	}

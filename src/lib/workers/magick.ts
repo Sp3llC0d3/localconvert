@@ -253,6 +253,7 @@ const handleMessage = async (
 				message.to,
 				keepMetadata,
 				compression,
+				message.resize,
 			);
 
 			return {
@@ -289,6 +290,7 @@ const magickConvert = async (
 	to: string,
 	keepMetadata: boolean,
 	compression?: number,
+	resize?: { width: number; height: number } | null,
 ) => {
 	let fmt = to.slice(1).toUpperCase();
 	if (fmt === "JFIF") fmt = "JPEG";
@@ -306,6 +308,8 @@ const magickConvert = async (
 
 			img.resize(newW, newH);
 		}
+	} else if (resize) {
+		img.resize(resize.width, resize.height);
 	}
 
 	const result = await new Promise<Uint8Array>((resolve, reject) => {

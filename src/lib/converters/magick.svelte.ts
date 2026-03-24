@@ -120,10 +120,11 @@ export class MagickConverter extends Converter {
 	): Promise<VertFile> {
 		let compression: number | undefined = args.at(0);
 		if (!compression) {
-			compression = Settings.instance.settings.magickQuality ?? 100;
+			// per-file override takes priority over global setting
+			compression = input.optQuality ?? Settings.instance.settings.magickQuality ?? 100;
 			log(
 				["converters", this.name],
-				`using user setting for quality: ${compression}%`,
+				`using quality: ${compression}% (${input.optQuality !== null ? "per-file" : "settings"})`,
 			);
 		}
 		log(["converters", this.name], `converting ${input.name} to ${to}`);
@@ -206,6 +207,9 @@ export class MagickConverter extends Converter {
 				to,
 				compression,
 				keepMetadata,
+				resize: (input.optWidth && input.optHeight)
+					? { width: input.optWidth, height: input.optHeight }
+					: null,
 			};
 			worker.postMessage(convertMsg);
 

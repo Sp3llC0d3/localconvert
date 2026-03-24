@@ -30,6 +30,14 @@ export class VertFile {
 
 	public conversionError = $state(false);
 
+	// Phase 3: per-file quality controls
+	public optQuality = $state<number | null>(null);  // image quality 1-100, null = use settings
+	public optBitrate = $state<string | null>(null);  // audio bitrate override, null = use settings
+	public optTrimStart = $state(0);                  // trim start in seconds (0 = no trim)
+	public optTrimEnd = $state(0);                    // trim end in seconds (0 = no trim)
+	public optWidth = $state<number | null>(null);    // resize width px, null = no resize
+	public optHeight = $state<number | null>(null);   // resize height px, null = no resize
+
 	public converters: Converter[] = [];
 
 	public isZip = $state(() => this.from === ".zip");
