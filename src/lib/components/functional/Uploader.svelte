@@ -63,6 +63,7 @@
 	bind:this={uploaderButton}
 	class={clsx(
 		`hover:scale-105 active:scale-100 ${$effects ? "" : "!scale-100"} duration-200 ${classList}`,
+		"bg-panel shadow-panel border border-separator rounded-2.5xl p-4 flex items-center justify-center overflow-hidden",
 	)}
 	aria-label={m["upload.uploader.text"]({ action: m["upload.uploader.convert"]() })}
 >

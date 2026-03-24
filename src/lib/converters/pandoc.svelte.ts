@@ -19,7 +19,7 @@ export class PandocConverter extends Converter {
 		(async () => {
 			try {
 				this.status = "downloading";
-				this.wasm = await fetch("/pandoc.wasm").then((r) =>
+				this.wasm = await fetch("https://pub-a63702e42341425494caded68a9378bd.r2.dev/pandoc.wasm").then((r) =>
 					r.arrayBuffer(),
 				);
 

@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js": "^2.5.0",
+		"@playwright/test": "^1.58.2",
 		"@poppanator/sveltekit-svg": "^5.0.1",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.49.0",
