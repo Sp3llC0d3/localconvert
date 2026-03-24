@@ -1,4 +1,4 @@
-const CACHE_NAME = "localconvert-wasm-cache-v1"; // updated when workers update
+const CACHE_NAME = "localconvert-wasm-cache-v2"; // updated when workers update
 
 const WASM_FILES = [
 	"https://pub-a63702e42341425494caded68a9378bd.r2.dev/pandoc.wasm",
