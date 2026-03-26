@@ -120,7 +120,7 @@
 	/>
 	<meta
 		name="description"
-		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
 	/>
 	<meta property="og:url" content="https://localconvert.app" />
 	<meta property="og:type" content="website" />
@@ -130,7 +130,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
 	/>
 	<meta property="og:image" content={featuredImage} />
 	<meta name="twitter:card" content="summary_large_image" />

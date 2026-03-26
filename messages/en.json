@@ -15,8 +15,8 @@
 		"privacy_policy": "Privacy policy"
 	},
 	"upload": {
-		"title": "Convert anything. Your files never leave your device.",
-		"subtitle": "All image, audio, video, and document processing is done entirely on your device. No uploads, no file size limit, no ads, and completely open source.",
+		"title": "Convert images, audio, video & docs — free, private, no uploads.",
+		"subtitle": "Everything runs in your browser via WebAssembly. No server, no account, no file size limit — open source and free forever.",
 		"uploader": {
 			"text": "Drop or click to {action}",
 			"convert": "convert"
@@ -355,7 +355,7 @@
 			"q2": "Are my files private?",
 			"a2": "Completely. All conversions run in your browser using WebAssembly. Your files never touch our servers — not even for a moment.",
 			"q3": "What file formats are supported?",
-			"a3": "Images (JPG, PNG, WEBP, HEIC, GIF, BMP, TIFF, SVG), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), and Documents (DOCX, HTML, Markdown, EPUB).",
+			"a3": "Images (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), and Documents (DOCX, HTML, Markdown, EPUB). PDF tools are also included.",
 			"q4": "Is there a file size limit?",
 			"a4": "No hard limit — it depends on your device's available memory. For very large video files, Firefox or Safari typically handle them better.",
 			"q5": "Do I need to install anything?",

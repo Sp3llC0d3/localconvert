@@ -81,7 +81,7 @@ const converterMap: Record<string, ConverterInfo> = {
 		type: "image",
 		headline: "Convert images to AVIF — free & private",
 		description:
-			"Convert JPG, PNG, WEBP, HEIC and more to AVIF for superior compression with no quality loss. Runs entirely in your browser — no uploads.",
+			"Convert JPG, PNG, WEBP, HEIC and more to AVIF for smaller file sizes and superior compression. Runs entirely in your browser — no uploads.",
 		inputFormats: ["jpg", "jpeg", "png", "webp", "gif", "bmp", "tiff", "heic"],
 	},
 	ico: {

@@ -162,7 +162,7 @@
 		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 		featureList: [
 			"No server uploads — 100% local processing",
-			"Image conversion (JPG, PNG, WEBP, GIF, TIFF, SVG, HEIC)",
+			"Image conversion (JPG, PNG, WEBP, AVIF, ICO, GIF, TIFF, SVG, HEIC)",
 			"Audio conversion (MP3, WAV, FLAC, OGG, AAC)",
 			"Video conversion (MP4, WEBM, MKV, AVI, MOV) with GPU acceleration",
 			"Document conversion (DOCX, HTML, Markdown, EPUB)",
@@ -177,13 +177,15 @@
 		url: "https://localconvert.app",
 		potentialAction: {
 			"@type": "SearchAction",
-			target: { "@type": "EntryPoint", urlTemplate: "https://localconvert.app/{search_term_string}-converter" },
+			target: { "@type": "EntryPoint", urlTemplate: "https://localconvert.app/{search_term_string}-converter/" },
 			"query-input": "required name=search_term_string",
 		},
 	});
 </script>
 
 <svelte:head>
+	<title>LocalConvert — Free, Private File Converter</title>
+	<meta name="description" content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source." />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
 </svelte:head>
