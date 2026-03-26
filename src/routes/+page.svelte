@@ -117,9 +117,10 @@
 	<div class="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
 	<div class="hero-overlay absolute inset-0"></div>
 
-	<div class="relative max-w-5xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-20 md:pb-28 flex flex-col items-center">
+	<div class="relative max-w-5xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-16 md:pb-24 flex flex-col items-center">
+
 		<!-- Feature pills -->
-		<div class="flex flex-wrap justify-center gap-2 mb-8">
+		<div class="flex flex-wrap justify-center gap-2 mb-7 hero-animate">
 			{#each pills as pill}
 				{@const Icon = pill.icon}
 				<span class="pill">
@@ -129,18 +130,22 @@
 			{/each}
 		</div>
 
-		<!-- Headline -->
-		<h1 class="text-3xl md:text-6xl text-center font-display tracking-tight leading-tight md:leading-[1.15] mb-5 max-w-3xl">
+		<!-- Headline — push it BIG -->
+		<h1 class="hero-headline hero-animate delay-1">
 			{m["upload.title"]()}
 		</h1>
-		<p class="text-lg md:text-xl text-center max-w-2xl mb-10 dynadark:text-muted text-muted">
+
+		<!-- Uploader — primary CTA -->
+		<div class="w-full max-w-2xl mt-8 mb-5 hero-animate delay-2">
+			<div class="uploader-glow">
+				<Uploader class="w-full h-44 md:h-56" />
+			</div>
+		</div>
+
+		<!-- Subtitle sits below the uploader -->
+		<p class="hero-subhead hero-animate delay-3">
 			{m["upload.subtitle"]()}
 		</p>
-
-		<!-- Uploader -->
-		<div class="w-full max-w-xl h-44 md:h-56">
-			<Uploader class="w-full h-full" />
-		</div>
 	</div>
 </section>
 
@@ -148,15 +153,15 @@
      HOW IT WORKS
 ═══════════════════════════════════════════════════════ -->
 <section class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
-	<h2 class="text-3xl md:text-4xl text-center mb-12">{m["landing.how_it_works.title"]()}</h2>
+	<h2 class="section-headline">{m["landing.how_it_works.title"]()}</h2>
 
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+	<div class="steps-grid">
 		{#each steps as step, i}
 			<div class="step-card">
 				<div class="step-number">{i + 1}</div>
 				<img src={step.img} alt={step.title} class="step-img" />
 				<h3 class="text-xl font-semibold mt-5 mb-2">{step.title}</h3>
-				<p class="text-sm font-normal text-muted">{step.desc}</p>
+				<p class="text-sm font-normal text-muted leading-relaxed">{step.desc}</p>
 			</div>
 		{/each}
 	</div>
@@ -166,7 +171,7 @@
      SUPPORTED FORMATS
 ═══════════════════════════════════════════════════════ -->
 <section class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-24 w-full">
-	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.formats.title"]()}</h2>
+	<h2 class="section-headline">{m["landing.formats.title"]()}</h2>
 
 	<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 		{#if browser}
@@ -206,7 +211,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     PRIVACY SECTION
+     PRIVACY SECTION — full-bleed accent statement
 ═══════════════════════════════════════════════════════ -->
 <section class="privacy-section w-full py-16 md:py-20">
 	<div class="max-w-5xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
@@ -218,14 +223,14 @@
 			/>
 		</div>
 		<div>
-			<h2 class="text-3xl md:text-4xl mb-6">{m["landing.privacy.title"]()}</h2>
-			<ul class="flex flex-col gap-4">
+			<h2 class="privacy-headline">{m["landing.privacy.title"]()}</h2>
+			<ul class="flex flex-col gap-4 mt-6">
 				{#each [m["landing.privacy.point1"](), m["landing.privacy.point2"](), m["landing.privacy.point3"]()] as point}
 					<li class="flex items-start gap-3">
 						<span class="privacy-check-icon flex-shrink-0 mt-0.5">
-							<Check size="18" />
+							<Check size="16" />
 						</span>
-						<span class="text-lg font-normal">{point}</span>
+						<span class="text-lg font-normal leading-relaxed privacy-text">{point}</span>
 					</li>
 				{/each}
 			</ul>
@@ -237,7 +242,7 @@
      FAQ SECTION
 ═══════════════════════════════════════════════════════ -->
 <section class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
-	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.faq.title"]()}</h2>
+	<h2 class="section-headline">{m["landing.faq.title"]()}</h2>
 
 	<div class="faq-list flex flex-col gap-3 max-w-3xl mx-auto">
 		{#each faqs as faq}
@@ -257,7 +262,27 @@
 </section>
 
 <style lang="postcss">
-	/* ── Hero ── */
+	/* ── Hero Reveal Animations ── */
+	@keyframes revealUp {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.hero-animate {
+		animation: revealUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	.delay-1 { animation-delay: 0.1s; }
+	.delay-2 { animation-delay: 0.22s; }
+	.delay-3 { animation-delay: 0.36s; }
+
+	/* ── Hero Background ── */
 	.hero-bg {
 		background-image: url('/bg-dark.png');
 		background-size: cover;
@@ -275,29 +300,75 @@
 	}
 
 	.hero-overlay {
-		background: linear-gradient(
-			to bottom,
-			hsla(0, 0%, 7%, 0.45) 0%,
-			var(--bg) 100%
-		);
+		background:
+			radial-gradient(ellipse 90% 55% at 50% 0%, hsla(158, 65%, 40%, 0.42) 0%, transparent 65%),
+			linear-gradient(to bottom, hsla(0, 0%, 7%, 0.2) 0%, var(--bg) 88%);
 	}
 
 	:global(.light) .hero-overlay {
-		background: linear-gradient(
-			to bottom,
-			hsl(158, 60%, 88%) 0%,
-			var(--bg) 65%
-		);
+		background:
+			radial-gradient(ellipse 90% 50% at 50% -5%, hsl(158, 60%, 87%) 0%, transparent 62%),
+			linear-gradient(to bottom, transparent 0%, var(--bg) 75%);
 	}
 
 	@media (prefers-color-scheme: light) {
 		:global(:root:not(.dark)) .hero-overlay {
-			background: linear-gradient(
-				to bottom,
-				hsl(158, 60%, 88%) 0%,
-				var(--bg) 65%
-			);
+			background:
+				radial-gradient(ellipse 90% 50% at 50% -5%, hsl(158, 60%, 87%) 0%, transparent 62%),
+				linear-gradient(to bottom, transparent 0%, var(--bg) 75%);
 		}
+	}
+
+	/* ── Hero Typography ── */
+	.hero-headline {
+		font-family: var(--font-display);
+		font-size: clamp(1.9rem, 5.5vw, 4.5rem);
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: -0.038em;
+		line-height: 1.07;
+		margin-bottom: 0;
+		max-width: 880px;
+	}
+
+	.hero-subhead {
+		font-size: clamp(0.9rem, 1.75vw, 1.05rem);
+		text-align: center;
+		color: var(--fg-muted);
+		max-width: 540px;
+		font-weight: 400;
+		line-height: 1.7;
+		margin-top: 0.25rem;
+	}
+
+	/* ── Uploader Glow (dark mode only) ── */
+	.uploader-glow {
+		position: relative;
+	}
+
+	.uploader-glow::before {
+		content: '';
+		position: absolute;
+		inset: -28px;
+		background: radial-gradient(ellipse at center, hsla(158, 65%, 45%, 0.2) 0%, transparent 72%);
+		pointer-events: none;
+		z-index: 0;
+		border-radius: 2rem;
+	}
+
+	:global(.light) .uploader-glow::before {
+		display: none;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:global(:root:not(.dark)) .uploader-glow::before {
+			display: none;
+		}
+	}
+
+	.uploader-glow > :global(*) {
+		position: relative;
+		z-index: 1;
 	}
 
 	/* ── Pills ── */
@@ -307,9 +378,26 @@
 		color: var(--fg-on-badge);
 	}
 
+	/* ── Section Headlines ── */
+	.section-headline {
+		@apply text-3xl md:text-4xl text-center mb-10 md:mb-12;
+		letter-spacing: -0.025em;
+	}
+
 	/* ── How It Works ── */
+	.steps-grid {
+		@apply grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8;
+	}
+
 	.step-card {
 		@apply bg-panel rounded-2xl p-6 shadow-panel text-center flex flex-col items-center relative;
+		border: 1px solid var(--bg-separator);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.step-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 36px hsla(0, 0%, 0%, 0.12);
 	}
 
 	.step-number {
@@ -322,9 +410,17 @@
 		@apply w-full max-w-[12rem] h-44 object-contain mx-auto;
 	}
 
-	/* ── Format cards ── */
+	/* ── Format Cards ── */
 	.file-category-card {
 		@apply bg-panel rounded-2xl p-5 shadow-panel flex flex-col gap-3;
+		border: 1px solid var(--bg-separator);
+		transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.file-category-card:hover {
+		transform: translateY(-2px);
+		border-color: var(--accent);
+		box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.1);
 	}
 
 	.file-category-card-inner {
@@ -336,31 +432,62 @@
 	}
 
 	.format-chip {
-		@apply text-xs font-medium px-1.5 py-0.5 rounded;
-		background: var(--bg-panel-alt, var(--bg-separator));
+		font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		padding: 2px 6px;
+		border-radius: 4px;
+		background: var(--bg-panel-highlight);
 		color: var(--fg-muted);
+		transition: background-color 0.15s ease, color 0.15s ease;
 	}
 
-	/* ── Privacy section ── */
+	.file-category-card:hover .format-chip {
+		background: var(--bg-badge);
+		color: var(--fg-on-badge);
+	}
+
+	/* ── Privacy Section — accent background ── */
 	.privacy-section {
-		background-color: var(--bg-panel);
+		background-color: var(--accent);
+	}
+
+	.privacy-headline {
+		font-family: var(--font-display);
+		font-size: clamp(1.75rem, 4vw, 3rem);
+		font-weight: 700;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		color: var(--fg-on-accent);
+	}
+
+	.privacy-text {
+		color: var(--fg-on-accent);
+		opacity: 0.92;
 	}
 
 	.privacy-check-icon {
 		@apply flex items-center justify-center w-6 h-6 rounded-full flex-shrink-0;
-		background-color: var(--bg-badge);
-		color: var(--fg-on-badge);
+		background-color: hsla(0, 0%, 100%, 0.22);
+		color: var(--fg-on-accent);
 	}
 
 	/* ── FAQ ── */
 	.faq-item {
 		@apply bg-panel rounded-2xl shadow-panel overflow-hidden;
+		border: 1px solid var(--bg-separator);
 	}
 
 	.faq-question {
 		@apply flex items-center justify-between gap-4 px-6 py-4 cursor-pointer select-none list-none;
 		font-size: 1rem;
 		font-weight: 600;
+		transition: background-color 0.15s ease;
+	}
+
+	.faq-question:hover {
+		background-color: var(--bg-panel-highlight);
 	}
 
 	.faq-question::-webkit-details-marker {
@@ -378,6 +505,8 @@
 
 	.faq-answer {
 		@apply px-6 pb-5 text-sm font-normal leading-relaxed;
+		padding-top: 1rem;
 		color: var(--fg-muted);
+		border-top: 1px solid var(--bg-separator);
 	}
 </style>

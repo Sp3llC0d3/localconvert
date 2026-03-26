@@ -11,6 +11,7 @@
 		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
 		"Helvetica Neue", sans-serif;
 	--font-display: "Radio Canada Big", var(--font-body);
+	--font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 	--transition: linear(
 		0,
 		0.006,
@@ -345,11 +346,17 @@ body {
 		transition:
 			opacity 0.2s ease,
 			transform 0.2s ease,
-			background-color 0.2s ease;
+			background-color 0.2s ease,
+			box-shadow 0.2s ease;
 	}
 
 	.btn.highlight {
 		@apply bg-accent text-on-accent;
+		box-shadow: 0 2px 16px hsla(158, 65%, 40%, 0.35);
+	}
+
+	.btn.highlight:hover {
+		box-shadow: 0 4px 24px hsla(158, 65%, 40%, 0.5);
 	}
 
 	h1,
