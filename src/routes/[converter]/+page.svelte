@@ -4,8 +4,8 @@
 	import privacyBadge from "$lib/assets/privacy-badge.png";
 
 	let { data } = $props();
-	const { info } = data;
-	const validFormats = new Set(data.validFormats);
+	const info = $derived(data.info);
+	const validFormats = $derived(new Set(data.validFormats));
 
 	const typeLabel: Record<string, string> = {
 		image: "Image",
@@ -21,7 +21,7 @@
 		{ icon: Code, label: "Open source" },
 	];
 
-	const howToSchema = JSON.stringify({
+	const howToSchema = $derived(JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "HowTo",
 		name: `How to convert to ${info.label}`,
@@ -33,9 +33,9 @@
 		],
 		tool: [{ "@type": "HowToTool", name: "LocalConvert" }],
 		totalTime: "PT1M",
-	});
+	}));
 
-	const faqSchema = JSON.stringify({
+	const faqSchema = $derived(JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "FAQPage",
 		mainEntity: [
@@ -55,7 +55,7 @@
 				acceptedAnswer: { "@type": "Answer", text: `You can convert ${info.inputFormats.map(f => f.toUpperCase()).join(", ")} files to ${info.label}.` },
 			},
 		],
-	});
+	}));
 </script>
 
 <svelte:head>
@@ -123,7 +123,7 @@
 	<div class="flex flex-wrap justify-center gap-2">
 		{#each info.inputFormats as fmt}
 			{#if validFormats.has(fmt)}
-				<a href="/{fmt}-converter" class="format-chip">.{fmt.toUpperCase()}</a>
+				<a href="/{fmt}-converter/" class="format-chip">.{fmt.toUpperCase()}</a>
 			{:else}
 				<span class="format-chip">.{fmt.toUpperCase()}</span>
 			{/if}
