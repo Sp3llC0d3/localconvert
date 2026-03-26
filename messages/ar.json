@@ -27,8 +27,8 @@
 			"audio": "الصوت",
 			"documents": "المستندات",
 			"video": "الفيديو",
-			"video_server_processing": "معالجة محلية",
-			"local_supported": "معالجة محلية",
+			"video_server_processing": "مدعوم محليًا",
+			"local_supported": "مدعوم محليًا",
 			"status": {
 				"text": "<b>الحالة:</b> {status}",
 				"ready": "جاهز",
