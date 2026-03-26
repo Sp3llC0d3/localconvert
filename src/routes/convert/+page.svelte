@@ -26,10 +26,10 @@
 		ImageOffIcon,
 		RotateCwIcon,
 		XIcon,
-		ArrowRightIcon,
-	FileTextIcon,
-} from "lucide-svelte";
+	} from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
+	import { ToastManager } from "$lib/util/toast.svelte";
+	import PdfRedirectToast from "$lib/components/visual/PdfRedirectToast.svelte";
 	import { Settings } from "$lib/sections/settings/index.svelte";
 	import { MAX_ARRAY_BUFFER_SIZE } from "$lib/store/index.svelte";
 	import { GB } from "$lib/util/consts";
@@ -47,6 +47,28 @@
 	const isVideoFormat = (format: string) => videoFormatNames.includes(format);
 
 	let processedFileIds = $state(new Set<string>());
+
+	// Auto-remove PDF files and show a redirect toast (PDFs can't be converted here)
+	const pdfRemovedIds = new Set<string>();
+	$effect(() => {
+		const pdfs = files.files.filter(
+			(f) => f.from?.toLowerCase() === ".pdf" && !f.findConverter() && !pdfRemovedIds.has(f.id),
+		);
+		if (pdfs.length === 0) return;
+
+		pdfs.forEach((f) => {
+			pdfRemovedIds.add(f.id);
+			f.cancel();
+			ToastManager.add({
+				type: "info",
+				message: PdfRedirectToast,
+				additional: { filename: f.name },
+				durations: { stay: 8000 },
+			});
+		});
+
+		files.files = files.files.filter((f) => !pdfRemovedIds.has(f.id));
+	});
 
 	$effect(() => {
 		if (!Settings.instance.settings || files.files.length === 0) return;
@@ -228,27 +250,10 @@
 			</button>
 		</div>
 		{#if !currentConverter}
-			{@const isPdf = file.from?.toLowerCase() === '.pdf'}
-			{#if isPdf}
-				<div class="flex flex-col items-center text-center justify-center gap-3 py-2">
-					<div class="w-10 h-10 rounded-full bg-badge flex items-center justify-center">
-						<FileTextIcon size="20" class="text-on-badge" />
-					</div>
-					<div>
-						<p class="font-body font-bold">{m["convert.errors.pdf_redirect_title"]()}</p>
-						<p class="font-normal text-sm text-muted mt-1">{m["convert.errors.pdf_redirect_desc"]()}</p>
-					</div>
-					<a href="/pdf-tools/" class="btn highlight text-sm px-5 h-10 flex items-center gap-1.5">
-						{m["convert.errors.pdf_redirect_button"]()}
-						<ArrowRightIcon size="16" />
-					</a>
-				</div>
-			{:else}
-				<div class="h-full flex flex-col text-center justify-center text-failure">
-					<p class="font-body font-bold">{m["convert.errors.cant_convert"]()}</p>
-					<p class="font-normal">{m["convert.errors.unsupported_format"]()}</p>
-				</div>
-			{/if}
+			<div class="h-full flex flex-col text-center justify-center text-failure">
+				<p class="font-body font-bold">{m["convert.errors.cant_convert"]()}</p>
+				<p class="font-normal">{m["convert.errors.unsupported_format"]()}</p>
+			</div>
 		{:else}
 			{@const formatInfo = currentConverter.supportedFormats.find(
 				(f) => f.name === file.from,
