@@ -12,12 +12,12 @@
 	const description = $derived(data.description);
 	const metaDescription = $derived(data.metaDescription);
 
-	const fromLabel = fromMeta.label;
-	const toLabel = toMeta.label;
-	const FROM = from.toUpperCase();
-	const TO = to.toUpperCase();
+	const fromLabel = $derived(fromMeta.label);
+	const toLabel = $derived(toMeta.label);
+	const FROM = $derived(from.toUpperCase());
+	const TO = $derived(to.toUpperCase());
 
-	const canonicalUrl = `https://localconvert.app/${from}-to-${to}`;
+	const canonicalUrl = $derived(`https://localconvert.app/${from}-to-${to}/`);
 
 	const features = [
 		{ icon: Ban, label: 'No server uploads' },
@@ -27,7 +27,7 @@
 	];
 
 	// JSON-LD structured data
-	const howToSchema = JSON.stringify({
+	const howToSchema = $derived(JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'HowTo',
 		name: `How to convert ${fromLabel} to ${toLabel}`,
@@ -51,9 +51,9 @@
 		],
 		tool: [{ '@type': 'HowToTool', name: 'LocalConvert' }],
 		totalTime: 'PT1M',
-	});
+	}));
 
-	const faqSchema = JSON.stringify({
+	const faqSchema = $derived(JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'FAQPage',
 		mainEntity: [
@@ -82,7 +82,7 @@
 				},
 			},
 		],
-	});
+	}));
 </script>
 
 <svelte:head>
@@ -117,7 +117,7 @@
 		</div>
 
 		<div class="w-full max-w-lg h-52">
-			<Uploader class="w-full h-full" redirectSuffix="?to=.{to}" />
+			<Uploader class="w-full h-full" redirectSuffix="?to={to}" />
 		</div>
 	</div>
 </section>

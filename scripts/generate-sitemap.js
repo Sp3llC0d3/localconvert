@@ -18,7 +18,8 @@ const converterFormats = [
 ];
 
 // ── Format-pair pages ─────────────────────────────────────────────────────
-const imageFmts = ['jpg','png','webp','gif','bmp','tiff','svg','heic'];
+const imageFmts = ['jpg','png','webp','gif','bmp','tiff','svg'];
+const imageFromFmts = [...imageFmts, 'heic']; // heic input-only (no heic output)
 const audioFmts = ['mp3','wav','ogg','flac','aac'];
 const videoFmts = ['mp4','webm','mkv','avi','mov'];
 const docFmts   = ['docx','md','html','epub','odt'];
@@ -27,6 +28,14 @@ function allPairs(fmts) {
 	const pairs = [];
 	for (const from of fmts)
 		for (const to of fmts)
+			if (from !== to) pairs.push([from, to]);
+	return pairs;
+}
+
+function imagePairs() {
+	const pairs = [];
+	for (const from of imageFromFmts)
+		for (const to of imageFmts)
 			if (from !== to) pairs.push([from, to]);
 	return pairs;
 }
@@ -40,7 +49,7 @@ const videoToAudio = [
 ];
 
 const pairPages = [
-	...allPairs(imageFmts),
+	...imagePairs(),
 	...allPairs(audioFmts),
 	...allPairs(videoFmts),
 	...videoToAudio,

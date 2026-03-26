@@ -63,7 +63,7 @@
 	<meta name="description" content={info.description} />
 	<meta property="og:title" content="Free {info.label} Converter — LocalConvert" />
 	<meta property="og:description" content={info.description} />
-	<link rel="canonical" href="https://localconvert.app/{info.format}-converter" />
+	<link rel="canonical" href="https://localconvert.app/{info.format}-converter/" />
 	{@html `<script type="application/ld+json">${howToSchema}</script>`}
 	{@html `<script type="application/ld+json">${faqSchema}</script>`}
 </svelte:head>

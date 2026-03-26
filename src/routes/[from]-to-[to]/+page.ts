@@ -42,8 +42,9 @@ const formatMeta: Record<string, { label: string; type: 'image' | 'audio' | 'vid
 
 // ── Valid conversion pairs ───────────────────────────────────────────────────
 
-// image pairs — all cross-format within images
-const imageFmts = ['jpg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg', 'heic'];
+// image pairs — heic is input-only (HEIC output not supported by ImageMagick)
+const imageFmts = ['jpg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg'];
+const imageFromFmts = [...imageFmts, 'heic']; // heic can be source but not target
 // audio pairs
 const audioFmts = ['mp3', 'wav', 'ogg', 'flac', 'aac'];
 // video pairs
@@ -68,8 +69,17 @@ const videoToAudio: [string, string][] = [
 	['mov', 'mp3'], ['mov', 'wav'], ['mov', 'aac'],
 ];
 
+// Build image pairs: all imageFromFmts → imageFmts (excludes heic as target)
+function imagePairs(): [string, string][] {
+	const pairs: [string, string][] = [];
+	for (const from of imageFromFmts)
+		for (const to of imageFmts)
+			if (from !== to) pairs.push([from, to]);
+	return pairs;
+}
+
 const allValidPairs: [string, string][] = [
-	...allPairs(imageFmts),
+	...imagePairs(),
 	...allPairs(audioFmts),
 	...allPairs(videoFmts),
 	...videoToAudio,
