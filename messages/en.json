@@ -220,7 +220,7 @@
 		"title": "About",
 		"why": {
 			"title": "Why LocalConvert?",
-			"description": "<b>File converters have always disappointed us.</b> They're ugly, riddled with ads, and most importantly; slow. We decided to solve this problem once and for all by making an alternative that solves all those problems, and more.<br/><br/>Every single file you convert — images, audio, video, and documents — is processed entirely on your device. Nothing ever leaves your browser. There are no servers involved, no uploads, and no one can ever see your files."
+			"description": "<b>File converters have always disappointed us.</b> They're slow, require accounts, and send your files to third-party servers you know nothing about. We decided to fix that.<br/><br/>Every single file you convert — images, audio, video, and documents — is processed entirely on your device using WebAssembly. Nothing ever leaves your browser. There are no servers involved, no uploads, and no one can ever see your files."
 		},
 		"sponsors": {
 			"title": "Support",

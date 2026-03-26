@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Uploader from '$lib/components/functional/Uploader.svelte';
-	import privacyBadge from '$lib/assets/privacy-badge.png';
-	import { ShieldCheck, Zap, Ban, Code, Check } from 'lucide-svelte';
+	import { ShieldCheck, Zap, Ban, Code } from 'lucide-svelte';
 
 	let { data } = $props();
 	const from = $derived(data.from);
@@ -123,7 +122,7 @@
 </section>
 
 <!-- How to convert -->
-<section class="max-w-4xl mx-auto px-6 md:px-8 py-12 w-full">
+<section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-8">
 		How to convert {fromLabel} to {toLabel}
 	</h2>
@@ -142,30 +141,8 @@
 	</ol>
 </section>
 
-<!-- Privacy -->
-<section class="privacy-strip w-full py-10 md:py-14">
-	<div class="max-w-4xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8">
-		<img src={privacyBadge} alt="Privacy badge" class="w-28 h-28 object-contain flex-shrink-0" />
-		<div>
-			<h2 class="text-xl md:text-2xl font-display mb-3">Your {FROM} files never leave your device</h2>
-			<ul class="flex flex-col gap-2">
-				{#each [
-					`All ${FROM} to ${TO} conversion runs in your browser via WebAssembly`,
-					'No server uploads — your files are never transmitted',
-					'No account needed, no file size limits, completely free',
-				] as point}
-					<li class="flex items-start gap-2 text-sm">
-						<span class="check-icon flex-shrink-0 mt-0.5"><Check size="14" /></span>
-						{point}
-					</li>
-				{/each}
-			</ul>
-		</div>
-	</div>
-</section>
-
 <!-- FAQ -->
-<section class="max-w-4xl mx-auto px-6 md:px-8 py-12 w-full">
+<section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">
 		{fromLabel} to {toLabel} — FAQ
 	</h2>
@@ -220,12 +197,6 @@
 	}
 	.step-num {
 		@apply w-7 h-7 rounded-full flex items-center justify-center text-sm font-semibold mb-2;
-		background: var(--bg-badge);
-		color: var(--fg-on-badge);
-	}
-	.privacy-strip { background: var(--bg-panel); }
-	.check-icon {
-		@apply flex items-center justify-center w-5 h-5 rounded-full;
 		background: var(--bg-badge);
 		color: var(--fg-on-badge);
 	}

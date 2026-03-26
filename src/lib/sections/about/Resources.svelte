@@ -6,6 +6,7 @@
 		GithubIcon,
 		LinkIcon,
 		MailIcon,
+		ShieldIcon,
 	} from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
 </script>
@@ -19,7 +20,7 @@
 		</div>
 		{m["about.resources.title"]()}
 	</h2>
-	<div class="flex gap-3">
+	<div class="flex flex-wrap gap-3">
 		<a
 			href={GITHUB_URL}
 			target="_blank"
@@ -28,7 +29,7 @@
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
-			<GithubIcon size="24" class="inline-block mr-2" />
+			<GithubIcon size="20" class="inline-block mr-2" />
 			{m["about.resources.source"]()}
 		</a>
 		<a
@@ -39,8 +40,17 @@
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
-			<MailIcon size="24" class="inline-block mr-2" />
+			<MailIcon size="20" class="inline-block mr-2" />
 			{m["about.resources.email"]()}
+		</a>
+		<a
+			href="/privacy/"
+			class="btn {$effects
+				? ''
+				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
+		>
+			<ShieldIcon size="20" class="inline-block mr-2" />
+			{m["footer.privacy_policy"]()}
 		</a>
 	</div>
 </Panel>
