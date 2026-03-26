@@ -408,6 +408,7 @@ export const theme = writable<"light" | "dark">("light");
 export const locale = writable(getLocale());
 export const availableLocales = {
 	en: "English",
+	ar: "العربية",
 	es: "Español",
 	fr: "Français",
 	de: "Deutsch",
