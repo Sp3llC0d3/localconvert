@@ -3,30 +3,32 @@
 	"navbar": {
 		"upload": "Yükle",
 		"convert": "Dönüştür",
+		"pdf_tools": "PDF Araçları",
 		"settings": "Ayarlar",
 		"about": "Hakkımızda",
 		"toggle_theme": "Temayı değiştir"
 	},
 	"footer": {
-		"copyright": "© {year} VERT.",
+		"copyright": "© {year} LocalConvert. VERT.sh Tabanlı",
 		"source_code": "Kaynak kodu",
-		"discord_server": "Discord sunucusu"
+		"discord_server": "Discord sunucusu",
+		"privacy_policy": "Gizlilik politikası"
 	},
 	"upload": {
-		"title": "Sevdiğiniz dosya dönüştürücü.",
-		"subtitle": "Tüm görüntü, ses ve belge işlemleri cihazınızda gerçekleştirilir. Videolar, ışık hızındaki sunucularımızda dönüştürülür. Dosya boyutu sınırı ve reklam yoktur. Tamamen açık kaynaklıdır.",
+		"title": "Görüntü, ses, video ve belge dönüştürün — ücretsiz, gizli, yükleme yok.",
+		"subtitle": "WebAssembly ile çalışır — tamamen tarayıcınızda işlenir. Hesap gerekmez, dosya boyutu sınırı yoktur, açık kaynaklıdır ve sonsuza kadar ücretsizdir.",
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
 			"convert": "dönüştürmek"
 		},
 		"cards": {
-			"title": "VERT'in desteklediği formatlar...",
+			"title": "LocalConvert şunları destekler...",
 			"images": "Görsel",
 			"audio": "Ses",
 			"documents": "Belge",
 			"video": "Video",
-			"video_server_processing": "Sunucuda gerçekleşir",
-			"local_supported": "Cihazınızda gerçekleşir",
+			"video_server_processing": "Yerel destekli",
+			"local_supported": "Yerel destekli",
 			"status": {
 				"text": "<b>Durum:</b> {status}",
 				"ready": "hazır",
@@ -40,15 +42,27 @@
 		},
 		"tooltip": {
 			"partial_support": "Bu format yalnızca şu şekilde dönüştürülebilir: {direction}.",
-			"direction_input": "kaynak",
-			"direction_output": "çıktı",
-			"video_server_processing": "Videolar varsayılan olarak işlenmek üzere sunucuya yüklenir. Yerel olarak nasıl ayarlayacağınızı buradan öğrenebilirsiniz."
+			"direction_input": "kaynak (giriş)",
+			"direction_output": "çıktı (hedef)",
+			"video_server_processing": "Tüm dönüştürme işlemleri cihazınızda yerel olarak gerçekleşir."
 		}
 	},
 	"convert": {
+		"archive_file": {
+			"extract": "Arşivi çıkar",
+			"extracting": "Arşiv algılandı: {filename}",
+			"extracted": "{filename} dosyasından {extract_count} dosya çıkarıldı. {ignore_count} öğe yoksayıldı.",
+			"detected": "{filename} içinde {type} dosyaları algılandı.",
+			"audio": "ses",
+			"video": "video",
+			"doc": "belge",
+			"image": "görsel",
+			"extract_error": "{filename} çıkarılırken hata oluştu: {error}"
+		},
+		"large_file_warning": "Tarayıcı / cihaz kısıtlamaları nedeniyle bu dosya {limit} GB'den büyük olduğundan dönüştürme devre dışıdır. Bu boyuttaki dosyalar için Firefox veya Safari kullanmanızı öneririz; bu tarayıcıların daha az kısıtlaması vardır.",
 		"external_warning": {
-			"title": "Harici sunucu uyarısı",
-			"text": "Video formatına dönüştürmeyi seçerseniz, bu dosyalar dönüştürülmek üzere harici bir sunucuya yüklenecektir. Devam etmek istiyor musunuz?",
+			"title": "Büyük dosya uyarısı",
+			"text": "Bu dosya oldukça büyük ve tarayıcıda dönüştürülmesi biraz zaman alabilir. Devam etmek istiyor musunuz?",
 			"yes": "Evet",
 			"no": "Hayır"
 		},
@@ -64,7 +78,9 @@
 			"video": "Video",
 			"doc": "Belge",
 			"image": "Görsel",
-			"placeholder": "Format ara"
+			"placeholder": "Format ara",
+			"no_formats": "Kullanılabilir format yok",
+			"no_results": "Aramanızla eşleşen format bulunamadı"
 		},
 		"tooltips": {
 			"unknown_file": "Bilinmeyen dosya türü",
@@ -77,12 +93,31 @@
 		},
 		"errors": {
 			"cant_convert": "Bu dosyayı dönüştüremiyoruz.",
-			"vertd_server": "Ne yapıyorsun..? vertd sunucusunu çalıştırman gerekiyordu!",
-			"unsupported_format": "Yalnızca görüntü, video, ses ve belge dosyaları desteklenir.",
-			"vertd_not_found": "Video dönüştürme işlemini başlatmak için vertd örneği bulunamadı. Sunucu URL’sinin doğru ayarlandığından emin misiniz?",
-			"worker_downloading": "{type} dönüştürme işlemi şu anda başlatılıyor, lütfen birkaç saniye bekleyin.",
-			"worker_error": "{type} dönüştürme işlemi başlatılırken bir hata oluştu, lütfen daha sonra tekrar deneyin.",
-			"worker_timeout": "{type} dönüştürme işlemi beklenenden daha uzun sürüyor, lütfen biraz daha bekleyin veya sayfayı yenileyin.",
+			"vertd_server": "Bu dosya formatı dönüştürme için desteklenmiyor.",
+			"vertd_generic_view": "Hata ayrıntılarını görüntüle",
+			"vertd_generic_body": "Dosyanız dönüştürülmeye çalışılırken bir hata oluştu. Lütfen tekrar deneyin veya farklı bir format seçin.",
+			"vertd_generic_title": "Dönüştürme hatası",
+			"vertd_generic_yes": "Tamam",
+			"vertd_generic_no": "İptal",
+			"vertd_failed_to_keep": "Dönüştürme başarısız: {error}",
+			"vertd_details": "Hata ayrıntılarını görüntüle",
+			"vertd_details_body": "Aşağıdaki hata bilgileri sorun gidermede yardımcı olabilir:",
+			"vertd_details_footer": "Daha fazla bilgi için [privacy_link]gizlilik politikamızı[/privacy_link] inceleyin.",
+			"vertd_details_job_id": "<b>İş Kimliği:</b> {jobId}",
+			"vertd_details_from": "<b>Kaynak format:</b> {from}",
+			"vertd_details_to": "<b>Hedef format:</b> {to}",
+			"vertd_details_error_message": "<b>Hata mesajı:</b> [view_link]Hata günlüklerini görüntüle[/view_link]",
+			"vertd_details_close": "Kapat",
+			"vertd_ratelimit": "'{filename}' dosyası birden fazla kez dönüştürülemedi. Lütfen farklı bir format veya daha küçük bir dosya deneyin.",
+			"unsupported_format": "Yalnızca görüntü, video, ses ve belge dosyaları desteklenir",
+			"pdf_redirect_title": "Bu bir PDF dosyasıdır.",
+			"pdf_redirect_desc": "PDF'ler burada dönüştürülmez — birleştirme, bölme, sıkıştırma, döndürme ve daha fazlası için PDF Araçları'nı kullanın.",
+			"pdf_redirect_button": "PDF Araçlarını Aç",
+			"format_output_only": "Bu format şu anda yalnızca çıktı (dönüştürme hedefi) olarak kullanılabilir, giriş olarak kullanılamaz.",
+			"vertd_not_found": "Video dönüştürücü başlatılamadı. Lütfen sayfayı yenileyip tekrar deneyin.",
+			"worker_downloading": "{type} dönüştürücüsü şu anda başlatılıyor, lütfen birkaç dakika bekleyin.",
+			"worker_error": "{type} dönüştürücüsü başlatılırken bir hata oluştu, lütfen daha sonra tekrar deneyin.",
+			"worker_timeout": "{type} dönüştürücüsü beklenenden daha uzun süre başlatılıyor, lütfen biraz daha bekleyin veya sayfayı yenileyin.",
 			"audio": "ses",
 			"doc": "belge",
 			"image": "görsel"
@@ -109,14 +144,16 @@
 			"advanced_settings": "Gelişmiş ayarlar",
 			"filename_format": "Dosya adı formatı",
 			"filename_description": "Bu ayar, <b>dosya uzantısını etkilemeden</b> indirilen dosyanın adını belirleyecektir. Aşağıdaki şablonları formata ekleyebilirsiniz, bunlar ilgili bilgilerle değiştirilecektir: orijinal dosya adı için <b>%name%</b>, orijinal dosya uzantısı için <b>%extension%</b> ve dosyanın dönüştürüldüğü tarihin tarih için <b>%date%</b>.",
-			"placeholder": "VERT_%name%",
+			"placeholder": "LocalConvert_%name%",
 			"default_format": "Varsayılan dönüştürme formatı",
+			"default_format_enable": "Etkinleştir",
+			"default_format_disable": "Devre dışı bırak",
 			"default_format_description": "Bu ayar, bu dosya türünde bir dosya yüklediğinizde seçili olan varsayılan formatı değiştirecektir.",
-			"default_format_image": "Görsel",
-			"default_format_video": "Video",
+			"default_format_image": "Görseller",
+			"default_format_video": "Videolar",
 			"default_format_audio": "Ses",
-			"default_format_document": "Belge",
-			"metadata": "Dosya metadata",
+			"default_format_document": "Belgeler",
+			"metadata": "Dosya meta verileri",
 			"metadata_description": "Bu ayar, orijinal dosyadaki meta verilerin (EXIF, şarkı bilgileri vb.) dönüştürülen dosyalarda korunup korunmayacağını değiştirir.",
 			"keep": "Sakla",
 			"remove": "Kaldır",
@@ -131,12 +168,12 @@
 			"title": "Video dönüştürme",
 			"status": "durum:",
 			"loading": "yükleniyor...",
-			"available": "uygun, işlem no: {commitId}",
-			"unavailable": "uygun değil (url doğru mu?)",
-			"description": "<code>vertd</code> projesi, FFmpeg için bir sunucu sarmalayıcısıdır (server wrapper). Bu ayar, VERT'in web arayüzünün kullanım kolaylığı ile videoları dönüştürmenize olanak sağlarken, ekran kartınızın gücünden yararlanarak işlemi mümkün olan en hızlı şekilde yapmanızı sağlar.",
-			"hosting_info": "Kolaylık sağlaması açısından herkese açık bir dönüştürücü sunuyoruz, ancak kendi bilgisayarınızda veya sunucunuzda kendi dönüştürücünüzü kurmak da oldukça kolaydır. Sunucu binary dosyalarını [vertd_link]buradan[/vertd_link] indirebilirsiniz. Kurulum işlemini gelecekte daha kolay hale getirmeye çalışıyoruz, bu nedenle bizi takip etmeyi unutmayın!",
-			"instance": "Sunucu",
-			"url_placeholder": "Örneğin: http://localhost:24153",
+			"available": "hazır",
+			"unavailable": "kullanılamıyor",
+			"description": "Video dönüştürme, FFmpeg WebAssembly kullanılarak yerel olarak gerçekleştirilir. Videolarınız cihazınızı asla terk etmez.",
+			"hosting_info": "Tüm video işlemleri, WebAssembly teknolojisi kullanılarak tarayıcınızda gerçekleşir.",
+			"instance": "Motor",
+			"url_placeholder": "FFmpeg WASM (yerel)",
 			"conversion_speed": "Dönüştürme hızı",
 			"speed_description": "Bu ayar, hız ve kalite arasındaki dengeyi belirlemenizi sağlar. Yüksek hızlar, düşük kaliteye neden olur ancak işlem daha hızlı tamamlanır.",
 			"speeds": {
@@ -148,14 +185,14 @@
 				"ultra_fast": "En Hızlı"
 			},
 			"auto_instance": "Otomatik (önerilen)",
-			"eu_instance": "Falkenstein, Germany",
-			"us_instance": "Washington, USA",
-			"custom_instance": "Özel"
+			"eu_instance": "Yerel",
+			"us_instance": "Yerel",
+			"custom_instance": "Yerel"
 		},
 		"privacy": {
-			"title": "Gizlilik & kişisel veriler",
-			"plausible_title": "Plausible analytics",
-			"plausible_description": "Tamamen anonim istatistikler toplamak için gizliliğe odaklı bir analiz aracı olan [plausible_link]Plausible[/plausible_link]’ı kullanıyoruz. Tüm veriler anonimleştirilmiş ve birleştirilmiş şekilde işlenir; hiçbir kişisel veya tanımlanabilir bilgi gönderilmez ya da saklanmaz. Analitik verilerini [analytics_link]buradan[/analytics_link] görüntüleyebilir ve aşağıdan devre dışı bırakmayı seçebilirsiniz.",
+			"title": "Gizlilik ve kişisel veriler",
+			"plausible_title": "Plausible analitik",
+			"plausible_description": "Tamamen anonim istatistikler toplamak için gizliliğe odaklı bir analiz aracı olan [plausible_link]Plausible[/plausible_link]'ı kullanıyoruz. Tüm veriler anonimleştirilmiş ve birleştirilmiş şekilde işlenir; hiçbir kişisel veya tanımlanabilir bilgi gönderilmez ya da saklanmaz. Analitik verilerini [analytics_link]buradan[/analytics_link] görüntüleyebilir ve aşağıdan devre dışı bırakmayı seçebilirsiniz.",
 			"opt_in": "Etkinleştir",
 			"opt_out": "Devre dışı bırak",
 			"cache_title": "Önbellek yönetimi",
@@ -166,63 +203,74 @@
 			"loading_cache": "Yükleniyor...",
 			"total_size": "Toplam Boyut",
 			"files_cached_label": "Önbelleğe Alınan Dosyalar",
-			"cache_cleared": "Önbellek başarıyla temizlendi."
+			"cache_cleared": "Önbellek başarıyla temizlendi!",
+			"cache_clear_error": "Önbellek temizlenemedi.",
+			"site_data_title": "Site verisi yönetimi",
+			"site_data_description": "Ayarlar ve önbelleğe alınan dosyalar dahil tüm site verilerini temizleyin; LocalConvert'i varsayılan durumuna sıfırlayın ve sayfayı yenileyin.",
+			"clear_all_data": "Tüm site verilerini temizle",
+			"clear_all_data_confirm_title": "Tüm site verileri temizlensin mi?",
+			"clear_all_data_confirm": "Bu işlem tüm ayarları ve önbelleği sıfırlayarak sayfayı yeniden yükleyecektir. Bu işlem geri alınamaz.",
+			"clear_all_data_cancel": "İptal",
+			"all_data_cleared": "Tüm site verileri temizlendi! Sayfa yeniden yükleniyor...",
+			"all_data_clear_error": "Tüm site verileri temizlenemedi."
 		},
 		"language": {
 			"title": "Dil",
-			"description": "VERT arayüzü için tercih ettiğiniz dili seçin."
+			"description": "LocalConvert arayüzü için tercih ettiğiniz dili seçin."
 		}
 	},
 	"about": {
 		"title": "Hakkımızda",
 		"why": {
-			"title": "Neden VERT?",
-			"description": "<b>Dosya dönüştürücüler bizi her zaman hayal kırıklığına uğratmıştır. </b> Çoğu dönüştürücü site, kötü ve reklamlarla dolu arayüze sahiptir ve en önemlisi yavaştır. Tüm bu sorunları ve daha fazlasını çözen bir alternatif oluşturarak bu sorunu sonsuza kadar çözmeye karar verdik. <br/><br/>Video dışındaki tüm dosyalar tamamen cihazınızda dönüştürülür; bu, sunucuya dosya yükleme ve sunucudan dosya indirme sırasında gecikme olmaması ve dönüştürdüğünüz dosyaların asla başka biri tarafından görüntülenememesi anlamına gelir. <br/><br/>Video dosyaları, ışık hızındaki RTX 4000 Ada sunucumuza yüklenir. Videolarınızı dönüştürseniz de dönüştürmeseniz de bir saat sonra sunucularımızdan silinir. Video dönüştürme işlemi gerçekleştirirseniz, bir saat içinde dönüştürülmüş dosyayı indirebilirsiniz. Dosya daha sonra sunucumuzdan silinir."
+			"title": "Neden LocalConvert?",
+			"description": "<b>Dosya dönüştürücüler bizi her zaman hayal kırıklığına uğratmıştır.</b> Yavaştırlar, hesap gerektirirler ve dosyalarınızı hakkında hiçbir şey bilmediğiniz üçüncü taraf sunuculara gönderirler. Bunu değiştirmeye karar verdik.<br/><br/>Dönüştürdüğünüz her dosya — görseller, ses, video ve belgeler — WebAssembly kullanılarak tamamen cihazınızda işlenir. Hiçbir şey tarayıcınızı terk etmez. Sunucu yoktur, yükleme yoktur ve dosyalarınızı kimse göremez."
 		},
 		"sponsors": {
-			"title": "Sponsorlar",
-			"description": "Bizi desteklemek ister misiniz? [discord_link]Discord[/discord_link] sunucumuzda bir geliştiriciyle iletişime geçin veya şu adrese e-posta gönderin:",
+			"title": "Destek",
+			"description": "LocalConvert ücretsiz ve açık kaynaklıdır. Yararlı buluyorsanız projeyi desteklemeyi düşünebilirsiniz. Bize şu adresten ulaşın:",
 			"email_copied": "E-posta kopyalandı!"
 		},
 		"resources": {
 			"title": "Bağlantılar",
 			"discord": "Discord",
-			"source": "GitHub",
+			"source": "Kaynak",
 			"email": "E-posta"
 		},
 		"donate": {
-			"title": "VERT'e bağış yapın",
-			"description": "Desteğinizle VERT'i çalıştırmaya ve geliştirmeye devam edebiliriz.",
+			"title": "LocalConvert'i Destekleyin",
+			"description": "Desteğinizle LocalConvert'i geliştirmeye ve iyileştirmeye devam edebiliriz.",
 			"one_time": "Tek seferlik",
 			"monthly": "Aylık",
 			"custom": "Özel",
 			"pay_now": "Ödeme yap",
 			"donate_amount": "${amount} USD Bağış Yap",
-			"thank_you": "Bağışınız için teşekkür ederiz!",
+			"thank_you": "Desteğiniz için teşekkür ederiz!",
 			"payment_failed": "Ödeme başarısız: {message}{period} Kartınızdan para çekilmedi.",
 			"donation_error": "Bağışınız işlenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
-			"payment_error": "Ödeme bilgileri alınırken hata oluştu. Lütfen daha sonra tekrar deneyin."
+			"payment_error": "Ödeme bilgileri alınırken hata oluştu. Lütfen daha sonra tekrar deneyin.",
+			"donation_notice_official": "Desteğiniz LocalConvert'in bakımına ve geliştirilmesine katkı sağlar.",
+			"donation_notice_unofficial": "Bu, LocalConvert'in üçüncü taraf bir örneğidir. Orijinal projeyi desteklemek istiyorsanız lütfen resmi siteyi ziyaret edin."
 		},
 		"credits": {
-			"title": "Katkıda bulunanlar",
-			"contact_team": "Geliştirme ekibiyle iletişime geçmek isterseniz, \"Bağlantılar\" kısmında bulunan e-posta adresini kullanabilirsiniz.",
-			"notable_contributors": "Önemli katılımcılar",
-			"notable_description": "VERT'e sağladıkları büyük katkılardan dolayı bu kişilere teşekkür ederiz.",
-			"github_contributors": "GitHub katılımcıları",
-			"github_description": "Yardımcı olan herkese çok teşekkürler! [github_link]Sen de yardım etmek ister misin?[/github_link]",
-			"no_contributors": "Henüz kimse katkıda bulunmamış gibi görünüyor... [contribute_link]ilk katkıda bulunan sen ol![/contribute_link]",
+			"title": "Katkıda Bulunanlar",
+			"contact_team": "Geliştirme ekibiyle iletişime geçmek isterseniz, \"Bağlantılar\" bölümündeki e-posta adresini kullanabilirsiniz.",
+			"notable_contributors": "Önemli katkıda bulunanlar",
+			"notable_description": "LocalConvert'in dayandığı VERT projesine büyük katkılar sağlayan bu kişilere teşekkür etmek istiyoruz.",
+			"github_contributors": "GitHub katkıda bulunanlar",
+			"github_description": "Yardımcı olan herkese çok teşekkürler! [github_link]Siz de katkıda bulunmak ister misiniz?[/github_link]",
+			"no_contributors": "Henüz kimse katkıda bulunmamış gibi görünüyor... [contribute_link]ilk katkıda bulunan siz olun![/contribute_link]",
 			"libraries": "Kütüphaneler",
-			"libraries_description": "Bu mükemmel kütüphaneleri yıllardır geliştirdikleri için FFmpeg (ses, video), ImageMagick (görseller) ve Pandoc (belgeler)'a çok teşekkür ederiz. VERT, dönüştürme işlemleri için bu kütüphaneleri kullanmaktadır.",
+			"libraries_description": "Bu mükemmel kütüphaneleri yıllardır geliştirdikleri için FFmpeg (ses, video), ImageMagick (görseller) ve Pandoc (belgeler)'a çok teşekkür ederiz. LocalConvert, dönüştürme işlemleri için bu kütüphanelere dayanmaktadır.",
 			"roles": {
-				"lead_developer": "Lead developer; conversion backend, UI implementation",
-				"developer": "Developer; UI implementation",
-				"designer": "Designer; UX, branding, marketing",
-				"docker_ci": "Maintaining Docker & CI support",
-				"former_cofounder": "Former co-founder & designer"
+				"lead_developer": "Baş geliştirici; dönüştürme arka ucu, arayüz uygulaması",
+				"developer": "Geliştirici; arayüz uygulaması",
+				"designer": "Tasarımcı; UX, marka kimliği, pazarlama",
+				"docker_ci": "Docker ve CI desteğinin yönetimi",
+				"former_cofounder": "Eski kurucu ortak ve tasarımcı"
 			}
 		},
 		"errors": {
-			"github_contributors": "GitHub katılımcılarını yüklerken hata oluştu"
+			"github_contributors": "GitHub katkıda bulunanlar yüklenirken hata oluştu"
 		}
 	},
 	"workers": {
@@ -230,9 +278,91 @@
 			"general": "{file} dönüştürülürken hata oluştu: {message}",
 			"cancel": "{file} için dönüştürme işlemi iptal edilirken hata oluştu: {message}",
 			"magick": "Magick işlemi sırasında hata oluştu, görsel dönüştürme işlemi beklendiği gibi çalışmayabilir.",
-			"ffmpeg": "ffmpeg yüklenirken hata oluştu, bazı özellikler çalışmayabilir.",
+			"ffmpeg": "FFmpeg yüklenirken hata oluştu, bazı özellikler beklendiği gibi çalışmayabilir.",
+			"pandoc": "Pandoc çalışanı yüklenirken hata oluştu, belge dönüştürme beklendiği gibi çalışmayabilir.",
 			"no_audio": "Ses akışı bulunamadı.",
-			"invalid_rate": "Geçersiz örnekleme hızı: {rate}Hz"
+			"invalid_rate": "Geçersiz örnekleme hızı belirtildi: {rate}Hz",
+			"file_too_large": "Bu dosya {limit} GB tarayıcı / cihaz sınırını aşıyor. Bu büyük dosyayı dönüştürmek için genellikle daha yüksek sınırlara sahip olan Firefox veya Safari'yi deneyin."
+		}
+	},
+	"privacy": {
+		"title": "Gizlilik Politikası",
+		"summary": {
+			"title": "Özet",
+			"description": "LocalConvert'in gizlilik politikası basittir: dosyalarınız cihazınızı asla terk etmez. Tüm dönüştürme işlemleri — görseller, ses, video ve belgeler — WebAssembly kullanılarak tamamen tarayıcınızda gerçekleşir. Çerez veya izleyici kullanmıyoruz; analitikler Plausible aracılığıyla tamamen anonimdir.<br/><br/>LocalConvert, [vert_link]VERT.sh[/vert_link] (AGPL-3.0) temel alınarak geliştirilmiştir."
+		},
+		"conversions": {
+			"title": "Dönüştürme İşlemleri",
+			"description": "Tüm dönüştürme işlemleri, ilgili araçların (FFmpeg, ImageMagick, Pandoc) WebAssembly sürümleri kullanılarak tamamen cihazınızda yerel olarak gerçekleşir. Bu, dosyalarınızın cihazınızı asla terk etmeyeceği ve hiç kimsenin bunlara erişemeyeceği anlamına gelir. Diğer dönüştürücülerin aksine, bu video dönüştürmeyi de kapsar — video dönüştürme de tarayıcınızda yerel olarak yapılır."
+		},
+		"donations": {
+			"title": "Bağışlar",
+			"description": "Bağış işlevi mevcutsa, ödeme işlemi üçüncü taraf bir sağlayıcı tarafından gerçekleştirilebilir. Ödeme sağlayıcısına yapılan harici ağ istekleri ertelenir ve yalnızca ödeme düğmesine tıkladıktan sonra başlatılır."
+		},
+		"conversion_errors": {
+			"title": "Dönüştürme Hataları",
+			"description": "Bir dönüştürme başarısız olduğunda, hata bilgileri cihazınızda kalır. Hata verileri otomatik olarak herhangi bir sunucuya gönderilmez. Hata ayrıntıları şunları içerebilir:",
+			"list_job_id": "Dosya türü",
+			"list_format_from": "Dönüştürme kaynağı format",
+			"list_format_to": "Dönüştürme hedefi format",
+			"list_stderr": "FFmpeg hata çıktısı",
+			"list_video": "Hiçbir dosya asla yüklenmez",
+			"footer": "Tüm hata bilgileri cihazınızda kalır ve asla iletilmez."
+		},
+		"analytics": {
+			"title": "Analitik",
+			"description": "Tamamen anonim ve toplu analitikler için Plausible kullanıyoruz. Plausible çerez kullanmaz ve tüm büyük gizlilik düzenlemeleriyle (GDPR/CCPA/PECR) uyumludur. [settings_link]Ayarlar[/settings_link] bölümündeki \"Gizlilik ve kişisel veriler\" kısmından analitikten çıkabilirsiniz. Plausible'ın gizlilik uygulamaları hakkında daha fazla bilgiyi [plausible_link]buradan[/plausible_link] okuyabilirsiniz."
+		},
+		"local_storage": {
+			"title": "Yerel Depolama",
+			"description": "Ayarlarınızı kaydetmek için tarayıcınızın yerel depolama alanını kullanıyoruz. Kişisel veri depolanmaz veya iletilmez.<br/><br/>Kullandığımız dönüştürme araçlarının WebAssembly sürümleri (FFmpeg, ImageMagick, Pandoc) de siteyi ilk ziyaretinizde tarayıcınızda yerel olarak depolanır; böylece her ziyarette yeniden indirmenize gerek kalmaz. Kişisel veri depolanmaz veya iletilmez. Bu verileri istediğiniz zaman [settings_link]Ayarlar[/settings_link] bölümündeki \"Gizlilik ve kişisel veriler\" kısmından görüntüleyebilir veya silebilirsiniz."
+		},
+		"contact": {
+			"title": "İletişim",
+			"description": "Sorularınız için şu adrese e-posta gönderin: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Son güncelleme: 2026-03-22"
+	},
+	"toast": {
+		"insecure_context": "LocalConvert'i güvensiz bir bağlamda ziyaret ediyorsunuz (örneğin HTTPS yerine HTTP üzerinden erişim). Bazı özellikler beklendiği gibi çalışmayabilir."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Sunucu Yüklemesi Yok",
+			"gpu": "GPU Hızlandırmalı",
+			"open_source": "Ücretsiz ve Açık Kaynak",
+			"no_limit": "Dosya Boyutu Sınırı Yok"
+		},
+		"how_it_works": {
+			"title": "Nasıl Çalışır",
+			"step1_title": "Dosyanızı Seçin",
+			"step1_desc": "Herhangi bir görsel, ses, video veya belge dosyasını sürükleyip bırakın ya da tıklayarak seçin.",
+			"step2_title": "Tarayıcınızda Dönüştürülür",
+			"step2_desc": "Her şey WebAssembly aracılığıyla yerel olarak çalışır — yükleme yok, sunucu bekleme süresi yok.",
+			"step3_title": "Sonucu İndirin",
+			"step3_desc": "Dönüştürülen dosyanızı anında, doğrudan cihazınıza alın."
+		},
+		"formats": {
+			"title": "Desteklenen Formatlar"
+		},
+		"privacy": {
+			"title": "Tasarım Gereği %100 Gizli",
+			"point1": "Dosyalarınız cihazınızı asla terk etmez",
+			"point2": "Sunucu yüklemesi yok — her şey tarayıcınızda çalışır",
+			"point3": "Açık kaynak — kendiniz doğrulayın"
+		},
+		"faq": {
+			"title": "Sıkça Sorulan Sorular",
+			"q1": "LocalConvert gerçekten ücretsiz mi?",
+			"a1": "Evet — tamamen ücretsiz, hesap gerekmez, gizli ücret yoktur. LocalConvert, AGPL-3.0 lisansı altında açık kaynaklıdır.",
+			"q2": "Dosyalarım gizli mi?",
+			"a2": "Tamamen. Tüm dönüştürme işlemleri WebAssembly kullanılarak tarayıcınızda çalışır. Dosyalarınız sunucularımıza hiç ulaşmaz — bir an için bile.",
+			"q3": "Hangi dosya formatları destekleniyor?",
+			"a3": "Görseller (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Ses (MP3, WAV, OGG, FLAC, AAC) ve Belgeler (DOCX, HTML, Markdown, EPUB). PDF araçları da dahildir.",
+			"q4": "Dosya boyutu sınırı var mı?",
+			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
+			"q5": "Bir şey yüklemem gerekiyor mu?",
+			"a5": "Kurulum gerekmez. LocalConvert herhangi bir modern tarayıcıda doğrudan çalışır. Uygulama benzeri bir deneyim için adres çubuğundan PWA olarak da yükleyebilirsiniz."
 		}
 	}
 }

@@ -3,30 +3,31 @@
 	"navbar": {
 		"upload": "上传",
 		"convert": "转换",
+		"pdf_tools": "PDF工具",
 		"settings": "设置",
 		"about": "关于",
 		"toggle_theme": "切换主题"
 	},
 	"footer": {
-		"copyright": "© {year} VERT.",
+		"copyright": "© {year} LocalConvert. 基于 VERT.sh",
 		"source_code": "源代码",
 		"discord_server": "Discord 服务器",
 		"privacy_policy": "隐私政策"
 	},
 	"upload": {
-		"title": "你一定会喜欢的文件转换工具。",
-		"subtitle": "所有图片、音频和文档处理都在你的设备上进行。视频通过超快速服务器转换。无文件大小限制，无广告，完全开源。",
+		"title": "在浏览器中转换图片、音频、视频和文档——免费、私密、无需上传。",
+		"subtitle": "由 WebAssembly 驱动——完全在你的浏览器中运行。无需账户，无文件大小限制，开源且永久免费。",
 		"uploader": {
 			"text": "拖放或点击以{action}",
 			"convert": "转换"
 		},
 		"cards": {
-			"title": "VERT 支持...",
+			"title": "LocalConvert 支持...",
 			"images": "图片",
 			"audio": "音频",
 			"documents": "文档",
 			"video": "视频",
-			"video_server_processing": "服务器支持",
+			"video_server_processing": "本地支持",
 			"local_supported": "本地支持",
 			"status": {
 				"text": "<b>状态：</b>{status}",
@@ -43,19 +44,25 @@
 			"partial_support": "此格式仅可作为{direction}进行转换。",
 			"direction_input": "输入（来源）",
 			"direction_output": "输出（目标）",
-			"video_server_processing": "视频默认上传到服务器进行处理，点击这里了解如何在本地设置。"
+			"video_server_processing": "所有转换均在你的设备上本地进行。"
 		}
 	},
 	"convert": {
 		"archive_file": {
-			"extracting": "检测到 ZIP 压缩包：{filename}",
-			"extracted": "从 {filename} 中提取了 {extract_count} 个文件。{ignore_count} 个项目被忽略。",
+			"extract": "解压压缩包",
+			"extracting": "检测到压缩包：{filename}",
+			"extracted": "已从 {filename} 中提取 {extract_count} 个文件。{ignore_count} 个项目被忽略。",
+			"detected": "在 {filename} 中检测到 {type} 文件。",
+			"audio": "音频",
+			"video": "视频",
+			"doc": "文档",
+			"image": "图片",
 			"extract_error": "提取 {filename} 时出错：{error}"
 		},
-		"large_file_warning": "由于浏览器/设备限制，此文件大于 {limit}GB，视频转音频功能已禁用。我们建议使用 Firefox 或 Safari 处理此大小的文件，因为它们的限制较少。",
+		"large_file_warning": "由于浏览器/设备限制，此文件大于 {limit}GB，转换功能已禁用。我们建议使用 Firefox 或 Safari 处理此大小的文件，因为它们的限制较少。",
 		"external_warning": {
-			"title": "外部服务器警告",
-			"text": "如果你选择转换为视频格式，这些文件将被上传到外部服务器进行转换。是否继续？",
+			"title": "大文件警告",
+			"text": "此文件较大，在浏览器中转换可能需要一些时间。是否继续？",
 			"yes": "是",
 			"no": "否"
 		},
@@ -71,7 +78,9 @@
 			"video": "视频",
 			"doc": "文档",
 			"image": "图片",
-			"placeholder": "搜索格式"
+			"placeholder": "搜索格式",
+			"no_formats": "暂无可用格式",
+			"no_results": "没有匹配的格式"
 		},
 		"tooltips": {
 			"unknown_file": "未知文件类型",
@@ -84,24 +93,28 @@
 		},
 		"errors": {
 			"cant_convert": "无法转换此文件。",
-			"vertd_server": "你在做什么...？你应该运行 vertd 服务器！",
+			"vertd_server": "此文件格式不支持转换。",
 			"vertd_generic_view": "查看错误详情",
-			"vertd_generic_body": "尝试转换视频时发生错误。你想将此视频提交给开发者以帮助修复此错误吗？只会发送你的视频文件，不会上传任何标识符。",
-			"vertd_generic_title": "视频转换错误",
-			"vertd_generic_yes": "提交视频",
-			"vertd_generic_no": "不提交",
-			"vertd_failed_to_keep": "无法在服务器上保留视频：{error}",
+			"vertd_generic_body": "尝试转换文件时发生错误。请重试或尝试其他格式。",
+			"vertd_generic_title": "转换错误",
+			"vertd_generic_yes": "确定",
+			"vertd_generic_no": "取消",
+			"vertd_failed_to_keep": "转换失败：{error}",
 			"vertd_details": "查看错误详情",
-			"vertd_details_body": "如果你按下提交，<b>你的视频也会被附加</b>在错误日志旁边，日志会自动报告给我们审核。以下信息是我们自动接收的日志：",
-			"vertd_details_footer": "此信息仅用于故障排查，绝不会被共享。查看我们的[privacy_link]隐私政策[/privacy_link]了解更多详情。",
+			"vertd_details_body": "以下错误信息可能有助于排查问题：",
+			"vertd_details_footer": "查看我们的[privacy_link]隐私政策[/privacy_link]了解更多详情。",
 			"vertd_details_job_id": "<b>任务 ID：</b>{jobId}",
 			"vertd_details_from": "<b>来源格式：</b>{from}",
 			"vertd_details_to": "<b>目标格式：</b>{to}",
 			"vertd_details_error_message": "<b>错误消息：</b>[view_link]查看错误日志[/view_link]",
 			"vertd_details_close": "关闭",
+			"vertd_ratelimit": "文件‘{filename}’多次转换失败。请尝试其他格式或更小的文件。",
 			"unsupported_format": "仅支持图片、视频、音频和文档文件",
+			"pdf_redirect_title": "这是一个PDF文件。",
+			"pdf_redirect_desc": "PDF文件不在此处转换——请使用PDF工具进行合并、拆分、压缩、旋转等操作。",
+			"pdf_redirect_button": "打开PDF工具",
 			"format_output_only": "此格式目前只能用作输出（转换目标），不能用作输入。",
-			"vertd_not_found": "未找到 vertd 实例来开始视频转换。请确保实例 URL 设置正确。",
+			"vertd_not_found": "视频转换器无法初始化。请刷新页面后重试。",
 			"worker_downloading": "{type}转换器正在初始化，请稍候。",
 			"worker_error": "{type}转换器初始化时出错，请稍后重试。",
 			"worker_timeout": "{type}转换器初始化时间超出预期，请再等待一会儿或刷新页面。",
@@ -131,8 +144,10 @@
 			"advanced_settings": "高级设置",
 			"filename_format": "文件名格式",
 			"filename_description": "这将决定下载时的文件名，<b>不包括文件扩展名。</b>你可以在格式中使用以下模板，它们将被替换为相关信息：<b>%name%</b>表示原始文件名，<b>%extension%</b>表示原始文件扩展名，<b>%date%</b>表示文件转换时的日期字符串。",
-			"placeholder": "VERT_%name%",
+			"placeholder": "LocalConvert_%name%",
 			"default_format": "默认转换格式",
+			"default_format_enable": "启用",
+			"default_format_disable": "禁用",
 			"default_format_description": "这将更改上传此文件类型时自动选择的默认格式。",
 			"default_format_image": "图片",
 			"default_format_video": "视频",
@@ -143,8 +158,8 @@
 			"keep": "保留",
 			"remove": "删除",
 			"quality": "转换质量",
-			"quality_description": "更改输出文件的质量。值越高，处理时间和文件大小越大。",
-			"quality_video": "更改视频转换的质量。质量越高，转换时间和文件大小越大。",
+			"quality_description": "这将更改转换文件的默认输出质量（按类别）。值越高，处理时间和文件大小越大。",
+			"quality_video": "这将更改视频转换的默认输出质量。值越高，处理时间和文件大小越大。",
 			"quality_audio": "音频（kbps）",
 			"quality_images": "图片（%）",
 			"rate": "采样率（Hz）"
@@ -153,12 +168,12 @@
 			"title": "视频转换",
 			"status": "状态：",
 			"loading": "加载中...",
-			"available": "可用（提交 ID {commitId}）",
-			"unavailable": "不可用（URL 正确吗？）",
-			"description": "<code>vertd</code>项目是 FFmpeg 的服务器包装器。这允许你通过 VERT 网页界面方便地转换视频，同时仍能利用 GPU 的强大性能以尽可能快的速度完成转换。",
-			"hosting_info": "我们为你提供了一个公共实例以方便使用，但如果你知道如何操作，在自己的电脑或服务器上托管也很容易。你可以在[vertd_link]这里[/vertd_link]下载服务器二进制文件 - 设置过程将来会变得更简单，敬请期待！",
-			"instance": "实例",
-			"url_placeholder": "例如：http://localhost:24153",
+			"available": "就绪",
+			"unavailable": "不可用",
+			"description": "视频转换通过 FFmpeg WebAssembly 在本地处理。你的视频永远不会离开你的设备。",
+			"hosting_info": "所有视频处理均在你的浏览器中使用 WebAssembly 技术完成。",
+			"instance": "引擎",
+			"url_placeholder": "FFmpeg WASM（本地）",
 			"conversion_speed": "转换速度",
 			"speed_description": "这描述了速度和质量之间的权衡。速度越快质量越低，但完成工作的速度更快。",
 			"speeds": {
@@ -170,9 +185,9 @@
 				"ultra_fast": "超快"
 			},
 			"auto_instance": "自动（推荐）",
-			"eu_instance": "德国法尔肯施泰因",
-			"us_instance": "美国华盛顿",
-			"custom_instance": "自定义"
+			"eu_instance": "本地",
+			"us_instance": "本地",
+			"custom_instance": "本地"
 		},
 		"privacy": {
 			"title": "隐私与数据",
@@ -191,7 +206,7 @@
 			"cache_cleared": "缓存已成功清除！",
 			"cache_clear_error": "清除缓存失败。",
 			"site_data_title": "网站数据管理",
-			"site_data_description": "清除所有网站数据，包括设置和缓存文件，将 VERT 重置为默认状态并重新加载页面。",
+			"site_data_description": "清除所有网站数据，包括设置和缓存文件，将 LocalConvert 重置为默认状态并重新加载页面。",
 			"clear_all_data": "清除所有网站数据",
 			"clear_all_data_confirm_title": "清除所有网站数据？",
 			"clear_all_data_confirm": "这将重置所有设置和缓存，然后重新加载页面。此操作无法撤消。",
@@ -201,18 +216,18 @@
 		},
 		"language": {
 			"title": "语言",
-			"description": "选择 VERT 界面的首选语言。"
+			"description": "选择 LocalConvert 界面的首选语言。"
 		}
 	},
 	"about": {
 		"title": "关于",
 		"why": {
-			"title": "为什么选择 VERT？",
-			"description": "<b>文件转换器一直让我们失望。</b>它们很丑陋，充满广告，最重要的是；很慢。我们决定通过制作一个解决所有这些问题的替代方案，一劳永逸地解决这个问题。<br/><br/>所有非视频文件都完全在设备上转换；这意味着不需要在服务器之间发送和接收文件的延迟，而且我们永远不会窥探你转换的文件。<br/><br/>视频文件会上传到我们超快速的 RTX 4000 Ada 服务器。如果你不转换视频，它们会在服务器上保留一小时。如果你转换文件，视频将在服务器上保留一小时，或直到下载完成。然后文件将从我们的服务器中删除。"
+			"title": "为什么选择 LocalConvert？",
+			"description": "<b>文件转换器一直让我们失望。</b>它们很慢，需要注册账户，还会将你的文件发送到你一无所知的第三方服务器。我们决定改变这一切。<br/><br/>你转换的每一个文件——图片、音频、视频和文档——都完全在你的设备上使用 WebAssembly 处理。任何内容都不会离开你的浏览器。没有服务器参与，没有上传，没有人能看到你的文件。"
 		},
 		"sponsors": {
-			"title": "赞助商",
-			"description": "想支持我们吗？请在[discord_link]Discord[/discord_link]服务器上联系开发者，或发送电子邮件至",
+			"title": "支持",
+			"description": "LocalConvert 免费且开源。如果你觉得它有用，请考虑支持该项目。联系我们：",
 			"email_copied": "电子邮件已复制到剪贴板！"
 		},
 		"resources": {
@@ -222,28 +237,30 @@
 			"email": "电子邮件"
 		},
 		"donate": {
-			"title": "捐赠给 VERT",
-			"description": "有了你的支持，我们可以继续维护和改进 VERT。",
+			"title": "支持 LocalConvert",
+			"description": "有了你的支持，我们可以继续维护和改进 LocalConvert。",
 			"one_time": "一次性",
 			"monthly": "每月",
 			"custom": "自定义",
 			"pay_now": "立即支付",
 			"donate_amount": "捐赠 ${amount} 美元",
-			"thank_you": "感谢你的捐赠！",
+			"thank_you": "感谢你的支持！",
 			"payment_failed": "支付失败：{message}{period}你未被收费。",
 			"donation_error": "处理捐赠时出错。请稍后重试。",
-			"payment_error": "获取支付详情时出错。请稍后重试。"
+			"payment_error": "获取支付详情时出错。请稍后重试。",
+			"donation_notice_official": "你的支持有助于维护和改进 LocalConvert。",
+			"donation_notice_unofficial": "这是 LocalConvert 的第三方实例。如果你希望支持原始项目，请访问官方网站。"
 		},
 		"credits": {
 			"title": "致谢",
-			"contact_team": "如果你想联系开发团队，请使用“资源”卡片上的电子邮件。",
+			"contact_team": "如果你想联系开发团队，请使用「资源」卡片上的电子邮件。",
 			"notable_contributors": "杰出贡献者",
-			"notable_description": "我们要感谢这些人对 VERT 的重大贡献。",
+			"notable_description": "我们要感谢这些人对 VERT（LocalConvert 所基于的项目）的重大贡献。",
 			"github_contributors": "GitHub 贡献者",
 			"github_description": "非常感谢所有这些人的帮助！[github_link]也想帮忙吗？[/github_link]",
 			"no_contributors": "似乎还没有人贡献……[contribute_link]成为第一个贡献者！[/contribute_link]",
 			"libraries": "库",
-			"libraries_description": "非常感谢 FFmpeg（音频、视频）、ImageMagick（图片）和 Pandoc（文档）多年来维护如此出色的库。VERT 依赖它们为你提供转换服务。",
+			"libraries_description": "非常感谢 FFmpeg（音频、视频）、ImageMagick（图片）和 Pandoc（文档）多年来维护如此出色的库。LocalConvert 依赖它们为你提供转换服务。",
 			"roles": {
 				"lead_developer": "首席开发者；转换后端、UI 实现",
 				"developer": "开发者；UI 实现",
@@ -261,7 +278,7 @@
 			"general": "转换 {file} 时出错：{message}",
 			"cancel": "取消转换 {file} 时出错：{message}",
 			"magick": "Magick worker 出错，图片转换可能无法正常工作。",
-			"ffmpeg": "加载 ffmpeg 时出错，某些功能可能无法工作。",
+			"ffmpeg": "加载 FFmpeg 时出错，某些功能可能无法工作。",
 			"pandoc": "加载 Pandoc worker 时出错，文档转换可能无法正常工作。",
 			"no_audio": "未找到音频流。",
 			"invalid_rate": "指定的采样率无效：{rate}Hz",
@@ -272,34 +289,80 @@
 		"title": "隐私政策",
 		"summary": {
 			"title": "摘要",
-			"description": "VERT 的隐私政策非常简单：我们根本不收集或存储你的任何数据。我们不使用 cookie 或跟踪器，分析是完全私密的，所有转换（视频除外）都在你的浏览器本地进行。视频在下载后或一小时后删除，除非你明确授权存储；它只会用于故障排查。VERT 自托管 Coolify 实例用于托管网站和 vertd（用于视频转换），以及用于完全匿名和聚合分析的 Plausible 实例。<br/><br/>请注意，这可能仅适用于[vert_link]vert.sh[/vert_link]的官方 VERT 实例；第三方实例可能以不同方式处理你的数据。"
+			"description": "LocalConvert 的隐私政策很简单：你的文件永远不会离开你的设备。所有转换——图片、音频、视频和文档——完全在你的浏览器中使用 WebAssembly 进行。我们不使用 cookie 或跟踪器，分析完全匿名（通过 Plausible）。<br/><br/>LocalConvert 基于 [vert_link]VERT.sh[/vert_link]（AGPL-3.0）。"
 		},
 		"conversions": {
 			"title": "转换",
-			"description": "大多数转换（图片、文档、音频）完全在你的设备上本地使用相关工具的 WebAssembly 版本（例如 ImageMagick、Pandoc、FFmpeg）进行。这意味着你的文件永远不会离开你的设备，我们也永远无法访问它们。<br/><br/>视频转换在我们的服务器上进行，因为它们需要更多的处理能力，并且目前无法在浏览器上非常快速地完成。你使用 VERT 转换的视频在下载后或一小时后删除，除非你明确授权我们将它们存储更长时间，纯粹用于故障排查。"
+			"description": "所有转换完全在你的设备上本地进行，使用相关工具的 WebAssembly 版本（FFmpeg、ImageMagick、Pandoc）。这意味着你的文件永远不会离开你的设备，也没有人能访问它们。与其他转换器不同，视频转换也在你的浏览器中本地完成。"
+		},
+		"donations": {
+			"title": "捐赠",
+			"description": "如果捐赠功能可用，支付处理可能由第三方支付服务商处理。对支付服务商的外部网络请求会延迟，仅在你点击支付按钮后才会发出。"
 		},
 		"conversion_errors": {
 			"title": "转换错误",
-			"description": "当视频转换失败时，我们可能会收集一些匿名数据以帮助我们诊断问题。这些数据可能包括：",
-			"list_job_id": "任务 ID，即匿名化的文件名",
+			"description": "当转换失败时，错误信息保留在你的设备上。不会自动将任何错误数据发送到服务器。错误详情可能包括：",
+			"list_job_id": "文件类型",
 			"list_format_from": "你转换的来源格式",
 			"list_format_to": "你转换的目标格式",
-			"list_stderr": "你任务的 FFmpeg stderr 输出（错误消息）",
-			"list_video": "实际视频文件（如果明确授权）",
-			"footer": "此信息仅用于诊断转换问题。只有在你明确授权的情况下，才会收集实际视频文件，并且仅用于故障排查。"
+			"list_stderr": "FFmpeg 错误输出",
+			"list_video": "不会上传任何文件",
+			"footer": "所有错误信息保留在你的设备上，不会传输。"
 		},
 		"analytics": {
 			"title": "分析",
-			"description": "我们自托管 Plausible 实例用于完全匿名和聚合的分析。Plausible 不使用 cookie，并符合所有主要隐私法规（GDPR/CCPA/PECR）。你可以在[settings_link]设置[/settings_link]的“隐私与数据”部分选择退出分析，并在[plausible_link]这里[/plausible_link]阅读更多关于 Plausible 隐私实践的信息。"
+			"description": "我们使用 Plausible 进行完全匿名和聚合的分析。Plausible 不使用 cookie，并符合所有主要隐私法规（GDPR/CCPA/PECR）。你可以在[settings_link]设置[/settings_link]的“隐私与数据”部分选择退出分析，并在[plausible_link]这里[/plausible_link]阅读更多关于 Plausible 隐私实践的信息。"
 		},
 		"local_storage": {
 			"title": "本地存储",
-			"description": "我们使用浏览器的本地存储来保存你的设置，使用浏览器的会话存储来临时存储“关于”部分的 GitHub 贡献者列表，以减少重复的 GitHub API 请求。不会存储或传输任何个人数据。<br/><br/>我们使用的转换工具的 WebAssembly 版本（FFmpeg、ImageMagick、Pandoc）也会在你首次访问网站时本地存储在浏览器中，这样你就不需要每次访问时都重新下载它们。不会存储或传输任何个人数据。你可以随时在[settings_link]设置[/settings_link]的“隐私与数据”部分查看或删除这些数据。"
+			"description": "我们使用浏览器的本地存储来保存你的设置。不会存储或传输任何个人数据。<br/><br/>我们使用的转换工具的 WebAssembly 版本（FFmpeg、ImageMagick、Pandoc）也会在你首次访问网站时本地存储在浏览器中，这样你就不需要每次访问时都重新下载它们。不会存储或传输任何个人数据。你可以随时在[settings_link]设置[/settings_link]的“隐私与数据”部分查看或删除这些数据。"
 		},
 		"contact": {
 			"title": "联系",
-			"description": "如有问题，请发送电子邮件至：[email_link]hello@vert.sh[/email_link]。如果你使用的是第三方 VERT 实例，请联系该实例的托管者。"
+			"description": "如有问题，请发送电子邮件至：[email_link]hello@localconvert.app[/email_link]。"
 		},
-		"last_updated": "最后更新：2025-10-19"
+		"last_updated": "最后更新：2026-03-22"
+	},
+	"toast": {
+		"insecure_context": "你正在通过不安全的连接访问 LocalConvert（例如通过 HTTP 而非 HTTPS）。某些功能可能无法正常工作。"
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "无服务器上传",
+			"gpu": "GPU 加速",
+			"open_source": "免费且开源",
+			"no_limit": "无文件大小限制"
+		},
+		"how_it_works": {
+			"title": "工作原理",
+			"step1_title": "选择你的文件",
+			"step1_desc": "拖放或点击选择任意图片、音频、视频或文档文件。",
+			"step2_title": "在浏览器中转换",
+			"step2_desc": "一切通过 WebAssembly 在本地运行——无需上传，无需等待服务器。",
+			"step3_title": "下载结果",
+			"step3_desc": "立即获取转换后的文件，直接保存到你的设备。"
+		},
+		"formats": {
+			"title": "支持的格式"
+		},
+		"privacy": {
+			"title": "从设计上保证100%隐私",
+			"point1": "你的文件永远不会离开你的设备",
+			"point2": "无服务器上传——一切在你的浏览器中运行",
+			"point3": "开源——自行验证"
+		},
+		"faq": {
+			"title": "常见问题",
+			"q1": "LocalConvert 真的免费吗？",
+			"a1": "是的——完全免费，无需账户，没有隐藏费用。LocalConvert 以 AGPL-3.0 许可证开源。",
+			"q2": "我的文件是私密的吗？",
+			"a2": "完全私密。所有转换均在你的浏览器中使用 WebAssembly 运行。你的文件永远不会接触我们的服务器——哪怕是一瞬间。",
+			"q3": "支持哪些文件格式？",
+			"a3": "图片（JPG、PNG、WEBP、AVIF、HEIC、GIF、BMP、TIFF、SVG、ICO）、视频（MP4、WebM、MKV、AVI、MOV）、音频（MP3、WAV、OGG、FLAC、AAC）和文档（DOCX、HTML、Markdown、EPUB）。还包含 PDF 工具。",
+			"q4": "有文件大小限制吗？",
+			"a4": "没有硬性限制——取决于你设备的可用内存。对于非常大的视频文件，Firefox 或 Safari 通常处理得更好。",
+			"q5": "我需要安装任何东西吗？",
+			"a5": "无需安装。LocalConvert 可在任何现代浏览器中直接使用。你也可以从地址栏将其安装为 PWA，获得类似应用的体验。"
+		}
 	}
 }

@@ -3,29 +3,31 @@
 	"navbar": {
 		"upload": "Carica",
 		"convert": "Converti",
+		"pdf_tools": "Strumenti PDF",
 		"settings": "Impostazioni",
 		"about": "Informazioni",
 		"toggle_theme": "Cambia tema"
 	},
 	"footer": {
-		"copyright": "© {year} VERT.",
+		"copyright": "© {year} LocalConvert. Basato su VERT.sh",
 		"source_code": "Codice sorgente",
-		"discord_server": "Server Discord"
+		"discord_server": "Server Discord",
+		"privacy_policy": "Informativa sulla privacy"
 	},
 	"upload": {
-		"title": "Il convertitore di file che amerai.",
-		"subtitle": "Tutta l'elaborazione di immagini, audio e documenti avviene sul tuo dispositivo. I video sono convertiti sui nostri server velocissimi. Nessun limite di dimensione, nessuna pubblicità e completamente open source.",
+		"title": "Converti immagini, audio, video e documenti — gratis, privato, senza upload.",
+		"subtitle": "Basato su WebAssembly — funziona interamente nel Suo browser. Nessun account, nessun limite di dimensione, open source e gratuito per sempre.",
 		"uploader": {
-			"text": "Trascina o clicca per {action}",
+			"text": "Trascini o clicchi per {action}",
 			"convert": "convertire"
 		},
 		"cards": {
-			"title": "VERT supporta...",
+			"title": "LocalConvert supporta...",
 			"images": "Immagini",
 			"audio": "Audio",
 			"documents": "Documenti",
 			"video": "Video",
-			"video_server_processing": "Supportato da server",
+			"video_server_processing": "Supportato in locale",
 			"local_supported": "Supportato in locale",
 			"status": {
 				"text": "<b>Stato:</b> {status}",
@@ -42,13 +44,25 @@
 			"partial_support": "Questo formato può essere convertito solo come {direction}.",
 			"direction_input": "input (da)",
 			"direction_output": "output (a)",
-			"video_server_processing": "Per impostazione predefinita, i video vengono caricati su un server per l'elaborazione. Scopri come configurarlo in locale qui."
+			"video_server_processing": "Tutte le conversioni avvengono localmente sul Suo dispositivo."
 		}
 	},
 	"convert": {
+		"archive_file": {
+			"extract": "Estrai archivio",
+			"extracting": "Archivio rilevato: {filename}",
+			"extracted": "Estratti {extract_count} file da {filename}. {ignore_count} elementi sono stati ignorati.",
+			"detected": "Rilevati file {type} in {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "documento",
+			"image": "immagine",
+			"extract_error": "Errore durante l'estrazione di {filename}: {error}"
+		},
+		"large_file_warning": "A causa delle limitazioni del browser o del dispositivo, la conversione è disabilitata per questo file poiché supera {limit} GB. Si consiglia di utilizzare Firefox o Safari per file di questa dimensione, in quanto presentano meno limitazioni.",
 		"external_warning": {
-			"title": "Avviso server esterno",
-			"text": "Se scegli di convertire in un formato video, quei file verranno caricati su un server esterno per essere convertiti. Vuoi continuare?",
+			"title": "Avviso file di grandi dimensioni",
+			"text": "Questo file è piuttosto grande e potrebbe richiedere del tempo per essere convertito nel browser. Desidera continuare?",
 			"yes": "Sì",
 			"no": "No"
 		},
@@ -64,7 +78,9 @@
 			"video": "Video",
 			"doc": "Documento",
 			"image": "Immagine",
-			"placeholder": "Cerca formato"
+			"placeholder": "Cerca formato",
+			"no_formats": "Nessun formato disponibile",
+			"no_results": "Nessun formato corrisponde alla ricerca"
 		},
 		"tooltips": {
 			"unknown_file": "Tipo di file sconosciuto",
@@ -76,18 +92,32 @@
 			"download_file": "Scarica questo file"
 		},
 		"errors": {
-			"cant_convert": "Non possiamo convertire questo file.",
-			"vertd_server": "cosa stai facendo...? dovresti eseguire il server vertd!",
-			"vertd_generic_body": "Si è verificato un errore durante il tentativo di conversione del tuo video. Vuoi inviare questo video agli sviluppatori per aiutare a risolvere questo bug? Verrà inviato solo il tuo file video. Nessun identificatore sarà caricato.",
-			"vertd_generic_title": "Errore di conversione video",
-			"vertd_generic_yes": "Invia video",
-			"vertd_generic_no": "Non inviare",
-			"vertd_failed_to_keep": "Impossibile mantenere il video sul server: {error}",
+			"cant_convert": "Non è possibile convertire questo file.",
+			"vertd_server": "Questo formato di file non è supportato per la conversione.",
+			"vertd_generic_view": "Visualizza dettagli errore",
+			"vertd_generic_body": "Si è verificato un errore durante il tentativo di conversione del file. Si prega di riprovare o di provare un formato diverso.",
+			"vertd_generic_title": "Errore di conversione",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Annulla",
+			"vertd_failed_to_keep": "Conversione non riuscita: {error}",
+			"vertd_details": "Visualizza dettagli errore",
+			"vertd_details_body": "Le seguenti informazioni sull'errore potrebbero essere utili per la risoluzione dei problemi:",
+			"vertd_details_footer": "Consulti la nostra [privacy_link]informativa sulla privacy[/privacy_link] per ulteriori dettagli.",
+			"vertd_details_job_id": "<b>ID lavoro:</b> {jobId}",
+			"vertd_details_from": "<b>Formato di partenza:</b> {from}",
+			"vertd_details_to": "<b>Formato di destinazione:</b> {to}",
+			"vertd_details_error_message": "<b>Messaggio di errore:</b> [view_link]Visualizza log degli errori[/view_link]",
+			"vertd_details_close": "Chiudi",
+			"vertd_ratelimit": "Il file '{filename}' non è riuscito a convertirsi più volte. Si prega di provare un formato diverso o un file di dimensioni inferiori.",
 			"unsupported_format": "Sono supportati solo file immagine, video, audio e documento",
-			"vertd_not_found": "Impossibile trovare l'istanza vertd per avviare la conversione video. Sei sicuro che l'URL dell'istanza sia impostato correttamente?",
-			"worker_downloading": "Il convertitore {type} è attualmente in fase di inizializzazione, attendi qualche istante.",
-			"worker_error": "Il convertitore {type} ha avuto un errore durante l'inizializzazione, riprova più tardi.",
-			"worker_timeout": "Il convertitore {type} sta impiegando più del previsto per inizializzare, attendi ancora qualche istante o aggiorna la pagina.",
+			"pdf_redirect_title": "Questo è un file PDF.",
+			"pdf_redirect_desc": "I PDF non vengono convertiti qui — usi gli Strumenti PDF per unire, dividere, comprimere, ruotare e altro ancora.",
+			"pdf_redirect_button": "Apri Strumenti PDF",
+			"format_output_only": "Questo formato al momento può essere utilizzato solo come output (destinazione di conversione), non come input.",
+			"vertd_not_found": "Impossibile inizializzare il convertitore video. Si prega di aggiornare la pagina e riprovare.",
+			"worker_downloading": "Il convertitore {type} è attualmente in fase di inizializzazione, attenda qualche istante.",
+			"worker_error": "Il convertitore {type} ha riscontrato un errore durante l'inizializzazione, si prega di riprovare più tardi.",
+			"worker_timeout": "Il convertitore {type} sta impiegando più del previsto per inizializzarsi, attenda ancora qualche istante o aggiorni la pagina.",
 			"audio": "audio",
 			"doc": "documento",
 			"image": "immagine"
@@ -101,11 +131,11 @@
 		"appearance": {
 			"title": "Aspetto",
 			"brightness_theme": "Tema luminosità",
-			"brightness_description": "Vuoi un lampo di sole, o una tranquilla notte solitaria?",
+			"brightness_description": "Preferisce una schermata luminosa o una tranquilla notte scura?",
 			"light": "Chiaro",
 			"dark": "Scuro",
 			"effect_settings": "Impostazioni effetti",
-			"effect_description": "Desideri effetti *fancy*, o un'esperienza più statica?",
+			"effect_description": "Desidera effetti visivi elaborati o un'esperienza più statica?",
 			"enable": "Abilita",
 			"disable": "Disabilita"
 		},
@@ -113,21 +143,23 @@
 			"title": "Conversione",
 			"advanced_settings": "Impostazioni avanzate",
 			"filename_format": "Formato nome file",
-			"filename_description": "Questo determinerà il nome del file al momento del download, <b>esclusa l'estensione del file.</b> È possibile inserire i seguenti *template* nel formato, che verranno sostituiti con le informazioni pertinenti: <b>%name%</b> per il nome del file originale, <b>%extension%</b> per l'estensione del file originale e <b>%date%</b> per una *stringa* di data di quando il file è stato convertito.",
-			"placeholder": "VERT_%name%",
+			"filename_description": "Questo determinerà il nome del file al momento del download, <b>esclusa l'estensione del file.</b> È possibile inserire i seguenti segnaposto nel formato, che verranno sostituiti con le informazioni pertinenti: <b>%name%</b> per il nome del file originale, <b>%extension%</b> per l'estensione del file originale e <b>%date%</b> per la data di conversione del file.",
+			"placeholder": "LocalConvert_%name%",
 			"default_format": "Formato di conversione predefinito",
-			"default_format_description": "Questo cambierà il formato predefinito selezionato quando carichi un file di questo tipo.",
+			"default_format_enable": "Abilita",
+			"default_format_disable": "Disabilita",
+			"default_format_description": "Questo cambierà il formato predefinito selezionato quando si carica un file di questo tipo.",
 			"default_format_image": "Immagini",
 			"default_format_video": "Video",
 			"default_format_audio": "Audio",
 			"default_format_document": "Documenti",
 			"metadata": "Metadati del file",
-			"metadata_description": "Questo cambia se eventuali metadati (EXIF, informazioni sul brano, ecc.) del file originale vengono conservati nei file convertiti.",
+			"metadata_description": "Questa impostazione determina se i metadati presenti nel file originale (EXIF, informazioni sul brano, ecc.) vengono conservati nei file convertiti.",
 			"keep": "Mantieni",
 			"remove": "Rimuovi",
 			"quality": "Qualità di conversione",
-			"quality_description": "Questo cambia la qualità di output predefinita dei file convertiti (nella sua categoria). Valori più alti possono comportare tempi di conversione più lunghi e dimensioni maggiori.",
-			"quality_video": "Questo cambia la qualità di output predefinita dei file video convertiti. Valori più alti possono comportare tempi di conversione più lunghi e dimensioni maggiori.",
+			"quality_description": "Questa impostazione modifica la qualità di output predefinita dei file convertiti (nella sua categoria). Valori più alti possono comportare tempi di conversione più lunghi e file di dimensioni maggiori.",
+			"quality_video": "Questa impostazione modifica la qualità di output predefinita dei file video convertiti. Valori più alti possono comportare tempi di conversione più lunghi e file di dimensioni maggiori.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Immagine (%)",
 			"rate": "Frequenza di campionamento (Hz)"
@@ -136,14 +168,14 @@
 			"title": "Conversione video",
 			"status": "stato:",
 			"loading": "caricamento...",
-			"available": "disponibile, ID commit {commitId}",
-			"unavailable": "non disponibile (l'URL è corretto?)",
-			"description": "Il progetto <code>vertd</code> è un *server wrapper* per FFmpeg. Questo ti permette di convertire video attraverso la comodità dell'interfaccia web di VERT, pur essendo in grado di sfruttare la potenza della tua GPU per farlo il più rapidamente possibile.",
-			"hosting_info": "Ospitiamo un'istanza pubblica per la tua comodità, ma è abbastanza facile ospitarne una tua sul tuo PC o server se sai cosa stai facendo. Puoi scaricare i binari del server [vertd_link]qui[/vertd_link] - il processo di configurazione diventerà più semplice in futuro, quindi resta sintonizzato!",
-			"instance": "Istanza",
-			"url_placeholder": "Esempio: http://localhost:24153",
+			"available": "pronto",
+			"unavailable": "non disponibile",
+			"description": "La conversione video è gestita localmente tramite FFmpeg WebAssembly. I Suoi video non lasciano mai il Suo dispositivo.",
+			"hosting_info": "Tutta l'elaborazione video avviene nel Suo browser utilizzando la tecnologia WebAssembly.",
+			"instance": "Motore",
+			"url_placeholder": "FFmpeg WASM (locale)",
 			"conversion_speed": "Velocità di conversione",
-			"speed_description": "Questo descrive il compromesso tra velocità e qualità. Velocità maggiori si tradurranno in una qualità inferiore, ma completeranno il lavoro più velocemente.",
+			"speed_description": "Questo descrive il compromesso tra velocità e qualità. Velocità maggiori producono una qualità inferiore, ma completano il lavoro più rapidamente.",
 			"speeds": {
 				"very_slow": "Molto Lento",
 				"slower": "Più Lento",
@@ -153,18 +185,18 @@
 				"ultra_fast": "Ultra Veloce"
 			},
 			"auto_instance": "Automatico (consigliato)",
-			"eu_instance": "Falkenstein, Germania",
-			"us_instance": "Washington, USA",
-			"custom_instance": "Personalizzato"
+			"eu_instance": "Locale",
+			"us_instance": "Locale",
+			"custom_instance": "Locale"
 		},
 		"privacy": {
 			"title": "Privacy e dati",
 			"plausible_title": "Statistiche Plausible",
-			"plausible_description": "Utilizziamo [plausible_link]Plausible[/plausible_link], uno strumento di analisi focalizzato sulla privacy, per raccogliere statistiche completamente anonime. Tutti i dati sono anonimizzati e aggregati e nessuna informazione identificabile viene mai inviata o archiviata. Puoi visualizzare le statistiche [analytics_link]qui[/analytics_link] e scegliere di disattivare il tracciamento qui sotto.",
+			"plausible_description": "Utilizziamo [plausible_link]Plausible[/plausible_link], uno strumento di analisi focalizzato sulla privacy, per raccogliere statistiche completamente anonime. Tutti i dati sono anonimizzati e aggregati e nessuna informazione identificabile viene mai inviata o archiviata. È possibile visualizzare le statistiche [analytics_link]qui[/analytics_link] e scegliere di disattivare il tracciamento qui sotto.",
 			"opt_in": "Attiva tracciamento",
 			"opt_out": "Disattiva tracciamento",
 			"cache_title": "Gestione della cache",
-			"cache_description": "Memorizziamo i file del convertitore nella cache del tuo *browser* in modo che tu non debba riscaricarli ogni volta, migliorando le prestazioni e riducendo l'utilizzo dei dati.",
+			"cache_description": "I file del convertitore vengono salvati nella cache del browser in modo da non doverli riscaricare ad ogni visita, migliorando le prestazioni e riducendo il consumo di dati.",
 			"refresh_cache": "Aggiorna cache",
 			"clear_cache": "Cancella cache",
 			"files_cached": "{size} ({count} file)",
@@ -172,22 +204,30 @@
 			"total_size": "Dimensione Totale",
 			"files_cached_label": "File in Cache",
 			"cache_cleared": "Cache cancellata con successo!",
-			"cache_clear_error": "Impossibile cancellare la cache."
+			"cache_clear_error": "Impossibile cancellare la cache.",
+			"site_data_title": "Gestione dei dati del sito",
+			"site_data_description": "Cancella tutti i dati del sito, incluse le impostazioni e i file in cache, ripristinando LocalConvert allo stato predefinito e ricaricando la pagina.",
+			"clear_all_data": "Cancella tutti i dati del sito",
+			"clear_all_data_confirm_title": "Cancellare tutti i dati del sito?",
+			"clear_all_data_confirm": "Questa operazione azzererà tutte le impostazioni e la cache, quindi ricaricherà la pagina. L'operazione non può essere annullata.",
+			"clear_all_data_cancel": "Annulla",
+			"all_data_cleared": "Tutti i dati del sito sono stati cancellati! Ricaricamento della pagina in corso...",
+			"all_data_clear_error": "Impossibile cancellare tutti i dati del sito."
 		},
 		"language": {
 			"title": "Lingua",
-			"description": "Seleziona la tua lingua preferita per l'interfaccia di VERT."
+			"description": "Selezioni la lingua preferita per l'interfaccia di LocalConvert."
 		}
 	},
 	"about": {
 		"title": "Informazioni",
 		"why": {
-			"title": "Perché VERT?",
-			"description": "<b>I convertitori di file ci hanno sempre deluso.</b> Sono brutti, pieni di pubblicità e, soprattutto, lenti. Abbiamo deciso di risolvere questo problema una volta per tutte creando un'alternativa che risolve tutti questi problemi e non solo.<br/><br/>Tutti i file non video vengono convertiti completamente sul dispositivo; questo significa che non ci sono ritardi tra l'invio e la ricezione dei file da un server e non possiamo mai spiare i file che converti.<br/><br/>I file video vengono caricati sul nostro velocissimo server RTX 4000 Ada. I tuoi video rimangono lì per un'ora se non li converti. Se converti il file, il video rimarrà sul server per un'ora o fino a quando non viene scaricato. Il file verrà quindi eliminato dal nostro server."
+			"title": "Perché LocalConvert?",
+			"description": "<b>I convertitori di file ci hanno sempre deluso.</b> Sono lenti, richiedono la registrazione di un account e inviano i file a server di terze parti su cui non si ha alcun controllo. Abbiamo deciso di cambiare le cose.<br/><br/>Ogni singolo file convertito — immagini, audio, video e documenti — viene elaborato interamente sul Suo dispositivo tramite WebAssembly. Nulla lascia mai il browser. Non sono coinvolti server, non avvengono upload e nessuno potrà mai vedere i Suoi file."
 		},
 		"sponsors": {
-			"title": "Sponsor",
-			"description": "Vuoi sostenerci? Contatta uno sviluppatore nel server [discord_link]Discord[/discord_link] o invia un'e-mail a",
+			"title": "Supporto",
+			"description": "LocalConvert è gratuito e open source. Se lo trova utile, consideri di supportare il progetto. La contatti all'indirizzo",
 			"email_copied": "E-mail copiata negli appunti!"
 		},
 		"resources": {
@@ -197,28 +237,30 @@
 			"email": "E-mail"
 		},
 		"donate": {
-			"title": "Fai una donazione a VERT",
-			"description": "Con il tuo supporto, possiamo continuare a mantenere e migliorare VERT.",
+			"title": "Supporta LocalConvert",
+			"description": "Con il Suo supporto, possiamo continuare a mantenere e migliorare LocalConvert.",
 			"one_time": "Una tantum",
 			"monthly": "Mensile",
 			"custom": "Personalizzato",
 			"pay_now": "Paga ora",
 			"donate_amount": "Dona ${amount} USD",
-			"thank_you": "Grazie per la tua donazione!",
-			"payment_failed": "Pagamento fallito: {message}{period} Non ti è stato addebitato nulla.",
-			"donation_error": "Si è verificato un errore durante l'elaborazione della tua donazione. Riprova più tardi.",
-			"payment_error": "Errore nel recupero dei dettagli di pagamento. Riprova più tardi."
+			"thank_you": "Grazie per il Suo supporto!",
+			"payment_failed": "Pagamento non riuscito: {message}{period} Non Le è stato addebitato nulla.",
+			"donation_error": "Si è verificato un errore durante l'elaborazione della Sua donazione. Si prega di riprovare più tardi.",
+			"payment_error": "Errore nel recupero dei dettagli di pagamento. Si prega di riprovare più tardi.",
+			"donation_notice_official": "Il Suo supporto contribuisce a mantenere e migliorare LocalConvert.",
+			"donation_notice_unofficial": "Questa è un'istanza di terze parti di LocalConvert. Se desidera supportare il progetto originale, visiti il sito ufficiale."
 		},
 		"credits": {
 			"title": "Crediti",
-			"contact_team": "Se desideri contattare il team di sviluppo, utilizza l'e-mail che trovi sulla scheda \"Risorse\".",
+			"contact_team": "Per contattare il team di sviluppo, si prega di utilizzare l'e-mail indicata nella scheda \"Risorse\".",
 			"notable_contributors": "Contributori di rilievo",
-			"notable_description": "Vorremmo ringraziare queste persone per i loro importanti contributi a VERT.",
+			"notable_description": "Desideriamo ringraziare queste persone per i loro importanti contributi a VERT, il progetto su cui si basa LocalConvert.",
 			"github_contributors": "Contributori GitHub",
-			"github_description": "Un grande grazie a tutte queste persone per aver dato una mano! [github_link]Vuoi aiutare anche tu?[/github_link]",
-			"no_contributors": "Sembra che nessuno abbia ancora contribuito... [contribute_link]sii il primo a contribuire![/contribute_link]",
+			"github_description": "Un grande ringraziamento a tutte queste persone per il loro contributo! [github_link]Vuole contribuire anche Lei?[/github_link]",
+			"no_contributors": "Sembra che nessuno abbia ancora contribuito... [contribute_link]sia il primo a contribuire![/contribute_link]",
 			"libraries": "Librerie",
-			"libraries_description": "Un grande ringraziamento a FFmpeg (audio, video), ImageMagick (immagini) e Pandoc (documenti) per aver mantenuto librerie così eccellenti per così tanti anni. VERT si affida a loro per fornirti le tue conversioni.",
+			"libraries_description": "Un grande ringraziamento a FFmpeg (audio, video), ImageMagick (immagini) e Pandoc (documenti) per aver mantenuto librerie di tale qualità per così tanti anni. LocalConvert si affida a loro per fornire le conversioni.",
 			"roles": {
 				"lead_developer": "Sviluppatore principale; backend di conversione, implementazione UI",
 				"developer": "Sviluppatore; implementazione UI",
@@ -235,10 +277,92 @@
 		"errors": {
 			"general": "Errore durante la conversione di {file}: {message}",
 			"cancel": "Errore durante l'annullamento della conversione per {file}: {message}",
-			"magick": "Errore nel *worker* Magick, la conversione delle immagini potrebbe non funzionare come previsto.",
-			"ffmpeg": "Errore durante il caricamento di ffmpeg, alcune funzionalità potrebbero non funzionare.",
-			"no_audio": "Nessuno *stream* audio trovato.",
-			"invalid_rate": "Frequenza di campionamento specificata non valida: {rate}Hz"
+			"magick": "Errore nel worker Magick: la conversione delle immagini potrebbe non funzionare come previsto.",
+			"ffmpeg": "Errore durante il caricamento di FFmpeg: alcune funzionalità potrebbero non funzionare come previsto.",
+			"pandoc": "Errore durante il caricamento del worker Pandoc: la conversione dei documenti potrebbe non funzionare come previsto.",
+			"no_audio": "Nessun flusso audio trovato.",
+			"invalid_rate": "Frequenza di campionamento non valida specificata: {rate}Hz",
+			"file_too_large": "Questo file supera il limite di {limit} GB del browser o del dispositivo. Si prega di utilizzare Firefox o Safari per convertire file di grandi dimensioni, poiché in genere presentano limiti superiori."
+		}
+	},
+	"privacy": {
+		"title": "Informativa sulla Privacy",
+		"summary": {
+			"title": "Riepilogo",
+			"description": "L'informativa sulla privacy di LocalConvert è semplice: i Suoi file non lasciano mai il Suo dispositivo. Tutte le conversioni — immagini, audio, video e documenti — avvengono interamente nel Suo browser tramite WebAssembly. Non utilizziamo cookie né sistemi di tracciamento, e le statistiche sono completamente anonime tramite Plausible.<br/><br/>LocalConvert è basato su [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Conversioni",
+			"description": "Tutte le conversioni avvengono interamente in locale sul Suo dispositivo, utilizzando versioni WebAssembly degli strumenti pertinenti (FFmpeg, ImageMagick, Pandoc). Ciò significa che i Suoi file non lasciano mai il Suo dispositivo e nessuno potrà mai accedervi. A differenza di altri convertitori, questo vale anche per i video — la conversione video viene eseguita localmente nel Suo browser."
+		},
+		"donations": {
+			"title": "Donazioni",
+			"description": "Se la funzionalità di donazione è disponibile, l'elaborazione dei pagamenti può essere gestita da un fornitore terzo. Le richieste di rete verso il fornitore di pagamenti sono differite e vengono effettuate solo dopo aver cliccato sul pulsante per pagare."
+		},
+		"conversion_errors": {
+			"title": "Errori di Conversione",
+			"description": "In caso di errore di conversione, le informazioni relative rimangono sul Suo dispositivo. Nessun dato sugli errori viene inviato automaticamente a server esterni. I dettagli dell'errore possono includere:",
+			"list_job_id": "Il tipo di file",
+			"list_format_from": "Il formato di partenza della conversione",
+			"list_format_to": "Il formato di destinazione della conversione",
+			"list_stderr": "L'output di errore di FFmpeg",
+			"list_video": "Nessun file viene mai caricato",
+			"footer": "Tutte le informazioni sugli errori rimangono sul Suo dispositivo e non vengono mai trasmesse."
+		},
+		"analytics": {
+			"title": "Statistiche",
+			"description": "Utilizziamo Plausible per statistiche completamente anonime e aggregate. Plausible non utilizza cookie ed è conforme a tutte le principali normative sulla privacy (GDPR/CCPA/PECR). È possibile disattivare le statistiche nella sezione \"Privacy e dati\" nelle [settings_link]impostazioni[/settings_link] e approfondire le pratiche sulla privacy di Plausible [plausible_link]qui[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Archiviazione Locale",
+			"description": "Utilizziamo la memoria locale del browser per salvare le impostazioni. Nessun dato personale viene archiviato o trasmesso.<br/><br/>Le versioni WebAssembly degli strumenti di conversione (FFmpeg, ImageMagick, Pandoc) vengono anch'esse archiviate localmente nel browser al primo accesso al sito, in modo da non doverle riscaricare ad ogni visita. Nessun dato personale viene archiviato o trasmesso. È possibile visualizzare o eliminare questi dati in qualsiasi momento nella sezione \"Privacy e dati\" nelle [settings_link]impostazioni[/settings_link]."
+		},
+		"contact": {
+			"title": "Contatti",
+			"description": "Per domande, ci scriva all'indirizzo: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Ultimo aggiornamento: 2026-03-22"
+	},
+	"toast": {
+		"insecure_context": "Sta visitando LocalConvert in un contesto non sicuro (ad esempio tramite HTTP anziché HTTPS). Alcune funzionalità potrebbero non funzionare come previsto."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Nessun Upload su Server",
+			"gpu": "Accelerazione GPU",
+			"open_source": "Gratuito e Open Source",
+			"no_limit": "Nessun Limite di Dimensione"
+		},
+		"how_it_works": {
+			"title": "Come Funziona",
+			"step1_title": "Scelga il Suo File",
+			"step1_desc": "Trascini o clicchi per selezionare qualsiasi file immagine, audio, video o documento.",
+			"step2_title": "Convertito nel Suo Browser",
+			"step2_desc": "Tutto viene eseguito in locale tramite WebAssembly — nessun upload, nessuna attesa su server.",
+			"step3_title": "Scarichi il Risultato",
+			"step3_desc": "Riceva il file convertito immediatamente, direttamente sul Suo dispositivo."
+		},
+		"formats": {
+			"title": "Formati Supportati"
+		},
+		"privacy": {
+			"title": "100% Privato per Progettazione",
+			"point1": "I Suoi file non lasciano mai il Suo dispositivo",
+			"point2": "Nessun upload su server — tutto viene eseguito nel Suo browser",
+			"point3": "Open source — verifichi Lei stesso"
+		},
+		"faq": {
+			"title": "Domande Frequenti",
+			"q1": "LocalConvert è davvero gratuito?",
+			"a1": "Sì — completamente gratuito, nessun account richiesto, nessun costo nascosto. LocalConvert è open source con licenza AGPL-3.0.",
+			"q2": "I miei file sono privati?",
+			"a2": "Assolutamente. Tutte le conversioni vengono eseguite nel Suo browser tramite WebAssembly. I Suoi file non toccano mai i nostri server — nemmeno per un istante.",
+			"q3": "Quali formati di file sono supportati?",
+			"a3": "Immagini (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC) e Documenti (DOCX, HTML, Markdown, EPUB). Sono inclusi anche gli Strumenti PDF.",
+			"q4": "Esiste un limite di dimensione per i file?",
+			"a4": "Nessun limite rigido — dipende dalla memoria disponibile sul Suo dispositivo. Per file video molto grandi, Firefox o Safari in genere li gestiscono meglio.",
+			"q5": "Devo installare qualcosa?",
+			"a5": "Nessuna installazione necessaria. LocalConvert funziona direttamente in qualsiasi browser moderno. È anche possibile installarlo come PWA dalla barra degli indirizzi per un'esperienza simile a un'app."
 		}
 	}
 }

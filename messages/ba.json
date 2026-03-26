@@ -3,30 +3,31 @@
   "navbar": {
     "upload": "Učitaj",
     "convert": "Konvertuj",
+    "pdf_tools": "PDF Alati",
     "settings": "Postavke",
     "about": "O nama",
     "toggle_theme": "Promijeni temu"
   },
   "footer": {
-    "copyright": "© {year} VERT.",
+    "copyright": "© {year} LocalConvert.",
     "source_code": "Izvorni kod",
     "discord_server": "Discord server",
     "privacy_policy": "Politika privatnosti"
   },
   "upload": {
     "title": "Konverter datoteka koji ćete voljeti.",
-    "subtitle": "Sva obrada slika, zvuka i dokumenata obavlja se na vašem uređaju. Video zapisi se konvertuju na našim izuzetno brzim serverima. Bez ograničenja veličine, bez reklama i potpuno otvorenog koda.",
+    "subtitle": "Sva obrada slika, zvuka i dokumenata obavlja se na vašem uređaju putem WebAssembly tehnologije. Bez ograničenja veličine, bez reklama i potpuno otvorenog koda.",
     "uploader": {
       "text": "Prevucite ili kliknite da {action}",
       "convert": "konvertujete"
     },
     "cards": {
-      "title": "VERT podržava...",
+      "title": "LocalConvert podržava...",
       "images": "Slike",
       "audio": "Audio",
       "documents": "Dokumente",
       "video": "Video",
-      "video_server_processing": "Server podržava",
+      "video_server_processing": "Lokalno podržano",
       "local_supported": "Lokalno podržano",
       "status": {
         "text": "<b>Status:</b> {status}",
@@ -43,7 +44,7 @@
       "partial_support": "Ovaj format može biti konvertovan samo kao {direction}.",
       "direction_input": "ulazni (iz)",
       "direction_output": "izlazni (u)",
-      "video_server_processing": "Video se podrazumijevano otprema na server radi obrade, ovdje možete naučiti kako to postaviti lokalno."
+      "video_server_processing": "Sve konverzije odvijaju se lokalno na vašem uređaju."
     }
   },
   "convert": {
@@ -58,10 +59,10 @@
       "image": "slika",
       "extract_error": "Greška pri raspakivanju {filename}: {error}"
     },
-    "large_file_warning": "Zbog ograničenja preglednika/uređaja, konverzija videa u audio je onemogućena za ovu datoteku jer je veća od {limit}GB. Preporučujemo Firefox ili Safari za datoteke ove veličine jer imaju manje ograničenja.",
+    "large_file_warning": "Zbog ograničenja preglednika/uređaja, konverzija je onemogućena za ovu datoteku jer je veća od {limit}GB. Preporučujemo Firefox ili Safari za datoteke ove veličine jer imaju manje ograničenja.",
     "external_warning": {
-      "title": "Upozorenje o vanjskom serveru",
-      "text": "Ako odaberete konverziju u video format, te datoteke će biti otpremljene na vanjski server. Želite li nastaviti?",
+      "title": "Upozorenje o velikoj datoteci",
+      "text": "Ova datoteka je prilično velika i konverzija u pregledniku može potrajati. Želite li nastaviti?",
       "yes": "Da",
       "no": "Ne"
     },
@@ -92,25 +93,28 @@
     },
     "errors": {
       "cant_convert": "Ne možemo konvertovati ovu datoteku.",
-      "vertd_server": "šta to radiš..? treba da pokreneš vertd server!",
+      "vertd_server": "Ovaj format datoteke nije podržan za konverziju.",
       "vertd_generic_view": "Prikaži detalje greške",
-      "vertd_generic_body": "Došlo je do greške prilikom pokušaja konverzije videa. Želite li poslati svoj video programerima da pomognete u rješavanju problema? Samo će vaš video biti poslan. Nikakvi identifikatori neće biti otpremljeni.",
-      "vertd_generic_title": "Greška pri konverziji videa",
-      "vertd_generic_yes": "Pošalji video",
-      "vertd_generic_no": "Ne šalji",
-      "vertd_failed_to_keep": "Neuspjelo čuvanje videa na serveru: {error}",
+      "vertd_generic_body": "Došlo je do greške prilikom pokušaja konverzije datoteke. Molimo pokušajte ponovo ili odaberite drugi format.",
+      "vertd_generic_title": "Greška pri konverziji",
+      "vertd_generic_yes": "OK",
+      "vertd_generic_no": "Otkaži",
+      "vertd_failed_to_keep": "Konverzija nije uspjela: {error}",
       "vertd_details": "Prikaži detalje greške",
-      "vertd_details_body": "Ako pritisnete pošalji, <b>vaš video će također biti priložen</b> uz log greške koji se uvijek automatski šalje nama na pregled. Sljedeće informacije su log koji automatski dobijamo:",
-      "vertd_details_footer": "Ove informacije se koriste isključivo za rješavanje problema i nikada neće biti dijeljene. Pogledajte našu [privacy_link]politiku privatnosti[/privacy_link] za više detalja.",
+      "vertd_details_body": "Sljedeće informacije o grešci mogu pomoći pri rješavanju problema:",
+      "vertd_details_footer": "Pogledajte našu [privacy_link]politiku privatnosti[/privacy_link] za više detalja.",
       "vertd_details_job_id": "<b>ID zadatka:</b> {jobId}",
       "vertd_details_from": "<b>Iz formata:</b> {from}",
       "vertd_details_to": "<b>U format:</b> {to}",
-      "vertd_details_error_message": "<b>Poruka greške:</b> [view_link]Pogledaj log[/view_link]",
+      "vertd_details_error_message": "<b>Poruka greške:</b> [view_link]Pogledaj log greške[/view_link]",
       "vertd_details_close": "Zatvori",
-      "vertd_ratelimit": "Vaš video '{filename}' nije uspio biti konvertovan nekoliko puta. Kako bismo spriječili preopterećenje servera, dalji pokušaji konverzije za ovu datoteku su privremeno blokirani.",
+      "vertd_ratelimit": "Datoteka '{filename}' nije uspjela biti konvertovana više puta. Molimo pokušajte drugi format ili manju datoteku.",
       "unsupported_format": "Podržane su samo slike, video, audio i dokumenti",
+      "pdf_redirect_title": "Ovo je PDF datoteka.",
+      "pdf_redirect_desc": "PDF-ovi se ovdje ne konvertuju — koristite PDF Alate za spajanje, dijeljenje, kompresiju, rotaciju i još mnogo toga.",
+      "pdf_redirect_button": "Otvori PDF Alate",
       "format_output_only": "Ovaj format se trenutno može koristiti samo kao izlaz, ne kao ulaz.",
-      "vertd_not_found": "Nije moguće pronaći vertd instancu za pokretanje konverzije videa. Da li je URL ispravno postavljen?",
+      "vertd_not_found": "Video konverter nije mogao biti inicijaliziran. Molimo osvježite stranicu i pokušajte ponovo.",
       "worker_downloading": "{type} konverter se trenutno inicijalizira, molimo sačekajte.",
       "worker_error": "{type} konverter je imao grešku tokom inicijalizacije, pokušajte kasnije ponovo.",
       "worker_timeout": "{type} konverteru treba duže nego očekivano da se inicijalizira, molimo sačekajte još malo ili osvježite stranicu.",
@@ -140,7 +144,7 @@
       "advanced_settings": "Napredne postavke",
       "filename_format": "Format imena datoteke",
       "filename_description": "Ovo određuje ime datoteke pri preuzimanju, <b>bez ekstenzije</b>. Možete koristiti sljedeće šablone: <b>%name%</b> originalno ime, <b>%extension%</b> originalna ekstenzija, <b>%date%</b> datum konverzije.",
-      "placeholder": "VERT_%name%",
+      "placeholder": "LocalConvert_%name%",
       "default_format": "Podrazumijevani format konverzije",
       "default_format_enable": "Uključi",
       "default_format_disable": "Isključi",
@@ -164,14 +168,14 @@
       "title": "Konverzija videa",
       "status": "status:",
       "loading": "učitavam...",
-      "available": "dostupan, commit id {commitId}",
-      "unavailable": "nedostupan (da li je URL tačan?)",
-      "description": "<code>vertd</code> je serverski omotač za FFmpeg, omogućava brzo konvertovanje videa koristeći vaš GPU putem VERT web interfejsa.",
-      "hosting_info": "Imamo javnu instancu radi praktičnosti, ali možete lako hostati svoju. Preuzmite server [vertd_link]ovdje[/vertd_link].",
-      "instance": "Instanca",
-      "url_placeholder": "Primjer: http://localhost:24153",
+      "available": "spreman",
+      "unavailable": "nedostupan",
+      "description": "Konverzija videa odvija se lokalno putem FFmpeg WebAssembly tehnologije. Vaši video zapisi nikada ne napuštaju vaš uređaj.",
+      "hosting_info": "Sva obrada videa odvija se u vašem pregledniku putem WebAssembly tehnologije.",
+      "instance": "Motor",
+      "url_placeholder": "FFmpeg WASM (lokalno)",
       "conversion_speed": "Brzina konverzije",
-      "speed_description": "Opisuje odnos između brzine i kvaliteta. Brže = niži kvalitet ali kraće vrijeme.",
+      "speed_description": "Opisuje odnos između brzine i kvaliteta. Brže znači niži kvalitet, ali kraće vrijeme konverzije.",
       "speeds": {
         "very_slow": "Vrlo sporo",
         "slower": "Sporije",
@@ -181,18 +185,18 @@
         "ultra_fast": "Ultra brzo"
       },
       "auto_instance": "Auto (preporučeno)",
-      "eu_instance": "Falkenstein, Njemačka",
-      "us_instance": "Washington, SAD",
-      "custom_instance": "Prilagođeno"
+      "eu_instance": "Lokalno",
+      "us_instance": "Lokalno",
+      "custom_instance": "Lokalno"
     },
     "privacy": {
       "title": "Privatnost i podaci",
       "plausible_title": "Plausible analitika",
-      "plausible_description": "Koristimo [plausible_link]Plausible[/plausible_link], alat fokusiran na privatnost. Podaci su potpuno anonimni i agregirani. Analitiku možete vidjeti [analytics_link]ovdje[/analytics_link] i isključiti ispod.",
+      "plausible_description": "Koristimo [plausible_link]Plausible[/plausible_link], alat fokusiran na privatnost, za prikupljanje potpuno anonimnih statistika. Podaci su potpuno anonimni i agregirani. Analitiku možete vidjeti [analytics_link]ovdje[/analytics_link] i isključiti je ispod.",
       "opt_in": "Uključi",
       "opt_out": "Isključi",
       "cache_title": "Upravljanje cacheom",
-      "cache_description": "Konverter se kešira u vašem pregledniku radi boljih performansi.",
+      "cache_description": "Konverter se kešira u vašem pregledniku kako ne biste morali ponovo preuzimati datoteke, čime se poboljšavaju performanse i smanjuje potrošnja podataka.",
       "refresh_cache": "Osvježi cache",
       "clear_cache": "Obriši cache",
       "files_cached": "{size} ({count} datoteka)",
@@ -202,61 +206,61 @@
       "cache_cleared": "Cache uspješno obrisan!",
       "cache_clear_error": "Neuspješno brisanje cachea.",
       "site_data_title": "Upravljanje podacima stranice",
-      "site_data_description": "Obriši sve podatke stranice uključujući postavke i cache i resetuj VERT.",
+      "site_data_description": "Obriši sve podatke stranice uključujući postavke i cache te resetuj LocalConvert na početno stanje i osvježi stranicu.",
       "clear_all_data": "Obriši sve podatke",
       "clear_all_data_confirm_title": "Obrisati sve podatke stranice?",
-      "clear_all_data_confirm": "Resetovat će sve postavke i cache i osvježiti stranicu. Ova akcija je nepovratna.",
+      "clear_all_data_confirm": "Resetovat će sve postavke i cache te osvježiti stranicu. Ova akcija je nepovratna.",
       "clear_all_data_cancel": "Otkaži",
       "all_data_cleared": "Svi podaci obrisani! Osvježavam stranicu...",
       "all_data_clear_error": "Neuspješno brisanje svih podataka."
     },
     "language": {
       "title": "Jezik",
-      "description": "Odaberite željeni jezik VERT interfejsa."
+      "description": "Odaberite željeni jezik LocalConvert sučelja."
     }
   },
   "about": {
     "title": "O nama",
     "why": {
-      "title": "Zašto VERT?",
-      "description": "<b>Konverteri datoteka su nas uvijek razočaravali.</b> Ružni su, puni reklama i, najvažnije, spori. Odlučili smo to riješiti jednom zauvijek.<br/><br/>Sve ne-video datoteke se obrađuju lokalno, što znači da nema slanja datoteka na server — i mi nikad ne vidimo vaše podatke.<br/><br/>Video se otprema na naš brzi RTX 4000 Ada server. Vaši video snimci ostaju tamo sat vremena ako ih ne konvertujete. Ako ih konvertujete, ostaju sat ili dok ih preuzmete, nakon čega se brišu."
+      "title": "Zašto LocalConvert?",
+      "description": "<b>Konverteri datoteka su nas uvijek razočaravali.</b> Spori su, zahtijevaju registraciju i šalju vaše datoteke na servere trećih strana o kojima ništa ne znate. Odlučili smo to promijeniti.<br/><br/>Svaka datoteka koju konvertujete — slike, audio, video i dokumenti — obrađuje se u potpunosti na vašem uređaju putem WebAssembly tehnologije. Ništa ne napušta vaš preglednik. Nema servera, nema otpremanja i niko nikada ne može vidjeti vaše datoteke."
     },
     "sponsors": {
-      "title": "Sponzori",
-      "description": "Želite nas podržati? Kontaktirajte nekog od developera na [discord_link]Discordu[/discord_link] ili pošaljite email na",
-      "email_copied": "Email kopiran!"
+      "title": "Podrška",
+      "description": "LocalConvert je besplatan i otvorenog koda. Ako vam je koristan, razmislite o podršci projektu. Kontaktirajte nas na",
+      "email_copied": "Email kopiran u međuspremnik!"
     },
     "resources": {
       "title": "Resursi",
       "discord": "Discord",
-      "source": "Izvor",
+      "source": "Izvorni kod",
       "email": "Email"
     },
     "donate": {
-      "title": "Donirajte VERT-u",
-      "description": "Vaša podrška pomaže da nastavimo razvijati i unapređivati VERT.",
+      "title": "Podržite LocalConvert",
+      "description": "Uz vašu podršku možemo nastaviti održavati i unapređivati LocalConvert.",
       "one_time": "Jednokratno",
       "monthly": "Mjesečno",
       "custom": "Prilagođeno",
       "pay_now": "Plati sada",
       "donate_amount": "Doniraj ${amount} USD",
-      "thank_you": "Hvala na donaciji!",
-      "payment_failed": "Plaćanje nije uspjelo: {message}{period}. Novac nije skinut s vašeg računa.",
+      "thank_you": "Hvala na podršci!",
+      "payment_failed": "Plaćanje nije uspjelo: {message}{period} Novac nije skinut s vašeg računa.",
       "donation_error": "Došlo je do greške pri obradi donacije. Pokušajte ponovo kasnije.",
       "payment_error": "Greška pri dohvaćanju podataka o plaćanju. Pokušajte ponovo.",
-      "donation_notice_official": "Donacije ovdje idu za zvaničnu VERT instancu (vert.sh) i pomažu razvoj projekta.",
-      "donation_notice_unofficial": "Donacije ovdje idu operateru ove VERT instance. Ako želite podržati zvanične developere, posjetite [official_link]vert.sh[/official_link]."
+      "donation_notice_official": "Vaša podrška pomaže u održavanju i unapređivanju LocalConverta.",
+      "donation_notice_unofficial": "Ovo je instanca LocalConverta treće strane. Ako želite podržati originalni projekat, posjetite zvanični sajt."
     },
     "credits": {
       "title": "Zasluge",
       "contact_team": "Ako želite kontaktirati razvojni tim, koristite email iz kartice \"Resursi\".",
       "notable_contributors": "Istaknuti doprinosioci",
-      "notable_description": "Želimo zahvaliti ovim osobama na velikim doprinosima VERT-u.",
+      "notable_description": "Želimo zahvaliti ovim osobama na velikim doprinosima VERT-u, projektu na kojem se LocalConvert temelji.",
       "github_contributors": "GitHub doprinosioci",
-      "github_description": "Veliko hvala svima! [github_link]Želite pomoći i vi?[/github_link]",
+      "github_description": "Veliko hvala svima koji su pomogli! [github_link]Želite li i vi doprinijeti?[/github_link]",
       "no_contributors": "Izgleda da još niko nije doprinio... [contribute_link]budite prvi![/contribute_link]",
       "libraries": "Biblioteke",
-      "libraries_description": "Veliko hvala FFmpeg-u (audio, video), ImageMagick-u (slike) i Pandoc-u (dokumenti). VERT se na njima temelji.",
+      "libraries_description": "Veliko hvala FFmpeg-u (audio, video), ImageMagick-u (slike) i Pandoc-u (dokumenti) na godinama odličnih biblioteka. LocalConvert se na njima temelji.",
       "roles": {
         "lead_developer": "Glavni developer; backend konverzije, UI implementacija",
         "developer": "Developer; UI implementacija",
@@ -285,38 +289,80 @@
     "title": "Politika privatnosti",
     "summary": {
       "title": "Sažetak",
-      "description": "VERT-ova politika privatnosti je vrlo jednostavna: ne prikupljamo niti pohranjujemo ikakve podatke o vama. Ne koristimo kolačiće ni trackere, analitika je potpuno privatna, a konverzije (osim videa) rade lokalno. Video se briše nakon preuzimanja ili nakon sat vremena, osim ako nam ne date dozvolu da ga čuvamo radi rješavanja problema. Koristimo Coolify za hosting i Plausible za anonimnu analitiku. Stripe obrađuje donacije i može prikupiti podatke za prevenciju prevara.<br/><br/>Ovo vrijedi za zvaničnu instancu [vert_link]vert.sh[/vert_link]; treće strane mogu raditi drugačije."
+      "description": "Politika privatnosti LocalConverta je jednostavna: vaše datoteke nikada ne napuštaju vaš uređaj. Sve konverzije — slike, audio, video i dokumenti — odvijaju se u potpunosti u vašem pregledniku putem WebAssembly tehnologije. Ne koristimo kolačiće ni trackere, a analitika je potpuno anonimna putem Plausiblea.<br/><br/>LocalConvert se temelji na [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
     },
     "conversions": {
       "title": "Konverzije",
-      "description": "Većina konverzija (slike, dokumenti, audio) se obavlja lokalno putem WebAssembly alata (ImageMagick, Pandoc, FFmpeg). Vaše datoteke ne napuštaju uređaj.<br/><br/>Video konverzije se obavljaju na našim serverima jer zahtijevaju više snage. Video se briše nakon preuzimanja ili sat vremena, osim ako nam eksplicitno ne dozvolite duže čuvanje radi otklanjanja grešaka."
+      "description": "Sve konverzije odvijaju se u potpunosti lokalno na vašem uređaju putem WebAssembly verzija relevantnih alata (FFmpeg, ImageMagick, Pandoc). To znači da vaše datoteke nikada ne napuštaju vaš uređaj i niko im nikada neće imati pristup. Za razliku od drugih konvertera, ovo uključuje i video — konverzija videa također se vrši lokalno u vašem pregledniku."
     },
     "donations": {
       "title": "Donacije",
-      "description": "Koristimo Stripe na stranici [about_link]o nama[/about_link] za donacije. Stripe može prikupiti određene informacije radi prevencije prevara, opisano u [stripe_link]njihovoj dokumentaciji[/stripe_link]. Eksterni zahtjevi se šalju tek nakon vašeg klika."
+      "description": "Ako je funkcionalnost donacija dostupna, obrada plaćanja može biti povjerena pružatelju treće strane. Eksterni mrežni zahtjevi prema pružatelju plaćanja se odgađaju i šalju se tek nakon što kliknete na dugme za plaćanje."
     },
     "conversion_errors": {
       "title": "Greške pri konverziji",
-      "description": "Kada konverzija videa ne uspije, možemo prikupiti anonimne informacije radi dijagnostike:",
-      "list_job_id": "ID zadatka (anonimizirano ime datoteke)",
-      "list_format_from": "Format iz kojeg se konvertuje",
-      "list_format_to": "Format u koji se konvertuje",
-      "list_stderr": "FFmpeg stderr (poruka greške)",
-      "list_video": "Stvarni video zapis (samo uz vašu dozvolu)",
-      "footer": "Ove informacije se koriste samo za dijagnostiku. Sam video se prikuplja samo uz vašu dozvolu."
+      "description": "Kada konverzija ne uspije, informacije o grešci ostaju na vašem uređaju. Nikakvi podaci o grešci se automatski ne šalju na bilo koji server. Detalji greške mogu uključivati:",
+      "list_job_id": "Tip datoteke",
+      "list_format_from": "Format iz kojeg ste konvertovali",
+      "list_format_to": "Format u koji ste konvertovali",
+      "list_stderr": "FFmpeg izlaz greške",
+      "list_video": "Nijedna datoteka se ne otprema",
+      "footer": "Sve informacije o grešci ostaju na vašem uređaju i nikada se ne prenose."
     },
     "analytics": {
       "title": "Analitika",
-      "description": "Koristimo vlastitu Plausible instancu za potpuno anonimnu analitiku. Plausible ne koristi kolačiće i usklađen je sa svim glavnim zakonima o privatnosti. Možete isključiti analitiku u sekciji \"Privatnost i podaci\" u [settings_link]postavkama[/settings_link] i pročitati više [plausible_link]ovdje[/plausible_link]."
+      "description": "Koristimo Plausible za potpuno anonimnu i agregiranu analitiku. Plausible ne koristi kolačiće i usklađen je sa svim glavnim propisima o privatnosti (GDPR/CCPA/PECR). Možete isključiti analitiku u sekciji \"Privatnost i podaci\" u [settings_link]postavkama[/settings_link] i pročitati više o Plausibleovim praksama privatnosti [plausible_link]ovdje[/plausible_link]."
     },
     "local_storage": {
       "title": "Lokalno skladištenje",
-      "description": "Vaše postavke se čuvaju u local storage-u preglednika, a lista GitHub doprinosilaca u session storage-u. Nijedan lični podatak se ne skladišti.<br/><br/>WebAssembly alati (FFmpeg, ImageMagick, Pandoc) se također čuvaju lokalno. Možete ih vidjeti ili obrisati u sekciji \"Privatnost i podaci\" u [settings_link]postavkama[/settings_link]."
+      "description": "Vaše postavke se čuvaju u local storageu preglednika. Nijedan lični podatak se ne skladišti ni prenosi.<br/><br/>WebAssembly alati (FFmpeg, ImageMagick, Pandoc) također se čuvaju lokalno u vašem pregledniku pri prvoj posjeti, kako ne biste morali ponovo preuzimati pri svakoj posjeti. Možete ih pregledati ili obrisati u sekciji \"Privatnost i podaci\" u [settings_link]postavkama[/settings_link]."
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Za pitanja, pišite nam na: [email_link]hello@vert.sh[/email_link]. Ako koristite treću stranu, kontaktirajte njihovog hostera."
+      "description": "Za pitanja, pišite nam na: [email_link]hello@localconvert.app[/email_link]."
     },
-    "last_updated": "Posljednje ažuriranje: 2025-10-29"
+    "last_updated": "Posljednje ažuriranje: 2026-03-22"
+  },
+  "toast": {
+    "insecure_context": "Pristupate LocalConvertu u nesigurnom kontekstu (npr. putem HTTP-a umjesto HTTPS-a). Neke funkcije možda neće raditi kako se očekuje."
+  },
+  "landing": {
+    "pills": {
+      "no_uploads": "Bez Otpremanja na Server",
+      "gpu": "GPU Ubrzanje",
+      "open_source": "Besplatno i Otvorenog Koda",
+      "no_limit": "Bez Ograničenja Veličine"
+    },
+    "how_it_works": {
+      "title": "Kako Funkcioniše",
+      "step1_title": "Odaberite Datoteku",
+      "step1_desc": "Prevucite ili kliknite da odaberete bilo koju sliku, audio, video ili dokument.",
+      "step2_title": "Konvertovano u Vašem Pregledniku",
+      "step2_desc": "Sve se izvršava lokalno putem WebAssembly tehnologije — bez otpremanja, bez čekanja na servere.",
+      "step3_title": "Preuzmite Rezultat",
+      "step3_desc": "Dobijte konvertovanu datoteku odmah, direktno na vaš uređaj."
+    },
+    "formats": {
+      "title": "Podržani Formati"
+    },
+    "privacy": {
+      "title": "100% Privatno po Dizajnu",
+      "point1": "Vaše datoteke nikada ne napuštaju vaš uređaj",
+      "point2": "Bez otpremanja na server — sve se izvršava u vašem pregledniku",
+      "point3": "Otvorenog koda — provjerite sami"
+    },
+    "faq": {
+      "title": "Često Postavljana Pitanja",
+      "q1": "Je li LocalConvert zaista besplatan?",
+      "a1": "Da — potpuno besplatan, bez potrebe za računom, bez skrivenih naknada. LocalConvert je otvorenog koda pod AGPL-3.0 licencom.",
+      "q2": "Jesu li moje datoteke privatne?",
+      "a2": "U potpunosti. Sve konverzije se izvršavaju u vašem pregledniku putem WebAssembly tehnologije. Vaše datoteke nikada ne dotiču naše servere — ni na trenutak.",
+      "q3": "Koji formati datoteka su podržani?",
+      "a3": "Slike (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC) i Dokumenti (DOCX, HTML, Markdown, EPUB). PDF alati su također uključeni.",
+      "q4": "Postoji li ograničenje veličine datoteke?",
+      "a4": "Nema fiksnog ograničenja — ovisi o dostupnoj memoriji vašeg uređaja. Za vrlo velike video datoteke, Firefox ili Safari ih obično bolje obrađuju.",
+      "q5": "Trebam li nešto instalirati?",
+      "a5": "Nije potrebna instalacija. LocalConvert radi direktno u bilo kojem modernom pregledniku. Možete ga i instalirati kao PWA iz adresne trake za iskustvo slično aplikaciji."
+    }
   }
 }

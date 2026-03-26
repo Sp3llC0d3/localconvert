@@ -3,30 +3,31 @@
 	"navbar": {
 		"upload": "Unggah",
 		"convert": "Konversi",
+		"pdf_tools": "Alat PDF",
 		"settings": "Pengaturan",
 		"about": "Tentang",
 		"toggle_theme": "Ganti Tema"
 	},
 	"footer": {
-		"copyright": "© {year} VERT.",
+		"copyright": "© {year} LocalConvert. Berbasis VERT.sh",
 		"source_code": "Kode sumber",
-		"discord_server": "Peladen Discord"
+		"discord_server": "Peladen Discord",
+		"privacy_policy": "Kebijakan privasi"
 	},
 	"upload": {
-		"title": "Konverter berkas andalanmu.",
-		"subtitle": "Semua gambar, audio, dan pemrosesan dokumen dilakukan pada perangkatmu. Video dikonversi pada peladen kilat kami. Tidak ada batas ukuran berkas, tidak ada iklan, dan benar-benar sumber terbuka.",
+		"title": "Konversi gambar, audio, video & dokumen — gratis, privat, tanpa unggahan.",
+		"subtitle": "Didukung oleh WebAssembly — berjalan sepenuhnya di browser Anda. Tanpa akun, tanpa batas ukuran berkas, sumber terbuka dan gratis selamanya.",
 		"uploader": {
-			"text": "Jatuhkan dan klik untuk {action}",
-			"convert": "Konversi",
-			"jpegify": "jpegify"
+			"text": "Jatuhkan atau klik untuk {action}",
+			"convert": "konversi"
 		},
 		"cards": {
-			"title": "Dapat Ditangani VERT ...",
+			"title": "LocalConvert mendukung...",
 			"images": "Gambar",
 			"audio": "Audio",
 			"documents": "Dokumen",
 			"video": "Video",
-			"video_server_processing": "Proses di Server",
+			"video_server_processing": "Proses Lokal",
 			"local_supported": "Proses di Lokal",
 			"status": {
 				"text": "<b>Status:</b> {status}",
@@ -43,13 +44,25 @@
 			"partial_support": "Format ini hanya dapat dikonversi ke {direction}.",
 			"direction_input": "sumber asal (dari)",
 			"direction_output": "target (ke)",
-			"video_server_processing": "Video upload ke server untuk diproses secara baku, belajar bagaimana mengaturnya di sini."
+			"video_server_processing": "Semua konversi dilakukan secara lokal di perangkat Anda."
 		}
 	},
 	"convert": {
+		"archive_file": {
+			"extract": "Ekstrak arsip",
+			"extracting": "Arsip terdeteksi: {filename}",
+			"extracted": "{extract_count} berkas diekstrak dari {filename}. {ignore_count} item diabaikan.",
+			"detected": "Berkas {type} terdeteksi di {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "dokumen",
+			"image": "gambar",
+			"extract_error": "Kesalahan mengekstrak {filename}: {error}"
+		},
+		"large_file_warning": "Karena keterbatasan browser/perangkat, konversi dinonaktifkan untuk berkas ini karena ukurannya melebihi {limit}GB. Kami menyarankan penggunaan Firefox atau Safari untuk berkas seukuran ini karena memiliki keterbatasan yang lebih sedikit.",
 		"external_warning": {
-			"title": "Peringatan server eksternal",
-			"text": "Jika kamu memilih untuk mengonversi ke format video, berkas tersebut akan diunggah ke server eksternal untuk dikonversi. Apakah kamu ingin melanjutkan?",
+			"title": "Peringatan berkas besar",
+			"text": "Berkas ini cukup besar dan mungkin memerlukan waktu untuk dikonversi di browser. Apakah Anda ingin melanjutkan?",
 			"yes": "Ya",
 			"no": "Tidak"
 		},
@@ -65,7 +78,9 @@
 			"video": "Video",
 			"doc": "Dokumen",
 			"image": "Gambar",
-			"placeholder": "Cari format"
+			"placeholder": "Cari format",
+			"no_formats": "Tidak ada format yang tersedia",
+			"no_results": "Tidak ada format yang cocok dengan pencarian Anda"
 		},
 		"tooltips": {
 			"unknown_file": "Jenis berkas tidak diketahui",
@@ -78,14 +93,28 @@
 		},
 		"errors": {
 			"cant_convert": "Kami tidak dapat mengonversi berkas ini.",
-			"vertd_server": "apa yang kamu lakukan..? kamu seharusnya menjalankan peladen vertd!",
-			"vertd_generic_body": "Terjadi galat saat mencoba mengonversi video kamu. Apakah kamu ingin mengirimkan video ini ke pengembang untuk membantu memperbaiki kutu ini? Hanya berkas video kamu yang akan dikirim. Tidak ada data identifikasi yang diunggah.",
-			"vertd_generic_title": "Konversi video galat",
-			"vertd_generic_yes": "Kirim video",
-			"vertd_generic_no": "Jangan kirim",
-			"vertd_failed_to_keep": "Gagal menyimpan video di peladen: {error}",
+			"vertd_server": "Format berkas ini tidak didukung untuk konversi.",
+			"vertd_generic_view": "Lihat detail kesalahan",
+			"vertd_generic_body": "Terjadi kesalahan saat mencoba mengonversi berkas Anda. Coba lagi atau gunakan format yang berbeda.",
+			"vertd_generic_title": "Kesalahan konversi",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Batal",
+			"vertd_failed_to_keep": "Konversi gagal: {error}",
+			"vertd_details": "Lihat detail kesalahan",
+			"vertd_details_body": "Informasi kesalahan berikut mungkin membantu pemecahan masalah:",
+			"vertd_details_footer": "Lihat [privacy_link]kebijakan privasi[/privacy_link] kami untuk detail selengkapnya.",
+			"vertd_details_job_id": "<b>Job ID:</b> {jobId}",
+			"vertd_details_from": "<b>Dari format:</b> {from}",
+			"vertd_details_to": "<b>Ke format:</b> {to}",
+			"vertd_details_error_message": "<b>Pesan kesalahan:</b> [view_link]Lihat log kesalahan[/view_link]",
+			"vertd_details_close": "Tutup",
+			"vertd_ratelimit": "Berkas '{filename}' gagal dikonversi beberapa kali. Coba format yang berbeda atau berkas yang lebih kecil.",
 			"unsupported_format": "Hanya berkas gambar, video, audio, dan dokumen yang didukung",
-			"vertd_not_found": "Tidak dapat menemukan layanan vertd untuk memulai konversi video. Apakah URL layanan sudah diatur dengan benar?",
+			"pdf_redirect_title": "Ini adalah file PDF.",
+			"pdf_redirect_desc": "PDF tidak dikonversi di sini — gunakan Alat PDF untuk menggabungkan, membagi, mengompresi, memutar, dan lainnya.",
+			"pdf_redirect_button": "Buka Alat PDF",
+			"format_output_only": "Format ini saat ini hanya dapat digunakan sebagai keluaran (dikonversi ke), bukan sebagai masukan.",
+			"vertd_not_found": "Konverter video tidak dapat diinisialisasi. Segarkan halaman dan coba lagi.",
 			"worker_downloading": "Konverter {type} sedang diinisialisasi, harap tunggu beberapa saat.",
 			"worker_error": "Konverter {type} mengalami kesalahan saat inisialisasi, coba lagi nanti.",
 			"worker_timeout": "Konverter {type} memerlukan waktu lebih lama dari perkiraan untuk inisialisasi, harap tunggu beberapa saat lagi atau segarkan halaman.",
@@ -114,10 +143,12 @@
 			"title": "Konversi",
 			"advanced_settings": "Pengaturan lanjutan",
 			"filename_format": "Format nama berkas",
-			"filename_description": "Ini akan menentukan nama berkas saat diunduh, <b>tidak termasuk ekstensi berkas.</b> Kamu dapat menggunakan template berikut dalam format, yang akan diganti dengan informasi terkait: <b>%name%</b> untuk nama berkas asli, <b>%extension%</b> untuk ekstensi berkas asli, dan <b>%date%</b> untuk tanggal saat berkas dikonversi.",
-			"placeholder": "VERT_%name%",
+			"filename_description": "Ini akan menentukan nama berkas saat diunduh, <b>tidak termasuk ekstensi berkas.</b> Anda dapat menggunakan template berikut dalam format, yang akan diganti dengan informasi terkait: <b>%name%</b> untuk nama berkas asli, <b>%extension%</b> untuk ekstensi berkas asli, dan <b>%date%</b> untuk tanggal saat berkas dikonversi.",
+			"placeholder": "LocalConvert_%name%",
 			"default_format": "Format konversi baku",
-			"default_format_description": "Ini akan mengubah format baku yang dipilih saat kamu mengunggah berkas dengan tipe tersebut.",
+			"default_format_enable": "Aktifkan",
+			"default_format_disable": "Nonaktifkan",
+			"default_format_description": "Ini akan mengubah format baku yang dipilih saat Anda mengunggah berkas dengan tipe tersebut.",
 			"default_format_image": "Gambar",
 			"default_format_video": "Video",
 			"default_format_audio": "Audio",
@@ -137,12 +168,12 @@
 			"title": "Konversi video",
 			"status": "status:",
 			"loading": "memuat...",
-			"available": "tersedia, commit id {commitId}",
-			"unavailable": "tidak tersedia (apakah URL sudah benar?)",
-			"description": "Proyek <code>vertd</code> adalah server wrapper untuk FFmpeg. Ini memungkinkan kamu mengonversi video melalui antarmuka web VERT, sambil memanfaatkan kekuatan GPU untuk mempercepat proses.",
-			"hosting_info": "Kami menyediakan instance publik untuk kemudahanmu, tetapi kamu juga bisa dengan mudah meng-host sendiri di PC atau server jika tahu caranya. Kamu dapat mengunduh binary server [vertd_link]di sini[/vertd_link] - proses penyiapan akan semakin mudah di masa depan, jadi tetap pantau!",
-			"instance": "Instance",
-			"url_placeholder": "Contoh: http://localhost:24153",
+			"available": "siap",
+			"unavailable": "tidak tersedia",
+			"description": "Konversi video ditangani secara lokal menggunakan FFmpeg WebAssembly. Video Anda tidak pernah meninggalkan perangkat Anda.",
+			"hosting_info": "Semua pemrosesan video dilakukan di browser Anda menggunakan teknologi WebAssembly.",
+			"instance": "Mesin",
+			"url_placeholder": "FFmpeg WASM (lokal)",
 			"conversion_speed": "Kecepatan konversi",
 			"speed_description": "Menjelaskan kompromi antara kecepatan dan kualitas. Kecepatan lebih tinggi menghasilkan kualitas lebih rendah, tetapi proses lebih cepat.",
 			"speeds": {
@@ -154,41 +185,49 @@
 				"ultra_fast": "Sangat Cepat"
 			},
 			"auto_instance": "Otomatis (disarankan)",
-			"eu_instance": "Falkenstein, Jerman",
-			"us_instance": "Washington, AS",
-			"custom_instance": "Kustom"
+			"eu_instance": "Lokal",
+			"us_instance": "Lokal",
+			"custom_instance": "Lokal"
 		},
 		"privacy": {
 			"title": "Privasi & data",
 			"plausible_title": "Analitik Plausible",
-			"plausible_description": "Kami menggunakan [plausible_link]Plausible[/plausible_link], alat analitik yang berfokus pada privasi, untuk mengumpulkan statistik anonim sepenuhnya. Semua data dianonimkan dan diagregasi, tanpa informasi yang dapat diidentifikasi. Kamu dapat melihat analitiknya [analytics_link]di sini[/analytics_link] dan memilih untuk keluar di bawah.",
+			"plausible_description": "Kami menggunakan [plausible_link]Plausible[/plausible_link], alat analitik yang berfokus pada privasi, untuk mengumpulkan statistik anonim sepenuhnya. Semua data dianonimkan dan diagregasi, tanpa informasi yang dapat diidentifikasi. Anda dapat melihat analitiknya [analytics_link]di sini[/analytics_link] dan memilih untuk keluar di bawah.",
 			"opt_in": "Ikut serta",
 			"opt_out": "Tidak ikut",
 			"cache_title": "Manajemen cache",
-			"cache_description": "Kami menyimpan berkas konverter di browser agar kamu tidak perlu mengunduh ulang setiap kali, meningkatkan performa dan menghemat data.",
+			"cache_description": "Kami menyimpan berkas konverter di browser agar Anda tidak perlu mengunduh ulang setiap kali, meningkatkan performa dan menghemat data.",
 			"refresh_cache": "Segarkan cache",
 			"clear_cache": "Hapus cache",
 			"files_cached": "{size} ({count} berkas)",
 			"loading_cache": "Memuat...",
 			"total_size": "Total Ukuran",
-			"files_cached_label": "File Tersimpan",
+			"files_cached_label": "Berkas Tersimpan",
 			"cache_cleared": "Cache berhasil dihapus!",
-			"cache_clear_error": "Gagal menghapus cache."
+			"cache_clear_error": "Gagal menghapus cache.",
+			"site_data_title": "Manajemen data situs",
+			"site_data_description": "Hapus semua data situs termasuk pengaturan dan berkas cache, mengatur ulang LocalConvert ke kondisi bawaan dan memuat ulang halaman.",
+			"clear_all_data": "Hapus semua data situs",
+			"clear_all_data_confirm_title": "Hapus semua data situs?",
+			"clear_all_data_confirm": "Ini akan mengatur ulang semua pengaturan & cache, lalu memuat ulang halaman. Tindakan ini tidak dapat dibatalkan.",
+			"clear_all_data_cancel": "Batal",
+			"all_data_cleared": "Semua data situs berhasil dihapus! Memuat ulang halaman...",
+			"all_data_clear_error": "Gagal menghapus semua data situs."
 		},
 		"language": {
 			"title": "Bahasa",
-			"description": "Pilih bahasa pilihanmu untuk antarmuka VERT."
+			"description": "Pilih bahasa pilihan Anda untuk antarmuka LocalConvert."
 		}
 	},
 	"about": {
 		"title": "Tentang",
 		"why": {
-			"title": "Mengapa VERT?",
-			"description": "<b>Konverter berkas selalu mengecewakan kami.</b> Mereka jelek, penuh iklan, dan yang paling penting; lambat. Kami memutuskan untuk menyelesaikan masalah ini sekali untuk selamanya dengan membuat alternatif yang memperbaiki semua masalah itu, dan lebih banyak lagi.<br/><br/>Semua berkas non-video dikonversi sepenuhnya di perangkat; artinya tidak ada jeda antara pengiriman dan penerimaan berkas, dan kami tidak pernah melihat berkas yang kamu konversi.<br/><br/>File video diunggah ke server RTX 4000 Ada super cepat kami. Videomu akan tetap di sana selama satu jam jika tidak dikonversi. Jika dikonversi, video akan bertahan satu jam atau hingga diunduh. Setelah itu, berkas akan dihapus dari server kami."
+			"title": "Mengapa LocalConvert?",
+			"description": "<b>Konverter berkas selalu mengecewakan kami.</b> Mereka lambat, mengharuskan Anda membuat akun, dan mengirim berkas Anda ke server pihak ketiga yang tidak Anda ketahui. Kami memutuskan untuk memperbaikinya.<br/><br/>Setiap berkas yang Anda konversi — gambar, audio, video, dan dokumen — diproses sepenuhnya di perangkat Anda menggunakan WebAssembly. Tidak ada yang pernah meninggalkan browser Anda. Tidak ada server yang terlibat, tidak ada unggahan, dan tidak ada yang bisa melihat berkas Anda."
 		},
 		"sponsors": {
-			"title": "Sponsor",
-			"description": "Ingin mendukung kami? Hubungi pengembang di server [discord_link]Discord[/discord_link], atau kirim email ke",
+			"title": "Dukungan",
+			"description": "LocalConvert gratis dan sumber terbuka. Jika Anda merasa terbantu, pertimbangkan untuk mendukung proyek ini. Hubungi kami di",
 			"email_copied": "Email disalin ke clipboard!"
 		},
 		"resources": {
@@ -198,28 +237,30 @@
 			"email": "Email"
 		},
 		"donate": {
-			"title": "Donasi untuk VERT",
-			"description": "Dengan dukunganmu, kami dapat terus memelihara dan meningkatkan VERT.",
+			"title": "Dukung LocalConvert",
+			"description": "Dengan dukungan Anda, kami dapat terus memelihara dan meningkatkan LocalConvert.",
 			"one_time": "Sekali",
 			"monthly": "Bulanan",
 			"custom": "Kustom",
 			"pay_now": "Bayar sekarang",
 			"donate_amount": "Donasi ${amount} USD",
-			"thank_you": "Terima kasih atas donasimu!",
-			"payment_failed": "Pembayaran gagal: {message}{period} Kamu tidak dikenai biaya.",
+			"thank_you": "Terima kasih atas dukungan Anda!",
+			"payment_failed": "Pembayaran gagal: {message}{period} Anda tidak dikenai biaya.",
 			"donation_error": "Terjadi kesalahan saat memproses donasi. Coba lagi nanti.",
-			"payment_error": "Kesalahan mengambil detail pembayaran. Coba lagi nanti."
+			"payment_error": "Kesalahan mengambil detail pembayaran. Coba lagi nanti.",
+			"donation_notice_official": "Dukungan Anda membantu memelihara dan meningkatkan LocalConvert.",
+			"donation_notice_unofficial": "Ini adalah instansi pihak ketiga dari LocalConvert. Jika Anda ingin mendukung proyek aslinya, kunjungi situs resminya."
 		},
 		"credits": {
 			"title": "Kredit",
-			"contact_team": "Jika kamu ingin menghubungi tim pengembang, gunakan email yang ada di kartu \"Sumber Daya\".",
+			"contact_team": "Jika Anda ingin menghubungi tim pengembang, gunakan email yang ada di kartu \"Sumber Daya\".",
 			"notable_contributors": "Kontributor penting",
-			"notable_description": "Kami ingin berterima kasih kepada orang-orang ini atas kontribusi besar mereka untuk VERT.",
+			"notable_description": "Kami ingin berterima kasih kepada orang-orang ini atas kontribusi besar mereka untuk VERT, proyek yang menjadi dasar LocalConvert.",
 			"github_contributors": "Kontributor GitHub",
-			"github_description": "[jpegify_link]Terima kasih[/jpegify_link] banyak kepada semua orang yang telah membantu! [github_link]Ingin membantu juga?[/github_link]",
+			"github_description": "Terima kasih banyak kepada semua orang yang telah membantu! [github_link]Ingin membantu juga?[/github_link]",
 			"no_contributors": "Sepertinya belum ada yang berkontribusi... [contribute_link]jadilah yang pertama berkontribusi![/contribute_link]",
 			"libraries": "Pustaka",
-			"libraries_description": "Terima kasih besar kepada FFmpeg (audio, video), ImageMagick (gambar), dan Pandoc (dokumen) atas pemeliharaannya selama bertahun-tahun. VERT bergantung pada mereka untuk menyediakan konversi berkas.",
+			"libraries_description": "Terima kasih besar kepada FFmpeg (audio, video), ImageMagick (gambar), dan Pandoc (dokumen) atas pemeliharaannya selama bertahun-tahun. LocalConvert bergantung pada mereka untuk menyediakan konversi berkas.",
 			"roles": {
 				"lead_developer": "Pengembang utama; backend konversi, implementasi UI",
 				"developer": "Pengembang; implementasi UI",
@@ -237,16 +278,91 @@
 			"general": "Kesalahan mengonversi {file}: {message}",
 			"cancel": "Kesalahan membatalkan konversi untuk {file}: {message}",
 			"magick": "Kesalahan di worker Magick, konversi gambar mungkin tidak berfungsi dengan benar.",
-			"ffmpeg": "Kesalahan memuat ffmpeg, beberapa fitur mungkin tidak berfungsi.",
+			"ffmpeg": "Kesalahan memuat FFmpeg, beberapa fitur mungkin tidak berfungsi sebagaimana mestinya.",
+			"pandoc": "Kesalahan memuat worker Pandoc, konversi dokumen mungkin tidak berfungsi sebagaimana mestinya.",
 			"no_audio": "Tidak ditemukan aliran audio.",
-			"invalid_rate": "Laju sampel tidak valid: {rate}Hz"
+			"invalid_rate": "Laju sampel tidak valid: {rate}Hz",
+			"file_too_large": "Berkas ini melebihi batas {limit}GB browser/perangkat. Coba Firefox atau Safari untuk mengonversi berkas besar ini, yang biasanya memiliki batas lebih tinggi."
 		}
 	},
-	"jpegify": {
-		"title": "JPEGIFY RAHASIA!!!",
-		"subtitle": "(psst... jangan beri tahu siapa pun!)",
-		"button": "JPEGIFY {compression}%!!!",
-		"download": "Unduh",
-		"delete": "Hapus"
+	"privacy": {
+		"title": "Kebijakan Privasi",
+		"summary": {
+			"title": "Ringkasan",
+			"description": "Kebijakan privasi LocalConvert sederhana: berkas Anda tidak pernah meninggalkan perangkat Anda. Semua konversi — gambar, audio, video, dan dokumen — terjadi sepenuhnya di browser Anda menggunakan WebAssembly. Kami tidak menggunakan cookie atau pelacak, dan analitik sepenuhnya anonim melalui Plausible.<br/><br/>LocalConvert berbasis [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Konversi",
+			"description": "Semua konversi terjadi sepenuhnya secara lokal di perangkat Anda menggunakan versi WebAssembly dari alat yang relevan (FFmpeg, ImageMagick, Pandoc). Ini berarti berkas Anda tidak pernah meninggalkan perangkat Anda dan tidak ada yang akan pernah mengaksesnya. Berbeda dengan konverter lain, ini termasuk video — konversi video juga dilakukan secara lokal di browser Anda."
+		},
+		"donations": {
+			"title": "Donasi",
+			"description": "Jika fitur donasi tersedia, pemrosesan pembayaran mungkin ditangani oleh penyedia pihak ketiga. Permintaan jaringan eksternal ke penyedia pembayaran ditangguhkan, dan hanya dibuat setelah Anda mengklik tombol bayar."
+		},
+		"conversion_errors": {
+			"title": "Kesalahan Konversi",
+			"description": "Ketika konversi gagal, informasi kesalahan tetap di perangkat Anda. Tidak ada data kesalahan yang dikirim secara otomatis ke server mana pun. Detail kesalahan mungkin mencakup:",
+			"list_job_id": "Jenis berkas",
+			"list_format_from": "Format yang Anda konversi dari",
+			"list_format_to": "Format yang Anda konversi ke",
+			"list_stderr": "Keluaran kesalahan FFmpeg",
+			"list_video": "Tidak ada berkas yang pernah diunggah",
+			"footer": "Semua informasi kesalahan tetap di perangkat Anda dan tidak pernah dikirimkan."
+		},
+		"analytics": {
+			"title": "Analitik",
+			"description": "Kami menggunakan Plausible untuk analitik yang sepenuhnya anonim dan teragregasi. Plausible tidak menggunakan cookie dan mematuhi semua regulasi privasi utama (GDPR/CCPA/PECR). Anda dapat memilih keluar dari analitik di bagian \"Privasi & data\" di [settings_link]pengaturan[/settings_link] dan membaca lebih lanjut tentang praktik privasi Plausible [plausible_link]di sini[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Penyimpanan Lokal",
+			"description": "Kami menggunakan penyimpanan lokal browser Anda untuk menyimpan pengaturan Anda. Tidak ada data pribadi yang disimpan atau dikirimkan.<br/><br/>Versi WebAssembly dari alat konversi yang kami gunakan (FFmpeg, ImageMagick, Pandoc) juga disimpan secara lokal di browser Anda saat pertama kali mengunjungi situs web, sehingga Anda tidak perlu mengunduhnya ulang setiap kunjungan. Tidak ada data pribadi yang disimpan atau dikirimkan. Anda dapat melihat atau menghapus data ini kapan saja di bagian \"Privasi & data\" di [settings_link]pengaturan[/settings_link]."
+		},
+		"contact": {
+			"title": "Kontak",
+			"description": "Untuk pertanyaan, kirim email kepada kami di: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Terakhir diperbarui: 2026-03-22"
+	},
+	"toast": {
+		"insecure_context": "Anda mengunjungi LocalConvert dalam konteks tidak aman (misalnya mengakses melalui HTTP alih-alih HTTPS). Beberapa fitur mungkin tidak berfungsi sebagaimana mestinya."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Tanpa Unggahan ke Server",
+			"gpu": "Dipercepat GPU",
+			"open_source": "Gratis & Sumber Terbuka",
+			"no_limit": "Tanpa Batas Ukuran Berkas"
+		},
+		"how_it_works": {
+			"title": "Cara Kerjanya",
+			"step1_title": "Pilih Berkas Anda",
+			"step1_desc": "Jatuhkan atau klik untuk memilih berkas gambar, audio, video, atau dokumen apa pun.",
+			"step2_title": "Dikonversi di Browser Anda",
+			"step2_desc": "Semuanya berjalan secara lokal melalui WebAssembly — tanpa unggahan, tanpa menunggu server.",
+			"step3_title": "Unduh Hasilnya",
+			"step3_desc": "Dapatkan berkas hasil konversi Anda seketika, langsung ke perangkat Anda."
+		},
+		"formats": {
+			"title": "Format yang Didukung"
+		},
+		"privacy": {
+			"title": "100% Privat Sejak Awal",
+			"point1": "Berkas Anda tidak pernah meninggalkan perangkat Anda",
+			"point2": "Tanpa unggahan ke server — semuanya berjalan di browser Anda",
+			"point3": "Sumber terbuka — verifikasi sendiri"
+		},
+		"faq": {
+			"title": "Pertanyaan yang Sering Diajukan",
+			"q1": "Apakah LocalConvert benar-benar gratis?",
+			"a1": "Ya — sepenuhnya gratis, tanpa akun, tanpa biaya tersembunyi. LocalConvert adalah sumber terbuka di bawah lisensi AGPL-3.0.",
+			"q2": "Apakah berkas saya privat?",
+			"a2": "Sepenuhnya. Semua konversi berjalan di browser Anda menggunakan WebAssembly. Berkas Anda tidak pernah menyentuh server kami — bahkan sesaat pun tidak.",
+			"q3": "Format berkas apa yang didukung?",
+			"a3": "Gambar (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), dan Dokumen (DOCX, HTML, Markdown, EPUB). Alat PDF juga tersedia.",
+			"q4": "Apakah ada batas ukuran berkas?",
+			"a4": "Tidak ada batas keras — tergantung memori yang tersedia di perangkat Anda. Untuk berkas video yang sangat besar, Firefox atau Safari biasanya menanganinya lebih baik.",
+			"q5": "Apakah saya perlu menginstal sesuatu?",
+			"a5": "Tidak perlu instalasi. LocalConvert bekerja langsung di browser modern apa pun. Anda juga dapat menginstalnya sebagai PWA dari bilah alamat untuk pengalaman seperti aplikasi."
+		}
 	}
 }

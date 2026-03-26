@@ -3,29 +3,31 @@
 	"navbar": {
 		"upload": "アップロード",
 		"convert": "変換",
+		"pdf_tools": "PDFツール",
 		"settings": "設定",
 		"about": "について",
 		"toggle_theme": "テーマを切り替える"
 	},
 	"footer": {
-		"copyright": "© {year} VERT.",
+		"copyright": "© {year} LocalConvert. VERT.shをベースに構築。",
 		"source_code": "ソースコード",
-		"discord_server": "Discordサーバー"
+		"discord_server": "Discordサーバー",
+		"privacy_policy": "プライバシーポリシー"
 	},
 	"upload": {
-		"title": "きっと気に入るファイル変換ツール。",
-		"subtitle": "すべての画像・音声・ドキュメント処理はデバイス上で行われます。動画は超高速サーバーで変換されます。ファイルサイズ制限なし、広告なし、完全オープンソース。",
+		"title": "画像・音声・動画・ドキュメントを変換 — 無料・プライベート・アップロード不要。",
+		"subtitle": "WebAssemblyを使用し、すべての処理はブラウザ内で完結します。アカウント不要、ファイルサイズ制限なし、オープンソースで永久無料です。",
 		"uploader": {
 			"text": "ドロップまたはクリックして{action}",
 			"convert": "変換"
 		},
 		"cards": {
-			"title": "VERTがサポートしている形式",
+			"title": "LocalConvertが対応している形式",
 			"images": "画像",
 			"audio": "音声",
 			"documents": "ドキュメント",
 			"video": "動画",
-			"video_server_processing": "サーバー対応",
+			"video_server_processing": "ローカル対応",
 			"local_supported": "ローカル対応",
 			"status": {
 				"text": "<b>ステータス:</b> {status}",
@@ -42,13 +44,25 @@
 			"partial_support": "このフォーマットは{direction}としてのみ変換可能です。",
 			"direction_input": "入力（変換元）",
 			"direction_output": "出力（変換先）",
-			"video_server_processing": "動画はデフォルトでサーバーにアップロードされて処理されます。ローカルで設定する方法はこちら。"
+			"video_server_processing": "すべての変換はお使いのデバイス上でローカルに行われます。"
 		}
 	},
 	"convert": {
+		"archive_file": {
+			"extract": "アーカイブを展開",
+			"extracting": "アーカイブを検出しました: {filename}",
+			"extracted": "{filename}から{extract_count}件のファイルを展開しました。{ignore_count}件の項目は無視されました。",
+			"detected": "{filename}内に{type}ファイルが検出されました。",
+			"audio": "音声",
+			"video": "動画",
+			"doc": "ドキュメント",
+			"image": "画像",
+			"extract_error": "{filename}の展開中にエラーが発生しました: {error}"
+		},
+		"large_file_warning": "ブラウザ・デバイスの制限により、このファイルは{limit}GBを超えているため変換が無効になっています。このサイズのファイルには、制限が少ないFirefoxまたはSafariのご利用をお勧めします。",
 		"external_warning": {
-			"title": "外部サーバーの警告",
-			"text": "動画フォーマットへの変換を選択すると、ファイルは外部サーバーにアップロードされて変換されます。続行しますか？",
+			"title": "大きなファイルの警告",
+			"text": "このファイルはかなり大きく、ブラウザでの変換に時間がかかる場合があります。続行しますか？",
 			"yes": "はい",
 			"no": "いいえ"
 		},
@@ -64,7 +78,9 @@
 			"video": "動画",
 			"doc": "ドキュメント",
 			"image": "画像",
-			"placeholder": "フォーマットを検索"
+			"placeholder": "フォーマットを検索",
+			"no_formats": "利用可能なフォーマットがありません",
+			"no_results": "検索条件に一致するフォーマットがありません"
 		},
 		"tooltips": {
 			"unknown_file": "不明なファイルタイプ",
@@ -77,9 +93,28 @@
 		},
 		"errors": {
 			"cant_convert": "このファイルを変換できません。",
-			"vertd_server": "何してるの..? vertdサーバーを起動する必要があります！",
+			"vertd_server": "このファイル形式は変換に対応していません。",
+			"vertd_generic_view": "エラーの詳細を表示",
+			"vertd_generic_body": "ファイルの変換中にエラーが発生しました。もう一度お試しいただくか、別のフォーマットをお試しください。",
+			"vertd_generic_title": "変換エラー",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "キャンセル",
+			"vertd_failed_to_keep": "変換に失敗しました: {error}",
+			"vertd_details": "エラーの詳細を表示",
+			"vertd_details_body": "以下のエラー情報はトラブルシューティングに役立つ場合があります:",
+			"vertd_details_footer": "詳細については、[privacy_link]プライバシーポリシー[/privacy_link]をご確認ください。",
+			"vertd_details_job_id": "<b>ジョブID:</b> {jobId}",
+			"vertd_details_from": "<b>変換元フォーマット:</b> {from}",
+			"vertd_details_to": "<b>変換先フォーマット:</b> {to}",
+			"vertd_details_error_message": "<b>エラーメッセージ:</b> [view_link]エラーログを表示[/view_link]",
+			"vertd_details_close": "閉じる",
+			"vertd_ratelimit": "ファイル「{filename}」の変換が複数回失敗しました。別のフォーマットまたは小さなファイルをお試しください。",
 			"unsupported_format": "画像、動画、音声、ドキュメントのみ対応しています",
-			"vertd_not_found": "動画変換を開始するためのvertdインスタンスが見つかりません。URLが正しいか確認してください。",
+			"pdf_redirect_title": "これはPDFファイルです。",
+			"pdf_redirect_desc": "PDFはここでは変換されません — PDFツールを使用して、結合、分割、圧縮、回転などを行ってください。",
+			"pdf_redirect_button": "PDFツールを開く",
+			"format_output_only": "このフォーマットは現在、入力（変換元）としてではなく、出力（変換先）としてのみ使用できます。",
+			"vertd_not_found": "動画コンバーターを初期化できませんでした。ページを更新して、もう一度お試しください。",
 			"worker_downloading": "{type}コンバーターを初期化中です。少々お待ちください。",
 			"worker_error": "{type}コンバーターの初期化中にエラーが発生しました。後でもう一度お試しください。",
 			"worker_timeout": "{type}コンバーターの初期化に予想以上の時間がかかっています。もう少しお待ちいただくか、ページを更新してください。",
@@ -108,9 +143,11 @@
 			"title": "変換",
 			"advanced_settings": "詳細設定",
 			"filename_format": "ファイル名フォーマット",
-			"filename_description": "これはダウンロード時のファイル名を決定します（拡張子を除く）。以下のテンプレートを使用できます：<b>%name%</b>（元のファイル名）、<b>%extension%</b>（元の拡張子）、<b>%date%</b>（変換日時）。",
-			"placeholder": "VERT_%name%",
+			"filename_description": "これはダウンロード時のファイル名を決定します（<b>拡張子を除く</b>）。以下のテンプレートを使用できます：<b>%name%</b>（元のファイル名）、<b>%extension%</b>（元の拡張子）、<b>%date%</b>（変換日時）。",
+			"placeholder": "LocalConvert_%name%",
 			"default_format": "デフォルト変換フォーマット",
+			"default_format_enable": "有効",
+			"default_format_disable": "無効",
 			"default_format_description": "このファイルタイプをアップロードしたときに自動で選択される形式を変更します。",
 			"default_format_image": "画像",
 			"default_format_video": "動画",
@@ -121,22 +158,22 @@
 			"keep": "保持",
 			"remove": "削除",
 			"quality": "変換品質",
-			"quality_description": "出力ファイルの品質を変更します。値が高いほど処理時間とファイルサイズが増加します。",
-			"quality_video": "動画変換の品質を変更します。高品質ほど変換時間とサイズが増加します。",
+			"quality_description": "変換後のファイルのデフォルト出力品質を変更します。値が高いほど処理時間とファイルサイズが増加する場合があります。",
+			"quality_video": "変換後の動画ファイルのデフォルト出力品質を変更します。高品質ほど変換時間とサイズが増加する場合があります。",
 			"quality_audio": "音声（kbps）",
-			"quality_images": "画像（％）",
+			"quality_images": "画像（%）",
 			"rate": "サンプリングレート（Hz）"
 		},
 		"vertd": {
 			"title": "動画変換",
 			"status": "ステータス：",
 			"loading": "読み込み中...",
-			"available": "利用可能（コミットID {commitId}）",
-			"unavailable": "利用不可（URLが正しいですか？）",
-			"description": "<code>vertd</code>プロジェクトはFFmpegのサーバーラッパーです。これにより、GPUの性能を活かして高速に変換しつつ、VERTのウェブインターフェイスから簡単に動画を変換できます。",
-			"hosting_info": "私たちは利便性のために公開インスタンスをホストしていますが、自分のPCやサーバーでも簡単にホストできます。バイナリは[vertd_link]こちら[/vertd_link]からダウンロードできます。今後さらにセットアップが簡単になる予定です！",
-			"instance": "インスタンス",
-			"url_placeholder": "例: http://localhost:24153",
+			"available": "利用可能",
+			"unavailable": "利用不可",
+			"description": "動画変換はFFmpeg WebAssemblyを使用してローカルで処理されます。お使いのデバイスから動画が送信されることはありません。",
+			"hosting_info": "すべての動画処理はWebAssemblyテクノロジーを使用してブラウザ内で行われます。",
+			"instance": "エンジン",
+			"url_placeholder": "FFmpeg WASM（ローカル）",
 			"conversion_speed": "変換速度",
 			"speed_description": "速度と品質のバランスを設定します。高速化すると品質が低下しますが、処理は速くなります。",
 			"speeds": {
@@ -148,9 +185,9 @@
 				"ultra_fast": "超高速"
 			},
 			"auto_instance": "自動（推奨）",
-			"eu_instance": "ドイツ・ファルケンシュタイン",
-			"us_instance": "アメリカ・ワシントン",
-			"custom_instance": "カスタム"
+			"eu_instance": "ローカル",
+			"us_instance": "ローカル",
+			"custom_instance": "ローカル"
 		},
 		"privacy": {
 			"title": "プライバシーとデータ",
@@ -159,30 +196,39 @@
 			"opt_in": "参加する",
 			"opt_out": "参加しない",
 			"cache_title": "キャッシュ管理",
-			"cache_description": "コンバーターファイルをブラウザにキャッシュして再ダウンロードを防ぎ、パフォーマンスを向上させます。",
+			"cache_description": "コンバーターファイルをブラウザにキャッシュして再ダウンロードを防ぎ、パフォーマンスを向上させデータ使用量を削減します。",
 			"refresh_cache": "キャッシュを更新",
 			"clear_cache": "キャッシュをクリア",
 			"files_cached": "{size}（{count}ファイル）",
 			"loading_cache": "読み込み中...",
 			"total_size": "合計サイズ",
 			"files_cached_label": "キャッシュ済みファイル",
-			"cache_cleared": "キャッシュが正常にクリアされました！"
+			"cache_cleared": "キャッシュが正常にクリアされました！",
+			"cache_clear_error": "キャッシュのクリアに失敗しました。",
+			"site_data_title": "サイトデータ管理",
+			"site_data_description": "設定およびキャッシュファイルを含むすべてのサイトデータをクリアし、LocalConvertをデフォルト状態にリセットしてページを再読み込みします。",
+			"clear_all_data": "すべてのサイトデータをクリア",
+			"clear_all_data_confirm_title": "すべてのサイトデータをクリアしますか？",
+			"clear_all_data_confirm": "すべての設定とキャッシュをリセットし、ページを再読み込みします。この操作は元に戻せません。",
+			"clear_all_data_cancel": "キャンセル",
+			"all_data_cleared": "すべてのサイトデータがクリアされました！ページを再読み込みしています...",
+			"all_data_clear_error": "すべてのサイトデータのクリアに失敗しました。"
 		},
 		"language": {
 			"title": "言語",
-			"description": "VERTインターフェイスの表示言語を選択してください。"
+			"description": "LocalConvertのインターフェイスで使用する言語を選択してください。"
 		}
 	},
 	"about": {
 		"title": "について",
 		"why": {
-			"title": "なぜVERT？",
-			"description": "<b>従来のファイルコンバーターにはいつもがっかりしてきました。</b>見た目が悪く、広告だらけで、そして何より遅い。私たちはそれらの問題をすべて解決するためにVERTを作りました。<br/><br/>動画以外のファイルは完全にデバイス上で変換されるため、サーバーとのやり取りによる遅延もなく、あなたのファイルを覗き見ることもありません。<br/><br/>動画は超高速RTX 4000 Adaサーバーで処理され、変換しなかった場合は1時間以内に削除されます。変換された動画も1時間またはダウンロード完了後に削除されます。"
+			"title": "なぜLocalConvertなのか？",
+			"description": "<b>従来のファイルコンバーターには常に不満を感じてきました。</b>動作が遅く、アカウントが必要で、何も知らないサードパーティのサーバーにファイルを送信してしまいます。私たちはそれを解決することにしました。<br/><br/>変換するすべてのファイル（画像、音声、動画、ドキュメント）は、WebAssemblyを使用してお使いのデバイス上で完全に処理されます。ブラウザの外にデータが出ることはありません。サーバーへの転送もアップロードも一切なく、誰もあなたのファイルを閲覧することはできません。"
 		},
 		"sponsors": {
-			"title": "スポンサー",
-			"description": "私たちを支援したい場合は、[discord_link]Discord[/discord_link]サーバーで開発者に連絡するか、以下のメールアドレスまでご連絡ください。",
-			"email_copied": "メールアドレスをコピーしました！"
+			"title": "サポート",
+			"description": "LocalConvertは無料のオープンソースです。ご利用が役に立てば、プロジェクトへのサポートをご検討ください。お問い合わせ先：",
+			"email_copied": "メールアドレスをクリップボードにコピーしました！"
 		},
 		"resources": {
 			"title": "リソース",
@@ -191,8 +237,8 @@
 			"email": "メール"
 		},
 		"donate": {
-			"title": "VERTを支援する",
-			"description": "あなたの支援でVERTの維持と改善を続けられます。",
+			"title": "LocalConvertを支援する",
+			"description": "皆さまのご支援により、LocalConvertの維持と改善を続けることができます。",
 			"one_time": "一度きり",
 			"monthly": "毎月",
 			"custom": "カスタム",
@@ -201,18 +247,20 @@
 			"thank_you": "ご支援ありがとうございます！",
 			"payment_failed": "支払いに失敗しました: {message}{period} 請求は行われていません。",
 			"donation_error": "寄付の処理中にエラーが発生しました。後でもう一度お試しください。",
-			"payment_error": "支払い情報の取得中にエラーが発生しました。後でもう一度お試しください。"
+			"payment_error": "支払い情報の取得中にエラーが発生しました。後でもう一度お試しください。",
+			"donation_notice_official": "皆さまのご支援はLocalConvertの維持と改善に役立てられます。",
+			"donation_notice_unofficial": "これはLocalConvertのサードパーティインスタンスです。オリジナルプロジェクトを支援したい場合は、公式サイトをご利用ください。"
 		},
 		"credits": {
 			"title": "クレジット",
 			"contact_team": "開発チームに連絡したい場合は、「リソース」カードに記載されたメールをご利用ください。",
 			"notable_contributors": "特筆すべき貢献者",
-			"notable_description": "VERTに大きく貢献してくださった方々に感謝します。",
+			"notable_description": "LocalConvertのベースとなっているVERTプロジェクトに多大な貢献をしてくださった方々に感謝いたします。",
 			"github_contributors": "GitHubの貢献者",
-			"github_description": "多くの方々に感謝します！[github_link]あなたも参加してみませんか？[/github_link]",
+			"github_description": "多くの方々のご協力に感謝します！[github_link]あなたも参加してみませんか？[/github_link]",
 			"no_contributors": "まだ誰も貢献していないようです… [contribute_link]最初の貢献者になりましょう！[/contribute_link]",
 			"libraries": "ライブラリ",
-			"libraries_description": "長年にわたり優れたライブラリを提供してくれているFFmpeg（音声・動画）、ImageMagick（画像）、Pandoc（ドキュメント）に感謝します。VERTはこれらに依存して動作しています。",
+			"libraries_description": "長年にわたり優れたライブラリを提供し続けているFFmpeg（音声・動画）、ImageMagick（画像）、Pandoc（ドキュメント）に深く感謝いたします。LocalConvertはこれらのライブラリを使用して変換機能を提供しています。",
 			"roles": {
 				"lead_developer": "リード開発者；変換バックエンド、UI実装",
 				"developer": "開発者；UI実装",
@@ -222,7 +270,7 @@
 			}
 		},
 		"errors": {
-			"github_contributors": "GitHub貢献者の取得エラー"
+			"github_contributors": "GitHub貢献者の取得中にエラーが発生しました"
 		}
 	},
 	"workers": {
@@ -230,9 +278,91 @@
 			"general": "{file}の変換エラー：{message}",
 			"cancel": "{file}の変換キャンセルエラー：{message}",
 			"magick": "Magickワーカーでエラーが発生しました。画像変換が正常に動作しない可能性があります。",
-			"ffmpeg": "ffmpegの読み込みエラー。一部の機能が動作しない可能性があります。",
+			"ffmpeg": "FFmpegの読み込みエラーが発生しました。一部の機能が正常に動作しない可能性があります。",
+			"pandoc": "Pandocワーカーの読み込みエラーが発生しました。ドキュメント変換が正常に動作しない可能性があります。",
 			"no_audio": "音声ストリームが見つかりません。",
-			"invalid_rate": "無効なサンプリングレートが指定されました: {rate}Hz"
+			"invalid_rate": "無効なサンプリングレートが指定されました: {rate}Hz",
+			"file_too_large": "このファイルは{limit}GBのブラウザ・デバイス制限を超えています。このような大きなファイルの変換には、通常より高い制限を持つFirefoxまたはSafariをお試しください。"
+		}
+	},
+	"privacy": {
+		"title": "プライバシーポリシー",
+		"summary": {
+			"title": "概要",
+			"description": "LocalConvertのプライバシーポリシーはシンプルです：お使いのファイルがデバイスを離れることはありません。画像・音声・動画・ドキュメントを含むすべての変換は、WebAssemblyを使用してブラウザ内で完全に行われます。クッキーやトラッカーは使用せず、分析はPlausibleによって完全に匿名化されています。<br/><br/>LocalConvertは[vert_link]VERT.sh[/vert_link]（AGPL-3.0）をベースにしています。"
+		},
+		"conversions": {
+			"title": "変換",
+			"description": "すべての変換は、関連ツール（FFmpeg、ImageMagick、Pandoc）のWebAssemblyバージョンを使用して、お使いのデバイス上で完全にローカルに行われます。つまり、ファイルがデバイスを離れることはなく、誰もアクセスすることはできません。動画変換も含め、すべてブラウザ内でローカルに行われます。"
+		},
+		"donations": {
+			"title": "寄付",
+			"description": "寄付機能が利用可能な場合、支払い処理はサードパーティのプロバイダーによって処理される場合があります。支払いプロバイダーへの外部ネットワークリクエストは延期され、支払いボタンをクリックした後にのみ実行されます。"
+		},
+		"conversion_errors": {
+			"title": "変換エラー",
+			"description": "変換が失敗した場合、エラー情報はお使いのデバイス上に留まります。エラーデータが自動的にサーバーに送信されることはありません。エラーの詳細には以下が含まれる場合があります：",
+			"list_job_id": "ファイルの種類",
+			"list_format_from": "変換元のフォーマット",
+			"list_format_to": "変換先のフォーマット",
+			"list_stderr": "FFmpegのエラー出力",
+			"list_video": "ファイルがアップロードされることはありません",
+			"footer": "すべてのエラー情報はお使いのデバイス上に留まり、送信されることはありません。"
+		},
+		"analytics": {
+			"title": "分析",
+			"description": "私たちは完全に匿名化・集計された分析のためにPlausibleを使用しています。Plausibleはクッキーを使用せず、すべての主要なプライバシー規制（GDPR/CCPA/PECR）に準拠しています。[settings_link]設定[/settings_link]の「プライバシーとデータ」セクションで分析をオプトアウトでき、Plausibleのプライバシーについては[plausible_link]こちら[/plausible_link]で詳細をご確認いただけます。"
+		},
+		"local_storage": {
+			"title": "ローカルストレージ",
+			"description": "設定を保存するためにブラウザのローカルストレージを使用しています。個人データの保存や送信は行いません。<br/><br/>使用する変換ツール（FFmpeg、ImageMagick、Pandoc）のWebAssemblyバージョンも、初回サイト訪問時にブラウザにローカル保存されるため、毎回再ダウンロードする必要がありません。個人データの保存や送信は行いません。このデータはいつでも[settings_link]設定[/settings_link]の「プライバシーとデータ」セクションで確認または削除できます。"
+		},
+		"contact": {
+			"title": "お問い合わせ",
+			"description": "ご質問がある場合は、以下のメールアドレスまでお問い合わせください：[email_link]hello@localconvert.app[/email_link]。"
+		},
+		"last_updated": "最終更新日：2026年3月22日"
+	},
+	"toast": {
+		"insecure_context": "LocalConvertに安全でないコンテキスト（例：HTTPSではなくHTTPでのアクセス）でアクセスしています。一部の機能が正常に動作しない場合があります。"
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "サーバーへのアップロードなし",
+			"gpu": "GPUアクセラレーション対応",
+			"open_source": "無料・オープンソース",
+			"no_limit": "ファイルサイズ制限なし"
+		},
+		"how_it_works": {
+			"title": "使い方",
+			"step1_title": "ファイルを選択",
+			"step1_desc": "画像・音声・動画・ドキュメントファイルをドロップまたはクリックして選択してください。",
+			"step2_title": "ブラウザ内で変換",
+			"step2_desc": "すべてWebAssemblyによりローカルで実行されます — アップロード不要、サーバー待ち不要。",
+			"step3_title": "結果をダウンロード",
+			"step3_desc": "変換されたファイルを即座にお使いのデバイスに直接取得できます。"
+		},
+		"formats": {
+			"title": "対応フォーマット"
+		},
+		"privacy": {
+			"title": "設計から100%プライベート",
+			"point1": "ファイルがデバイスを離れることはありません",
+			"point2": "サーバーへのアップロードなし — すべてブラウザ内で実行",
+			"point3": "オープンソース — ご自身で確認できます"
+		},
+		"faq": {
+			"title": "よくある質問",
+			"q1": "LocalConvertは本当に無料ですか？",
+			"a1": "はい — 完全に無料で、アカウント不要、隠れた費用もありません。LocalConvertはAGPL-3.0ライセンスのもとオープンソースで公開されています。",
+			"q2": "ファイルのプライバシーは保護されますか？",
+			"a2": "完全に保護されます。すべての変換はWebAssemblyを使用してブラウザ内で実行されます。ファイルが私たちのサーバーに触れることは一切ありません。",
+			"q3": "どのようなファイル形式に対応していますか？",
+			"a3": "画像（JPG、PNG、WEBP、AVIF、HEIC、GIF、BMP、TIFF、SVG、ICO）、動画（MP4、WebM、MKV、AVI、MOV）、音声（MP3、WAV、OGG、FLAC、AAC）、ドキュメント（DOCX、HTML、Markdown、EPUB）に対応しています。PDFツールも搭載しています。",
+			"q4": "ファイルサイズの制限はありますか？",
+			"a4": "ハードリミットはありません — お使いのデバイスの利用可能メモリによって異なります。非常に大きな動画ファイルには、FirefoxまたはSafariが通常より適しています。",
+			"q5": "インストールは必要ですか？",
+			"a5": "インストール不要です。LocalConvertは最新のブラウザで直接動作します。より快適にお使いいただくために、アドレスバーからPWAとしてインストールすることもできます。"
 		}
 	}
 }
