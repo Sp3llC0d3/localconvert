@@ -34,7 +34,7 @@
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/" />
 </svelte:head>
 
-<div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-12">
+<div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">
 
 	<!-- Hero -->
 	<div class="flex flex-col items-center text-center gap-4">
@@ -87,8 +87,8 @@
 
 	.tool-icon {
 		@apply w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0;
-		background: var(--bg-badge);
-		color: var(--fg-on-badge);
+		background: var(--accent);
+		color: var(--fg-on-accent);
 	}
 
 	.tool-name {

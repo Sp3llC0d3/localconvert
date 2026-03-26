@@ -1,16 +1,10 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
-	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { converters } from "$lib/converters";
 	import clsx from "clsx";
 	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Zap, Ban } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { OverlayScrollbarsComponent } from "overlayscrollbars-svelte";
 	import { browser } from "$app/environment";
-	import "overlayscrollbars/overlayscrollbars.css";
-	import { onMount } from "svelte";
-	import type { WorkerStatus } from "$lib/converters/converter.svelte";
-	import { sanitize } from "$lib/store/index.svelte";
 
 	import step1 from "$lib/assets/steps/step-1-choose.png";
 	import step2 from "$lib/assets/steps/step-2-convert.png";
@@ -32,103 +26,29 @@
 			formats: string;
 			icon: typeof Image;
 			title: string;
-			status: WorkerStatus;
 		};
-	} = $derived.by(() => {
-		const output: {
-			[key: string]: {
-				formats: string;
-				icon: typeof Image;
-				title: string;
-				status: WorkerStatus;
-			};
-		} = {
-			Images: {
-				formats: getSupportedFormats("imagemagick"),
-				icon: Image,
-				title: m["upload.cards.images"](),
-				status:
-					converters.find((c) => c.name === "imagemagick")?.status ||
-					"not-ready",
-			},
-			Audio: {
-				formats: getSupportedFormats("ffmpeg", true),
-				icon: AudioLines,
-				title: m["upload.cards.audio"](),
-				status:
-					converters.find((c) => c.name === "ffmpeg")?.status ||
-					"not-ready",
-			},
-			Video: {
-				formats: getSupportedFormats("ffmpeg", false),
-				icon: Film,
-				title: m["upload.cards.video"](),
-				status:
-					converters.find((c) => c.name === "ffmpeg")?.status ||
-					"not-ready",
-			},
-			Documents: {
-				formats: getSupportedFormats("pandoc"),
-				icon: BookText,
-				title: m["upload.cards.documents"](),
-				status:
-					converters.find((c) => c.name === "pandoc")?.status ||
-					"not-ready",
-			},
-		};
-
-		return output;
-	});
-
-	const getTooltip = (format: string) => {
-		const converter = converters.find((c) =>
-			c.supportedFormats.some((sf) => sf.name === format),
-		);
-
-		const formatInfo = converter?.supportedFormats.find(
-			(sf) => sf.name === format,
-		);
-
-		if (formatInfo) {
-			const direction = formatInfo.fromSupported
-				? m["upload.tooltip.direction_input"]()
-				: m["upload.tooltip.direction_output"]();
-			return m["upload.tooltip.partial_support"]({ direction });
-		}
-		return "";
-	};
-
-	const getStatusText = (status: WorkerStatus) => {
-		switch (status) {
-			case "downloading":
-				return m["upload.cards.status.downloading"]();
-			case "ready":
-				return m["upload.cards.status.ready"]();
-			default:
-				return m["upload.cards.status.not_ready"]();
-		}
-	};
-
-	let scrollContainers: HTMLElement[] = $state([]);
-	// svelte-ignore state_referenced_locally
-	let showBlur = $state(Array(Object.keys(worker).length).fill(false));
-
-	onMount(() => {
-		const handleResize = () => {
-			for (let i = 0; i < scrollContainers.length; i++) {
-				const container = scrollContainers[i];
-				if (!container) return;
-				showBlur[i] = container.scrollHeight > container.clientHeight;
-			}
-		};
-
-		handleResize();
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	});
+	} = $derived.by(() => ({
+		Images: {
+			formats: getSupportedFormats("imagemagick"),
+			icon: Image,
+			title: m["upload.cards.images"](),
+		},
+		Audio: {
+			formats: getSupportedFormats("ffmpeg", true),
+			icon: AudioLines,
+			title: m["upload.cards.audio"](),
+		},
+		Video: {
+			formats: getSupportedFormats("ffmpeg", false),
+			icon: Film,
+			title: m["upload.cards.video"](),
+		},
+		Documents: {
+			formats: getSupportedFormats("pandoc"),
+			icon: BookText,
+			title: m["upload.cards.documents"](),
+		},
+	}));
 
 	const pills = [
 		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
@@ -196,7 +116,7 @@
 	<div class="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
 	<div class="hero-overlay absolute inset-0"></div>
 
-	<div class="relative max-w-6xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-20 md:pb-28 flex flex-col items-center">
+	<div class="relative max-w-5xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-20 md:pb-28 flex flex-col items-center">
 		<!-- Feature pills -->
 		<div class="flex flex-wrap justify-center gap-2 mb-8">
 			{#each pills as pill}
@@ -226,7 +146,7 @@
 <!-- ═══════════════════════════════════════════════════════
      HOW IT WORKS
 ═══════════════════════════════════════════════════════ -->
-<section class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
+<section class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
 	<h2 class="text-3xl md:text-4xl text-center mb-12">{m["landing.how_it_works.title"]()}</h2>
 
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -244,14 +164,14 @@
 <!-- ═══════════════════════════════════════════════════════
      SUPPORTED FORMATS
 ═══════════════════════════════════════════════════════ -->
-<section class="max-w-6xl mx-auto px-6 md:px-8 pb-16 md:pb-24 w-full">
+<section class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-24 w-full">
 	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.formats.title"]()}</h2>
 
-	<div class="flex gap-4 md:flex-row flex-col">
+	<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 		{#if browser}
-			{#each Object.entries(worker) as [key, s], i}
+			{#each Object.entries(worker) as [key, s]}
 				{@const Icon = s.icon}
-				<div class="file-category-card w-full flex flex-col gap-4">
+				<div class="file-category-card">
 					<div class="file-category-card-inner">
 						<div
 							class={clsx("icon-container", {
@@ -261,63 +181,18 @@
 								"bg-accent-red": key === "Video",
 							})}
 						>
-							<Icon size="20" />
+							<Icon size="18" />
 						</div>
-						<span>{s.title}</span>
+						<span class="font-semibold text-sm">{s.title}</span>
 					</div>
-
-					<div class="file-category-card-content flex-grow relative">
-						<OverlayScrollbarsComponent
-							options={{
-								scrollbars: {
-									autoHide: "move",
-									autoHideDelay: 1500,
-								},
-							}}
-							defer
-						>
-							<div
-								class="flex flex-col gap-4 h-[12.25rem] relative"
-								bind:this={scrollContainers[i]}
-							>
-								<p class="flex items-center justify-center gap-2">
-									<Check size="20" />
-									{m["upload.cards.local_supported"]()}
-								</p>
-								<p>
-									{@html sanitize(m["upload.cards.status.text"]({
-										status: getStatusText(s.status),
-									}))}
-								</p>
-								<div class="flex flex-col items-center relative">
-									<b>{m["upload.cards.supported_formats"]()}&nbsp;</b>
-									<p class="flex flex-wrap justify-center leading-tight px-2">
-										{#each s.formats.split(", ") as format, index}
-											{@const isPartial = format.endsWith("*")}
-											{@const formatName = isPartial ? format.slice(0, -1) : format}
-											<span class="text-sm font-normal flex items-center relative">
-												{#if isPartial}
-													<Tooltip text={getTooltip(formatName)}>
-														{formatName}<span class="text-red-500">*</span>
-													</Tooltip>
-												{:else}
-													{formatName}
-												{/if}
-												{#if index < s.formats.split(", ").length - 1}
-													<span>,&nbsp;</span>
-												{/if}
-											</span>
-										{/each}
-									</p>
-								</div>
-							</div>
-						</OverlayScrollbarsComponent>
-						{#if showBlur[i]}
-							<div
-								class="absolute left-0 bottom-0 w-full h-10 pointer-events-none"
-								style={`background: linear-gradient(to top, var(--bg-panel), transparent 100%);`}
-							></div>
-						{/if}
+					<p class="format-list">{s.formats.replace(/\*/g, "")}</p>
+				</div>
+			{/each}
+		{:else}
+			{#each ["Images", "Audio", "Video", "Documents"] as label}
+				<div class="file-category-card opacity-50">
+					<div class="file-category-card-inner">
+						<span class="font-semibold text-sm">{label}</span>
 					</div>
 				</div>
 			{/each}
@@ -329,7 +204,7 @@
      PRIVACY SECTION
 ═══════════════════════════════════════════════════════ -->
 <section class="privacy-section w-full py-16 md:py-20">
-	<div class="max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+	<div class="max-w-5xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
 		<div class="flex-shrink-0">
 			<img
 				src={privacyBadge}
@@ -356,7 +231,7 @@
 <!-- ═══════════════════════════════════════════════════════
      FAQ SECTION
 ═══════════════════════════════════════════════════════ -->
-<section class="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
+<section class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
 	<h2 class="text-3xl md:text-4xl text-center mb-10">{m["landing.faq.title"]()}</h2>
 
 	<div class="faq-list flex flex-col gap-3 max-w-3xl mx-auto">
@@ -442,25 +317,22 @@
 		@apply w-full max-w-[12rem] h-44 object-contain mx-auto;
 	}
 
-	/* ── Format cards (kept from original) ── */
+	/* ── Format cards ── */
 	.file-category-card {
-		@apply bg-panel rounded-2xl p-5 shadow-panel relative;
-	}
-
-	.file-category-card p {
-		@apply font-normal text-center text-sm;
+		@apply bg-panel rounded-2xl p-5 shadow-panel flex flex-col gap-3;
 	}
 
 	.file-category-card-inner {
-		@apply flex items-center justify-center gap-3 text-xl;
-	}
-
-	.file-category-card-content {
-		@apply flex flex-col text-center justify-between;
+		@apply flex items-center gap-3;
 	}
 
 	.icon-container {
-		@apply p-2 rounded-full text-on-accent;
+		@apply p-2 rounded-full text-on-accent flex-shrink-0;
+	}
+
+	.format-list {
+		@apply text-xs font-normal leading-relaxed;
+		color: var(--fg-muted);
 	}
 
 	/* ── Privacy section ── */

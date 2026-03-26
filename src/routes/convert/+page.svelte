@@ -329,65 +329,56 @@
 					<button class="btn text-sm px-4 py-2" onclick={() => file.convert()}>Try again</button>
 				</div>
 			{:else}
-				<!-- preview area — relative so absolute controls scope to this 152px box -->
-				<div class="relative h-[152px]">
-					<div class="flex gap-4 w-full h-full overflow-hidden">
-						<div class="w-1/2 h-full overflow-hidden rounded-xl">
-							{#if file.blobUrl}
-								<img
-									class="object-cover w-full h-full"
-									src={file.blobUrl}
-									alt={file.name}
-								/>
-							{:else}
-								<div
-									class="w-full h-full flex items-center justify-center text-black"
-									style="background: var({isAudio
-										? '--bg-gradient-purple-alt'
-										: isVideo
-											? '--bg-gradient-red-alt'
-											: isDocument
-												? '--bg-gradient-green-alt'
-												: '--bg-gradient-blue-alt'})"
-								>
-									{#if isAudio}
-										<FileMusicIcon size="56" />
-									{:else if isVideo}
-										<FileVideo2 size="56" />
-									{:else if isDocument}
-										<BookText size="56" />
-									{:else}
-										<ImageOffIcon size="56" />
-									{/if}
-								</div>
-							{/if}
-						</div>
+				<!-- preview + controls -->
+				<div class="flex gap-4 h-[152px]">
+					<!-- preview -->
+					<div class="w-1/2 flex-shrink-0 h-full overflow-hidden rounded-xl">
+						{#if file.blobUrl}
+							<img
+								class="object-cover w-full h-full"
+								src={file.blobUrl}
+								alt={file.name}
+							/>
+						{:else}
+							<div
+								class="w-full h-full flex items-center justify-center text-black"
+								style="background: var({isAudio
+									? '--bg-gradient-purple-alt'
+									: isVideo
+										? '--bg-gradient-red-alt'
+										: isDocument
+											? '--bg-gradient-green-alt'
+											: '--bg-gradient-blue-alt'})"
+							>
+								{#if isAudio}
+									<FileMusicIcon size="56" />
+								{:else if isVideo}
+									<FileVideo2 size="56" />
+								{:else if isDocument}
+									<BookText size="56" />
+								{:else}
+									<ImageOffIcon size="56" />
+								{/if}
+							</div>
+						{/if}
 					</div>
-					<div
-						class="absolute top-0 right-0 mr-4 pl-2 h-full w-[calc(50%-38px)] pr-4 flex items-center justify-center"
-					>
-						<div
-							class="w-[122px] h-fit flex flex-col gap-2 items-center justify-center"
-						>
+					<!-- controls -->
+					<div class="flex-1 flex items-center justify-center">
+						<div class="w-[122px] flex flex-col gap-2 items-center">
 							<FormatDropdown
 								{categories}
 								from={file.from}
 								bind:selected={file.to}
-								onselect={(option) =>
-									handleSelect(option, file)}
+								onselect={(option) => handleSelect(option, file)}
 								{file}
 							/>
-							<div
-								class="w-full flex items-center justify-between"
-							>
+							<div class="w-full flex items-center justify-between">
 								<Tooltip
 									text={m["convert.tooltips.convert_file"]()}
 									position="bottom"
 								>
 									<button
-										class="btn {$effects
-											? ''
-											: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
+										class="btn {$effects ? '' : '!scale-100'} p-0 w-14 h-14 text-black {isAudio
 											? 'bg-accent-purple'
 											: isVideo
 												? 'bg-accent-red'
@@ -405,9 +396,7 @@
 									position="bottom"
 								>
 									<button
-										class="btn {$effects
-											? ''
-											: '!scale-100'} p-0 w-14 h-14"
+										class="btn {$effects ? '' : '!scale-100'} p-0 w-14 h-14"
 										onclick={file.download}
 										disabled={!file.result}
 									>
@@ -512,13 +501,14 @@
 					class="w-full h-full col-start-1 row-start-1 md:col-start-2"
 				/>
 			{/if}
-			{@render fileItem(file, i)}
-			{#if files.files.length < 2}
-				<Uploader class="w-full h-full" />
-			{/if}
+			<div class={files.files.length === 1 ? "md:col-span-2" : ""}>
+				{@render fileItem(file, i)}
+			</div>
 		{/each}
 		{#if files.files.length === 0}
 			<Uploader class="w-full min-h-[240px] col-span-2" />
+		{:else if files.files.length === 1}
+			<Uploader class="w-full col-span-2 min-h-[80px]" />
 		{/if}
 	</div>
 </div>
@@ -526,16 +516,16 @@
 <style lang="postcss">
 	/* ── Per-file options strip ── */
 	.file-options {
-		@apply flex flex-col gap-2 pt-2 border-t border-separator;
+		@apply flex flex-col gap-2.5 pt-3 border-t border-separator;
 	}
 
 	.opt-group {
-		@apply flex items-center gap-2 text-sm;
+		@apply flex items-center gap-3 text-sm;
 	}
 
 	.opt-label {
-		@apply w-14 flex-shrink-0 text-xs font-semibold;
-		color: var(--fg-muted);
+		@apply w-14 flex-shrink-0 text-xs font-semibold uppercase tracking-wide;
+		color: var(--fg);
 	}
 
 	.opt-control {

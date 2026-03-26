@@ -16,7 +16,7 @@
 	},
 	"upload": {
 		"title": "Convert images, audio, video & docs — free, private, no uploads.",
-		"subtitle": "Everything runs in your browser via WebAssembly. No server, no account, no file size limit — open source and free forever.",
+		"subtitle": "Powered by WebAssembly — runs entirely in your browser. No account, no file size limit, open source and free forever.",
 		"uploader": {
 			"text": "Drop or click to {action}",
 			"convert": "convert"

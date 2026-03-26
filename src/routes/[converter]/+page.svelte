@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
-	import { ShieldCheck, Zap, Ban, Code, Check } from "lucide-svelte";
-	import privacyBadge from "$lib/assets/privacy-badge.png";
+	import { ShieldCheck, Zap, Ban, Code } from "lucide-svelte";
 
 	let { data } = $props();
 	const info = $derived(data.info);
@@ -96,7 +95,7 @@
 </section>
 
 <!-- How to convert -->
-<section class="max-w-4xl mx-auto px-6 md:px-8 py-12 w-full">
+<section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-8">
 		How to convert to {info.label}
 	</h2>
@@ -116,7 +115,7 @@
 </section>
 
 <!-- Supported input formats -->
-<section class="max-w-4xl mx-auto px-6 md:px-8 pb-12 w-full">
+<section class="max-w-4xl mx-auto px-6 md:px-8 pb-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">
 		Supported input formats
 	</h2>
@@ -131,30 +130,8 @@
 	</div>
 </section>
 
-<!-- Privacy -->
-<section class="privacy-strip w-full py-10 md:py-14">
-	<div class="max-w-4xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-8">
-		<img src={privacyBadge} alt="Privacy badge" class="w-28 h-28 object-contain flex-shrink-0" />
-		<div>
-			<h2 class="text-xl md:text-2xl font-display mb-3">Your files never leave your device</h2>
-			<ul class="flex flex-col gap-2">
-				{#each [
-					"No server uploads — everything runs in your browser",
-					"No account needed, no file size limits, completely free",
-					"Open source — you can verify every line of code",
-				] as point}
-					<li class="flex items-start gap-2 text-sm">
-						<span class="check-icon flex-shrink-0 mt-0.5"><Check size="14" /></span>
-						{point}
-					</li>
-				{/each}
-			</ul>
-		</div>
-	</div>
-</section>
-
 <!-- FAQ -->
-<section class="max-w-4xl mx-auto px-6 md:px-8 py-12 w-full">
+<section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">FAQ</h2>
 	<div class="flex flex-col gap-3 max-w-2xl mx-auto">
 		{#each [
@@ -224,17 +201,6 @@
 
 	.format-chip:hover {
 		background: var(--bg-panel-highlight);
-	}
-
-	/* Privacy */
-	.privacy-strip {
-		background: var(--bg-panel);
-	}
-
-	.check-icon {
-		@apply flex items-center justify-center w-5 h-5 rounded-full;
-		background: var(--bg-badge);
-		color: var(--fg-on-badge);
 	}
 
 	/* FAQ */
