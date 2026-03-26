@@ -185,7 +185,6 @@
 
 <svelte:head>
 	<title>LocalConvert — Free, Private File Converter</title>
-	<meta name="description" content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source." />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
 </svelte:head>

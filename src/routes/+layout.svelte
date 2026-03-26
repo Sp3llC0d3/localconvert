@@ -142,7 +142,7 @@
 	/>
 	<meta
 		property="twitter:description"
-		content="Convert anything. Your files never leave your device. No ads, no tracking, completely open source."
+		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
