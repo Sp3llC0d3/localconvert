@@ -49,7 +49,9 @@
 </script>
 
 <svelte:head>
-	<title>Rotate PDF — LocalConvert</title>
+	<title>Rotate PDF Pages — LocalConvert</title>
+	<meta name="description" content="Rotate individual or all pages in a PDF by 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/rotate/" />
 </svelte:head>
 
 <div class="pdf-page">

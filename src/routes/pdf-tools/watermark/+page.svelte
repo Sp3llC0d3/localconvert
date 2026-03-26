@@ -42,6 +42,8 @@
 
 <svelte:head>
 	<title>Add Watermark to PDF — LocalConvert</title>
+	<meta name="description" content="Stamp custom text on every page of a PDF. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/watermark/" />
 </svelte:head>
 
 <div class="pdf-page">

@@ -50,6 +50,8 @@
 
 <svelte:head>
 	<title>Merge PDF — LocalConvert</title>
+	<meta name="description" content="Combine multiple PDF files into one. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/merge/" />
 </svelte:head>
 
 <div class="pdf-page">

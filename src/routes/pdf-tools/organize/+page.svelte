@@ -64,6 +64,8 @@
 
 <svelte:head>
 	<title>Organize PDF Pages — LocalConvert</title>
+	<meta name="description" content="Reorder or delete PDF pages with visual thumbnails. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/organize/" />
 </svelte:head>
 
 <div class="pdf-page">

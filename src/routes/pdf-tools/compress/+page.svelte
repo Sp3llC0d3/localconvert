@@ -54,6 +54,8 @@
 
 <svelte:head>
 	<title>Compress PDF — LocalConvert</title>
+	<meta name="description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/compress/" />
 </svelte:head>
 
 <div class="pdf-page">

@@ -58,6 +58,8 @@
 
 <svelte:head>
 	<title>Images to PDF — LocalConvert</title>
+	<meta name="description" content="Convert JPG, PNG, or WEBP images into a single PDF file. Free, private, no uploads — runs entirely in your browser." />
+	<link rel="canonical" href="https://localconvert.app/pdf-tools/images-to-pdf/" />
 </svelte:head>
 
 <div class="pdf-page">
