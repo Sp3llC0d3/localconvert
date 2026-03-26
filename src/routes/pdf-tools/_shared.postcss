@@ -1,0 +1,54 @@
+.pdf-page {
+	@apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6;
+}
+
+.pdf-header {
+	@apply flex items-center gap-3;
+}
+
+.file-list {
+	@apply flex flex-col gap-2;
+}
+
+.file-row {
+	@apply flex items-center gap-3 px-4 py-3 rounded-xl;
+	background: var(--bg-panel);
+	box-shadow: var(--shadow-panel);
+}
+
+.icon-btn {
+	@apply w-6 h-6 rounded-full flex items-center justify-center transition-colors;
+	color: var(--fg-muted);
+}
+
+.icon-btn:hover {
+	background: var(--bg-separator);
+	color: var(--fg);
+}
+
+.result-box {
+	@apply flex flex-col gap-3 p-4 rounded-2xl;
+	background: var(--bg-panel);
+	box-shadow: var(--shadow-panel);
+}
+
+.privacy-note {
+	@apply text-xs mt-2;
+	color: var(--fg-muted);
+}
+
+.thumb-grid {
+	@apply grid gap-3;
+	grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
+
+.opt-row {
+	@apply flex flex-wrap items-center gap-4;
+}
+
+.opt-select {
+	@apply rounded-lg px-3 py-1.5 text-sm border cursor-pointer;
+	background: var(--bg-panel-alt, var(--bg-panel));
+	color: var(--fg);
+	border-color: var(--bg-separator);
+}

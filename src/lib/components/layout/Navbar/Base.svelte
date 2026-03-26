@@ -11,6 +11,7 @@
 	import clsx from "clsx";
 	import {
 		DownloadIcon,
+		FileTextIcon,
 		InfoIcon,
 		MoonIcon,
 		RefreshCw,
@@ -82,6 +83,12 @@
 				pathname === "/convert/" || pathname === "/convert",
 			icon: RefreshCw,
 			badge: files.files.length,
+		},
+		{
+			name: m["navbar.pdf_tools"](),
+			url: "/pdf-tools/",
+			activeMatch: (pathname) => pathname.startsWith("/pdf-tools"),
+			icon: FileTextIcon,
 		},
 		{
 			name: m["navbar.settings"](),
