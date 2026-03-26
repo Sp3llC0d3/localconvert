@@ -16,7 +16,8 @@
 		"id",
 		"zh-Hans",
 		"zh-Hant",
-		"pt-BR"
+		"pt-BR",
+		"ar"
 	],
 	"modules": [
 		"https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@4/dist/index.js",
