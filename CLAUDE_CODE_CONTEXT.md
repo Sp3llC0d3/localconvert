@@ -177,18 +177,33 @@ Per-file inline controls added to each file card in `/convert`:
 - Card layout: preview wrapper is now the `relative` containing block (h-152px), options strip renders below in normal flow
 - Grid changed from `auto-rows-[240px]` to `auto-rows-auto`; empty uploader gets `min-h-[240px]`
 
-### Phase 4 — PDF Enhancement (next)
+### Phase 4 — PDF Tools ✅ COMPLETE
 
-- pdf-lib: merge/split PDFs
-- DOCX→PDF (Pandoc already supports this)
-- PDF page picker
+Full PDF tools section at `/pdf-tools` with 8 browser-local tools:
+- Merge PDF, Split PDF (with thumbnails), Rotate Pages, Organize Pages (arrows)
+- Images → PDF (JPG/PNG/WEBP), PDF → Images, Compress PDF, Add Watermark
+- Libraries: pdf-lib (MIT) + pdfjs-dist 5.x (Apache 2.0), lazy-loaded
+- Components: `src/lib/components/pdf/`, logic: `src/lib/pdf/`
+- "PDF Tools" navbar entry (FileTextIcon) between Convert and Settings
+
+### Phase 8 — SEO & Polish ✅ COMPLETE
+
+- **Format-pair pages** (`/jpg-to-png`, `/mp4-to-mp3`, etc.) — 168 URLs total
+  - Route: `src/routes/[from]-to-[to]/+page.svelte` + `+page.ts`
+  - Covers image↔image, audio↔audio, video↔video, video→audio (mp4→mp3 etc.), doc↔doc
+  - Each page: targeted H1, per-pair description, steps, privacy strip, FAQ, JSON-LD
+- **JSON-LD schema markup**
+  - Home: `SoftwareApplication` + `WebSite` with SearchAction
+  - `/[converter]` pages: `HowTo` + `FAQPage`
+  - `/[from]-to-[to]` pages: `HowTo` + `FAQPage`
+- **sitemap.xml** — generated as static file by `scripts/generate-sitemap.js`
+  - Auto-runs before `vite build` via npm build script
+  - 168 URLs: static pages + converter pages + pair pages + PDF tools
 
 
 ## FUTURE PHASES (for reference only)
 
-- Phase 3: Quality controls (bitrate, resize, trim, compression slider)
-- Phase 4: PDF enhancement (pdf-lib, merge/split, DOCX→PDF)
 - Phase 5: Ad monetization (AdSense, needs 500+ visitors/month first)
 - Phase 6: Desktop app (Tauri v2, native FFmpeg, ad-free)
 - Phase 7: Mobile app (Tauri v2 or React Native, AdMob)
-- Phase 8: SEO & Polish (format-pair pages, schema markup, Product Hunt launch)
+- Phase 9: Product Hunt launch

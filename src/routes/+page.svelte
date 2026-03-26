@@ -150,7 +150,43 @@
 		{ q: m["landing.faq.q4"](), a: m["landing.faq.a4"]() },
 		{ q: m["landing.faq.q5"](), a: m["landing.faq.a5"]() },
 	];
+
+	const softwareSchema = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		name: "LocalConvert",
+		applicationCategory: "UtilitiesApplication",
+		operatingSystem: "Web",
+		description: "Free, private file converter that runs entirely in your browser. Convert images, audio, video, and documents — no uploads, no server.",
+		url: "https://localconvert.app",
+		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+		featureList: [
+			"No server uploads — 100% local processing",
+			"Image conversion (JPG, PNG, WEBP, GIF, TIFF, SVG, HEIC)",
+			"Audio conversion (MP3, WAV, FLAC, OGG, AAC)",
+			"Video conversion (MP4, WEBM, MKV, AVI, MOV) with GPU acceleration",
+			"Document conversion (DOCX, HTML, Markdown, EPUB)",
+			"PDF tools (merge, split, rotate, compress, watermark)",
+		],
+	});
+
+	const websiteSchema = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "LocalConvert",
+		url: "https://localconvert.app",
+		potentialAction: {
+			"@type": "SearchAction",
+			target: { "@type": "EntryPoint", urlTemplate: "https://localconvert.app/{search_term_string}-converter" },
+			"query-input": "required name=search_term_string",
+		},
+	});
 </script>
+
+<svelte:head>
+	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
+	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
+</svelte:head>
 
 <!-- ═══════════════════════════════════════════════════════
      HERO SECTION

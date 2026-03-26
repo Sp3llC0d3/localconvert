@@ -20,6 +20,42 @@
 		{ icon: Zap, label: "GPU accelerated" },
 		{ icon: Code, label: "Open source" },
 	];
+
+	const howToSchema = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "HowTo",
+		name: `How to convert to ${info.label}`,
+		description: info.description,
+		step: [
+			{ "@type": "HowToStep", name: "Upload your file", text: `Click or drag your file onto the uploader. Supported formats: ${info.inputFormats.map(f => f.toUpperCase()).join(", ")}.` },
+			{ "@type": "HowToStep", name: `Select ${info.label}`, text: `Choose ${info.label} as the output format in the converter.` },
+			{ "@type": "HowToStep", name: "Download", text: `Click Convert, then download your ${info.label} file instantly.` },
+		],
+		tool: [{ "@type": "HowToTool", name: "LocalConvert" }],
+		totalTime: "PT1M",
+	});
+
+	const faqSchema = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [
+			{
+				"@type": "Question",
+				name: `Is the ${info.label} converter really free?`,
+				acceptedAnswer: { "@type": "Answer", text: "Yes — completely free, no account required, no watermarks, no file size limits. LocalConvert is open source." },
+			},
+			{
+				"@type": "Question",
+				name: "Are my files safe?",
+				acceptedAnswer: { "@type": "Answer", text: "Your files never leave your browser. All conversion happens using WebAssembly running locally on your device." },
+			},
+			{
+				"@type": "Question",
+				name: `What files can I convert to ${info.label}?`,
+				acceptedAnswer: { "@type": "Answer", text: `You can convert ${info.inputFormats.map(f => f.toUpperCase()).join(", ")} files to ${info.label}.` },
+			},
+		],
+	});
 </script>
 
 <svelte:head>
@@ -28,6 +64,8 @@
 	<meta property="og:title" content="Free {info.label} Converter — LocalConvert" />
 	<meta property="og:description" content={info.description} />
 	<link rel="canonical" href="https://localconvert.app/{info.format}-converter" />
+	{@html `<script type="application/ld+json">${howToSchema}</script>`}
+	{@html `<script type="application/ld+json">${faqSchema}</script>`}
 </svelte:head>
 
 <!-- Hero -->
