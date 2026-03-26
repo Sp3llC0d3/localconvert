@@ -105,6 +105,7 @@
 
 <svelte:head>
 	<title>LocalConvert — Free, Private File Converter</title>
+	<link rel="canonical" href="https://localconvert.app/" />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
 </svelte:head>
@@ -185,7 +186,11 @@
 						</div>
 						<span class="font-semibold text-sm">{s.title}</span>
 					</div>
-					<p class="format-list">{s.formats.replace(/\*/g, "")}</p>
+					<div class="flex flex-wrap gap-1">
+						{#each s.formats.replace(/\*/g, "").split(", ") as fmt}
+							<span class="format-chip">{fmt.toUpperCase()}</span>
+						{/each}
+					</div>
 				</div>
 			{/each}
 		{:else}
@@ -330,8 +335,9 @@
 		@apply p-2 rounded-full text-on-accent flex-shrink-0;
 	}
 
-	.format-list {
-		@apply text-xs font-normal leading-relaxed;
+	.format-chip {
+		@apply text-xs font-medium px-1.5 py-0.5 rounded;
+		background: var(--bg-panel-alt, var(--bg-separator));
 		color: var(--fg-muted);
 	}
 

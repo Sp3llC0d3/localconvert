@@ -147,7 +147,6 @@
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
 	<link rel="search" type="application/opensearchdescription+xml" title="LocalConvert" href="/opensearch.xml" />
-	<link rel="canonical" href="https://localconvert.app/" />
 	{#if enablePlausible}
 		<script
 			defer

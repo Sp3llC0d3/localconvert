@@ -69,6 +69,7 @@
 </svelte:head>
 
 <div class="pdf-page">
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
 	<div class="pdf-header">
 		<LayoutGridIcon size={28} />
 		<div>
@@ -109,7 +110,7 @@
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
-	<p class="text-xs text-muted mt-2">🔒 Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
 </div>
 
 <style lang="postcss">

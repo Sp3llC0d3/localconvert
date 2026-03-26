@@ -59,6 +59,7 @@
 </svelte:head>
 
 <div class="pdf-page">
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
 	<div class="pdf-header">
 		<ZapIcon size={28} />
 		<div>
@@ -126,7 +127,7 @@
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">🔒 Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
 </div>
 
 <style lang="postcss">
