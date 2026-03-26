@@ -75,6 +75,24 @@ const converterMap: Record<string, ConverterInfo> = {
 			"Convert raster images to scalable SVG vector format. Everything runs in your browser — zero uploads.",
 		inputFormats: ["jpg", "jpeg", "png", "webp", "bmp", "gif"],
 	},
+	avif: {
+		format: "avif",
+		label: "AVIF",
+		type: "image",
+		headline: "Convert images to AVIF — free & private",
+		description:
+			"Convert JPG, PNG, WEBP, HEIC and more to AVIF for superior compression with no quality loss. Runs entirely in your browser — no uploads.",
+		inputFormats: ["jpg", "jpeg", "png", "webp", "gif", "bmp", "tiff", "heic"],
+	},
+	ico: {
+		format: "ico",
+		label: "ICO",
+		type: "image",
+		headline: "Convert images to ICO — free & private",
+		description:
+			"Convert PNG, JPG, WEBP and more to ICO icon format. Perfect for favicons. All conversion runs locally in your browser.",
+		inputFormats: ["png", "jpg", "jpeg", "webp", "bmp", "gif"],
+	},
 	// Audio
 	mp3: {
 		format: "mp3",

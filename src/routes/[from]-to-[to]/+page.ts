@@ -43,7 +43,7 @@ const formatMeta: Record<string, { label: string; type: 'image' | 'audio' | 'vid
 // ── Valid conversion pairs ───────────────────────────────────────────────────
 
 // image pairs — heic is input-only (HEIC output not supported by ImageMagick)
-const imageFmts = ['jpg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg'];
+const imageFmts = ['jpg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg', 'avif', 'ico'];
 const imageFromFmts = [...imageFmts, 'heic']; // heic can be source but not target
 // audio pairs
 const audioFmts = ['mp3', 'wav', 'ogg', 'flac', 'aac'];

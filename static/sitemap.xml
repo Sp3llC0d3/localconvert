@@ -61,6 +61,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://localconvert.app/avif-converter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-converter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://localconvert.app/mp3-converter/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -166,7 +176,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/jpg-to-heic/</loc>
+    <loc>https://localconvert.app/jpg-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/jpg-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -201,7 +216,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/png-to-heic/</loc>
+    <loc>https://localconvert.app/png-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/png-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -236,7 +256,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/webp-to-heic/</loc>
+    <loc>https://localconvert.app/webp-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/webp-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -271,7 +296,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/gif-to-heic/</loc>
+    <loc>https://localconvert.app/gif-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/gif-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -306,7 +336,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/bmp-to-heic/</loc>
+    <loc>https://localconvert.app/bmp-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/bmp-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -341,7 +376,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/tiff-to-heic/</loc>
+    <loc>https://localconvert.app/tiff-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/tiff-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -376,7 +416,92 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localconvert.app/svg-to-heic/</loc>
+    <loc>https://localconvert.app/svg-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/svg-to-ico/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-jpg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-png/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-webp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-gif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-bmp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-tiff/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-svg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/avif-to-ico/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-jpg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-png/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-webp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-gif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-bmp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-tiff/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-svg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/ico-to-avif/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -412,6 +537,16 @@
   </url>
   <url>
     <loc>https://localconvert.app/heic-to-svg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/heic-to-avif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localconvert.app/heic-to-ico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

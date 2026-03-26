@@ -11,14 +11,14 @@ const BASE = 'https://localconvert.app';
 
 // ── Converter pages ───────────────────────────────────────────────────────
 const converterFormats = [
-	'jpg','png','webp','gif','bmp','tiff','svg',
+	'jpg','png','webp','gif','bmp','tiff','svg','avif','ico',
 	'mp3','wav','ogg','flac','aac',
 	'mp4','webm','mkv','avi','mov',
 	'docx','md','html','epub','odt',
 ];
 
 // ── Format-pair pages ─────────────────────────────────────────────────────
-const imageFmts = ['jpg','png','webp','gif','bmp','tiff','svg'];
+const imageFmts = ['jpg','png','webp','gif','bmp','tiff','svg','avif','ico'];
 const imageFromFmts = [...imageFmts, 'heic']; // heic input-only (no heic output)
 const audioFmts = ['mp3','wav','ogg','flac','aac'];
 const videoFmts = ['mp4','webm','mkv','avi','mov'];
