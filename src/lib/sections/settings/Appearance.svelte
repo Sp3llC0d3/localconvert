@@ -11,8 +11,8 @@
 	import {
 		MoonIcon,
 		PaletteIcon,
-		PauseIcon,
-		PlayIcon,
+		XIcon,
+		CheckIcon,
 		SunIcon,
 	} from "lucide-svelte";
 	import { onMount, onDestroy } from "svelte";
@@ -158,7 +158,7 @@
 								? ''
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
-							<PlayIcon size="24" class="inline-block mr-2" />
+							<CheckIcon size="24" class="inline-block mr-2" />
 							{m["settings.appearance.enable"]()}
 						</button>
 
@@ -169,7 +169,7 @@
 								? ''
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
-							<PauseIcon size="24" class="inline-block mr-2" />
+							<XIcon size="24" class="inline-block mr-2" />
 							{m["settings.appearance.disable"]()}
 						</button>
 					</div>

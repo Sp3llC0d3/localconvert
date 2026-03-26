@@ -2,8 +2,8 @@
 	import FancyTextInput from "$lib/components/functional/FancyInput.svelte";
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
-		PauseIcon,
-		PlayIcon,
+		CheckIcon,
+		XIcon,
 		RefreshCwIcon,
 		ChevronDownIcon,
 	} from "lucide-svelte";
@@ -98,7 +98,7 @@
 											? 'selected'
 											: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 									>
-										<PlayIcon
+										<CheckIcon
 											size="24"
 											class="inline-block mr-2"
 										/>
@@ -114,7 +114,7 @@
 											? ''
 											: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 									>
-										<PauseIcon
+										<XIcon
 											size="24"
 											class="inline-block mr-2"
 										/>
@@ -212,7 +212,7 @@
 											? 'selected'
 											: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 									>
-										<PlayIcon
+										<CheckIcon
 											size="24"
 											class="inline-block mr-2"
 										/>
@@ -228,7 +228,7 @@
 											? ''
 											: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 									>
-										<PauseIcon
+										<XIcon
 											size="24"
 											class="inline-block mr-2"
 										/>

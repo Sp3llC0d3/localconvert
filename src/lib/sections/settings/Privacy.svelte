@@ -2,8 +2,8 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
 		ChartColumnIcon,
-		PauseIcon,
-		PlayIcon,
+		XIcon,
+		CheckIcon,
 		RefreshCwIcon,
 		Trash2Icon,
 	} from "lucide-svelte";
@@ -161,7 +161,7 @@
 									? 'selected'
 									: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 							>
-								<PlayIcon size="24" class="inline-block mr-2" />
+								<CheckIcon size="24" class="inline-block mr-2" />
 								{m["settings.privacy.opt_in"]()}
 							</button>
 
@@ -173,7 +173,7 @@
 									? ''
 									: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 							>
-								<PauseIcon
+								<XIcon
 									size="24"
 									class="inline-block mr-2"
 								/>

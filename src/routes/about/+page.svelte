@@ -4,6 +4,11 @@
 	import { m } from "$lib/paraglide/messages";
 </script>
 
+<svelte:head>
+	<title>About — LocalConvert</title>
+	<link rel="canonical" href="https://localconvert.app/about/" />
+</svelte:head>
+
 <div class="flex flex-col h-full items-center">
 	<h1 class="text-2xl md:text-[40px] tracking-tight md:leading-[72px] leading-tight mb-4 md:mb-6">
 		<InfoIcon size="40" class="inline-block -mt-2 mr-2" />

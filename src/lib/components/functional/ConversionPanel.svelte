@@ -70,7 +70,7 @@
 		</div>
 		<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 		<div class="flex items-center gap-2">
-			<p class="whitespace-normal text-xl text-right w-full">
+			<p class="whitespace-nowrap text-sm font-medium text-muted">
 				{m["convert.panel.set_all_to"]()}
 			</p>
 			<div class="w-48 md:max-w-[6.5rem]">

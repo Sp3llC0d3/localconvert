@@ -4,6 +4,11 @@
 	import { ShieldCheckIcon } from "lucide-svelte";
 </script>
 
+<svelte:head>
+	<title>Privacy Policy — LocalConvert</title>
+	<link rel="canonical" href="https://localconvert.app/privacy/" />
+</svelte:head>
+
 <div class="flex flex-col h-full items-center">
 	<h1 class="text-2xl md:text-[40px] tracking-tight md:leading-[72px] leading-tight mb-4 md:mb-6">
 		<ShieldCheckIcon size="40" class="inline-block -mt-2 mr-2" />
@@ -37,7 +42,7 @@
 					link(
 						["about_link", "stripe_link"],
 						m["privacy.donations.description"](),
-						["/about", "https://stripe.com/docs/disputes/prevention/advanced-fraud-detection"],
+						["/about/", "https://stripe.com/docs/disputes/prevention/advanced-fraud-detection"],
 						[false, true],
 					),
 				)}
@@ -81,7 +86,7 @@
 					link(
 						["settings_link"],
 						m["privacy.local_storage.description"](),
-						["/settings"],
+						["/settings/"],
 						[false],
 					),
 				)}
