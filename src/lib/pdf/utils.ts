@@ -1,5 +1,5 @@
 export function downloadPdf(bytes: Uint8Array, filename: string): void {
-	const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
+	const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer], { type: 'application/pdf' });
 	const url = URL.createObjectURL(blob);
 	const a = document.createElement('a');
 	a.href = url;
@@ -69,7 +69,9 @@ let _pdfjsLib: typeof import('pdfjs-dist') | null = null;
 export async function getPdfJs(): Promise<typeof import('pdfjs-dist')> {
 	if (_pdfjsLib) return _pdfjsLib;
 	_pdfjsLib = await import('pdfjs-dist');
+	// Use the version string from the loaded module so the worker URL always matches
+	const version = (_pdfjsLib as unknown as { version?: string }).version ?? '5.5.207';
 	_pdfjsLib.GlobalWorkerOptions.workerSrc =
-		'https://unpkg.com/pdfjs-dist@5.5.207/build/pdf.worker.min.mjs';
+		`https://unpkg.com/pdfjs-dist@${version}/build/pdf.worker.min.mjs`;
 	return _pdfjsLib;
 }

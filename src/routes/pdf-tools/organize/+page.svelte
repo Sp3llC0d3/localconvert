@@ -17,15 +17,17 @@
 
 	$effect(() => {
 		if (!browser || files.length === 0) { thumbs = []; order = []; return; }
+		let cancelled = false;
 		loadingThumbs = true;
 		thumbProgress = 0;
 		renderAllThumbnails(files[0], 0.3, (done, total) => {
-			thumbProgress = Math.round((done / total) * 100);
+			if (!cancelled) thumbProgress = Math.round((done / total) * 100);
 		}).then(t => {
-			thumbs = t;
-			order = t.map((_, i) => i);
-			loadingThumbs = false;
-		}).catch(e => { error = e.message; loadingThumbs = false; });
+			if (!cancelled) { thumbs = t; order = t.map((_, i) => i); loadingThumbs = false; }
+		}).catch(e => {
+			if (!cancelled) { error = e.message; loadingThumbs = false; }
+		});
+		return () => { cancelled = true; };
 	});
 
 	function moveUp(i: number) {

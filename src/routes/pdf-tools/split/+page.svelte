@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { onDestroy } from 'svelte';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
 	import { splitPdf, splitAllPages } from '$lib/pdf/split';
@@ -23,17 +22,17 @@
 			selectedPages = new Set();
 			return;
 		}
+		let cancelled = false;
 		loadingThumbs = true;
 		thumbProgress = 0;
 		renderAllThumbnails(files[0], 0.3, (done, total) => {
-			thumbProgress = Math.round((done / total) * 100);
+			if (!cancelled) thumbProgress = Math.round((done / total) * 100);
 		}).then(t => {
-			thumbs = t;
-			loadingThumbs = false;
+			if (!cancelled) { thumbs = t; loadingThumbs = false; }
 		}).catch(e => {
-			error = e.message;
-			loadingThumbs = false;
+			if (!cancelled) { error = e.message; loadingThumbs = false; }
 		});
+		return () => { cancelled = true; };
 	});
 
 	function togglePage(i: number) {

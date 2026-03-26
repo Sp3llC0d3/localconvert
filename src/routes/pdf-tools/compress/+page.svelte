@@ -44,7 +44,7 @@
 		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_compressed.pdf'));
 	}
 
-	const savings = $derived(() => {
+	const savings = $derived.by(() => {
 		if (!resultBytes || !files[0]) return null;
 		const saved = files[0].size - resultBytes.byteLength;
 		const pct = Math.round((saved / files[0].size) * 100);
@@ -113,12 +113,11 @@
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
 
 	{#if resultBytes}
-		{@const s = savings()}
 		<div class="result-box">
 			<p class="text-sm font-medium">
 				Output: <b>{formatFileSize(resultBytes.byteLength)}</b>
-				{#if s && s.saved > 0}
-					— saved <b>{formatFileSize(s.saved)}</b> ({s.pct}%)
+				{#if savings && savings.saved > 0}
+					— saved <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
 				{/if}
 			</p>
 			<button class="btn" onclick={download}>Download compressed.pdf</button>

@@ -1,25 +1,24 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ImageIcon, XIcon, GripVerticalIcon } from 'lucide-svelte';
 
 	let files = $state<File[]>([]);
-	let previews = $state<string[]>([]);
 	let processing = $state(false);
 	let error = $state('');
 	let resultBytes = $state<Uint8Array | null>(null);
 
 	let dragIndex = $state<number | null>(null);
 
-	// Generate object URL previews
-	$effect(() => {
-		previews.forEach(u => URL.revokeObjectURL(u));
-		previews = files.map(f => URL.createObjectURL(f));
-	});
+	// Generate object URL previews — computed fresh whenever files changes,
+	// cleanup previous set via $effect return value
+	const previews = $derived(files.map(f => URL.createObjectURL(f)));
 
-	onDestroy(() => previews.forEach(u => URL.revokeObjectURL(u)));
+	$effect(() => {
+		const urls = previews;
+		return () => urls.forEach(u => URL.revokeObjectURL(u));
+	});
 
 	function removeFile(i: number) {
 		files = files.filter((_, idx) => idx !== i);

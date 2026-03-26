@@ -18,11 +18,14 @@
 
 	$effect(() => {
 		if (!browser || files.length === 0) { thumbs = []; selectedPages = new Set(); return; }
+		let cancelled = false;
 		loadingThumbs = true;
 		renderAllThumbnails(files[0], 0.3).then(t => {
-			thumbs = t;
-			loadingThumbs = false;
-		}).catch(e => { error = e.message; loadingThumbs = false; });
+			if (!cancelled) { thumbs = t; loadingThumbs = false; }
+		}).catch(e => {
+			if (!cancelled) { error = e.message; loadingThumbs = false; }
+		});
+		return () => { cancelled = true; };
 	});
 
 	function togglePage(i: number) {
