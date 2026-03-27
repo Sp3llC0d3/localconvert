@@ -414,7 +414,9 @@
 			"sign_name": "Potpiši PDF",
 			"sign_desc": "Nacrtajte, upišite ili učitajte potpis",
 			"edit_name": "Uredi PDF",
-			"edit_desc": "Dodajte tekst na bilo koju stranicu PDF-a"
+			"edit_desc": "Dodajte tekst na bilo koju stranicu PDF-a",
+			"password_name": "Zaštita lozinkom",
+			"password_desc": "Šifrirajte PDF lozinkom i postavite dozvole"
 		}
 	},
 	"image_tools": {

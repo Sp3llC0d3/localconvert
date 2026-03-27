@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const categories = $derived([
@@ -33,6 +33,7 @@
 				{ href: '/pdf-tools/crop/', icon: CropIcon, name: m['pdf_tools.tools.crop_name'](), desc: m['pdf_tools.tools.crop_desc']() },
 				{ href: '/pdf-tools/sign/', icon: PenToolIcon, name: m['pdf_tools.tools.sign_name'](), desc: m['pdf_tools.tools.sign_desc']() },
 				{ href: '/pdf-tools/edit/', icon: EditIcon, name: m['pdf_tools.tools.edit_name'](), desc: m['pdf_tools.tools.edit_desc']() },
+				{ href: '/pdf-tools/password/', icon: LockIcon, name: m['pdf_tools.tools.password_name'](), desc: m['pdf_tools.tools.password_desc']() },
 			],
 		},
 	]);

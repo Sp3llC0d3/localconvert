@@ -371,7 +371,9 @@
 			"sign_name": "簽署 PDF",
 			"sign_desc": "手繪、輸入或上傳簽名",
 			"edit_name": "編輯 PDF",
-			"edit_desc": "在 PDF 的任意頁面新增文字"
+			"edit_desc": "在 PDF 的任意頁面新增文字",
+			"password_name": "密碼保護",
+			"password_desc": "使用密碼加密 PDF 並設定權限"
 		}
 	},
 	"landing": {

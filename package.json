@@ -58,6 +58,7 @@
 		"overlayscrollbars-svelte": "^0.5.5",
 		"p-queue": "^9.0.1",
 		"pdf-lib": "^1.17.1",
+		"pdf-lib-plus-encrypt": "^1.1.0",
 		"pdfjs-dist": "^5.5.207",
 		"pptxgenjs": "^4.0.1",
 		"riff-file": "^1.0.3",

@@ -414,7 +414,9 @@
 			"sign_name": "Signer le PDF",
 			"sign_desc": "Dessinez, saisissez ou importez une signature",
 			"edit_name": "Modifier le PDF",
-			"edit_desc": "Ajouter du texte sur n'importe quelle page d'un PDF"
+			"edit_desc": "Ajouter du texte sur n'importe quelle page d'un PDF",
+			"password_name": "Protéger par mot de passe",
+			"password_desc": "Chiffrer un PDF avec un mot de passe et définir les autorisations"
 		}
 	},
 	"image_tools": {

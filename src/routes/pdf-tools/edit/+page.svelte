@@ -92,7 +92,7 @@
 			pageHeight = Math.round(vp.height);
 			currentPage = 0;
 			// Render at higher quality for the interactive preview
-			thumbs = await renderAllThumbnails(files[0], 1.0);
+			thumbs = await renderAllThumbnails(files[0], 0.7);
 			calcDisplaySize();
 		} catch {
 			error = 'Failed to read PDF.';

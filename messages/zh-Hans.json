@@ -414,7 +414,9 @@
 			"sign_name": "签署 PDF",
 			"sign_desc": "手绘、键入或上传签名",
 			"edit_name": "编辑 PDF",
-			"edit_desc": "在 PDF 的任意页面添加文字"
+			"edit_desc": "在 PDF 的任意页面添加文字",
+			"password_name": "密码保护",
+			"password_desc": "使用密码加密 PDF 并设置权限"
 		}
 	},
 	"image_tools": {

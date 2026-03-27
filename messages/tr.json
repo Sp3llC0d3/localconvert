@@ -414,7 +414,9 @@
 			"sign_name": "PDF İmzala",
 			"sign_desc": "İmza çizin, yazın veya yükleyin",
 			"edit_name": "PDF Düzenle",
-			"edit_desc": "Bir PDF'nin herhangi bir sayfasına metin ekleyin"
+			"edit_desc": "Bir PDF'nin herhangi bir sayfasına metin ekleyin",
+			"password_name": "Parola ile Koru",
+			"password_desc": "PDF'yi parola ile şifreleyin ve izinleri ayarlayın"
 		}
 	},
 	"image_tools": {

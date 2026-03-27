@@ -371,7 +371,9 @@
 			"sign_name": "توقيع PDF",
 			"sign_desc": "ارسم أو اكتب أو ارفع توقيعًا",
 			"edit_name": "تعديل PDF",
-			"edit_desc": "أضف نصًا إلى أي صفحة في ملف PDF"
+			"edit_desc": "أضف نصًا إلى أي صفحة في ملف PDF",
+			"password_name": "حماية بكلمة مرور",
+			"password_desc": "تشفير ملف PDF بكلمة مرور وتعيين الأذونات"
 		}
 	},
 	"landing": {

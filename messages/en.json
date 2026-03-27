@@ -368,7 +368,9 @@
 			"sign_name": "Sign PDF",
 			"sign_desc": "Draw, type, or upload a signature",
 			"edit_name": "Edit PDF",
-			"edit_desc": "Add text to any page of a PDF"
+			"edit_desc": "Add text to any page of a PDF",
+			"password_name": "Password Protect",
+			"password_desc": "Encrypt a PDF with a password and set permissions"
 		}
 	},
 	"image_tools": {

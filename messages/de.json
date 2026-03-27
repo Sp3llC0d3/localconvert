@@ -414,7 +414,9 @@
 			"sign_name": "PDF unterschreiben",
 			"sign_desc": "Unterschrift zeichnen, eintippen oder hochladen",
 			"edit_name": "PDF bearbeiten",
-			"edit_desc": "Text auf jeder Seite einer PDF hinzufügen"
+			"edit_desc": "Text auf jeder Seite einer PDF hinzufügen",
+			"password_name": "Passwortschutz",
+			"password_desc": "PDF mit Passwort verschlüsseln und Berechtigungen festlegen"
 		}
 	},
 	"image_tools": {

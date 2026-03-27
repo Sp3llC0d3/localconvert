@@ -414,7 +414,9 @@
 			"sign_name": "Firmar PDF",
 			"sign_desc": "Dibuje, escriba o cargue una firma",
 			"edit_name": "Editar PDF",
-			"edit_desc": "Agregar texto a cualquier página de un PDF"
+			"edit_desc": "Agregar texto a cualquier página de un PDF",
+			"password_name": "Proteger con contraseña",
+			"password_desc": "Cifrar un PDF con contraseña y establecer permisos"
 		}
 	},
 	"image_tools": {
