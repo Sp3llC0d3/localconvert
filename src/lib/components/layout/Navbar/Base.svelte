@@ -12,6 +12,7 @@
 	import {
 		DownloadIcon,
 		FileTextIcon,
+		GlobeIcon,
 		InfoIcon,
 		MoonIcon,
 		RefreshCw,
@@ -26,8 +27,24 @@
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { m } from "$lib/paraglide/messages";
+	import { getLocale } from "$lib/paraglide/runtime";
+	import { onMount } from "svelte";
 
 	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
+
+	let showLangPicker = $state(false);
+	let currentLocale = $state("en");
+	let langPickerContainer = $state<HTMLDivElement>();
+
+	onMount(() => {
+		currentLocale = localStorage.getItem("locale") || getLocale();
+	});
+
+	function selectLocale(locale: string) {
+		currentLocale = locale;
+		updateLocale(locale);
+		showLangPicker = false;
+	}
 
 	if (browser) {
 		window.addEventListener("beforeinstallprompt", (e: Event) => {
@@ -156,6 +173,25 @@
 			goingLeft.set(false);
 		}
 	});
+
+	// Close language picker when clicking outside
+	$effect(() => {
+		if (!showLangPicker) return;
+		function handleClick(e: MouseEvent) {
+			if (!langPickerContainer?.contains(e.target as Node)) {
+				showLangPicker = false;
+			}
+		}
+		function handleKey(e: KeyboardEvent) {
+			if (e.key === 'Escape') showLangPicker = false;
+		}
+		window.addEventListener('pointerdown', handleClick);
+		window.addEventListener('keydown', handleKey);
+		return () => {
+			window.removeEventListener('pointerdown', handleClick);
+			window.removeEventListener('keydown', handleKey);
+		};
+	});
 </script>
 
 {#snippet link(item: (typeof items)[0], index: number)}
@@ -266,6 +302,33 @@
 				<MoonIcon class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
+		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+		<div class="relative hidden md:flex" bind:this={langPickerContainer}>
+			<button
+				onclick={() => (showLangPicker = !showLangPicker)}
+				class="w-14 h-full items-center justify-center flex"
+				class:text-accent={showLangPicker}
+				aria-label="Select language"
+			>
+				<GlobeIcon size={20} />
+			</button>
+			{#if showLangPicker}
+				<div
+					class="lang-popover absolute top-full right-0 mt-2 z-50 rounded-xl shadow-lg p-3 grid grid-cols-3 gap-1.5 w-64"
+					style="background: var(--bg-panel); border: 1px solid var(--bg-separator);"
+				>
+					{#each Object.entries(availableLocales) as [locale, name]}
+						<button
+							onclick={() => selectLocale(locale)}
+							class="lang-btn px-2 py-1.5 rounded-lg text-xs font-medium transition-colors text-center truncate"
+							class:lang-active={currentLocale === locale}
+						>
+							{name}
+						</button>
+					{/each}
+				</div>
+			{/if}
+		</div>
 		{#if installPrompt}
 			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 			<button
@@ -278,3 +341,18 @@
 		{/if}
 	</Panel>
 </div>
+
+<style>
+	.lang-btn {
+		background: transparent;
+		color: var(--fg);
+	}
+	.lang-btn:hover {
+		background: var(--bg-panel-alt, var(--bg-separator));
+	}
+	.lang-btn.lang-active {
+		background: var(--accent);
+		color: var(--fg-on-accent);
+		font-weight: 600;
+	}
+</style>
