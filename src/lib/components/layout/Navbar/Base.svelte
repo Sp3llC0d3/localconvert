@@ -7,6 +7,8 @@
 		files,
 		goingLeft,
 		setTheme,
+		updateLocale,
+		availableLocales,
 	} from "$lib/store/index.svelte";
 	import clsx from "clsx";
 	import {
@@ -302,8 +304,8 @@
 				<MoonIcon class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
-		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-		<div class="relative hidden md:flex" bind:this={langPickerContainer}>
+		<div class="w-0.5 bg-separator h-full flex"></div>
+		<div class="relative flex" bind:this={langPickerContainer}>
 			<button
 				onclick={() => (showLangPicker = !showLangPicker)}
 				class="w-14 h-full items-center justify-center flex"
@@ -314,7 +316,7 @@
 			</button>
 			{#if showLangPicker}
 				<div
-					class="lang-popover absolute top-full right-0 mt-2 z-50 rounded-xl shadow-lg p-3 grid grid-cols-3 gap-1.5 w-64"
+					class="lang-popover absolute bottom-full right-0 mb-2 md:top-full md:bottom-auto md:mt-2 md:mb-0 z-50 rounded-xl shadow-lg p-3 grid grid-cols-3 gap-1.5 w-64"
 					style="background: var(--bg-panel); border: 1px solid var(--bg-separator);"
 				>
 					{#each Object.entries(availableLocales) as [locale, name]}
