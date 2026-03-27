@@ -262,10 +262,10 @@
 				<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
 
 				<!-- Drag handle indicators -->
-				<div class="handle handle-left" style="left: {dLeft - 3}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
-				<div class="handle handle-right" style="right: {dRight - 3}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
-				<div class="handle handle-top" style="top: {dTop - 3}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
-				<div class="handle handle-bottom" style="bottom: {dBottom - 3}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
+				<div class="handle handle-left" style="left: {Math.max(0, dLeft - 3)}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
+				<div class="handle handle-right" style="right: {Math.max(0, dRight - 3)}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
+				<div class="handle handle-top" style="top: {Math.max(0, dTop - 3)}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
+				<div class="handle handle-bottom" style="bottom: {Math.max(0, dBottom - 3)}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
 			</div>
 			<p class="text-xs text-muted mt-2">
 				{pageWidth} × {pageHeight} pt → {Math.max(0, pageWidth - marginLeft - marginRight)} × {Math.max(0, pageHeight - marginTop - marginBottom)} pt
