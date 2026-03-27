@@ -22,11 +22,12 @@
 		SettingsIcon,
 		SunIcon,
 		FolderOpen,
+		WrenchIcon,
+		ChevronDownIcon,
 		type Icon as IconType,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
 	import Panel from "../../visual/Panel.svelte";
-	import Logo from "../../visual/svg/Logo.svelte";
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { m } from "$lib/paraglide/messages";
@@ -36,8 +37,10 @@
 	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
 
 	let showLangPicker = $state(false);
+	let showToolsMenu = $state(false);
 	let currentLocale = $state("en");
 	let langPickerContainer = $state<HTMLDivElement>();
+	let toolsMenuContainer = $state<HTMLDivElement>();
 
 	onMount(() => {
 		currentLocale = localStorage.getItem("locale") || getLocale();
@@ -56,7 +59,6 @@
 			(window as any).__installPrompt = e;
 		});
 
-		// Check for early-captured prompt every second until found
 		const checkPrompt = setInterval(() => {
 			if ((window as any).__installPrompt && !installPrompt) {
 				installPrompt = (window as any).__installPrompt;
@@ -64,7 +66,6 @@
 			if (installPrompt) clearInterval(checkPrompt);
 		}, 1000);
 
-		// Stop checking after 30 seconds
 		setTimeout(() => clearInterval(checkPrompt), 30000);
 	}
 
@@ -81,6 +82,7 @@
 		}
 	}
 
+	// Primary nav items (always visible)
 	const items = $derived<
 		{
 			name: string;
@@ -104,18 +106,37 @@
 			icon: RefreshCw,
 			badge: files.files.length,
 		},
+	]);
+
+	// Tools submenu items
+	const toolItems = $derived([
 		{
 			name: m["navbar.pdf_tools"](),
 			url: "/pdf-tools/",
-			activeMatch: (pathname) => pathname.startsWith("/pdf-tools"),
+			activeMatch: (pathname: string) => pathname.startsWith("/pdf-tools"),
 			icon: FileTextIcon,
 		},
 		{
 			name: m["navbar.image_tools"](),
 			url: "/image-tools/",
-			activeMatch: (pathname) => pathname.startsWith("/image-tools"),
+			activeMatch: (pathname: string) => pathname.startsWith("/image-tools"),
 			icon: ImageIcon,
 		},
+	]);
+
+	const isToolsActive = $derived(
+		toolItems.some((t) => t.activeMatch(page.url.pathname)),
+	);
+
+	// Secondary nav items
+	const secondaryItems = $derived<
+		{
+			name: string;
+			url: string;
+			activeMatch: (pathname: string) => boolean;
+			icon: typeof IconType;
+		}[]
+	>([
 		{
 			name: m["navbar.settings"](),
 			url: "/settings/",
@@ -130,16 +151,17 @@
 		},
 	]);
 
+	// All flat items for indicator calculation
+	const allItems = $derived([...items, ...toolItems, ...secondaryItems]);
+
 	let links = $state<HTMLAnchorElement[]>([]);
 	let container = $state<HTMLDivElement>();
 	let isInitialized = $state(false);
 
-	// measureTick forces linkRects/containerRect to re-read the DOM after
-	// installPrompt changes (the flex items shift when the button appears/disappears)
 	let measureTick = $state(0);
 
 	$effect(() => {
-		void installPrompt; // depend on installPrompt
+		void installPrompt;
 		setTimeout(() => measureTick++, 15);
 	});
 
@@ -154,8 +176,20 @@
 	});
 
 	const selectedIndex = $derived(
-		items.findIndex((i) => i.activeMatch(page.url.pathname)),
+		allItems.findIndex((i) => i.activeMatch(page.url.pathname)),
 	);
+
+	// Map allItems index to links array index
+	const selectedLinkIndex = $derived.by(() => {
+		if (selectedIndex === -1) return -1;
+		const item = allItems[selectedIndex];
+		// Primary items: index 0, 1 → links 0, 1
+		if (selectedIndex < items.length) return selectedIndex;
+		// Tool items: mapped to the Tools button (index 2)
+		if (selectedIndex < items.length + toolItems.length) return 2;
+		// Secondary items: mapped to links starting after Tools button
+		return 3 + (selectedIndex - items.length - toolItems.length);
+	});
 
 	const isSecretPage = $derived(selectedIndex === -1);
 
@@ -170,10 +204,10 @@
 	});
 
 	beforeNavigate((e) => {
-		const oldIndex = items.findIndex((i) =>
+		const oldIndex = allItems.findIndex((i) =>
 			i.activeMatch(e.from?.url.pathname || ""),
 		);
-		const newIndex = items.findIndex((i) =>
+		const newIndex = allItems.findIndex((i) =>
 			i.activeMatch(e.to?.url.pathname || ""),
 		);
 		if (newIndex < oldIndex) {
@@ -181,18 +215,25 @@
 		} else {
 			goingLeft.set(false);
 		}
+		showToolsMenu = false;
 	});
 
-	// Close language picker when clicking outside
+	// Close popups when clicking outside
 	$effect(() => {
-		if (!showLangPicker) return;
+		if (!showLangPicker && !showToolsMenu) return;
 		function handleClick(e: MouseEvent) {
-			if (!langPickerContainer?.contains(e.target as Node)) {
+			if (showLangPicker && !langPickerContainer?.contains(e.target as Node)) {
 				showLangPicker = false;
+			}
+			if (showToolsMenu && !toolsMenuContainer?.contains(e.target as Node)) {
+				showToolsMenu = false;
 			}
 		}
 		function handleKey(e: KeyboardEvent) {
-			if (e.key === 'Escape') showLangPicker = false;
+			if (e.key === 'Escape') {
+				showLangPicker = false;
+				showToolsMenu = false;
+			}
 		}
 		window.addEventListener('pointerdown', handleClick);
 		window.addEventListener('keydown', handleKey);
@@ -203,14 +244,14 @@
 	});
 </script>
 
-{#snippet link(item: (typeof items)[0], index: number)}
+{#snippet navLink(item: { name: string; url: string; activeMatch: (p: string) => boolean; icon: typeof IconType; badge?: number }, index: number)}
 	{@const Icon = item.icon}
 	<a
 		bind:this={links[index]}
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"min-w-0 md:min-w-32 h-full relative z-10 rounded-xl flex flex-1 items-center justify-center gap-3 overflow-hidden",
+			"nav-link",
 			{
 				"bg-panel-highlight":
 					item.activeMatch(page.url.pathname) && !browser,
@@ -221,38 +262,23 @@
 		<div class="grid grid-rows-1 grid-cols-1">
 			{#key item.name}
 				<div
-					class="w-full row-start-1 col-start-1 h-full flex items-center justify-center gap-3"
-					in:fade={{
-						duration,
-						easing: quintOut,
-					}}
-					out:fade={{
-						duration,
-						easing: quintOut,
-					}}
+					class="w-full row-start-1 col-start-1 h-full flex items-center justify-center gap-2.5"
+					in:fade={{ duration, easing: quintOut }}
+					out:fade={{ duration, easing: quintOut }}
 				>
 					<div class="relative">
-						<Icon />
+						<Icon size={20} />
 						{#if item.badge}
 							<div
-								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1 font-display -right-1 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
-								style="font-size: 0.7rem;"
-								transition:fade={{
-									duration,
-									easing: quintOut,
-								}}
+								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1.5 font-display -right-2 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
+								style="font-size: 0.65rem;"
+								transition:fade={{ duration, easing: quintOut }}
 							>
 								{#key item.badge}
 									<div
 										class="flex items-center justify-center w-full h-full col-start-1 row-start-1"
-										in:fade={{
-											duration,
-											easing: quintOut,
-										}}
-										out:fade={{
-											duration,
-											easing: quintOut,
-										}}
+										in:fade={{ duration, easing: quintOut }}
+										out:fade={{ duration, easing: quintOut }}
 									>
 										{item.badge}
 									</div>
@@ -260,11 +286,7 @@
 							</div>
 						{/if}
 					</div>
-					<p
-						class="font-medium hidden hyphens-auto break-all md:flex min-w-0"
-					>
-						{item.name}
-					</p>
+					<span class="nav-label">{item.name}</span>
 				</div>
 			{/key}
 		</div>
@@ -272,8 +294,8 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="max-w-[1100px] w-screen h-20 flex items-center gap-0 md:gap-3 relative">
-		{@const linkRect = linkRects.at(selectedIndex) || linkRects[0]}
+	<Panel class="nav-panel">
+		{@const linkRect = linkRects.at(selectedLinkIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}
 			<div
 				class="absolute bg-panel-highlight rounded-xl"
@@ -286,50 +308,92 @@
 					: ''}"
 			></div>
 		{/if}
-		<a
-			class="w-28 h-full bg-accent rounded-xl items-center justify-center hidden md:flex"
-			href="/"
-		>
-			<div class="h-5 w-full">
-				<Logo />
-			</div>
-		</a>
+
+		<!-- Primary items -->
 		{#each items as item, i (item.url)}
-			{@render link(item, i)}
+			{@render navLink(item, i)}
 		{/each}
-		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+
+		<!-- Tools dropdown -->
+		<div class="relative flex" bind:this={toolsMenuContainer}>
+			<button
+				bind:this={links[items.length]}
+				onclick={() => { showToolsMenu = !showToolsMenu; showLangPicker = false; }}
+				aria-label="Tools"
+				class={clsx("nav-link nav-tools-btn", {
+					"bg-panel-highlight": isToolsActive && !browser,
+				})}
+			>
+				<div class="flex items-center justify-center gap-2">
+					<WrenchIcon size={20} />
+					<span class="nav-label">{m["navbar.tools"]()}</span>
+					<ChevronDownIcon size={14} class="hidden md:block transition-transform {showToolsMenu ? 'rotate-180' : ''}" />
+				</div>
+			</button>
+			{#if showToolsMenu}
+				<div
+					class="tools-popover"
+					transition:fade={{ duration: 120 }}
+				>
+					{#each toolItems as tool}
+						{@const ToolIcon = tool.icon}
+						<a
+							href={tool.url}
+							class="tools-item"
+							class:tools-active={tool.activeMatch(page.url.pathname)}
+							onclick={() => showToolsMenu = false}
+						>
+							<ToolIcon size={18} />
+							<span>{tool.name}</span>
+						</a>
+					{/each}
+				</div>
+			{/if}
+		</div>
+
+		<!-- Secondary items -->
+		{#each secondaryItems as item, i (item.url)}
+			{@render navLink(item, items.length + 1 + i)}
+		{/each}
+
+		<!-- Separator -->
+		<div class="nav-sep hidden md:flex"></div>
+
+		<!-- Theme toggle -->
 		<Tooltip text={m["navbar.toggle_theme"]()} position="right">
 			<button
 				onclick={() => {
-					const isDark =
-						document.documentElement.classList.contains("dark");
+					const isDark = document.documentElement.classList.contains("dark");
 					setTheme(isDark ? "light" : "dark");
 				}}
-				class="w-14 h-full items-center justify-center hidden md:flex"
+				class="nav-action hidden md:flex"
+				aria-label={m["navbar.toggle_theme"]()}
 			>
-				<SunIcon class="dynadark:hidden block" />
-				<MoonIcon class="dynadark:block hidden" />
+				<SunIcon size={18} class="dynadark:hidden block" />
+				<MoonIcon size={18} class="dynadark:block hidden" />
 			</button>
 		</Tooltip>
-		<div class="w-0.5 bg-separator h-full flex"></div>
+
+		<!-- Language picker -->
+		<div class="nav-sep"></div>
 		<div class="relative flex" bind:this={langPickerContainer}>
 			<button
-				onclick={() => (showLangPicker = !showLangPicker)}
-				class="w-14 h-full items-center justify-center flex"
+				onclick={() => { showLangPicker = !showLangPicker; showToolsMenu = false; }}
+				class="nav-action"
 				class:text-accent={showLangPicker}
 				aria-label="Select language"
 			>
-				<GlobeIcon size={20} />
+				<GlobeIcon size={18} />
 			</button>
 			{#if showLangPicker}
 				<div
-					class="lang-popover absolute bottom-full right-0 mb-2 md:top-full md:bottom-auto md:mt-2 md:mb-0 z-50 rounded-xl shadow-lg p-3 grid grid-cols-3 gap-1.5 w-64"
-					style="background: var(--bg-panel); border: 1px solid var(--bg-separator);"
+					class="lang-popover"
+					transition:fade={{ duration: 120 }}
 				>
 					{#each Object.entries(availableLocales) as [locale, name]}
 						<button
 							onclick={() => selectLocale(locale)}
-							class="lang-btn px-2 py-1.5 rounded-lg text-xs font-medium transition-colors text-center truncate"
+							class="lang-btn"
 							class:lang-active={currentLocale === locale}
 							aria-label="Select {name}"
 						>
@@ -339,27 +403,230 @@
 				</div>
 			{/if}
 		</div>
+
+		<!-- Install button -->
 		{#if installPrompt}
-			<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+			<div class="nav-sep hidden md:flex"></div>
 			<button
 				onclick={handleInstall}
-				class="h-full items-center justify-center gap-2 flex px-3 text-sm font-medium hover:text-accent transition-colors"
+				class="nav-install"
+				aria-label="Install app"
 			>
-				<DownloadIcon size={18} />
-				<span class="hidden md:inline">Install App</span>
+				<DownloadIcon size={16} />
+				<span class="hidden md:inline">Install</span>
 			</button>
 		{/if}
 	</Panel>
 </div>
 
 <style>
+	/* ── Nav panel ── */
+	.nav-panel {
+		display: flex;
+		align-items: center;
+		gap: 0;
+		position: relative;
+		max-width: 960px;
+		width: 100vw;
+		height: 4.5rem;
+	}
+
+	@media (min-width: 768px) {
+		.nav-panel {
+			gap: 0.25rem;
+			height: 4.25rem;
+		}
+	}
+
+	/* ── Nav links ── */
+	.nav-link {
+		display: flex;
+		flex: 1;
+		min-width: 0;
+		height: 100%;
+		position: relative;
+		z-index: 10;
+		border-radius: 0.75rem;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
+		transition: color 0.15s ease;
+	}
+
+	.nav-link:hover {
+		color: var(--accent);
+	}
+
+	@media (min-width: 768px) {
+		.nav-link {
+			min-width: 5.5rem;
+			flex: 1 1 auto;
+		}
+	}
+
+	/* ── Nav labels (hidden on mobile) ── */
+	.nav-label {
+		display: none;
+		font-weight: 500;
+		font-size: 0.8125rem;
+		white-space: nowrap;
+	}
+
+	@media (min-width: 768px) {
+		.nav-label {
+			display: block;
+		}
+	}
+
+	/* ── Tools dropdown button ── */
+	.nav-tools-btn {
+		cursor: pointer;
+		border: none;
+		background: none;
+	}
+
+	/* ── Tools popover ── */
+	.tools-popover {
+		position: absolute;
+		z-index: 50;
+		bottom: calc(100% + 0.5rem);
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--bg-panel);
+		border: 1px solid var(--bg-separator);
+		border-radius: 0.75rem;
+		box-shadow: var(--shadow-panel);
+		padding: 0.375rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.125rem;
+		min-width: 10.5rem;
+	}
+
+	@media (min-width: 768px) {
+		.tools-popover {
+			bottom: auto;
+			top: calc(100% + 0.5rem);
+		}
+	}
+
+	.tools-item {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		padding: 0.5rem 0.75rem;
+		border-radius: 0.5rem;
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: var(--fg);
+		text-decoration: none;
+		transition: background-color 0.12s ease;
+	}
+
+	.tools-item:hover {
+		background: var(--bg-panel-alt, var(--bg-separator));
+	}
+
+	.tools-item.tools-active {
+		background: var(--accent);
+		color: var(--fg-on-accent);
+	}
+
+	/* ── Separator ── */
+	.nav-sep {
+		width: 1px;
+		height: 100%;
+		background: var(--bg-separator);
+		flex-shrink: 0;
+	}
+
+	/* ── Action buttons (theme, language) ── */
+	.nav-action {
+		display: flex;
+		width: 2.75rem;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		cursor: pointer;
+		border: none;
+		background: none;
+		color: inherit;
+		transition: color 0.15s ease;
+	}
+
+	.nav-action:hover {
+		color: var(--accent);
+	}
+
+	/* ── Install button ── */
+	.nav-install {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		gap: 0.375rem;
+		padding: 0 0.75rem;
+		font-size: 0.8125rem;
+		font-weight: 500;
+		cursor: pointer;
+		border: none;
+		background: none;
+		color: inherit;
+		transition: color 0.15s ease;
+		flex-shrink: 0;
+	}
+
+	.nav-install:hover {
+		color: var(--accent);
+	}
+
+	/* ── Language popover ── */
+	.lang-popover {
+		position: absolute;
+		z-index: 50;
+		bottom: calc(100% + 0.5rem);
+		right: 0;
+		background: var(--bg-panel);
+		border: 1px solid var(--bg-separator);
+		border-radius: 0.75rem;
+		box-shadow: var(--shadow-panel);
+		padding: 0.75rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.375rem;
+		width: 16rem;
+	}
+
+	@media (min-width: 768px) {
+		.lang-popover {
+			bottom: auto;
+			top: calc(100% + 0.5rem);
+		}
+	}
+
 	.lang-btn {
+		padding: 0.375rem 0.5rem;
+		border-radius: 0.5rem;
+		font-size: 0.75rem;
+		font-weight: 500;
+		text-align: center;
+		cursor: pointer;
+		border: none;
 		background: transparent;
 		color: var(--fg);
+		transition: background-color 0.12s ease;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
+
 	.lang-btn:hover {
 		background: var(--bg-panel-alt, var(--bg-separator));
 	}
+
 	.lang-btn.lang-active {
 		background: var(--accent);
 		color: var(--fg-on-accent);
