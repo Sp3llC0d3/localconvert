@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "Privacidade e dados",
-			"plausible_title": "Analytics Plausible",
-			"plausible_description": "Nós usamos [plausible_link]Plausible[/plausible_link], uma ferramenta de análise focada em privacidade, para coletar estatísticas completamente anônimas. Todos os dados são anonimizados e agregados, e nenhuma informação identificável é enviada ou armazenada. Você pode visualizar as análises [analytics_link]aqui[/analytics_link] e escolher optar por não participar abaixo.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Nós usamos [plausible_link]Cloudflare Web Analytics[/plausible_link], uma ferramenta de análise focada em privacidade, para coletar estatísticas completamente anônimas. Todos os dados são anonimizados e agregados, e nenhuma informação identificável é enviada ou armazenada. Você pode escolher não participar abaixo.",
 			"opt_in": "Aceitar",
 			"opt_out": "Recusar",
 			"cache_title": "Gerenciamento de cache",
@@ -289,7 +289,7 @@
 		"title": "Política de Privacidade",
 		"summary": {
 			"title": "Resumo",
-			"description": "A política de privacidade do LocalConvert é simples: seus arquivos nunca saem do seu dispositivo. Todas as conversões — imagens, áudio, vídeo e documentos — acontecem inteiramente no seu navegador usando WebAssembly. Não usamos cookies ou rastreadores, e a análise é completamente anônima via Plausible.<br/><br/>O LocalConvert é baseado no [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+			"description": "A política de privacidade do LocalConvert é simples: seus arquivos nunca saem do seu dispositivo. Todas as conversões — imagens, áudio, vídeo e documentos — acontecem inteiramente no seu navegador usando WebAssembly. Não usamos cookies ou rastreadores, e a análise é completamente anônima via Cloudflare Web Analytics.<br/><br/>O LocalConvert é baseado no [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
 		},
 		"conversions": {
 			"title": "Conversões",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "Analytics",
-			"description": "Usamos o Plausible para análises completamente anônimas e agregadas. O Plausible não usa cookies e está em conformidade com todas as principais regulamentações de privacidade (GDPR/CCPA/PECR). Você pode optar por não participar das análises na seção \"Privacidade e dados\" em [settings_link]configurações[/settings_link] e ler mais sobre as práticas de privacidade do Plausible [plausible_link]aqui[/plausible_link]."
+			"description": "Usamos o Cloudflare Web Analytics para análises completamente anônimas e agregadas. O Cloudflare Web Analytics não usa cookies e está em conformidade com todas as principais regulamentações de privacidade (GDPR/CCPA/PECR). Você pode optar por não participar das análises na seção \"Privacidade e dados\" em [settings_link]configurações[/settings_link] e ler mais sobre o Cloudflare Web Analytics [plausible_link]aqui[/plausible_link]."
 		},
 		"local_storage": {
 			"title": "Armazenamento local",
@@ -363,6 +363,34 @@
 			"a4": "Sem limite rígido — depende da memória disponível do seu dispositivo. Para arquivos de vídeo muito grandes, Firefox ou Safari normalmente os processam melhor.",
 			"q5": "Preciso instalar alguma coisa?",
 			"a5": "Nenhuma instalação necessária. O LocalConvert funciona diretamente em qualquer navegador moderno. Você também pode instalá-lo como um PWA a partir da barra de endereços para uma experiência semelhante a um aplicativo."
+		}
+	},
+	"pdf_tools": {
+		"title": "Ferramentas PDF",
+		"subtitle": "Todas as operações são executadas inteiramente no seu navegador. Seus arquivos nunca saem do seu dispositivo.",
+		"badge": "100% local — sem uploads, sem servidor",
+		"categories": {
+			"organize": "Organizar",
+			"convert": "Converter",
+			"optimize": "Otimizar e editar"
+		},
+		"tools": {
+			"merge_name": "Mesclar PDF",
+			"merge_desc": "Combinar vários PDFs em um único arquivo",
+			"split_name": "Dividir PDF",
+			"split_desc": "Extrair páginas ou dividir em arquivos individuais",
+			"rotate_name": "Girar páginas",
+			"rotate_desc": "Girar páginas individuais ou todas as páginas em 90°/180°/270°",
+			"organize_name": "Organizar páginas",
+			"organize_desc": "Reordenar ou excluir páginas com miniaturas visuais",
+			"images_to_pdf_name": "Imagens → PDF",
+			"images_to_pdf_desc": "Converter imagens JPG, PNG ou WEBP em PDF",
+			"pdf_to_images_name": "PDF → Imagens",
+			"pdf_to_images_desc": "Exportar cada página como imagem JPG ou PNG",
+			"compress_name": "Comprimir PDF",
+			"compress_desc": "Reduzir o tamanho do arquivo re-renderizando as páginas como JPEG",
+			"watermark_name": "Adicionar marca d'água",
+			"watermark_desc": "Carimbar texto em cada página de um PDF"
 		}
 	}
 }

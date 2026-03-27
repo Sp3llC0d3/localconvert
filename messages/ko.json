@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "개인정보 및 데이터",
-			"plausible_title": "Plausible 분석",
-			"plausible_description": "저희는 개인정보 보호에 초점을 둔 분석 도구인 [plausible_link]Plausible[/plausible_link]를 사용해 완전히 익명화된 통계를 수집합니다. 모든 데이터는 익명화되어 집계되며, 식별 가능한 정보는 전송되거나 보관되지 않습니다. 분석 결과는 [analytics_link]여기[/analytics_link]에서 확인할 수 있고, 아래에서 수집을 거부(opt-out)하실 수 있습니다.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "저희는 개인정보 보호에 초점을 둔 분석 도구인 [plausible_link]Cloudflare Web Analytics[/plausible_link]를 사용해 완전히 익명화된 통계를 수집합니다. 모든 데이터는 익명화되어 집계되며, 식별 가능한 정보는 전송되거나 보관되지 않습니다. 아래에서 수집 거부(opt-out)를 선택하실 수 있습니다.",
 			"opt_in": "수락",
 			"opt_out": "거부",
 			"cache_title": "캐시 관리",
@@ -289,7 +289,7 @@
 		"title": "개인정보 처리방침",
 		"summary": {
 			"title": "요약",
-			"description": "LocalConvert의 개인정보 처리방침은 간단합니다: 귀하의 파일이 기기를 벗어나는 일은 없습니다. 이미지, 오디오, 동영상, 문서를 포함한 모든 변환은 WebAssembly를 사용하여 브라우저에서 완전히 처리됩니다. 쿠키나 트래커를 사용하지 않으며, 분석은 Plausible을 통해 완전히 익명화됩니다.<br/><br/>LocalConvert는 [vert_link]VERT.sh[/vert_link] (AGPL-3.0)를 기반으로 합니다."
+			"description": "LocalConvert의 개인정보 처리방침은 간단합니다: 귀하의 파일이 기기를 벗어나는 일은 없습니다. 이미지, 오디오, 동영상, 문서를 포함한 모든 변환은 WebAssembly를 사용하여 브라우저에서 완전히 처리됩니다. 쿠키나 트래커를 사용하지 않으며, 분석은 Cloudflare Web Analytics를 통해 완전히 익명화됩니다.<br/><br/>LocalConvert는 [vert_link]VERT.sh[/vert_link] (AGPL-3.0)를 기반으로 합니다."
 		},
 		"conversions": {
 			"title": "변환",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "분석",
-			"description": "저희는 완전히 익명화되고 집계된 분석을 위해 Plausible을 사용합니다. Plausible은 쿠키를 사용하지 않으며 모든 주요 개인정보 보호 규정(GDPR/CCPA/PECR)을 준수합니다. [settings_link]설정[/settings_link]의 \"개인정보 및 데이터\" 섹션에서 분석을 선택 해제할 수 있으며, Plausible의 개인정보 보호 관행에 대한 자세한 내용은 [plausible_link]여기[/plausible_link]에서 확인하실 수 있습니다."
+			"description": "저희는 완전히 익명화되고 집계된 분석을 위해 Cloudflare Web Analytics를 사용합니다. Cloudflare Web Analytics는 쿠키를 사용하지 않으며 모든 주요 개인정보 보호 규정(GDPR/CCPA/PECR)을 준수합니다. [settings_link]설정[/settings_link]의 \"개인정보 및 데이터\" 섹션에서 분석을 선택 해제할 수 있으며, Cloudflare Web Analytics에 대한 자세한 내용은 [plausible_link]여기[/plausible_link]에서 확인하실 수 있습니다."
 		},
 		"local_storage": {
 			"title": "로컬 스토리지",
@@ -325,6 +325,34 @@
 	},
 	"toast": {
 		"insecure_context": "LocalConvert에 안전하지 않은 환경(예: HTTPS 대신 HTTP로 접속)에서 접속하고 있습니다. 일부 기능이 예상대로 작동하지 않을 수 있습니다."
+	},
+	"pdf_tools": {
+		"title": "PDF 도구",
+		"subtitle": "모든 작업이 브라우저 내에서 완전히 실행됩니다. 파일이 기기를 벗어나는 일은 없습니다.",
+		"badge": "100% 로컬 처리 — 업로드 없음, 서버 없음",
+		"categories": {
+			"organize": "정리",
+			"convert": "변환",
+			"optimize": "최적화 및 편집"
+		},
+		"tools": {
+			"merge_name": "PDF 병합",
+			"merge_desc": "여러 PDF를 하나의 파일로 합칩니다",
+			"split_name": "PDF 분할",
+			"split_desc": "페이지를 추출하거나 개별 파일로 분할합니다",
+			"rotate_name": "페이지 회전",
+			"rotate_desc": "개별 또는 모든 페이지를 90°/180°/270° 회전합니다",
+			"organize_name": "페이지 정리",
+			"organize_desc": "시각적 썸네일로 페이지 순서를 변경하거나 삭제합니다",
+			"images_to_pdf_name": "이미지 → PDF",
+			"images_to_pdf_desc": "JPG, PNG 또는 WEBP 이미지를 PDF로 변환합니다",
+			"pdf_to_images_name": "PDF → 이미지",
+			"pdf_to_images_desc": "각 페이지를 JPG 또는 PNG 이미지로 내보냅니다",
+			"compress_name": "PDF 압축",
+			"compress_desc": "페이지를 JPEG로 재렌더링하여 파일 크기를 줄입니다",
+			"watermark_name": "워터마크 추가",
+			"watermark_desc": "PDF의 모든 페이지에 텍스트를 삽입합니다"
+		}
 	},
 	"landing": {
 		"pills": {

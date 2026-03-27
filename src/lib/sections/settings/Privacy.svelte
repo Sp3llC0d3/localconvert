@@ -145,7 +145,7 @@
 								["plausible_link", "analytics_link"],
 								m["settings.privacy.plausible_description"](),
 								[
-									"https://plausible.io/privacy-focused-web-analytics",
+									"https://www.cloudflare.com/web-analytics/",
 									"https://ats.vert.sh/vert.sh",
 								],
 							)}

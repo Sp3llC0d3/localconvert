@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "Privasi & data",
-			"plausible_title": "Analitik Plausible",
-			"plausible_description": "Kami menggunakan [plausible_link]Plausible[/plausible_link], alat analitik yang berfokus pada privasi, untuk mengumpulkan statistik anonim sepenuhnya. Semua data dianonimkan dan diagregasi, tanpa informasi yang dapat diidentifikasi. Anda dapat melihat analitiknya [analytics_link]di sini[/analytics_link] dan memilih untuk keluar di bawah.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Kami menggunakan [plausible_link]Cloudflare Web Analytics[/plausible_link], alat analitik yang berfokus pada privasi, untuk mengumpulkan statistik anonim sepenuhnya. Semua data dianonimkan dan diagregasi, tanpa informasi yang dapat diidentifikasi yang pernah dikirim atau disimpan. Anda dapat memilih untuk keluar di bawah.",
 			"opt_in": "Ikut serta",
 			"opt_out": "Tidak ikut",
 			"cache_title": "Manajemen cache",
@@ -289,7 +289,7 @@
 		"title": "Kebijakan Privasi",
 		"summary": {
 			"title": "Ringkasan",
-			"description": "Kebijakan privasi LocalConvert sederhana: berkas Anda tidak pernah meninggalkan perangkat Anda. Semua konversi — gambar, audio, video, dan dokumen — terjadi sepenuhnya di browser Anda menggunakan WebAssembly. Kami tidak menggunakan cookie atau pelacak, dan analitik sepenuhnya anonim melalui Plausible.<br/><br/>LocalConvert berbasis [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+			"description": "Kebijakan privasi LocalConvert sederhana: berkas Anda tidak pernah meninggalkan perangkat Anda. Semua konversi — gambar, audio, video, dan dokumen — terjadi sepenuhnya di browser Anda menggunakan WebAssembly. Kami tidak menggunakan cookie atau pelacak, dan analitik sepenuhnya anonim melalui Cloudflare Web Analytics.<br/><br/>LocalConvert berbasis [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
 		},
 		"conversions": {
 			"title": "Konversi",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "Analitik",
-			"description": "Kami menggunakan Plausible untuk analitik yang sepenuhnya anonim dan teragregasi. Plausible tidak menggunakan cookie dan mematuhi semua regulasi privasi utama (GDPR/CCPA/PECR). Anda dapat memilih keluar dari analitik di bagian \"Privasi & data\" di [settings_link]pengaturan[/settings_link] dan membaca lebih lanjut tentang praktik privasi Plausible [plausible_link]di sini[/plausible_link]."
+			"description": "Kami menggunakan Cloudflare Web Analytics untuk analitik yang sepenuhnya anonim dan teragregasi. Cloudflare Web Analytics tidak menggunakan cookie dan mematuhi semua regulasi privasi utama (GDPR/CCPA/PECR). Anda dapat memilih keluar dari analitik di bagian \"Privasi & data\" di [settings_link]pengaturan[/settings_link] dan membaca lebih lanjut tentang Cloudflare Web Analytics [plausible_link]di sini[/plausible_link]."
 		},
 		"local_storage": {
 			"title": "Penyimpanan Lokal",
@@ -363,6 +363,34 @@
 			"a4": "Tidak ada batas keras — tergantung memori yang tersedia di perangkat Anda. Untuk berkas video yang sangat besar, Firefox atau Safari biasanya menanganinya lebih baik.",
 			"q5": "Apakah saya perlu menginstal sesuatu?",
 			"a5": "Tidak perlu instalasi. LocalConvert bekerja langsung di browser modern apa pun. Anda juga dapat menginstalnya sebagai PWA dari bilah alamat untuk pengalaman seperti aplikasi."
+		}
+	},
+	"pdf_tools": {
+		"title": "Alat PDF",
+		"subtitle": "Setiap operasi berjalan sepenuhnya di browser Anda. Berkas Anda tidak pernah meninggalkan perangkat Anda.",
+		"badge": "100% lokal — tanpa unggahan, tanpa server",
+		"categories": {
+			"organize": "Atur",
+			"convert": "Konversi",
+			"optimize": "Optimalkan & Edit"
+		},
+		"tools": {
+			"merge_name": "Gabung PDF",
+			"merge_desc": "Gabungkan beberapa PDF menjadi satu berkas",
+			"split_name": "Pisah PDF",
+			"split_desc": "Ekstrak halaman atau pisahkan menjadi berkas terpisah",
+			"rotate_name": "Putar Halaman",
+			"rotate_desc": "Putar halaman tertentu atau semua halaman 90°/180°/270°",
+			"organize_name": "Atur Halaman",
+			"organize_desc": "Susun ulang atau hapus halaman dengan tampilan gambar mini",
+			"images_to_pdf_name": "Gambar → PDF",
+			"images_to_pdf_desc": "Konversi gambar JPG, PNG, atau WEBP menjadi PDF",
+			"pdf_to_images_name": "PDF → Gambar",
+			"pdf_to_images_desc": "Ekspor setiap halaman sebagai gambar JPG atau PNG",
+			"compress_name": "Kompres PDF",
+			"compress_desc": "Kurangi ukuran berkas dengan merender ulang halaman sebagai JPEG",
+			"watermark_name": "Tambah Tanda Air",
+			"watermark_desc": "Tambahkan stempel teks pada setiap halaman PDF"
 		}
 	}
 }

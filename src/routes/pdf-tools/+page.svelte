@@ -1,31 +1,32 @@
 <script lang="ts">
 	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { m } from '$lib/paraglide/messages';
 
-	const categories = [
+	const categories = $derived([
 		{
-			label: 'Organize',
+			label: m['pdf_tools.categories.organize'](),
 			tools: [
-				{ href: '/pdf-tools/merge/', icon: GitMergeIcon, name: 'Merge PDF', desc: 'Combine multiple PDFs into one file' },
-				{ href: '/pdf-tools/split/', icon: ScissorsIcon, name: 'Split PDF', desc: 'Extract pages or split into individual files' },
-				{ href: '/pdf-tools/rotate/', icon: RotateCwIcon, name: 'Rotate Pages', desc: 'Rotate individual or all pages 90°/180°/270°' },
-				{ href: '/pdf-tools/organize/', icon: LayoutGridIcon, name: 'Organize Pages', desc: 'Reorder or delete pages with visual thumbnails' },
+				{ href: '/pdf-tools/merge/', icon: GitMergeIcon, name: m['pdf_tools.tools.merge_name'](), desc: m['pdf_tools.tools.merge_desc']() },
+				{ href: '/pdf-tools/split/', icon: ScissorsIcon, name: m['pdf_tools.tools.split_name'](), desc: m['pdf_tools.tools.split_desc']() },
+				{ href: '/pdf-tools/rotate/', icon: RotateCwIcon, name: m['pdf_tools.tools.rotate_name'](), desc: m['pdf_tools.tools.rotate_desc']() },
+				{ href: '/pdf-tools/organize/', icon: LayoutGridIcon, name: m['pdf_tools.tools.organize_name'](), desc: m['pdf_tools.tools.organize_desc']() },
 			],
 		},
 		{
-			label: 'Convert',
+			label: m['pdf_tools.categories.convert'](),
 			tools: [
-				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: 'Images → PDF', desc: 'Convert JPG, PNG, or WEBP images to a PDF' },
-				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: 'PDF → Images', desc: 'Export each page as a JPG or PNG image' },
+				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc']() },
+				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc']() },
 			],
 		},
 		{
-			label: 'Optimize & Edit',
+			label: m['pdf_tools.categories.optimize'](),
 			tools: [
-				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: 'Compress PDF', desc: 'Reduce file size by re-rendering pages as JPEG' },
-				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: 'Add Watermark', desc: 'Stamp text on every page of a PDF' },
+				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc']() },
+				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc']() },
 			],
 		},
-	];
+	]);
 </script>
 
 <svelte:head>
@@ -41,13 +42,13 @@
 		<div class="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center">
 			<FileTextIcon size={28} color="black" />
 		</div>
-		<h1 class="text-4xl md:text-5xl font-display tracking-tight">PDF Tools</h1>
+		<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
-			Every operation runs entirely in your browser. Your files never leave your device.
+			{m['pdf_tools.subtitle']()}
 		</p>
 		<div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style="background: var(--bg-badge); color: var(--fg-on-badge)">
 			<ShieldCheckIcon size={14} />
-			100% local — no uploads, no server
+			{m['pdf_tools.badge']()}
 		</div>
 	</div>
 

@@ -71,7 +71,7 @@
 						m["privacy.analytics.description"](),
 						[
 							"/settings",
-							"https://plausible.io/privacy-focused-web-analytics",
+							"https://www.cloudflare.com/web-analytics/",
 						],
 						[false, true],
 					),

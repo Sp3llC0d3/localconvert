@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "プライバシーとデータ",
-			"plausible_title": "Plausible解析",
-			"plausible_description": "私たちはプライバシー重視の解析ツール[plausible_link]Plausible[/plausible_link]を使用しています。すべてのデータは匿名化・集計され、個人情報は一切収集・保存されません。統計情報は[analytics_link]こちら[/analytics_link]で確認でき、以下でオプトアウト可能です。",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "私たちはプライバシー重視の解析ツール[plausible_link]Cloudflare Web Analytics[/plausible_link]を使用して、完全に匿名化された統計情報を収集しています。すべてのデータは匿名化・集計され、個人を特定できる情報は一切送信・保存されません。以下でオプトアウトを選択できます。",
 			"opt_in": "参加する",
 			"opt_out": "参加しない",
 			"cache_title": "キャッシュ管理",
@@ -289,7 +289,7 @@
 		"title": "プライバシーポリシー",
 		"summary": {
 			"title": "概要",
-			"description": "LocalConvertのプライバシーポリシーはシンプルです：お使いのファイルがデバイスを離れることはありません。画像・音声・動画・ドキュメントを含むすべての変換は、WebAssemblyを使用してブラウザ内で完全に行われます。クッキーやトラッカーは使用せず、分析はPlausibleによって完全に匿名化されています。<br/><br/>LocalConvertは[vert_link]VERT.sh[/vert_link]（AGPL-3.0）をベースにしています。"
+			"description": "LocalConvertのプライバシーポリシーはシンプルです：お使いのファイルがデバイスを離れることはありません。画像・音声・動画・ドキュメントを含むすべての変換は、WebAssemblyを使用してブラウザ内で完全に行われます。クッキーやトラッカーは使用せず、分析はCloudflare Web Analyticsによって完全に匿名化されています。<br/><br/>LocalConvertは[vert_link]VERT.sh[/vert_link]（AGPL-3.0）をベースにしています。"
 		},
 		"conversions": {
 			"title": "変換",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "分析",
-			"description": "私たちは完全に匿名化・集計された分析のためにPlausibleを使用しています。Plausibleはクッキーを使用せず、すべての主要なプライバシー規制（GDPR/CCPA/PECR）に準拠しています。[settings_link]設定[/settings_link]の「プライバシーとデータ」セクションで分析をオプトアウトでき、Plausibleのプライバシーについては[plausible_link]こちら[/plausible_link]で詳細をご確認いただけます。"
+			"description": "私たちは完全に匿名化・集計された分析のためにCloudflare Web Analyticsを使用しています。Cloudflare Web Analyticsはクッキーを使用せず、すべての主要なプライバシー規制（GDPR/CCPA/PECR）に準拠しています。[settings_link]設定[/settings_link]の「プライバシーとデータ」セクションで分析をオプトアウトでき、Cloudflare Web Analyticsについては[plausible_link]こちら[/plausible_link]で詳細をご確認いただけます。"
 		},
 		"local_storage": {
 			"title": "ローカルストレージ",
@@ -325,6 +325,34 @@
 	},
 	"toast": {
 		"insecure_context": "LocalConvertに安全でないコンテキスト（例：HTTPSではなくHTTPでのアクセス）でアクセスしています。一部の機能が正常に動作しない場合があります。"
+	},
+	"pdf_tools": {
+		"title": "PDFツール",
+		"subtitle": "すべての操作はブラウザ内で完結します。ファイルがデバイスを離れることはありません。",
+		"badge": "100%ローカル処理 — アップロードなし、サーバーなし",
+		"categories": {
+			"organize": "整理",
+			"convert": "変換",
+			"optimize": "最適化・編集"
+		},
+		"tools": {
+			"merge_name": "PDFを結合",
+			"merge_desc": "複数のPDFを1つのファイルに結合します",
+			"split_name": "PDFを分割",
+			"split_desc": "ページを抽出するか、個別のファイルに分割します",
+			"rotate_name": "ページを回転",
+			"rotate_desc": "個別またはすべてのページを90°／180°／270°回転します",
+			"organize_name": "ページを整理",
+			"organize_desc": "サムネイルを使ってページの順序変更や削除を行います",
+			"images_to_pdf_name": "画像 → PDF",
+			"images_to_pdf_desc": "JPG、PNG、またはWEBP画像をPDFに変換します",
+			"pdf_to_images_name": "PDF → 画像",
+			"pdf_to_images_desc": "各ページをJPGまたはPNG画像としてエクスポートします",
+			"compress_name": "PDFを圧縮",
+			"compress_desc": "ページをJPEGとして再レンダリングしてファイルサイズを削減します",
+			"watermark_name": "透かしを追加",
+			"watermark_desc": "PDFのすべてのページにテキストを刻印します"
+		}
 	},
 	"landing": {
 		"pills": {

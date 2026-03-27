@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "Privatnost i podatci",
-			"plausible_title": "Plausible analitika",
-			"plausible_description": "Koristimo [plausible_link]Plausible[/plausible_link], alat za analitiku usmjeren na privatnost, za prikupljanje potpuno anonimnih statistika. Svi su podatci anonimizirani i agregirani te se nikakve prepoznatljive informacije nikada ne šalju ni ne pohranjuju. Možete pogledati analitiku [analytics_link]ovdje[/analytics_link] i odabrati isključivanje ispod.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Koristimo [plausible_link]Cloudflare Web Analytics[/plausible_link], alat za analitiku usmjeren na privatnost, za prikupljanje potpuno anonimnih statistika. Svi su podatci anonimizirani i agregirani te se nikakve prepoznatljive informacije nikada ne šalju ni ne pohranjuju. Možete odabrati isključivanje ispod.",
 			"opt_in": "Uključi",
 			"opt_out": "Isključi",
 			"cache_title": "Upravljanje predmemorijom",
@@ -289,7 +289,7 @@
 		"title": "Pravila privatnosti",
 		"summary": {
 			"title": "Sažetak",
-			"description": "Pravila privatnosti LocalConverta su jednostavna: Vaše datoteke nikada ne napuštaju Vaš uređaj. Sve pretvorbe — slike, audio, video i dokumenti — odvijaju se u cijelosti u Vašem pregledniku pomoću WebAssembly. Ne koristimo kolačiće ni tragače, a analitika je potpuno anonimna putem Plausiblea.<br/><br/>LocalConvert se temelji na [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+			"description": "Pravila privatnosti LocalConverta su jednostavna: Vaše datoteke nikada ne napuštaju Vaš uređaj. Sve pretvorbe — slike, audio, video i dokumenti — odvijaju se u cijelosti u Vašem pregledniku pomoću WebAssembly. Ne koristimo kolačiće ni tragače, a analitika je potpuno anonimna putem Cloudflare Web Analyticsa.<br/><br/>LocalConvert se temelji na [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
 		},
 		"conversions": {
 			"title": "Pretvorbe",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "Analitika",
-			"description": "Koristimo Plausible za potpuno anonimnu i agregiranu analitiku. Plausible ne koristi kolačiće i usklađen je sa svim važnim propisima o privatnosti (GDPR/CCPA/PECR). Možete se isključiti iz analitike u odjeljku \"Privatnost i podatci\" u [settings_link]postavkama[/settings_link] i pročitati više o Plausibleovim praksama privatnosti [plausible_link]ovdje[/plausible_link]."
+			"description": "Koristimo Cloudflare Web Analytics za potpuno anonimnu i agregiranu analitiku. Cloudflare Web Analytics ne koristi kolačiće i usklađen je sa svim važnim propisima o privatnosti (GDPR/CCPA/PECR). Možete se isključiti iz analitike u odjeljku \"Privatnost i podatci\" u [settings_link]postavkama[/settings_link] i pročitati više o Cloudflare Web Analyticsu [plausible_link]ovdje[/plausible_link]."
 		},
 		"local_storage": {
 			"title": "Lokalna pohrana",
@@ -363,6 +363,34 @@
 			"a4": "Nema tvrdog ograničenja — ovisi o dostupnoj memoriji Vašeg uređaja. Za vrlo velike videodatoteke, Firefox ili Safari obično ih bolje obrađuju.",
 			"q5": "Moram li nešto instalirati?",
 			"a5": "Nije potrebna instalacija. LocalConvert radi izravno u bilo kojem modernom pregledniku. Možete ga instalirati i kao PWA iz adresne trake za iskustvo slično aplikaciji."
+		}
+	},
+	"pdf_tools": {
+		"title": "PDF Alati",
+		"subtitle": "Svaka operacija odvija se u cijelosti u Vašem pregledniku. Vaše datoteke nikada ne napuštaju Vaš uređaj.",
+		"badge": "100% lokalno — bez prijenosa, bez poslužitelja",
+		"categories": {
+			"organize": "Organiziraj",
+			"convert": "Pretvori",
+			"optimize": "Optimiziraj i uredi"
+		},
+		"tools": {
+			"merge_name": "Spoji PDF",
+			"merge_desc": "Kombinirajte više PDF-ova u jednu datoteku",
+			"split_name": "Podijeli PDF",
+			"split_desc": "Izvucite stranice ili podijelite u zasebne datoteke",
+			"rotate_name": "Rotiraj stranice",
+			"rotate_desc": "Rotirajte pojedinačne ili sve stranice za 90°/180°/270°",
+			"organize_name": "Organiziraj stranice",
+			"organize_desc": "Promijenite redoslijed ili izbrišite stranice s vizualnim minijaturama",
+			"images_to_pdf_name": "Slike → PDF",
+			"images_to_pdf_desc": "Pretvorite slike JPG, PNG ili WEBP u PDF",
+			"pdf_to_images_name": "PDF → Slike",
+			"pdf_to_images_desc": "Izvezite svaku stranicu kao sliku JPG ili PNG",
+			"compress_name": "Komprimiraj PDF",
+			"compress_desc": "Smanjite veličinu datoteke ponovnim prikazivanjem stranica kao JPEG",
+			"watermark_name": "Dodaj vodeni žig",
+			"watermark_desc": "Utisnite tekst na svaku stranicu PDF-a"
 		}
 	}
 }

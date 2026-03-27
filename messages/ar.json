@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "الخصوصية والبيانات",
-			"plausible_title": "⁧تحليلات ⁦Plausible⁩⁩",
-			"plausible_description": "⁧نستخدم [plausible_link]⁦Plausible⁩[/plausible_link]، وهي أداة تحليلات تُعنى بالخصوصية، لجمع إحصاءات مجهولة الهوية تمامًا. جميع البيانات مجهولة ومجمّعة، ولا يُرسل أو يُخزَّن أي معلومات قابلة للتعريف. يمكنك عرض التحليلات [analytics_link]هنا[/analytics_link] واختيار إلغاء الاشتراك في الأسفل.⁩",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "⁧نستخدم [plausible_link]⁦Cloudflare Web Analytics⁩[/plausible_link]، وهي أداة تحليلات تُعنى بالخصوصية، لجمع إحصاءات مجهولة الهوية تمامًا. جميع البيانات مجهولة ومجمّعة، ولا يُرسل أو يُخزَّن أي معلومات قابلة للتعريف. يمكنك اختيار إلغاء الاشتراك في الأسفل.⁩",
 			"opt_in": "الاشتراك",
 			"opt_out": "إلغاء الاشتراك",
 			"cache_title": "إدارة ذاكرة التخزين المؤقت",
@@ -289,7 +289,7 @@
 		"title": "سياسة الخصوصية",
 		"summary": {
 			"title": "ملخص",
-			"description": "⁧سياسة خصوصية ⁦LocalConvert⁩ بسيطة: ملفاتك لا تغادر جهازك أبدًا. تتم جميع عمليات التحويل — الصور والصوت والفيديو والمستندات — بالكامل في متصفحك باستخدام ⁦WebAssembly⁩. لا نستخدم ملفات تعريف الارتباط أو أدوات التتبع، والتحليلات مجهولة الهوية بالكامل عبر ⁦Plausible⁩.<br/><br/>يستند ⁦LocalConvert⁩ إلى [vert_link]⁦VERT.sh⁩[/vert_link] (⁦AGPL-3.0⁩).⁩"
+			"description": "⁧سياسة خصوصية ⁦LocalConvert⁩ بسيطة: ملفاتك لا تغادر جهازك أبدًا. تتم جميع عمليات التحويل — الصور والصوت والفيديو والمستندات — بالكامل في متصفحك باستخدام ⁦WebAssembly⁩. لا نستخدم ملفات تعريف الارتباط أو أدوات التتبع، والتحليلات مجهولة الهوية بالكامل عبر ⁦Cloudflare Web Analytics⁩.<br/><br/>يستند ⁦LocalConvert⁩ إلى [vert_link]⁦VERT.sh⁩[/vert_link] (⁦AGPL-3.0⁩).⁩"
 		},
 		"conversions": {
 			"title": "التحويلات",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "التحليلات",
-			"description": "⁧نستخدم ⁦Plausible⁩ لإجراء تحليلات مجهولة الهوية ومجمّعة بالكامل. لا يستخدم ⁦Plausible⁩ ملفات تعريف الارتباط ويمتثل لجميع لوائح الخصوصية الرئيسية (⁦GDPR⁩/⁦CCPA⁩/⁦PECR⁩). يمكنك إلغاء الاشتراك في التحليلات من قسم «الخصوصية والبيانات» في [settings_link]الإعدادات[/settings_link] وقراءة المزيد عن ممارسات خصوصية ⁦Plausible⁩ [plausible_link]هنا[/plausible_link].⁩"
+			"description": "⁧نستخدم ⁦Cloudflare Web Analytics⁩ لإجراء تحليلات مجهولة الهوية ومجمّعة بالكامل. لا تستخدم ⁦Cloudflare Web Analytics⁩ ملفات تعريف الارتباط وتمتثل لجميع لوائح الخصوصية الرئيسية (⁦GDPR⁩/⁦CCPA⁩/⁦PECR⁩). يمكنك إلغاء الاشتراك في التحليلات من قسم «الخصوصية والبيانات» في [settings_link]الإعدادات[/settings_link] وقراءة المزيد عن ⁦Cloudflare Web Analytics⁩ [plausible_link]هنا[/plausible_link].⁩"
 		},
 		"local_storage": {
 			"title": "التخزين المحلي",
@@ -325,6 +325,34 @@
 	},
 	"toast": {
 		"insecure_context": "⁧أنت تزور ⁦LocalConvert⁩ في سياق غير آمن (مثل الوصول عبر ⁦HTTP⁩ بدلًا من ⁦HTTPS⁩). قد لا تعمل بعض الميزات بالشكل المتوقع.⁩"
+	},
+	"pdf_tools": {
+		"title": "⁧أدوات ⁦PDF⁩⁩",
+		"subtitle": "تعمل جميع العمليات بالكامل في متصفحك. ملفاتك لا تغادر جهازك أبدًا.",
+		"badge": "⁧معالجة محلية ⁦100%⁩ — بدون رفع ملفات ودون خوادم⁩",
+		"categories": {
+			"organize": "تنظيم",
+			"convert": "تحويل",
+			"optimize": "تحسين وتحرير"
+		},
+		"tools": {
+			"merge_name": "⁧دمج ⁦PDF⁩⁩",
+			"merge_desc": "⁧دمج ملفات ⁦PDF⁩ متعددة في ملف واحد⁩",
+			"split_name": "⁧تقسيم ⁦PDF⁩⁩",
+			"split_desc": "⁧استخراج صفحات أو تقسيم الملف إلى ملفات منفردة⁩",
+			"rotate_name": "تدوير الصفحات",
+			"rotate_desc": "⁧تدوير صفحة واحدة أو جميع الصفحات بمقدار ⁦90°⁩/⁦180°⁩/⁦270°⁩⁩",
+			"organize_name": "تنظيم الصفحات",
+			"organize_desc": "إعادة ترتيب الصفحات أو حذفها باستخدام صور مصغّرة مرئية",
+			"images_to_pdf_name": "⁧صور ← ⁦PDF⁩⁩",
+			"images_to_pdf_desc": "⁧تحويل صور ⁦JPG⁩ أو ⁦PNG⁩ أو ⁦WEBP⁩ إلى ملف ⁦PDF⁩⁩",
+			"pdf_to_images_name": "⁧⁦PDF⁩ ← صور⁩",
+			"pdf_to_images_desc": "⁧تصدير كل صفحة بصيغة ⁦JPG⁩ أو ⁦PNG⁩⁩",
+			"compress_name": "⁧ضغط ⁦PDF⁩⁩",
+			"compress_desc": "⁧تقليل حجم الملف بإعادة تصيير الصفحات بصيغة ⁦JPEG⁩⁩",
+			"watermark_name": "إضافة علامة مائية",
+			"watermark_desc": "⁧طبع نص على كل صفحة من صفحات ملف ⁦PDF⁩⁩"
+		}
 	},
 	"landing": {
 		"pills": {

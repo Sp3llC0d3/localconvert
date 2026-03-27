@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "Privacy & data",
-			"plausible_title": "Plausible analytics",
-			"plausible_description": "We use [plausible_link]Plausible[/plausible_link], a privacy-focused analytics tool, to gather completely anonymous statistics. All data is anonymized and aggregated, and no identifiable information is ever sent or stored. You can view the analytics [analytics_link]here[/analytics_link] and choose to opt out below.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "We use [plausible_link]Cloudflare Web Analytics[/plausible_link], a privacy-focused analytics tool, to gather completely anonymous statistics. All data is anonymized and aggregated, and no identifiable information is ever sent or stored. You can choose to opt out below.",
 			"opt_in": "Opt-in",
 			"opt_out": "Opt-out",
 			"cache_title": "Cache management",
@@ -289,7 +289,7 @@
 		"title": "Privacy Policy",
 		"summary": {
 			"title": "Summary",
-			"description": "LocalConvert's privacy policy is simple: your files never leave your device. All conversions — images, audio, video, and documents — happen entirely in your browser using WebAssembly. We don't use cookies or trackers, and analytics are completely anonymous via Plausible.<br/><br/>LocalConvert is based on [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+			"description": "LocalConvert's privacy policy is simple: your files never leave your device. All conversions — images, audio, video, and documents — happen entirely in your browser using WebAssembly. We don't use cookies or trackers, and analytics are completely anonymous via Cloudflare Web Analytics.<br/><br/>LocalConvert is based on [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
 		},
 		"conversions": {
 			"title": "Conversions",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "Analytics",
-			"description": "We use Plausible for completely anonymous and aggregated analytics. Plausible does not use cookies and complies with all major privacy regulations (GDPR/CCPA/PECR). You can opt out of analytics in the \"Privacy & data\" section in [settings_link]settings[/settings_link] and read more about Plausible's privacy practices [plausible_link]here[/plausible_link]."
+			"description": "We use Cloudflare Web Analytics for completely anonymous and aggregated analytics. Cloudflare Web Analytics does not use cookies and complies with all major privacy regulations (GDPR/CCPA/PECR). You can opt out of analytics in the \"Privacy & data\" section in [settings_link]settings[/settings_link] and read more about Cloudflare Web Analytics [plausible_link]here[/plausible_link]."
 		},
 		"local_storage": {
 			"title": "Local Storage",
@@ -322,6 +322,34 @@
 			"description": "For questions, email us at: [email_link]hello@localconvert.app[/email_link]."
 		},
 		"last_updated": "Last updated: 2026-03-22"
+	},
+	"pdf_tools": {
+		"title": "PDF Tools",
+		"subtitle": "Every operation runs entirely in your browser. Your files never leave your device.",
+		"badge": "100% local — no uploads, no server",
+		"categories": {
+			"organize": "Organize",
+			"convert": "Convert",
+			"optimize": "Optimize & Edit"
+		},
+		"tools": {
+			"merge_name": "Merge PDF",
+			"merge_desc": "Combine multiple PDFs into one file",
+			"split_name": "Split PDF",
+			"split_desc": "Extract pages or split into individual files",
+			"rotate_name": "Rotate Pages",
+			"rotate_desc": "Rotate individual or all pages 90°/180°/270°",
+			"organize_name": "Organize Pages",
+			"organize_desc": "Reorder or delete pages with visual thumbnails",
+			"images_to_pdf_name": "Images → PDF",
+			"images_to_pdf_desc": "Convert JPG, PNG, or WEBP images to a PDF",
+			"pdf_to_images_name": "PDF → Images",
+			"pdf_to_images_desc": "Export each page as a JPG or PNG image",
+			"compress_name": "Compress PDF",
+			"compress_desc": "Reduce file size by re-rendering pages as JPEG",
+			"watermark_name": "Add Watermark",
+			"watermark_desc": "Stamp text on every page of a PDF"
+		}
 	},
 	"toast": {
 		"insecure_context": "You are visiting LocalConvert in an insecure context (e.g. accessing over HTTP instead of HTTPS). Some features may not work as expected."

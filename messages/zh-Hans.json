@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "隐私与数据",
-			"plausible_title": "Plausible 分析",
-			"plausible_description": "我们使用[plausible_link]Plausible[/plausible_link]，一个注重隐私的分析工具，来收集完全匿名的统计数据。所有数据都是匿名和聚合的，不会发送或存储任何可识别信息。你可以在[analytics_link]这里[/analytics_link]查看分析数据，并在下方选择退出。",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "我们使用[plausible_link]Cloudflare Web Analytics[/plausible_link]，一个注重隐私的分析工具，来收集完全匿名的统计数据。所有数据都是匿名和聚合的，不会发送或存储任何可识别信息。你可以在下方选择退出。",
 			"opt_in": "选择加入",
 			"opt_out": "选择退出",
 			"cache_title": "缓存管理",
@@ -289,7 +289,7 @@
 		"title": "隐私政策",
 		"summary": {
 			"title": "摘要",
-			"description": "LocalConvert 的隐私政策很简单：你的文件永远不会离开你的设备。所有转换——图片、音频、视频和文档——完全在你的浏览器中使用 WebAssembly 进行。我们不使用 cookie 或跟踪器，分析完全匿名（通过 Plausible）。<br/><br/>LocalConvert 基于 [vert_link]VERT.sh[/vert_link]（AGPL-3.0）。"
+			"description": "LocalConvert 的隐私政策很简单：你的文件永远不会离开你的设备。所有转换——图片、音频、视频和文档——完全在你的浏览器中使用 WebAssembly 进行。我们不使用 cookie 或跟踪器，分析通过 Cloudflare Web Analytics 完全匿名处理。<br/><br/>LocalConvert 基于 [vert_link]VERT.sh[/vert_link]（AGPL-3.0）。"
 		},
 		"conversions": {
 			"title": "转换",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "分析",
-			"description": "我们使用 Plausible 进行完全匿名和聚合的分析。Plausible 不使用 cookie，并符合所有主要隐私法规（GDPR/CCPA/PECR）。你可以在[settings_link]设置[/settings_link]的“隐私与数据”部分选择退出分析，并在[plausible_link]这里[/plausible_link]阅读更多关于 Plausible 隐私实践的信息。"
+			"description": "我们使用 Cloudflare Web Analytics 进行完全匿名和聚合的分析。Cloudflare Web Analytics 不使用 cookie，并符合所有主要隐私法规（GDPR/CCPA/PECR）。你可以在[settings_link]设置[/settings_link]的“隐私与数据”部分选择退出分析，并在[plausible_link]这里[/plausible_link]阅读更多关于 Cloudflare Web Analytics 的信息。"
 		},
 		"local_storage": {
 			"title": "本地存储",
@@ -363,6 +363,34 @@
 			"a4": "没有硬性限制——取决于你设备的可用内存。对于非常大的视频文件，Firefox 或 Safari 通常处理得更好。",
 			"q5": "我需要安装任何东西吗？",
 			"a5": "无需安装。LocalConvert 可在任何现代浏览器中直接使用。你也可以从地址栏将其安装为 PWA，获得类似应用的体验。"
+		}
+	},
+	"pdf_tools": {
+		"title": "PDF工具",
+		"subtitle": "所有操作完全在你的浏览器中运行。你的文件永远不会离开你的设备。",
+		"badge": "100%本地处理——无上传，无服务器",
+		"categories": {
+			"organize": "整理",
+			"convert": "转换",
+			"optimize": "优化与编辑"
+		},
+		"tools": {
+			"merge_name": "合并PDF",
+			"merge_desc": "将多个PDF合并为一个文件",
+			"split_name": "拆分PDF",
+			"split_desc": "提取页面或拆分为单独的文件",
+			"rotate_name": "旋转页面",
+			"rotate_desc": "将单个或所有页面旋转90°/180°/270°",
+			"organize_name": "整理页面",
+			"organize_desc": "通过可视化缩略图重新排序或删除页面",
+			"images_to_pdf_name": "图片 → PDF",
+			"images_to_pdf_desc": "将JPG、PNG或WEBP图片转换为PDF",
+			"pdf_to_images_name": "PDF → 图片",
+			"pdf_to_images_desc": "将每页导出为JPG或PNG图片",
+			"compress_name": "压缩PDF",
+			"compress_desc": "将页面重新渲染为JPEG以减小文件大小",
+			"watermark_name": "添加水印",
+			"watermark_desc": "在PDF的每一页上印制文字水印"
 		}
 	}
 }

@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "隱私權與資料",
-			"plausible_title": "Plausible 分析",
-			"plausible_description": "我們使用[plausible_link]Plausible[/plausible_link]，一個注重隱私權的分析工具，來收集完全匿名的統計資料。所有資料都是匿名和彙總的，不會傳送或儲存任何可識別資訊。你可以在[analytics_link]這裡[/analytics_link]檢視分析資料，並在下方選擇退出。",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "我們使用[plausible_link]Cloudflare Web Analytics[/plausible_link]，一個注重隱私權的分析工具，來收集完全匿名的統計資料。所有資料都是匿名和彙總的，不會傳送或儲存任何可識別資訊。你可以在下方選擇退出。",
 			"opt_in": "選擇加入",
 			"opt_out": "選擇退出",
 			"cache_title": "快取管理",
@@ -289,7 +289,7 @@
 		"title": "隱私權政策",
 		"summary": {
 			"title": "摘要",
-			"description": "LocalConvert 的隱私權政策很簡單：你的檔案永遠不會離開你的裝置。所有轉換——圖片、音訊、影片和文件——完全在你的瀏覽器中使用 WebAssembly 進行。我們不使用 cookie 或追蹤器，分析完全匿名（透過 Plausible）。<br/><br/>LocalConvert 基於 [vert_link]VERT.sh[/vert_link]（AGPL-3.0）。"
+			"description": "LocalConvert 的隱私權政策很簡單：你的檔案永遠不會離開你的裝置。所有轉換——圖片、音訊、影片和文件——完全在你的瀏覽器中使用 WebAssembly 進行。我們不使用 cookie 或追蹤器，分析透過 Cloudflare Web Analytics 完全匿名處理。<br/><br/>LocalConvert 基於 [vert_link]VERT.sh[/vert_link]（AGPL-3.0）。"
 		},
 		"conversions": {
 			"title": "轉換",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "分析",
-			"description": "我們使用 Plausible 進行完全匿名和彙總的分析。Plausible 不使用 cookie，並符合所有主要隱私權法規（GDPR/CCPA/PECR）。你可以在[settings_link]設定[/settings_link]的「隱私權與資料」部分選擇退出分析，並在[plausible_link]這裡[/plausible_link]閱讀更多關於 Plausible 隱私權實務的資訊。"
+			"description": "我們使用 Cloudflare Web Analytics 進行完全匿名和彙總的分析。Cloudflare Web Analytics 不使用 cookie，並符合所有主要隱私權法規（GDPR/CCPA/PECR）。你可以在[settings_link]設定[/settings_link]的「隱私權與資料」部分選擇退出分析，並在[plausible_link]這裡[/plausible_link]閱讀更多關於 Cloudflare Web Analytics 的資訊。"
 		},
 		"local_storage": {
 			"title": "本機儲存",
@@ -325,6 +325,34 @@
 	},
 	"toast": {
 		"insecure_context": "你正在透過不安全的連線存取 LocalConvert（例如透過 HTTP 而非 HTTPS）。某些功能可能無法正常運作。"
+	},
+	"pdf_tools": {
+		"title": "PDF工具",
+		"subtitle": "所有操作完全在你的瀏覽器中執行。你的檔案永遠不會離開你的裝置。",
+		"badge": "100%本機處理——無上傳，無伺服器",
+		"categories": {
+			"organize": "整理",
+			"convert": "轉換",
+			"optimize": "最佳化與編輯"
+		},
+		"tools": {
+			"merge_name": "合併PDF",
+			"merge_desc": "將多個PDF合併為一個檔案",
+			"split_name": "拆分PDF",
+			"split_desc": "提取頁面或拆分為單獨的檔案",
+			"rotate_name": "旋轉頁面",
+			"rotate_desc": "將個別或所有頁面旋轉90°/180°/270°",
+			"organize_name": "整理頁面",
+			"organize_desc": "透過視覺化縮圖重新排序或刪除頁面",
+			"images_to_pdf_name": "圖片 → PDF",
+			"images_to_pdf_desc": "將JPG、PNG或WEBP圖片轉換為PDF",
+			"pdf_to_images_name": "PDF → 圖片",
+			"pdf_to_images_desc": "將每頁匯出為JPG或PNG圖片",
+			"compress_name": "壓縮PDF",
+			"compress_desc": "將頁面重新渲染為JPEG以縮小檔案大小",
+			"watermark_name": "新增浮水印",
+			"watermark_desc": "在PDF的每一頁上印製文字浮水印"
+		}
 	},
 	"landing": {
 		"pills": {

@@ -191,8 +191,8 @@
 		},
 		"privacy": {
 			"title": "Gizlilik ve kişisel veriler",
-			"plausible_title": "Plausible analitik",
-			"plausible_description": "Tamamen anonim istatistikler toplamak için gizliliğe odaklı bir analiz aracı olan [plausible_link]Plausible[/plausible_link]'ı kullanıyoruz. Tüm veriler anonimleştirilmiş ve birleştirilmiş şekilde işlenir; hiçbir kişisel veya tanımlanabilir bilgi gönderilmez ya da saklanmaz. Analitik verilerini [analytics_link]buradan[/analytics_link] görüntüleyebilir ve aşağıdan devre dışı bırakmayı seçebilirsiniz.",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Tamamen anonim istatistikler toplamak için gizliliğe odaklı bir analiz aracı olan [plausible_link]Cloudflare Web Analytics[/plausible_link]’ı kullanıyoruz. Tüm veriler anonimleştirilmiş ve birleştirilmiş şekilde işlenir; hiçbir tanımlanabilir bilgi gönderilmez ya da saklanmaz. Aşağıdan devre dışı bırakmayı seçebilirsiniz.",
 			"opt_in": "Etkinleştir",
 			"opt_out": "Devre dışı bırak",
 			"cache_title": "Önbellek yönetimi",
@@ -289,7 +289,7 @@
 		"title": "Gizlilik Politikası",
 		"summary": {
 			"title": "Özet",
-			"description": "LocalConvert'in gizlilik politikası basittir: dosyalarınız cihazınızı asla terk etmez. Tüm dönüştürme işlemleri — görseller, ses, video ve belgeler — WebAssembly kullanılarak tamamen tarayıcınızda gerçekleşir. Çerez veya izleyici kullanmıyoruz; analitikler Plausible aracılığıyla tamamen anonimdir.<br/><br/>LocalConvert, [vert_link]VERT.sh[/vert_link] (AGPL-3.0) temel alınarak geliştirilmiştir."
+			"description": "LocalConvert'in gizlilik politikası basittir: dosyalarınız cihazınızı asla terk etmez. Tüm dönüştürme işlemleri — görseller, ses, video ve belgeler — WebAssembly kullanılarak tamamen tarayıcınızda gerçekleşir. Çerez veya izleyici kullanmıyoruz; analitikler Cloudflare Web Analytics aracılığıyla tamamen anonimdir.<br/><br/>LocalConvert, [vert_link]VERT.sh[/vert_link] (AGPL-3.0) temel alınarak geliştirilmiştir."
 		},
 		"conversions": {
 			"title": "Dönüştürme İşlemleri",
@@ -311,7 +311,7 @@
 		},
 		"analytics": {
 			"title": "Analitik",
-			"description": "Tamamen anonim ve toplu analitikler için Plausible kullanıyoruz. Plausible çerez kullanmaz ve tüm büyük gizlilik düzenlemeleriyle (GDPR/CCPA/PECR) uyumludur. [settings_link]Ayarlar[/settings_link] bölümündeki \"Gizlilik ve kişisel veriler\" kısmından analitikten çıkabilirsiniz. Plausible'ın gizlilik uygulamaları hakkında daha fazla bilgiyi [plausible_link]buradan[/plausible_link] okuyabilirsiniz."
+			"description": "Tamamen anonim ve toplu analitikler için Cloudflare Web Analytics kullanıyoruz. Cloudflare Web Analytics çerez kullanmaz ve tüm büyük gizlilik düzenlemeleriyle (GDPR/CCPA/PECR) uyumludur. [settings_link]Ayarlar[/settings_link] bölümündeki \"Gizlilik ve kişisel veriler\" kısmından analitikten çıkabilirsiniz. Cloudflare Web Analytics hakkında daha fazla bilgiyi [plausible_link]buradan[/plausible_link] okuyabilirsiniz."
 		},
 		"local_storage": {
 			"title": "Yerel Depolama",
@@ -363,6 +363,34 @@
 			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
 			"q5": "Bir şey yüklemem gerekiyor mu?",
 			"a5": "Kurulum gerekmez. LocalConvert herhangi bir modern tarayıcıda doğrudan çalışır. Uygulama benzeri bir deneyim için adres çubuğundan PWA olarak da yükleyebilirsiniz."
+		}
+	},
+	"pdf_tools": {
+		"title": "PDF Araçları",
+		"subtitle": "Her işlem tamamen tarayıcınızda çalışır. Dosyalarınız hiçbir zaman cihazınızı terk etmez.",
+		"badge": "%100 yerel — yükleme yok, sunucu yok",
+		"categories": {
+			"organize": "Düzenle",
+			"convert": "Dönüştür",
+			"optimize": "Optimize Et ve Düzenle"
+		},
+		"tools": {
+			"merge_name": "PDF Birleştir",
+			"merge_desc": "Birden fazla PDF'yi tek bir dosyada birleştirin",
+			"split_name": "PDF Böl",
+			"split_desc": "Sayfaları çıkarın veya ayrı dosyalara bölün",
+			"rotate_name": "Sayfaları Döndür",
+			"rotate_desc": "Tek veya tüm sayfaları 90°/180°/270° döndürün",
+			"organize_name": "Sayfaları Düzenle",
+			"organize_desc": "Görsel küçük resimlerle sayfaları yeniden sıralayın veya silin",
+			"images_to_pdf_name": "Resimler → PDF",
+			"images_to_pdf_desc": "JPG, PNG veya WEBP resimlerini PDF'ye dönüştürün",
+			"pdf_to_images_name": "PDF → Resimler",
+			"pdf_to_images_desc": "Her sayfayı JPG veya PNG resmi olarak dışa aktarın",
+			"compress_name": "PDF Sıkıştır",
+			"compress_desc": "Sayfaları JPEG olarak yeniden oluşturarak dosya boyutunu küçültün",
+			"watermark_name": "Filigran Ekle",
+			"watermark_desc": "PDF'nin her sayfasına metin damgası ekleyin"
 		}
 	}
 }
