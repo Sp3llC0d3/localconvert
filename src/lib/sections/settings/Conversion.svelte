@@ -5,7 +5,6 @@
 		CheckIcon,
 		XIcon,
 		RefreshCwIcon,
-		ChevronDownIcon,
 	} from "lucide-svelte";
 	import type { ISettings } from "./index.svelte";
 	import {
@@ -20,10 +19,8 @@
 	import { effects, sanitize } from "$lib/store/index.svelte";
 	import FormatDropdown from "$lib/components/functional/FormatDropdown.svelte";
 	import { categories } from "$lib/converters";
-	import clsx from "clsx";
 
 	const { settings = $bindable() }: { settings: ISettings } = $props();
-	let showAdvanced = $state(false);
 </script>
 
 <Panel class="flex flex-col gap-8 p-6">
@@ -54,27 +51,10 @@
 				/>
 			</div>
 			<div class="flex flex-col gap-4">
-				<button
-					onclick={() => (showAdvanced = !showAdvanced)}
-					class="bg-button flex items-center justify-between p-4 rounded-lg text-black dynadark:text-white w-full"
-				>
-					<span class="text-base font-bold"
-						>{m["settings.conversion.advanced_settings"]()}</span
-					>
-					<ChevronDownIcon
-						size="20"
-						class={clsx("transition-transform duration-300", {
-							"rotate-180": showAdvanced,
-						})}
-					/>
-				</button>
-				<div
-					class={clsx(
-						"flex flex-col gap-8 transition-all duration-300 ease-in-out",
-						{"max-h-[2000px] opacity-100 overflow-visible": showAdvanced},
-						{"max-h-0 opacity-0 overflow-hidden -mb-4": !showAdvanced},
-					)}
-				>
+				<div class="border-t border-separator pt-2">
+					<p class="text-base font-bold">{m["settings.conversion.advanced_settings"]()}</p>
+				</div>
+				<div class="flex flex-col gap-8">
 					<div class="flex flex-col gap-8">
 						<div class="flex flex-col gap-4">
 							<div class="flex flex-col gap-2">
