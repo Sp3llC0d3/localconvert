@@ -44,6 +44,17 @@ export function formatFileSize(bytes: number): string {
 	return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
+export function validateImageSize(file: File): { ok: boolean; warning?: string } {
+	const MB = 1024 * 1024;
+	if (file.size > 100 * MB) {
+		return { ok: false, warning: 'File too large (>100 MB). May crash the browser.' };
+	}
+	if (file.size > 20 * MB) {
+		return { ok: true, warning: 'Large file (>20 MB). Processing may be slow.' };
+	}
+	return { ok: true };
+}
+
 export function getOutputName(original: string, suffix: string, ext?: string): string {
 	const base = original.replace(/\.[^.]+$/, '');
 	const outExt = ext ?? original.split('.').pop() ?? 'png';

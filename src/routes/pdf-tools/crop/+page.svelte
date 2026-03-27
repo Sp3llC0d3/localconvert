@@ -2,9 +2,10 @@
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { cropPdf, type PdfCropBox } from '$lib/pdf/crop';
-	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
+	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
+	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { CropIcon } from 'lucide-svelte';
+	import { onDestroy } from 'svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -15,8 +16,14 @@
 	let pageCount = $state(0);
 	let pageWidth = $state(0);
 	let pageHeight = $state(0);
-	let thumbUrl = $state('');
-	let scale = $state(1);
+	let displayW = $state(0);
+	let displayH = $state(0);
+	let pdfDoc = $state<PdfDocProxy | null>(null);
+
+	// Preview
+	let previewCanvas = $state<HTMLCanvasElement>();
+	let previewContainer = $state<HTMLDivElement>();
+	let baseImageData = $state<ImageData | null>(null);
 
 	// Crop margins (PDF points from each edge)
 	let marginLeft = $state(36);
@@ -25,37 +32,162 @@
 	let marginBottom = $state(36);
 	let applyToAll = $state(true);
 
+	// Drag state
+	type DragEdge = 'left' | 'right' | 'top' | 'bottom' | null;
+	let dragEdge = $state<DragEdge>(null);
+	let dragStartPos = $state(0);
+	let dragStartMargin = $state(0);
+
 	$effect(() => {
 		if (!browser || files.length === 0) {
-			thumbUrl = '';
 			pageCount = 0;
+			baseImageData = null;
 			resultBytes = null;
+			pdfDoc?.destroy();
+			pdfDoc = null;
 			return;
 		}
-		loadPageInfo();
+		loadFile();
 	});
 
-	async function loadPageInfo() {
+	onDestroy(() => { pdfDoc?.destroy(); });
+
+	async function loadFile() {
+		pdfDoc?.destroy();
 		try {
-			const pdfjs = await getPdfJs();
-			const buf = await files[0].arrayBuffer();
-			const doc = await pdfjs.getDocument({ data: buf }).promise;
-			pageCount = doc.numPages;
-			const page = await doc.getPage(1);
-			const vp = page.getViewport({ scale: 1 });
-			pageWidth = Math.round(vp.width);
-			pageHeight = Math.round(vp.height);
-
-			// Render thumbnail
-			const thumbs = await renderAllThumbnails(files[0], 0.4);
-			if (thumbs.length > 0) thumbUrl = thumbs[0];
-
-			// Fit preview to viewport
-			const maxW = Math.min(500, (typeof window !== 'undefined' ? window.innerWidth : 500) - 48);
-			scale = Math.min(1, maxW / pageWidth);
+			pdfDoc = await loadPdfDocument(files[0]);
+			pageCount = pdfDoc.numPages;
+			await renderPage();
 		} catch {
 			error = 'Failed to read PDF.';
 		}
+	}
+
+	async function renderPage() {
+		if (!previewCanvas || !pdfDoc) return;
+		const dims = await renderDocPageToCanvas(pdfDoc, 1, previewCanvas, 0.5);
+		pageWidth = dims.width;
+		pageHeight = dims.height;
+
+		const maxW = Math.min(500, (typeof window !== 'undefined' ? window.innerWidth : 500) - 48);
+		const fitScale = Math.min(1, maxW / (previewCanvas.width));
+		displayW = Math.round(previewCanvas.width * fitScale);
+		displayH = Math.round(previewCanvas.height * fitScale);
+
+		const ctx = previewCanvas.getContext('2d')!;
+		baseImageData = ctx.getImageData(0, 0, previewCanvas.width, previewCanvas.height);
+		drawOverlay();
+	}
+
+	// Scale factor: display px → PDF points
+	const pdfScale = $derived(pageWidth > 0 ? pageWidth / displayW : 1);
+
+	// Display-space margins
+	const dLeft = $derived(marginLeft / pdfScale);
+	const dRight = $derived(marginRight / pdfScale);
+	const dTop = $derived(marginTop / pdfScale);
+	const dBottom = $derived(marginBottom / pdfScale);
+
+	// Redraw overlay when margins change
+	$effect(() => {
+		void marginLeft; void marginRight; void marginTop; void marginBottom;
+		drawOverlay();
+	});
+
+	function drawOverlay() {
+		if (!previewCanvas || !baseImageData) return;
+		const ctx = previewCanvas.getContext('2d')!;
+		ctx.putImageData(baseImageData, 0, 0);
+
+		const cw = previewCanvas.width;
+		const ch = previewCanvas.height;
+		const s = cw / pageWidth; // canvas px per PDF point
+		const l = marginLeft * s;
+		const r = marginRight * s;
+		const t = marginTop * s;
+		const b = marginBottom * s;
+
+		// Dark overlay on trimmed regions
+		ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+		ctx.fillRect(0, 0, cw, t);              // top
+		ctx.fillRect(0, ch - b, cw, b);         // bottom
+		ctx.fillRect(0, t, l, ch - t - b);      // left
+		ctx.fillRect(cw - r, t, r, ch - t - b); // right
+
+		// Crop border
+		ctx.strokeStyle = '#0F6E56';
+		ctx.lineWidth = 2;
+		ctx.setLineDash([6, 3]);
+		ctx.strokeRect(l, t, cw - l - r, ch - t - b);
+		ctx.setLineDash([]);
+	}
+
+	// Drag handlers
+	function getPos(e: MouseEvent | TouchEvent): { x: number; y: number } {
+		if (!previewContainer) return { x: 0, y: 0 };
+		const rect = previewContainer.getBoundingClientRect();
+		const pos = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as MouseEvent);
+		return { x: pos.clientX - rect.left, y: pos.clientY - rect.top };
+	}
+
+	function hitTestEdge(x: number, y: number): DragEdge {
+		const threshold = 12;
+		// Check edges of the crop rectangle
+		if (Math.abs(x - dLeft) < threshold && y > dTop && y < displayH - dBottom) return 'left';
+		if (Math.abs(x - (displayW - dRight)) < threshold && y > dTop && y < displayH - dBottom) return 'right';
+		if (Math.abs(y - dTop) < threshold && x > dLeft && x < displayW - dRight) return 'top';
+		if (Math.abs(y - (displayH - dBottom)) < threshold && x > dLeft && x < displayW - dRight) return 'bottom';
+		return null;
+	}
+
+	function getCursor(edge: DragEdge): string {
+		if (edge === 'left' || edge === 'right') return 'ew-resize';
+		if (edge === 'top' || edge === 'bottom') return 'ns-resize';
+		return 'default';
+	}
+
+	function onPointerDown(e: MouseEvent | TouchEvent) {
+		if ('touches' in e) e.preventDefault();
+		const pos = getPos(e);
+		const edge = hitTestEdge(pos.x, pos.y);
+		if (!edge) return;
+		dragEdge = edge;
+		dragStartPos = edge === 'left' || edge === 'right' ? pos.x : pos.y;
+		dragStartMargin = edge === 'left' ? marginLeft : edge === 'right' ? marginRight : edge === 'top' ? marginTop : marginBottom;
+	}
+
+	function onPointerMove(e: MouseEvent | TouchEvent) {
+		const pos = getPos(e);
+
+		if (!dragEdge) {
+			// Update cursor
+			if (previewContainer) {
+				const edge = hitTestEdge(pos.x, pos.y);
+				previewContainer.style.cursor = getCursor(edge);
+			}
+			return;
+		}
+
+		if ('touches' in e) e.preventDefault();
+		const current = dragEdge === 'left' || dragEdge === 'right' ? pos.x : pos.y;
+		const delta = current - dragStartPos;
+		const deltaPdf = Math.round(delta * pdfScale);
+
+		const maxMargin = (dragEdge === 'left' || dragEdge === 'right') ? pageWidth / 2 - 10 : pageHeight / 2 - 10;
+
+		if (dragEdge === 'left') {
+			marginLeft = Math.max(0, Math.min(maxMargin, dragStartMargin + deltaPdf));
+		} else if (dragEdge === 'right') {
+			marginRight = Math.max(0, Math.min(maxMargin, dragStartMargin - deltaPdf));
+		} else if (dragEdge === 'top') {
+			marginTop = Math.max(0, Math.min(maxMargin, dragStartMargin + deltaPdf));
+		} else if (dragEdge === 'bottom') {
+			marginBottom = Math.max(0, Math.min(maxMargin, dragStartMargin - deltaPdf));
+		}
+	}
+
+	function onPointerUp() {
+		dragEdge = null;
 	}
 
 	function getCropBox(): PdfCropBox {
@@ -78,11 +210,7 @@
 		processing = true;
 		resultBytes = null;
 		try {
-			resultBytes = await cropPdf(
-				files[0],
-				box,
-				applyToAll ? undefined : [0],
-			);
+			resultBytes = await cropPdf(files[0], box, applyToAll ? undefined : [0]);
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : 'Failed.';
 		}
@@ -97,59 +225,73 @@
 
 <svelte:head>
 	<title>Crop PDF — LocalConvert</title>
-	<meta name="description" content="Crop PDF margins and trim whitespace. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content="Crop PDF margins with draggable handles. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/crop/" />
 </svelte:head>
 
-<div class="pdf-page">
+<div class="crop-page">
 	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
-	<div class="pdf-header">
+	<div class="crop-header">
 		<CropIcon size={28} />
 		<div>
 			<h1 class="text-2xl font-semibold">Crop PDF</h1>
-			<p class="text-sm text-muted">Trim margins from PDF pages.</p>
+			<p class="text-sm text-muted">Drag the edges to set margins, or type values below.</p>
 		</div>
 	</div>
 
 	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
 
-	{#if thumbUrl && pageWidth > 0}
-		<div class="flex flex-col items-center gap-2 w-full overflow-hidden">
-			<div class="preview-wrap" style="width: {pageWidth * scale}px; max-width: 100%; height: {pageHeight * scale}px;">
-				<img src={thumbUrl} alt="Page preview" class="preview-img" />
-				<div
-					class="crop-overlay"
-					style="
-						left: {marginLeft * scale}px;
-						top: {marginTop * scale}px;
-						right: {marginRight * scale}px;
-						bottom: {marginBottom * scale}px;
-					"
-				></div>
+	{#if baseImageData && displayW > 0}
+		<!-- Interactive preview -->
+		<div class="preview-wrap">
+			<div
+				bind:this={previewContainer}
+				class="preview-container"
+				style="width: {displayW}px; max-width: 100%; height: {displayH}px;"
+				onmousedown={onPointerDown}
+				onmousemove={onPointerMove}
+				onmouseup={onPointerUp}
+				onmouseleave={onPointerUp}
+				ontouchstart={onPointerDown}
+				ontouchmove={onPointerMove}
+				ontouchend={onPointerUp}
+				ontouchcancel={onPointerUp}
+				role="application"
+				aria-label="Drag edges to crop PDF"
+			>
+				<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
+
+				<!-- Drag handle indicators -->
+				<div class="handle handle-left" style="left: {dLeft - 3}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
+				<div class="handle handle-right" style="right: {dRight - 3}px; top: {dTop + (displayH - dTop - dBottom) / 2 - 16}px;"></div>
+				<div class="handle handle-top" style="top: {dTop - 3}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
+				<div class="handle handle-bottom" style="bottom: {dBottom - 3}px; left: {dLeft + (displayW - dLeft - dRight) / 2 - 16}px;"></div>
 			</div>
-			<p class="text-xs text-muted">{pageWidth} × {pageHeight} pt — {pageCount} page{pageCount > 1 ? 's' : ''}</p>
+			<p class="text-xs text-muted mt-2">
+				{pageWidth} × {pageHeight} pt → {Math.max(0, pageWidth - marginLeft - marginRight)} × {Math.max(0, pageHeight - marginTop - marginBottom)} pt
+				{pageCount > 1 ? ` — ${pageCount} pages` : ''}
+			</p>
 		</div>
 
+		<!-- Margin inputs (synced with handles) -->
 		<div class="opt-section">
 			<div class="opt-row">
 				<span class="opt-label">Left</span>
-				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input w-20" aria-label="Left margin" />
+				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input" aria-label="Left margin" />
 				<span class="opt-label">Right</span>
-				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input w-20" aria-label="Right margin" />
+				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input" aria-label="Right margin" />
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">Top</span>
-				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input w-20" aria-label="Top margin" />
+				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input" aria-label="Top margin" />
 				<span class="opt-label">Bottom</span>
-				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input w-20" aria-label="Bottom margin" />
+				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input" aria-label="Bottom margin" />
 			</div>
 			{#if pageCount > 1}
-				<div class="opt-row">
-					<label class="flex items-center gap-2 cursor-pointer text-sm">
-						<input type="checkbox" bind:checked={applyToAll} />
-						Apply to all pages
-					</label>
-				</div>
+				<label class="flex items-center gap-2 cursor-pointer text-sm">
+					<input type="checkbox" bind:checked={applyToAll} />
+					Apply to all pages
+				</label>
 			{/if}
 		</div>
 
@@ -162,7 +304,7 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
 			<button class="btn" onclick={download}>Save cropped PDF</button>
 		</div>
 	{/if}
@@ -170,20 +312,33 @@
 	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
 </div>
 
-<style lang="postcss">
-	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.opt-section { @apply flex flex-col gap-4 p-4 rounded-2xl bg-panel shadow-panel; }
-	.opt-row { @apply flex items-center gap-4 flex-wrap; }
-	.opt-label { @apply text-sm font-semibold w-16 flex-shrink-0; }
-	.opt-input { @apply rounded-lg px-3 py-1.5 text-sm border; background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg); border-color: var(--bg-separator); }
-	.opt-input:focus { outline: 1.5px solid var(--accent); }
-	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
-	.preview-wrap { @apply relative rounded-lg overflow-hidden border; border-color: var(--bg-separator); }
-	.preview-img { @apply w-full h-full object-contain; }
-	.crop-overlay {
-		@apply absolute;
-		border: 2px dashed var(--accent);
-		background: hsla(162, 72%, 28%, 0.08);
+<style>
+	.crop-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
+	.crop-header { display: flex; align-items: center; gap: 0.75rem; }
+	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 3.5rem; flex-shrink: 0; }
+	.opt-input {
+		width: 5rem; padding: 0.375rem 0.5rem; border-radius: 0.5rem; font-size: 0.875rem;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
 	}
+	.opt-input:focus { outline: 1.5px solid var(--accent); }
+	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+
+	/* Preview */
+	.preview-wrap { display: flex; flex-direction: column; align-items: center; }
+	.preview-container {
+		position: relative; user-select: none; -webkit-user-select: none; touch-action: none;
+		border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-panel);
+	}
+	.preview-canvas { display: block; width: 100%; height: 100%; }
+
+	/* Edge handles */
+	.handle {
+		position: absolute; pointer-events: none; z-index: 10;
+		background: white; border: 2px solid var(--accent, #0F6E56);
+		border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+	.handle-left, .handle-right { width: 6px; height: 32px; }
+	.handle-top, .handle-bottom { width: 32px; height: 6px; }
 </style>

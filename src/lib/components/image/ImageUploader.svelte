@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { validateImageSize } from '$lib/image/utils';
+
 	type Props = {
 		files: File[];
 		multiple?: boolean;
@@ -15,15 +17,26 @@
 
 	let input = $state<HTMLInputElement>();
 	let dragging = $state(false);
+	let warnings = $state<string[]>([]);
 
 	function processFiles(raw: FileList | null) {
 		if (!raw) return;
 		const arr = Array.from(raw).filter((f) => f.type.startsWith('image/'));
 		if (arr.length === 0) return;
+		const newWarnings: string[] = [];
+		const valid: File[] = [];
+		for (const f of arr) {
+			const { ok, warning } = validateImageSize(f);
+			if (!ok) { newWarnings.push(`${f.name}: ${warning}`); continue; }
+			if (warning) newWarnings.push(`${f.name}: ${warning}`);
+			valid.push(f);
+		}
+		warnings = newWarnings;
+		if (valid.length === 0) return;
 		if (multiple) {
-			files = [...files, ...arr];
+			files = [...files, ...valid];
 		} else {
-			files = arr.slice(0, 1);
+			files = valid.slice(0, 1);
 		}
 		if (input) input.value = '';
 	}
@@ -59,6 +72,14 @@
 	<p class="drop-sub">or click to browse</p>
 </button>
 
+{#if warnings.length > 0}
+	<div class="warn-list">
+		{#each warnings as w}
+			<p class="warn-text">{w}</p>
+		{/each}
+	</div>
+{/if}
+
 <style lang="postcss">
 	.img-drop-zone {
 		@apply w-full flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed py-10 px-6 cursor-pointer transition-colors;
@@ -84,5 +105,14 @@
 	.drop-sub {
 		@apply text-xs;
 		color: var(--fg-muted);
+	}
+
+	.warn-list {
+		@apply mt-2 flex flex-col gap-1;
+	}
+
+	.warn-text {
+		@apply text-xs;
+		color: hsl(35, 90%, 45%);
 	}
 </style>
