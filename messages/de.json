@@ -435,7 +435,9 @@
 			"meme_name": "Meme-Generator",
 			"meme_desc": "Text oben und unten auf ein beliebiges Bild setzen",
 			"batch_name": "Stapelverarbeitung",
-			"batch_desc": "Dieselbe Operation auf mehrere Bilder anwenden"
+			"batch_desc": "Dieselbe Operation auf mehrere Bilder anwenden",
+			"qr_name": "QR-Code Generator",
+			"qr_desc": "QR-Codes aus Text oder URLs erstellen"
 		}
 	}
 }

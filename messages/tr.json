@@ -435,7 +435,9 @@
 			"meme_name": "Meme Oluşturucu",
 			"meme_desc": "Herhangi bir görselin üstüne ve altına metin ekleyin",
 			"batch_name": "Toplu İşleme",
-			"batch_desc": "Aynı işlemi birden fazla görsele uygulayın"
+			"batch_desc": "Aynı işlemi birden fazla görsele uygulayın",
+			"qr_name": "QR Kod Oluşturucu",
+			"qr_desc": "Metin veya URL'lerden QR kodları oluşturun"
 		}
 	}
 }

@@ -435,7 +435,9 @@
 			"meme_name": "밈 생성기",
 			"meme_desc": "이미지 상단과 하단에 텍스트 추가",
 			"batch_name": "일괄 처리",
-			"batch_desc": "여러 이미지에 동일한 작업 적용"
+			"batch_desc": "여러 이미지에 동일한 작업 적용",
+			"qr_name": "QR 코드 생성기",
+			"qr_desc": "텍스트 또는 URL에서 QR 코드 생성"
 		}
 	}
 }

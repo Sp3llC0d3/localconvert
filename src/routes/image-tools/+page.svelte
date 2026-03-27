@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const tools = [
@@ -8,6 +8,7 @@
 		{ href: '/image-tools/watermark/', icon: DropletIcon, name: m['image_tools.tools.watermark_name'](), desc: m['image_tools.tools.watermark_desc']() },
 		{ href: '/image-tools/meme/', icon: SmileIcon, name: m['image_tools.tools.meme_name'](), desc: m['image_tools.tools.meme_desc']() },
 		{ href: '/image-tools/batch/', icon: LayersIcon, name: m['image_tools.tools.batch_name'](), desc: m['image_tools.tools.batch_desc']() },
+		{ href: '/image-tools/qr/', icon: QrCodeIcon, name: m['image_tools.tools.qr_name'](), desc: m['image_tools.tools.qr_desc']() },
 	];
 </script>
 

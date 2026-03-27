@@ -435,7 +435,9 @@
 			"meme_name": "Generator Meme",
 			"meme_desc": "Tambahkan teks atas dan bawah pada gambar apa pun",
 			"batch_name": "Pemrosesan Massal",
-			"batch_desc": "Terapkan operasi yang sama ke beberapa gambar"
+			"batch_desc": "Terapkan operasi yang sama ke beberapa gambar",
+			"qr_name": "Generator Kode QR",
+			"qr_desc": "Buat kode QR dari teks atau URL"
 		}
 	}
 }

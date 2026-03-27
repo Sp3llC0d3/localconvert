@@ -435,7 +435,9 @@
 			"meme_name": "迷因產生器",
 			"meme_desc": "在任意圖片的頂部和底部加入文字",
 			"batch_name": "批次處理",
-			"batch_desc": "將相同操作套用於多張圖片"
+			"batch_desc": "將相同操作套用於多張圖片",
+			"qr_name": "QR碼生成器",
+			"qr_desc": "從文字或網址生成QR碼"
 		}
 	}
 }

@@ -435,7 +435,9 @@
 			"meme_name": "Generator memova",
 			"meme_desc": "Dodajte tekst na vrh i dno bilo koje slike",
 			"batch_name": "Skupna obrada",
-			"batch_desc": "Primijenite istu operaciju na više slika"
+			"batch_desc": "Primijenite istu operaciju na više slika",
+			"qr_name": "QR kod generator",
+			"qr_desc": "Generirajte QR kodove iz teksta ili URL-ova"
 		}
 	}
 }

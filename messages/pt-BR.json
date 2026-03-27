@@ -435,7 +435,9 @@
 			"meme_name": "Gerador de memes",
 			"meme_desc": "Adicionar texto na parte superior e inferior de qualquer imagem",
 			"batch_name": "Processamento em lote",
-			"batch_desc": "Aplicar a mesma operação a várias imagens"
+			"batch_desc": "Aplicar a mesma operação a várias imagens",
+			"qr_name": "Gerador de QR Code",
+			"qr_desc": "Gerar códigos QR a partir de texto ou URLs"
 		}
 	}
 }

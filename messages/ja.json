@@ -435,7 +435,9 @@
 			"meme_name": "ミーム作成",
 			"meme_desc": "任意の画像の上下にテキストを追加",
 			"batch_name": "一括処理",
-			"batch_desc": "複数の画像に同じ操作を適用"
+			"batch_desc": "複数の画像に同じ操作を適用",
+			"qr_name": "QRコード生成",
+			"qr_desc": "テキストやURLからQRコードを生成"
 		}
 	}
 }

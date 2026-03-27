@@ -389,7 +389,9 @@
 			"meme_name": "Meme Generator",
 			"meme_desc": "Add top and bottom text to any image",
 			"batch_name": "Batch Processing",
-			"batch_desc": "Apply the same operation to multiple images"
+			"batch_desc": "Apply the same operation to multiple images",
+			"qr_name": "QR Code Generator",
+			"qr_desc": "Generate QR codes from text or URLs"
 		}
 	},
 	"toast": {

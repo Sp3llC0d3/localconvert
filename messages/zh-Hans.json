@@ -435,7 +435,9 @@
 			"meme_name": "表情包生成器",
 			"meme_desc": "在任意图片的顶部和底部添加文字",
 			"batch_name": "批量处理",
-			"batch_desc": "将相同操作应用于多张图片"
+			"batch_desc": "将相同操作应用于多张图片",
+			"qr_name": "QR码生成器",
+			"qr_desc": "从文字或网址生成QR码"
 		}
 	}
 }
