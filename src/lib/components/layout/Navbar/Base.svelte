@@ -203,7 +203,7 @@
 		href={item.url}
 		aria-label={item.name}
 		class={clsx(
-			"min-w-0 md:min-w-32 h-full relative z-10 rounded-xl flex flex-1 items-center justify-center gap-3 overflow-hidden",
+			"min-w-0 h-full relative z-10 rounded-xl flex flex-1 md:flex-none md:w-32 items-center justify-center gap-3 overflow-hidden",
 			{
 				"bg-panel-highlight":
 					item.activeMatch(page.url.pathname) && !browser,
@@ -265,7 +265,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="max-w-[960px] w-screen h-20 flex items-center gap-0 md:gap-3 relative">
+	<Panel class="w-screen md:w-fit h-20 flex items-center gap-0 md:gap-3 relative">
 		{@const linkRect = linkRects.at(selectedIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}
 			<div
