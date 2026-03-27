@@ -97,18 +97,29 @@
 
 		{#if loadingThumbs}
 			<p class="text-sm text-muted">Loading thumbnails…</p>
-		{:else if thumbs.length > 0 && applyTo === 'selected'}
+		{:else if thumbs.length > 0}
 			<div class="thumb-grid">
 				{#each thumbs as thumb, i}
-					<PdfPageThumbnail
-						src={thumb}
-						pageNum={i + 1}
-						selected={selectedPages.has(i)}
-						onclick={() => togglePage(i)}
-					/>
+					{@const shouldRotate = applyTo === 'all' || selectedPages.has(i)}
+					<div
+						class="thumb-wrapper"
+						onclick={() => { if (applyTo === 'selected') togglePage(i); }}
+						role={applyTo === 'selected' ? 'button' : undefined}
+					>
+						<PdfPageThumbnail
+							src={thumb}
+							pageNum={i + 1}
+							selected={applyTo === 'selected' && selectedPages.has(i)}
+						/>
+						{#if shouldRotate}
+							<div class="rotate-indicator" style="transform: rotate({rotation}deg);">↻</div>
+						{/if}
+					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected</p>
+			{#if applyTo === 'selected'}
+				<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle</p>
+			{/if}
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={rotate}>
@@ -124,4 +135,14 @@
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
 	.pdf-header { @apply flex items-center gap-3; }
 	.thumb-grid { @apply grid gap-3; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+	.thumb-wrapper { position: relative; cursor: pointer; }
+	.rotate-indicator {
+		position: absolute; top: 4px; right: 4px;
+		width: 22px; height: 22px; border-radius: 50%;
+		background: var(--accent); color: var(--fg-on-accent);
+		display: flex; align-items: center; justify-content: center;
+		font-size: 12px; font-weight: bold;
+		transition: transform 0.2s ease;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
 </style>

@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { compressPdf } from '$lib/pdf/compress';
+	import { renderPageToCanvas } from '$lib/pdf/preview';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ZapIcon, AlertTriangleIcon } from 'lucide-svelte';
 
@@ -12,6 +13,11 @@
 	let total = $state(0);
 	let error = $state('');
 	let resultBytes = $state<Uint8Array | null>(null);
+
+	// Before/after comparison
+	let origCanvas = $state<HTMLCanvasElement>();
+	let compCanvas = $state<HTMLCanvasElement>();
+	let compareView = $state<'original' | 'compressed'>('compressed');
 
 	const presets = [
 		{ label: 'Low compression', value: 90, desc: '~20–40% smaller, great quality' },
@@ -37,6 +43,24 @@
 			error = e instanceof Error ? e.message : 'Compression failed.';
 		}
 		processing = false;
+
+		// Render before/after comparison
+		if (resultBytes) renderComparison();
+	}
+
+	async function renderComparison() {
+		if (!origCanvas || !compCanvas || !resultBytes || !files[0]) return;
+		try {
+			await renderPageToCanvas(files[0], 1, origCanvas, 0.4);
+			const compFile = new File(
+				[resultBytes.buffer.slice(resultBytes.byteOffset, resultBytes.byteOffset + resultBytes.byteLength)],
+				'compressed.pdf',
+				{ type: 'application/pdf' },
+			);
+			await renderPageToCanvas(compFile, 1, compCanvas, 0.4);
+		} catch {
+			// Comparison is optional, don't fail
+		}
 	}
 
 	function download() {
@@ -123,6 +147,19 @@
 					— saved <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
 				{/if}
 			</p>
+
+			<!-- Before/after comparison -->
+			<div class="compare-section">
+				<div class="compare-toggle">
+					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>Original</button>
+					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>Compressed</button>
+				</div>
+				<div class="compare-canvas-wrap">
+					<canvas bind:this={origCanvas} class="compare-canvas" class:hidden={compareView !== 'original'}></canvas>
+					<canvas bind:this={compCanvas} class="compare-canvas" class:hidden={compareView !== 'compressed'}></canvas>
+				</div>
+			</div>
+
 			<button class="btn" onclick={download}>Download compressed.pdf</button>
 		</div>
 	{/if}
@@ -139,4 +176,14 @@
 	.preset-btn.selected { border-color: var(--accent); background: var(--bg-badge); }
 	.quality-slider { @apply h-1.5 appearance-none rounded-full cursor-pointer; background: var(--bg-separator); accent-color: var(--accent); }
 	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
+	.compare-section { @apply flex flex-col items-center gap-2; }
+	.compare-toggle { @apply flex gap-1 p-1 rounded-lg; background: var(--bg-panel-alt); }
+	.comp-btn {
+		@apply px-3 py-1 rounded-md text-xs font-medium cursor-pointer transition-colors;
+		border: none; background: transparent; color: var(--fg-muted);
+	}
+	.comp-btn.active { background: var(--bg-panel); color: var(--fg); box-shadow: var(--shadow-panel); }
+	.compare-canvas-wrap { @apply flex justify-center; }
+	.compare-canvas { max-width: 100%; max-height: 20rem; border-radius: 0.375rem; }
+	.hidden { display: none; }
 </style>
