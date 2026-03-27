@@ -25,8 +25,9 @@
 	let dragOrigin = $state({ x: 0, y: 0 });
 	let cropAtDragStart = $state<CropRect>({ x: 0, y: 0, width: 0, height: 0 });
 
-	// Aspect ratio
+	// Aspect ratio & shape
 	let aspectRatio = $state<string>('free');
+	let circleMode = $state(false);
 	const ratios: { label: string; value: string }[] = [
 		{ label: 'Free', value: 'free' },
 		{ label: '1:1', value: '1' },
@@ -98,8 +99,8 @@
 	}
 
 	function enforceRatio(c: CropRect, anchor: 'se' | 'sw' | 'ne' | 'nw' | 'center'): CropRect {
-		if (aspectRatio === 'free') return c;
-		const ratio = parseFloat(aspectRatio);
+		if (aspectRatio === 'free' && !circleMode) return c;
+		const ratio = circleMode ? 1 : parseFloat(aspectRatio);
 		let { x, y, width, height } = c;
 		// Adjust height to match ratio
 		const newH = Math.round(width / ratio);
@@ -243,7 +244,7 @@
 		processing = true;
 		resultBlob = null;
 		try {
-			resultBlob = await cropImage(files[0], crop);
+			resultBlob = await cropImage(files[0], crop, circleMode);
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : 'Failed.';
 		}
@@ -275,15 +276,19 @@
 	<ImageUploader bind:files label="Drop an image here" />
 
 	{#if imgEl && previewUrl}
-		<!-- Aspect ratio presets -->
+		<!-- Shape & aspect ratio presets -->
 		<div class="flex gap-2 flex-wrap">
+			<button
+				class="btn text-sm px-3 py-1.5 {!circleMode ? '' : 'highlight'}"
+				onclick={() => { circleMode = !circleMode; if (circleMode) aspectRatio = '1'; }}
+			>Circle</button>
 			{#each ratios as r}
 				<button
-					class="btn text-sm px-3 py-1.5 {aspectRatio === r.value ? 'highlight' : ''}"
-					onclick={() => { aspectRatio = r.value; }}
+					class="btn text-sm px-3 py-1.5 {!circleMode && aspectRatio === r.value ? 'highlight' : ''}"
+					onclick={() => { circleMode = false; aspectRatio = r.value; }}
 				>{r.label}</button>
 			{/each}
-			<button class="btn text-sm px-3 py-1.5" onclick={resetCrop}>Reset</button>
+			<button class="btn text-sm px-3 py-1.5" onclick={() => { circleMode = false; resetCrop(); }}>Reset</button>
 		</div>
 
 		<!-- Crop workspace -->
@@ -306,22 +311,35 @@
 				<!-- Full image -->
 				<img src={previewUrl} alt="Source" class="crop-img" draggable="false" />
 
-				<!-- Dark overlay (4 regions around the crop) -->
-				<div class="crop-shade" style="top: 0; left: 0; right: 0; height: {dCrop.y}px;"></div>
-				<div class="crop-shade" style="top: {dCrop.y}px; left: 0; width: {dCrop.x}px; height: {dCrop.h}px;"></div>
-				<div class="crop-shade" style="top: {dCrop.y}px; right: 0; left: {dCrop.x + dCrop.w}px; height: {dCrop.h}px;"></div>
-				<div class="crop-shade" style="top: {dCrop.y + dCrop.h}px; left: 0; right: 0; bottom: 0;"></div>
+				<!-- Dark overlay -->
+				{#if circleMode}
+					{@const cx = dCrop.x + dCrop.w / 2}
+					{@const cy = dCrop.y + dCrop.h / 2}
+					{@const r = Math.min(dCrop.w, dCrop.h) / 2}
+					<div
+						class="crop-shade-full"
+						style="-webkit-mask: radial-gradient(circle {r}px at {cx}px {cy}px, transparent {r - 1}px, black {r}px); mask: radial-gradient(circle {r}px at {cx}px {cy}px, transparent {r - 1}px, black {r}px);"
+					></div>
+				{:else}
+					<div class="crop-shade" style="top: 0; left: 0; right: 0; height: {dCrop.y}px;"></div>
+					<div class="crop-shade" style="top: {dCrop.y}px; left: 0; width: {dCrop.x}px; height: {dCrop.h}px;"></div>
+					<div class="crop-shade" style="top: {dCrop.y}px; right: 0; left: {dCrop.x + dCrop.w}px; height: {dCrop.h}px;"></div>
+					<div class="crop-shade" style="top: {dCrop.y + dCrop.h}px; left: 0; right: 0; bottom: 0;"></div>
+				{/if}
 
 				<!-- Crop border -->
 				<div
 					class="crop-border"
+					class:crop-circle={circleMode}
 					style="left: {dCrop.x}px; top: {dCrop.y}px; width: {dCrop.w}px; height: {dCrop.h}px;"
 				>
-					<!-- Rule of thirds grid -->
-					<div class="grid-line" style="left: 33.33%; top: 0; width: 1px; height: 100%;"></div>
-					<div class="grid-line" style="left: 66.66%; top: 0; width: 1px; height: 100%;"></div>
-					<div class="grid-line" style="top: 33.33%; left: 0; height: 1px; width: 100%;"></div>
-					<div class="grid-line" style="top: 66.66%; left: 0; height: 1px; width: 100%;"></div>
+					{#if !circleMode}
+						<!-- Rule of thirds grid -->
+						<div class="grid-line" style="left: 33.33%; top: 0; width: 1px; height: 100%;"></div>
+						<div class="grid-line" style="left: 66.66%; top: 0; width: 1px; height: 100%;"></div>
+						<div class="grid-line" style="top: 33.33%; left: 0; height: 1px; width: 100%;"></div>
+						<div class="grid-line" style="top: 66.66%; left: 0; height: 1px; width: 100%;"></div>
+					{/if}
 				</div>
 
 				<!-- Corner handles -->
@@ -338,7 +356,13 @@
 			</div>
 
 			<!-- Dimensions -->
-			<p class="text-xs text-muted mt-2 text-center">{crop.width} × {crop.height} px</p>
+			<p class="text-xs text-muted mt-2 text-center">
+				{#if circleMode}
+					{Math.min(crop.width, crop.height)}px diameter (transparent PNG)
+				{:else}
+					{crop.width} × {crop.height} px
+				{/if}
+			</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing || crop.width < 4} onclick={apply}>
@@ -413,12 +437,24 @@
 		pointer-events: none;
 	}
 
+	.crop-shade-full {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: none;
+	}
+
 	/* ── Crop border ── */
 	.crop-border {
 		position: absolute;
 		border: 2px solid rgba(255, 255, 255, 0.85);
 		pointer-events: none;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+	}
+
+	.crop-border.crop-circle {
+		border-radius: 50%;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 	}
 
 	/* ── Rule of thirds grid ── */
