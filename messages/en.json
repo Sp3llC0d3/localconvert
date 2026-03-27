@@ -4,6 +4,7 @@
 		"upload": "Select",
 		"convert": "Convert",
 		"pdf_tools": "PDF Tools",
+		"image_tools": "Image Tools",
 		"settings": "Settings",
 		"about": "About",
 		"toggle_theme": "Toggle theme"
@@ -358,7 +359,30 @@
 			"page_numbers_name": "Add Page Numbers",
 			"page_numbers_desc": "Add sequential numbering to every page",
 			"metadata_name": "Edit Metadata",
-			"metadata_desc": "View and edit title, author, and other PDF properties"
+			"metadata_desc": "View and edit title, author, and other PDF properties",
+			"crop_name": "Crop PDF",
+			"crop_desc": "Trim margins from PDF pages",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Convert each PDF page into a presentation slide",
+			"sign_name": "Sign PDF",
+			"sign_desc": "Draw, type, or upload a signature",
+			"edit_name": "Edit PDF",
+			"edit_desc": "Add text to any page of a PDF"
+		}
+	},
+	"image_tools": {
+		"title": "Image Tools",
+		"subtitle": "Every operation runs entirely in your browser. Your files never leave your device.",
+		"badge": "100% local — no uploads, no server",
+		"tools": {
+			"rotate_name": "Rotate Image",
+			"rotate_desc": "Rotate an image by 90°, 180°, or 270°",
+			"crop_name": "Crop Image",
+			"crop_desc": "Draw a rectangle to crop any area",
+			"watermark_name": "Watermark Image",
+			"watermark_desc": "Stamp text on any image",
+			"meme_name": "Meme Generator",
+			"meme_desc": "Add top and bottom text to any image"
 		}
 	},
 	"toast": {

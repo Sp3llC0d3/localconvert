@@ -15,6 +15,7 @@
 		DownloadIcon,
 		FileTextIcon,
 		GlobeIcon,
+		ImageIcon,
 		InfoIcon,
 		MoonIcon,
 		RefreshCw,
@@ -108,6 +109,12 @@
 			url: "/pdf-tools/",
 			activeMatch: (pathname) => pathname.startsWith("/pdf-tools"),
 			icon: FileTextIcon,
+		},
+		{
+			name: m["navbar.image_tools"](),
+			url: "/image-tools/",
+			activeMatch: (pathname) => pathname.startsWith("/image-tools"),
+			icon: ImageIcon,
 		},
 		{
 			name: m["navbar.settings"](),

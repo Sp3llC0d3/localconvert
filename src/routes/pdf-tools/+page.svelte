@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const categories = $derived([
@@ -19,6 +19,7 @@
 			tools: [
 				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc']() },
 				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc']() },
+				{ href: '/pdf-tools/pdf-to-ppt/', icon: PresentationIcon, name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc']() },
 			],
 		},
 		{
@@ -29,6 +30,9 @@
 				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc']() },
 				{ href: '/pdf-tools/page-numbers/', icon: ListOrderedIcon, name: m['pdf_tools.tools.page_numbers_name'](), desc: m['pdf_tools.tools.page_numbers_desc']() },
 				{ href: '/pdf-tools/metadata/', icon: InfoIcon, name: m['pdf_tools.tools.metadata_name'](), desc: m['pdf_tools.tools.metadata_desc']() },
+				{ href: '/pdf-tools/crop/', icon: CropIcon, name: m['pdf_tools.tools.crop_name'](), desc: m['pdf_tools.tools.crop_desc']() },
+				{ href: '/pdf-tools/sign/', icon: PenToolIcon, name: m['pdf_tools.tools.sign_name'](), desc: m['pdf_tools.tools.sign_desc']() },
+				{ href: '/pdf-tools/edit/', icon: EditIcon, name: m['pdf_tools.tools.edit_name'](), desc: m['pdf_tools.tools.edit_desc']() },
 			],
 		},
 	]);
