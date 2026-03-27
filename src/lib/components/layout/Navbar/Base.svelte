@@ -154,7 +154,7 @@
 	// All flat items for indicator calculation
 	const allItems = $derived([...items, ...toolItems, ...secondaryItems]);
 
-	let links = $state<HTMLAnchorElement[]>([]);
+	let links = $state<HTMLElement[]>([]);
 	let container = $state<HTMLDivElement>();
 	let isInitialized = $state(false);
 
