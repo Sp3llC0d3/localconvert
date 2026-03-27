@@ -58,27 +58,38 @@
 	}
 
 	// Drawing handlers
+	function canvasCoords(e: MouseEvent | TouchEvent): { x: number; y: number } {
+		if (!sigCanvas) return { x: 0, y: 0 };
+		const rect = sigCanvas.getBoundingClientRect();
+		const pos = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as MouseEvent);
+		// Scale from CSS display coords to canvas resolution coords
+		const scaleX = sigCanvas.width / rect.width;
+		const scaleY = sigCanvas.height / rect.height;
+		return {
+			x: (pos.clientX - rect.left) * scaleX,
+			y: (pos.clientY - rect.top) * scaleY,
+		};
+	}
+
 	function startDraw(e: MouseEvent | TouchEvent) {
 		if (!sigCanvas) return;
 		if ('touches' in e) e.preventDefault();
 		drawing = true;
 		const ctx = sigCanvas.getContext('2d')!;
-		const rect = sigCanvas.getBoundingClientRect();
-		const pos = 'touches' in e ? e.touches[0] : e;
+		const { x, y } = canvasCoords(e);
 		ctx.beginPath();
-		ctx.moveTo(pos.clientX - rect.left, pos.clientY - rect.top);
+		ctx.moveTo(x, y);
 	}
 
 	function doDraw(e: MouseEvent | TouchEvent) {
 		if (!drawing || !sigCanvas) return;
 		e.preventDefault();
 		const ctx = sigCanvas.getContext('2d')!;
-		const rect = sigCanvas.getBoundingClientRect();
-		const pos = 'touches' in e ? e.touches[0] : e;
+		const { x, y } = canvasCoords(e);
 		ctx.lineWidth = 2.5;
 		ctx.lineCap = 'round';
 		ctx.strokeStyle = '#000';
-		ctx.lineTo(pos.clientX - rect.left, pos.clientY - rect.top);
+		ctx.lineTo(x, y);
 		ctx.stroke();
 		hasSignature = true;
 	}

@@ -296,7 +296,7 @@
 			<div
 				bind:this={containerEl}
 				class="crop-container"
-				style="width: {displayW}px; height: {displayH}px;"
+				style="width: {displayW}px; max-width: 100%; height: {displayH}px;"
 				onmousedown={onPointerDown}
 				onmousemove={onPointerMove}
 				onmouseup={onPointerUp}

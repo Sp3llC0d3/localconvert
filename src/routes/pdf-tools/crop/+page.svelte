@@ -50,8 +50,9 @@
 			const thumbs = await renderAllThumbnails(files[0], 0.4);
 			if (thumbs.length > 0) thumbUrl = thumbs[0];
 
-			// Fit preview
-			scale = Math.min(1, 500 / pageWidth);
+			// Fit preview to viewport
+			const maxW = Math.min(500, (typeof window !== 'undefined' ? window.innerWidth : 500) - 48);
+			scale = Math.min(1, maxW / pageWidth);
 		} catch {
 			error = 'Failed to read PDF.';
 		}
@@ -113,8 +114,8 @@
 	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
 
 	{#if thumbUrl && pageWidth > 0}
-		<div class="flex flex-col items-center gap-2">
-			<div class="preview-wrap" style="width: {pageWidth * scale}px; height: {pageHeight * scale}px;">
+		<div class="flex flex-col items-center gap-2 w-full overflow-hidden">
+			<div class="preview-wrap" style="width: {pageWidth * scale}px; max-width: 100%; height: {pageHeight * scale}px;">
 				<img src={thumbUrl} alt="Page preview" class="preview-img" />
 				<div
 					class="crop-overlay"
