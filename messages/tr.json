@@ -6,7 +6,9 @@
 		"pdf_tools": "PDF Araçları",
 		"settings": "Ayarlar",
 		"about": "Hakkımızda",
-		"toggle_theme": "Temayı değiştir"
+		"toggle_theme": "Temayı değiştir",
+		"image_tools": "Görsel Araçları",
+		"tools": "Araçlar"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. VERT.sh Tabanlı",
@@ -400,7 +402,34 @@
 			"compress_name": "PDF Sıkıştır",
 			"compress_desc": "Sayfaları JPEG olarak yeniden oluşturarak dosya boyutunu küçültün",
 			"watermark_name": "Filigran Ekle",
-			"watermark_desc": "PDF'nin her sayfasına metin damgası ekleyin"
+			"watermark_desc": "PDF'nin her sayfasına metin damgası ekleyin",
+			"page_numbers_name": "Sayfa Numarası Ekle",
+			"page_numbers_desc": "Her sayfaya sıralı numaralandırma ekleyin",
+			"metadata_name": "Meta Verileri Düzenle",
+			"metadata_desc": "Başlık, yazar ve diğer PDF özelliklerini görüntüleyin ve düzenleyin",
+			"crop_name": "PDF Kırp",
+			"crop_desc": "PDF sayfalarındaki kenar boşluklarını kırpın",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Her PDF sayfasını bir sunum slaydına dönüştürün",
+			"sign_name": "PDF İmzala",
+			"sign_desc": "İmza çizin, yazın veya yükleyin",
+			"edit_name": "PDF Düzenle",
+			"edit_desc": "Bir PDF'nin herhangi bir sayfasına metin ekleyin"
+		}
+	},
+	"image_tools": {
+		"title": "Görsel Araçları",
+		"subtitle": "Tüm işlemler tamamen tarayıcınızda gerçekleştirilir. Dosyalarınız hiçbir zaman cihazınızdan çıkmaz.",
+		"badge": "100% yerel — yükleme yok, sunucu yok",
+		"tools": {
+			"rotate_name": "Görsel Döndür",
+			"rotate_desc": "Görseli 90°, 180° veya 270° döndürün",
+			"crop_name": "Görsel Kırp",
+			"crop_desc": "Herhangi bir alanı kırpmak için dikdörtgen çizin",
+			"watermark_name": "Filigran Ekle",
+			"watermark_desc": "Herhangi bir görsele metin ekleyin",
+			"meme_name": "Meme Oluşturucu",
+			"meme_desc": "Herhangi bir görselin üstüne ve altına metin ekleyin"
 		}
 	}
 }

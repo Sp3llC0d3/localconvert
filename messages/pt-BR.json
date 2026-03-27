@@ -6,7 +6,9 @@
 		"pdf_tools": "Ferramentas PDF",
 		"settings": "Ajustes",
 		"about": "Sobre",
-		"toggle_theme": "Alternar tema"
+		"toggle_theme": "Alternar tema",
+		"image_tools": "Ferramentas de imagem",
+		"tools": "Ferramentas"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert.",
@@ -400,7 +402,34 @@
 			"compress_name": "Comprimir PDF",
 			"compress_desc": "Reduzir o tamanho do arquivo re-renderizando as páginas como JPEG",
 			"watermark_name": "Adicionar marca d'água",
-			"watermark_desc": "Carimbar texto em cada página de um PDF"
+			"watermark_desc": "Carimbar texto em cada página de um PDF",
+			"page_numbers_name": "Adicionar números de página",
+			"page_numbers_desc": "Adicionar numeração sequencial a cada página",
+			"metadata_name": "Editar metadados",
+			"metadata_desc": "Visualizar e editar título, autor e outras propriedades do PDF",
+			"crop_name": "Cortar PDF",
+			"crop_desc": "Aparar margens das páginas do PDF",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Converter cada página do PDF em um slide de apresentação",
+			"sign_name": "Assinar PDF",
+			"sign_desc": "Desenhe, digite ou envie uma assinatura",
+			"edit_name": "Editar PDF",
+			"edit_desc": "Adicionar texto a qualquer página de um PDF"
+		}
+	},
+	"image_tools": {
+		"title": "Ferramentas de imagem",
+		"subtitle": "Todas as operações são executadas inteiramente no seu navegador. Seus arquivos nunca saem do seu dispositivo.",
+		"badge": "100% local — sem uploads, sem servidor",
+		"tools": {
+			"rotate_name": "Girar imagem",
+			"rotate_desc": "Girar uma imagem em 90°, 180° ou 270°",
+			"crop_name": "Cortar imagem",
+			"crop_desc": "Desenhe um retângulo para cortar qualquer área",
+			"watermark_name": "Marca d'água",
+			"watermark_desc": "Carimbar texto em qualquer imagem",
+			"meme_name": "Gerador de memes",
+			"meme_desc": "Adicionar texto na parte superior e inferior de qualquer imagem"
 		}
 	}
 }

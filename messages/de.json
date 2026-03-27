@@ -6,7 +6,9 @@
 		"pdf_tools": "PDF-Tools",
 		"settings": "Optionen",
 		"about": "Über",
-		"toggle_theme": "Design wechseln"
+		"toggle_theme": "Design wechseln",
+		"image_tools": "Bildwerkzeuge",
+		"tools": "Werkzeuge"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Basiert auf VERT.sh",
@@ -400,7 +402,34 @@
 			"compress_name": "PDF komprimieren",
 			"compress_desc": "Dateigröße durch erneutes Rendern der Seiten als JPEG reduzieren",
 			"watermark_name": "Wasserzeichen hinzufügen",
-			"watermark_desc": "Text auf jede Seite eines PDFs stempeln"
+			"watermark_desc": "Text auf jede Seite eines PDFs stempeln",
+			"page_numbers_name": "Seitenzahlen hinzufügen",
+			"page_numbers_desc": "Fortlaufende Nummerierung auf jeder Seite hinzufügen",
+			"metadata_name": "Metadaten bearbeiten",
+			"metadata_desc": "Titel, Autor und andere PDF-Eigenschaften anzeigen und bearbeiten",
+			"crop_name": "PDF zuschneiden",
+			"crop_desc": "Ränder von PDF-Seiten abschneiden",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Jede PDF-Seite in eine Präsentationsfolie umwandeln",
+			"sign_name": "PDF unterschreiben",
+			"sign_desc": "Unterschrift zeichnen, eintippen oder hochladen",
+			"edit_name": "PDF bearbeiten",
+			"edit_desc": "Text auf jeder Seite einer PDF hinzufügen"
+		}
+	},
+	"image_tools": {
+		"title": "Bildwerkzeuge",
+		"subtitle": "Alle Vorgänge werden vollständig in Ihrem Browser ausgeführt. Ihre Dateien verlassen niemals Ihr Gerät.",
+		"badge": "100 % lokal — kein Upload, kein Server",
+		"tools": {
+			"rotate_name": "Bild drehen",
+			"rotate_desc": "Bild um 90°, 180° oder 270° drehen",
+			"crop_name": "Bild zuschneiden",
+			"crop_desc": "Zeichnen Sie ein Rechteck, um einen Bereich zuzuschneiden",
+			"watermark_name": "Wasserzeichen",
+			"watermark_desc": "Text auf ein beliebiges Bild stempeln",
+			"meme_name": "Meme-Generator",
+			"meme_desc": "Text oben und unten auf ein beliebiges Bild setzen"
 		}
 	}
 }

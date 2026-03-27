@@ -6,7 +6,9 @@
 		"pdf_tools": "PDFツール",
 		"settings": "設定",
 		"about": "について",
-		"toggle_theme": "テーマを切り替える"
+		"toggle_theme": "テーマを切り替える",
+		"image_tools": "画像ツール",
+		"tools": "ツール"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. VERT.shをベースに構築。",
@@ -357,7 +359,19 @@
 			"compress_name": "PDFを圧縮",
 			"compress_desc": "ページをJPEGとして再レンダリングしてファイルサイズを削減します",
 			"watermark_name": "透かしを追加",
-			"watermark_desc": "PDFのすべてのページにテキストを刻印します"
+			"watermark_desc": "PDFのすべてのページにテキストを刻印します",
+			"page_numbers_name": "ページ番号の追加",
+			"page_numbers_desc": "各ページに連番を追加",
+			"metadata_name": "メタデータの編集",
+			"metadata_desc": "タイトル、著者などのPDFプロパティを表示・編集",
+			"crop_name": "PDFの切り抜き",
+			"crop_desc": "PDFページの余白をトリミング",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "PDFの各ページをプレゼンテーションスライドに変換",
+			"sign_name": "PDFに署名",
+			"sign_desc": "手書き、テキスト入力、または画像で署名を追加",
+			"edit_name": "PDFの編集",
+			"edit_desc": "PDFの任意のページにテキストを追加"
 		}
 	},
 	"landing": {
@@ -401,6 +415,21 @@
 			"q5": "インストールは必要ですか？",
 			"a5": "インストール不要です。LocalConvertは最新のブラウザで直接動作します。より快適にお使いいただくために、アドレスバーからPWAとしてインストールすることもできます。",
 			"label": "よくある質問"
+		}
+	},
+	"image_tools": {
+		"title": "画像ツール",
+		"subtitle": "すべての処理はブラウザ内で完結します。ファイルがデバイスの外に送信されることはありません。",
+		"badge": "100%ローカル処理 — アップロード・サーバー不要",
+		"tools": {
+			"rotate_name": "画像の回転",
+			"rotate_desc": "画像を90°、180°、270°に回転",
+			"crop_name": "画像の切り抜き",
+			"crop_desc": "四角形を描いて任意の領域を切り抜き",
+			"watermark_name": "透かしの追加",
+			"watermark_desc": "任意の画像にテキストを追加",
+			"meme_name": "ミーム作成",
+			"meme_desc": "任意の画像の上下にテキストを追加"
 		}
 	}
 }

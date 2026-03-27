@@ -6,7 +6,9 @@
 		"pdf_tools": "PDF工具",
 		"settings": "设置",
 		"about": "关于",
-		"toggle_theme": "切换主题"
+		"toggle_theme": "切换主题",
+		"image_tools": "图片工具",
+		"tools": "工具"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. 基于 VERT.sh",
@@ -400,7 +402,34 @@
 			"compress_name": "压缩PDF",
 			"compress_desc": "将页面重新渲染为JPEG以减小文件大小",
 			"watermark_name": "添加水印",
-			"watermark_desc": "在PDF的每一页上印制文字水印"
+			"watermark_desc": "在PDF的每一页上印制文字水印",
+			"page_numbers_name": "添加页码",
+			"page_numbers_desc": "为每页添加连续编号",
+			"metadata_name": "编辑元数据",
+			"metadata_desc": "查看和编辑标题、作者及其他 PDF 属性",
+			"crop_name": "裁剪 PDF",
+			"crop_desc": "裁剪 PDF 页面的边距",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "将每页 PDF 转换为演示文稿幻灯片",
+			"sign_name": "签署 PDF",
+			"sign_desc": "手绘、键入或上传签名",
+			"edit_name": "编辑 PDF",
+			"edit_desc": "在 PDF 的任意页面添加文字"
+		}
+	},
+	"image_tools": {
+		"title": "图片工具",
+		"subtitle": "所有操作完全在您的浏览器中运行。您的文件绝不会离开您的设备。",
+		"badge": "100% 本地处理 — 无上传、无服务器",
+		"tools": {
+			"rotate_name": "旋转图片",
+			"rotate_desc": "将图片旋转 90°、180° 或 270°",
+			"crop_name": "裁剪图片",
+			"crop_desc": "绘制矩形以裁剪任意区域",
+			"watermark_name": "图片水印",
+			"watermark_desc": "在任意图片上添加文字",
+			"meme_name": "表情包生成器",
+			"meme_desc": "在任意图片的顶部和底部添加文字"
 		}
 	}
 }

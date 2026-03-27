@@ -67,6 +67,14 @@
 	<title>Rotate Image — LocalConvert</title>
 	<meta name="description" content="Rotate images 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/rotate/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Rotate an Image",
+		"step": [
+			{"@type": "HowToStep", "text": "Select an image file from your device"},
+			{"@type": "HowToStep", "text": "Choose rotation angle: 90°, 180°, or 270°"},
+			{"@type": "HowToStep", "text": "Save the rotated image"}
+		]
+	})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

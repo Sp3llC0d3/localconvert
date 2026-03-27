@@ -6,7 +6,9 @@
 		"pdf_tools": "Outils PDF",
 		"settings": "Paramètres",
 		"about": "À propos",
-		"toggle_theme": "Changer de thème"
+		"toggle_theme": "Changer de thème",
+		"image_tools": "Outils image",
+		"tools": "Outils"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Basé sur VERT.sh",
@@ -400,7 +402,34 @@
 			"compress_name": "Compresser un PDF",
 			"compress_desc": "Réduire la taille du fichier en restituant les pages en JPEG",
 			"watermark_name": "Ajouter un filigrane",
-			"watermark_desc": "Appliquer un texte sur chaque page d'un PDF"
+			"watermark_desc": "Appliquer un texte sur chaque page d'un PDF",
+			"page_numbers_name": "Ajouter des numéros de page",
+			"page_numbers_desc": "Ajouter une numérotation séquentielle à chaque page",
+			"metadata_name": "Modifier les métadonnées",
+			"metadata_desc": "Afficher et modifier le titre, l'auteur et d'autres propriétés du PDF",
+			"crop_name": "Rogner le PDF",
+			"crop_desc": "Rogner les marges des pages du PDF",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Convertir chaque page du PDF en diapositive de présentation",
+			"sign_name": "Signer le PDF",
+			"sign_desc": "Dessinez, saisissez ou importez une signature",
+			"edit_name": "Modifier le PDF",
+			"edit_desc": "Ajouter du texte sur n'importe quelle page d'un PDF"
+		}
+	},
+	"image_tools": {
+		"title": "Outils image",
+		"subtitle": "Toutes les opérations s'exécutent entièrement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil.",
+		"badge": "100 % local — aucun téléversement, aucun serveur",
+		"tools": {
+			"rotate_name": "Pivoter l'image",
+			"rotate_desc": "Pivoter une image de 90°, 180° ou 270°",
+			"crop_name": "Rogner l'image",
+			"crop_desc": "Dessinez un rectangle pour rogner n'importe quelle zone",
+			"watermark_name": "Filigrane",
+			"watermark_desc": "Appliquer un texte sur n'importe quelle image",
+			"meme_name": "Générateur de mèmes",
+			"meme_desc": "Ajouter du texte en haut et en bas de n'importe quelle image"
 		}
 	}
 }

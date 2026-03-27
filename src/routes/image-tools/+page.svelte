@@ -14,6 +14,16 @@
 	<title>Image Tools — LocalConvert</title>
 	<meta name="description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "LocalConvert Image Tools",
+		"url": "https://localconvert.app/image-tools/",
+		"applicationCategory": "MultimediaApplication",
+		"operatingSystem": "Any (browser-based)",
+		"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+		"description": "Free online image tools — rotate, crop, watermark, and create memes. All processing runs in your browser."
+	})}</script>`}
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">

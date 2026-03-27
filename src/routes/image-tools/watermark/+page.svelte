@@ -97,6 +97,15 @@
 	<title>Watermark Image — LocalConvert</title>
 	<meta name="description" content="Add text watermarks to images. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/watermark/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Add a Watermark to an Image",
+		"step": [
+			{"@type": "HowToStep", "text": "Select an image file from your device"},
+			{"@type": "HowToStep", "text": "Enter watermark text and adjust opacity, size, and rotation"},
+			{"@type": "HowToStep", "text": "Choose center or tiled placement"},
+			{"@type": "HowToStep", "text": "Save the watermarked image"}
+		]
+	})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

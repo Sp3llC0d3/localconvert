@@ -261,6 +261,15 @@
 	<title>Crop Image — LocalConvert</title>
 	<meta name="description" content="Crop images with interactive handles. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/crop/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Crop an Image",
+		"step": [
+			{"@type": "HowToStep", "text": "Select an image file from your device"},
+			{"@type": "HowToStep", "text": "Drag the handles to select the area to keep"},
+			{"@type": "HowToStep", "text": "Choose an aspect ratio or circle crop if needed"},
+			{"@type": "HowToStep", "text": "Save the cropped image"}
+		]
+	})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

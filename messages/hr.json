@@ -6,7 +6,9 @@
 		"pdf_tools": "PDF Alati",
 		"settings": "Postavke",
 		"about": "O Stranici",
-		"toggle_theme": "Promjeni izgled"
+		"toggle_theme": "Promjeni izgled",
+		"image_tools": "Alati za slike",
+		"tools": "Alati"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Bazirano na VERT.sh",
@@ -400,7 +402,34 @@
 			"compress_name": "Komprimiraj PDF",
 			"compress_desc": "Smanjite veličinu datoteke ponovnim prikazivanjem stranica kao JPEG",
 			"watermark_name": "Dodaj vodeni žig",
-			"watermark_desc": "Utisnite tekst na svaku stranicu PDF-a"
+			"watermark_desc": "Utisnite tekst na svaku stranicu PDF-a",
+			"page_numbers_name": "Dodaj brojeve stranica",
+			"page_numbers_desc": "Dodajte sekvencijalno numeriranje na svaku stranicu",
+			"metadata_name": "Uredi metapodatke",
+			"metadata_desc": "Pregledajte i uredite naslov, autora i druga PDF svojstva",
+			"crop_name": "Izreži PDF",
+			"crop_desc": "Obrežite margine sa PDF stranica",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Pretvorite svaku PDF stranicu u slajd prezentacije",
+			"sign_name": "Potpiši PDF",
+			"sign_desc": "Nacrtajte, upišite ili učitajte potpis",
+			"edit_name": "Uredi PDF",
+			"edit_desc": "Dodajte tekst na bilo koju stranicu PDF-a"
+		}
+	},
+	"image_tools": {
+		"title": "Alati za slike",
+		"subtitle": "Sve operacije izvršavaju se u potpunosti u vašem pregledniku. Vaše datoteke nikada ne napuštaju vaš uređaj.",
+		"badge": "100% lokalno — bez učitavanja, bez poslužitelja",
+		"tools": {
+			"rotate_name": "Rotiraj sliku",
+			"rotate_desc": "Rotirajte sliku za 90°, 180° ili 270°",
+			"crop_name": "Izreži sliku",
+			"crop_desc": "Nacrtajte pravokutnik za izrezivanje bilo kojeg područja",
+			"watermark_name": "Vodeni žig na slici",
+			"watermark_desc": "Dodajte tekst na bilo koju sliku",
+			"meme_name": "Generator memova",
+			"meme_desc": "Dodajte tekst na vrh i dno bilo koje slike"
 		}
 	}
 }

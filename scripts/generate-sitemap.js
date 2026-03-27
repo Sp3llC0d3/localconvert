@@ -60,7 +60,15 @@ const pairPages = [
 const pdfToolPaths = [
 	'/pdf-tools/','/pdf-tools/merge/','/pdf-tools/split/','/pdf-tools/rotate/',
 	'/pdf-tools/organize/','/pdf-tools/images-to-pdf/','/pdf-tools/pdf-to-images/',
-	'/pdf-tools/compress/','/pdf-tools/watermark/',
+	'/pdf-tools/compress/','/pdf-tools/watermark/','/pdf-tools/page-numbers/',
+	'/pdf-tools/metadata/','/pdf-tools/crop/','/pdf-tools/pdf-to-ppt/',
+	'/pdf-tools/sign/','/pdf-tools/edit/',
+];
+
+// ── Image tool pages ──────────────────────────────────────────────────────
+const imageToolPaths = [
+	'/image-tools/','/image-tools/rotate/','/image-tools/crop/',
+	'/image-tools/watermark/','/image-tools/meme/',
 ];
 
 // ── Static pages ──────────────────────────────────────────────────────────
@@ -81,10 +89,12 @@ const lines = [
 	...converterFormats.map(f => urlEntry(`/${f}-converter/`, '0.8', 'monthly')),
 	...pairPages.map(([from, to]) => urlEntry(`/${from}-to-${to}/`, '0.7', 'monthly')),
 	...pdfToolPaths.map(p => urlEntry(p, '0.8', 'monthly')),
+	...imageToolPaths.map(p => urlEntry(p, '0.8', 'monthly')),
 	'</urlset>',
 ];
 
 const xml = lines.join('\n');
 const outPath = join(__dirname, '..', 'static', 'sitemap.xml');
 writeFileSync(outPath, xml, 'utf8');
-console.log(`✓ sitemap.xml written with ${pairPages.length + converterFormats.length + staticPages.length + pdfToolPaths.length} URLs`);
+const total = pairPages.length + converterFormats.length + staticPages.length + pdfToolPaths.length + imageToolPaths.length;
+console.log(`✓ sitemap.xml written with ${total} URLs`);

@@ -6,7 +6,9 @@
 		"pdf_tools": "PDF工具",
 		"settings": "設定",
 		"about": "關於",
-		"toggle_theme": "切換主題"
+		"toggle_theme": "切換主題",
+		"image_tools": "圖片工具",
+		"tools": "工具"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. 基於 VERT.sh",
@@ -357,7 +359,19 @@
 			"compress_name": "壓縮PDF",
 			"compress_desc": "將頁面重新渲染為JPEG以縮小檔案大小",
 			"watermark_name": "新增浮水印",
-			"watermark_desc": "在PDF的每一頁上印製文字浮水印"
+			"watermark_desc": "在PDF的每一頁上印製文字浮水印",
+			"page_numbers_name": "新增頁碼",
+			"page_numbers_desc": "為每頁新增連續編號",
+			"metadata_name": "編輯中繼資料",
+			"metadata_desc": "檢視及編輯標題、作者和其他 PDF 屬性",
+			"crop_name": "裁剪 PDF",
+			"crop_desc": "裁切 PDF 頁面的邊距",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "將每頁 PDF 轉換為簡報投影片",
+			"sign_name": "簽署 PDF",
+			"sign_desc": "手繪、輸入或上傳簽名",
+			"edit_name": "編輯 PDF",
+			"edit_desc": "在 PDF 的任意頁面新增文字"
 		}
 	},
 	"landing": {
@@ -401,6 +415,21 @@
 			"q5": "我需要安裝任何東西嗎？",
 			"a5": "無需安裝。LocalConvert 可在任何現代瀏覽器中直接使用。你也可以從網址列將其安裝為 PWA，獲得類似應用程式的體驗。",
 			"label": "常見問題"
+		}
+	},
+	"image_tools": {
+		"title": "圖片工具",
+		"subtitle": "所有操作完全在您的瀏覽器中執行。您的檔案絕不會離開您的裝置。",
+		"badge": "100% 本機處理 — 無上傳、無伺服器",
+		"tools": {
+			"rotate_name": "旋轉圖片",
+			"rotate_desc": "將圖片旋轉 90°、180° 或 270°",
+			"crop_name": "裁剪圖片",
+			"crop_desc": "繪製矩形以裁剪任意區域",
+			"watermark_name": "圖片浮水印",
+			"watermark_desc": "在任意圖片上加入文字",
+			"meme_name": "迷因產生器",
+			"meme_desc": "在任意圖片的頂部和底部加入文字"
 		}
 	}
 }

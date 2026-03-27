@@ -89,6 +89,14 @@
 	<title>Meme Generator — LocalConvert</title>
 	<meta name="description" content="Create memes with custom top and bottom text. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/meme/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Create a Meme",
+		"step": [
+			{"@type": "HowToStep", "text": "Select an image to use as the meme background"},
+			{"@type": "HowToStep", "text": "Enter top and bottom text"},
+			{"@type": "HowToStep", "text": "Preview the meme live and save it"}
+		]
+	})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

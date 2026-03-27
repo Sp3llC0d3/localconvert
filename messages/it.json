@@ -6,7 +6,9 @@
 		"pdf_tools": "Strumenti PDF",
 		"settings": "Impostazioni",
 		"about": "Informazioni",
-		"toggle_theme": "Cambia tema"
+		"toggle_theme": "Cambia tema",
+		"image_tools": "Strumenti immagine",
+		"tools": "Strumenti"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Basato su VERT.sh",
@@ -400,7 +402,34 @@
 			"compress_name": "Comprimi PDF",
 			"compress_desc": "Riduci le dimensioni del file ri-renderizzando le pagine come JPEG",
 			"watermark_name": "Aggiungi filigrana",
-			"watermark_desc": "Applica un testo su ogni pagina di un PDF"
+			"watermark_desc": "Applica un testo su ogni pagina di un PDF",
+			"page_numbers_name": "Aggiungi numeri di pagina",
+			"page_numbers_desc": "Aggiungi numerazione sequenziale a ogni pagina",
+			"metadata_name": "Modifica metadati",
+			"metadata_desc": "Visualizza e modifica titolo, autore e altre proprietà del PDF",
+			"crop_name": "Ritaglia PDF",
+			"crop_desc": "Taglia i margini dalle pagine del PDF",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Converti ogni pagina del PDF in una diapositiva di presentazione",
+			"sign_name": "Firma PDF",
+			"sign_desc": "Disegna, digita o carica una firma",
+			"edit_name": "Modifica PDF",
+			"edit_desc": "Aggiungi testo a qualsiasi pagina di un PDF"
+		}
+	},
+	"image_tools": {
+		"title": "Strumenti immagine",
+		"subtitle": "Tutte le operazioni vengono eseguite interamente nel tuo browser. I tuoi file non lasciano mai il tuo dispositivo.",
+		"badge": "100% locale — nessun caricamento, nessun server",
+		"tools": {
+			"rotate_name": "Ruota immagine",
+			"rotate_desc": "Ruota un'immagine di 90°, 180° o 270°",
+			"crop_name": "Ritaglia immagine",
+			"crop_desc": "Disegna un rettangolo per ritagliare qualsiasi area",
+			"watermark_name": "Filigrana sull'immagine",
+			"watermark_desc": "Applica un testo su qualsiasi immagine",
+			"meme_name": "Generatore di meme",
+			"meme_desc": "Aggiungi testo in alto e in basso su qualsiasi immagine"
 		}
 	}
 }
