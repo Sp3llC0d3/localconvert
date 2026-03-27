@@ -185,6 +185,7 @@
 </svelte:head>
 
 {#key $locale}
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<div
 		class="flex flex-col min-h-screen h-full w-full overflow-x-hidden"
 		ondrop={dropFiles}
@@ -200,7 +201,9 @@
 			<Navbar.Desktop />
 		</div>
 
-		<Layout.PageContent {children} />
+		<main id="main-content" class="flex-grow flex flex-col">
+			<Layout.PageContent {children} />
+		</main>
 
 		<Layout.Toasts />
 		<Layout.Dialogs />

@@ -241,6 +241,7 @@
 			</div>
 			<button
 				class="flex-shrink-0 w-8 rounded-full hover:bg-panel-alt h-full flex items-center justify-center"
+				aria-label="Remove file"
 				onclick={async () => {
 					await file.cancel();
 					files.files = files.files.filter((_, i) => i !== index);
@@ -250,7 +251,7 @@
 			</button>
 		</div>
 		{#if !currentConverter}
-			<div class="h-full flex flex-col text-center justify-center text-failure">
+			<div class="h-full flex flex-col text-center justify-center text-failure" role="alert">
 				<p class="font-body font-bold">{m["convert.errors.cant_convert"]()}</p>
 				<p class="font-normal">{m["convert.errors.unsupported_format"]()}</p>
 			</div>
@@ -262,6 +263,7 @@
 			{#if formatInfo && !formatInfo.fromSupported}
 				<div
 					class="h-full flex flex-col text-center justify-center text-failure"
+					role="alert"
 				>
 					<p class="font-body font-bold">
 						{m["convert.errors.cant_convert"]()}
@@ -273,6 +275,7 @@
 			{:else if isLarge && !file.supportsStreaming()}
 				<div
 					class="h-full flex flex-col text-center justify-center text-failure"
+					role="alert"
 				>
 					<p class="font-body font-bold">
 						{m["convert.errors.cant_convert"]()}
@@ -342,7 +345,7 @@
 				</div>
 			{:else if file.conversionError}
 				<div class="flex flex-col items-center justify-center gap-3 py-2">
-					<img src={errorConversion} alt="" class="w-20 h-20 object-contain" />
+					<img src={errorConversion} alt="Conversion error" class="w-20 h-20 object-contain" />
 					<p class="text-sm text-failure font-medium">{m["convert.errors.cant_convert"]()}</p>
 					<button class="btn text-sm px-4 py-2" onclick={() => file.convert()}>Try again</button>
 				</div>
@@ -439,6 +442,7 @@
 										value={effectiveQuality}
 										oninput={(e) => { file.optQuality = Number((e.target as HTMLInputElement).value); }}
 										class="quality-slider"
+										aria-label="Image quality"
 									/>
 									<span class="opt-value">{effectiveQuality}%</span>
 								</div>
@@ -450,12 +454,14 @@
 										type="number" min={1} placeholder="W"
 										bind:value={file.optWidth}
 										class="dim-input"
+										aria-label="Width in pixels"
 									/>
 									<span class="opt-value">×</span>
 									<input
 										type="number" min={1} placeholder="H"
 										bind:value={file.optHeight}
 										class="dim-input"
+										aria-label="Height in pixels"
 									/>
 									<span class="opt-value">px</span>
 								</div>
@@ -469,6 +475,7 @@
 										class="opt-select"
 										value={file.optBitrate ?? Settings.instance.settings.ffmpegQuality.toString()}
 										onchange={(e) => { file.optBitrate = (e.target as HTMLSelectElement).value; }}
+										aria-label="Audio bitrate"
 									>
 										{#each CONVERSION_BITRATES as br}
 											<option value={br.toString()}>
@@ -487,12 +494,14 @@
 										type="number" min={0} step={1} placeholder="0"
 										bind:value={file.optTrimStart}
 										class="time-input"
+										aria-label="Trim start in seconds"
 									/>
 									<span class="opt-value">s →</span>
 									<input
 										type="number" min={0} step={1} placeholder="end"
 										bind:value={file.optTrimEnd}
 										class="time-input"
+										aria-label="Trim end in seconds"
 									/>
 									<span class="opt-value">s</span>
 								</div>

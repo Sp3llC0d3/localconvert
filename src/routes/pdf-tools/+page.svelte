@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const categories = $derived([
@@ -27,6 +27,8 @@
 			tools: [
 				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc']() },
 				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc']() },
+				{ href: '/pdf-tools/page-numbers/', icon: ListOrderedIcon, name: m['pdf_tools.tools.page_numbers_name'](), desc: m['pdf_tools.tools.page_numbers_desc']() },
+				{ href: '/pdf-tools/metadata/', icon: InfoIcon, name: m['pdf_tools.tools.metadata_name'](), desc: m['pdf_tools.tools.metadata_desc']() },
 			],
 		},
 	]);

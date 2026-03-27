@@ -5,6 +5,8 @@
 
 <div
 	class="fixed bottom-28 md:bottom-0 right-0 p-4 flex flex-col-reverse gap-4 z-50"
+	role="status"
+	aria-live="polite"
 >
 	{#each ToastManager.toasts as toast (toast.id)}
 		<div class="flex justify-end">

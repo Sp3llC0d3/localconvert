@@ -354,7 +354,11 @@
 			"compress_name": "Compress PDF",
 			"compress_desc": "Reduce file size by re-rendering pages as JPEG",
 			"watermark_name": "Add Watermark",
-			"watermark_desc": "Stamp text on every page of a PDF"
+			"watermark_desc": "Stamp text on every page of a PDF",
+			"page_numbers_name": "Add Page Numbers",
+			"page_numbers_desc": "Add sequential numbering to every page",
+			"metadata_name": "Edit Metadata",
+			"metadata_desc": "View and edit title, author, and other PDF properties"
 		}
 	},
 	"toast": {

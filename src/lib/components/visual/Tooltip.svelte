@@ -8,6 +8,7 @@
 	}
 
 	let { children, text, className, position = "top" }: Props = $props();
+	const tooltipId = `tooltip-${Math.random().toString(36).slice(2, 9)}`;
 	let showTooltip = $state(false);
 	let timeout: NodeJS.Timeout | null = null;
 	let triggerElement: HTMLElement;
@@ -91,7 +92,7 @@
 	onfocusout={hide}
 	ontouchstart={show}
 	ontouchend={hide}
-	role="tooltip"
+	aria-describedby={showTooltip ? tooltipId : undefined}
 >
 	{@render children()}
 </span>
@@ -99,6 +100,8 @@
 {#if showTooltip}
 	<span
 		bind:this={tooltipElement}
+		id={tooltipId}
+		role="tooltip"
 		class="tooltip tooltip-{position}"
 		style="left: {tooltipPosition.x}px; top: {tooltipPosition.y}px;"
 		transition:fade={{

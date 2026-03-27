@@ -324,6 +324,7 @@
 							onclick={() => selectLocale(locale)}
 							class="lang-btn px-2 py-1.5 rounded-lg text-xs font-medium transition-colors text-center truncate"
 							class:lang-active={currentLocale === locale}
+							aria-label="Select {name}"
 						>
 							{name}
 						</button>
