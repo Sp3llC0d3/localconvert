@@ -2,7 +2,7 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { rotateImage, type RotationAngle } from '$lib/image/rotate';
 	import { watermarkImage } from '$lib/image/watermark';
-	import { downloadBlob, formatFileSize, getOutputName, loadImage, canvasToBlob } from '$lib/image/utils';
+	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { LayersIcon, XIcon } from 'lucide-svelte';
 
 	let files = $state<File[]>([]);
@@ -23,6 +23,7 @@
 
 	function removeFile(index: number) {
 		files = files.filter((_, i) => i !== index);
+		results = [];
 	}
 
 	async function applyAll() {
@@ -64,9 +65,12 @@
 		downloadBlob(r.blob, r.name);
 	}
 
-	function downloadAll() {
+	async function downloadAll() {
 		for (const r of results) {
-			if (r.blob.size > 0) downloadBlob(r.blob, r.name);
+			if (r.blob.size > 0) {
+				downloadBlob(r.blob, r.name);
+				await new Promise((resolve) => setTimeout(resolve, 300));
+			}
 		}
 	}
 </script>
@@ -132,6 +136,11 @@
 					<span class="opt-label">Opacity</span>
 					<input type="range" min={5} max={80} bind:value={wmOpacity} class="slider flex-1" aria-label="Opacity" />
 					<span class="val">{wmOpacity}%</span>
+				</div>
+				<div class="opt-row">
+					<span class="opt-label">Font size</span>
+					<input type="range" min={16} max={120} bind:value={wmFontSize} class="slider flex-1" aria-label="Font size" />
+					<span class="val">{wmFontSize}px</span>
 				</div>
 				<div class="opt-row">
 					<span class="opt-label">Position</span>
