@@ -121,6 +121,12 @@
 			"audio": "audio",
 			"doc": "dokument",
 			"image": "slika"
+		},
+		"options": {
+			"quality": "Kvaliteta",
+			"resize": "Promijeni veličinu",
+			"bitrate": "Bitrate",
+			"trim": "Izreži"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "100% privatno po dizajnu",
 			"point1": "Vaše datoteke nikada ne napuštaju Vaš uređaj",
 			"point2": "Bez prijenosa na poslužitelj — sve se odvija u Vašem pregledniku",
-			"point3": "Otvorenog koda — provjerite sami"
+			"point3": "Otvorenog koda — provjerite sami",
+			"label": "Privatnost na prvom mjestu"
 		},
 		"faq": {
 			"title": "Često postavljana pitanja",

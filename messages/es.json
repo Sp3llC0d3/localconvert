@@ -121,6 +121,12 @@
 			"audio": "audio",
 			"doc": "documento",
 			"image": "imagen"
+		},
+		"options": {
+			"quality": "Calidad",
+			"resize": "Redimensionar",
+			"bitrate": "Bitrate",
+			"trim": "Recortar"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "100% privado por diseño",
 			"point1": "Sus archivos nunca abandonan su dispositivo",
 			"point2": "Sin subidas al servidor — todo se ejecuta en su navegador",
-			"point3": "Código abierto — verifíquelo usted mismo"
+			"point3": "Código abierto — verifíquelo usted mismo",
+			"label": "Privacidad primero"
 		},
 		"faq": {
 			"title": "Preguntas frecuentes",

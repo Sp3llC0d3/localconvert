@@ -121,6 +121,12 @@
 			"audio": "audio",
 			"doc": "document",
 			"image": "image"
+		},
+		"options": {
+			"quality": "Quality",
+			"resize": "Resize",
+			"bitrate": "Bitrate",
+			"trim": "Trim"
 		}
 	},
 	"settings": {
@@ -379,7 +385,8 @@
 			"title": "100% Private by Design",
 			"point1": "Your files never leave your device",
 			"point2": "No server uploads — everything runs in your browser",
-			"point3": "Open source — verify it yourself"
+			"point3": "Open source — verify it yourself",
+			"label": "Privacy first"
 		},
 		"faq": {
 			"title": "Frequently Asked Questions",

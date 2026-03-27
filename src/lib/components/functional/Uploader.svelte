@@ -18,6 +18,7 @@
 
 	let uploaderButton = $state<HTMLButtonElement>();
 	let fileInput = $state<HTMLInputElement>();
+	let isDragOver = $state(false);
 
 	const uploadFiles = async () => {
 		if (!fileInput) return;
@@ -32,21 +33,27 @@
 	};
 
 	onMount(() => {
-		const handler = (e: Event) => {
+		const prevent = (e: Event) => { e.preventDefault(); return false; };
+		const onEnter = (e: Event) => { e.preventDefault(); isDragOver = true; };
+		const onLeave = (e: Event) => { e.preventDefault(); isDragOver = false; };
+		const onDrop  = (e: DragEvent) => {
 			e.preventDefault();
-			return false;
+			isDragOver = false;
+			const oldLength = files.files.length;
+			files.add(e.dataTransfer?.files ?? null);
+			if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
 		};
 
-		uploaderButton?.addEventListener("dragover", handler);
-		uploaderButton?.addEventListener("dragenter", handler);
-		uploaderButton?.addEventListener("dragleave", handler);
-		uploaderButton?.addEventListener("drop", handler);
+		uploaderButton?.addEventListener("dragover",  onEnter);
+		uploaderButton?.addEventListener("dragenter", onEnter);
+		uploaderButton?.addEventListener("dragleave", onLeave);
+		uploaderButton?.addEventListener("drop",      onDrop);
 
 		return () => {
-			uploaderButton?.removeEventListener("dragover", handler);
-			uploaderButton?.removeEventListener("dragenter", handler);
-			uploaderButton?.removeEventListener("dragleave", handler);
-			uploaderButton?.removeEventListener("drop", handler);
+			uploaderButton?.removeEventListener("dragover",  onEnter);
+			uploaderButton?.removeEventListener("dragenter", onEnter);
+			uploaderButton?.removeEventListener("dragleave", onLeave);
+			uploaderButton?.removeEventListener("drop",      onDrop);
 		};
 	});
 </script>
@@ -64,7 +71,8 @@
 	bind:this={uploaderButton}
 	class={clsx(
 		`hover:scale-105 active:scale-100 ${$effects ? "" : "!scale-100"} duration-200 ${classList}`,
-		"bg-panel shadow-panel border border-separator rounded-2.5xl p-4 flex items-center justify-center overflow-hidden",
+		"bg-panel shadow-panel border rounded-2.5xl p-4 flex items-center justify-center overflow-hidden transition-colors",
+		isDragOver ? "border-accent scale-105 bg-panel-highlight" : "border-separator",
 	)}
 	aria-label={m["upload.uploader.text"]({ action: m["upload.uploader.convert"]() })}
 >

@@ -24,7 +24,7 @@
 
 	@keyframes dragoverlay-animation {
 		0% {
-			@apply bg-accent-pink;
+			@apply bg-accent-base;
 		}
 
 		25% {
@@ -40,7 +40,7 @@
 		}
 
 		100% {
-			@apply bg-accent-pink;
+			@apply bg-accent-base;
 		}
 	}
 </style>

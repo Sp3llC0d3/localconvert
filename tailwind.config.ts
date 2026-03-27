@@ -28,8 +28,8 @@ export default {
 			colors: {
 				accent: "var(--accent)",
 				"accent-alt": "var(--accent-alt)",
-				"accent-pink": "var(--accent-pink)",
-				"accent-pink-alt": "var(--accent-pink-alt)",
+				"accent-base": "var(--accent-base)",
+				"accent-base-alt": "var(--accent-base-alt)",
 				"accent-red": "var(--accent-red)",
 				"accent-red-alt": "var(--accent-red-alt)",
 				"accent-purple-alt": "var(--accent-purple-alt)",

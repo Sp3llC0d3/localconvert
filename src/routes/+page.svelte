@@ -207,7 +207,7 @@
 			<img src={privacyBadge} alt="Privacy badge" class="privacy-badge" />
 		</div>
 		<div class="privacy-content">
-			<div class="section-label privacy-label">Privacy first</div>
+			<div class="section-label privacy-label">{m["landing.privacy.label"]()}</div>
 			<h2 class="privacy-headline">{m["landing.privacy.title"]()}</h2>
 			<ul class="privacy-list">
 				{#each [m["landing.privacy.point1"](), m["landing.privacy.point2"](), m["landing.privacy.point3"]()] as point}
@@ -416,11 +416,11 @@
 
 .step-card:hover {
 	transform: translateY(-4px);
-	box-shadow: var(--shadow-panel), 0 16px 40px hsla(162, 40%, 20%, 0.1);
+	box-shadow: var(--shadow-panel), 0 16px 40px hsla(162, 40%, 20%, 0.12);
 }
 
 :global(.dark) .step-card:hover {
-	box-shadow: 0 16px 48px hsla(218, 30%, 0%, 0.4);
+	box-shadow: var(--shadow-panel), 0 16px 48px hsla(20, 15%, 0%, 0.5);
 }
 
 .step-bg-number {

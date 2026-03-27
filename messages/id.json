@@ -121,6 +121,12 @@
 			"audio": "audio",
 			"doc": "dokumen",
 			"image": "gambar"
+		},
+		"options": {
+			"quality": "Kualitas",
+			"resize": "Ubah ukuran",
+			"bitrate": "Bitrate",
+			"trim": "Potong"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "100% Privat Sejak Awal",
 			"point1": "Berkas Anda tidak pernah meninggalkan perangkat Anda",
 			"point2": "Tanpa unggahan ke server — semuanya berjalan di browser Anda",
-			"point3": "Sumber terbuka — verifikasi sendiri"
+			"point3": "Sumber terbuka — verifikasi sendiri",
+			"label": "Privasi pertama"
 		},
 		"faq": {
 			"title": "Pertanyaan yang Sering Diajukan",

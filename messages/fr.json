@@ -121,6 +121,12 @@
 			"audio": "audio",
 			"doc": "document",
 			"image": "image"
+		},
+		"options": {
+			"quality": "Qualité",
+			"resize": "Redimensionner",
+			"bitrate": "Bitrate",
+			"trim": "Rogner"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "100 % privé par conception",
 			"point1": "Vos fichiers ne quittent jamais votre appareil",
 			"point2": "Aucun envoi vers un serveur — tout s'exécute dans votre navigateur",
-			"point3": "Open source — vérifiez-le vous-même"
+			"point3": "Open source — vérifiez-le vous-même",
+			"label": "La confidentialité d'abord"
 		},
 		"faq": {
 			"title": "Foire aux questions",

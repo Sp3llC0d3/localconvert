@@ -432,7 +432,7 @@
 						{#if isImage}
 							{@const effectiveQuality = file.optQuality ?? Settings.instance.settings.magickQuality}
 							<div class="opt-group">
-								<span class="opt-label">Quality</span>
+								<span class="opt-label">{m["convert.options.quality"]()}</span>
 								<div class="opt-control">
 									<input
 										type="range" min={1} max={100}
@@ -444,7 +444,7 @@
 								</div>
 							</div>
 							<div class="opt-group">
-								<span class="opt-label">Resize</span>
+								<span class="opt-label">{m["convert.options.resize"]()}</span>
 								<div class="opt-control gap-1">
 									<input
 										type="number" min={1} placeholder="W"
@@ -463,7 +463,7 @@
 						{/if}
 						{#if isAudio}
 							<div class="opt-group">
-								<span class="opt-label">Bitrate</span>
+								<span class="opt-label">{m["convert.options.bitrate"]()}</span>
 								<div class="opt-control">
 									<select
 										class="opt-select"
@@ -481,7 +481,7 @@
 						{/if}
 						{#if isAudio || isVideo}
 							<div class="opt-group">
-								<span class="opt-label">Trim</span>
+								<span class="opt-label">{m["convert.options.trim"]()}</span>
 								<div class="opt-control gap-1">
 									<input
 										type="number" min={0} step={1} placeholder="0"
@@ -558,7 +558,7 @@
 	.quality-slider {
 		@apply flex-1 h-1.5 appearance-none rounded-full cursor-pointer;
 		background: var(--bg-separator);
-		accent-color: var(--accent-pink);
+		accent-color: var(--accent-base);
 	}
 
 	.dim-input,
@@ -570,7 +570,7 @@
 
 	.dim-input:focus,
 	.time-input:focus {
-		outline: 1.5px solid var(--accent-pink);
+		outline: 1.5px solid var(--accent-base);
 	}
 
 	.opt-select {
@@ -580,6 +580,6 @@
 	}
 
 	.opt-select:focus {
-		outline: 1.5px solid var(--accent-pink);
+		outline: 1.5px solid var(--accent-base);
 	}
 </style>

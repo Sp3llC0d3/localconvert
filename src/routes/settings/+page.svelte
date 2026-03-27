@@ -54,7 +54,7 @@
 </script>
 
 <div class="flex flex-col h-full items-center">
-	<h1 class="text-2xl md:text-[40px] tracking-tight md:leading-[72px] leading-tight mb-4 md:mb-6">
+	<h1 class="tracking-tight leading-tight mb-4 md:mb-6" style="font-size: clamp(1.75rem, 4vw, 2.75rem)">
 		<SettingsIcon size="40" class="inline-block -mt-2 mr-2" />
 		{m["settings.title"]()}
 	</h1>

@@ -46,7 +46,7 @@
 	// intentionally unused. this is so tailwind can generate the css for these colours as it doesn't detect if it's dynamically loaded
 	// this would lead to the colours not being generated in the final css file by tailwind
 	const colourVariants = [
-		"border-accent-pink-alt",
+		"border-accent-base-alt",
 		"border-accent-red-alt",
 		"border-accent-purple-alt",
 		"border-accent-blue-alt",

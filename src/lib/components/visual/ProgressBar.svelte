@@ -12,52 +12,28 @@
 	);
 </script>
 
-<div class="w-full h-1 bg-panel-alt rounded-full overflow-hidden relative">
+<div
+	class="w-full h-1.5 bg-panel-alt rounded-full overflow-hidden relative"
+	role="progressbar"
+	aria-valuenow={percent ?? undefined}
+	aria-valuemin={0}
+	aria-valuemax={100}
+>
 	<div
-		class="h-full bg-accent absolute left-0 top-0"
-		class:percentless-animation={progress === null}
-		style={percent
-			? `width: ${percent}%; transition: 500ms linear width;`
-			: ""}
+		class="h-full bg-accent rounded-full absolute top-0"
+		class:indeterminate={progress === null}
+		style={percent !== null ? `width: ${percent}%; transition: width 400ms linear;` : "width: 40%;"}
 	></div>
 </div>
 
 <style>
-	.percentless-animation {
-		width: 100%;
-		animation:
-			percentless-animation 1s ease infinite,
-			left-right 1s ease infinite;
+	.indeterminate {
+		animation: indeterminate 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 	}
 
-	@keyframes percentless-animation {
-		0% {
-			width: 0%;
-		}
-
-		50% {
-			width: 100%;
-		}
-
-		100% {
-			width: 0%;
-		}
-	}
-
-	@keyframes left-right {
-		49% {
-			left: 0;
-			right: auto;
-		}
-
-		50% {
-			left: auto;
-			right: 0;
-		}
-
-		100% {
-			left: auto;
-			right: 0;
-		}
+	@keyframes indeterminate {
+		0%   { left: -40%; }
+		60%  { left: 100%; }
+		100% { left: 100%; }
 	}
 </style>

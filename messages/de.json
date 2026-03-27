@@ -121,6 +121,12 @@
 			"audio": "Audio",
 			"doc": "Dokument",
 			"image": "Bild"
+		},
+		"options": {
+			"quality": "Qualität",
+			"resize": "Größe ändern",
+			"bitrate": "Bitrate",
+			"trim": "Zuschneiden"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "100 % privat by Design",
 			"point1": "Ihre Dateien verlassen Ihr Gerät niemals",
 			"point2": "Keine Server-Uploads — alles läuft in Ihrem Browser",
-			"point3": "Open Source — überprüfen Sie es selbst"
+			"point3": "Open Source — überprüfen Sie es selbst",
+			"label": "Datenschutz zuerst"
 		},
 		"faq": {
 			"title": "Häufig gestellte Fragen",

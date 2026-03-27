@@ -121,6 +121,12 @@
 			"audio": "ses",
 			"doc": "belge",
 			"image": "görsel"
+		},
+		"options": {
+			"quality": "Kalite",
+			"resize": "Yeniden boyutlandır",
+			"bitrate": "Bit hızı",
+			"trim": "Kırp"
 		}
 	},
 	"settings": {
@@ -351,7 +357,8 @@
 			"title": "Tasarım Gereği %100 Gizli",
 			"point1": "Dosyalarınız cihazınızı asla terk etmez",
 			"point2": "Sunucu yüklemesi yok — her şey tarayıcınızda çalışır",
-			"point3": "Açık kaynak — kendiniz doğrulayın"
+			"point3": "Açık kaynak — kendiniz doğrulayın",
+			"label": "Önce Gizlilik"
 		},
 		"faq": {
 			"title": "Sıkça Sorulan Sorular",

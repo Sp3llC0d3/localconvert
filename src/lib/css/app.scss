@@ -30,9 +30,9 @@
 
 @mixin light {
 	/* ── Primary accent — refined forest teal ── */
-	--accent-pink: hsl(162, 72%, 28%);
-	--accent-pink-alt: hsl(162, 72%, 22%);
-	--accent-pink-muted: hsl(162, 72%, 28%);
+	--accent-base: hsl(162, 72%, 28%);
+	--accent-base-alt: hsl(162, 72%, 22%);
+	--accent-base-muted: hsl(162, 72%, 28%);
 
 	/* ── Category: Images — electric blue ── */
 	--accent-blue: hsl(217, 82%, 58%);
@@ -50,10 +50,10 @@
 	--accent-green: hsl(158, 65%, 37%);
 	--accent-green-alt: hsl(158, 65%, 28%);
 
-	--accent: var(--accent-pink);
-	--accent-alt: var(--accent-pink-alt);
+	--accent: var(--accent-base);
+	--accent-alt: var(--accent-base-alt);
 
-	--accent-pink-transparent: hsla(162, 72%, 28%, 0);
+	--accent-base-transparent: hsla(162, 72%, 28%, 0);
 	--accent-red-transparent: hsla(14, 80%, 60%, 0);
 	--accent-purple-transparent: hsla(258, 68%, 62%, 0);
 	--accent-blue-transparent: hsla(217, 82%, 58%, 0);
@@ -64,17 +64,17 @@
 	--fg-muted: hsla(220, 10%, 15%, 0.55);
 	--fg-on-accent: hsl(0, 0%, 100%);
 	--fg-on-badge: hsl(162, 72%, 18%);
-	--fg-accent: var(--accent-pink-muted);
+	--fg-accent: var(--accent-base-muted);
 	--fg-failure: hsl(0, 72%, 50%);
 
 	/* ── Backgrounds ── */
 	--bg: hsl(38, 20%, 96%);
 
-	--bg-gradient-from: var(--accent-pink);
+	--bg-gradient-from: var(--accent-base);
 	--bg-gradient-to: hsla(162, 72%, 28%, 0);
-	--bg-gradient-pink-from: var(--accent-pink);
+	--bg-gradient-pink-from: var(--accent-base);
 	--bg-gradient-pink-to: hsla(162, 72%, 28%, 0);
-	--bg-gradient-pink-alt-from: var(--accent-pink);
+	--bg-gradient-pink-alt-from: var(--accent-base);
 	--bg-gradient-pink-alt-to: hsl(162, 45%, 94%);
 	--bg-gradient-red-from: var(--accent-red);
 	--bg-gradient-red-to: hsla(14, 80%, 60%, 0);
@@ -123,9 +123,9 @@
 
 @mixin dark {
 	/* ── Primary accent — bright mint-teal ── */
-	--accent-pink: hsl(162, 62%, 56%);
-	--accent-pink-alt: hsl(158, 65%, 40%);
-	--accent-pink-muted: hsl(162, 62%, 56%);
+	--accent-base: hsl(162, 62%, 56%);
+	--accent-base-alt: hsl(158, 65%, 40%);
+	--accent-base-muted: hsl(162, 62%, 56%);
 
 	/* ── Category: Images — sky blue ── */
 	--accent-blue: hsl(217, 85%, 68%);
@@ -143,10 +143,10 @@
 	--accent-green: hsl(158, 62%, 52%);
 	--accent-green-alt: hsl(158, 62%, 40%);
 
-	--accent: var(--accent-pink);
-	--accent-alt: var(--accent-pink-alt);
+	--accent: var(--accent-base);
+	--accent-alt: var(--accent-base-alt);
 
-	--accent-pink-transparent: hsla(162, 62%, 56%, 0);
+	--accent-base-transparent: hsla(162, 62%, 56%, 0);
 	--accent-red-transparent: hsla(14, 82%, 68%, 0);
 	--accent-purple-transparent: hsla(258, 72%, 72%, 0);
 	--accent-blue-transparent: hsla(217, 85%, 68%, 0);
@@ -168,7 +168,7 @@
 	--bg-gradient-to: hsla(162, 62%, 56%, 0);
 	--bg-gradient-pink-from: hsla(162, 62%, 56%, 0.20);
 	--bg-gradient-pink-to: hsla(162, 62%, 56%, 0);
-	--bg-gradient-pink-alt-from: var(--accent-pink);
+	--bg-gradient-pink-alt-from: var(--accent-base);
 	--bg-gradient-pink-alt-to: hsl(160, 40%, 95%);
 	--bg-gradient-red-from: hsla(14, 82%, 68%, 0.22);
 	--bg-gradient-red-to: hsla(14, 82%, 68%, 0);

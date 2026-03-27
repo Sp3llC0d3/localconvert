@@ -5,6 +5,7 @@
 	const categories = $derived([
 		{
 			label: m['pdf_tools.categories.organize'](),
+			color: 'green',
 			tools: [
 				{ href: '/pdf-tools/merge/', icon: GitMergeIcon, name: m['pdf_tools.tools.merge_name'](), desc: m['pdf_tools.tools.merge_desc']() },
 				{ href: '/pdf-tools/split/', icon: ScissorsIcon, name: m['pdf_tools.tools.split_name'](), desc: m['pdf_tools.tools.split_desc']() },
@@ -14,6 +15,7 @@
 		},
 		{
 			label: m['pdf_tools.categories.convert'](),
+			color: 'blue',
 			tools: [
 				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc']() },
 				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc']() },
@@ -21,6 +23,7 @@
 		},
 		{
 			label: m['pdf_tools.categories.optimize'](),
+			color: 'red',
 			tools: [
 				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc']() },
 				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc']() },
@@ -39,8 +42,8 @@
 
 	<!-- Hero -->
 	<div class="flex flex-col items-center text-center gap-4">
-		<div class="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center">
-			<FileTextIcon size={28} color="black" />
+		<div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: var(--accent-green); color: var(--fg-on-accent)">
+			<FileTextIcon size={28} />
 		</div>
 		<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
@@ -60,7 +63,7 @@
 				{#each cat.tools as tool}
 					{@const Icon = tool.icon}
 					<a href={tool.href} class="tool-card">
-						<div class="tool-icon">
+						<div class="tool-icon" style="background: var(--accent-{cat.color}); color: var(--fg-on-accent)">
 							<Icon size={20} />
 						</div>
 						<div class="flex flex-col gap-0.5">
