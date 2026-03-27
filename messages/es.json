@@ -364,7 +364,8 @@
 			"q4": "¿Hay un límite de tamaño de archivo?",
 			"a4": "No hay un límite fijo — depende de la memoria disponible en su dispositivo. Para archivos de vídeo muy grandes, Firefox o Safari suelen manejarlos mejor.",
 			"q5": "¿Necesito instalar algo?",
-			"a5": "No se necesita instalación. LocalConvert funciona directamente en cualquier navegador moderno. También puede instalarlo como PWA desde la barra de direcciones para una experiencia similar a una aplicación."
+			"a5": "No se necesita instalación. LocalConvert funciona directamente en cualquier navegador moderno. También puede instalarlo como PWA desde la barra de direcciones para una experiencia similar a una aplicación.",
+			"label": "Preguntas"
 		}
 	},
 	"pdf_tools": {

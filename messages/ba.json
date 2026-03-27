@@ -364,7 +364,8 @@
 			"q4": "Postoji li ograničenje veličine datoteke?",
 			"a4": "Nema fiksnog ograničenja — ovisi o dostupnoj memoriji vašeg uređaja. Za vrlo velike video datoteke, Firefox ili Safari ih obično bolje obrađuju.",
 			"q5": "Trebam li nešto instalirati?",
-			"a5": "Nije potrebna instalacija. LocalConvert radi direktno u bilo kojem modernom pregledniku. Možete ga i instalirati kao PWA iz adresne trake za iskustvo slično aplikaciji."
+			"a5": "Nije potrebna instalacija. LocalConvert radi direktno u bilo kojem modernom pregledniku. Možete ga i instalirati kao PWA iz adresne trake za iskustvo slično aplikaciji.",
+			"label": "Pitanja"
 		}
 	},
 	"pdf_tools": {

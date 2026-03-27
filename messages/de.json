@@ -364,7 +364,8 @@
 			"q4": "Gibt es ein Dateigrößenlimit?",
 			"a4": "Kein festes Limit — es hängt vom verfügbaren Arbeitsspeicher Ihres Geräts ab. Bei sehr großen Videodateien bieten Firefox oder Safari in der Regel eine bessere Unterstützung.",
 			"q5": "Muss ich etwas installieren?",
-			"a5": "Keine Installation erforderlich. LocalConvert funktioniert direkt in jedem modernen Browser. Sie können es auch als PWA über die Adressleiste installieren, um eine App-ähnliche Erfahrung zu erhalten."
+			"a5": "Keine Installation erforderlich. LocalConvert funktioniert direkt in jedem modernen Browser. Sie können es auch als PWA über die Adressleiste installieren, um eine App-ähnliche Erfahrung zu erhalten.",
+			"label": "Fragen"
 		}
 	},
 	"pdf_tools": {

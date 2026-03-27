@@ -364,7 +364,8 @@
 			"q4": "Apakah ada batas ukuran berkas?",
 			"a4": "Tidak ada batas keras — tergantung memori yang tersedia di perangkat Anda. Untuk berkas video yang sangat besar, Firefox atau Safari biasanya menanganinya lebih baik.",
 			"q5": "Apakah saya perlu menginstal sesuatu?",
-			"a5": "Tidak perlu instalasi. LocalConvert bekerja langsung di browser modern apa pun. Anda juga dapat menginstalnya sebagai PWA dari bilah alamat untuk pengalaman seperti aplikasi."
+			"a5": "Tidak perlu instalasi. LocalConvert bekerja langsung di browser modern apa pun. Anda juga dapat menginstalnya sebagai PWA dari bilah alamat untuk pengalaman seperti aplikasi.",
+			"label": "Pertanyaan"
 		}
 	},
 	"pdf_tools": {

@@ -392,7 +392,8 @@
 			"q4": "Is there a file size limit?",
 			"a4": "No hard limit — it depends on your device's available memory. For very large video files, Firefox or Safari typically handle them better.",
 			"q5": "Do I need to install anything?",
-			"a5": "No installation needed. LocalConvert works directly in any modern browser. You can also install it as a PWA from the address bar for an app-like experience."
+			"a5": "No installation needed. LocalConvert works directly in any modern browser. You can also install it as a PWA from the address bar for an app-like experience.",
+			"label": "Questions"
 		}
 	}
 }

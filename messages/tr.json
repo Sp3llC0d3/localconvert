@@ -364,7 +364,8 @@
 			"q4": "Dosya boyutu sınırı var mı?",
 			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
 			"q5": "Bir şey yüklemem gerekiyor mu?",
-			"a5": "Kurulum gerekmez. LocalConvert herhangi bir modern tarayıcıda doğrudan çalışır. Uygulama benzeri bir deneyim için adres çubuğundan PWA olarak da yükleyebilirsiniz."
+			"a5": "Kurulum gerekmez. LocalConvert herhangi bir modern tarayıcıda doğrudan çalışır. Uygulama benzeri bir deneyim için adres çubuğundan PWA olarak da yükleyebilirsiniz.",
+			"label": "Sorular"
 		}
 	},
 	"pdf_tools": {

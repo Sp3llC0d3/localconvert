@@ -20,7 +20,7 @@
 		RefreshCw,
 		SettingsIcon,
 		SunIcon,
-		UploadIcon,
+		FolderOpen,
 		type Icon as IconType,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
@@ -93,7 +93,7 @@
 			name: m["navbar.upload"](),
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
-			icon: UploadIcon,
+			icon: FolderOpen,
 		},
 		{
 			name: m["navbar.convert"](),

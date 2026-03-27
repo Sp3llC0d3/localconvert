@@ -226,7 +226,7 @@
 <!-- ═══ FAQ ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">Questions</div>
+		<div class="section-label">{m["landing.faq.label"]()}</div>
 		<h2 class="section-headline">{m["landing.faq.title"]()}</h2>
 
 		<div class="faq-list">
