@@ -34,8 +34,8 @@
 		step: [
 			{
 				'@type': 'HowToStep',
-				name: 'Upload your file',
-				text: `Click or drag your ${FROM} file onto the uploader.`,
+				name: 'Select your file',
+				text: `Click or drag your ${FROM} file onto the converter.`,
 			},
 			{
 				'@type': 'HowToStep',
@@ -44,8 +44,8 @@
 			},
 			{
 				'@type': 'HowToStep',
-				name: 'Download the result',
-				text: `Click Convert, then download your ${TO} file instantly.`,
+				name: 'Save the result',
+				text: `Click Convert, then save your ${TO} file to your device instantly.`,
 			},
 		],
 		tool: [{ '@type': 'HowToTool', name: 'LocalConvert' }],
@@ -128,9 +128,9 @@
 	</h2>
 	<ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
 		{#each [
-			{ n: '1', title: `Upload your ${FROM} file`, body: `Click or drag your ${FROM} file onto the upload zone above.` },
+			{ n: '1', title: `Select your ${FROM} file`, body: `Click or drag your ${FROM} file onto the converter above.` },
 			{ n: '2', title: `Convert to ${TO}`, body: `The output format is pre-set to ${toLabel}. Click the convert button to process your file.` },
-			{ n: '3', title: 'Download instantly', body: `Your converted ${TO} file is ready to download — no email, no waiting.` },
+			{ n: '3', title: 'Save instantly', body: `Your converted ${TO} file is ready — save it to your device, no email required.` },
 		] as step}
 			<li class="step-card">
 				<span class="step-num">{step.n}</span>

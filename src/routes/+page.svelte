@@ -152,7 +152,7 @@
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">How it works</div>
+		<div class="section-label">The process</div>
 		<h2 class="section-headline">{m["landing.how_it_works.title"]()}</h2>
 
 		<div class="steps-grid">

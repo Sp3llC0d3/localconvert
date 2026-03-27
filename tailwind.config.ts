@@ -10,7 +10,7 @@ export default {
 				"panel-highlight": "var(--bg-panel-highlight)",
 				separator: "var(--bg-separator)",
 				button: "var(--bg-button)",
-				"panel-alt": "var(--bg-button)",
+				"panel-alt": "var(--bg-panel-alt)",
 				badge: "var(--bg-badge)",
 			},
 			borderColor: {

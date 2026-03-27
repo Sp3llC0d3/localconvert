@@ -26,9 +26,9 @@
 		name: `How to convert to ${info.label}`,
 		description: info.description,
 		step: [
-			{ "@type": "HowToStep", name: "Upload your file", text: `Click or drag your file onto the uploader. Supported formats: ${info.inputFormats.map(f => f.toUpperCase()).join(", ")}.` },
+			{ "@type": "HowToStep", name: "Select your file", text: `Click or drag your file onto the converter. Supported formats: ${info.inputFormats.map(f => f.toUpperCase()).join(", ")}.` },
 			{ "@type": "HowToStep", name: `Select ${info.label}`, text: `Choose ${info.label} as the output format in the converter.` },
-			{ "@type": "HowToStep", name: "Download", text: `Click Convert, then download your ${info.label} file instantly.` },
+			{ "@type": "HowToStep", name: "Save", text: `Click Convert, then save your ${info.label} file to your device instantly.` },
 		],
 		tool: [{ "@type": "HowToTool", name: "LocalConvert" }],
 		totalTime: "PT1M",
@@ -103,7 +103,7 @@
 		{#each [
 			{ n: "1", title: "Choose your file", body: `Click or drag any ${info.inputFormats.slice(0, 3).join(", ").toUpperCase()} file onto the uploader above.` },
 			{ n: "2", title: "Pick " + info.label + " format", body: "Select " + info.label + " from the format dropdown in the converter." },
-			{ n: "3", title: "Download", body: "Hit the convert button, then download your " + info.label + " file instantly." },
+			{ n: "3", title: "Save", body: "Hit the convert button, then save your " + info.label + " file to your device instantly." },
 		] as step}
 			<li class="step-card">
 				<span class="step-num">{step.n}</span>

@@ -109,6 +109,7 @@
 	--bg-gradient-image: linear-gradient(to bottom, var(--bg-gradient-image-from), var(--bg-gradient-image-to) 100%);
 
 	--bg-panel: hsl(0, 0%, 100%);
+	--bg-panel-alt: hsl(38, 12%, 93%);
 	--bg-panel-highlight: hsl(38, 14%, 91%);
 	--bg-separator: hsla(220, 15%, 15%, 0.09);
 	--bg-button: var(--bg-panel-highlight);
@@ -203,6 +204,7 @@
 
 	/* ── Panels — warm charcoal family ── */
 	--bg-panel: hsl(20, 6%, 15%);
+	--bg-panel-alt: hsl(20, 5%, 18%);
 	--bg-panel-highlight: hsl(20, 5%, 20%);
 	--bg-separator: hsl(20, 5%, 24%);
 	--bg-button: hsl(20, 5%, 23%);

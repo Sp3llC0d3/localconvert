@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "上傳",
+		"upload": "選擇",
 		"convert": "轉換",
 		"pdf_tools": "PDF工具",
 		"settings": "設定",
@@ -34,7 +34,7 @@
 				"ready": "就緒",
 				"not_ready": "未就緒",
 				"not_initialized": "未初始化",
-				"downloading": "下載中...",
+				"downloading": "載入工具中...",
 				"initializing": "初始化中...",
 				"unknown": "未知狀態"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "全部轉換",
-			"download_all": "下載全部為 .zip",
+			"download_all": "儲存全部為 .zip",
 			"remove_all": "刪除所有檔案",
 			"set_all_to": "全部設定為",
 			"na": "不適用"
@@ -89,7 +89,7 @@
 			"document_file": "文件檔案",
 			"image_file": "圖片檔案",
 			"convert_file": "轉換此檔案",
-			"download_file": "下載此檔案"
+			"download_file": "儲存至裝置"
 		},
 		"errors": {
 			"cant_convert": "無法轉換此檔案。",
@@ -367,7 +367,7 @@
 			"step1_desc": "拖放或點擊選擇任意圖片、音訊、影片或文件檔案。",
 			"step2_title": "在瀏覽器中轉換",
 			"step2_desc": "一切透過 WebAssembly 在本機執行——無需上傳，無需等待伺服器。",
-			"step3_title": "下載結果",
+			"step3_title": "儲存結果",
 			"step3_desc": "立即取得轉換後的檔案，直接儲存到你的裝置。"
 		},
 		"formats": {

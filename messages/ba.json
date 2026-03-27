@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Učitaj",
+		"upload": "Odaberi",
 		"convert": "Konvertuj",
 		"pdf_tools": "PDF Alati",
 		"settings": "Postavke",
@@ -34,7 +34,7 @@
 				"ready": "spreman",
 				"not_ready": "nije spreman",
 				"not_initialized": "nije inicijaliziran",
-				"downloading": "preuzimam...",
+				"downloading": "učitavam alate...",
 				"initializing": "inicijaliziram...",
 				"unknown": "nepoznat status"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "Konvertuj sve",
-			"download_all": "Preuzmi sve kao .zip",
+			"download_all": "Spremi sve kao .zip",
 			"remove_all": "Ukloni sve datoteke",
 			"set_all_to": "Postavi sve na",
 			"na": "N/A"
@@ -89,7 +89,7 @@
 			"document_file": "Dokument",
 			"image_file": "Slika",
 			"convert_file": "Konvertuj ovu datoteku",
-			"download_file": "Preuzmi ovu datoteku"
+			"download_file": "Spremi na uređaj"
 		},
 		"errors": {
 			"cant_convert": "Ne možemo konvertovati ovu datoteku.",
@@ -339,7 +339,7 @@
 			"step1_desc": "Prevucite ili kliknite da odaberete bilo koju sliku, audio, video ili dokument.",
 			"step2_title": "Konvertovano u Vašem Pregledniku",
 			"step2_desc": "Sve se izvršava lokalno putem WebAssembly tehnologije — bez otpremanja, bez čekanja na servere.",
-			"step3_title": "Preuzmite Rezultat",
+			"step3_title": "Spremi Rezultat",
 			"step3_desc": "Dobijte konvertovanu datoteku odmah, direktno na vaš uređaj."
 		},
 		"formats": {

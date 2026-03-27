@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "上传",
+		"upload": "选择",
 		"convert": "转换",
 		"pdf_tools": "PDF工具",
 		"settings": "设置",
@@ -34,7 +34,7 @@
 				"ready": "就绪",
 				"not_ready": "未就绪",
 				"not_initialized": "未初始化",
-				"downloading": "下载中...",
+				"downloading": "加载工具中...",
 				"initializing": "初始化中...",
 				"unknown": "未知状态"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "全部转换",
-			"download_all": "下载全部为 .zip",
+			"download_all": "保存全部为 .zip",
 			"remove_all": "删除所有文件",
 			"set_all_to": "全部设置为",
 			"na": "不适用"
@@ -89,7 +89,7 @@
 			"document_file": "文档文件",
 			"image_file": "图片文件",
 			"convert_file": "转换此文件",
-			"download_file": "下载此文件"
+			"download_file": "保存到设备"
 		},
 		"errors": {
 			"cant_convert": "无法转换此文件。",
@@ -339,7 +339,7 @@
 			"step1_desc": "拖放或点击选择任意图片、音频、视频或文档文件。",
 			"step2_title": "在浏览器中转换",
 			"step2_desc": "一切通过 WebAssembly 在本地运行——无需上传，无需等待服务器。",
-			"step3_title": "下载结果",
+			"step3_title": "保存结果",
 			"step3_desc": "立即获取转换后的文件，直接保存到你的设备。"
 		},
 		"formats": {
@@ -364,7 +364,7 @@
 			"q5": "我需要安装任何东西吗？",
 			"a5": "无需安装。LocalConvert 可在任何现代浏览器中直接使用。你也可以从地址栏将其安装为 PWA，获得类似应用的体验。"
 		}
-	},
+	},
 	"pdf_tools": {
 		"title": "PDF工具",
 		"subtitle": "所有操作完全在你的浏览器中运行。你的文件永远不会离开你的设备。",

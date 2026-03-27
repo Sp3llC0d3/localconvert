@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "업로드",
+		"upload": "선택",
 		"convert": "변환",
 		"pdf_tools": "PDF 도구",
 		"settings": "설정",
@@ -34,7 +34,7 @@
 				"ready": "준비됨",
 				"not_ready": "준비되지 않음",
 				"not_initialized": "준비 안됨",
-				"downloading": "다운로드 중...",
+				"downloading": "도구 로딩 중...",
 				"initializing": "준비 중...",
 				"unknown": "알 수 없음"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "모두 변환",
-			"download_all": ".zip으로 다운로드",
+			"download_all": ".zip으로 저장",
 			"remove_all": "모든 파일 삭제",
 			"set_all_to": "모두 다음으로 설정",
 			"na": "N/A"
@@ -89,7 +89,7 @@
 			"document_file": "문서 파일",
 			"image_file": "이미지 파일",
 			"convert_file": "파일 변환하기",
-			"download_file": "파일 다운로드"
+			"download_file": "기기에 저장"
 		},
 		"errors": {
 			"cant_convert": "이 파일을 변환할 수 없습니다.",
@@ -367,7 +367,7 @@
 			"step1_desc": "이미지, 오디오, 동영상 또는 문서 파일을 드래그하거나 클릭하여 선택하세요.",
 			"step2_title": "브라우저에서 변환",
 			"step2_desc": "모든 처리가 WebAssembly를 통해 로컬에서 실행됩니다 — 업로드 불필요, 서버 대기 불필요.",
-			"step3_title": "결과 다운로드",
+			"step3_title": "결과 저장",
 			"step3_desc": "변환된 파일을 즉시 기기로 직접 다운로드하세요."
 		},
 		"formats": {

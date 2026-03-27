@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Carica",
+		"upload": "Seleziona",
 		"convert": "Converti",
 		"pdf_tools": "Strumenti PDF",
 		"settings": "Impostazioni",
@@ -34,7 +34,7 @@
 				"ready": "pronto",
 				"not_ready": "non pronto",
 				"not_initialized": "non inizializzato",
-				"downloading": "download in corso...",
+				"downloading": "caricamento strumenti...",
 				"initializing": "inizializzazione in corso...",
 				"unknown": "stato sconosciuto"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "Converti tutti",
-			"download_all": "Scarica tutti come .zip",
+			"download_all": "Salva tutto come .zip",
 			"remove_all": "Rimuovi tutti i file",
 			"set_all_to": "Imposta tutti a",
 			"na": "N/D"
@@ -89,7 +89,7 @@
 			"document_file": "File documento",
 			"image_file": "File immagine",
 			"convert_file": "Converti questo file",
-			"download_file": "Scarica questo file"
+			"download_file": "Salva sul dispositivo"
 		},
 		"errors": {
 			"cant_convert": "Non è possibile convertire questo file.",
@@ -339,7 +339,7 @@
 			"step1_desc": "Trascini o clicchi per selezionare qualsiasi file immagine, audio, video o documento.",
 			"step2_title": "Convertito nel Suo Browser",
 			"step2_desc": "Tutto viene eseguito in locale tramite WebAssembly — nessun upload, nessuna attesa su server.",
-			"step3_title": "Scarichi il Risultato",
+			"step3_title": "Salvi il Risultato",
 			"step3_desc": "Riceva il file convertito immediatamente, direttamente sul Suo dispositivo."
 		},
 		"formats": {

@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "رفع",
+		"upload": "اختر",
 		"convert": "تحويل",
 		"pdf_tools": "⁧أدوات ⁦PDF⁩⁩",
 		"settings": "الإعدادات",
@@ -34,7 +34,7 @@
 				"ready": "جاهز",
 				"not_ready": "غير جاهز",
 				"not_initialized": "لم يتم التهيئة",
-				"downloading": "جارٍ التنزيل...",
+				"downloading": "جارٍ تحميل الأدوات...",
 				"initializing": "جارٍ التهيئة...",
 				"unknown": "حالة غير معروفة"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "تحويل الكل",
-			"download_all": "⁧تنزيل الكل كملف ⁦.zip⁩⁩",
+			"download_all": "⁧حفظ الكل كملف ⁦.zip⁩⁩",
 			"remove_all": "إزالة جميع الملفات",
 			"set_all_to": "تعيين الكل إلى",
 			"na": "غير متاح"
@@ -89,7 +89,7 @@
 			"document_file": "ملف مستند",
 			"image_file": "ملف صورة",
 			"convert_file": "تحويل هذا الملف",
-			"download_file": "تنزيل هذا الملف"
+			"download_file": "حفظ على الجهاز"
 		},
 		"errors": {
 			"cant_convert": "تعذّر تحويل هذا الملف.",
@@ -367,7 +367,7 @@
 			"step1_desc": "اسحب أو انقر لتحديد أي ملف صورة أو صوت أو فيديو أو مستند.",
 			"step2_title": "التحويل في متصفحك",
 			"step2_desc": "⁧يعمل كل شيء محليًا عبر ⁦WebAssembly⁩ — بدون رفع ملفات ودون انتظار الخوادم.⁩",
-			"step3_title": "تنزيل النتيجة",
+			"step3_title": "احفظ النتيجة",
 			"step3_desc": "احصل على ملفك المحوّل فورًا، مباشرةً على جهازك."
 		},
 		"formats": {

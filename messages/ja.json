@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "アップロード",
+		"upload": "選択",
 		"convert": "変換",
 		"pdf_tools": "PDFツール",
 		"settings": "設定",
@@ -34,7 +34,7 @@
 				"ready": "準備完了",
 				"not_ready": "未準備",
 				"not_initialized": "未初期化",
-				"downloading": "ダウンロード中...",
+				"downloading": "ツールを読み込み中...",
 				"initializing": "初期化中...",
 				"unknown": "不明なステータス"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "すべて変換",
-			"download_all": "すべてを.zipでダウンロード",
+			"download_all": "すべてを.zipで保存",
 			"remove_all": "すべてのファイルを削除",
 			"set_all_to": "すべてを設定",
 			"na": "該当なし"
@@ -89,7 +89,7 @@
 			"document_file": "ドキュメントファイル",
 			"image_file": "画像ファイル",
 			"convert_file": "このファイルを変換",
-			"download_file": "このファイルをダウンロード"
+			"download_file": "デバイスに保存"
 		},
 		"errors": {
 			"cant_convert": "このファイルを変換できません。",
@@ -367,7 +367,7 @@
 			"step1_desc": "画像・音声・動画・ドキュメントファイルをドロップまたはクリックして選択してください。",
 			"step2_title": "ブラウザ内で変換",
 			"step2_desc": "すべてWebAssemblyによりローカルで実行されます — アップロード不要、サーバー待ち不要。",
-			"step3_title": "結果をダウンロード",
+			"step3_title": "結果を保存",
 			"step3_desc": "変換されたファイルを即座にお使いのデバイスに直接取得できます。"
 		},
 		"formats": {

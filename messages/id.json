@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Unggah",
+		"upload": "Pilih",
 		"convert": "Konversi",
 		"pdf_tools": "Alat PDF",
 		"settings": "Pengaturan",
@@ -34,7 +34,7 @@
 				"ready": "siap",
 				"not_ready": "belum siap",
 				"not_initialized": "tidak terinisialisasi",
-				"downloading": "mengunduh...",
+				"downloading": "memuat alat...",
 				"initializing": "menginisialisasi...",
 				"unknown": "status tidak diketahui"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "Konversi semua",
-			"download_all": "Unduh semua sebagai .zip",
+			"download_all": "Simpan semua sebagai .zip",
 			"remove_all": "Hapus semua berkas",
 			"set_all_to": "Atur semua ke",
 			"na": "N/A"
@@ -89,7 +89,7 @@
 			"document_file": "Berkas dokumen",
 			"image_file": "Berkas gambar",
 			"convert_file": "Konversi berkas ini",
-			"download_file": "Unduh berkas ini"
+			"download_file": "Simpan ke perangkat"
 		},
 		"errors": {
 			"cant_convert": "Kami tidak dapat mengonversi berkas ini.",
@@ -339,7 +339,7 @@
 			"step1_desc": "Jatuhkan atau klik untuk memilih berkas gambar, audio, video, atau dokumen apa pun.",
 			"step2_title": "Dikonversi di Browser Anda",
 			"step2_desc": "Semuanya berjalan secara lokal melalui WebAssembly — tanpa unggahan, tanpa menunggu server.",
-			"step3_title": "Unduh Hasilnya",
+			"step3_title": "Simpan Hasilnya",
 			"step3_desc": "Dapatkan berkas hasil konversi Anda seketika, langsung ke perangkat Anda."
 		},
 		"formats": {

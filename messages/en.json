@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Upload",
+		"upload": "Select",
 		"convert": "Convert",
 		"pdf_tools": "PDF Tools",
 		"settings": "Settings",
@@ -34,7 +34,7 @@
 				"ready": "ready",
 				"not_ready": "not ready",
 				"not_initialized": "not initialized",
-				"downloading": "downloading...",
+				"downloading": "loading tools...",
 				"initializing": "initializing...",
 				"unknown": "unknown status"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "Convert all",
-			"download_all": "Download all as .zip",
+			"download_all": "Save all as .zip",
 			"remove_all": "Remove all files",
 			"set_all_to": "Set all to",
 			"na": "N/A"
@@ -89,7 +89,7 @@
 			"document_file": "Document file",
 			"image_file": "Image file",
 			"convert_file": "Convert this file",
-			"download_file": "Download this file"
+			"download_file": "Save to device"
 		},
 		"errors": {
 			"cant_convert": "We can't convert this file.",
@@ -115,7 +115,7 @@
 			"pdf_redirect_button": "Open PDF Tools",
 			"format_output_only": "This format can currently only be used as output (converted to), not as input.",
 			"vertd_not_found": "The video converter could not be initialized. Please refresh the page and try again.",
-			"worker_downloading": "The {type} converter is currently being initialized, please wait a few moments.",
+			"worker_downloading": "The {type} converter is loading, please wait a few moments.",
 			"worker_error": "The {type} converter had an error during initialization, please try again later.",
 			"worker_timeout": "The {type} converter is taking longer than expected to initialize, please wait a few more moments or refresh the page.",
 			"audio": "audio",
@@ -148,7 +148,7 @@
 			"default_format": "Default conversion format",
 			"default_format_enable": "Enable",
 			"default_format_disable": "Disable",
-			"default_format_description": "This will change the default format selected when you upload a file of this file type.",
+			"default_format_description": "This will change the default format selected when you select a file of this file type.",
 			"default_format_image": "Images",
 			"default_format_video": "Videos",
 			"default_format_audio": "Audio",
@@ -196,7 +196,7 @@
 			"opt_in": "Opt-in",
 			"opt_out": "Opt-out",
 			"cache_title": "Cache management",
-			"cache_description": "We cache the converter files on your browser so you don't have to re-download them every time, improving performance and reducing data usage.",
+			"cache_description": "We cache the converter files on your browser so you don't have to reload them every time, improving performance and reducing data usage.",
 			"refresh_cache": "Refresh cache",
 			"clear_cache": "Clear cache",
 			"files_cached": "{size} ({count} files)",
@@ -315,7 +315,7 @@
 		},
 		"local_storage": {
 			"title": "Local Storage",
-			"description": "We use your browser's local storage to save your settings. No personal data is stored or transmitted.<br/><br/>The WebAssembly versions of the conversion tools we use (FFmpeg, ImageMagick, Pandoc) are also stored locally on your browser when you first visit the website, so you don't need to redownload them each visit. No personal data is stored or transmitted. You may view or delete this data at any time in the \"Privacy & data\" section in [settings_link]settings[/settings_link]."
+			"description": "We use your browser's local storage to save your settings. No personal data is stored or transmitted.<br/><br/>The WebAssembly versions of the conversion tools we use (FFmpeg, ImageMagick, Pandoc) are also stored locally on your browser when you first visit the website, so you don't need to reload them each visit. No personal data is stored or transmitted. You may view or delete this data at any time in the \"Privacy & data\" section in [settings_link]settings[/settings_link]."
 		},
 		"contact": {
 			"title": "Contact",
@@ -356,7 +356,7 @@
 	},
 	"landing": {
 		"pills": {
-			"no_uploads": "No Server Uploads",
+			"no_uploads": "No server uploads",
 			"gpu": "GPU Accelerated",
 			"open_source": "Free & Open Source",
 			"no_limit": "No File Size Limit"
@@ -367,7 +367,7 @@
 			"step1_desc": "Drop or click to select any image, audio, video, or document file.",
 			"step2_title": "Converted in Your Browser",
 			"step2_desc": "Everything runs locally via WebAssembly — no uploads, no waiting on servers.",
-			"step3_title": "Download the Result",
+			"step3_title": "Save the Result",
 			"step3_desc": "Get your converted file instantly, straight to your device."
 		},
 		"formats": {

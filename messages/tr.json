@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Yükle",
+		"upload": "Seç",
 		"convert": "Dönüştür",
 		"pdf_tools": "PDF Araçları",
 		"settings": "Ayarlar",
@@ -34,7 +34,7 @@
 				"ready": "hazır",
 				"not_ready": "hazır değil",
 				"not_initialized": "başlatılmamış",
-				"downloading": "indiriliyor...",
+				"downloading": "araçlar yükleniyor...",
 				"initializing": "başlatılıyor...",
 				"unknown": "bilinmeyen durum"
 			},
@@ -68,7 +68,7 @@
 		},
 		"panel": {
 			"convert_all": "Tümünü dönüştür",
-			"download_all": "Tümünü .zip olarak indir",
+			"download_all": "Tümünü .zip olarak kaydet",
 			"remove_all": "Tüm dosyaları kaldır",
 			"set_all_to": "Tümünü ayarla",
 			"na": "N/A"
@@ -89,7 +89,7 @@
 			"document_file": "Belge dosyası",
 			"image_file": "Görsel dosyası",
 			"convert_file": "Bu dosyayı dönüştür",
-			"download_file": "Bu dosyayı indir"
+			"download_file": "Cihaza kaydet"
 		},
 		"errors": {
 			"cant_convert": "Bu dosyayı dönüştüremiyoruz.",
@@ -339,7 +339,7 @@
 			"step1_desc": "Herhangi bir görsel, ses, video veya belge dosyasını sürükleyip bırakın ya da tıklayarak seçin.",
 			"step2_title": "Tarayıcınızda Dönüştürülür",
 			"step2_desc": "Her şey WebAssembly aracılığıyla yerel olarak çalışır — yükleme yok, sunucu bekleme süresi yok.",
-			"step3_title": "Sonucu İndirin",
+			"step3_title": "Sonucu Kaydedin",
 			"step3_desc": "Dönüştürülen dosyanızı anında, doğrudan cihazınıza alın."
 		},
 		"formats": {
