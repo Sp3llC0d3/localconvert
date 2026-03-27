@@ -255,11 +255,23 @@
 		processing = false;
 	}
 
+	function onKeyDown(e: KeyboardEvent) {
+		if ((e.target as HTMLElement)?.tagName === 'INPUT') return;
+		if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
+			e.preventDefault();
+			if (placed) { placed = false; }
+		} else if (e.key === 'Escape') {
+			if (placed) { placed = false; }
+		}
+	}
+
 	function download() {
 		if (!resultBytes) return;
 		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_signed.pdf'));
 	}
 </script>
+
+<svelte:window onkeydown={onKeyDown} />
 
 <svelte:head>
 	<title>Sign PDF — LocalConvert</title>

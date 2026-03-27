@@ -4,7 +4,8 @@
 	import { editPdf, type PdfEdit, type TextEdit } from '$lib/pdf/edit';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
-	import { EditIcon, Trash2Icon } from 'lucide-svelte';
+	import { EditIcon, Trash2Icon, Undo2Icon, Redo2Icon } from 'lucide-svelte';
+	import { createHistory } from '$lib/util/history.svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -34,6 +35,23 @@
 	let newText = $state('Type here');
 	let newFontSize = $state(14);
 	let newColor = $state('#000000');
+
+	// Undo/redo
+	const history = createHistory<PlacedText[]>([]);
+
+	function pushHistory() {
+		history.push(elements.map((e) => ({ ...e })));
+	}
+
+	function doUndo() {
+		const state = history.undo();
+		if (state) { elements = state; selectedId = null; }
+	}
+
+	function doRedo() {
+		const state = history.redo();
+		if (state) { elements = state; selectedId = null; }
+	}
 
 	// Ghost preview (follows cursor before placing)
 	let ghostPos = $state({ x: 0, y: 0 });
@@ -157,6 +175,7 @@
 			color: newColor,
 		}];
 		selectedId = elements[elements.length - 1].id;
+		pushHistory();
 	}
 
 	// Element drag
@@ -174,12 +193,44 @@
 	}
 
 	function onPageMouseUp() {
-		dragging = null;
+		if (dragging) {
+			dragging = null;
+			pushHistory();
+		}
 	}
 
 	function removeElement(id: string) {
 		elements = elements.filter((el) => el.id !== id);
 		if (selectedId === id) selectedId = null;
+		pushHistory();
+	}
+
+	// Keyboard shortcuts
+	function onKeyDown(e: KeyboardEvent) {
+		// Ignore if typing in an input
+		if ((e.target as HTMLElement)?.tagName === 'INPUT') return;
+
+		if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+			e.preventDefault();
+			doUndo();
+		} else if ((e.ctrlKey || e.metaKey) && (e.key === 'Z' || (e.key === 'z' && e.shiftKey))) {
+			e.preventDefault();
+			doRedo();
+		} else if (e.key === 'Escape') {
+			selectedId = null;
+		} else if ((e.key === 'Delete' || e.key === 'Backspace') && selectedId) {
+			e.preventDefault();
+			removeElement(selectedId);
+		} else if (selectedId && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+			e.preventDefault();
+			const el = elements.find((el) => el.id === selectedId);
+			if (!el) return;
+			const step = e.shiftKey ? 10 : 1;
+			if (e.key === 'ArrowUp') el.y += step;    // PDF Y increases upward
+			if (e.key === 'ArrowDown') el.y -= step;
+			if (e.key === 'ArrowLeft') el.x -= step;
+			if (e.key === 'ArrowRight') el.x += step;
+		}
 	}
 
 	async function apply() {
@@ -212,6 +263,8 @@
 	}
 </script>
 
+<svelte:window onkeydown={onKeyDown} />
+
 <svelte:head>
 	<title>Edit PDF — LocalConvert</title>
 	<meta name="description" content="Click anywhere on a PDF page to add text. Drag to reposition. Free, private, no uploads." />
@@ -242,7 +295,16 @@
 			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
 			<span class="text-xs text-muted">pt</span>
 			<input type="color" bind:value={newColor} class="color-input" aria-label="Text color" />
+			<div class="hist-btns">
+				<button class="hist-btn" onclick={doUndo} disabled={!history.canUndo} aria-label="Undo (Ctrl+Z)">
+					<Undo2Icon size={16} />
+				</button>
+				<button class="hist-btn" onclick={doRedo} disabled={!history.canRedo} aria-label="Redo (Ctrl+Shift+Z)">
+					<Redo2Icon size={16} />
+				</button>
+			</div>
 		</div>
+		<p class="text-xs text-muted">Ctrl+Z undo · Del remove · Arrow keys nudge · Esc deselect</p>
 
 		<!-- Page selector -->
 		{#if thumbs.length > 1}
@@ -346,6 +408,15 @@
 	}
 	.size-input:focus { outline: 1.5px solid var(--accent); }
 	.color-input { width: 2rem; height: 2rem; border-radius: 0.375rem; cursor: pointer; border: 1px solid var(--bg-separator); padding: 0; }
+	.hist-btns { display: flex; gap: 0.25rem; margin-left: auto; }
+	.hist-btn {
+		display: flex; align-items: center; justify-content: center;
+		width: 2rem; height: 2rem; border-radius: 0.375rem;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel));
+		cursor: pointer; color: inherit; transition: background 0.1s;
+	}
+	.hist-btn:hover:not(:disabled) { background: var(--bg-panel-highlight); }
+	.hist-btn:disabled { opacity: 0.3; cursor: default; }
 
 	/* Page workspace */
 	.page-workspace { display: flex; flex-direction: column; align-items: center; }
