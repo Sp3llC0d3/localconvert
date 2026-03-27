@@ -315,7 +315,10 @@
 		{/each}
 
 		<!-- Tools dropdown -->
-		<div class="relative flex" bind:this={toolsMenuContainer}>
+		<div
+			bind:this={toolsMenuContainer}
+			class="nav-link-wrap"
+		>
 			<button
 				bind:this={links[items.length]}
 				onclick={() => { showToolsMenu = !showToolsMenu; showLangPicker = false; }}
@@ -420,6 +423,22 @@
 </div>
 
 <style>
+	/* ── Nav link wrapper (for Tools dropdown container) ── */
+	.nav-link-wrap {
+		display: flex;
+		flex: 1;
+		min-width: 0;
+		height: 100%;
+		position: relative;
+	}
+
+	@media (min-width: 768px) {
+		.nav-link-wrap {
+			min-width: 5.5rem;
+			flex: 1 1 auto;
+		}
+	}
+
 	/* ── Nav links ── */
 	.nav-link {
 		display: flex;
