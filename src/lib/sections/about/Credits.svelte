@@ -9,9 +9,9 @@
 <Panel class="flex flex-col gap-3 p-6">
 	<h2 class="text-2xl font-bold flex items-center">
 		<div
-			class="rounded-full bg-accent-green p-2 inline-block mr-3 w-10 h-10"
+			class="rounded-full bg-accent p-2 inline-block mr-3 w-10 h-10 text-on-accent"
 		>
-			<HeartIcon color="black" />
+			<HeartIcon />
 		</div>
 		{m["about.credits.title"]()}
 	</h2>

@@ -14,9 +14,9 @@
 <Panel class="flex flex-col gap-4 p-6">
 	<h2 class="text-2xl font-bold flex items-center">
 		<div
-			class="rounded-full bg-accent-purple p-2 inline-block mr-3 w-10 h-10"
+			class="rounded-full bg-accent p-2 inline-block mr-3 w-10 h-10 text-on-accent"
 		>
-			<LinkIcon color="black" />
+			<LinkIcon />
 		</div>
 		{m["about.resources.title"]()}
 	</h2>
