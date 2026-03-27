@@ -196,14 +196,15 @@
 	function onPageClick(e: MouseEvent) {
 		if (dragging || !hasSignature) return;
 		const pos = getRelPos(e);
-		sigDisplayX = Math.max(0, pos.x - sigDisplayW / 2);
-		sigDisplayY = Math.max(0, pos.y - sigDisplayH / 2);
+		sigDisplayX = Math.max(0, Math.min(displayW - sigDisplayW, pos.x - sigDisplayW / 2));
+		sigDisplayY = Math.max(0, Math.min(displayH - sigDisplayH, pos.y - sigDisplayH / 2));
 		placed = true;
 		showGhost = false;
 	}
 
-	function onSigPointerDown(e: MouseEvent) {
+	function onSigPointerDown(e: MouseEvent | TouchEvent) {
 		e.stopPropagation();
+		if ('touches' in e) e.preventDefault();
 		const pos = getRelPos(e);
 		dragging = { offsetX: pos.x - sigDisplayX, offsetY: pos.y - sigDisplayY };
 	}
@@ -361,6 +362,7 @@
 								class="sig-placed"
 								style="left: {sigDisplayX}px; top: {sigDisplayY}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
 								onmousedown={onSigPointerDown}
+								ontouchstart={onSigPointerDown}
 								draggable="false"
 							/>
 						{/if}

@@ -2,6 +2,7 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { SmileIcon } from 'lucide-svelte';
+	import { onDestroy } from 'svelte';
 
 	let files = $state<File[]>([]);
 	let topText = $state('');
@@ -36,6 +37,8 @@
 			rafId = null;
 		});
 	});
+
+	onDestroy(() => { if (rafId !== null) cancelAnimationFrame(rafId); });
 
 	function drawMemeText(ctx: CanvasRenderingContext2D, text: string, y: number, maxWidth: number) {
 		const upper = text.toUpperCase();

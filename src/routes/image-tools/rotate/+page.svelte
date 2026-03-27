@@ -2,6 +2,7 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { RotateCwIcon } from 'lucide-svelte';
+	import { onDestroy } from 'svelte';
 	import type { RotationAngle } from '$lib/image/rotate';
 
 	let files = $state<File[]>([]);
@@ -35,6 +36,8 @@
 			rafId = null;
 		});
 	});
+
+	onDestroy(() => { if (rafId !== null) cancelAnimationFrame(rafId); });
 
 	function drawPreview() {
 		if (!previewCanvas || !imgEl) return;

@@ -2,6 +2,7 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { DropletIcon } from 'lucide-svelte';
+	import { onDestroy } from 'svelte';
 
 	let files = $state<File[]>([]);
 	let text = $state('CONFIDENTIAL');
@@ -38,6 +39,8 @@
 			rafId = null;
 		});
 	});
+
+	onDestroy(() => { if (rafId !== null) cancelAnimationFrame(rafId); });
 
 	function drawPreview() {
 		if (!previewCanvas || !imgEl) return;
