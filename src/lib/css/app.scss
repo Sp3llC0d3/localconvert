@@ -252,7 +252,7 @@ body {
 }
 
 .selected {
-	@apply bg-accent-purple text-on-accent;
+	@apply bg-accent !text-on-accent;
 }
 
 @layer components {
@@ -270,7 +270,7 @@ body {
 	}
 
 	.btn.highlight {
-		@apply bg-accent text-on-accent;
+		@apply bg-accent !text-on-accent;
 		box-shadow: 0 2px 16px hsla(162, 65%, 35%, 0.32);
 	}
 
