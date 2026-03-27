@@ -141,7 +141,7 @@
 					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle, arrow to download</p>
+			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle, <span style="color: var(--accent)">●</span> to save single page</p>
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={doSplit}>

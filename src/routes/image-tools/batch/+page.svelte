@@ -37,6 +37,8 @@
 
 	async function applyAll() {
 		if (files.length === 0) { error = 'Add images first.'; return; }
+		if (operation === 'meme' && !memeTop.trim() && !memeBottom.trim()) { error = 'Enter at least one line of text.'; return; }
+		if (operation === 'watermark' && !wmText.trim()) { error = 'Enter watermark text.'; return; }
 		error = '';
 		processing = true;
 		progress = 0;
