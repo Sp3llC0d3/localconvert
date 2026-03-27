@@ -54,7 +54,7 @@
 		);
 
 		// Draw crop border
-		ctx.strokeStyle = 'var(--accent, #0F6E56)';
+		ctx.strokeStyle = '#0F6E56';
 		ctx.lineWidth = 2;
 		ctx.setLineDash([6, 3]);
 		ctx.strokeRect(crop.x * scale, crop.y * scale, crop.width * scale, crop.height * scale);
@@ -66,21 +66,30 @@
 		drawPreview();
 	});
 
-	function onMouseDown(e: MouseEvent) {
+	function getPointerPos(e: MouseEvent | TouchEvent): { clientX: number; clientY: number } {
+		if ('touches' in e && e.touches.length > 0) return e.touches[0];
+		return e as MouseEvent;
+	}
+
+	function onPointerDown(e: MouseEvent | TouchEvent) {
 		if (!canvasEl) return;
+		if ('touches' in e) e.preventDefault();
+		const pos = getPointerPos(e);
 		const rect = canvasEl.getBoundingClientRect();
 		dragStart = {
-			x: (e.clientX - rect.left) / scale,
-			y: (e.clientY - rect.top) / scale,
+			x: (pos.clientX - rect.left) / scale,
+			y: (pos.clientY - rect.top) / scale,
 		};
 		dragging = true;
 	}
 
-	function onMouseMove(e: MouseEvent) {
+	function onPointerMove(e: MouseEvent | TouchEvent) {
 		if (!dragging || !canvasEl || !imgEl) return;
+		if ('touches' in e) e.preventDefault();
+		const pos = getPointerPos(e);
 		const rect = canvasEl.getBoundingClientRect();
-		const mx = Math.max(0, Math.min(imgEl.width, (e.clientX - rect.left) / scale));
-		const my = Math.max(0, Math.min(imgEl.height, (e.clientY - rect.top) / scale));
+		const mx = Math.max(0, Math.min(imgEl.width, (pos.clientX - rect.left) / scale));
+		const my = Math.max(0, Math.min(imgEl.height, (pos.clientY - rect.top) / scale));
 
 		crop = {
 			x: Math.round(Math.min(dragStart.x, mx)),
@@ -90,7 +99,7 @@
 		};
 	}
 
-	function onMouseUp() {
+	function onPointerUp() {
 		dragging = false;
 	}
 
@@ -139,10 +148,15 @@
 			<canvas
 				bind:this={canvasEl}
 				class="crop-canvas"
-				onmousedown={onMouseDown}
-				onmousemove={onMouseMove}
-				onmouseup={onMouseUp}
-				onmouseleave={onMouseUp}
+				aria-label="Image crop selection"
+				onmousedown={onPointerDown}
+				onmousemove={onPointerMove}
+				onmouseup={onPointerUp}
+				onmouseleave={onPointerUp}
+				ontouchstart={onPointerDown}
+				ontouchmove={onPointerMove}
+				ontouchend={onPointerUp}
+				ontouchcancel={onPointerUp}
 			></canvas>
 			<p class="text-xs text-muted mt-1">Click and drag to select crop area — {crop.width} × {crop.height} px</p>
 		</div>
@@ -168,6 +182,6 @@
 	.tool-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
 	.tool-header { @apply flex items-center gap-3; }
 	.canvas-wrap { @apply flex flex-col items-center; }
-	.crop-canvas { @apply rounded-xl cursor-crosshair max-w-full; border: 1px solid var(--bg-separator); }
+	.crop-canvas { @apply rounded-xl cursor-crosshair max-w-full; border: 1px solid var(--bg-separator); touch-action: none; }
 	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
 </style>

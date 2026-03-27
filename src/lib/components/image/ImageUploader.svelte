@@ -18,7 +18,8 @@
 
 	function processFiles(raw: FileList | null) {
 		if (!raw) return;
-		const arr = Array.from(raw);
+		const arr = Array.from(raw).filter((f) => f.type.startsWith('image/'));
+		if (arr.length === 0) return;
 		if (multiple) {
 			files = [...files, ...arr];
 		} else {

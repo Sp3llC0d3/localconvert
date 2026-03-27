@@ -40,10 +40,10 @@ export async function editPdf(
 	const bytes = await file.arrayBuffer();
 	const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
 	const page = doc.getPage(pageIndex);
+	const font = await doc.embedFont(StandardFonts.Helvetica);
 
 	for (const edit of edits) {
 		if (edit.type === 'text') {
-			const font = await doc.embedFont(StandardFonts.Helvetica);
 			page.drawText(edit.text, {
 				x: edit.x,
 				y: edit.y,

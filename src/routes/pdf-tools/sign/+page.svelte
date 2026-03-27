@@ -60,6 +60,7 @@
 	// Drawing handlers
 	function startDraw(e: MouseEvent | TouchEvent) {
 		if (!sigCanvas) return;
+		if ('touches' in e) e.preventDefault();
 		drawing = true;
 		const ctx = sigCanvas.getContext('2d')!;
 		const rect = sigCanvas.getBoundingClientRect();

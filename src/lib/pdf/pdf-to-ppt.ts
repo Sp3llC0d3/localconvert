@@ -29,6 +29,8 @@ export async function pdfToPpt(
 		await page.render({ canvasContext: ctx, viewport }).promise;
 
 		const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+		canvas.width = 0;
+		canvas.height = 0;
 
 		const slide = pres.addSlide();
 		slide.addImage({
