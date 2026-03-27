@@ -370,7 +370,9 @@
 			"edit_name": "Edit PDF",
 			"edit_desc": "Add text to any page of a PDF",
 			"password_name": "Password Protect",
-			"password_desc": "Encrypt a PDF with a password and set permissions"
+			"password_desc": "Encrypt a PDF with a password and set permissions",
+			"unlock_name": "Unlock PDF",
+			"unlock_desc": "Remove password protection from a PDF"
 		}
 	},
 	"image_tools": {

@@ -5,7 +5,7 @@
 	import { splitPdf, splitAllPages } from '$lib/pdf/split';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, downloadBlob, formatFileSize } from '$lib/pdf/utils';
-	import { ScissorsIcon, XIcon } from 'lucide-svelte';
+	import { ScissorsIcon, XIcon, DownloadIcon } from 'lucide-svelte';
 
 	let files = $state<File[]>([]);
 	let thumbs = $state<string[]>([]);
@@ -39,6 +39,16 @@
 		const s = new Set(selectedPages);
 		if (s.has(i)) s.delete(i); else s.add(i);
 		selectedPages = s;
+	}
+
+	async function downloadSinglePage(pageIndex: number) {
+		try {
+			const bytes = await splitPdf(files[0], [pageIndex]);
+			const baseName = files[0].name.replace(/\.pdf$/i, '');
+			downloadPdf(bytes, `${baseName}_page${pageIndex + 1}.pdf`);
+		} catch {
+			error = 'Failed to extract page.';
+		}
 	}
 
 	async function doSplit() {
@@ -114,15 +124,24 @@
 		{:else if thumbs.length > 0 && mode === 'select'}
 			<div class="thumb-grid">
 				{#each thumbs as thumb, i}
-					<PdfPageThumbnail
-						src={thumb}
-						pageNum={i + 1}
-						selected={selectedPages.has(i)}
-						onclick={() => togglePage(i)}
-					/>
+					<div class="thumb-wrap">
+						<PdfPageThumbnail
+							src={thumb}
+							pageNum={i + 1}
+							selected={selectedPages.has(i)}
+							onclick={() => togglePage(i)}
+						/>
+						<button
+							class="page-dl-btn"
+							onclick={(e) => { e.stopPropagation(); downloadSinglePage(i); }}
+							aria-label="Download page {i + 1}"
+						>
+							<DownloadIcon size={12} />
+						</button>
+					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected</p>
+			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle, arrow to download</p>
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={doSplit}>
@@ -139,4 +158,15 @@
 	.pdf-header { @apply flex items-center gap-3; }
 	.icon-btn { @apply flex items-center px-3 py-1.5 rounded-lg text-muted hover:bg-separator transition-colors text-sm; }
 	.thumb-grid { @apply grid gap-3; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+	.thumb-wrap { position: relative; }
+	.page-dl-btn {
+		position: absolute; bottom: 4px; right: 4px; z-index: 10;
+		display: flex; align-items: center; justify-content: center;
+		width: 22px; height: 22px; border-radius: 50%;
+		background: var(--accent); color: var(--fg-on-accent);
+		border: none; cursor: pointer; opacity: 0.7;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		transition: opacity 0.15s;
+	}
+	.page-dl-btn:hover { opacity: 1; }
 </style>

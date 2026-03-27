@@ -416,7 +416,9 @@
 			"edit_name": "Edit PDF",
 			"edit_desc": "Tambahkan teks ke halaman mana pun dari PDF",
 			"password_name": "Lindungi dengan Kata Sandi",
-			"password_desc": "Enkripsi PDF dengan kata sandi dan atur izin"
+			"password_desc": "Enkripsi PDF dengan kata sandi dan atur izin",
+			"unlock_name": "Buka Kunci PDF",
+			"unlock_desc": "Hapus proteksi kata sandi dari PDF"
 		}
 	},
 	"image_tools": {

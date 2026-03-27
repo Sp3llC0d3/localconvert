@@ -373,7 +373,9 @@
 			"edit_name": "PDF 편집",
 			"edit_desc": "PDF의 원하는 페이지에 텍스트 추가",
 			"password_name": "비밀번호 보호",
-			"password_desc": "PDF를 비밀번호로 암호화하고 권한을 설정"
+			"password_desc": "PDF를 비밀번호로 암호화하고 권한을 설정",
+			"unlock_name": "PDF 잠금 해제",
+			"unlock_desc": "PDF에서 비밀번호 보호 제거"
 		}
 	},
 	"landing": {

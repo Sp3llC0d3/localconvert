@@ -416,7 +416,9 @@
 			"edit_name": "Modifier le PDF",
 			"edit_desc": "Ajouter du texte sur n'importe quelle page d'un PDF",
 			"password_name": "Protéger par mot de passe",
-			"password_desc": "Chiffrer un PDF avec un mot de passe et définir les autorisations"
+			"password_desc": "Chiffrer un PDF avec un mot de passe et définir les autorisations",
+			"unlock_name": "Déverrouiller le PDF",
+			"unlock_desc": "Supprimer la protection par mot de passe d'un PDF"
 		}
 	},
 	"image_tools": {

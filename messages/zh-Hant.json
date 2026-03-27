@@ -373,7 +373,9 @@
 			"edit_name": "編輯 PDF",
 			"edit_desc": "在 PDF 的任意頁面新增文字",
 			"password_name": "密碼保護",
-			"password_desc": "使用密碼加密 PDF 並設定權限"
+			"password_desc": "使用密碼加密 PDF 並設定權限",
+			"unlock_name": "解鎖 PDF",
+			"unlock_desc": "移除 PDF 的密碼保護"
 		}
 	},
 	"landing": {

@@ -373,7 +373,9 @@
 			"edit_name": "PDFの編集",
 			"edit_desc": "PDFの任意のページにテキストを追加",
 			"password_name": "パスワード保護",
-			"password_desc": "PDFをパスワードで暗号化し、アクセス権限を設定"
+			"password_desc": "PDFをパスワードで暗号化し、アクセス権限を設定",
+			"unlock_name": "PDFのロック解除",
+			"unlock_desc": "PDFのパスワード保護を解除"
 		}
 	},
 	"landing": {

@@ -416,7 +416,9 @@
 			"edit_name": "PDF bearbeiten",
 			"edit_desc": "Text auf jeder Seite einer PDF hinzufügen",
 			"password_name": "Passwortschutz",
-			"password_desc": "PDF mit Passwort verschlüsseln und Berechtigungen festlegen"
+			"password_desc": "PDF mit Passwort verschlüsseln und Berechtigungen festlegen",
+			"unlock_name": "PDF entsperren",
+			"unlock_desc": "Passwortschutz von einer PDF entfernen"
 		}
 	},
 	"image_tools": {

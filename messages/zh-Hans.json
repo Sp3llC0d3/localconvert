@@ -416,7 +416,9 @@
 			"edit_name": "编辑 PDF",
 			"edit_desc": "在 PDF 的任意页面添加文字",
 			"password_name": "密码保护",
-			"password_desc": "使用密码加密 PDF 并设置权限"
+			"password_desc": "使用密码加密 PDF 并设置权限",
+			"unlock_name": "解锁 PDF",
+			"unlock_desc": "移除 PDF 的密码保护"
 		}
 	},
 	"image_tools": {

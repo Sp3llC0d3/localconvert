@@ -416,7 +416,9 @@
 			"edit_name": "PDF Düzenle",
 			"edit_desc": "Bir PDF'nin herhangi bir sayfasına metin ekleyin",
 			"password_name": "Parola ile Koru",
-			"password_desc": "PDF'yi parola ile şifreleyin ve izinleri ayarlayın"
+			"password_desc": "PDF'yi parola ile şifreleyin ve izinleri ayarlayın",
+			"unlock_name": "PDF Kilidini Aç",
+			"unlock_desc": "PDF'den parola korumasını kaldırın"
 		}
 	},
 	"image_tools": {

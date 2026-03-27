@@ -2,11 +2,13 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { rotateImage, type RotationAngle } from '$lib/image/rotate';
 	import { watermarkImage } from '$lib/image/watermark';
-	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
+	import { cropImage } from '$lib/image/crop';
+	import { generateMeme } from '$lib/image/meme';
+	import { downloadBlob, formatFileSize, getOutputName, loadImage } from '$lib/image/utils';
 	import { LayersIcon, XIcon } from 'lucide-svelte';
 
 	let files = $state<File[]>([]);
-	let operation = $state<'rotate' | 'watermark'>('rotate');
+	let operation = $state<'rotate' | 'watermark' | 'crop' | 'meme'>('rotate');
 	let processing = $state(false);
 	let progress = $state(0);
 	let error = $state('');
@@ -20,6 +22,13 @@
 	let wmOpacity = $state(30);
 	let wmFontSize = $state(48);
 	let wmPosition = $state<'center' | 'tile'>('center');
+
+	// Crop options
+	let cropPercent = $state(10); // % to trim from each edge
+
+	// Meme options
+	let memeTop = $state('');
+	let memeBottom = $state('');
 
 	function removeFile(index: number) {
 		files = files.filter((_, i) => i !== index);
@@ -38,17 +47,32 @@
 		for (let i = 0; i < files.length; i++) {
 			try {
 				let blob: Blob;
+				let suffix: string;
 				if (operation === 'rotate') {
 					blob = await rotateImage(files[i], rotateAngle);
-				} else {
+					suffix = `rotated${rotateAngle}`;
+				} else if (operation === 'watermark') {
 					blob = await watermarkImage(files[i], {
 						text: wmText,
 						opacity: wmOpacity / 100,
 						fontSize: wmFontSize,
 						position: wmPosition,
 					});
+					suffix = 'watermarked';
+				} else if (operation === 'crop') {
+					const img = await loadImage(files[i]);
+					const margin = cropPercent / 100;
+					blob = await cropImage(files[i], {
+						x: Math.round(img.width * margin),
+						y: Math.round(img.height * margin),
+						width: Math.round(img.width * (1 - 2 * margin)),
+						height: Math.round(img.height * (1 - 2 * margin)),
+					});
+					suffix = 'cropped';
+				} else {
+					blob = await generateMeme(files[i], { topText: memeTop, bottomText: memeBottom });
+					suffix = 'meme';
 				}
-				const suffix = operation === 'rotate' ? `rotated${rotateAngle}` : 'watermarked';
 				output.push({ name: getOutputName(files[i].name, suffix, 'png'), blob });
 			} catch {
 				output.push({ name: `${files[i].name} — failed`, blob: new Blob([]) });
@@ -112,9 +136,11 @@
 		<div class="opt-section">
 			<div class="opt-row">
 				<span class="opt-label">Operation</span>
-				<div class="flex gap-2">
+				<div class="flex gap-2 flex-wrap">
 					<button class="btn text-sm px-3 py-1.5 {operation === 'rotate' ? 'highlight' : ''}" onclick={() => operation = 'rotate'}>Rotate</button>
 					<button class="btn text-sm px-3 py-1.5 {operation === 'watermark' ? 'highlight' : ''}" onclick={() => operation = 'watermark'}>Watermark</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'crop' ? 'highlight' : ''}" onclick={() => operation = 'crop'}>Crop</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'meme' ? 'highlight' : ''}" onclick={() => operation = 'meme'}>Meme</button>
 				</div>
 			</div>
 
@@ -127,7 +153,7 @@
 						{/each}
 					</div>
 				</div>
-			{:else}
+			{:else if operation === 'watermark'}
 				<div class="opt-row">
 					<label class="opt-label" for="batch-wm">Text</label>
 					<input id="batch-wm" type="text" bind:value={wmText} class="opt-input" maxlength={80} />
@@ -148,6 +174,22 @@
 						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'center' ? 'highlight' : ''}" onclick={() => wmPosition = 'center'}>Center</button>
 						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'tile' ? 'highlight' : ''}" onclick={() => wmPosition = 'tile'}>Tile</button>
 					</div>
+				</div>
+			{:else if operation === 'crop'}
+				<div class="opt-row">
+					<span class="opt-label">Trim</span>
+					<input type="range" min={1} max={40} bind:value={cropPercent} class="slider flex-1" aria-label="Crop percentage" />
+					<span class="val">{cropPercent}%</span>
+				</div>
+				<p class="text-xs text-muted">Trims {cropPercent}% from each edge of every image.</p>
+			{:else if operation === 'meme'}
+				<div class="opt-row">
+					<label class="opt-label" for="batch-meme-top">Top text</label>
+					<input id="batch-meme-top" type="text" bind:value={memeTop} placeholder="TOP TEXT" class="opt-input" maxlength={100} />
+				</div>
+				<div class="opt-row">
+					<label class="opt-label" for="batch-meme-btm">Bottom</label>
+					<input id="batch-meme-btm" type="text" bind:value={memeBottom} placeholder="BOTTOM TEXT" class="opt-input" maxlength={100} />
 				</div>
 			{/if}
 		</div>

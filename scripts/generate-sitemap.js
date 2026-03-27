@@ -62,7 +62,7 @@ const pdfToolPaths = [
 	'/pdf-tools/organize/','/pdf-tools/images-to-pdf/','/pdf-tools/pdf-to-images/',
 	'/pdf-tools/compress/','/pdf-tools/watermark/','/pdf-tools/page-numbers/',
 	'/pdf-tools/metadata/','/pdf-tools/crop/','/pdf-tools/pdf-to-ppt/',
-	'/pdf-tools/sign/','/pdf-tools/edit/','/pdf-tools/password/',
+	'/pdf-tools/sign/','/pdf-tools/edit/','/pdf-tools/password/','/pdf-tools/unlock/',
 ];
 
 // ── Image tool pages ──────────────────────────────────────────────────────

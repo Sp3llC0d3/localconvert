@@ -373,7 +373,9 @@
 			"edit_name": "تعديل PDF",
 			"edit_desc": "أضف نصًا إلى أي صفحة في ملف PDF",
 			"password_name": "حماية بكلمة مرور",
-			"password_desc": "تشفير ملف PDF بكلمة مرور وتعيين الأذونات"
+			"password_desc": "تشفير ملف PDF بكلمة مرور وتعيين الأذونات",
+			"unlock_name": "إلغاء قفل PDF",
+			"unlock_desc": "إزالة حماية كلمة المرور من ملف PDF"
 		}
 	},
 	"landing": {

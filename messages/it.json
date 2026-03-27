@@ -416,7 +416,9 @@
 			"edit_name": "Modifica PDF",
 			"edit_desc": "Aggiungi testo a qualsiasi pagina di un PDF",
 			"password_name": "Proteggi con password",
-			"password_desc": "Crittografa un PDF con password e imposta i permessi"
+			"password_desc": "Crittografa un PDF con password e imposta i permessi",
+			"unlock_name": "Sblocca PDF",
+			"unlock_desc": "Rimuovi la protezione con password da un PDF"
 		}
 	},
 	"image_tools": {
