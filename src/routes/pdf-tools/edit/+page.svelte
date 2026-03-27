@@ -53,6 +53,13 @@
 		if (state) { elements = state; selectedId = null; }
 	}
 
+	// Debounced history push for arrow nudge
+	let nudgeTimer: ReturnType<typeof setTimeout> | null = null;
+	function pushHistoryDebounced() {
+		if (nudgeTimer) clearTimeout(nudgeTimer);
+		nudgeTimer = setTimeout(() => { pushHistory(); nudgeTimer = null; }, 300);
+	}
+
 	// Ghost preview (follows cursor before placing)
 	let ghostPos = $state({ x: 0, y: 0 });
 	let showGhost = $state(false);
@@ -68,6 +75,7 @@
 			thumbs = [];
 			elements = [];
 			resultBytes = null;
+			history.reset([]);
 			return;
 		}
 		loadPdf();
@@ -230,6 +238,7 @@
 			if (e.key === 'ArrowDown') el.y -= step;
 			if (e.key === 'ArrowLeft') el.x -= step;
 			if (e.key === 'ArrowRight') el.x += step;
+			pushHistoryDebounced();
 		}
 	}
 
