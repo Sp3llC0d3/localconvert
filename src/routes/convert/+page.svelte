@@ -359,7 +359,7 @@
 							/>
 						{:else}
 							<div
-								class="w-full h-full flex items-center justify-center text-black"
+								class="w-full h-full flex items-center justify-center text-on-accent"
 								style="background: var({isAudio
 									? '--bg-gradient-purple-alt'
 									: isVideo

@@ -288,8 +288,8 @@
 
 .hero-overlay {
 	background:
-		radial-gradient(ellipse 80% 50% at 50% -5%, hsla(162, 65%, 45%, 0.35) 0%, transparent 60%),
-		linear-gradient(to bottom, hsla(218, 22%, 5%, 0.15) 0%, var(--bg) 90%);
+		radial-gradient(ellipse 80% 50% at 50% -5%, hsla(162, 65%, 45%, 0.38) 0%, transparent 62%),
+		linear-gradient(to bottom, hsla(20, 8%, 5%, 0.12) 0%, var(--bg) 88%);
 }
 
 :global(.light) .hero-overlay {

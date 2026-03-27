@@ -152,40 +152,41 @@
 	--accent-green-transparent: hsla(158, 62%, 52%, 0);
 
 	/* ── Foregrounds ── */
-	--fg: hsl(210, 20%, 96%);
-	--fg-muted: hsla(210, 15%, 95%, 0.52);
+	--fg: hsl(32, 12%, 94%);
+	--fg-muted: hsla(32, 8%, 90%, 0.50);
 	--fg-on-accent: hsl(220, 28%, 7%);
-	--fg-on-badge: hsl(210, 20%, 92%);
+	--fg-on-badge: hsl(162, 30%, 88%);
 	--fg-accent: var(--accent);
 	--fg-failure: hsl(0, 75%, 68%);
 
-	/* ── Backgrounds ── */
-	--bg: hsl(218, 22%, 8%);
+	/* ── Backgrounds — warm charcoal, like a private darkroom ── */
+	--bg: hsl(20, 8%, 10%);
 
-	--bg-gradient-from: hsla(162, 62%, 56%, 0.09);
+	/* ── Gradients — richer, more atmospheric in dark mode ── */
+	--bg-gradient-from: hsla(162, 62%, 56%, 0.20);
 	--bg-gradient-to: hsla(162, 62%, 56%, 0);
-	--bg-gradient-pink-from: hsla(162, 62%, 56%, 0.09);
+	--bg-gradient-pink-from: hsla(162, 62%, 56%, 0.20);
 	--bg-gradient-pink-to: hsla(162, 62%, 56%, 0);
 	--bg-gradient-pink-alt-from: var(--accent-pink);
 	--bg-gradient-pink-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-red-from: hsla(14, 82%, 68%, 0.1);
+	--bg-gradient-red-from: hsla(14, 82%, 68%, 0.22);
 	--bg-gradient-red-to: hsla(14, 82%, 68%, 0);
 	--bg-gradient-red-alt-from: var(--accent-red);
 	--bg-gradient-red-alt-to: hsl(14, 60%, 95%);
-	--bg-gradient-purple-from: hsla(258, 72%, 72%, 0.1);
+	--bg-gradient-purple-from: hsla(258, 72%, 72%, 0.22);
 	--bg-gradient-purple-to: hsla(258, 72%, 72%, 0);
 	--bg-gradient-purple-alt-from: var(--accent-purple);
 	--bg-gradient-purple-alt-to: hsl(258, 50%, 95%);
-	--bg-gradient-blue-from: hsla(217, 85%, 68%, 0.1);
+	--bg-gradient-blue-from: hsla(217, 85%, 68%, 0.22);
 	--bg-gradient-blue-to: hsla(217, 85%, 68%, 0);
 	--bg-gradient-blue-alt-from: var(--accent-blue);
 	--bg-gradient-blue-alt-to: hsl(217, 60%, 95%);
-	--bg-gradient-green-from: hsla(158, 62%, 52%, 0.1);
+	--bg-gradient-green-from: hsla(158, 62%, 52%, 0.20);
 	--bg-gradient-green-to: hsla(158, 62%, 52%, 0);
 	--bg-gradient-green-alt-from: var(--accent-green-alt);
 	--bg-gradient-green-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-image-from: hsla(218, 22%, 8%, 0.5);
-	--bg-gradient-image-to: hsla(218, 22%, 8%, 1);
+	--bg-gradient-image-from: hsla(20, 8%, 10%, 0.5);
+	--bg-gradient-image-to: hsla(20, 8%, 10%, 1);
 
 	--bg-gradient: linear-gradient(to bottom, var(--bg-gradient-from), var(--bg-gradient-to) 100%);
 	--bg-gradient-pink: linear-gradient(to bottom, var(--bg-gradient-pink-from), var(--bg-gradient-pink-to) 25%);
@@ -200,15 +201,16 @@
 	--bg-gradient-green-alt: linear-gradient(to top, var(--bg-gradient-green-alt-from), var(--bg-gradient-green-alt-to) 100%);
 	--bg-gradient-image: linear-gradient(to bottom, var(--bg-gradient-image-from), var(--bg-gradient-image-to) 100%);
 
-	--bg-panel: hsl(218, 16%, 13%);
-	--bg-panel-highlight: hsl(218, 14%, 19%);
-	--bg-separator: hsl(218, 18%, 22%);
-	--bg-button: hsl(218, 14%, 22%);
-	--bg-badge: hsl(162, 28%, 18%);
-	--bg-input: hsl(218, 14%, 19%);
+	/* ── Panels — warm charcoal family ── */
+	--bg-panel: hsl(20, 6%, 15%);
+	--bg-panel-highlight: hsl(20, 5%, 20%);
+	--bg-separator: hsl(20, 5%, 24%);
+	--bg-button: hsl(20, 5%, 23%);
+	--bg-badge: hsl(162, 22%, 17%);
+	--bg-input: hsl(20, 5%, 20%);
 
-	--shadow-panel: 0 4px 16px 0 hsla(218, 30%, 0%, 0.5),
-		0 0 0 1px hsla(218, 20%, 80%, 0.05);
+	--shadow-panel: 0 2px 8px 0 hsla(20, 15%, 0%, 0.55),
+		0 0 0 1px hsla(20, 8%, 80%, 0.04);
 
 	color-scheme: dark;
 }

@@ -24,17 +24,17 @@
 		{
 			matcher: (path) => path === "/convert/",
 			color: `var(--bg-gradient-${$gradientColor ? $gradientColor + "-" : ""}from)`,
-			at: 25,
+			at: 55,
 		},
 		{
 			matcher: (path) => path === "/settings/",
 			color: "var(--bg-gradient-blue-from)",
-			at: 25,
+			at: 40,
 		},
 		{
 			matcher: (path) => path === "/about/",
 			color: "var(--bg-gradient-from)",
-			at: 25,
+			at: 40,
 		},
 		{
 			matcher: (path) => path === "/privacy/",
