@@ -431,7 +431,9 @@
 			"watermark_name": "Marca d'água",
 			"watermark_desc": "Carimbar texto em qualquer imagem",
 			"meme_name": "Gerador de memes",
-			"meme_desc": "Adicionar texto na parte superior e inferior de qualquer imagem"
+			"meme_desc": "Adicionar texto na parte superior e inferior de qualquer imagem",
+			"batch_name": "Processamento em lote",
+			"batch_desc": "Aplicar a mesma operação a várias imagens"
 		}
 	}
 }

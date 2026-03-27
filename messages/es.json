@@ -431,7 +431,9 @@
 			"watermark_name": "Marca de agua",
 			"watermark_desc": "Estampar texto en cualquier imagen",
 			"meme_name": "Generador de memes",
-			"meme_desc": "Agregar texto arriba y abajo en cualquier imagen"
+			"meme_desc": "Agregar texto arriba y abajo en cualquier imagen",
+			"batch_name": "Procesamiento por lotes",
+			"batch_desc": "Aplicar la misma operación a varias imágenes"
 		}
 	}
 }

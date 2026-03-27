@@ -385,7 +385,9 @@
 			"watermark_name": "Watermark Image",
 			"watermark_desc": "Stamp text on any image",
 			"meme_name": "Meme Generator",
-			"meme_desc": "Add top and bottom text to any image"
+			"meme_desc": "Add top and bottom text to any image",
+			"batch_name": "Batch Processing",
+			"batch_desc": "Apply the same operation to multiple images"
 		}
 	},
 	"toast": {

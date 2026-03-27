@@ -431,7 +431,9 @@
 			"watermark_name": "이미지 워터마크",
 			"watermark_desc": "이미지에 텍스트 삽입",
 			"meme_name": "밈 생성기",
-			"meme_desc": "이미지 상단과 하단에 텍스트 추가"
+			"meme_desc": "이미지 상단과 하단에 텍스트 추가",
+			"batch_name": "일괄 처리",
+			"batch_desc": "여러 이미지에 동일한 작업 적용"
 		}
 	}
 }

@@ -431,7 +431,9 @@
 			"watermark_name": "Wasserzeichen",
 			"watermark_desc": "Text auf ein beliebiges Bild stempeln",
 			"meme_name": "Meme-Generator",
-			"meme_desc": "Text oben und unten auf ein beliebiges Bild setzen"
+			"meme_desc": "Text oben und unten auf ein beliebiges Bild setzen",
+			"batch_name": "Stapelverarbeitung",
+			"batch_desc": "Dieselbe Operation auf mehrere Bilder anwenden"
 		}
 	}
 }

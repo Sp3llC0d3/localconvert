@@ -431,7 +431,9 @@
 			"watermark_name": "Filigrana sull'immagine",
 			"watermark_desc": "Applica un testo su qualsiasi immagine",
 			"meme_name": "Generatore di meme",
-			"meme_desc": "Aggiungi testo in alto e in basso su qualsiasi immagine"
+			"meme_desc": "Aggiungi testo in alto e in basso su qualsiasi immagine",
+			"batch_name": "Elaborazione in blocco",
+			"batch_desc": "Applica la stessa operazione a più immagini"
 		}
 	}
 }

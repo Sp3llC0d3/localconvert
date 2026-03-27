@@ -431,7 +431,9 @@
 			"watermark_name": "Tanda Air pada Gambar",
 			"watermark_desc": "Tambahkan teks pada gambar apa pun",
 			"meme_name": "Generator Meme",
-			"meme_desc": "Tambahkan teks atas dan bawah pada gambar apa pun"
+			"meme_desc": "Tambahkan teks atas dan bawah pada gambar apa pun",
+			"batch_name": "Pemrosesan Massal",
+			"batch_desc": "Terapkan operasi yang sama ke beberapa gambar"
 		}
 	}
 }

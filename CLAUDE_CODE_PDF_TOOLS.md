@@ -1,101 +1,117 @@
-# LocalConvert — PDF Tools Reference
+# LocalConvert — PDF & Image Tools Reference
 # ==================================================================
-# Reference for working on PDF tools in LocalConvert
+# Reference for working on PDF and image tools in LocalConvert
 # Last updated: March 27, 2026
 # ==================================================================
 
 
-## STATUS
+## PDF TOOLS — 15 tools at `/pdf-tools`
 
-### Implemented ✅ (8 tools live at `/pdf-tools`)
-1. **Merge PDF** — Combine multiple PDFs into one
-2. **Split PDF** — Extract pages/ranges (pdf.js thumbnails)
-3. **Rotate Pages** — Rotate individual or all pages (90/180/270)
-4. **Organize Pages** — Reorder/delete pages (up/down arrows, pdf.js thumbnails)
-5. **Images → PDF** — Convert JPG/PNG/WEBP to PDF
-6. **PDF → Images** — Export pages as PNG/JPG (pdf.js canvas)
-7. **Compress PDF** — pdf.js → canvas → JPEG → pdf-lib rebuild
-8. **Add Watermark** — Text or image watermark on pages
+### Organize (green category)
+1. **Merge PDF** — merge.ts — Combine multiple PDFs
+2. **Split PDF** — split.ts — Extract pages/ranges (thumbnail selection)
+3. **Rotate Pages** — rotate.ts — Rotate with visual indicators on thumbnails
+4. **Organize Pages** — organize.ts — Reorder/delete with arrow buttons
 
-### Not Yet Implemented
-9. **Page Numbers** — Add page numbers to PDF (straightforward with pdf-lib)
-10. **PDF Metadata** — Edit title, author, subject, keywords (straightforward with pdf-lib)
-11. **Sign PDF** — Draw/upload/type signature, place on page (complex: canvas overlay + PDF sync)
+### Convert (blue category)
+5. **Images → PDF** — images-to-pdf.ts — Create PDF from images
+6. **PDF → Images** — pdf-to-images.ts — Export pages as PNG/JPG
+7. **PDF → PowerPoint** — pdf-to-ppt.ts — pptxgenjs, each page becomes a slide
 
-### Deferred — Do NOT implement
-- **DOCX → PDF** — Would need Puppeteer (server-side only)
-- **PDF → Word** — Requires OCR + layout reconstruction
-- **PDF → Excel** — Requires table detection
-- **Repair PDF** — Beyond pdf-lib capabilities
+### Optimize & Edit (red category)
+8. **Compress PDF** — compress.ts — pdf.js → canvas → JPEG → pdf-lib. Before/after comparison view
+9. **Add Watermark** — watermark.ts — **Live canvas preview**, page navigation
+10. **Add Page Numbers** — page-numbers.ts — **Live canvas preview**, 6 positions, 4 formats
+11. **Edit Metadata** — metadata.ts — View/edit title, author, subject, keywords
+12. **Crop PDF** — crop.ts — **Draggable edge handles** synced with number inputs
+13. **Sign PDF** — sign.ts — Draw/type/upload signature, **click-to-place** on page, draggable
+14. **Edit PDF** — edit.ts — **Click-to-place** text, drag, **undo/redo**, keyboard shortcuts
+15. **Password Protect** — password.ts — AES encryption via pdf-lib-plus-encrypt, permissions UI
+
+
+## IMAGE TOOLS — 4 tools at `/image-tools`
+
+1. **Rotate Image** — image/rotate.ts — 90/180/270°, **live canvas preview**
+2. **Crop Image** — image/crop.ts — **Interactive handles**, aspect ratios, circle crop with transparent PNG
+3. **Watermark Image** — image/watermark.ts — Center/tile, **live canvas preview**
+4. **Meme Generator** — image/meme.ts — Impact font, **live canvas preview** on keystroke
 
 
 ## ARCHITECTURE
 
 ### File Structure
 ```
-src/routes/pdf-tools/
-├── +page.svelte              ← Landing page (tool cards grid)
-├── _shared.postcss           ← Shared styles for PDF tool pages
-├── merge/+page.svelte
-├── split/+page.svelte
-├── rotate/+page.svelte
-├── organize/+page.svelte
-├── images-to-pdf/+page.svelte
-├── pdf-to-images/+page.svelte
-├── compress/+page.svelte
-└── watermark/+page.svelte
-
 src/lib/pdf/
-├── merge.ts
-├── split.ts
-├── rotate.ts
-├── organize.ts
-├── images-to-pdf.ts
-├── pdf-to-images.ts          ← uses getPdfJs()
-├── compress.ts               ← uses getPdfJs() + pdf-lib pipeline
-├── watermark.ts
-├── thumbnails.ts             ← uses getPdfJs()
-└── utils.ts                  ← downloadPdf, downloadBlob, formatFileSize, validateFileSize, convertWebpToPng, getPdfJs
+├── merge.ts, split.ts, rotate.ts, organize.ts
+├── images-to-pdf.ts, pdf-to-images.ts, pdf-to-ppt.ts
+├── compress.ts, watermark.ts, page-numbers.ts
+├── metadata.ts, crop.ts, sign.ts, edit.ts, password.ts
+├── thumbnails.ts          ← renders all pages as data URL thumbnails
+├── preview.ts             ← loadPdfDocument + renderDocPageToCanvas (single-parse)
+└── utils.ts               ← downloadPdf, downloadBlob, formatFileSize, validateFileSize, getPdfJs
+
+src/lib/image/
+├── rotate.ts, crop.ts, watermark.ts, meme.ts
+└── utils.ts               ← loadImage, canvasToBlob, downloadBlob, validateImageSize
+
+src/lib/util/
+└── history.svelte.ts      ← createHistory<T>() — generic undo/redo (max 50 snapshots)
 
 src/lib/components/pdf/
-├── PdfUploader.svelte        ← accept=".pdf" file input
-└── PdfPageThumbnail.svelte   ← Single page thumbnail via pdf.js
+├── PdfUploader.svelte     ← accept=".pdf" file input with drag-drop
+└── PdfPageThumbnail.svelte
+
+src/lib/components/image/
+└── ImageUploader.svelte   ← accept="image/*" with type + size validation
+
+src/routes/pdf-tools/      ← 15 tool routes + landing page
+src/routes/image-tools/    ← 4 tool routes + landing page
 ```
 
 ### Libraries
 - **pdf-lib** (MIT, ~200KB) — Create, merge, split, rotate, reorder, embed images, draw text/shapes, metadata
-- **pdfjs-dist** 5.x (Apache 2.0, ~2.5MB) — Render pages to canvas, thumbnails. MUST be lazy-loaded.
+- **pdf-lib-plus-encrypt** (MIT) — Fork with AES encryption support for password protection
+- **pdfjs-dist** 5.x (Apache 2.0, ~2.5MB) — Render pages to canvas. MUST be lazy-loaded
+- **pptxgenjs** (MIT, ~500KB) — Generate PowerPoint files in the browser
 
-### pdf.js Rules (SvelteKit/Vite compatibility)
-1. **Browser-only** — Dynamic import only, never static import (SSR crash)
-2. **Use `getPdfJs()` from `src/lib/pdf/utils.ts`** — Handles lazy loading + worker setup
-3. **CDN worker** — Do not bundle the worker via Vite
-4. **1-indexed pages** — pdf.js `getPage(1)` = pdf-lib `getPage(0)`
-5. **Only load when needed** — Don't import on the landing page
+### Interactive Patterns
 
-### Compress Strategy
-pdf-lib cannot compress. The pipeline is: pdf.js renders each page to canvas → `canvas.toBlob('image/jpeg', quality)` → pdf-lib embeds JPEG into new PDF.
+**Live Canvas Preview (watermark, page-numbers, image tools):**
+- Load PDF document once via `loadPdfDocument()`, reuse for page navigation
+- Render page to canvas via `renderDocPageToCanvas()` at scale 0.5
+- Cache base rendering as `ImageData` via `ctx.getImageData()`
+- On settings change: `$effect` → `requestAnimationFrame` → `ctx.putImageData()` + draw overlay
+- `onDestroy` cancels pending rAF and calls `doc.destroy()`
 
-**Warning displayed to users:** Compressed PDFs become image-only — no selectable text, no links, no form fields.
+**Click-to-Place (edit, sign):**
+- Render page as image, overlay transparent container
+- Ghost element follows cursor (opacity 0.4) before placement
+- Click places element, drag repositions via CSS position updates
+- Coordinate conversion: `displayPx * (pageWidth / displayW)` and Y-axis flip for PDF
 
-Compression levels:
-- Low (0.9): ~20-40% reduction
-- Medium (0.6): ~50-70% reduction
-- High (0.3): ~70-90% reduction
+**Undo/Redo (edit):**
+- `createHistory<PlacedText[]>([])` — snapshot-based, structuredClone, max 50
+- Push on place, drag-end, delete. Arrow nudge pushes with 300ms debounce
+- Ctrl+Z / Ctrl+Shift+Z, Delete, Escape, Arrow keys
 
-### Component Patterns
-- Svelte 5 runes ($state, $derived, $effect)
-- `{ ignoreEncryption: true }` on `PDFDocument.load()`
-- `input.value = ''` after reading files (allows re-adding same file)
-- `URL.revokeObjectURL()` cleanup in onDestroy
-- File size: warn >50MB, block >200MB
-- pdf-lib only supports JPG/PNG — WEBP must be converted via canvas first (`convertWebpToPng`)
+**Draggable Handles (PDF crop):**
+- 4 edge handles positioned in display-space, hit-test with 12px threshold
+- Drag delta converted to PDF points via `delta * pdfScale`
+- Number inputs stay bidirectionally synced
+- Dark overlay drawn on canvas for trimmed regions
 
 
 ## TECHNICAL NOTES
 
-1. **AGPL compatibility** — pdf-lib (MIT) and pdf.js (Apache 2.0) are both AGPL-compatible
-2. **No cMaps needed** — Only needed for CJK fonts, not required for basic rendering
-3. **pdfjs-dist 5.x** — CDN worker URL must match installed version
-4. **Navbar** — "PDF Tools" entry uses FileTextIcon, positioned between Convert and Settings
-5. **Category colors on landing page** — Tool icons use green (Organize), blue (Convert), red (Edit) per category
+1. **pdf-lib + pdf-lib-plus-encrypt coexist** — Separate imports, no conflict
+2. **pdf.js pages are 1-indexed, pdf-lib is 0-indexed** — Always adjust
+3. **pdf.js MUST be lazy-loaded** — Use `getPdfJs()` or `loadPdfDocument()`
+4. **pdf.js Worker from CDN** — URL auto-matches installed version
+5. **Svelte scoped CSS** — Cannot style Panel's div from Base.svelte. Use Tailwind utilities for cross-component styling
+6. **Image tools validate file size** — >100MB blocked, >20MB warned
+7. **WEBP not supported by pdf-lib** — Convert via canvas first (`convertWebpToPng`)
+8. **Encrypted PDFs** — Use `{ ignoreEncryption: true }` on `PDFDocument.load()`
+9. **Compress warning** — Must warn that text becomes non-selectable
+10. **JSON-LD** — Present on image-tools pages. Follow existing pattern for new tools
+11. **Sitemap** — 207 URLs. Update `scripts/generate-sitemap.js` when adding new routes
+12. **All 16 locales must stay synced** — Use `scripts/add-translations.cjs` pattern for batch updates

@@ -431,7 +431,9 @@
 			"watermark_name": "Filigran Ekle",
 			"watermark_desc": "Herhangi bir görsele metin ekleyin",
 			"meme_name": "Meme Oluşturucu",
-			"meme_desc": "Herhangi bir görselin üstüne ve altına metin ekleyin"
+			"meme_desc": "Herhangi bir görselin üstüne ve altına metin ekleyin",
+			"batch_name": "Toplu İşleme",
+			"batch_desc": "Aynı işlemi birden fazla görsele uygulayın"
 		}
 	}
 }
