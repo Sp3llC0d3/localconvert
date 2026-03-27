@@ -2,8 +2,8 @@
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { addPageNumbers, type NumberPosition, type NumberFormat } from '$lib/pdf/page-numbers';
-	import { renderPageToCanvas } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
+	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
+	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
 
@@ -24,6 +24,7 @@
 	let pageWidth = $state(0);
 	let pageHeight = $state(0);
 	let baseImageData = $state<ImageData | null>(null);
+	let pdfDoc = $state<PdfDocProxy | null>(null);
 	let rafId: number | null = null;
 
 	const positions: { value: NumberPosition; label: string }[] = [
@@ -47,30 +48,33 @@
 			pageCount = 0;
 			baseImageData = null;
 			resultBytes = null;
+			pdfDoc?.destroy();
+			pdfDoc = null;
 			return;
 		}
-		loadPage();
+		loadFile();
 	});
 
-	async function loadPage() {
-		if (!previewCanvas || files.length === 0) return;
+	async function loadFile() {
+		pdfDoc?.destroy();
 		try {
-			const pdfjs = await getPdfJs();
-			const buf = await files[0].arrayBuffer();
-			const doc = await pdfjs.getDocument({ data: buf }).promise;
-			pageCount = doc.numPages;
-
-			const dims = await renderPageToCanvas(files[0], currentPage, previewCanvas, 0.5);
-			pageWidth = dims.width;
-			pageHeight = dims.height;
-
-			const ctx = previewCanvas.getContext('2d')!;
-			baseImageData = ctx.getImageData(0, 0, previewCanvas.width, previewCanvas.height);
-
-			drawNumberOverlay();
+			pdfDoc = await loadPdfDocument(files[0]);
+			pageCount = pdfDoc.numPages;
+			currentPage = 1;
+			await renderCurrentPage();
 		} catch {
 			error = 'Failed to read PDF.';
 		}
+	}
+
+	async function renderCurrentPage() {
+		if (!previewCanvas || !pdfDoc) return;
+		const dims = await renderDocPageToCanvas(pdfDoc, currentPage, previewCanvas, 0.5);
+		pageWidth = dims.width;
+		pageHeight = dims.height;
+		const ctx = previewCanvas.getContext('2d')!;
+		baseImageData = ctx.getImageData(0, 0, previewCanvas.width, previewCanvas.height);
+		drawNumberOverlay();
 	}
 
 	// Live preview
@@ -84,7 +88,10 @@
 		});
 	});
 
-	onDestroy(() => { if (rafId !== null) cancelAnimationFrame(rafId); });
+	onDestroy(() => {
+		if (rafId !== null) cancelAnimationFrame(rafId);
+		pdfDoc?.destroy();
+	});
 
 	function toRoman(num: number): string {
 		const vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
@@ -123,8 +130,6 @@
 
 		ctx.font = `${scaledFontSize}px sans-serif`;
 		ctx.fillStyle = '#000000';
-		const textW = ctx.measureText(label).width;
-
 		let x: number;
 		let y: number;
 
@@ -149,10 +154,10 @@
 	}
 
 	function prevPage() {
-		if (currentPage > 1) { currentPage--; loadPage(); }
+		if (currentPage > 1) { currentPage--; renderCurrentPage(); }
 	}
 	function nextPage() {
-		if (currentPage < pageCount) { currentPage++; loadPage(); }
+		if (currentPage < pageCount) { currentPage++; renderCurrentPage(); }
 	}
 
 	async function apply() {

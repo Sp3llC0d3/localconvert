@@ -135,7 +135,8 @@
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
 	.pdf-header { @apply flex items-center gap-3; }
 	.thumb-grid { @apply grid gap-3; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
-	.thumb-wrapper { position: relative; cursor: pointer; }
+	.thumb-wrapper { position: relative; }
+	.thumb-wrapper[role="button"] { cursor: pointer; }
 	.rotate-indicator {
 		position: absolute; top: 4px; right: 4px;
 		width: 22px; height: 22px; border-radius: 50%;

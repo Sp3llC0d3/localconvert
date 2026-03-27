@@ -5,6 +5,7 @@
 	import { renderPageToCanvas } from '$lib/pdf/preview';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ZapIcon, AlertTriangleIcon } from 'lucide-svelte';
+	import { tick } from 'svelte';
 
 	let files = $state<File[]>([]);
 	let quality = $state(60); // 60 = medium
@@ -44,8 +45,11 @@
 		}
 		processing = false;
 
-		// Render before/after comparison
-		if (resultBytes) renderComparison();
+		// Wait for DOM to mount the canvases, then render comparison
+		if (resultBytes) {
+			await tick();
+			renderComparison();
+		}
 	}
 
 	async function renderComparison() {
@@ -155,8 +159,8 @@
 					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>Compressed</button>
 				</div>
 				<div class="compare-canvas-wrap">
-					<canvas bind:this={origCanvas} class="compare-canvas" class:hidden={compareView !== 'original'}></canvas>
-					<canvas bind:this={compCanvas} class="compare-canvas" class:hidden={compareView !== 'compressed'}></canvas>
+					<canvas bind:this={origCanvas} class="compare-canvas" class:compare-hidden={compareView !== 'original'}></canvas>
+					<canvas bind:this={compCanvas} class="compare-canvas" class:compare-hidden={compareView !== 'compressed'}></canvas>
 				</div>
 			</div>
 
@@ -185,5 +189,5 @@
 	.comp-btn.active { background: var(--bg-panel); color: var(--fg); box-shadow: var(--shadow-panel); }
 	.compare-canvas-wrap { @apply flex justify-center; }
 	.compare-canvas { max-width: 100%; max-height: 20rem; border-radius: 0.375rem; }
-	.hidden { display: none; }
+	.compare-hidden { display: none; }
 </style>
