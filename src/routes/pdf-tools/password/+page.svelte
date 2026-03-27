@@ -16,10 +16,17 @@
 	let resultBytes = $state<Uint8Array | null>(null);
 	let showPassword = $state(false);
 
+	// Clear result when file changes
+	$effect(() => {
+		void files;
+		resultBytes = null;
+		error = '';
+	});
+
 	async function apply() {
 		if (files.length === 0) { error = 'Add a PDF file.'; return; }
 		if (!userPassword.trim()) { error = 'Enter a password.'; return; }
-		if (userPassword.length < 4) { error = 'Password must be at least 4 characters.'; return; }
+		if (userPassword.trim().length < 4) { error = 'Password must be at least 4 characters.'; return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
