@@ -340,10 +340,12 @@
 			"step2_title": "Convertido en su navegador",
 			"step2_desc": "Todo se ejecuta localmente mediante WebAssembly — sin subidas, sin esperar servidores.",
 			"step3_title": "Guarda el resultado",
-			"step3_desc": "Obtenga su archivo convertido al instante, directamente en su dispositivo."
+			"step3_desc": "Obtenga su archivo convertido al instante, directamente en su dispositivo.",
+			"label": "El proceso"
 		},
 		"formats": {
-			"title": "Formatos soportados"
+			"title": "Formatos soportados",
+			"label": "Capacidades"
 		},
 		"privacy": {
 			"title": "100% privado por diseño",

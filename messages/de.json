@@ -340,10 +340,12 @@
 			"step2_title": "Konvertierung im Browser",
 			"step2_desc": "Alles läuft lokal über WebAssembly — keine Uploads, kein Warten auf Server.",
 			"step3_title": "Ergebnis speichern",
-			"step3_desc": "Laden Sie Ihre konvertierte Datei sofort direkt auf Ihr Gerät herunter."
+			"step3_desc": "Laden Sie Ihre konvertierte Datei sofort direkt auf Ihr Gerät herunter.",
+			"label": "Der Prozess"
 		},
 		"formats": {
-			"title": "Unterstützte Formate"
+			"title": "Unterstützte Formate",
+			"label": "Funktionen"
 		},
 		"privacy": {
 			"title": "100 % privat by Design",

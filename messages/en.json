@@ -368,10 +368,12 @@
 			"step2_title": "Converted in Your Browser",
 			"step2_desc": "Everything runs locally via WebAssembly — no uploads, no waiting on servers.",
 			"step3_title": "Save the Result",
-			"step3_desc": "Get your converted file instantly, straight to your device."
+			"step3_desc": "Get your converted file instantly, straight to your device.",
+			"label": "The process"
 		},
 		"formats": {
-			"title": "Supported Formats"
+			"title": "Supported Formats",
+			"label": "Capabilities"
 		},
 		"privacy": {
 			"title": "100% Private by Design",

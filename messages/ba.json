@@ -340,10 +340,12 @@
 			"step2_title": "Konvertovano u Vašem Pregledniku",
 			"step2_desc": "Sve se izvršava lokalno putem WebAssembly tehnologije — bez otpremanja, bez čekanja na servere.",
 			"step3_title": "Spremi Rezultat",
-			"step3_desc": "Dobijte konvertovanu datoteku odmah, direktno na vaš uređaj."
+			"step3_desc": "Dobijte konvertovanu datoteku odmah, direktno na vaš uređaj.",
+			"label": "Proces"
 		},
 		"formats": {
-			"title": "Podržani Formati"
+			"title": "Podržani Formati",
+			"label": "Mogućnosti"
 		},
 		"privacy": {
 			"title": "100% Privatno po Dizajnu",

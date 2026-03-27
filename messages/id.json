@@ -340,10 +340,12 @@
 			"step2_title": "Dikonversi di Browser Anda",
 			"step2_desc": "Semuanya berjalan secara lokal melalui WebAssembly — tanpa unggahan, tanpa menunggu server.",
 			"step3_title": "Simpan Hasilnya",
-			"step3_desc": "Dapatkan berkas hasil konversi Anda seketika, langsung ke perangkat Anda."
+			"step3_desc": "Dapatkan berkas hasil konversi Anda seketika, langsung ke perangkat Anda.",
+			"label": "Prosesnya"
 		},
 		"formats": {
-			"title": "Format yang Didukung"
+			"title": "Format yang Didukung",
+			"label": "Kemampuan"
 		},
 		"privacy": {
 			"title": "100% Privat Sejak Awal",

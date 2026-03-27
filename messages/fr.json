@@ -340,10 +340,12 @@
 			"step2_title": "Converti dans votre navigateur",
 			"step2_desc": "Tout s'exécute localement via WebAssembly — aucun téléversement, aucune attente sur des serveurs.",
 			"step3_title": "Enregistrez le résultat",
-			"step3_desc": "Obtenez votre fichier converti instantanément, directement sur votre appareil."
+			"step3_desc": "Obtenez votre fichier converti instantanément, directement sur votre appareil.",
+			"label": "Le processus"
 		},
 		"formats": {
-			"title": "Formats pris en charge"
+			"title": "Formats pris en charge",
+			"label": "Fonctionnalités"
 		},
 		"privacy": {
 			"title": "100 % privé par conception",

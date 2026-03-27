@@ -340,10 +340,12 @@
 			"step2_title": "在浏览器中转换",
 			"step2_desc": "一切通过 WebAssembly 在本地运行——无需上传，无需等待服务器。",
 			"step3_title": "保存结果",
-			"step3_desc": "立即获取转换后的文件，直接保存到你的设备。"
+			"step3_desc": "立即获取转换后的文件，直接保存到你的设备。",
+			"label": "使用流程"
 		},
 		"formats": {
-			"title": "支持的格式"
+			"title": "支持的格式",
+			"label": "支持格式"
 		},
 		"privacy": {
 			"title": "从设计上保证100%隐私",

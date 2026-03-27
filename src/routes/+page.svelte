@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
-	import { converters } from "$lib/converters";
 	import clsx from "clsx";
 	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Zap, Ban, ChevronDown } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
@@ -11,41 +10,34 @@
 	import step3 from "$lib/assets/steps/step-3-download.png";
 	import privacyBadge from "$lib/assets/privacy-badge.png";
 
-	const getSupportedFormats = (name: string, nativeOnly?: boolean) =>
-		converters
-			.find((c) => c.name === name)
-			?.supportedFormats.filter((f) => (nativeOnly === undefined ? true : nativeOnly ? f.isNative : !f.isNative))
-			.map((f) => `${f.name}${f.fromSupported && f.toSupported ? "" : "*"}`)
-			.join(", ") || "none";
-
 	const worker: {
 		[key: string]: {
-			formats: string;
+			formats: string[];
 			icon: typeof Image;
 			title: string;
 			color: string;
 		};
 	} = $derived.by(() => ({
 		Images: {
-			formats: getSupportedFormats("imagemagick"),
+			formats: ["jpg", "png", "webp", "avif", "gif", "svg", "jxl", "heic", "ico", "bmp", "tiff", "psd", "eps", "dng", "nef", "arw", "cr2", "raw"],
 			icon: Image,
 			title: m["upload.cards.images"](),
 			color: "blue",
 		},
 		Audio: {
-			formats: getSupportedFormats("ffmpeg", true),
+			formats: ["mp3", "wav", "flac", "aac", "ogg", "opus", "m4a", "alac", "wma", "aiff", "amr", "ac3", "mp2", "au", "weba"],
 			icon: AudioLines,
 			title: m["upload.cards.audio"](),
 			color: "purple",
 		},
 		Video: {
-			formats: getSupportedFormats("ffmpeg", false),
+			formats: ["mp4", "mkv", "webm", "avi", "mov", "wmv", "flv", "mpeg", "3gp", "ts", "m4v", "vob", "m2ts", "mxf", "ogv", "divx"],
 			icon: Film,
 			title: m["upload.cards.video"](),
 			color: "red",
 		},
 		Documents: {
-			formats: getSupportedFormats("pandoc"),
+			formats: ["docx", "doc", "html", "md", "epub", "odt", "rtf", "csv", "tsv", "rst", "json", "docbook"],
 			icon: BookText,
 			title: m["upload.cards.documents"](),
 			color: "green",
@@ -152,7 +144,7 @@
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">The process</div>
+		<div class="section-label">{m["landing.how_it_works.label"]()}</div>
 		<h2 class="section-headline">{m["landing.how_it_works.title"]()}</h2>
 
 		<div class="steps-grid">
@@ -174,7 +166,7 @@
 <!-- ═══ FORMATS ═══ -->
 <section class="section-wrapper section-alt">
 	<div class="section-inner">
-		<div class="section-label">Capabilities</div>
+		<div class="section-label">{m["landing.formats.label"]()}</div>
 		<h2 class="section-headline">{m["landing.formats.title"]()}</h2>
 
 		<div class="formats-grid">
@@ -189,7 +181,7 @@
 							<span class="format-title">{s.title}</span>
 						</div>
 						<div class="format-chips">
-							{#each s.formats.replace(/\*/g, "").split(", ") as fmt}
+							{#each s.formats as fmt}
 								<span class={clsx("format-chip", `format-chip--${s.color}`)}>{fmt.toUpperCase()}</span>
 							{/each}
 						</div>

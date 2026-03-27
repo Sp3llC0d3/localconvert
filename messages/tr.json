@@ -340,10 +340,12 @@
 			"step2_title": "Tarayıcınızda Dönüştürülür",
 			"step2_desc": "Her şey WebAssembly aracılığıyla yerel olarak çalışır — yükleme yok, sunucu bekleme süresi yok.",
 			"step3_title": "Sonucu Kaydedin",
-			"step3_desc": "Dönüştürülen dosyanızı anında, doğrudan cihazınıza alın."
+			"step3_desc": "Dönüştürülen dosyanızı anında, doğrudan cihazınıza alın.",
+			"label": "Süreç"
 		},
 		"formats": {
-			"title": "Desteklenen Formatlar"
+			"title": "Desteklenen Formatlar",
+			"label": "Özellikler"
 		},
 		"privacy": {
 			"title": "Tasarım Gereği %100 Gizli",

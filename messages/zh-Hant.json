@@ -368,10 +368,12 @@
 			"step2_title": "在瀏覽器中轉換",
 			"step2_desc": "一切透過 WebAssembly 在本機執行——無需上傳，無需等待伺服器。",
 			"step3_title": "儲存結果",
-			"step3_desc": "立即取得轉換後的檔案，直接儲存到你的裝置。"
+			"step3_desc": "立即取得轉換後的檔案，直接儲存到你的裝置。",
+			"label": "使用流程"
 		},
 		"formats": {
-			"title": "支援的格式"
+			"title": "支援的格式",
+			"label": "支援格式"
 		},
 		"privacy": {
 			"title": "從設計上保證100%隱私",

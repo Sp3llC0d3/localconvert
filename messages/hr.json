@@ -340,10 +340,12 @@
 			"step2_title": "Pretvorba u Vašem pregledniku",
 			"step2_desc": "Sve se odvija lokalno putem WebAssembly — bez prijenosa, bez čekanja na poslužitelje.",
 			"step3_title": "Spremi rezultat",
-			"step3_desc": "Dobijte svoju pretvorenu datoteku trenutno, izravno na Vaš uređaj."
+			"step3_desc": "Dobijte svoju pretvorenu datoteku trenutno, izravno na Vaš uređaj.",
+			"label": "Proces"
 		},
 		"formats": {
-			"title": "Podržani formati"
+			"title": "Podržani formati",
+			"label": "Mogućnosti"
 		},
 		"privacy": {
 			"title": "100% privatno po dizajnu",
