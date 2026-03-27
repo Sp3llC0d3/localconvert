@@ -80,7 +80,28 @@
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);
 		const storedLocale = localStorage.getItem("locale");
-		if (storedLocale) updateLocale(storedLocale);
+		if (storedLocale) {
+			updateLocale(storedLocale);
+		} else {
+			// No stored preference — detect from browser language
+			const availableKeys = ["en","ar","es","fr","de","it","ba","hr","id","tr","ja","ko","el","zh-Hans","zh-Hant","pt-BR"];
+			const browserLangs = navigator.languages?.length ? navigator.languages : [navigator.language];
+			let detected = "en";
+			for (const lang of browserLangs) {
+				// Exact match first (e.g. "pt-BR")
+				if (availableKeys.includes(lang)) { detected = lang; break; }
+				// Base language match (e.g. "zh-TW" → "zh-Hant", "zh-CN" → "zh-Hans", "pt-*" → "pt-BR")
+				const base = lang.split("-")[0];
+				const sub = lang.split("-")[1]?.toLowerCase();
+				if (base === "zh") {
+					if (sub === "tw" || sub === "hk" || sub === "mo") { detected = "zh-Hant"; break; }
+					detected = "zh-Hans"; break;
+				}
+				if (base === "pt") { detected = "pt-BR"; break; }
+				if (availableKeys.includes(base)) { detected = base; break; }
+			}
+			if (detected !== "en") updateLocale(detected);
+		}
 
 		Settings.instance.load();
 

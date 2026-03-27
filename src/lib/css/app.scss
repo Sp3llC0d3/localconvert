@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(@fontsource/radio-canada-big/600.css);
-@import url("$lib/assets/style/host-grotesk.css");
+@import url(@fontsource/azeret-mono/700.css);
+@import url(@fontsource/lexend/400.css);
+@import url(@fontsource/lexend/600.css);
 
 :root {
-	--font-body:
-		"Host Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
-		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-		"Helvetica Neue", sans-serif;
-	--font-display: "Radio Canada Big", var(--font-body);
-	--font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	--font-body: "Lexend", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-display: "Azeret Mono", ui-monospace, "Cascadia Code", monospace;
+	--font-mono: "Azeret Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 	--transition: linear(
 		0,
 		0.006,
@@ -31,279 +29,200 @@
 }
 
 @mixin light {
-	// general — teal/green theme
-	--accent-pink: hsl(158, 75%, 34%);       // #0F6E56 — primary teal
-	--accent-pink-alt: hsl(158, 75%, 25%);    // darker teal
-	--accent-pink-muted: hsl(158, 75%, 25%);  // muted teal
-	--accent-red: hsl(158, 60%, 58%);         // #5DCAA5 — light teal (used for Video category)
-	--accent-red-alt: hsl(158, 75%, 34%);     // primary teal
-	--accent-purple: hsl(164, 80%, 17%);      // #085041 — dark teal (used for Audio category)
-	--accent-purple-alt: hsl(158, 75%, 34%);  // primary teal
-	--accent-blue: hsl(158, 75%, 34%);        // #0F6E56 — primary teal (used for Images category)
-	--accent-blue-alt: hsl(158, 60%, 58%);    // light teal
-	--accent-green: hsl(155, 68%, 37%);       // #1D9E75 — accent green
-	--accent-green-alt: hsl(155, 68%, 37%);   // accent green
+	/* ── Primary accent — refined forest teal ── */
+	--accent-pink: hsl(162, 72%, 28%);
+	--accent-pink-alt: hsl(162, 72%, 22%);
+	--accent-pink-muted: hsl(162, 72%, 28%);
+
+	/* ── Category: Images — electric blue ── */
+	--accent-blue: hsl(217, 82%, 58%);
+	--accent-blue-alt: hsl(217, 82%, 46%);
+
+	/* ── Category: Audio — violet ── */
+	--accent-purple: hsl(258, 68%, 62%);
+	--accent-purple-alt: hsl(258, 68%, 50%);
+
+	/* ── Category: Video — coral ── */
+	--accent-red: hsl(14, 80%, 60%);
+	--accent-red-alt: hsl(14, 80%, 48%);
+
+	/* ── Category: Documents — teal-green ── */
+	--accent-green: hsl(158, 65%, 37%);
+	--accent-green-alt: hsl(158, 65%, 28%);
+
 	--accent: var(--accent-pink);
 	--accent-alt: var(--accent-pink-alt);
-	--accent-pink-transparent: hsla(158, 75%, 34%, 0);
-	--accent-red-transparent: hsla(158, 60%, 58%, 0);
-	--accent-purple-transparent: hsla(164, 80%, 17%, 0);
-	--accent-blue-transparent: hsla(158, 75%, 34%, 0);
-	--accent-green-transparent: hsla(155, 68%, 37%, 0);
 
-	// foregrounds
-	--fg: hsl(0, 0%, 0%);
-	--fg-muted: hsla(0, 0%, 0%, 0.6);
-	--fg-on-accent: hsl(160, 40%, 95%);       // #E1F5EE — light text on teal
-	--fg-on-badge: hsl(164, 80%, 17%);        // #085041 — dark teal text on badge
-	// readable version of the accent color
+	--accent-pink-transparent: hsla(162, 72%, 28%, 0);
+	--accent-red-transparent: hsla(14, 80%, 60%, 0);
+	--accent-purple-transparent: hsla(258, 68%, 62%, 0);
+	--accent-blue-transparent: hsla(217, 82%, 58%, 0);
+	--accent-green-transparent: hsla(158, 65%, 37%, 0);
+
+	/* ── Foregrounds ── */
+	--fg: hsl(220, 18%, 8%);
+	--fg-muted: hsla(220, 10%, 15%, 0.55);
+	--fg-on-accent: hsl(0, 0%, 100%);
+	--fg-on-badge: hsl(162, 72%, 18%);
 	--fg-accent: var(--accent-pink-muted);
-	--fg-failure: hsl(0, 70%, 55%);           // red for errors (unchanged concept)
+	--fg-failure: hsl(0, 72%, 50%);
 
-	// backgrounds
-	--bg: hsl(0, 0%, 95%);
+	/* ── Backgrounds ── */
+	--bg: hsl(38, 20%, 96%);
 
 	--bg-gradient-from: var(--accent-pink);
-	--bg-gradient-to: hsla(158, 75%, 34%, 0);
+	--bg-gradient-to: hsla(162, 72%, 28%, 0);
 	--bg-gradient-pink-from: var(--accent-pink);
-	--bg-gradient-pink-to: hsla(158, 75%, 34%, 0);
+	--bg-gradient-pink-to: hsla(162, 72%, 28%, 0);
 	--bg-gradient-pink-alt-from: var(--accent-pink);
-	--bg-gradient-pink-alt-to: hsl(160, 40%, 95%);
+	--bg-gradient-pink-alt-to: hsl(162, 45%, 94%);
 	--bg-gradient-red-from: var(--accent-red);
-	--bg-gradient-red-to: hsla(158, 60%, 58%, 0);
+	--bg-gradient-red-to: hsla(14, 80%, 60%, 0);
 	--bg-gradient-red-alt-from: var(--accent-red);
-	--bg-gradient-red-alt-to: hsl(160, 40%, 95%);
+	--bg-gradient-red-alt-to: hsl(14, 60%, 95%);
 	--bg-gradient-purple-from: var(--accent-purple);
-	--bg-gradient-purple-to: hsla(164, 80%, 17%, 0);
+	--bg-gradient-purple-to: hsla(258, 68%, 62%, 0);
 	--bg-gradient-purple-alt-from: var(--accent-purple);
-	--bg-gradient-purple-alt-to: hsl(160, 40%, 95%);
+	--bg-gradient-purple-alt-to: hsl(258, 50%, 95%);
 	--bg-gradient-blue-from: var(--accent-blue);
-	--bg-gradient-blue-to: hsla(158, 75%, 34%, 0);
+	--bg-gradient-blue-to: hsla(217, 82%, 58%, 0);
 	--bg-gradient-blue-alt-from: var(--accent-blue);
-	--bg-gradient-blue-alt-to: hsl(160, 40%, 95%);
+	--bg-gradient-blue-alt-to: hsl(217, 60%, 95%);
 	--bg-gradient-green-from: var(--accent-green);
-	--bg-gradient-green-to: hsla(155, 68%, 37%, 0);
+	--bg-gradient-green-to: hsla(158, 65%, 37%, 0);
 	--bg-gradient-green-alt-from: var(--accent-green-alt);
-	--bg-gradient-green-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-image-from: hsla(0, 0%, 95%, 0.5);
-	--bg-gradient-image-to: hsla(0, 0%, 95%, 1);
+	--bg-gradient-green-alt-to: hsl(158, 40%, 94%);
+	--bg-gradient-image-from: hsla(38, 20%, 96%, 0.5);
+	--bg-gradient-image-to: hsla(38, 20%, 96%, 1);
 
-	--bg-gradient: linear-gradient(
-		to bottom,
-		var(--bg-gradient-from),
-		var(--bg-gradient-to) 100%
-	);
-	--bg-gradient-pink: linear-gradient(
-		to bottom,
-		var(--bg-gradient-pink-from),
-		var(--bg-gradient-pink-to) 25%
-	);
-	--bg-gradient-pink-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-pink-alt-from),
-		var(--bg-gradient-pink-alt-to) 100%
-	);
-	--bg-gradient-red: linear-gradient(
-		to bottom,
-		var(--bg-gradient-red-from),
-		var(--bg-gradient-red-to) 25%
-	);
-	--bg-gradient-red-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-red-alt-from),
-		var(--bg-gradient-red-alt-to) 100%
-	);
-	--bg-gradient-purple: linear-gradient(
-		to bottom,
-		var(--bg-gradient-purple-from),
-		var(--bg-gradient-purple-to) 25%
-	);
-	--bg-gradient-purple-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-purple-alt-from),
-		var(--bg-gradient-purple-alt-to) 100%
-	);
-	--bg-gradient-blue: linear-gradient(
-		to bottom,
-		var(--bg-gradient-blue-from),
-		var(--bg-gradient-blue-to) 25%
-	);
-	--bg-gradient-blue-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-blue-alt-from),
-		var(--bg-gradient-blue-alt-to) 100%
-	);
-	--bg-gradient-green: linear-gradient(
-		to bottom,
-		var(--bg-gradient-green-from),
-		var(--bg-gradient-green-to) 25%
-	);
-	--bg-gradient-green-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-green-alt-from),
-		var(--bg-gradient-green-alt-to) 100%
-	);
-	--bg-gradient-image: linear-gradient(
-		to bottom,
-		var(--bg-gradient-image-from),
-		var(--bg-gradient-image-to) 100%
-	);
+	--bg-gradient: linear-gradient(to bottom, var(--bg-gradient-from), var(--bg-gradient-to) 100%);
+	--bg-gradient-pink: linear-gradient(to bottom, var(--bg-gradient-pink-from), var(--bg-gradient-pink-to) 25%);
+	--bg-gradient-pink-alt: linear-gradient(to top, var(--bg-gradient-pink-alt-from), var(--bg-gradient-pink-alt-to) 100%);
+	--bg-gradient-red: linear-gradient(to bottom, var(--bg-gradient-red-from), var(--bg-gradient-red-to) 25%);
+	--bg-gradient-red-alt: linear-gradient(to top, var(--bg-gradient-red-alt-from), var(--bg-gradient-red-alt-to) 100%);
+	--bg-gradient-purple: linear-gradient(to bottom, var(--bg-gradient-purple-from), var(--bg-gradient-purple-to) 25%);
+	--bg-gradient-purple-alt: linear-gradient(to top, var(--bg-gradient-purple-alt-from), var(--bg-gradient-purple-alt-to) 100%);
+	--bg-gradient-blue: linear-gradient(to bottom, var(--bg-gradient-blue-from), var(--bg-gradient-blue-to) 25%);
+	--bg-gradient-blue-alt: linear-gradient(to top, var(--bg-gradient-blue-alt-from), var(--bg-gradient-blue-alt-to) 100%);
+	--bg-gradient-green: linear-gradient(to bottom, var(--bg-gradient-green-from), var(--bg-gradient-green-to) 25%);
+	--bg-gradient-green-alt: linear-gradient(to top, var(--bg-gradient-green-alt-from), var(--bg-gradient-green-alt-to) 100%);
+	--bg-gradient-image: linear-gradient(to bottom, var(--bg-gradient-image-from), var(--bg-gradient-image-to) 100%);
+
 	--bg-panel: hsl(0, 0%, 100%);
-	--bg-panel-highlight: hsl(0, 0%, 92%);
-	--bg-separator: hsla(0, 0%, 0%, 0.2);
+	--bg-panel-highlight: hsl(38, 14%, 91%);
+	--bg-separator: hsla(220, 15%, 15%, 0.09);
 	--bg-button: var(--bg-panel-highlight);
-	--bg-badge: hsl(160, 40%, 95%);           // #E1F5EE — light teal surface
-	--bg-input: #e0e0e0;
+	--bg-badge: hsl(162, 48%, 92%);
+	--bg-input: hsl(38, 14%, 91%);
 
-	--shadow-panel: 0 2px 4px 0 hsla(0, 0%, 0%, 0.15);
+	--shadow-panel: 0 1px 3px 0 hsla(220, 15%, 15%, 0.07),
+		0 4px 12px 0 hsla(220, 15%, 15%, 0.06),
+		0 0 0 1px hsla(220, 15%, 15%, 0.05);
 }
 
 @mixin dark {
-	// general — teal/green theme (dark mode)
-	--accent-pink: hsl(158, 60%, 58%);        // #5DCAA5 — light teal for dark mode
-	--accent-pink-alt: hsl(155, 68%, 37%);    // #1D9E75
-	--accent-red: hsl(158, 60%, 58%);         // #5DCAA5
-	--accent-red-alt: hsl(158, 75%, 34%);     // #0F6E56
-	--accent-purple: hsl(158, 43%, 73%);      // #9FE1CB — mint
-	--accent-purple-alt: hsl(164, 80%, 17%);  // #085041
-	--accent-blue: hsl(158, 60%, 58%);        // #5DCAA5
-	--accent-blue-alt: hsl(158, 75%, 34%);    // #0F6E56
+	/* ── Primary accent — bright mint-teal ── */
+	--accent-pink: hsl(162, 62%, 56%);
+	--accent-pink-alt: hsl(158, 65%, 40%);
+	--accent-pink-muted: hsl(162, 62%, 56%);
+
+	/* ── Category: Images — sky blue ── */
+	--accent-blue: hsl(217, 85%, 68%);
+	--accent-blue-alt: hsl(217, 82%, 56%);
+
+	/* ── Category: Audio — light violet ── */
+	--accent-purple: hsl(258, 72%, 72%);
+	--accent-purple-alt: hsl(258, 68%, 60%);
+
+	/* ── Category: Video — light coral ── */
+	--accent-red: hsl(14, 82%, 68%);
+	--accent-red-alt: hsl(14, 80%, 55%);
+
+	/* ── Category: Documents — bright teal ── */
+	--accent-green: hsl(158, 62%, 52%);
+	--accent-green-alt: hsl(158, 62%, 40%);
+
 	--accent: var(--accent-pink);
 	--accent-alt: var(--accent-pink-alt);
-	--accent-green: hsl(155, 68%, 37%);       // #1D9E75
-	--accent-green-alt: hsl(158, 75%, 34%);   // #0F6E56
-	--accent-pink-transparent: hsla(158, 60%, 58%, 0);
-	--accent-red-transparent: hsla(158, 60%, 58%, 0);
-	--accent-purple-transparent: hsla(158, 43%, 73%, 0);
-	--accent-blue-transparent: hsla(158, 60%, 58%, 0);
-	--accent-green-transparent: hsla(155, 68%, 37%, 0);
 
-	// foregrounds
-	--fg: hsl(0, 0%, 100%);
-	--fg-muted: hsla(0, 0%, 100%, 0.65);
-	--fg-on-accent: hsl(168, 80%, 11%);       // #04342C — very dark teal
-	--fg-on-badge: hsl(160, 40%, 95%);        // #E1F5EE — light on dark badge
+	--accent-pink-transparent: hsla(162, 62%, 56%, 0);
+	--accent-red-transparent: hsla(14, 82%, 68%, 0);
+	--accent-purple-transparent: hsla(258, 72%, 72%, 0);
+	--accent-blue-transparent: hsla(217, 85%, 68%, 0);
+	--accent-green-transparent: hsla(158, 62%, 52%, 0);
+
+	/* ── Foregrounds ── */
+	--fg: hsl(210, 20%, 96%);
+	--fg-muted: hsla(210, 15%, 95%, 0.52);
+	--fg-on-accent: hsl(220, 28%, 7%);
+	--fg-on-badge: hsl(210, 20%, 92%);
 	--fg-accent: var(--accent);
-	--fg-failure: hsl(0, 70%, 65%);           // lighter red for dark mode
+	--fg-failure: hsl(0, 75%, 68%);
 
-	// backgrounds
-	--bg: hsl(0, 0%, 7%);                     // #111111 — darker background
+	/* ── Backgrounds ── */
+	--bg: hsl(218, 22%, 8%);
 
-	--bg-gradient-from: hsla(158, 75%, 34%, 0.1);
-	--bg-gradient-to: hsla(158, 75%, 34%, 0);
-	--bg-gradient-pink-from: hsla(158, 75%, 34%, 0.1);
-	--bg-gradient-pink-to: hsla(158, 75%, 34%, 0);
+	--bg-gradient-from: hsla(162, 62%, 56%, 0.09);
+	--bg-gradient-to: hsla(162, 62%, 56%, 0);
+	--bg-gradient-pink-from: hsla(162, 62%, 56%, 0.09);
+	--bg-gradient-pink-to: hsla(162, 62%, 56%, 0);
 	--bg-gradient-pink-alt-from: var(--accent-pink);
 	--bg-gradient-pink-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-red-from: hsla(158, 60%, 58%, 0.1);
-	--bg-gradient-red-to: hsla(158, 60%, 58%, 0);
+	--bg-gradient-red-from: hsla(14, 82%, 68%, 0.1);
+	--bg-gradient-red-to: hsla(14, 82%, 68%, 0);
 	--bg-gradient-red-alt-from: var(--accent-red);
-	--bg-gradient-red-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-purple-from: hsla(158, 43%, 73%, 0.1);
-	--bg-gradient-purple-to: hsla(158, 43%, 73%, 0);
+	--bg-gradient-red-alt-to: hsl(14, 60%, 95%);
+	--bg-gradient-purple-from: hsla(258, 72%, 72%, 0.1);
+	--bg-gradient-purple-to: hsla(258, 72%, 72%, 0);
 	--bg-gradient-purple-alt-from: var(--accent-purple);
-	--bg-gradient-purple-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-blue-from: hsla(158, 60%, 58%, 0.1);
-	--bg-gradient-blue-to: hsla(158, 60%, 58%, 0);
+	--bg-gradient-purple-alt-to: hsl(258, 50%, 95%);
+	--bg-gradient-blue-from: hsla(217, 85%, 68%, 0.1);
+	--bg-gradient-blue-to: hsla(217, 85%, 68%, 0);
 	--bg-gradient-blue-alt-from: var(--accent-blue);
-	--bg-gradient-blue-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-green-from: hsla(155, 68%, 37%, 0.1);
-	--bg-gradient-green-to: hsla(155, 68%, 37%, 0);
+	--bg-gradient-blue-alt-to: hsl(217, 60%, 95%);
+	--bg-gradient-green-from: hsla(158, 62%, 52%, 0.1);
+	--bg-gradient-green-to: hsla(158, 62%, 52%, 0);
 	--bg-gradient-green-alt-from: var(--accent-green-alt);
 	--bg-gradient-green-alt-to: hsl(160, 40%, 95%);
-	--bg-gradient-image-from: hsla(0, 0%, 7%, 0.5);
-	--bg-gradient-image-to: hsla(0, 0%, 7%, 1);
+	--bg-gradient-image-from: hsla(218, 22%, 8%, 0.5);
+	--bg-gradient-image-to: hsla(218, 22%, 8%, 1);
 
-	--bg-gradient: linear-gradient(
-		to bottom,
-		var(--bg-gradient-from),
-		var(--bg-gradient-to) 100%
-	);
-	--bg-gradient-pink: linear-gradient(
-		to bottom,
-		var(--bg-gradient-pink-from),
-		var(--bg-gradient-pink-to) 25%
-	);
-	--bg-gradient-pink-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-pink-alt-from),
-		var(--bg-gradient-pink-alt-to) 100%
-	);
-	--bg-gradient-red: linear-gradient(
-		to bottom,
-		var(--bg-gradient-red-from),
-		var(--bg-gradient-red-to) 25%
-	);
-	--bg-gradient-red-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-red-alt-from),
-		var(--bg-gradient-red-alt-to) 100%
-	);
-	--bg-gradient-purple: linear-gradient(
-		to bottom,
-		var(--bg-gradient-purple-from),
-		var(--bg-gradient-purple-to) 25%
-	);
-	--bg-gradient-purple-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-purple-alt-from),
-		var(--bg-gradient-purple-alt-to) 100%
-	);
-	--bg-gradient-blue: linear-gradient(
-		to bottom,
-		var(--bg-gradient-blue-from),
-		var(--bg-gradient-blue-to) 25%
-	);
-	--bg-gradient-blue-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-blue-alt-from),
-		var(--bg-gradient-blue-alt-to) 100%
-	);
-	--bg-gradient-green: linear-gradient(
-		to bottom,
-		var(--bg-gradient-green-from),
-		var(--bg-gradient-green-to) 25%
-	);
-	--bg-gradient-green-alt: linear-gradient(
-		to top,
-		var(--bg-gradient-green-alt-from),
-		var(--bg-gradient-green-alt-to) 100%
-	);
-	--bg-gradient-image: linear-gradient(
-		to bottom,
-		var(--bg-gradient-image-from),
-		var(--bg-gradient-image-to) 100%
-	);
-	--bg-panel: hsl(160, 4%, 18%);            // dark panel with slight teal tint
-	--bg-panel-highlight: hsl(160, 2%, 25%);
-	--bg-separator: hsl(160, 4%, 22%);
-	--bg-button: hsl(160, 4%, 28%);
-	--bg-badge: hsl(164, 80%, 17%);           // #085041 — dark teal badge
+	--bg-gradient: linear-gradient(to bottom, var(--bg-gradient-from), var(--bg-gradient-to) 100%);
+	--bg-gradient-pink: linear-gradient(to bottom, var(--bg-gradient-pink-from), var(--bg-gradient-pink-to) 25%);
+	--bg-gradient-pink-alt: linear-gradient(to top, var(--bg-gradient-pink-alt-from), var(--bg-gradient-pink-alt-to) 100%);
+	--bg-gradient-red: linear-gradient(to bottom, var(--bg-gradient-red-from), var(--bg-gradient-red-to) 25%);
+	--bg-gradient-red-alt: linear-gradient(to top, var(--bg-gradient-red-alt-from), var(--bg-gradient-red-alt-to) 100%);
+	--bg-gradient-purple: linear-gradient(to bottom, var(--bg-gradient-purple-from), var(--bg-gradient-purple-to) 25%);
+	--bg-gradient-purple-alt: linear-gradient(to top, var(--bg-gradient-purple-alt-from), var(--bg-gradient-purple-alt-to) 100%);
+	--bg-gradient-blue: linear-gradient(to bottom, var(--bg-gradient-blue-from), var(--bg-gradient-blue-to) 25%);
+	--bg-gradient-blue-alt: linear-gradient(to top, var(--bg-gradient-blue-alt-from), var(--bg-gradient-blue-alt-to) 100%);
+	--bg-gradient-green: linear-gradient(to bottom, var(--bg-gradient-green-from), var(--bg-gradient-green-to) 25%);
+	--bg-gradient-green-alt: linear-gradient(to top, var(--bg-gradient-green-alt-from), var(--bg-gradient-green-alt-to) 100%);
+	--bg-gradient-image: linear-gradient(to bottom, var(--bg-gradient-image-from), var(--bg-gradient-image-to) 100%);
 
-	--shadow-panel: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+	--bg-panel: hsl(218, 16%, 13%);
+	--bg-panel-highlight: hsl(218, 14%, 19%);
+	--bg-separator: hsl(218, 18%, 22%);
+	--bg-button: hsl(218, 14%, 22%);
+	--bg-badge: hsl(162, 28%, 18%);
+	--bg-input: hsl(218, 14%, 19%);
+
+	--shadow-panel: 0 4px 16px 0 hsla(218, 30%, 0%, 0.5),
+		0 0 0 1px hsla(218, 20%, 80%, 0.05);
 
 	color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		@include dark;
-	}
+	:root { @include dark; }
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		@include light;
-	}
+	:root { @include light; }
 }
 
-:root.light {
-	@include light;
-}
-
-:root.dark {
-	@include dark;
-}
+:root.light { @include light; }
+:root.dark  { @include dark;  }
 
 body {
 	@apply text-foreground font-body font-semibold overflow-x-hidden;
@@ -333,7 +252,7 @@ body {
 }
 
 .selected {
-	@apply bg-accent-purple !text-black;
+	@apply bg-accent-purple text-on-accent;
 }
 
 @layer components {
@@ -342,7 +261,7 @@ body {
 	}
 
 	.btn {
-		@apply bg-button flex items-center justify-center overflow-hidden relative cursor-pointer px-6 h-14 rounded-full font-medium focus:!outline-none hover:scale-105 duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none hoverable;
+		@apply bg-button flex items-center justify-center overflow-hidden relative cursor-pointer px-6 h-14 rounded-full font-medium focus:!outline-none hover:scale-105 duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
 		transition:
 			opacity 0.2s ease,
 			transform 0.2s ease,
@@ -352,24 +271,21 @@ body {
 
 	.btn.highlight {
 		@apply bg-accent text-on-accent;
-		box-shadow: 0 2px 16px hsla(158, 65%, 40%, 0.35);
+		box-shadow: 0 2px 16px hsla(162, 65%, 35%, 0.32);
 	}
 
 	.btn.highlight:hover {
-		box-shadow: 0 4px 24px hsla(158, 65%, 40%, 0.5);
+		box-shadow: 0 4px 28px hsla(162, 65%, 35%, 0.48);
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+	h1, h2, h3, h4, h5, h6 {
 		@apply font-display font-semibold;
+		letter-spacing: -0.03em;
 	}
 
 	code {
-		@apply font-mono bg-gray-200 rounded-md px-1 dynadark:bg-panel-alt dynadark:text-white;
+		@apply font-mono rounded-md px-1;
+		background: var(--bg-panel-highlight);
 	}
 
 	p a {
