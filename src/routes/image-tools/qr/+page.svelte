@@ -15,9 +15,10 @@
 	let previewCanvas = $state<HTMLCanvasElement>();
 	let rafId: number | null = null;
 
-	// Live preview
+	// Live preview + clear stale result on any change
 	$effect(() => {
 		void text; void size; void fgColor; void bgColor; void errorLevel;
+		resultBlob = null;
 		if (!browser || !previewCanvas || !text.trim()) return;
 		if (rafId !== null) cancelAnimationFrame(rafId);
 		rafId = requestAnimationFrame(() => {
