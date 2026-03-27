@@ -4,7 +4,7 @@
 	import { editPdf, type PdfEdit, type TextEdit } from '$lib/pdf/edit';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
-	import { EditIcon } from 'lucide-svelte';
+	import { EditIcon, Trash2Icon } from 'lucide-svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -16,19 +16,39 @@
 	let currentPage = $state(0);
 	let pageWidth = $state(612);
 	let pageHeight = $state(792);
+	let displayW = $state(0);
+	let displayH = $state(0);
 
-	// Edit entries
-	let edits = $state<TextEdit[]>([]);
-	let newText = $state('');
-	let newX = $state(50);
-	let newY = $state(700);
+	// Edit state
+	interface PlacedText {
+		id: string;
+		text: string;
+		x: number; // PDF points from left
+		y: number; // PDF points from bottom
+		fontSize: number;
+		color: string;
+	}
+
+	let elements = $state<PlacedText[]>([]);
+	let selectedId = $state<string | null>(null);
+	let newText = $state('Type here');
 	let newFontSize = $state(14);
 	let newColor = $state('#000000');
+
+	// Ghost preview (follows cursor before placing)
+	let ghostPos = $state({ x: 0, y: 0 });
+	let showGhost = $state(false);
+
+	// Dragging
+	let dragging = $state<{ id: string; offsetX: number; offsetY: number } | null>(null);
+
+	// Page container ref
+	let pageContainer = $state<HTMLDivElement>();
 
 	$effect(() => {
 		if (!browser || files.length === 0) {
 			thumbs = [];
-			edits = [];
+			elements = [];
 			resultBytes = null;
 			return;
 		}
@@ -45,10 +65,39 @@
 			pageWidth = Math.round(vp.width);
 			pageHeight = Math.round(vp.height);
 			currentPage = 0;
-			thumbs = await renderAllThumbnails(files[0], 0.5);
+			// Render at higher quality for the interactive preview
+			thumbs = await renderAllThumbnails(files[0], 1.0);
+			calcDisplaySize();
 		} catch {
 			error = 'Failed to read PDF.';
 		}
+	}
+
+	function calcDisplaySize() {
+		const maxW = Math.min(600, (typeof window !== 'undefined' ? window.innerWidth : 600) - 48);
+		const scale = Math.min(1, maxW / pageWidth);
+		displayW = Math.round(pageWidth * scale);
+		displayH = Math.round(pageHeight * scale);
+	}
+
+	// Convert display px to PDF points
+	function toPdfCoords(displayX: number, displayY: number): { x: number; y: number } {
+		const scaleX = pageWidth / displayW;
+		const scaleY = pageHeight / displayH;
+		return {
+			x: Math.round(displayX * scaleX),
+			y: Math.round(pageHeight - displayY * scaleY), // flip Y: PDF origin is bottom-left
+		};
+	}
+
+	// Convert PDF points to display px
+	function toDisplayCoords(pdfX: number, pdfY: number): { x: number; y: number } {
+		const scaleX = displayW / pageWidth;
+		const scaleY = displayH / pageHeight;
+		return {
+			x: pdfX * scaleX,
+			y: (pageHeight - pdfY) * scaleY, // flip Y back
+		};
 	}
 
 	function hexToRgb(hex: string): [number, number, number] {
@@ -58,31 +107,99 @@
 		return [r, g, b];
 	}
 
-	function addTextEdit() {
-		if (!newText.trim()) return;
-		edits = [...edits, {
-			type: 'text',
-			text: newText.trim(),
-			x: newX,
-			y: newY,
-			fontSize: newFontSize,
-			color: hexToRgb(newColor),
-		}];
-		newText = '';
+	function getRelPos(e: MouseEvent | TouchEvent): { x: number; y: number } {
+		if (!pageContainer) return { x: 0, y: 0 };
+		const rect = pageContainer.getBoundingClientRect();
+		const pos = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as MouseEvent);
+		return {
+			x: pos.clientX - rect.left,
+			y: pos.clientY - rect.top,
+		};
 	}
 
-	function removeEdit(index: number) {
-		edits = edits.filter((_, i) => i !== index);
+	// Ghost follows cursor
+	function onPageMouseMove(e: MouseEvent) {
+		if (dragging) {
+			// Drag element
+			const pos = getRelPos(e);
+			const pdf = toPdfCoords(pos.x - dragging.offsetX, pos.y - dragging.offsetY);
+			const el = elements.find((el) => el.id === dragging.id);
+			if (el) {
+				el.x = pdf.x;
+				el.y = pdf.y;
+			}
+			return;
+		}
+		if (!newText.trim()) return;
+		const pos = getRelPos(e);
+		ghostPos = { x: pos.x, y: pos.y };
+		showGhost = true;
+	}
+
+	function onPageMouseLeave() {
+		showGhost = false;
+		if (dragging) dragging = null;
+	}
+
+	// Click to place text
+	function onPageClick(e: MouseEvent) {
+		if (dragging) return;
+		if (!newText.trim()) return;
+		const pos = getRelPos(e);
+		const pdf = toPdfCoords(pos.x, pos.y);
+
+		elements = [...elements, {
+			id: crypto.randomUUID(),
+			text: newText.trim(),
+			x: pdf.x,
+			y: pdf.y,
+			fontSize: newFontSize,
+			color: newColor,
+		}];
+		selectedId = elements[elements.length - 1].id;
+	}
+
+	// Element drag
+	function onElementPointerDown(e: MouseEvent, el: PlacedText) {
+		e.stopPropagation();
+		selectedId = el.id;
+		const pos = getRelPos(e);
+		const disp = toDisplayCoords(el.x, el.y);
+		dragging = {
+			id: el.id,
+			offsetX: pos.x - disp.x,
+			offsetY: pos.y - disp.y,
+		};
+		showGhost = false;
+	}
+
+	function onPageMouseUp() {
+		dragging = null;
+	}
+
+	function removeElement(id: string) {
+		elements = elements.filter((el) => el.id !== id);
+		if (selectedId === id) selectedId = null;
 	}
 
 	async function apply() {
-		if (files.length === 0) { error = 'Add a PDF file.'; return; }
-		if (edits.length === 0) { error = 'Add at least one text element.'; return; }
+		if (files.length === 0 || elements.length === 0) {
+			error = elements.length === 0 ? 'Click on the page to place text.' : 'Add a PDF.';
+			return;
+		}
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
-			resultBytes = await editPdf(files[0], currentPage, edits as PdfEdit[]);
+			const pdfEdits: PdfEdit[] = elements.map((el) => ({
+				type: 'text' as const,
+				text: el.text,
+				x: el.x,
+				y: el.y,
+				fontSize: el.fontSize,
+				color: hexToRgb(el.color),
+			}));
+			resultBytes = await editPdf(files[0], currentPage, pdfEdits);
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : 'Failed.';
 		}
@@ -97,78 +214,102 @@
 
 <svelte:head>
 	<title>Edit PDF — LocalConvert</title>
-	<meta name="description" content="Add text to PDF pages. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content="Click anywhere on a PDF page to add text. Drag to reposition. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/edit/" />
 </svelte:head>
 
-<div class="pdf-page">
+<div class="edit-page">
 	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
-	<div class="pdf-header">
+	<div class="edit-header">
 		<EditIcon size={28} />
 		<div>
 			<h1 class="text-2xl font-semibold">Edit PDF</h1>
-			<p class="text-sm text-muted">Add text to any page of a PDF.</p>
+			<p class="text-sm text-muted">Click on the page to place text. Drag to reposition.</p>
 		</div>
 	</div>
 
 	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
 
-	{#if thumbs.length > 0}
-		<!-- Page preview -->
-		{#if thumbs[currentPage]}
-			<div class="flex flex-col items-center gap-2">
-				<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-preview" />
-				<p class="text-xs text-muted">Page {currentPage + 1} — {pageWidth} × {pageHeight} pt</p>
-			</div>
-		{/if}
+	{#if thumbs.length > 0 && displayW > 0}
+		<!-- Text input bar -->
+		<div class="text-bar">
+			<input
+				type="text"
+				bind:value={newText}
+				placeholder="Text to place…"
+				class="text-input"
+			/>
+			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
+			<span class="text-xs text-muted">pt</span>
+			<input type="color" bind:value={newColor} class="color-input" aria-label="Text color" />
+		</div>
 
 		<!-- Page selector -->
 		{#if thumbs.length > 1}
 			<div class="flex gap-2 flex-wrap">
 				{#each thumbs as _, i}
-					<button class="btn text-sm px-3 py-1.5 {currentPage === i ? 'highlight' : ''}" onclick={() => currentPage = i}>
+					<button class="btn text-sm px-3 py-1.5 {currentPage === i ? 'highlight' : ''}" onclick={() => { currentPage = i; elements = []; }}>
 						Page {i + 1}
 					</button>
 				{/each}
 			</div>
 		{/if}
 
-		<!-- Add text -->
-		<div class="opt-section">
-			<p class="text-sm font-semibold">Add text</p>
-			<div class="opt-row">
-				<input type="text" bind:value={newText} placeholder="Enter text…" class="opt-input flex-1" />
-			</div>
-			<div class="opt-row">
-				<span class="opt-label">X</span>
-				<input type="number" min={0} max={pageWidth} bind:value={newX} class="opt-input w-20" aria-label="X position" />
-				<span class="opt-label">Y</span>
-				<input type="number" min={0} max={pageHeight} bind:value={newY} class="opt-input w-20" aria-label="Y position" />
-			</div>
-			<div class="opt-row">
-				<span class="opt-label">Size</span>
-				<input type="number" min={6} max={72} bind:value={newFontSize} class="opt-input w-20" aria-label="Font size" />
-				<span class="opt-label">Color</span>
-				<input type="color" bind:value={newColor} class="w-8 h-8 rounded cursor-pointer" aria-label="Text color" />
-			</div>
-			<button class="btn text-sm px-4 py-1.5" onclick={addTextEdit}>+ Add text</button>
-		</div>
+		<!-- Interactive page preview -->
+		<div class="page-workspace">
+			<div
+				bind:this={pageContainer}
+				class="page-container"
+				style="width: {displayW}px; max-width: 100%; height: {displayH}px;"
+				onmousemove={onPageMouseMove}
+				onmouseleave={onPageMouseLeave}
+				onmouseup={onPageMouseUp}
+				onclick={onPageClick}
+				role="application"
+				aria-label="PDF page editor"
+			>
+				<!-- Rendered page -->
+				<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
 
-		<!-- Edit list -->
-		{#if edits.length > 0}
-			<div class="opt-section">
-				<p class="text-sm font-semibold">Elements ({edits.length})</p>
-				{#each edits as edit, i}
-					<div class="flex items-center justify-between gap-2 text-sm">
-						<span class="truncate flex-1">"{edit.text}" at ({edit.x}, {edit.y})</span>
-						<button class="text-xs text-muted hover:text-failure" onclick={() => removeEdit(i)} aria-label="Remove element">✕</button>
+				<!-- Ghost preview (follows cursor) -->
+				{#if showGhost && newText.trim() && !dragging}
+					<div
+						class="ghost-text"
+						style="left: {ghostPos.x}px; top: {ghostPos.y}px; font-size: {newFontSize * (displayW / pageWidth)}px; color: {newColor};"
+					>
+						{newText}
+					</div>
+				{/if}
+
+				<!-- Placed elements -->
+				{#each elements as el (el.id)}
+					{@const disp = toDisplayCoords(el.x, el.y)}
+					<div
+						class="placed-text"
+						class:selected={selectedId === el.id}
+						style="left: {disp.x}px; top: {disp.y}px; font-size: {el.fontSize * (displayW / pageWidth)}px; color: {el.color};"
+						onmousedown={(e) => onElementPointerDown(e, el)}
+						role="button"
+						tabindex="0"
+					>
+						{el.text}
+						{#if selectedId === el.id}
+							<button
+								class="delete-btn"
+								onclick={(e) => { e.stopPropagation(); removeElement(el.id); }}
+								aria-label="Remove text"
+							>
+								<Trash2Icon size={12} />
+							</button>
+						{/if}
 					</div>
 				{/each}
 			</div>
-		{/if}
+			<p class="text-xs text-muted mt-2">{elements.length} element{elements.length !== 1 ? 's' : ''} placed</p>
+		</div>
 
-		<button class="btn highlight" disabled={processing || edits.length === 0} onclick={apply}>
-			{processing ? 'Applying…' : 'Apply edits'}
+		<button class="btn highlight" disabled={processing || elements.length === 0} onclick={apply}>
+			{processing ? 'Applying…' : 'Save edited PDF'}
 		</button>
 	{/if}
 
@@ -176,22 +317,70 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save edited PDF</button>
+			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>Download</button>
 		</div>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
 </div>
 
-<style lang="postcss">
-	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.opt-section { @apply flex flex-col gap-4 p-4 rounded-2xl bg-panel shadow-panel; }
-	.opt-row { @apply flex items-center gap-4 flex-wrap; }
-	.opt-label { @apply text-sm font-semibold w-16 flex-shrink-0; }
-	.opt-input { @apply rounded-lg px-3 py-1.5 text-sm border; background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg); border-color: var(--bg-separator); }
-	.opt-input:focus { outline: 1.5px solid var(--accent); }
-	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
-	.page-preview { @apply max-h-72 rounded-xl object-contain mx-auto border; border-color: var(--bg-separator); }
+<style>
+	.edit-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
+	.edit-header { display: flex; align-items: center; gap: 0.75rem; }
+	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+
+	/* Text input bar */
+	.text-bar {
+		display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border-radius: 1rem;
+		background: var(--bg-panel); box-shadow: var(--shadow-panel); flex-wrap: wrap;
+	}
+	.text-input {
+		flex: 1; min-width: 8rem; padding: 0.375rem 0.75rem; border-radius: 0.5rem; font-size: 0.875rem;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
+	}
+	.text-input:focus { outline: 1.5px solid var(--accent); }
+	.size-input {
+		width: 3.5rem; padding: 0.375rem 0.5rem; border-radius: 0.5rem; font-size: 0.8125rem; text-align: center;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
+	}
+	.size-input:focus { outline: 1.5px solid var(--accent); }
+	.color-input { width: 2rem; height: 2rem; border-radius: 0.375rem; cursor: pointer; border: 1px solid var(--bg-separator); padding: 0; }
+
+	/* Page workspace */
+	.page-workspace { display: flex; flex-direction: column; align-items: center; }
+	.page-container {
+		position: relative; cursor: crosshair; user-select: none; -webkit-user-select: none;
+		border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-panel);
+	}
+	.page-img { display: block; width: 100%; height: 100%; pointer-events: none; }
+
+	/* Ghost preview */
+	.ghost-text {
+		position: absolute; pointer-events: none; opacity: 0.4;
+		white-space: nowrap; font-family: sans-serif; font-weight: normal;
+		transform: translateY(-100%);
+	}
+
+	/* Placed text elements */
+	.placed-text {
+		position: absolute; cursor: move; white-space: nowrap;
+		font-family: sans-serif; font-weight: normal;
+		padding: 1px 3px; border-radius: 2px;
+		transform: translateY(-100%);
+		transition: box-shadow 0.1s ease;
+	}
+	.placed-text:hover { box-shadow: 0 0 0 1.5px var(--accent); }
+	.placed-text.selected { box-shadow: 0 0 0 2px var(--accent); background: rgba(15, 110, 86, 0.08); }
+
+	/* Delete button on selected element */
+	.delete-btn {
+		position: absolute; top: -10px; right: -10px;
+		width: 20px; height: 20px; border-radius: 50%;
+		background: var(--fg-failure, #e53e3e); color: white;
+		display: flex; align-items: center; justify-content: center;
+		border: none; cursor: pointer; padding: 0;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+	.delete-btn:hover { transform: scale(1.15); }
 </style>

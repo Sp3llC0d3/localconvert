@@ -11,22 +11,32 @@
 	let error = $state('');
 	let resultBytes = $state<Uint8Array | null>(null);
 
-	// Signature drawing
+	// Signature canvas
 	let sigCanvas = $state<HTMLCanvasElement>();
 	let drawing = $state(false);
 	let hasSignature = $state(false);
+	let sigPreviewUrl = $state('');
 
-	// PDF page info
+	// PDF page
 	let thumbs = $state<string[]>([]);
 	let currentPage = $state(0);
 	let pageWidth = $state(612);
 	let pageHeight = $state(792);
+	let displayW = $state(0);
+	let displayH = $state(0);
 
-	// Placement
-	let sigX = $state(50);
-	let sigY = $state(50);
-	let sigW = $state(200);
-	let sigH = $state(80);
+	// Visual placement
+	let placed = $state(false);
+	let sigDisplayX = $state(0);
+	let sigDisplayY = $state(0);
+	let sigDisplayW = $state(120);
+	let sigDisplayH = $state(48);
+	let dragging = $state<{ offsetX: number; offsetY: number } | null>(null);
+	let ghostPos = $state({ x: 0, y: 0 });
+	let showGhost = $state(false);
+
+	// Page container ref
+	let pageContainer = $state<HTMLDivElement>();
 
 	// Mode
 	let mode = $state<'draw' | 'type' | 'upload'>('draw');
@@ -36,6 +46,7 @@
 		if (!browser || files.length === 0) {
 			thumbs = [];
 			resultBytes = null;
+			placed = false;
 			return;
 		}
 		loadPdf();
@@ -51,23 +62,28 @@
 			pageWidth = Math.round(vp.width);
 			pageHeight = Math.round(vp.height);
 			currentPage = 0;
-			thumbs = await renderAllThumbnails(files[0], 0.5);
+			thumbs = await renderAllThumbnails(files[0], 1.0);
+			calcDisplaySize();
 		} catch {
 			error = 'Failed to read PDF.';
 		}
 	}
 
-	// Drawing handlers
+	function calcDisplaySize() {
+		const maxW = Math.min(600, (typeof window !== 'undefined' ? window.innerWidth : 600) - 48);
+		const scale = Math.min(1, maxW / pageWidth);
+		displayW = Math.round(pageWidth * scale);
+		displayH = Math.round(pageHeight * scale);
+	}
+
+	// Signature drawing
 	function canvasCoords(e: MouseEvent | TouchEvent): { x: number; y: number } {
 		if (!sigCanvas) return { x: 0, y: 0 };
 		const rect = sigCanvas.getBoundingClientRect();
 		const pos = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as MouseEvent);
-		// Scale from CSS display coords to canvas resolution coords
-		const scaleX = sigCanvas.width / rect.width;
-		const scaleY = sigCanvas.height / rect.height;
 		return {
-			x: (pos.clientX - rect.left) * scaleX,
-			y: (pos.clientY - rect.top) * scaleY,
+			x: (pos.clientX - rect.left) * (sigCanvas.width / rect.width),
+			y: (pos.clientY - rect.top) * (sigCanvas.height / rect.height),
 		};
 	}
 
@@ -88,6 +104,7 @@
 		const { x, y } = canvasCoords(e);
 		ctx.lineWidth = 2.5;
 		ctx.lineCap = 'round';
+		ctx.lineJoin = 'round';
 		ctx.strokeStyle = '#000';
 		ctx.lineTo(x, y);
 		ctx.stroke();
@@ -96,6 +113,7 @@
 
 	function endDraw() {
 		drawing = false;
+		updateSigPreview();
 	}
 
 	function clearSignature() {
@@ -103,6 +121,13 @@
 		const ctx = sigCanvas.getContext('2d')!;
 		ctx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
 		hasSignature = false;
+		sigPreviewUrl = '';
+		placed = false;
+	}
+
+	function updateSigPreview() {
+		if (!sigCanvas || !hasSignature) return;
+		sigPreviewUrl = sigCanvas.toDataURL('image/png');
 	}
 
 	function renderTypedSignature() {
@@ -114,50 +139,14 @@
 		ctx.textBaseline = 'middle';
 		ctx.fillText(typedName, 10, sigCanvas.height / 2);
 		hasSignature = true;
+		sigPreviewUrl = sigCanvas.toDataURL('image/png');
 	}
 
-	async function getSignatureBytes(): Promise<Uint8Array> {
-		if (!sigCanvas) throw new Error('No signature');
-
-		if (mode === 'type') renderTypedSignature();
-
-		const blob = await new Promise<Blob>((resolve, reject) => {
-			sigCanvas!.toBlob((b) => {
-				if (!b) return reject(new Error('Failed to export signature'));
-				resolve(b);
-			}, 'image/png');
-		});
-		return new Uint8Array(await blob.arrayBuffer());
-	}
-
-	async function apply() {
-		if (files.length === 0) { error = 'Add a PDF file.'; return; }
-		if (!hasSignature && mode !== 'type') { error = 'Draw or type a signature first.'; return; }
-		if (mode === 'type' && !typedName.trim()) { error = 'Enter your name.'; return; }
-
-		error = '';
-		processing = true;
-		resultBytes = null;
-		try {
-			const sigBytes = await getSignatureBytes();
-			// Convert placement from visual top-left to PDF bottom-left
-			resultBytes = await signPdf(files[0], sigBytes, {
-				pageIndex: currentPage,
-				x: sigX,
-				y: pageHeight - sigY - sigH,
-				width: sigW,
-				height: sigH,
-			});
-		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+	$effect(() => {
+		if (mode === 'type' && typedName.trim()) {
+			renderTypedSignature();
 		}
-		processing = false;
-	}
-
-	function download() {
-		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_signed.pdf'));
-	}
+	});
 
 	async function handleUpload(e: Event) {
 		const input = e.target as HTMLInputElement;
@@ -172,34 +161,127 @@
 			const h = img.height * scale;
 			ctx.drawImage(img, (sigCanvas!.width - w) / 2, (sigCanvas!.height - h) / 2, w, h);
 			hasSignature = true;
+			sigPreviewUrl = sigCanvas!.toDataURL('image/png');
 			URL.revokeObjectURL(url);
 		};
 		img.src = url;
 		input.value = '';
 	}
+
+	// Page interaction — click to place signature
+	function getRelPos(e: MouseEvent | TouchEvent): { x: number; y: number } {
+		if (!pageContainer) return { x: 0, y: 0 };
+		const rect = pageContainer.getBoundingClientRect();
+		const pos = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as MouseEvent);
+		return { x: pos.clientX - rect.left, y: pos.clientY - rect.top };
+	}
+
+	function onPageMouseMove(e: MouseEvent) {
+		if (dragging) {
+			const pos = getRelPos(e);
+			sigDisplayX = Math.max(0, Math.min(displayW - sigDisplayW, pos.x - dragging.offsetX));
+			sigDisplayY = Math.max(0, Math.min(displayH - sigDisplayH, pos.y - dragging.offsetY));
+			return;
+		}
+		if (!hasSignature || placed) return;
+		ghostPos = getRelPos(e);
+		showGhost = true;
+	}
+
+	function onPageMouseLeave() {
+		showGhost = false;
+		dragging = null;
+	}
+
+	function onPageClick(e: MouseEvent) {
+		if (dragging || !hasSignature) return;
+		const pos = getRelPos(e);
+		sigDisplayX = Math.max(0, pos.x - sigDisplayW / 2);
+		sigDisplayY = Math.max(0, pos.y - sigDisplayH / 2);
+		placed = true;
+		showGhost = false;
+	}
+
+	function onSigPointerDown(e: MouseEvent) {
+		e.stopPropagation();
+		const pos = getRelPos(e);
+		dragging = { offsetX: pos.x - sigDisplayX, offsetY: pos.y - sigDisplayY };
+	}
+
+	function onPageMouseUp() {
+		dragging = null;
+	}
+
+	async function getSignatureBytes(): Promise<Uint8Array> {
+		if (!sigCanvas) throw new Error('No signature');
+		if (mode === 'type') renderTypedSignature();
+		const blob = await new Promise<Blob>((resolve, reject) => {
+			sigCanvas!.toBlob((b) => {
+				if (!b) return reject(new Error('Failed'));
+				resolve(b);
+			}, 'image/png');
+		});
+		return new Uint8Array(await blob.arrayBuffer());
+	}
+
+	async function apply() {
+		if (!files.length) { error = 'Add a PDF.'; return; }
+		if (!hasSignature) { error = 'Create a signature first.'; return; }
+		if (!placed) { error = 'Click on the page to place your signature.'; return; }
+
+		error = '';
+		processing = true;
+		resultBytes = null;
+		try {
+			const sigBytes = await getSignatureBytes();
+			const scaleX = pageWidth / displayW;
+			const scaleY = pageHeight / displayH;
+			const pdfX = sigDisplayX * scaleX;
+			const pdfW = sigDisplayW * scaleX;
+			const pdfH = sigDisplayH * scaleY;
+			const pdfY = pageHeight - (sigDisplayY * scaleY) - pdfH; // flip Y
+
+			resultBytes = await signPdf(files[0], sigBytes, {
+				pageIndex: currentPage,
+				x: Math.round(pdfX),
+				y: Math.round(pdfY),
+				width: Math.round(pdfW),
+				height: Math.round(pdfH),
+			});
+		} catch (e: unknown) {
+			error = e instanceof Error ? e.message : 'Failed.';
+		}
+		processing = false;
+	}
+
+	function download() {
+		if (!resultBytes) return;
+		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_signed.pdf'));
+	}
 </script>
 
 <svelte:head>
 	<title>Sign PDF — LocalConvert</title>
-	<meta name="description" content="Add your signature to any PDF. Draw, type, or upload. Free, private, no uploads." />
+	<meta name="description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/sign/" />
 </svelte:head>
 
-<div class="pdf-page">
+<div class="sign-page">
 	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
-	<div class="pdf-header">
+	<div class="sign-header">
 		<PenToolIcon size={28} />
 		<div>
 			<h1 class="text-2xl font-semibold">Sign PDF</h1>
-			<p class="text-sm text-muted">Draw, type, or upload a signature and place it on a PDF page.</p>
+			<p class="text-sm text-muted">Create a signature, then click on the page to place it.</p>
 		</div>
 	</div>
 
 	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
 
-	{#if thumbs.length > 0}
-		<!-- Signature input -->
-		<div class="opt-section">
+	{#if thumbs.length > 0 && displayW > 0}
+		<!-- Step 1: Create signature -->
+		<div class="step-section">
+			<p class="step-label">1. Create your signature</p>
 			<div class="flex gap-2 mb-2">
 				<button class="btn text-sm px-3 py-1.5 {mode === 'draw' ? 'highlight' : ''}" onclick={() => { mode = 'draw'; clearSignature(); }}>Draw</button>
 				<button class="btn text-sm px-3 py-1.5 {mode === 'type' ? 'highlight' : ''}" onclick={() => { mode = 'type'; clearSignature(); }}>Type</button>
@@ -209,8 +291,7 @@
 			{#if mode === 'draw'}
 				<canvas
 					bind:this={sigCanvas}
-					width={400}
-					height={120}
+					width={400} height={120}
 					class="sig-canvas"
 					onmousedown={startDraw}
 					onmousemove={doDraw}
@@ -223,88 +304,138 @@
 				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>Clear</button>
 			{:else if mode === 'type'}
 				<input
-					type="text"
-					bind:value={typedName}
-					placeholder="Your name"
-					class="opt-input w-full"
-					oninput={() => { hasSignature = typedName.trim().length > 0; }}
+					type="text" bind:value={typedName} placeholder="Your name"
+					class="sig-text-input"
 				/>
 				<canvas bind:this={sigCanvas} width={400} height={120} class="hidden"></canvas>
 			{:else}
 				<input type="file" accept="image/*" onchange={handleUpload} class="text-sm" />
-				<canvas bind:this={sigCanvas} width={400} height={120} class="sig-canvas pointer-events-none"></canvas>
+				<canvas bind:this={sigCanvas} width={400} height={120} class="sig-canvas" style="pointer-events: none;"></canvas>
 			{/if}
 		</div>
 
-		<!-- Page selector -->
-		{#if thumbs.length > 1}
-			<div class="opt-section">
-				<span class="text-sm font-semibold">Place on page:</span>
-				<div class="flex gap-2 flex-wrap">
-					{#each thumbs as thumb, i}
-						<button class="thumb-btn {currentPage === i ? 'active' : ''}" onclick={() => currentPage = i}>
-							<img src={thumb} alt="Page {i + 1}" class="thumb-img" />
-							<span class="text-xs">{i + 1}</span>
-						</button>
-					{/each}
+		<!-- Step 2: Place on page -->
+		{#if hasSignature}
+			<div class="step-section">
+				<p class="step-label">2. Click on the page to place your signature</p>
+
+				{#if thumbs.length > 1}
+					<div class="flex gap-2 flex-wrap mb-2">
+						{#each thumbs as _, i}
+							<button class="btn text-sm px-3 py-1.5 {currentPage === i ? 'highlight' : ''}" onclick={() => { currentPage = i; placed = false; }}>
+								Page {i + 1}
+							</button>
+						{/each}
+					</div>
+				{/if}
+
+				<div class="page-workspace">
+					<div
+						bind:this={pageContainer}
+						class="page-container"
+						style="width: {displayW}px; max-width: 100%; height: {displayH}px;"
+						onmousemove={onPageMouseMove}
+						onmouseleave={onPageMouseLeave}
+						onmouseup={onPageMouseUp}
+						onclick={onPageClick}
+						role="application"
+						aria-label="Click to place signature"
+					>
+						<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
+
+						<!-- Ghost (follows cursor before placement) -->
+						{#if showGhost && !placed && sigPreviewUrl}
+							<img
+								src={sigPreviewUrl}
+								alt=""
+								class="sig-ghost"
+								style="left: {ghostPos.x - sigDisplayW / 2}px; top: {ghostPos.y - sigDisplayH / 2}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
+							/>
+						{/if}
+
+						<!-- Placed signature -->
+						{#if placed && sigPreviewUrl}
+							<img
+								src={sigPreviewUrl}
+								alt="Signature"
+								class="sig-placed"
+								style="left: {sigDisplayX}px; top: {sigDisplayY}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
+								onmousedown={onSigPointerDown}
+								draggable="false"
+							/>
+						{/if}
+					</div>
 				</div>
 			</div>
 		{/if}
 
-		<!-- Position -->
-		<div class="opt-section">
-			<div class="opt-row">
-				<span class="opt-label">X</span>
-				<input type="number" min={0} max={pageWidth} bind:value={sigX} class="opt-input w-20" aria-label="X position" />
-				<span class="opt-label">Y</span>
-				<input type="number" min={0} max={pageHeight} bind:value={sigY} class="opt-input w-20" aria-label="Y position" />
-			</div>
-			<div class="opt-row">
-				<span class="opt-label">Width</span>
-				<input type="number" min={20} max={pageWidth} bind:value={sigW} class="opt-input w-20" aria-label="Signature width" />
-				<span class="opt-label">Height</span>
-				<input type="number" min={10} max={pageHeight} bind:value={sigH} class="opt-input w-20" aria-label="Signature height" />
-			</div>
-		</div>
-
-		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? 'Signing…' : 'Sign PDF'}
-		</button>
+		{#if placed}
+			<button class="btn highlight" disabled={processing} onclick={apply}>
+				{processing ? 'Signing…' : 'Save signed PDF'}
+			</button>
+		{/if}
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save signed PDF</button>
+			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>Download</button>
 		</div>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
 </div>
 
-<style lang="postcss">
-	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.opt-section { @apply flex flex-col gap-4 p-4 rounded-2xl bg-panel shadow-panel; }
-	.opt-row { @apply flex items-center gap-4 flex-wrap; }
-	.opt-label { @apply text-sm font-semibold w-16 flex-shrink-0; }
-	.opt-input { @apply rounded-lg px-3 py-1.5 text-sm border; background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg); border-color: var(--bg-separator); }
-	.opt-input:focus { outline: 1.5px solid var(--accent); }
-	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
+<style>
+	.sign-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
+	.sign-header { display: flex; align-items: center; gap: 0.75rem; }
+	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+
+	.step-section {
+		display: flex; flex-direction: column; gap: 0.75rem;
+		padding: 1rem; border-radius: 1rem;
+		background: var(--bg-panel); box-shadow: var(--shadow-panel);
+	}
+	.step-label { font-size: 0.8125rem; font-weight: 600; }
+
+	/* Signature canvas */
 	.sig-canvas {
-		@apply w-full rounded-lg cursor-crosshair;
-		max-width: 400px;
-		height: 120px;
-		border: 2px dashed var(--bg-separator);
-		background: white;
-		touch-action: none;
+		width: 100%; max-width: 400px; height: 120px;
+		border: 2px dashed var(--bg-separator); border-radius: 0.5rem;
+		background: white; cursor: crosshair; touch-action: none;
 	}
-	.thumb-btn {
-		@apply flex flex-col items-center gap-1 p-1 rounded-lg transition-colors cursor-pointer;
-		border: 2px solid transparent;
+	.sig-text-input {
+		padding: 0.5rem 0.75rem; border-radius: 0.5rem; font-size: 1.25rem;
+		font-style: italic; font-family: "Georgia", "Times New Roman", serif;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
 	}
-	.thumb-btn.active { border-color: var(--accent); }
-	.thumb-img { @apply w-16 h-20 object-contain rounded; }
+	.sig-text-input:focus { outline: 1.5px solid var(--accent); }
+
+	/* Page workspace */
+	.page-workspace { display: flex; flex-direction: column; align-items: center; }
+	.page-container {
+		position: relative; cursor: crosshair; user-select: none; -webkit-user-select: none;
+		border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-panel);
+	}
+	.page-img { display: block; width: 100%; height: 100%; pointer-events: none; }
+
+	/* Ghost signature */
+	.sig-ghost {
+		position: absolute; pointer-events: none; opacity: 0.35;
+		object-fit: contain;
+	}
+
+	/* Placed signature */
+	.sig-placed {
+		position: absolute; cursor: move; object-fit: contain;
+		border: 2px solid var(--accent);
+		border-radius: 4px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+		transition: box-shadow 0.1s ease;
+	}
+	.sig-placed:hover {
+		box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+	}
 </style>
