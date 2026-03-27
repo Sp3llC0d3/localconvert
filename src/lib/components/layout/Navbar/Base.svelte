@@ -294,7 +294,7 @@
 {/snippet}
 
 <div bind:this={container}>
-	<Panel class="nav-panel">
+	<Panel class="max-w-[960px] w-screen h-[4.5rem] md:h-[4.25rem] flex items-center gap-0 md:gap-1 relative">
 		{@const linkRect = linkRects.at(selectedLinkIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}
 			<div
@@ -420,24 +420,6 @@
 </div>
 
 <style>
-	/* ── Nav panel ── */
-	.nav-panel {
-		display: flex;
-		align-items: center;
-		gap: 0;
-		position: relative;
-		max-width: 960px;
-		width: 100vw;
-		height: 4.5rem;
-	}
-
-	@media (min-width: 768px) {
-		.nav-panel {
-			gap: 0.25rem;
-			height: 4.25rem;
-		}
-	}
-
 	/* ── Nav links ── */
 	.nav-link {
 		display: flex;
