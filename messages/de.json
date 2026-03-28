@@ -418,7 +418,11 @@
 			"password_name": "Passwortschutz",
 			"password_desc": "PDF mit Passwort verschlüsseln und Berechtigungen festlegen",
 			"unlock_name": "PDF entsperren",
-			"unlock_desc": "Passwortschutz von einer PDF entfernen"
+			"unlock_desc": "Passwortschutz von einer PDF entfernen",
+			"pdf_to_text_name": "PDF zu Text",
+			"pdf_to_text_desc": "Gesamten Text aus einer PDF extrahieren",
+			"grayscale_name": "PDF in Graustufen",
+			"grayscale_desc": "PDF-Seiten in Schwarzweiß konvertieren"
 		}
 	},
 	"image_tools": {
@@ -457,7 +461,7 @@
 		"upload_images_pdf": "Bilddateien hinzufügen (JPG, PNG, WEBP)",
 		"loading_thumbs": "Miniaturansichten laden…",
 		"ready": "Fertig!",
-		"output": "Ausgabe:",
+		"output": "Output:",
 		"failed": "Fehlgeschlagen.",
 		"failed_read_pdf": "PDF konnte nicht gelesen werden.",
 		"page_of": "Seite {currentPage} / {pageCount}",
@@ -494,7 +498,8 @@
 		"crop": "Zuschneiden",
 		"meme": "Meme",
 		"foreground": "Vordergrund",
-		"background": "Hintergrund"
+		"background": "Hintergrund",
+		"input": "Input:"
 	},
 	"tool_pages": {
 		"merge": {
@@ -768,6 +773,26 @@
 			"btn": "Unschärfe anwenden",
 			"btn_busy": "Verwischen…",
 			"save": "Unscharfes Bild speichern"
+		},
+		"pdf_to_text": {
+			"title": "PDF to Text",
+			"desc": "Extract all text content from a PDF file.",
+			"btn": "Extract text",
+			"btn_busy": "Extracting page {progress} of {total}…",
+			"no_text": "No text found in this PDF.",
+			"result": "{chars} characters extracted",
+			"copy": "Copy",
+			"copied": "Copied!",
+			"download_txt": "Save as .txt"
+		},
+		"grayscale": {
+			"title": "PDF to Grayscale",
+			"desc": "Convert all pages to black and white.",
+			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
+			"btn": "Convert to grayscale",
+			"btn_busy": "Converting page {progress} of {total}…",
+			"grayscale": "Grayscale",
+			"save": "Save grayscale PDF"
 		}
 	}
 }

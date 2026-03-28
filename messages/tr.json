@@ -418,7 +418,11 @@
 			"password_name": "Parola ile Koru",
 			"password_desc": "PDF'yi parola ile şifreleyin ve izinleri ayarlayın",
 			"unlock_name": "PDF Kilidini Aç",
-			"unlock_desc": "PDF'den parola korumasını kaldırın"
+			"unlock_desc": "PDF'den parola korumasını kaldırın",
+			"pdf_to_text_name": "PDF'den Metne",
+			"pdf_to_text_desc": "PDF'den metin çıkarın",
+			"grayscale_name": "PDF Gri Tonlama",
+			"grayscale_desc": "PDF sayfalarını siyah beyaza dönüştürün"
 		}
 	},
 	"image_tools": {
@@ -494,7 +498,8 @@
 		"crop": "Crop",
 		"meme": "Meme",
 		"foreground": "Foreground",
-		"background": "Background"
+		"background": "Background",
+		"input": "Input:"
 	},
 	"tool_pages": {
 		"merge": {
@@ -768,6 +773,26 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"pdf_to_text": {
+			"title": "PDF to Text",
+			"desc": "Extract all text content from a PDF file.",
+			"btn": "Extract text",
+			"btn_busy": "Extracting page {progress} of {total}…",
+			"no_text": "No text found in this PDF.",
+			"result": "{chars} characters extracted",
+			"copy": "Copy",
+			"copied": "Copied!",
+			"download_txt": "Save as .txt"
+		},
+		"grayscale": {
+			"title": "PDF to Grayscale",
+			"desc": "Convert all pages to black and white.",
+			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
+			"btn": "Convert to grayscale",
+			"btn_busy": "Converting page {progress} of {total}…",
+			"grayscale": "Grayscale",
+			"save": "Save grayscale PDF"
 		}
 	}
 }

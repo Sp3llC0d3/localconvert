@@ -418,7 +418,11 @@
 			"password_name": "密码保护",
 			"password_desc": "使用密码加密 PDF 并设置权限",
 			"unlock_name": "解锁 PDF",
-			"unlock_desc": "移除 PDF 的密码保护"
+			"unlock_desc": "移除 PDF 的密码保护",
+			"pdf_to_text_name": "PDF转文字",
+			"pdf_to_text_desc": "从PDF提取全部文字",
+			"grayscale_name": "PDF转灰度",
+			"grayscale_desc": "将PDF页面转换为黑白"
 		}
 	},
 	"image_tools": {
@@ -494,7 +498,8 @@
 		"crop": "Crop",
 		"meme": "Meme",
 		"foreground": "Foreground",
-		"background": "Background"
+		"background": "Background",
+		"input": "Input:"
 	},
 	"tool_pages": {
 		"merge": {
@@ -768,6 +773,26 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"pdf_to_text": {
+			"title": "PDF to Text",
+			"desc": "Extract all text content from a PDF file.",
+			"btn": "Extract text",
+			"btn_busy": "Extracting page {progress} of {total}…",
+			"no_text": "No text found in this PDF.",
+			"result": "{chars} characters extracted",
+			"copy": "Copy",
+			"copied": "Copied!",
+			"download_txt": "Save as .txt"
+		},
+		"grayscale": {
+			"title": "PDF to Grayscale",
+			"desc": "Convert all pages to black and white.",
+			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
+			"btn": "Convert to grayscale",
+			"btn_busy": "Converting page {progress} of {total}…",
+			"grayscale": "Grayscale",
+			"save": "Save grayscale PDF"
 		}
 	}
 }

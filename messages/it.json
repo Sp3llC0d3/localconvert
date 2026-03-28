@@ -418,7 +418,11 @@
 			"password_name": "Proteggi con password",
 			"password_desc": "Crittografa un PDF con password e imposta i permessi",
 			"unlock_name": "Sblocca PDF",
-			"unlock_desc": "Rimuovi la protezione con password da un PDF"
+			"unlock_desc": "Rimuovi la protezione con password da un PDF",
+			"pdf_to_text_name": "PDF in testo",
+			"pdf_to_text_desc": "Estrarre il testo da un PDF",
+			"grayscale_name": "PDF in scala di grigi",
+			"grayscale_desc": "Convertire le pagine PDF in bianco e nero"
 		}
 	},
 	"image_tools": {
@@ -494,7 +498,8 @@
 		"crop": "Crop",
 		"meme": "Meme",
 		"foreground": "Foreground",
-		"background": "Background"
+		"background": "Background",
+		"input": "Input:"
 	},
 	"tool_pages": {
 		"merge": {
@@ -768,6 +773,26 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"pdf_to_text": {
+			"title": "PDF to Text",
+			"desc": "Extract all text content from a PDF file.",
+			"btn": "Extract text",
+			"btn_busy": "Extracting page {progress} of {total}…",
+			"no_text": "No text found in this PDF.",
+			"result": "{chars} characters extracted",
+			"copy": "Copy",
+			"copied": "Copied!",
+			"download_txt": "Save as .txt"
+		},
+		"grayscale": {
+			"title": "PDF to Grayscale",
+			"desc": "Convert all pages to black and white.",
+			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
+			"btn": "Convert to grayscale",
+			"btn_busy": "Converting page {progress} of {total}…",
+			"grayscale": "Grayscale",
+			"save": "Save grayscale PDF"
 		}
 	}
 }

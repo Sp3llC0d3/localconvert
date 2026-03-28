@@ -375,7 +375,11 @@
 			"password_name": "비밀번호 보호",
 			"password_desc": "PDF를 비밀번호로 암호화하고 권한을 설정",
 			"unlock_name": "PDF 잠금 해제",
-			"unlock_desc": "PDF에서 비밀번호 보호 제거"
+			"unlock_desc": "PDF에서 비밀번호 보호 제거",
+			"pdf_to_text_name": "PDF를 텍스트로",
+			"pdf_to_text_desc": "PDF에서 텍스트 추출",
+			"grayscale_name": "PDF 그레이스케일",
+			"grayscale_desc": "PDF 페이지를 흑백으로 변환"
 		}
 	},
 	"landing": {
@@ -494,7 +498,8 @@
 		"crop": "Crop",
 		"meme": "Meme",
 		"foreground": "Foreground",
-		"background": "Background"
+		"background": "Background",
+		"input": "Input:"
 	},
 	"tool_pages": {
 		"merge": {
@@ -768,6 +773,26 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"pdf_to_text": {
+			"title": "PDF to Text",
+			"desc": "Extract all text content from a PDF file.",
+			"btn": "Extract text",
+			"btn_busy": "Extracting page {progress} of {total}…",
+			"no_text": "No text found in this PDF.",
+			"result": "{chars} characters extracted",
+			"copy": "Copy",
+			"copied": "Copied!",
+			"download_txt": "Save as .txt"
+		},
+		"grayscale": {
+			"title": "PDF to Grayscale",
+			"desc": "Convert all pages to black and white.",
+			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
+			"btn": "Convert to grayscale",
+			"btn_busy": "Converting page {progress} of {total}…",
+			"grayscale": "Grayscale",
+			"save": "Save grayscale PDF"
 		}
 	}
 }

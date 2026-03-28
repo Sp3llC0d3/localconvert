@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, PaletteIcon, TypeIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const categories = $derived([
@@ -20,6 +20,8 @@
 				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc']() },
 				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc']() },
 				{ href: '/pdf-tools/pdf-to-ppt/', icon: PresentationIcon, name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc']() },
+				{ href: '/pdf-tools/pdf-to-text/', icon: TypeIcon, name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc']() },
+				{ href: '/pdf-tools/grayscale/', icon: PaletteIcon, name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc']() },
 			],
 		},
 		{
