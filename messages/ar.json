@@ -18,8 +18,8 @@
 		"privacy_policy": "سياسة الخصوصية"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "أدواتك الخاصة للملفات والأكواد.",
+		"subtitle": "36 أداة لملفات PDF والصور وسير عمل المطورين — تعمل بالكامل في متصفحك. بدون رفع، بدون حسابات، مجانية للأبد.",
 		"uploader": {
 			"text": "اسحب أو انقر للـ{action}",
 			"convert": "تحويل"
@@ -387,17 +387,17 @@
 		"pills": {
 			"no_uploads": "بدون رفع للخوادم",
 			"open_source": "مجاني ومفتوح المصدر",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ أداة",
+			"works_offline": "يعمل بدون إنترنت"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ تحويل صيغة",
+			"label": "المحوّل"
 		},
 		"privacy": {
 			"title": "⁧خصوصية ⁦100%⁩ بحكم التصميم⁩",
 			"point1": "ملفاتك لا تغادر جهازك أبدًا",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "جميع الأدوات الـ36 تعمل بالكامل في متصفحك — بدون رفع للخادم",
 			"point3": "مفتوح المصدر — تحقق بنفسك",
 			"label": "الخصوصية أولاً"
 		},
@@ -407,8 +407,8 @@
 			"a1": "⁧نعم — مجاني تمامًا، دون الحاجة إلى حساب أو رسوم خفية. ⁦LocalConvert⁩ مفتوح المصدر بموجب رخصة ⁦AGPL-3.0⁩.⁩",
 			"q2": "هل ملفاتي خاصة؟",
 			"a2": "⁧تمامًا. تتم جميع عمليات التحويل في متصفحك باستخدام ⁦WebAssembly⁩. ملفاتك لا تصل إلى خوادمنا أبدًا — ولا للحظة واحدة.⁩",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "ماذا يمكن لـ LocalConvert فعله؟",
+			"a3": "تحويل أكثر من 200 صيغة ملفات (صور، صوت، فيديو، مستندات)، 18 أداة PDF (دمج، تقسيم، ضغط، علامة مائية، توقيع، تعديل، والمزيد)، 10 أدوات صور (اقتصاص، تغيير الحجم، فلاتر، تمويه، علامة مائية)، و8 أدوات للمطورين (JSON، هاش، Base64، مقارنة، ماركداون).",
 			"q4": "هل هناك حد لحجم الملف؟",
 			"a4": "⁧لا يوجد حد صارم — يعتمد ذلك على الذاكرة المتاحة على جهازك. بالنسبة لملفات الفيديو الكبيرة جدًا، عادةً ما يتعامل ⁦Firefox⁩ أو ⁦Safari⁩ معها بشكل أفضل.⁩",
 			"q5": "هل أحتاج إلى تثبيت أي شيء؟",
@@ -416,18 +416,18 @@
 			"label": "الأسئلة"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "ورشتك",
+			"title": "كل أداة تعمل في متصفحك",
+			"pdf_title": "أدوات PDF",
+			"pdf_desc": "دمج، تقسيم، ضغط، علامة مائية، توقيع، تعديل، و12 أداة أخرى",
+			"pdf_count": "18 أداة",
+			"image_title": "أدوات الصور",
+			"image_desc": "اقتصاص، تغيير الحجم، فلاتر، تمويه، علامة مائية، ميم، والمزيد",
+			"image_count": "10 أدوات",
+			"dev_title": "أدوات المطورين",
+			"dev_desc": "JSON، هاش، Base64، ماركداون، مقارنة النصوص، والمزيد",
+			"dev_count": "8 أدوات",
+			"explore": "استكشف ←"
 		}
 	},
 	"image_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "انتقاء الألوان من أي صورة",
 			"blur_name": "تمويه منطقة",
 			"blur_desc": "تمويه جزء من الصورة للخصوصية",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "فلاتر الصور",
+			"filters_desc": "ضبط السطوع والتباين والتشبع والبُني ودرجة اللون",
+			"video_to_gif_name": "فيديو إلى GIF",
+			"video_to_gif_desc": "تحويل مقطع فيديو إلى صورة GIF متحركة"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "تعديل",
+			"create": "إنشاء"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← أدوات المطورين"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "أدوات المطورين",
+		"subtitle": "تنسيق، ترميز، وتشفير — كلها في متصفحك. لا شيء يغادر جهازك.",
+		"badge": "100% محلي — بدون رفع، بدون خادم",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "منسّق JSON",
+			"json_desc": "تنسيق وتصغير والتحقق من JSON",
+			"hash_name": "مولّد الهاش",
+			"hash_desc": "SHA-256 و SHA-1 و SHA-512",
+			"base64_name": "ترميز/فك ترميز Base64",
+			"base64_desc": "ترميز أو فك ترميز Base64",
+			"markdown_name": "معاينة ماركداون",
+			"markdown_desc": "ماركداون إلى HTML مباشرة",
+			"diff_name": "مقارنة النصوص",
+			"diff_desc": "مقارنة نصين وعرض الفروقات",
+			"word_count_name": "عدّاد الكلمات",
+			"word_count_desc": "كلمات، أحرف، وقت القراءة",
+			"url_encode_name": "ترميز/فك ترميز URL",
+			"url_encode_desc": "ترميز أو فك ترميز عناوين URL",
+			"css_minify_name": "تصغير CSS",
+			"css_minify_desc": "تصغير كود CSS"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "تنسيق وتحويل",
+			"analyze": "تحليل"
 		}
 	}
 }

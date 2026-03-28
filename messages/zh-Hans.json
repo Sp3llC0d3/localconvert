@@ -18,8 +18,8 @@
 		"privacy_policy": "隐私政策"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "文件与代码的私密工具箱。",
+		"subtitle": "36款PDF、图片和开发者工具 — 全部在浏览器中运行。无需上传、无需账户、永久免费。",
 		"uploader": {
 			"text": "拖放或点击以{action}",
 			"convert": "转换"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "无服务器上传",
 			"open_source": "免费且开源",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ 工具",
+			"works_offline": "离线可用"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ 格式转换",
+			"label": "转换器"
 		},
 		"privacy": {
 			"title": "从设计上保证100%隐私",
 			"point1": "你的文件永远不会离开你的设备",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "全部36个工具完全在浏览器中运行 — 零服务器上传",
 			"point3": "开源——自行验证",
 			"label": "隐私优先"
 		},
@@ -359,8 +359,8 @@
 			"a1": "是的——完全免费，无需账户，没有隐藏费用。LocalConvert 以 AGPL-3.0 许可证开源。",
 			"q2": "我的文件是私密的吗？",
 			"a2": "完全私密。所有转换均在你的浏览器中使用 WebAssembly 运行。你的文件永远不会接触我们的服务器——哪怕是一瞬间。",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "LocalConvert 能做什么？",
+			"a3": "转换200多种文件格式（图片、音频、视频、文档），18个PDF工具（合并、拆分、压缩、水印、签名、编辑等），10个图片工具（裁剪、调整大小、滤镜、模糊、水印），以及8个开发者工具（JSON、哈希、Base64、对比、Markdown）。",
 			"q4": "有文件大小限制吗？",
 			"a4": "没有硬性限制——取决于你设备的可用内存。对于非常大的视频文件，Firefox 或 Safari 通常处理得更好。",
 			"q5": "我需要安装任何东西吗？",
@@ -368,18 +368,18 @@
 			"label": "常见问题"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "您的工作坊",
+			"title": "每个工具都在浏览器中运行",
+			"pdf_title": "PDF 工具",
+			"pdf_desc": "合并、拆分、压缩、水印、签名、编辑等12种以上",
+			"pdf_count": "18个工具",
+			"image_title": "图片工具",
+			"image_desc": "裁剪、调整大小、滤镜、模糊、水印、表情包等",
+			"image_count": "10个工具",
+			"dev_title": "开发者工具",
+			"dev_desc": "JSON、哈希、Base64、Markdown、文本对比等",
+			"dev_count": "8个工具",
+			"explore": "探索 →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "从图片中选取颜色",
 			"blur_name": "模糊区域",
 			"blur_desc": "模糊图像区域以保护隐私",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "图片滤镜",
+			"filters_desc": "调整亮度、对比度、饱和度、棕褐色和色调",
+			"video_to_gif_name": "视频转GIF",
+			"video_to_gif_desc": "将视频转换为动态GIF"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "编辑",
+			"create": "创建"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← 开发者工具"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "开发者工具",
+		"subtitle": "格式化、编码和哈希 — 全部在浏览器中。数据不会离开您的设备。",
+		"badge": "100% 本地 — 无上传、无服务器",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "JSON 格式化",
+			"json_desc": "格式化、压缩和验证JSON",
+			"hash_name": "哈希生成器",
+			"hash_desc": "SHA-256、SHA-1、SHA-512",
+			"base64_name": "Base64 编码/解码",
+			"base64_desc": "编码或解码Base64",
+			"markdown_name": "Markdown 预览",
+			"markdown_desc": "实时 Markdown 转 HTML",
+			"diff_name": "文本对比",
+			"diff_desc": "比较两段文本并显示差异",
+			"word_count_name": "字数统计",
+			"word_count_desc": "字数、字符数、阅读时间",
+			"url_encode_name": "URL 编码/解码",
+			"url_encode_desc": "编码或解码URL",
+			"css_minify_name": "CSS 压缩",
+			"css_minify_desc": "压缩CSS代码"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "格式化与转换",
+			"analyze": "分析"
 		}
 	}
 }

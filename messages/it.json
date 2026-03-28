@@ -18,8 +18,8 @@
 		"privacy_policy": "Informativa sulla privacy"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "Il tuo toolkit privato per file e codice.",
+		"subtitle": "36 strumenti per PDF, immagini e flussi di sviluppo — tutto nel tuo browser. Senza caricamenti, senza account, gratis per sempre.",
 		"uploader": {
 			"text": "Trascini o clicchi per {action}",
 			"convert": "convertire"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "Nessun Upload su Server",
 			"open_source": "Gratuito e Open Source",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ Strumenti",
+			"works_offline": "Funziona offline"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ conversioni di formato",
+			"label": "Convertitore"
 		},
 		"privacy": {
 			"title": "100% Privato per Progettazione",
 			"point1": "I Suoi file non lasciano mai il Suo dispositivo",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "Tutti i 36 strumenti funzionano interamente nel tuo browser — zero caricamenti sul server",
 			"point3": "Open source — verifichi Lei stesso",
 			"label": "Privacy prima di tutto"
 		},
@@ -359,8 +359,8 @@
 			"a1": "Sì — completamente gratuito, nessun account richiesto, nessun costo nascosto. LocalConvert è open source con licenza AGPL-3.0.",
 			"q2": "I miei file sono privati?",
 			"a2": "Assolutamente. Tutte le conversioni vengono eseguite nel Suo browser tramite WebAssembly. I Suoi file non toccano mai i nostri server — nemmeno per un istante.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "Cosa può fare LocalConvert?",
+			"a3": "Convertire oltre 200 formati di file (immagini, audio, video, documenti), 18 strumenti PDF (unire, dividere, comprimere, filigrana, firmare, modificare e altro), 10 strumenti immagine (ritagliare, ridimensionare, filtri, sfocatura, filigrana) e 8 strumenti sviluppatore (JSON, hash, Base64, diff, markdown).",
 			"q4": "Esiste un limite di dimensione per i file?",
 			"a4": "Nessun limite rigido — dipende dalla memoria disponibile sul Suo dispositivo. Per file video molto grandi, Firefox o Safari in genere li gestiscono meglio.",
 			"q5": "Devo installare qualcosa?",
@@ -368,18 +368,18 @@
 			"label": "Domande"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "La tua officina",
+			"title": "Ogni strumento funziona nel tuo browser",
+			"pdf_title": "Strumenti PDF",
+			"pdf_desc": "Unire, dividere, comprimere, filigrana, firmare, modificare e altri 12",
+			"pdf_count": "18 strumenti",
+			"image_title": "Strumenti immagine",
+			"image_desc": "Ritagliare, ridimensionare, filtri, sfocatura, filigrana, meme e altro",
+			"image_count": "10 strumenti",
+			"dev_title": "Strumenti sviluppatore",
+			"dev_desc": "JSON, hash, Base64, markdown, diff e altro",
+			"dev_count": "8 strumenti",
+			"explore": "Esplora →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "Scegli colori da qualsiasi immagine",
 			"blur_name": "Sfoca regione",
 			"blur_desc": "Sfoca una regione dell'immagine per la privacy",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "Filtri immagine",
+			"filters_desc": "Regola luminosità, contrasto, saturazione, seppia e tonalità",
+			"video_to_gif_name": "Video in GIF",
+			"video_to_gif_desc": "Converti un video in una GIF animata"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "Modifica",
+			"create": "Crea"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← Strumenti sviluppatore"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "Strumenti sviluppatore",
+		"subtitle": "Formatta, codifica e genera hash — tutto nel tuo browser. Nulla lascia il tuo dispositivo.",
+		"badge": "100% locale — nessun caricamento, nessun server",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "Formattatore JSON",
+			"json_desc": "Formattare, minimizzare e validare JSON",
+			"hash_name": "Generatore di hash",
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Codifica/Decodifica Base64",
+			"base64_desc": "Codificare o decodificare Base64",
+			"markdown_name": "Anteprima Markdown",
+			"markdown_desc": "Markdown in HTML dal vivo",
+			"diff_name": "Confronto testi",
+			"diff_desc": "Confrontare due testi e mostrare le differenze",
+			"word_count_name": "Contaparole",
+			"word_count_desc": "Parole, caratteri, tempo di lettura",
+			"url_encode_name": "Codifica/Decodifica URL",
+			"url_encode_desc": "Codificare o decodificare URL",
+			"css_minify_name": "Minimizza CSS",
+			"css_minify_desc": "Minimizzare il codice CSS"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "Formattare e trasformare",
+			"analyze": "Analizzare"
 		}
 	}
 }

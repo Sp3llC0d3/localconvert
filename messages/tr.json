@@ -18,8 +18,8 @@
 		"privacy_policy": "Gizlilik politikası"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "Dosyalar ve kod için özel araç setiniz.",
+		"subtitle": "PDF'ler, görseller ve geliştirici iş akışları için 36 araç — hepsi tarayıcınızda çalışır. Yükleme yok, hesap yok, sonsuza kadar ücretsiz.",
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
 			"convert": "dönüştürmek"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "Sunucu Yüklemesi Yok",
 			"open_source": "Ücretsiz ve Açık Kaynak",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ Araç",
+			"works_offline": "Çevrimdışı çalışır"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ format dönüşümü",
+			"label": "Dönüştürücü"
 		},
 		"privacy": {
 			"title": "Tasarım Gereği %100 Gizli",
 			"point1": "Dosyalarınız cihazınızı asla terk etmez",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "36 aracın tamamı tarayıcınızda çalışır — sıfır sunucu yüklemesi",
 			"point3": "Açık kaynak — kendiniz doğrulayın",
 			"label": "Önce Gizlilik"
 		},
@@ -359,8 +359,8 @@
 			"a1": "Evet — tamamen ücretsiz, hesap gerekmez, gizli ücret yoktur. LocalConvert, AGPL-3.0 lisansı altında açık kaynaklıdır.",
 			"q2": "Dosyalarım gizli mi?",
 			"a2": "Tamamen. Tüm dönüştürme işlemleri WebAssembly kullanılarak tarayıcınızda çalışır. Dosyalarınız sunucularımıza hiç ulaşmaz — bir an için bile.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "LocalConvert ne yapabilir?",
+			"a3": "200'den fazla dosya formatı dönüştürme (görseller, ses, video, belgeler), 18 PDF aracı (birleştirme, bölme, sıkıştırma, filigran, imzalama, düzenleme ve daha fazlası), 10 görsel aracı (kırpma, yeniden boyutlandırma, filtreler, bulanıklaştırma, filigran) ve 8 geliştirici aracı (JSON, hash, Base64, fark, markdown).",
 			"q4": "Dosya boyutu sınırı var mı?",
 			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
 			"q5": "Bir şey yüklemem gerekiyor mu?",
@@ -368,18 +368,18 @@
 			"label": "Sorular"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "Atölyeniz",
+			"title": "Her araç tarayıcınızda çalışır",
+			"pdf_title": "PDF Araçları",
+			"pdf_desc": "Birleştir, böl, sıkıştır, filigran, imzala, düzenle ve 12 tane daha",
+			"pdf_count": "18 araç",
+			"image_title": "Görsel Araçları",
+			"image_desc": "Kırp, yeniden boyutlandır, filtreler, bulanıklaştır, filigran, meme ve daha fazlası",
+			"image_count": "10 araç",
+			"dev_title": "Geliştirici Araçları",
+			"dev_desc": "JSON, hash, Base64, markdown, fark ve daha fazlası",
+			"dev_count": "8 araç",
+			"explore": "Keşfet →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "Herhangi bir görselden renk seçin",
 			"blur_name": "Bölge Bulanıklaştır",
 			"blur_desc": "Gizlilik için görüntü bölgesini bulanıklaştırın",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "Görsel Filtreleri",
+			"filters_desc": "Parlaklık, kontrast, doygunluk, sepya ve ton ayarlama",
+			"video_to_gif_name": "Videodan GIF'e",
+			"video_to_gif_desc": "Bir videoyu animasyonlu GIF'e dönüştür"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "Düzenle",
+			"create": "Oluştur"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← Geliştirici Araçları"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "Geliştirici Araçları",
+		"subtitle": "Biçimlendir, kodla ve hash oluştur — hepsi tarayıcınızda. Hiçbir şey cihazınızdan çıkmaz.",
+		"badge": "100% yerel — yükleme yok, sunucu yok",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "JSON Biçimlendirici",
+			"json_desc": "JSON biçimlendir, küçült ve doğrula",
+			"hash_name": "Hash Oluşturucu",
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Base64 Kodla/Çöz",
+			"base64_desc": "Base64 kodlama veya çözme",
+			"markdown_name": "Markdown Önizleme",
+			"markdown_desc": "Canlı Markdown'dan HTML'e",
+			"diff_name": "Metin Karşılaştırma",
+			"diff_desc": "İki metni karşılaştır ve farkları göster",
+			"word_count_name": "Kelime Sayacı",
+			"word_count_desc": "Kelimeler, karakterler, okuma süresi",
+			"url_encode_name": "URL Kodla/Çöz",
+			"url_encode_desc": "URL kodlama veya çözme",
+			"css_minify_name": "CSS Küçült",
+			"css_minify_desc": "CSS kodunu küçült"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "Biçimlendir ve Dönüştür",
+			"analyze": "Analiz Et"
 		}
 	}
 }

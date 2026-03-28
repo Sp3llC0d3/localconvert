@@ -18,8 +18,8 @@
 		"privacy_policy": "개인정보 처리방침"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "파일과 코드를 위한 프라이빗 툴킷.",
+		"subtitle": "PDF, 이미지, 개발자 워크플로를 위한 36개 도구 — 모두 브라우저에서 작동. 업로드 없음, 계정 없음, 영원히 무료.",
 		"uploader": {
 			"text": "드래그하거나 클릭해서 {action}",
 			"convert": "변환하기"
@@ -387,17 +387,17 @@
 		"pills": {
 			"no_uploads": "서버 업로드 없음",
 			"open_source": "무료 및 오픈 소스",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36개 이상 도구",
+			"works_offline": "오프라인 지원"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200개 이상 포맷 변환",
+			"label": "변환기"
 		},
 		"privacy": {
 			"title": "설계부터 100% 프라이빗",
 			"point1": "파일이 기기를 벗어나는 일은 없습니다",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "36개 도구 모두 브라우저에서 완전히 실행 — 서버 업로드 제로",
 			"point3": "오픈 소스 — 직접 확인해 보세요",
 			"label": "프라이버시 우선"
 		},
@@ -407,8 +407,8 @@
 			"a1": "네 — 완전히 무료이며, 계정 불필요, 숨겨진 요금도 없습니다. LocalConvert는 AGPL-3.0 라이선스 하에 오픈 소스로 제공됩니다.",
 			"q2": "파일의 개인정보가 보호되나요?",
 			"a2": "완전히 보호됩니다. 모든 변환은 WebAssembly를 사용하여 브라우저에서 실행됩니다. 파일이 저희 서버에 닿는 일은 단 한 순간도 없습니다.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "LocalConvert로 무엇을 할 수 있나요?",
+			"a3": "200개 이상의 파일 형식 변환(이미지, 오디오, 비디오, 문서), 18개 PDF 도구(병합, 분할, 압축, 워터마크, 서명, 편집 등), 10개 이미지 도구(자르기, 크기 조정, 필터, 블러, 워터마크), 8개 개발자 도구(JSON, 해시, Base64, 비교, 마크다운).",
 			"q4": "파일 크기 제한이 있나요?",
 			"a4": "엄격한 제한은 없습니다 — 기기의 사용 가능한 메모리에 따라 다릅니다. 매우 큰 동영상 파일의 경우 Firefox나 Safari가 더 잘 처리합니다.",
 			"q5": "설치가 필요한가요?",
@@ -416,18 +416,18 @@
 			"label": "질문"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "당신의 작업실",
+			"title": "모든 도구가 브라우저에서 작동합니다",
+			"pdf_title": "PDF 도구",
+			"pdf_desc": "병합, 분할, 압축, 워터마크, 서명, 편집 외 12개",
+			"pdf_count": "18개 도구",
+			"image_title": "이미지 도구",
+			"image_desc": "자르기, 크기 조정, 필터, 블러, 워터마크, 밈 등",
+			"image_count": "10개 도구",
+			"dev_title": "개발자 도구",
+			"dev_desc": "JSON, 해시, Base64, 마크다운, 비교 등",
+			"dev_count": "8개 도구",
+			"explore": "탐색 →"
 		}
 	},
 	"image_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "이미지에서 색상 선택",
 			"blur_name": "영역 흐리기",
 			"blur_desc": "개인정보 보호를 위해 이미지 영역 흐리기",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "이미지 필터",
+			"filters_desc": "밝기, 대비, 채도, 세피아, 색조 조정",
+			"video_to_gif_name": "비디오를 GIF로",
+			"video_to_gif_desc": "비디오를 애니메이션 GIF로 변환"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "편집",
+			"create": "만들기"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← 개발자 도구"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "개발자 도구",
+		"subtitle": "포맷, 인코딩, 해시 — 모두 브라우저에서. 데이터는 기기 밖으로 나가지 않습니다.",
+		"badge": "100% 로컬 — 업로드 없음, 서버 없음",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "JSON 포맷터",
+			"json_desc": "JSON 포맷, 압축 및 검증",
+			"hash_name": "해시 생성기",
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Base64 인코딩/디코딩",
+			"base64_desc": "Base64 인코딩 또는 디코딩",
+			"markdown_name": "마크다운 미리보기",
+			"markdown_desc": "마크다운을 HTML로 실시간 변환",
+			"diff_name": "텍스트 비교",
+			"diff_desc": "두 텍스트를 비교하여 차이점 표시",
+			"word_count_name": "글자 수 카운터",
+			"word_count_desc": "단어, 글자, 읽기 시간",
+			"url_encode_name": "URL 인코딩/디코딩",
+			"url_encode_desc": "URL 인코딩 또는 디코딩",
+			"css_minify_name": "CSS 압축",
+			"css_minify_desc": "CSS 코드 압축"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "포맷 및 변환",
+			"analyze": "분석"
 		}
 	}
 }

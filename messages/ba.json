@@ -18,8 +18,8 @@
 		"privacy_policy": "Politika privatnosti"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "Vaš privatni alat za fajlove i kod.",
+		"subtitle": "36 alata za PDF-ove, slike i razvojne tokove — sve radi u vašem pregledniku. Bez otpremanja, bez naloga, zauvijek besplatno.",
 		"uploader": {
 			"text": "Prevucite ili kliknite da {action}",
 			"convert": "konvertujete"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "Bez Otpremanja na Server",
 			"open_source": "Besplatno i Otvorenog Koda",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ Alata",
+			"works_offline": "Radi offline"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ konverzija formata",
+			"label": "Konverter"
 		},
 		"privacy": {
 			"title": "100% Privatno po Dizajnu",
 			"point1": "Vaše datoteke nikada ne napuštaju vaš uređaj",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "Svih 36 alata radi u potpunosti u vašem pregledniku — nula otpremanja na server",
 			"point3": "Otvorenog koda — provjerite sami",
 			"label": "Privatnost na prvom mjestu"
 		},
@@ -359,8 +359,8 @@
 			"a1": "Da — potpuno besplatan, bez potrebe za računom, bez skrivenih naknada. LocalConvert je otvorenog koda pod AGPL-3.0 licencom.",
 			"q2": "Jesu li moje datoteke privatne?",
 			"a2": "U potpunosti. Sve konverzije se izvršavaju u vašem pregledniku putem WebAssembly tehnologije. Vaše datoteke nikada ne dotiču naše servere — ni na trenutak.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "Šta LocalConvert može?",
+			"a3": "Konvertovanje preko 200 formata fajlova (slike, audio, video, dokumenti), 18 PDF alata (spajanje, dijeljenje, kompresija, vodeni žig, potpis, uređivanje i više), 10 alata za slike (izrezivanje, promjena veličine, filteri, zamućivanje, vodeni žig) i 8 razvojnih alata (JSON, hash, Base64, diff, markdown).",
 			"q4": "Postoji li ograničenje veličine datoteke?",
 			"a4": "Nema fiksnog ograničenja — ovisi o dostupnoj memoriji vašeg uređaja. Za vrlo velike video datoteke, Firefox ili Safari ih obično bolje obrađuju.",
 			"q5": "Trebam li nešto instalirati?",
@@ -368,18 +368,18 @@
 			"label": "Pitanja"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "Vaša radionica",
+			"title": "Svaki alat radi u vašem pregledniku",
+			"pdf_title": "PDF Alati",
+			"pdf_desc": "Spoji, podijeli, kompresuj, vodeni žig, potpiši, uredi i još 12",
+			"pdf_count": "18 alata",
+			"image_title": "Alati za slike",
+			"image_desc": "Izreži, promijeni veličinu, filteri, zamuti, vodeni žig, mim i više",
+			"image_count": "10 alata",
+			"dev_title": "Razvojni alati",
+			"dev_desc": "JSON, hash, Base64, markdown, diff i više",
+			"dev_count": "8 alata",
+			"explore": "Istraži →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "Odaberite boje s bilo koje slike",
 			"blur_name": "Zamuti područje",
 			"blur_desc": "Zamutite dio slike za privatnost",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "Filteri za slike",
+			"filters_desc": "Podesi svjetlinu, kontrast, zasićenost, sepiju i ton",
+			"video_to_gif_name": "Video u GIF",
+			"video_to_gif_desc": "Pretvori video u animirani GIF"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "Uredi",
+			"create": "Kreiraj"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← Razvojni alati"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "Razvojni alati",
+		"subtitle": "Formatiraj, kodiraj i heširaj — sve u pregledniku. Ništa ne napušta vaš uređaj.",
+		"badge": "100% lokalno — bez otpremanja, bez servera",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
+			"json_name": "JSON Formater",
+			"json_desc": "Formatiraj, minimiziraj i validiraj JSON",
 			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Base64 Kodiraj/Dekodiraj",
+			"base64_desc": "Kodiraj ili dekodiraj Base64",
+			"markdown_name": "Markdown Pregled",
+			"markdown_desc": "Markdown u HTML uživo",
+			"diff_name": "Uporedi tekstove",
+			"diff_desc": "Uporedi dva teksta i prikaži razlike",
+			"word_count_name": "Brojač riječi",
+			"word_count_desc": "Riječi, znakovi, vrijeme čitanja",
+			"url_encode_name": "URL Kodiraj/Dekodiraj",
+			"url_encode_desc": "Kodiraj ili dekodiraj URL-ove",
+			"css_minify_name": "Minimiziraj CSS",
+			"css_minify_desc": "Minimiziraj CSS kod"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "Formatiraj i transformiši",
+			"analyze": "Analiziraj"
 		}
 	}
 }

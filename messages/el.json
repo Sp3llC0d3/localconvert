@@ -18,8 +18,8 @@
 		"privacy_policy": "Πολιτική απορρήτου"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "Η ιδιωτική σας εργαλειοθήκη για αρχεία και κώδικα.",
+		"subtitle": "36 εργαλεία για PDF, εικόνες και ροές εργασίας προγραμματιστών — όλα τρέχουν στον περιηγητή σας. Χωρίς μεταφορτώσεις, χωρίς λογαριασμούς, δωρεάν για πάντα.",
 		"uploader": {
 			"text": "Σύρετε ή κάντε κλικ για {action}",
 			"convert": "μετατροπή"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "Χωρίς Μεταφορτώσεις σε Διακομιστή",
 			"open_source": "Δωρεάν & Ανοιχτού Κώδικα",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ Εργαλεία",
+			"works_offline": "Λειτουργεί εκτός σύνδεσης"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ μετατροπές μορφής",
+			"label": "Μετατροπέας"
 		},
 		"privacy": {
 			"title": "100% Ιδιωτικό εξ Ορισμού",
 			"point1": "Τα αρχεία σας δεν εγκαταλείπουν ποτέ τη συσκευή σας",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "Και τα 36 εργαλεία τρέχουν εξ ολοκλήρου στον περιηγητή σας — μηδέν μεταφορτώσεις σε διακομιστή",
 			"point3": "Ανοιχτού κώδικα — επαληθεύστε το μόνοι σας",
 			"label": "Απόρρητο πρώτα"
 		},
@@ -359,8 +359,8 @@
 			"a1": "Ναι — εντελώς δωρεάν, χωρίς λογαριασμό, χωρίς κρυφές χρεώσεις. Το LocalConvert είναι ανοιχτού κώδικα υπό την άδεια AGPL-3.0.",
 			"q2": "Είναι τα αρχεία μου ιδιωτικά;",
 			"a2": "Εντελώς. Όλες οι μετατροπές εκτελούνται στο πρόγραμμα περιήγησής σας χρησιμοποιώντας WebAssembly. Τα αρχεία σας δεν αγγίζουν ποτέ τους διακομιστές μας — ούτε για μια στιγμή.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "Τι μπορεί να κάνει το LocalConvert;",
+			"a3": "Μετατροπή 200+ μορφών αρχείων (εικόνες, ήχος, βίντεο, έγγραφα), 18 εργαλεία PDF (συγχώνευση, διαχωρισμός, συμπίεση, υδατογράφημα, υπογραφή, επεξεργασία και άλλα), 10 εργαλεία εικόνας (περικοπή, αλλαγή μεγέθους, φίλτρα, θόλωμα, υδατογράφημα) και 8 εργαλεία προγραμματιστή (JSON, hash, Base64, σύγκριση, markdown).",
 			"q4": "Υπάρχει όριο μεγέθους αρχείου;",
 			"a4": "Δεν υπάρχει σκληρό όριο — εξαρτάται από τη διαθέσιμη μνήμη της συσκευής σας. Για πολύ μεγάλα αρχεία βίντεο, ο Firefox ή το Safari συνήθως τα χειρίζονται καλύτερα.",
 			"q5": "Χρειάζεται να εγκαταστήσω κάτι;",
@@ -368,18 +368,18 @@
 			"label": "Ερωτήσεις"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "Το εργαστήριό σας",
+			"title": "Κάθε εργαλείο τρέχει στον περιηγητή σας",
+			"pdf_title": "Εργαλεία PDF",
+			"pdf_desc": "Συγχώνευση, διαχωρισμός, συμπίεση, υδατογράφημα, υπογραφή, επεξεργασία και 12 ακόμα",
+			"pdf_count": "18 εργαλεία",
+			"image_title": "Εργαλεία εικόνας",
+			"image_desc": "Περικοπή, αλλαγή μεγέθους, φίλτρα, θόλωμα, υδατογράφημα, meme και άλλα",
+			"image_count": "10 εργαλεία",
+			"dev_title": "Εργαλεία προγραμματιστή",
+			"dev_desc": "JSON, hash, Base64, markdown, σύγκριση και άλλα",
+			"dev_count": "8 εργαλεία",
+			"explore": "Εξερεύνηση →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "Επιλέξτε χρώματα από οποιαδήποτε εικόνα",
 			"blur_name": "Θόλωση περιοχής",
 			"blur_desc": "Θολώστε μια περιοχή εικόνας για ιδιωτικότητα",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "Φίλτρα εικόνας",
+			"filters_desc": "Ρύθμιση φωτεινότητας, αντίθεσης, κορεσμού, σέπια και απόχρωσης",
+			"video_to_gif_name": "Βίντεο σε GIF",
+			"video_to_gif_desc": "Μετατροπή βίντεο σε κινούμενο GIF"
 		},
 		"categories": {
-			"edit": "Edit",
-			"create": "Create"
+			"edit": "Επεξεργασία",
+			"create": "Δημιουργία"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← Εργαλεία προγραμματιστή"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "Εργαλεία προγραμματιστή",
+		"subtitle": "Μορφοποίηση, κωδικοποίηση και hash — όλα στον περιηγητή σας. Τίποτα δεν φεύγει από τη συσκευή σας.",
+		"badge": "100% τοπικά — χωρίς μεταφορτώσεις, χωρίς διακομιστή",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "Μορφοποιητής JSON",
+			"json_desc": "Μορφοποίηση, ελαχιστοποίηση και επικύρωση JSON",
+			"hash_name": "Γεννήτρια hash",
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Κωδικοποίηση/Αποκωδικοποίηση Base64",
+			"base64_desc": "Κωδικοποίηση ή αποκωδικοποίηση Base64",
+			"markdown_name": "Προεπισκόπηση Markdown",
+			"markdown_desc": "Ζωντανό Markdown σε HTML",
+			"diff_name": "Σύγκριση κειμένων",
+			"diff_desc": "Σύγκριση δύο κειμένων και εμφάνιση διαφορών",
+			"word_count_name": "Μετρητής λέξεων",
+			"word_count_desc": "Λέξεις, χαρακτήρες, χρόνος ανάγνωσης",
+			"url_encode_name": "Κωδικοποίηση/Αποκωδικοποίηση URL",
+			"url_encode_desc": "Κωδικοποίηση ή αποκωδικοποίηση URL",
+			"css_minify_name": "Ελαχιστοποίηση CSS",
+			"css_minify_desc": "Ελαχιστοποίηση κώδικα CSS"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "Μορφοποίηση & Μετασχηματισμός",
+			"analyze": "Ανάλυση"
 		}
 	}
 }

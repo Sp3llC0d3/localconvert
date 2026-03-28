@@ -18,8 +18,8 @@
 		"privacy_policy": "Kebijakan privasi"
 	},
 	"upload": {
-		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"title": "Toolkit pribadi Anda untuk file dan kode.",
+		"subtitle": "36 alat untuk PDF, gambar, dan alur kerja pengembang — semua berjalan di browser Anda. Tanpa unggahan, tanpa akun, gratis selamanya.",
 		"uploader": {
 			"text": "Jatuhkan atau klik untuk {action}",
 			"convert": "konversi"
@@ -339,17 +339,17 @@
 		"pills": {
 			"no_uploads": "Tanpa Unggahan ke Server",
 			"open_source": "Gratis & Sumber Terbuka",
-			"tools_count": "36+ Tools",
-			"works_offline": "Works Offline"
+			"tools_count": "36+ Alat",
+			"works_offline": "Berfungsi offline"
 		},
 		"formats": {
-			"title": "200+ Format Conversions",
-			"label": "Converter"
+			"title": "200+ konversi format",
+			"label": "Pengonversi"
 		},
 		"privacy": {
 			"title": "100% Privat Sejak Awal",
 			"point1": "Berkas Anda tidak pernah meninggalkan perangkat Anda",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "Semua 36 alat berjalan sepenuhnya di browser Anda — nol unggahan ke server",
 			"point3": "Sumber terbuka — verifikasi sendiri",
 			"label": "Privasi pertama"
 		},
@@ -359,8 +359,8 @@
 			"a1": "Ya — sepenuhnya gratis, tanpa akun, tanpa biaya tersembunyi. LocalConvert adalah sumber terbuka di bawah lisensi AGPL-3.0.",
 			"q2": "Apakah berkas saya privat?",
 			"a2": "Sepenuhnya. Semua konversi berjalan di browser Anda menggunakan WebAssembly. Berkas Anda tidak pernah menyentuh server kami — bahkan sesaat pun tidak.",
-			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q3": "Apa yang bisa dilakukan LocalConvert?",
+			"a3": "Mengonversi 200+ format file (gambar, audio, video, dokumen), 18 alat PDF (gabung, pisah, kompres, tanda air, tanda tangan, edit, dan lainnya), 10 alat gambar (potong, ubah ukuran, filter, blur, tanda air), dan 8 alat pengembang (JSON, hash, Base64, diff, markdown).",
 			"q4": "Apakah ada batas ukuran berkas?",
 			"a4": "Tidak ada batas keras — tergantung memori yang tersedia di perangkat Anda. Untuk berkas video yang sangat besar, Firefox atau Safari biasanya menanganinya lebih baik.",
 			"q5": "Apakah saya perlu menginstal sesuatu?",
@@ -368,18 +368,18 @@
 			"label": "Pertanyaan"
 		},
 		"toolkit": {
-			"label": "Your workshop",
-			"title": "Every tool runs in your browser",
-			"pdf_title": "PDF Tools",
-			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
-			"image_title": "Image Tools",
-			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
-			"image_count": "10 tools",
-			"dev_title": "Developer Tools",
-			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
-			"dev_count": "8 tools",
-			"explore": "Explore →"
+			"label": "Bengkel Anda",
+			"title": "Setiap alat berjalan di browser Anda",
+			"pdf_title": "Alat PDF",
+			"pdf_desc": "Gabung, pisah, kompres, tanda air, tanda tangan, edit, dan 12 lainnya",
+			"pdf_count": "18 alat",
+			"image_title": "Alat Gambar",
+			"image_desc": "Potong, ubah ukuran, filter, blur, tanda air, meme, dan lainnya",
+			"image_count": "10 alat",
+			"dev_title": "Alat Pengembang",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, dan lainnya",
+			"dev_count": "8 alat",
+			"explore": "Jelajahi →"
 		}
 	},
 	"pdf_tools": {
@@ -451,14 +451,14 @@
 			"color_picker_desc": "Pilih warna dari gambar apa pun",
 			"blur_name": "Blur Area",
 			"blur_desc": "Blur area gambar untuk privasi",
-			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more",
-			"video_to_gif_name": "Video to GIF",
-			"video_to_gif_desc": "Convert any video to an animated GIF"
+			"filters_name": "Filter Gambar",
+			"filters_desc": "Atur kecerahan, kontras, saturasi, sepia, dan warna",
+			"video_to_gif_name": "Video ke GIF",
+			"video_to_gif_desc": "Konversi video menjadi GIF animasi"
 		},
 		"categories": {
 			"edit": "Edit",
-			"create": "Create"
+			"create": "Buat"
 		}
 	},
 	"tools_common": {
@@ -513,7 +513,7 @@
 		"foreground": "Foreground",
 		"background": "Background",
 		"input": "Input:",
-		"back_dev": "← Dev Tools"
+		"back_dev": "← Alat Pengembang"
 	},
 	"tool_pages": {
 		"merge": {
@@ -897,30 +897,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Developer Tools",
-		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
-		"badge": "100% local — no uploads, no server",
+		"title": "Alat Pengembang",
+		"subtitle": "Format, encode, dan hash — semua di browser Anda. Tidak ada yang keluar dari perangkat Anda.",
+		"badge": "100% lokal — tanpa unggahan, tanpa server",
 		"tools": {
-			"json_name": "JSON Formatter",
-			"json_desc": "Format, minify, and validate JSON",
-			"hash_name": "Hash Generator",
-			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
-			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings",
-			"markdown_name": "Markdown Preview",
-			"markdown_desc": "Write markdown and preview rendered HTML",
-			"diff_name": "Text Diff",
-			"diff_desc": "Compare two texts and highlight differences",
-			"word_count_name": "Word Counter",
-			"word_count_desc": "Count words, characters, sentences, and more",
-			"url_encode_name": "URL Encode/Decode",
-			"url_encode_desc": "Encode and decode URL strings",
-			"css_minify_name": "CSS Minifier",
-			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+			"json_name": "Pemformat JSON",
+			"json_desc": "Format, minifikasi, dan validasi JSON",
+			"hash_name": "Generator Hash",
+			"hash_desc": "SHA-256, SHA-1, SHA-512",
+			"base64_name": "Encode/Decode Base64",
+			"base64_desc": "Encode atau decode Base64",
+			"markdown_name": "Pratinjau Markdown",
+			"markdown_desc": "Markdown ke HTML langsung",
+			"diff_name": "Perbandingan Teks",
+			"diff_desc": "Bandingkan dua teks dan tampilkan perbedaan",
+			"word_count_name": "Penghitung Kata",
+			"word_count_desc": "Kata, karakter, waktu baca",
+			"url_encode_name": "Encode/Decode URL",
+			"url_encode_desc": "Encode atau decode URL",
+			"css_minify_name": "Minifikasi CSS",
+			"css_minify_desc": "Minifikasi kode CSS"
 		},
 		"categories": {
-			"format": "Format & Transform",
-			"analyze": "Analyze"
+			"format": "Format & Transformasi",
+			"analyze": "Analisis"
 		}
 	}
 }
