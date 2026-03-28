@@ -18,8 +18,8 @@
 		"privacy_policy": "Πολιτική απορρήτου"
 	},
 	"upload": {
-		"title": "Μετατροπή εικόνων, ήχου, βίντεο και εγγράφων — δωρεάν, ιδιωτικά, χωρίς μεταφορτώσεις.",
-		"subtitle": "Τροφοδοτείται από WebAssembly — εκτελείται εξ ολοκλήρου στο πρόγραμμα περιήγησής σας. Χωρίς λογαριασμό, χωρίς όριο μεγέθους αρχείου, ανοιχτού κώδικα και δωρεάν για πάντα.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Σύρετε ή κάντε κλικ για {action}",
 			"convert": "μετατροπή"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Χωρίς Μεταφορτώσεις σε Διακομιστή",
-			"gpu": "Επιτάχυνση GPU",
 			"open_source": "Δωρεάν & Ανοιχτού Κώδικα",
-			"no_limit": "Χωρίς Όριο Μεγέθους Αρχείου"
-		},
-		"how_it_works": {
-			"title": "Πώς Λειτουργεί",
-			"step1_title": "Επιλέξτε το Αρχείο σας",
-			"step1_desc": "Σύρετε ή κάντε κλικ για να επιλέξετε οποιοδήποτε αρχείο εικόνας, ήχου, βίντεο ή εγγράφου.",
-			"step2_title": "Μετατροπή στο Πρόγραμμα Περιήγησής σας",
-			"step2_desc": "Όλα εκτελούνται τοπικά μέσω WebAssembly — χωρίς μεταφορτώσεις, χωρίς αναμονή σε διακομιστές.",
-			"step3_title": "Αποθηκεύστε το Αποτέλεσμα",
-			"step3_desc": "Αποκτήστε το μετατρεπόμενο αρχείο σας αμέσως, κατευθείαν στη συσκευή σας.",
-			"label": "Η διαδικασία"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Υποστηριζόμενες Μορφές",
-			"label": "Δυνατότητες"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "100% Ιδιωτικό εξ Ορισμού",
 			"point1": "Τα αρχεία σας δεν εγκαταλείπουν ποτέ τη συσκευή σας",
-			"point2": "Χωρίς μεταφορτώσεις σε διακομιστή — όλα εκτελούνται στο πρόγραμμα περιήγησής σας",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Ανοιχτού κώδικα — επαληθεύστε το μόνοι σας",
 			"label": "Απόρρητο πρώτα"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Ναι — εντελώς δωρεάν, χωρίς λογαριασμό, χωρίς κρυφές χρεώσεις. Το LocalConvert είναι ανοιχτού κώδικα υπό την άδεια AGPL-3.0.",
 			"q2": "Είναι τα αρχεία μου ιδιωτικά;",
 			"a2": "Εντελώς. Όλες οι μετατροπές εκτελούνται στο πρόγραμμα περιήγησής σας χρησιμοποιώντας WebAssembly. Τα αρχεία σας δεν αγγίζουν ποτέ τους διακομιστές μας — ούτε για μια στιγμή.",
-			"q3": "Ποιες μορφές αρχείων υποστηρίζονται;",
-			"a3": "Εικόνες (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Βίντεο (MP4, WebM, MKV, AVI, MOV), Ήχος (MP3, WAV, OGG, FLAC, AAC) και Έγγραφα (DOCX, HTML, Markdown, EPUB). Περιλαμβάνονται επίσης εργαλεία PDF.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Υπάρχει όριο μεγέθους αρχείου;",
 			"a4": "Δεν υπάρχει σκληρό όριο — εξαρτάται από τη διαθέσιμη μνήμη της συσκευής σας. Για πολύ μεγάλα αρχεία βίντεο, ο Firefox ή το Safari συνήθως τα χειρίζονται καλύτερα.",
 			"q5": "Χρειάζεται να εγκαταστήσω κάτι;",
 			"a5": "Δεν απαιτείται εγκατάσταση. Το LocalConvert λειτουργεί απευθείας σε οποιοδήποτε σύγχρονο πρόγραμμα περιήγησης. Μπορείτε επίσης να το εγκαταστήσετε ως PWA από τη γραμμή διευθύνσεων για εμπειρία παρόμοια με εφαρμογή.",
 			"label": "Ερωτήσεις"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

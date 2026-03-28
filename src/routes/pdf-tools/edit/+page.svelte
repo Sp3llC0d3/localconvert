@@ -5,6 +5,7 @@
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
 	import { EditIcon, Trash2Icon, Undo2Icon, Redo2Icon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { createHistory } from '$lib/util/history.svelte';
 	import { m } from '$lib/paraglide/messages';
 
@@ -282,14 +283,14 @@
 </svelte:head>
 
 <div class="edit-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="edit-header">
-		<EditIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.edit.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.edit.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.edit.title']()}
+		description={m['tool_pages.edit.desc']()}
+		icon={EditIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -399,8 +400,7 @@
 
 <style>
 	.edit-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.edit-header { display: flex; align-items: center; gap: 0.75rem; }
-	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 
 	/* Text input bar */
 	.text-bar {

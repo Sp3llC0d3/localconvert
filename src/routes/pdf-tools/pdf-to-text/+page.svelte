@@ -4,6 +4,7 @@
 	import { pdfToText } from '$lib/pdf/pdf-to-text';
 	import { downloadBlob } from '$lib/pdf/utils';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -55,14 +56,14 @@
 </svelte:head>
 
 <div class="text-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="text-header">
-		<FileTextIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.pdf_to_text.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.pdf_to_text.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.pdf_to_text.title']()}
+		description={m['tool_pages.pdf_to_text.desc']()}
+		icon={FileTextIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -103,8 +104,7 @@
 
 <style>
 	.text-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.text-header { display: flex; align-items: center; gap: 0.75rem; }
-	.result-section { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.result-section { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.text-output {
 		width: 100%; min-height: 16rem; max-height: 32rem; padding: 0.75rem; border-radius: 0.5rem;
 		font-family: 'Lexend', sans-serif; font-size: 0.8125rem; line-height: 1.6; resize: vertical;

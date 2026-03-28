@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { TypeIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let text = $state('');
 
@@ -23,14 +24,14 @@
 </svelte:head>
 
 <div class="wc-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="wc-header">
-		<TypeIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.word_count.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.word_count.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.word_count.title']()}
+		description={m['tool_pages.word_count.desc']()}
+		icon={TypeIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<textarea bind:value={text} class="text-area" placeholder={m['tool_pages.word_count.placeholder']()} spellcheck="false"></textarea>
 
@@ -66,8 +67,7 @@
 
 <style>
 	.wc-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.wc-header { display: flex; align-items: center; gap: 0.75rem; }
-	.text-area {
+.text-area {
 		width: 100%; min-height: 14rem; padding: 0.75rem; border-radius: 0.5rem; resize: vertical;
 		font-size: 0.875rem; line-height: 1.6;
 		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);

@@ -18,8 +18,8 @@
 		"privacy_policy": "隱私權政策"
 	},
 	"upload": {
-		"title": "在瀏覽器中轉換圖片、音訊、影片和文件——免費、私密、無需上傳。",
-		"subtitle": "由 WebAssembly 驅動——完全在你的瀏覽器中執行。無需帳號，無檔案大小限制，開源且永久免費。",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "拖放或點擊以{action}",
 			"convert": "轉換"
@@ -386,28 +386,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "無伺服器上傳",
-			"gpu": "GPU 加速",
 			"open_source": "免費且開源",
-			"no_limit": "無檔案大小限制"
-		},
-		"how_it_works": {
-			"title": "運作原理",
-			"step1_title": "選擇你的檔案",
-			"step1_desc": "拖放或點擊選擇任意圖片、音訊、影片或文件檔案。",
-			"step2_title": "在瀏覽器中轉換",
-			"step2_desc": "一切透過 WebAssembly 在本機執行——無需上傳，無需等待伺服器。",
-			"step3_title": "儲存結果",
-			"step3_desc": "立即取得轉換後的檔案，直接儲存到你的裝置。",
-			"label": "使用流程"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "支援的格式",
-			"label": "支援格式"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "從設計上保證100%隱私",
 			"point1": "你的檔案永遠不會離開你的裝置",
-			"point2": "無伺服器上傳——一切在你的瀏覽器中執行",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "開源——自行驗證",
 			"label": "隱私優先"
 		},
@@ -417,13 +407,27 @@
 			"a1": "是的——完全免費，無需帳號，沒有隱藏費用。LocalConvert 以 AGPL-3.0 授權條款開源。",
 			"q2": "我的檔案是私密的嗎？",
 			"a2": "完全私密。所有轉換均在你的瀏覽器中使用 WebAssembly 執行。你的檔案永遠不會接觸我們的伺服器——哪怕是一瞬間。",
-			"q3": "支援哪些檔案格式？",
-			"a3": "圖片（JPG、PNG、WEBP、AVIF、HEIC、GIF、BMP、TIFF、SVG、ICO）、影片（MP4、WebM、MKV、AVI、MOV）、音訊（MP3、WAV、OGG、FLAC、AAC）和文件（DOCX、HTML、Markdown、EPUB）。還包含 PDF 工具。",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "有檔案大小限制嗎？",
 			"a4": "沒有硬性限制——取決於你裝置的可用記憶體。對於非常大的影片檔案，Firefox 或 Safari 通常處理得更好。",
 			"q5": "我需要安裝任何東西嗎？",
 			"a5": "無需安裝。LocalConvert 可在任何現代瀏覽器中直接使用。你也可以從網址列將其安裝為 PWA，獲得類似應用程式的體驗。",
 			"label": "常見問題"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"image_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

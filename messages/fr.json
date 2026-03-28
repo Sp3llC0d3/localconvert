@@ -18,8 +18,8 @@
 		"privacy_policy": "Politique de confidentialité"
 	},
 	"upload": {
-		"title": "Convertissez des images, de l'audio, de la vidéo et des documents — gratuitement, en toute confidentialité, sans envoi de fichiers.",
-		"subtitle": "Propulsé par WebAssembly — fonctionne entièrement dans votre navigateur. Aucun compte, aucune limite de taille de fichier, open source et gratuit pour toujours.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Déposer ou cliquer pour {action}",
 			"convert": "convertir"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Aucun envoi vers un serveur",
-			"gpu": "Accélération GPU",
 			"open_source": "Gratuit et open source",
-			"no_limit": "Aucune limite de taille de fichier"
-		},
-		"how_it_works": {
-			"title": "Comment ça fonctionne",
-			"step1_title": "Choisissez votre fichier",
-			"step1_desc": "Déposez ou cliquez pour sélectionner n'importe quel fichier image, audio, vidéo ou document.",
-			"step2_title": "Converti dans votre navigateur",
-			"step2_desc": "Tout s'exécute localement via WebAssembly — aucun téléversement, aucune attente sur des serveurs.",
-			"step3_title": "Enregistrez le résultat",
-			"step3_desc": "Obtenez votre fichier converti instantanément, directement sur votre appareil.",
-			"label": "Le processus"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Formats pris en charge",
-			"label": "Fonctionnalités"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "100 % privé par conception",
 			"point1": "Vos fichiers ne quittent jamais votre appareil",
-			"point2": "Aucun envoi vers un serveur — tout s'exécute dans votre navigateur",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Open source — vérifiez-le vous-même",
 			"label": "La confidentialité d'abord"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Oui — entièrement gratuit, aucun compte requis, aucun frais caché. LocalConvert est open source sous licence AGPL-3.0.",
 			"q2": "Mes fichiers sont-ils privés ?",
 			"a2": "Absolument. Toutes les conversions s'exécutent dans votre navigateur grâce à WebAssembly. Vos fichiers ne touchent jamais nos serveurs — pas même un instant.",
-			"q3": "Quels formats de fichiers sont pris en charge ?",
-			"a3": "Images (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Vidéo (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), et Documents (DOCX, HTML, Markdown, EPUB). Les outils PDF sont également inclus.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Y a-t-il une limite de taille de fichier ?",
 			"a4": "Aucune limite stricte — cela dépend de la mémoire disponible sur votre appareil. Pour les fichiers vidéo très volumineux, Firefox ou Safari les gèrent généralement mieux.",
 			"q5": "Dois-je installer quelque chose ?",
 			"a5": "Aucune installation requise. LocalConvert fonctionne directement dans tout navigateur moderne. Vous pouvez également l'installer en tant que PWA depuis la barre d'adresse pour une expérience similaire à une application.",
 			"label": "Questions"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

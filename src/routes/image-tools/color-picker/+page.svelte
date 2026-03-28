@@ -3,6 +3,7 @@
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage } from '$lib/image/utils';
 	import { PipetteIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let imgEl = $state<HTMLImageElement | null>(null);
@@ -111,14 +112,14 @@
 </svelte:head>
 
 <div class="picker-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="picker-header">
-		<PipetteIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.color_picker.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.color_picker.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.color_picker.title']()}
+		description={m['tool_pages.color_picker.desc']()}
+		icon={PipetteIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
@@ -169,8 +170,7 @@
 
 <style>
 	.picker-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.picker-header { display: flex; align-items: center; gap: 0.75rem; }
-	.canvas-wrap { position: relative; display: flex; flex-direction: column; align-items: center; }
+.canvas-wrap { position: relative; display: flex; flex-direction: column; align-items: center; }
 	.picker-canvas { border-radius: 0.75rem; cursor: crosshair; box-shadow: var(--shadow-panel); }
 
 	.cursor-preview {

@@ -7,6 +7,7 @@
 	import { generateMeme } from '$lib/image/meme';
 	import { downloadBlob, formatFileSize, getOutputName, loadImage } from '$lib/image/utils';
 	import { LayersIcon, XIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let operation = $state<'rotate' | 'watermark' | 'crop' | 'meme'>('rotate');
@@ -109,14 +110,14 @@
 </svelte:head>
 
 <div class="batch-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="batch-header">
-		<LayersIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.batch.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.batch.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.batch.title']()}
+		description={m['tool_pages.batch.desc']()}
+		icon={LayersIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files multiple={true} label={m['tools_common.upload_images']()} />
 
@@ -233,8 +234,7 @@
 
 <style>
 	.batch-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.batch-header { display: flex; align-items: center; gap: 0.75rem; }
-	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 4.5rem; flex-shrink: 0; }
 	.opt-input {

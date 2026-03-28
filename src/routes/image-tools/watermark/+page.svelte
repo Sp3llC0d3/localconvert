@@ -4,6 +4,7 @@
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { DropletIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
 
 	let files = $state<File[]>([]);
@@ -122,14 +123,14 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="tool-header">
-		<DropletIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.watermark_image.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.watermark_image.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.watermark_image.title']()}
+		description={m['tool_pages.watermark_image.desc']()}
+		icon={DropletIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
@@ -187,8 +188,7 @@
 
 <style>
 	.tool-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.tool-header { display: flex; align-items: center; gap: 0.75rem; }
-	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 5rem; flex-shrink: 0; }
 	.opt-input { border-radius: 0.5rem; padding: 0.375rem 0.75rem; font-size: 0.875rem; border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg); }

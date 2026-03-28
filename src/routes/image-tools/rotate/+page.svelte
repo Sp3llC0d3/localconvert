@@ -4,6 +4,7 @@
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { RotateCwIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
 	import type { RotationAngle } from '$lib/image/rotate';
 
@@ -91,14 +92,14 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="tool-header">
-		<RotateCwIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.rotate_image.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.rotate_image.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.rotate_image.title']()}
+		description={m['tool_pages.rotate_image.desc']()}
+		icon={RotateCwIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
@@ -138,8 +139,7 @@
 
 <style>
 	.tool-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.tool-header { display: flex; align-items: center; gap: 0.75rem; }
-	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 5rem; flex-shrink: 0; }
 	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }

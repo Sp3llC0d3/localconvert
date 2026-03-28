@@ -18,8 +18,8 @@
 		"privacy_policy": "Gizlilik politikası"
 	},
 	"upload": {
-		"title": "Görüntü, ses, video ve belge dönüştürün — ücretsiz, gizli, yükleme yok.",
-		"subtitle": "WebAssembly ile çalışır — tamamen tarayıcınızda işlenir. Hesap gerekmez, dosya boyutu sınırı yoktur, açık kaynaklıdır ve sonsuza kadar ücretsizdir.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
 			"convert": "dönüştürmek"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Sunucu Yüklemesi Yok",
-			"gpu": "GPU Hızlandırmalı",
 			"open_source": "Ücretsiz ve Açık Kaynak",
-			"no_limit": "Dosya Boyutu Sınırı Yok"
-		},
-		"how_it_works": {
-			"title": "Nasıl Çalışır",
-			"step1_title": "Dosyanızı Seçin",
-			"step1_desc": "Herhangi bir görsel, ses, video veya belge dosyasını sürükleyip bırakın ya da tıklayarak seçin.",
-			"step2_title": "Tarayıcınızda Dönüştürülür",
-			"step2_desc": "Her şey WebAssembly aracılığıyla yerel olarak çalışır — yükleme yok, sunucu bekleme süresi yok.",
-			"step3_title": "Sonucu Kaydedin",
-			"step3_desc": "Dönüştürülen dosyanızı anında, doğrudan cihazınıza alın.",
-			"label": "Süreç"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Desteklenen Formatlar",
-			"label": "Özellikler"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "Tasarım Gereği %100 Gizli",
 			"point1": "Dosyalarınız cihazınızı asla terk etmez",
-			"point2": "Sunucu yüklemesi yok — her şey tarayıcınızda çalışır",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Açık kaynak — kendiniz doğrulayın",
 			"label": "Önce Gizlilik"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Evet — tamamen ücretsiz, hesap gerekmez, gizli ücret yoktur. LocalConvert, AGPL-3.0 lisansı altında açık kaynaklıdır.",
 			"q2": "Dosyalarım gizli mi?",
 			"a2": "Tamamen. Tüm dönüştürme işlemleri WebAssembly kullanılarak tarayıcınızda çalışır. Dosyalarınız sunucularımıza hiç ulaşmaz — bir an için bile.",
-			"q3": "Hangi dosya formatları destekleniyor?",
-			"a3": "Görseller (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Ses (MP3, WAV, OGG, FLAC, AAC) ve Belgeler (DOCX, HTML, Markdown, EPUB). PDF araçları da dahildir.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Dosya boyutu sınırı var mı?",
 			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
 			"q5": "Bir şey yüklemem gerekiyor mu?",
 			"a5": "Kurulum gerekmez. LocalConvert herhangi bir modern tarayıcıda doğrudan çalışır. Uygulama benzeri bir deneyim için adres çubuğundan PWA olarak da yükleyebilirsiniz.",
 			"label": "Sorular"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

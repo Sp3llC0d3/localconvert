@@ -17,9 +17,10 @@ Most file converters upload your files to a server, process them remotely, and s
 **What it does:**
 
 - **Convert** 200+ format combinations — images (60+ formats), audio, video, documents
-- **16 PDF tools** — merge, split, rotate, organize, compress, watermark, page numbers, crop, sign, edit text, password protect, unlock, images-to-PDF, PDF-to-images, PDF-to-PowerPoint, metadata editor
-- **7 image tools** — rotate, crop (with circle mode), watermark, meme generator, batch processing, QR code generator, color picker
-- **Live previews** — see watermarks, page numbers, meme text, and rotations update in real-time
+- **18 PDF tools** — merge, split, rotate, organize, compress, watermark, page numbers, crop, sign, edit text, password protect, unlock, images-to-PDF, PDF-to-images, PDF-to-PowerPoint, metadata editor, grayscale, PDF-to-text
+- **10 image tools** — rotate, crop (with circle mode), resize, compress, convert, watermark, meme generator, blur, color picker, filters
+- **8 dev tools** — JSON formatter, hash generator, Base64 encode/decode, Markdown preview, text diff, word counter, URL encode/decode, CSS minifier
+- **Live previews** — see watermarks, page numbers, meme text, filters, and rotations update in real-time
 - **Interactive editing** — click to place text on PDFs, drag signatures, drag-and-drop page reordering
 - **Undo/redo** — Ctrl+Z with keyboard shortcuts on PDF editing tools
 - **Before/after slider** — compare original and edited images with a draggable divider
@@ -44,7 +45,7 @@ I built LocalConvert because I was tired of file converters that upload my files
 
 LocalConvert runs 100% in your browser using WebAssembly. Your files literally never leave your device — there's no server to upload to.
 
-It started as a simple converter but grew into a full toolkit: 16 PDF tools, 7 image tools, live previews, interactive editing, and support for 200+ format combinations.
+It started as a simple converter but grew into a full toolkit: 18 PDF tools, 10 image tools, 8 dev tools, live previews, interactive editing, and support for 200+ format combinations.
 
 Some features I'm most proud of:
 - The live canvas preview that updates watermarks and meme text as you type
@@ -59,13 +60,14 @@ It's completely free, open source, and works offline once loaded. I'd love to he
 ## Feature Bullets (for the listing)
 
 1. Convert 200+ format combinations — images, audio, video, documents
-2. 16 PDF tools — merge, split, compress, watermark, sign, edit, and more
-3. 7 image tools — crop, rotate, watermark, meme generator, QR codes
-4. 100% browser-based — your files never leave your device
-5. Live previews and interactive editing with undo/redo
-6. Works offline as a PWA — install on desktop or mobile
-7. 16 languages, dark mode, fully accessible
-8. Free and open source (AGPL-3.0)
+2. 18 PDF tools — merge, split, compress, watermark, sign, edit, grayscale, and more
+3. 10 image tools — crop, rotate, resize, filters, watermark, meme generator, blur
+4. 8 dev tools — JSON formatter, hash generator, Base64, Markdown preview, text diff
+5. 100% browser-based — your files never leave your device
+6. Live previews and interactive editing with undo/redo
+7. Works offline as a PWA — install on desktop or mobile
+8. 16 languages, dark mode, fully accessible
+9. Free and open source (AGPL-3.0)
 
 
 ## Topics/Categories
@@ -79,7 +81,7 @@ It's completely free, open source, and works offline once loaded. I'd love to he
 ## Screenshots Needed (5 max)
 
 1. **Home page** — hero section showing the privacy-first message + format support
-2. **PDF Tools landing** — grid of 16 tool cards with category colors
+2. **PDF Tools landing** — grid of 18 tool cards with category colors
 3. **Live preview** — PDF watermark tool showing real-time canvas update
 4. **Image crop** — interactive crop with handles, circle mode, rule-of-thirds grid
 5. **Before/after** — the comparison slider showing original vs watermarked image
@@ -88,7 +90,7 @@ It's completely free, open source, and works offline once loaded. I'd love to he
 ## Social Share Text
 
 **Twitter/X:**
-Just launched LocalConvert on Product Hunt! A free file converter that runs entirely in your browser — no uploads, no server. Convert 200+ formats, edit PDFs, create memes, generate QR codes. All private. localconvert.app
+Just launched LocalConvert on Product Hunt! A free file converter that runs entirely in your browser — no uploads, no server. Convert 200+ formats, 18 PDF tools, 10 image tools, 8 dev tools. All private. localconvert.app
 
 **LinkedIn:**
-Excited to share LocalConvert — a privacy-first file converter I built that processes everything in your browser using WebAssembly. No file uploads, no server processing. 16 PDF tools, 7 image tools, 200+ format combinations. Free and open source.
+Excited to share LocalConvert — a privacy-first file converter I built that processes everything in your browser using WebAssembly. No file uploads, no server processing. 18 PDF tools, 10 image tools, 8 dev tools, 200+ format combinations. Free and open source.

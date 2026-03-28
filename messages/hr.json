@@ -18,8 +18,8 @@
 		"privacy_policy": "Pravila privatnosti"
 	},
 	"upload": {
-		"title": "Pretvarajte slike, audio, video i dokumente — besplatno, privatno, bez prijenosa.",
-		"subtitle": "Pokreće ga WebAssembly — sve se odvija u Vašem pregledniku. Bez računa, bez ograničenja veličine datoteke, otvorenog koda i zauvijek besplatno.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Ubacite ili kliknite da {action}",
 			"convert": "pretvorite"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Bez prijenosa na poslužitelj",
-			"gpu": "GPU ubrzano",
 			"open_source": "Besplatno i otvorenog koda",
-			"no_limit": "Bez ograničenja veličine datoteke"
-		},
-		"how_it_works": {
-			"title": "Kako funkcionira",
-			"step1_title": "Odaberite svoju datoteku",
-			"step1_desc": "Povucite i ispustite ili kliknite za odabir bilo koje slike, audio, video ili dokument datoteke.",
-			"step2_title": "Pretvorba u Vašem pregledniku",
-			"step2_desc": "Sve se odvija lokalno putem WebAssembly — bez prijenosa, bez čekanja na poslužitelje.",
-			"step3_title": "Spremi rezultat",
-			"step3_desc": "Dobijte svoju pretvorenu datoteku trenutno, izravno na Vaš uređaj.",
-			"label": "Proces"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Podržani formati",
-			"label": "Mogućnosti"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "100% privatno po dizajnu",
 			"point1": "Vaše datoteke nikada ne napuštaju Vaš uređaj",
-			"point2": "Bez prijenosa na poslužitelj — sve se odvija u Vašem pregledniku",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Otvorenog koda — provjerite sami",
 			"label": "Privatnost na prvom mjestu"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Da — potpuno besplatan, bez potrebe za računom, bez skrivenih naknada. LocalConvert je otvorenog koda pod licencom AGPL-3.0.",
 			"q2": "Jesu li moje datoteke privatne?",
 			"a2": "Potpuno. Sve pretvorbe odvijaju se u Vašem pregledniku pomoću WebAssembly. Vaše datoteke nikada ne dotiču naše poslužitelje — ni za trenutak.",
-			"q3": "Koji su formati datoteka podržani?",
-			"a3": "Slike (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC) i Dokumenti (DOCX, HTML, Markdown, EPUB). Uključeni su i PDF alati.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Postoji li ograničenje veličine datoteke?",
 			"a4": "Nema tvrdog ograničenja — ovisi o dostupnoj memoriji Vašeg uređaja. Za vrlo velike videodatoteke, Firefox ili Safari obično ih bolje obrađuju.",
 			"q5": "Moram li nešto instalirati?",
 			"a5": "Nije potrebna instalacija. LocalConvert radi izravno u bilo kojem modernom pregledniku. Možete ga instalirati i kao PWA iz adresne trake za iskustvo slično aplikaciji.",
 			"label": "Pitanja"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

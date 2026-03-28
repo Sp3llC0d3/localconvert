@@ -1,13 +1,10 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
-	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Zap, Ban, ChevronDown } from "lucide-svelte";
+	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
 	import { browser } from "$app/environment";
 
-	import step1 from "$lib/assets/steps/step-1-choose.png";
-	import step2 from "$lib/assets/steps/step-2-convert.png";
-	import step3 from "$lib/assets/steps/step-3-download.png";
 	import privacyBadge from "$lib/assets/privacy-badge.png";
 
 	const worker: {
@@ -46,15 +43,36 @@
 
 	const pills = [
 		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
-		{ icon: Zap, label: m["landing.pills.gpu"]() },
+		{ icon: Wrench, label: m["landing.pills.tools_count"]() },
 		{ icon: Code, label: m["landing.pills.open_source"]() },
-		{ icon: ShieldCheck, label: m["landing.pills.no_limit"]() },
+		{ icon: ShieldCheck, label: m["landing.pills.works_offline"]() },
 	];
 
-	const steps = [
-		{ img: step1, title: m["landing.how_it_works.step1_title"](), desc: m["landing.how_it_works.step1_desc"](), n: "01" },
-		{ img: step2, title: m["landing.how_it_works.step2_title"](), desc: m["landing.how_it_works.step2_desc"](), n: "02" },
-		{ img: step3, title: m["landing.how_it_works.step3_title"](), desc: m["landing.how_it_works.step3_desc"](), n: "03" },
+	const toolkitCategories = [
+		{
+			title: m["landing.toolkit.pdf_title"](),
+			desc: m["landing.toolkit.pdf_desc"](),
+			count: m["landing.toolkit.pdf_count"](),
+			href: "/pdf-tools/",
+			color: "green" as const,
+			icon: FileText,
+		},
+		{
+			title: m["landing.toolkit.image_title"](),
+			desc: m["landing.toolkit.image_desc"](),
+			count: m["landing.toolkit.image_count"](),
+			href: "/image-tools/",
+			color: "blue" as const,
+			icon: Palette,
+		},
+		{
+			title: m["landing.toolkit.dev_title"](),
+			desc: m["landing.toolkit.dev_desc"](),
+			count: m["landing.toolkit.dev_count"](),
+			href: "/dev-tools/",
+			color: "purple" as const,
+			icon: Code,
+		},
 	];
 
 	const faqs = [
@@ -71,16 +89,16 @@
 		name: "LocalConvert",
 		applicationCategory: "UtilitiesApplication",
 		operatingSystem: "Web",
-		description: "Free, private file converter that runs entirely in your browser. Convert images, audio, video, and documents — no uploads, no server.",
+		description: "Free, private toolkit with 36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no server.",
 		url: "https://localconvert.app",
 		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 		featureList: [
-			"No server uploads — 100% local processing",
-			"Image conversion (JPG, PNG, WEBP, AVIF, ICO, GIF, TIFF, SVG, HEIC)",
-			"Audio conversion (MP3, WAV, FLAC, OGG, AAC)",
-			"Video conversion (MP4, WEBM, MKV, AVI, MOV) with GPU acceleration",
-			"Document conversion (DOCX, HTML, Markdown, EPUB)",
-			"PDF tools (merge, split, rotate, compress, watermark)",
+			"No server uploads \u2014 100% local processing",
+			"18 PDF tools (merge, split, compress, watermark, sign, edit, and more)",
+			"10 image tools (crop, resize, filters, blur, watermark, meme generator)",
+			"8 developer tools (JSON formatter, hash generator, Base64, diff, markdown)",
+			"200+ format conversions (images, audio, video, documents)",
+			"Works offline as a PWA",
 		],
 	});
 
@@ -98,7 +116,7 @@
 </script>
 
 <svelte:head>
-	<title>LocalConvert — Free, Private File Converter</title>
+	<title>LocalConvert — Free, Private Toolkit for Files & Code</title>
 	<link rel="canonical" href="https://localconvert.app/" />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
@@ -141,23 +159,28 @@
 	</div>
 </section>
 
-<!-- ═══ HOW IT WORKS ═══ -->
+<!-- ═══ TOOLKIT ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">{m["landing.how_it_works.label"]()}</div>
-		<h2 class="section-headline">{m["landing.how_it_works.title"]()}</h2>
+		<div class="section-label">{m["landing.toolkit.label"]()}</div>
+		<h2 class="section-headline">{m["landing.toolkit.title"]()}</h2>
 
-		<div class="steps-grid">
-			{#each steps as step, i}
-				<div class="step-card">
-					<span class="step-bg-number">{step.n}</span>
-					<img src={step.img} alt={step.title} class="step-img" />
-					<div class="step-meta">
-						<span class="step-index">Step {step.n}</span>
-						<h3 class="step-title">{step.title}</h3>
-						<p class="step-desc">{step.desc}</p>
+		<div class="toolkit-grid">
+			{#each toolkitCategories as cat, i}
+				{@const Icon = cat.icon}
+				<a href={cat.href} class={clsx("toolkit-card", `toolkit-card--${cat.color}`, "fade-in-up", i === 0 && "fade-delay-1", i === 1 && "fade-delay-2", i === 2 && "fade-delay-3")}>
+					<div class="toolkit-card-header">
+						<div class={clsx("toolkit-icon", `toolkit-icon--${cat.color}`)}>
+							<Icon size="20" />
+						</div>
+						<span class={clsx("toolkit-count", `toolkit-count--${cat.color}`)}>{cat.count}</span>
 					</div>
-				</div>
+					<h3 class="toolkit-title">{cat.title}</h3>
+					<p class="toolkit-desc">{cat.desc}</p>
+					<span class="toolkit-explore">
+						{m["landing.toolkit.explore"]()}
+					</span>
+				</a>
 			{/each}
 		</div>
 	</div>
@@ -312,7 +335,7 @@
 	font-size: clamp(0.875rem, 1.6vw, 1rem);
 	text-align: center;
 	color: var(--fg-muted);
-	max-width: 500px;
+	max-width: 560px;
 	font-weight: 400;
 	line-height: 1.75;
 }
@@ -401,78 +424,101 @@
 	margin-bottom: 2.5rem;
 }
 
-/* ── Steps ── */
-.steps-grid {
+/* ── Toolkit ── */
+.toolkit-grid {
 	@apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6;
 }
 
-.step-card {
-	@apply relative overflow-hidden rounded-2xl p-6 flex flex-col gap-4;
+.toolkit-card {
+	@apply relative overflow-hidden rounded-2xl p-6 flex flex-col gap-3;
 	background: var(--bg-panel);
 	box-shadow: var(--shadow-panel);
 	border: 1px solid var(--bg-separator);
-	transition: transform 0.22s ease, box-shadow 0.22s ease;
+	transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+	text-decoration: none;
+	color: var(--fg);
 }
 
-.step-card:hover {
+.toolkit-card::before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	height: 3px;
+	border-radius: 2px 2px 0 0;
+}
+
+.toolkit-card--green::before { background: var(--accent-green); }
+.toolkit-card--blue::before  { background: var(--accent-blue); }
+.toolkit-card--purple::before { background: var(--accent-purple); }
+
+.toolkit-card:hover {
 	transform: translateY(-4px);
 	box-shadow: var(--shadow-panel), 0 16px 40px hsla(162, 40%, 20%, 0.12);
 }
 
-:global(.dark) .step-card:hover {
+.toolkit-card--green:hover { border-color: var(--accent-green); }
+.toolkit-card--blue:hover  { border-color: var(--accent-blue); }
+.toolkit-card--purple:hover { border-color: var(--accent-purple); }
+
+:global(.dark) .toolkit-card:hover {
 	box-shadow: var(--shadow-panel), 0 16px 48px hsla(20, 15%, 0%, 0.5);
 }
 
-.step-bg-number {
-	position: absolute;
-	top: -0.5rem;
-	right: 0.75rem;
-	font-family: var(--font-display);
-	font-size: 6rem;
-	font-weight: 700;
-	line-height: 1;
-	color: var(--bg-separator);
-	letter-spacing: -0.06em;
-	pointer-events: none;
-	user-select: none;
+.toolkit-card-header {
+	@apply flex items-center justify-between;
 }
 
-.step-img {
-	@apply w-full max-w-[10rem] h-40 object-contain mx-auto;
-	position: relative;
-	z-index: 1;
+.toolkit-icon {
+	@apply w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0;
+	color: white;
 }
 
-.step-meta {
-	@apply flex flex-col gap-1;
-	position: relative;
-	z-index: 1;
-}
+.toolkit-icon--green  { background: var(--accent-green); }
+.toolkit-icon--blue   { background: var(--accent-blue); }
+.toolkit-icon--purple { background: var(--accent-purple); }
 
-.step-index {
+.toolkit-count {
 	font-family: var(--font-mono);
-	font-size: 0.65rem;
+	font-size: 0.7rem;
 	font-weight: 700;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--accent);
-	opacity: 0.8;
+	letter-spacing: 0.06em;
+	padding: 3px 10px;
+	border-radius: 9999px;
 }
 
-.step-title {
+.toolkit-count--green  { background: hsla(158, 65%, 37%, 0.12); color: var(--accent-green); }
+.toolkit-count--blue   { background: hsla(217, 82%, 58%, 0.12); color: var(--accent-blue); }
+.toolkit-count--purple { background: hsla(258, 68%, 62%, 0.12); color: var(--accent-purple); }
+
+.toolkit-title {
 	font-family: var(--font-display);
 	font-size: 1.1rem;
 	font-weight: 700;
 	letter-spacing: -0.03em;
 	color: var(--fg);
+	margin-top: 0.25rem;
 }
 
-.step-desc {
+.toolkit-desc {
 	font-size: 0.875rem;
 	font-weight: 400;
 	color: var(--fg-muted);
 	line-height: 1.65;
-	margin-top: 0.25rem;
+}
+
+.toolkit-explore {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--fg-muted);
+	margin-top: auto;
+	padding-top: 0.5rem;
+	transition: color 0.15s ease;
+}
+
+.toolkit-card:hover .toolkit-explore {
+	color: var(--fg);
 }
 
 /* ── Formats ── */

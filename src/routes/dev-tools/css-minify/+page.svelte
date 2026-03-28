@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { CodeIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let input = $state('body {\n  margin: 0;\n  padding: 0;\n  /* Reset styles */\n  font-family: sans-serif;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n}');
 	let output = $state('');
@@ -47,14 +48,14 @@
 </svelte:head>
 
 <div class="css-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="css-header">
-		<CodeIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.css_minify.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.css_minify.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.css_minify.title']()}
+		description={m['tool_pages.css_minify.desc']()}
+		icon={CodeIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<div class="panel">
 		<label class="panel-label">{m['tool_pages.css_minify.input_label']()}</label>
@@ -87,8 +88,7 @@
 
 <style>
 	.css-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.css-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
+.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }
 	.code-area {
 		width: 100%; min-height: 10rem; padding: 0.75rem; border-radius: 0.5rem; resize: vertical;

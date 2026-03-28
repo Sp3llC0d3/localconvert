@@ -18,8 +18,8 @@
 		"privacy_policy": "Privacy policy"
 	},
 	"upload": {
-		"title": "Convert images, audio, video & docs — free, private, no uploads.",
-		"subtitle": "Powered by WebAssembly — runs entirely in your browser. No account, no file size limit, open source and free forever.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Drop or click to {action}",
 			"convert": "convert"
@@ -384,6 +384,10 @@
 		"title": "Image Tools",
 		"subtitle": "Every operation runs entirely in your browser. Your files never leave your device.",
 		"badge": "100% local — no uploads, no server",
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
+		},
 		"tools": {
 			"rotate_name": "Rotate Image",
 			"rotate_desc": "Rotate an image by 90°, 180°, or 270°",
@@ -411,6 +415,10 @@
 		"title": "Developer Tools",
 		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
 		"badge": "100% local — no uploads, no server",
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
+		},
 		"tools": {
 			"json_name": "JSON Formatter",
 			"json_desc": "Format, minify, and validate JSON",
@@ -428,488 +436,6 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
-		}
-	},
-	"tools_common": {
-		"back_pdf": "← PDF Tools",
-		"back_image": "← Image Tools",
-		"back_dev": "← Dev Tools",
-		"privacy_note": "✓ Your files never leave your device.",
-		"privacy_note_browser": "✓ Generated entirely in your browser.",
-		"upload_pdf": "Add a PDF file",
-		"upload_pdfs": "Add PDF files",
-		"upload_image": "Drop an image here",
-		"upload_images": "Drop multiple images here",
-		"upload_pdf_protected": "Add a password-protected PDF",
-		"upload_images_pdf": "Add image files (JPG, PNG, WEBP)",
-		"loading_thumbs": "Loading thumbnails…",
-		"ready": "Ready!",
-		"output": "Output:",
-		"failed": "Failed.",
-		"failed_read_pdf": "Failed to read PDF.",
-		"page_of": "Page {currentPage} / {pageCount}",
-		"pages_remaining": "{count} page(s) remaining",
-		"pages_selected": "{count} page(s) selected",
-		"images_selected": "{count} image(s) selected",
-		"results_ready": "{count} result(s) ready",
-		"apply_all_pages": "Apply to all pages",
-		"save_all": "Save all",
-		"download": "Download",
-		"save": "Save",
-		"clear": "Clear",
-		"reset": "Reset",
-		"show": "Show",
-		"hide": "Hide",
-		"text": "Text",
-		"opacity": "Opacity",
-		"font_size": "Font size",
-		"rotation": "Rotation",
-		"position": "Position",
-		"center": "Center",
-		"tile": "Tile",
-		"angle": "Angle",
-		"format": "Format",
-		"quality": "Quality",
-		"size": "Size",
-		"left": "Left",
-		"right": "Right",
-		"top": "Top",
-		"bottom": "Bottom",
-		"operation": "Operation",
-		"rotate": "Rotate",
-		"watermark": "Watermark",
-		"crop": "Crop",
-		"meme": "Meme",
-		"foreground": "Foreground",
-		"background": "Background",
-		"input": "Input:",
-		"output": "Output:"
-	},
-	"tool_pages": {
-		"merge": {
-			"title": "Merge PDF",
-			"desc": "Combine multiple PDFs into one. Drag rows to reorder.",
-			"btn": "Merge PDFs",
-			"btn_busy": "Merging…",
-			"err_min": "Add at least 2 PDF files.",
-			"err_fail": "Merge failed.",
-			"save": "Save merged PDF"
-		},
-		"split": {
-			"title": "Split PDF",
-			"desc": "Extract pages or split every page into its own file.",
-			"select_pages": "Select pages",
-			"split_all": "Split all pages",
-			"download_selected": "Download selected pages",
-			"btn_busy": "Processing…",
-			"err_select": "Select at least one page.",
-			"err_extract": "Failed to extract page.",
-			"err_fail": "Split failed.",
-			"help": "click to toggle, ● to save single page"
-		},
-		"rotate_pdf": {
-			"title": "Rotate Pages",
-			"desc": "Rotate individual pages or the entire PDF.",
-			"rotation": "Rotation",
-			"apply_to": "Apply to",
-			"all_pages": "All pages",
-			"selected_pages": "Selected pages",
-			"btn_busy": "Processing…",
-			"err_fail": "Rotate failed.",
-			"help": "click to toggle"
-		},
-		"organize": {
-			"title": "Organize Pages",
-			"desc": "Drag to reorder, or use arrows. Delete pages you don't need.",
-			"drag_reorder": "Drag to reorder",
-			"move_up": "Move up",
-			"move_down": "Move down",
-			"delete_page": "Delete page",
-			"no_pages": "No pages remaining.",
-			"btn": "Save organized PDF",
-			"btn_busy": "Saving…"
-		},
-		"images_to_pdf": {
-			"title": "Images → PDF",
-			"desc": "Convert JPG, PNG, or WEBP images to a single PDF. Drag to reorder.",
-			"err_min": "Add at least one image.",
-			"err_fail": "Conversion failed.",
-			"btn": "Convert to PDF",
-			"btn_busy": "Converting…",
-			"save": "Save PDF"
-		},
-		"pdf_to_images": {
-			"title": "PDF → Images",
-			"desc": "Export each PDF page as a JPG or PNG image.",
-			"resolution": "Resolution",
-			"btn": "Export as images",
-			"btn_busy": "Converting page {progress} of {total}…",
-			"err_fail": "Conversion failed."
-		},
-		"pdf_to_ppt": {
-			"title": "PDF to PowerPoint",
-			"desc": "Convert each PDF page into a presentation slide.",
-			"slide_size": "Slide size",
-			"widescreen": "16:9 Widescreen",
-			"standard": "4:3 Standard",
-			"btn": "Convert to PPTX",
-			"btn_busy": "Converting page {progress} of {total}…",
-			"save": "Save PPTX"
-		},
-		"compress": {
-			"title": "Compress PDF",
-			"desc": "Reduce file size by re-rendering each page as JPEG.",
-			"warning": "Compressed PDFs have image-only pages. Text will <b>not</b> be selectable, and links/forms will be removed.",
-			"note": "Note:",
-			"preset_low": "Low compression",
-			"preset_low_desc": "~20–40% smaller, great quality",
-			"preset_med": "Medium",
-			"preset_med_desc": "~50–70% smaller, good quality",
-			"preset_high": "High compression",
-			"preset_high_desc": "~70–90% smaller, visible loss",
-			"jpeg_quality": "JPEG quality",
-			"input": "Input:",
-			"saved": "saved",
-			"original": "Original",
-			"compressed": "Compressed",
-			"btn": "Compress PDF",
-			"btn_busy": "Compressing page {progress} of {total}…",
-			"err_fail": "Compression failed.",
-			"save": "Save compressed PDF"
-		},
-		"watermark_pdf": {
-			"title": "Add Watermark",
-			"desc": "Adjust settings and see the watermark live on the page.",
-			"btn": "Apply to all pages",
-			"btn_busy": "Applying…",
-			"err_text": "Enter watermark text.",
-			"save": "Save watermarked PDF"
-		},
-		"page_numbers": {
-			"title": "Add Page Numbers",
-			"desc": "See the page number update live as you change settings.",
-			"position": "Position",
-			"start_from": "Start from",
-			"skip_first": "Skip first page (e.g. cover page)",
-			"bottom_left": "Bottom left",
-			"bottom_center": "Bottom center",
-			"bottom_right": "Bottom right",
-			"top_left": "Top left",
-			"top_center": "Top center",
-			"top_right": "Top right",
-			"btn": "Apply to all pages",
-			"btn_busy": "Adding numbers…",
-			"save": "Save numbered PDF"
-		},
-		"metadata": {
-			"title": "Edit Metadata",
-			"desc": "View and edit title, author, and other PDF properties.",
-			"reading": "Reading metadata…",
-			"field_title": "Title",
-			"field_author": "Author",
-			"field_subject": "Subject",
-			"field_keywords": "Keywords",
-			"keywords_placeholder": "keyword1, keyword2",
-			"field_creator": "Creator",
-			"producer": "Producer:",
-			"created": "Created:",
-			"modified": "Modified:",
-			"none": "—",
-			"btn": "Save metadata",
-			"btn_busy": "Saving…",
-			"err_read": "Failed to read metadata.",
-			"err_update": "Failed to update metadata.",
-			"save": "Save updated PDF"
-		},
-		"crop_pdf": {
-			"title": "Crop PDF",
-			"desc": "Drag the edges to set margins, or type values below.",
-			"aria_drag": "Drag edges to crop PDF",
-			"err_margins": "Margins are too large — no area left.",
-			"btn": "Crop PDF",
-			"btn_busy": "Cropping…",
-			"save": "Save cropped PDF"
-		},
-		"sign": {
-			"title": "Sign PDF",
-			"desc": "Create a signature, then click on the page to place it.",
-			"step1": "1. Create your signature",
-			"step2": "2. Click on the page to place your signature",
-			"draw": "Draw",
-			"type": "Type",
-			"upload": "Upload",
-			"your_name": "Your name",
-			"click_place": "Click to place signature",
-			"err_pdf": "Add a PDF.",
-			"err_sig": "Create a signature first.",
-			"err_place": "Click on the page to place your signature.",
-			"btn_busy": "Signing…",
-			"save": "Save signed PDF"
-		},
-		"edit": {
-			"title": "Edit PDF",
-			"desc": "Click on the page to place text. Drag to reposition.",
-			"placeholder": "Text to place…",
-			"pt": "pt",
-			"keyboard_help": "Ctrl+Z undo · Del remove · Arrow keys nudge · Esc deselect",
-			"aria_editor": "PDF page editor",
-			"remove_text": "Remove text",
-			"err_text": "Click on the page to place text.",
-			"err_pdf": "Add a PDF.",
-			"elements_placed": "{count} element(s) placed",
-			"btn_busy": "Applying…",
-			"save": "Save edited PDF"
-		},
-		"password": {
-			"title": "Password Protect PDF",
-			"desc": "Encrypt a PDF with a password and set access permissions.",
-			"password_label": "Password",
-			"password_placeholder": "Enter password…",
-			"owner_toggle": "Set a separate owner password",
-			"owner_label": "Owner password",
-			"owner_placeholder": "Owner password…",
-			"owner_help": "Owner password grants full access. User password enforces the permissions below.",
-			"permissions_label": "Permissions (for users opening with the password)",
-			"allow_printing": "Allow printing",
-			"allow_copying": "Allow copying text",
-			"allow_editing": "Allow editing / annotating",
-			"info": "Encryption happens entirely in your browser. Your password and file never leave your device.",
-			"err_pdf": "Add a PDF file.",
-			"err_password": "Enter a password.",
-			"err_min_length": "Password must be at least 4 characters.",
-			"err_fail": "Encryption failed.",
-			"btn": "Protect PDF",
-			"btn_busy": "Encrypting…",
-			"result": "Protected!",
-			"save": "Save protected PDF"
-		},
-		"unlock": {
-			"title": "Unlock PDF",
-			"desc": "Remove password protection from a PDF file.",
-			"info": "This tool removes restrictions (printing, copying, editing) from PDFs. It works with most permission-locked files. Files with strong open-password encryption may not be supported.",
-			"err_pdf": "Add a PDF file.",
-			"err_fail": "Failed to unlock. The file may not be encrypted or uses unsupported encryption.",
-			"btn": "Unlock PDF",
-			"btn_busy": "Unlocking…",
-			"result": "Unlocked!",
-			"save": "Save unlocked PDF"
-		},
-		"rotate_image": {
-			"title": "Rotate Image",
-			"desc": "Pick an angle and see the result instantly.",
-			"save": "Save rotated image"
-		},
-		"crop_image": {
-			"title": "Crop Image",
-			"desc": "Drag corners, edges, or draw a new selection.",
-			"circle": "Circle",
-			"free": "Free",
-			"err_area": "Select a crop area on the image.",
-			"btn": "Crop image",
-			"btn_busy": "Cropping…",
-			"save": "Save cropped image"
-		},
-		"watermark_image": {
-			"title": "Watermark Image",
-			"desc": "Adjust settings and see the watermark update live.",
-			"save": "Save watermarked image"
-		},
-		"meme": {
-			"title": "Meme Generator",
-			"desc": "Type and see your meme update live.",
-			"top_text": "Top text",
-			"bottom_text": "Bottom text",
-			"save": "Save meme"
-		},
-		"batch": {
-			"title": "Batch Processing",
-			"desc": "Apply the same operation to multiple images at once.",
-			"trim": "Trim",
-			"trim_help": "Trims {percent}% from each edge of every image.",
-			"err_images": "Add images first.",
-			"err_text": "Enter at least one line of text.",
-			"err_watermark": "Enter watermark text.",
-			"btn": "Process {count} image(s)",
-			"btn_busy": "Processing {progress} / {total}…"
-		},
-		"qr": {
-			"title": "QR Code Generator",
-			"desc": "Generate a QR code and see it update live.",
-			"text_url": "Text or URL",
-			"error_correction": "Error correction",
-			"low": "Low (7%)",
-			"medium": "Medium (15%)",
-			"quartile": "Quartile (25%)",
-			"high": "High (30%)",
-			"save": "Save QR code",
-			"save_file": "Download qrcode.png"
-		},
-		"color_picker": {
-			"title": "Color Picker",
-			"desc": "Click anywhere on the image to pick a color."
-		},
-		"blur": {
-			"title": "Blur Region",
-			"desc": "Draw a rectangle over the area you want to blur.",
-			"radius": "Blur strength",
-			"err_area": "Draw a region to blur.",
-			"help": "drag to draw, click inside to move",
-			"btn": "Apply blur",
-			"btn_busy": "Blurring…",
-			"save": "Save blurred image"
-		},
-		"video_to_gif": {
-			"title": "Video to GIF",
-			"desc": "Convert any video to an animated GIF.",
-			"upload": "Drop a video file here",
-			"width": "Width",
-			"start": "Start time",
-			"duration": "Duration",
-			"btn": "Convert to GIF",
-			"btn_busy": "Converting…",
-			"save": "Save GIF"
-		},
-		"filters": {
-			"title": "Image Filters",
-			"desc": "Adjust brightness, contrast, saturation, sepia, and hue.",
-			"brightness": "Brightness",
-			"contrast": "Contrast",
-			"saturation": "Saturation",
-			"sepia": "Sepia",
-			"hue": "Hue rotate",
-			"save": "Save filtered image"
-		},
-		"pdf_to_text": {
-			"title": "PDF to Text",
-			"desc": "Extract all text content from a PDF file.",
-			"btn": "Extract text",
-			"btn_busy": "Extracting page {progress} of {total}…",
-			"no_text": "No text found in this PDF.",
-			"result": "{chars} characters extracted",
-			"copy": "Copy",
-			"copied": "Copied!",
-			"download_txt": "Save as .txt"
-		},
-		"grayscale": {
-			"title": "PDF to Grayscale",
-			"desc": "Convert all pages to black and white.",
-			"warning": "Grayscale PDFs have image-only pages. Text will not be selectable.",
-			"btn": "Convert to grayscale",
-			"btn_busy": "Converting page {progress} of {total}…",
-			"grayscale": "Grayscale",
-			"save": "Save grayscale PDF"
-		},
-		"json_formatter": {
-			"title": "JSON Formatter",
-			"desc": "Format, minify, and validate JSON.",
-			"input_label": "Input",
-			"output_label": "Output",
-			"btn_format": "Format",
-			"btn_minify": "Minify",
-			"btn_copy": "Copy",
-			"indent": "Indent"
-		},
-		"hash_generator": {
-			"title": "Hash Generator",
-			"desc": "Generate hashes for text or files.",
-			"text_mode": "Text",
-			"file_mode": "File",
-			"text_placeholder": "Enter text to hash…",
-			"file_placeholder": "Click to select a file",
-			"algorithm": "Algorithm",
-			"computing": "Computing…"
-		},
-		"base64": {
-			"title": "Base64 Encode / Decode",
-			"desc": "Encode text to Base64 or decode Base64 to text.",
-			"btn_encode": "Encode",
-			"btn_decode": "Decode",
-			"input_text": "Text",
-			"input_base64": "Base64",
-			"decoded": "Decoded text",
-			"or_file": "Or encode a file:",
-			"select_file": "Select file"
-		},
-		"markdown": {
-			"title": "Markdown Preview",
-			"desc": "Write markdown and see rendered HTML live.",
-			"preview": "Preview"
-		},
-		"diff": {
-			"title": "Text Diff",
-			"desc": "Compare two texts and see differences highlighted.",
-			"original": "Original",
-			"modified": "Modified",
-			"btn": "Compare"
-		},
-		"word_count": {
-			"title": "Word Counter",
-			"desc": "Paste or type text to see live stats.",
-			"placeholder": "Paste or type your text here…",
-			"words": "Words",
-			"characters": "Characters",
-			"chars_no_spaces": "No spaces",
-			"sentences": "Sentences",
-			"paragraphs": "Paragraphs",
-			"reading_time": "Min read"
-		},
-		"url_encode": {
-			"title": "URL Encode / Decode",
-			"desc": "Encode or decode URL strings."
-		},
-		"css_minify": {
-			"title": "CSS Minifier",
-			"desc": "Remove comments and whitespace from CSS.",
-			"input_label": "CSS Input",
-			"output_label": "Minified Output",
-			"btn": "Minify",
-			"saved": "Saved {pct}%"
-		}
-	},
-	"toast": {
-		"insecure_context": "You are visiting LocalConvert in an insecure context (e.g. accessing over HTTP instead of HTTPS). Some features may not work as expected."
-	},
-	"landing": {
-		"pills": {
-			"no_uploads": "No server uploads",
-			"gpu": "GPU Accelerated",
-			"open_source": "Free & Open Source",
-			"no_limit": "No File Size Limit"
-		},
-		"how_it_works": {
-			"title": "How It Works",
-			"step1_title": "Choose Your File",
-			"step1_desc": "Drop or click to select any image, audio, video, or document file.",
-			"step2_title": "Converted in Your Browser",
-			"step2_desc": "Everything runs locally via WebAssembly — no uploads, no waiting on servers.",
-			"step3_title": "Save the Result",
-			"step3_desc": "Get your converted file instantly, straight to your device.",
-			"label": "The process"
-		},
-		"formats": {
-			"title": "Supported Formats",
-			"label": "Capabilities"
-		},
-		"privacy": {
-			"title": "100% Private by Design",
-			"point1": "Your files never leave your device",
-			"point2": "No server uploads — everything runs in your browser",
-			"point3": "Open source — verify it yourself",
-			"label": "Privacy first"
-		},
-		"faq": {
-			"title": "Frequently Asked Questions",
-			"q1": "Is LocalConvert really free?",
-			"a1": "Yes — completely free, no account required, no hidden fees. LocalConvert is open source under the AGPL-3.0 license.",
-			"q2": "Are my files private?",
-			"a2": "Completely. All conversions run in your browser using WebAssembly. Your files never touch our servers — not even for a moment.",
-			"q3": "What file formats are supported?",
-			"a3": "Images (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), and Documents (DOCX, HTML, Markdown, EPUB). PDF tools are also included.",
-			"q4": "Is there a file size limit?",
-			"a4": "No hard limit — it depends on your device's available memory. For very large video files, Firefox or Safari typically handle them better.",
-			"q5": "Do I need to install anything?",
-			"a5": "No installation needed. LocalConvert works directly in any modern browser. You can also install it as a PWA from the address bar for an app-like experience.",
-			"label": "Questions"
 		}
 	},
 	"tools_common": {
@@ -989,6 +515,56 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "You are visiting LocalConvert in an insecure context (e.g. accessing over HTTP instead of HTTPS). Some features may not work as expected."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "No server uploads",
+			"tools_count": "36+ Tools",
+			"open_source": "Free & Open Source",
+			"works_offline": "Works Offline"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
+		},
+		"formats": {
+			"title": "200+ Format Conversions",
+			"label": "Converter"
+		},
+		"privacy": {
+			"title": "100% Private by Design",
+			"point1": "Your files never leave your device",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point3": "Open source — verify it yourself",
+			"label": "Privacy first"
+		},
+		"faq": {
+			"title": "Frequently Asked Questions",
+			"q1": "Is LocalConvert really free?",
+			"a1": "Yes — completely free, no account required, no hidden fees. LocalConvert is open source under the AGPL-3.0 license.",
+			"q2": "Are my files private?",
+			"a2": "Completely. All processing runs in your browser using WebAssembly. Your files never touch our servers — not even for a moment.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"q4": "Is there a file size limit?",
+			"a4": "No hard limit — it depends on your device's available memory. For very large video files, Firefox or Safari typically handle them better.",
+			"q5": "Do I need to install anything?",
+			"a5": "No installation needed. LocalConvert works directly in any modern browser. You can also install it as a PWA from the address bar for an app-like experience.",
+			"label": "Questions"
 		}
 	}
 }

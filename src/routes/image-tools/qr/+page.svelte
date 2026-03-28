@@ -3,6 +3,7 @@
 	import { browser } from '$app/environment';
 	import { canvasToBlob, downloadBlob } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
 
 	let text = $state('https://localconvert.app');
@@ -75,14 +76,14 @@
 </svelte:head>
 
 <div class="qr-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="qr-header">
-		<QrCodeIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.qr.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.qr.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.qr.title']()}
+		description={m['tool_pages.qr.desc']()}
+		icon={QrCodeIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<!-- Preview -->
 	<div class="preview-wrap">
@@ -134,8 +135,7 @@
 
 <style>
 	.qr-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.qr-header { display: flex; align-items: center; gap: 0.75rem; }
-	.preview-wrap { display: flex; justify-content: center; }
+.preview-wrap { display: flex; justify-content: center; }
 	.qr-canvas { border-radius: 0.75rem; box-shadow: var(--shadow-panel); }
 	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }

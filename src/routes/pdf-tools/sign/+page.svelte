@@ -5,6 +5,7 @@
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
 	import { PenToolIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
@@ -281,14 +282,14 @@
 </svelte:head>
 
 <div class="sign-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="sign-header">
-		<PenToolIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.sign.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.sign.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.sign.title']()}
+		description={m['tool_pages.sign.desc']()}
+		icon={PenToolIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -405,8 +406,7 @@
 
 <style>
 	.sign-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.sign-header { display: flex; align-items: center; gap: 0.75rem; }
-	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 
 	.step-section {
 		display: flex; flex-direction: column; gap: 0.75rem;

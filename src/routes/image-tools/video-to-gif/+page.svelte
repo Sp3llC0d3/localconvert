@@ -4,6 +4,7 @@
 	import { videoToGif } from '$lib/converters/video-to-gif';
 	import { downloadBlob, formatFileSize } from '$lib/image/utils';
 	import { FilmIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let fileInput = $state<HTMLInputElement>();
@@ -67,14 +68,14 @@
 </svelte:head>
 
 <div class="gif-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="gif-header">
-		<FilmIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.video_to_gif.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.video_to_gif.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.video_to_gif.title']()}
+		description={m['tool_pages.video_to_gif.desc']()}
+		icon={FilmIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<!-- File upload -->
 	<input bind:this={fileInput} type="file" accept="video/*" class="hidden" onchange={onFileSelect} />
@@ -151,8 +152,7 @@
 
 <style>
 	.gif-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.gif-header { display: flex; align-items: center; gap: 0.75rem; }
-	.drop-zone {
+.drop-zone {
 		width: 100%; padding: 2.5rem 1.5rem; border-radius: 1rem; border: 2px dashed var(--bg-separator);
 		display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
 		cursor: pointer; background: var(--bg-panel); transition: border-color 0.15s;

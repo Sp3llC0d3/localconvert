@@ -4,6 +4,7 @@
 	import { cropImage, type CropRect } from '$lib/image/crop';
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { CropIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -274,14 +275,14 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="tool-header">
-		<CropIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.crop_image.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.crop_image.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.crop_image.title']()}
+		description={m['tool_pages.crop_image.desc']()}
+		icon={CropIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 

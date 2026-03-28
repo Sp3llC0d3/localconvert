@@ -18,8 +18,8 @@
 		"privacy_policy": "Kebijakan privasi"
 	},
 	"upload": {
-		"title": "Konversi gambar, audio, video & dokumen — gratis, privat, tanpa unggahan.",
-		"subtitle": "Didukung oleh WebAssembly — berjalan sepenuhnya di browser Anda. Tanpa akun, tanpa batas ukuran berkas, sumber terbuka dan gratis selamanya.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Jatuhkan atau klik untuk {action}",
 			"convert": "konversi"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Tanpa Unggahan ke Server",
-			"gpu": "Dipercepat GPU",
 			"open_source": "Gratis & Sumber Terbuka",
-			"no_limit": "Tanpa Batas Ukuran Berkas"
-		},
-		"how_it_works": {
-			"title": "Cara Kerjanya",
-			"step1_title": "Pilih Berkas Anda",
-			"step1_desc": "Jatuhkan atau klik untuk memilih berkas gambar, audio, video, atau dokumen apa pun.",
-			"step2_title": "Dikonversi di Browser Anda",
-			"step2_desc": "Semuanya berjalan secara lokal melalui WebAssembly — tanpa unggahan, tanpa menunggu server.",
-			"step3_title": "Simpan Hasilnya",
-			"step3_desc": "Dapatkan berkas hasil konversi Anda seketika, langsung ke perangkat Anda.",
-			"label": "Prosesnya"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Format yang Didukung",
-			"label": "Kemampuan"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "100% Privat Sejak Awal",
 			"point1": "Berkas Anda tidak pernah meninggalkan perangkat Anda",
-			"point2": "Tanpa unggahan ke server — semuanya berjalan di browser Anda",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Sumber terbuka — verifikasi sendiri",
 			"label": "Privasi pertama"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Ya — sepenuhnya gratis, tanpa akun, tanpa biaya tersembunyi. LocalConvert adalah sumber terbuka di bawah lisensi AGPL-3.0.",
 			"q2": "Apakah berkas saya privat?",
 			"a2": "Sepenuhnya. Semua konversi berjalan di browser Anda menggunakan WebAssembly. Berkas Anda tidak pernah menyentuh server kami — bahkan sesaat pun tidak.",
-			"q3": "Format berkas apa yang didukung?",
-			"a3": "Gambar (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Video (MP4, WebM, MKV, AVI, MOV), Audio (MP3, WAV, OGG, FLAC, AAC), dan Dokumen (DOCX, HTML, Markdown, EPUB). Alat PDF juga tersedia.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Apakah ada batas ukuran berkas?",
 			"a4": "Tidak ada batas keras — tergantung memori yang tersedia di perangkat Anda. Untuk berkas video yang sangat besar, Firefox atau Safari biasanya menanganinya lebih baik.",
 			"q5": "Apakah saya perlu menginstal sesuatu?",
 			"a5": "Tidak perlu instalasi. LocalConvert bekerja langsung di browser modern apa pun. Anda juga dapat menginstalnya sebagai PWA dari bilah alamat untuk pengalaman seperti aplikasi.",
 			"label": "Pertanyaan"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

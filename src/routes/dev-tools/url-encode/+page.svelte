@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { LinkIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let mode = $state<'encode' | 'decode'>('encode');
 	let input = $state('');
@@ -36,14 +37,14 @@
 </svelte:head>
 
 <div class="url-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="url-header">
-		<LinkIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.url_encode.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.url_encode.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.url_encode.title']()}
+		description={m['tool_pages.url_encode.desc']()}
+		icon={LinkIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<div class="flex gap-2">
 		<button class="btn text-sm px-3 py-1.5 {mode === 'encode' ? 'highlight' : ''}" onclick={() => { mode = 'encode'; input = ''; }}>{m['tool_pages.base64.btn_encode']()}</button>
@@ -75,8 +76,7 @@
 
 <style>
 	.url-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.url-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
+.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }
 	.code-area {
 		width: 100%; min-height: 6rem; padding: 0.75rem; border-radius: 0.5rem; resize: vertical;

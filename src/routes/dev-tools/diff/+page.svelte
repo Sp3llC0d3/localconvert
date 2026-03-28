@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { GitCompareArrowsIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let textA = $state('Hello World\nThis is line 2\nLine three here\nFourth line');
 	let textB = $state('Hello World\nThis line was changed\nLine three here\nFourth line\nNew fifth line');
@@ -62,14 +63,14 @@
 </svelte:head>
 
 <div class="diff-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="diff-header">
-		<GitCompareArrowsIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.diff.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.diff.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.diff.title']()}
+		description={m['tool_pages.diff.desc']()}
+		icon={GitCompareArrowsIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<div class="panels">
 		<div class="panel">
@@ -101,8 +102,7 @@
 
 <style>
 	.diff-page { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.diff-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panels { display: flex; flex-direction: column; gap: 1rem; }
+.panels { display: flex; flex-direction: column; gap: 1rem; }
 	@media (min-width: 640px) { .panels { flex-direction: row; } .panel { flex: 1; } }
 	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }

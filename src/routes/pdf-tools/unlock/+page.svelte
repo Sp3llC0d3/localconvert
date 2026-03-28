@@ -2,7 +2,8 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { unlockPdf } from '$lib/pdf/unlock';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
-	import { UnlockIcon } from 'lucide-svelte';
+	import { LockOpenIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
@@ -42,14 +43,14 @@
 </svelte:head>
 
 <div class="unlock-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="unlock-header">
-		<UnlockIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.unlock.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.unlock.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.unlock.title']()}
+		description={m['tool_pages.unlock.desc']()}
+		icon={LockOpenIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf_protected']()} />
 
@@ -77,7 +78,6 @@
 
 <style>
 	.unlock-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.unlock-header { display: flex; align-items: center; gap: 0.75rem; }
-	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.info-box { padding: 0.75rem 1rem; border-radius: 0.75rem; background: var(--bg-panel-alt); color: var(--fg-muted); }
 </style>

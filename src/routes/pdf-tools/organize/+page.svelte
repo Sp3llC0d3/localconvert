@@ -6,6 +6,7 @@
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf } from '$lib/pdf/utils';
 	import { LayoutGridIcon, Trash2Icon, ArrowUpIcon, ArrowDownIcon, GripVerticalIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { dndzone } from 'svelte-dnd-action';
 
 	let files = $state<File[]>([]);
@@ -83,14 +84,14 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="pdf-header">
-		<LayoutGridIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.organize.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.organize.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.organize.title']()}
+		description={m['tool_pages.organize.desc']()}
+		icon={LayoutGridIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -143,9 +144,7 @@
 
 <style>
 	.pdf-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.pdf-header { display: flex; align-items: center; gap: 0.75rem; }
-
-	.org-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.org-list { display: flex; flex-direction: column; gap: 0.5rem; }
 	.org-row {
 		display: flex; align-items: center; gap: 0.75rem;
 		padding: 0.5rem 1rem; border-radius: 0.75rem;

@@ -18,8 +18,8 @@
 		"privacy_policy": "개인정보 처리방침"
 	},
 	"upload": {
-		"title": "이미지, 오디오, 동영상 및 문서 변환 — 무료, 개인정보 보호, 업로드 불필요.",
-		"subtitle": "WebAssembly로 구동되며 브라우저 내에서 완전히 실행됩니다. 계정 불필요, 파일 크기 제한 없음, 오픈 소스, 영구 무료.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "드래그하거나 클릭해서 {action}",
 			"convert": "변환하기"
@@ -386,28 +386,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "서버 업로드 없음",
-			"gpu": "GPU 가속 지원",
 			"open_source": "무료 및 오픈 소스",
-			"no_limit": "파일 크기 제한 없음"
-		},
-		"how_it_works": {
-			"title": "사용 방법",
-			"step1_title": "파일 선택",
-			"step1_desc": "이미지, 오디오, 동영상 또는 문서 파일을 드래그하거나 클릭하여 선택하세요.",
-			"step2_title": "브라우저에서 변환",
-			"step2_desc": "모든 처리가 WebAssembly를 통해 로컬에서 실행됩니다 — 업로드 불필요, 서버 대기 불필요.",
-			"step3_title": "결과 저장",
-			"step3_desc": "변환된 파일을 즉시 기기로 직접 다운로드하세요.",
-			"label": "사용 방법"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "지원 포맷",
-			"label": "지원 형식"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "설계부터 100% 프라이빗",
 			"point1": "파일이 기기를 벗어나는 일은 없습니다",
-			"point2": "서버 업로드 없음 — 모든 처리가 브라우저에서 실행됩니다",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "오픈 소스 — 직접 확인해 보세요",
 			"label": "프라이버시 우선"
 		},
@@ -417,13 +407,27 @@
 			"a1": "네 — 완전히 무료이며, 계정 불필요, 숨겨진 요금도 없습니다. LocalConvert는 AGPL-3.0 라이선스 하에 오픈 소스로 제공됩니다.",
 			"q2": "파일의 개인정보가 보호되나요?",
 			"a2": "완전히 보호됩니다. 모든 변환은 WebAssembly를 사용하여 브라우저에서 실행됩니다. 파일이 저희 서버에 닿는 일은 단 한 순간도 없습니다.",
-			"q3": "어떤 파일 형식이 지원되나요?",
-			"a3": "이미지(JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), 동영상(MP4, WebM, MKV, AVI, MOV), 오디오(MP3, WAV, OGG, FLAC, AAC), 문서(DOCX, HTML, Markdown, EPUB)를 지원합니다. PDF 도구도 포함되어 있습니다.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "파일 크기 제한이 있나요?",
 			"a4": "엄격한 제한은 없습니다 — 기기의 사용 가능한 메모리에 따라 다릅니다. 매우 큰 동영상 파일의 경우 Firefox나 Safari가 더 잘 처리합니다.",
 			"q5": "설치가 필요한가요?",
 			"a5": "설치가 필요 없습니다. LocalConvert는 최신 브라우저에서 바로 작동합니다. 주소 표시줄에서 PWA로 설치하면 앱처럼 사용하실 수도 있습니다.",
 			"label": "질문"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"image_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

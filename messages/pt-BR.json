@@ -18,8 +18,8 @@
 		"privacy_policy": "Política de privacidade"
 	},
 	"upload": {
-		"title": "O conversor de arquivos que você vai adorar.",
-		"subtitle": "Todo processamento de imagens, áudio e documentos é feito no seu dispositivo usando WebAssembly. Sem limite de tamanho de arquivo, sem anúncios e totalmente de código aberto.",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Arraste ou clique para {action}",
 			"convert": "converter"
@@ -338,28 +338,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Sem Envio para Servidores",
-			"gpu": "Aceleração por GPU",
 			"open_source": "Gratuito e Código Aberto",
-			"no_limit": "Sem Limite de Tamanho"
-		},
-		"how_it_works": {
-			"title": "Como Funciona",
-			"step1_title": "Escolha o Seu Arquivo",
-			"step1_desc": "Arraste ou clique para selecionar qualquer arquivo de imagem, áudio, vídeo ou documento.",
-			"step2_title": "Convertido no Seu Navegador",
-			"step2_desc": "Tudo é executado localmente via WebAssembly — sem uploads, sem esperar servidores.",
-			"step3_title": "Salve o Resultado",
-			"step3_desc": "Obtenha o arquivo convertido instantaneamente, diretamente no seu dispositivo.",
-			"label": "O processo"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "Formatos Suportados",
-			"label": "Capacidades"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "100% Privado por Design",
 			"point1": "Seus arquivos nunca saem do seu dispositivo",
-			"point2": "Sem uploads para servidores — tudo é executado no seu navegador",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "Código aberto — verifique você mesmo",
 			"label": "Privacidade em primeiro lugar"
 		},
@@ -369,13 +359,27 @@
 			"a1": "Sim — completamente gratuito, sem necessidade de conta, sem taxas ocultas. O LocalConvert é código aberto sob a licença AGPL-3.0.",
 			"q2": "Meus arquivos são privados?",
 			"a2": "Completamente. Todas as conversões são executadas no seu navegador usando WebAssembly. Seus arquivos nunca tocam nossos servidores — nem por um momento.",
-			"q3": "Quais formatos de arquivo são suportados?",
-			"a3": "Imagens (JPG, PNG, WEBP, AVIF, HEIC, GIF, BMP, TIFF, SVG, ICO), Vídeo (MP4, WebM, MKV, AVI, MOV), Áudio (MP3, WAV, OGG, FLAC, AAC) e Documentos (DOCX, HTML, Markdown, EPUB). Ferramentas PDF também estão incluídas.",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Existe um limite de tamanho de arquivo?",
 			"a4": "Sem limite rígido — depende da memória disponível do seu dispositivo. Para arquivos de vídeo muito grandes, Firefox ou Safari normalmente os processam melhor.",
 			"q5": "Preciso instalar alguma coisa?",
 			"a5": "Nenhuma instalação necessária. O LocalConvert funciona diretamente em qualquer navegador moderno. Você também pode instalá-lo como um PWA a partir da barra de endereços para uma experiência semelhante a um aplicativo.",
 			"label": "Perguntas"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"pdf_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

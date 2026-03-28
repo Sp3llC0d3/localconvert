@@ -2,6 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let input = $state('# Hello World\n\nThis is **bold** and *italic* text.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log("hi");\n```');
 	let html = $state('');
@@ -31,14 +32,14 @@
 </svelte:head>
 
 <div class="md-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="md-header">
-		<FileTextIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.markdown.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.markdown.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.markdown.title']()}
+		description={m['tool_pages.markdown.desc']()}
+		icon={FileTextIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<div class="panels">
 		<div class="panel">
@@ -64,8 +65,7 @@
 
 <style>
 	.md-page { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.md-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panels { display: flex; flex-direction: column; gap: 1rem; }
+.panels { display: flex; flex-direction: column; gap: 1rem; }
 	@media (min-width: 640px) { .panels { flex-direction: row; } .panel { flex: 1; } }
 	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }

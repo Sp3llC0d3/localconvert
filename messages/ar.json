@@ -18,8 +18,8 @@
 		"privacy_policy": "سياسة الخصوصية"
 	},
 	"upload": {
-		"title": "⁧تحويل الصور والصوت والفيديو والمستندات — مجانًا وبخصوصية تامة دون رفع الملفات.⁩",
-		"subtitle": "⁧يعمل بتقنية ⁦WebAssembly⁩ — يعمل بالكامل في متصفحك. لا حساب مطلوب، ولا حد لحجم الملف، مفتوح المصدر ومجاني للأبد.⁩",
+		"title": "Your private toolkit for files & code.",
+		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "اسحب أو انقر للـ{action}",
 			"convert": "تحويل"
@@ -386,28 +386,18 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "بدون رفع للخوادم",
-			"gpu": "معجَّل بوحدة المعالجة الرسومية",
 			"open_source": "مجاني ومفتوح المصدر",
-			"no_limit": "بدون حد لحجم الملف"
-		},
-		"how_it_works": {
-			"title": "كيف يعمل؟",
-			"step1_title": "اختر ملفك",
-			"step1_desc": "اسحب أو انقر لتحديد أي ملف صورة أو صوت أو فيديو أو مستند.",
-			"step2_title": "التحويل في متصفحك",
-			"step2_desc": "⁧يعمل كل شيء محليًا عبر ⁦WebAssembly⁩ — بدون رفع ملفات ودون انتظار الخوادم.⁩",
-			"step3_title": "احفظ النتيجة",
-			"step3_desc": "احصل على ملفك المحوّل فورًا، مباشرةً على جهازك.",
-			"label": "العملية"
+			"tools_count": "36+ Tools",
+			"works_offline": "Works Offline"
 		},
 		"formats": {
-			"title": "الصيغ المدعومة",
-			"label": "الإمكانيات"
+			"title": "200+ Format Conversions",
+			"label": "Converter"
 		},
 		"privacy": {
 			"title": "⁧خصوصية ⁦100%⁩ بحكم التصميم⁩",
 			"point1": "ملفاتك لا تغادر جهازك أبدًا",
-			"point2": "بدون رفع للخوادم — كل شيء يعمل في متصفحك",
+			"point2": "All 36 tools run entirely in your browser — zero server uploads",
 			"point3": "مفتوح المصدر — تحقق بنفسك",
 			"label": "الخصوصية أولاً"
 		},
@@ -417,13 +407,27 @@
 			"a1": "⁧نعم — مجاني تمامًا، دون الحاجة إلى حساب أو رسوم خفية. ⁦LocalConvert⁩ مفتوح المصدر بموجب رخصة ⁦AGPL-3.0⁩.⁩",
 			"q2": "هل ملفاتي خاصة؟",
 			"a2": "⁧تمامًا. تتم جميع عمليات التحويل في متصفحك باستخدام ⁦WebAssembly⁩. ملفاتك لا تصل إلى خوادمنا أبدًا — ولا للحظة واحدة.⁩",
-			"q3": "ما صيغ الملفات المدعومة؟",
-			"a3": "⁧الصور (⁦JPG⁩، ⁦PNG⁩، ⁦WEBP⁩، ⁦AVIF⁩، ⁦HEIC⁩، ⁦GIF⁩، ⁦BMP⁩، ⁦TIFF⁩، ⁦SVG⁩، ⁦ICO⁩)، الفيديو (⁦MP4⁩، ⁦WebM⁩، ⁦MKV⁩، ⁦AVI⁩، ⁦MOV⁩)، الصوت (⁦MP3⁩، ⁦WAV⁩، ⁦OGG⁩، ⁦FLAC⁩، ⁦AAC⁩)، والمستندات (⁦DOCX⁩، ⁦HTML⁩، ⁦Markdown⁩، ⁦EPUB⁩). كما تتوفر أدوات ⁦PDF⁩.⁩",
+			"q3": "What can LocalConvert do?",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "هل هناك حد لحجم الملف؟",
 			"a4": "⁧لا يوجد حد صارم — يعتمد ذلك على الذاكرة المتاحة على جهازك. بالنسبة لملفات الفيديو الكبيرة جدًا، عادةً ما يتعامل ⁦Firefox⁩ أو ⁦Safari⁩ معها بشكل أفضل.⁩",
 			"q5": "هل أحتاج إلى تثبيت أي شيء؟",
 			"a5": "⁧لا حاجة لأي تثبيت. يعمل ⁦LocalConvert⁩ مباشرةً في أي متصفح حديث. يمكنك أيضًا تثبيته كتطبيق ⁦PWA⁩ من شريط العنوان للحصول على تجربة مشابهة للتطبيق.⁩",
 			"label": "الأسئلة"
+		},
+		"toolkit": {
+			"label": "Your workshop",
+			"title": "Every tool runs in your browser",
+			"pdf_title": "PDF Tools",
+			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
+			"pdf_count": "18 tools",
+			"image_title": "Image Tools",
+			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
+			"image_count": "10 tools",
+			"dev_title": "Developer Tools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff, and more",
+			"dev_count": "8 tools",
+			"explore": "Explore →"
 		}
 	},
 	"image_tools": {
@@ -451,6 +455,10 @@
 			"filters_desc": "Adjust brightness, contrast, saturation, and more",
 			"video_to_gif_name": "Video to GIF",
 			"video_to_gif_desc": "Convert any video to an animated GIF"
+		},
+		"categories": {
+			"edit": "Edit",
+			"create": "Create"
 		}
 	},
 	"tools_common": {
@@ -909,6 +917,10 @@
 			"url_encode_desc": "Encode and decode URL strings",
 			"css_minify_name": "CSS Minifier",
 			"css_minify_desc": "Minify CSS by removing comments and whitespace"
+		},
+		"categories": {
+			"format": "Format & Transform",
+			"analyze": "Analyze"
 		}
 	}
 }

@@ -5,6 +5,7 @@
 	import { blurRegion, type BlurRect } from '$lib/image/blur';
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { EyeOffIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -162,14 +163,14 @@
 </svelte:head>
 
 <div class="blur-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
-	<div class="blur-header">
-		<EyeOffIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.blur.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.blur.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="image"
+		title={m['tool_pages.blur.title']()}
+		description={m['tool_pages.blur.desc']()}
+		icon={EyeOffIcon}
+		backHref="/image-tools/"
+		backLabel={m['tools_common.back_image']()}
+	/>
 
 	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
@@ -235,8 +236,7 @@
 
 <style>
 	.blur-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.blur-header { display: flex; align-items: center; gap: 0.75rem; }
-	.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+.opt-section { display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 4rem; flex-shrink: 0; }
 	.slider { height: 6px; appearance: none; border-radius: 9999px; cursor: pointer; background: var(--bg-separator); accent-color: var(--accent); }

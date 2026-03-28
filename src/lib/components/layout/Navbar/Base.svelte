@@ -25,6 +25,7 @@
 		FolderOpen,
 		WrenchIcon,
 		ChevronDownIcon,
+		SearchIcon,
 		type Icon as IconType,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
@@ -32,6 +33,7 @@
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { m } from "$lib/paraglide/messages";
+	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { getLocale } from "$lib/paraglide/runtime";
 	import { onMount } from "svelte";
 
@@ -368,6 +370,17 @@
 
 		<!-- Separator -->
 		<div class="nav-sep hidden md:flex"></div>
+
+		<!-- Search -->
+		<Tooltip text="Search tools (⌘K)" position="right">
+			<button
+				onclick={() => commandPalette.toggle()}
+				class="nav-action hidden md:flex"
+				aria-label="Search tools"
+			>
+				<SearchIcon size={18} />
+			</button>
+		</Tooltip>
 
 		<!-- Theme toggle -->
 		<Tooltip text={m["navbar.toggle_theme"]()} position="right">

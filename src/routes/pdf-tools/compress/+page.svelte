@@ -6,6 +6,7 @@
 	import { renderPageToCanvas } from '$lib/pdf/preview';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ZapIcon, AlertTriangleIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { tick } from 'svelte';
 
 	let files = $state<File[]>([]);
@@ -88,14 +89,14 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="pdf-header">
-		<ZapIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.compress.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.compress.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.compress.title']()}
+		description={m['tool_pages.compress.desc']()}
+		icon={ZapIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<!-- Warning banner -->
 	<div class="warn-box">
@@ -174,8 +175,7 @@
 
 <style lang="postcss">
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.warn-box { @apply flex gap-3 p-4 rounded-2xl text-yellow-600 dark:text-yellow-400; background: color-mix(in srgb, var(--bg-panel) 85%, transparent); border: 1px solid currentColor; }
+.warn-box { @apply flex gap-3 p-4 rounded-2xl text-yellow-600 dark:text-yellow-400; background: color-mix(in srgb, var(--bg-panel) 85%, transparent); border: 1px solid currentColor; }
 	.opt-section { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }
 	.preset-btn { @apply flex flex-col items-start gap-0.5 px-3 py-2.5 rounded-xl border-2 transition-colors; border-color: var(--bg-separator); }
 	.preset-btn.selected { border-color: var(--accent); background: var(--bg-badge); }

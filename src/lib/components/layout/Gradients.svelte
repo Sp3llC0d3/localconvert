@@ -1,7 +1,16 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { duration, transition } from "$lib/util/animation";
-	import VertVBig from "$lib/assets/vert-bg.svg?component";
+	import { onMount } from "svelte";
+
+	let mounted = $state(false);
+	let VertVBig = $state<any>(null);
+
+	onMount(async () => {
+		const mod = await import("$lib/assets/vert-bg.svg?component");
+		VertVBig = mod.default;
+		mounted = true;
+	});
 	import {
 		files,
 		gradientColor,
@@ -65,7 +74,7 @@
 	);
 </script>
 
-{#if page.url.pathname === "/"}
+{#if mounted && VertVBig && page.url.pathname === "/"}
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 		transition:fade={{
@@ -73,7 +82,7 @@
 			easing: quintOut,
 		}}
 	>
-		<VertVBig
+		<svelte:component this={VertVBig}
 			class="fill-[--fg] opacity-10 dynadark:opacity-5 scale-[200%] md:scale-[80%]"
 		/>
 	</div>

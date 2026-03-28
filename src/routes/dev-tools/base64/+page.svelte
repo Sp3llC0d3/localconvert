@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { Binary, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { formatFileSize } from '$lib/image/utils';
 
 	let mode = $state<'encode' | 'decode'>('encode');
@@ -70,14 +71,14 @@
 </svelte:head>
 
 <div class="b64-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="b64-header">
-		<Binary size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.base64.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.base64.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.base64.title']()}
+		description={m['tool_pages.base64.desc']()}
+		icon={Binary}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<!-- Mode toggle -->
 	<div class="flex gap-2">
@@ -123,8 +124,7 @@
 
 <style>
 	.b64-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.b64-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
+.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }
 	.code-area {
 		width: 100%; min-height: 8rem; padding: 0.75rem; border-radius: 0.5rem; resize: vertical;

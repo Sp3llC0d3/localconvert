@@ -7,6 +7,7 @@
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, downloadBlob, formatFileSize } from '$lib/pdf/utils';
 	import { ScissorsIcon, XIcon, DownloadIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let thumbs = $state<string[]>([]);
@@ -88,14 +89,14 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="pdf-header">
-		<ScissorsIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.split.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.split.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.split.title']()}
+		description={m['tool_pages.split.desc']()}
+		icon={ScissorsIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -156,8 +157,7 @@
 
 <style lang="postcss">
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.icon-btn { @apply flex items-center px-3 py-1.5 rounded-lg text-muted hover:bg-separator transition-colors text-sm; }
+.icon-btn { @apply flex items-center px-3 py-1.5 rounded-lg text-muted hover:bg-separator transition-colors text-sm; }
 	.thumb-grid { @apply grid gap-3; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
 	.thumb-wrap { position: relative; }
 	.page-dl-btn {

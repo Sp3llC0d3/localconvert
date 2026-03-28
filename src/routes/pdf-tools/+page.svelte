@@ -50,12 +50,18 @@
 
 <div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">
 
+	<!-- Accent line -->
+	<div class="accent-line accent-line--green"></div>
+
 	<!-- Hero -->
 	<div class="flex flex-col items-center text-center gap-4">
 		<div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: var(--accent-green); color: var(--fg-on-accent)">
 			<FileTextIcon size={28} />
 		</div>
-		<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
+		<div class="flex items-center gap-3">
+			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
+			<span class="tool-count tool-count--green">18</span>
+		</div>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
 			{m['pdf_tools.subtitle']()}
 		</p>
@@ -113,4 +119,22 @@
 		@apply text-xs font-normal;
 		color: var(--fg-muted);
 	}
+
+	.accent-line {
+		height: 3px;
+		border-radius: 2px;
+		width: 100%;
+	}
+	.accent-line--green { background: var(--accent-green); }
+
+	.tool-count {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		padding: 3px 10px;
+		border-radius: 9999px;
+		flex-shrink: 0;
+	}
+	.tool-count--green { background: hsla(158, 65%, 37%, 0.12); color: var(--accent-green); }
 </style>

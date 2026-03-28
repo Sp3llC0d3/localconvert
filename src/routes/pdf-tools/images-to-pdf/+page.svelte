@@ -4,6 +4,7 @@
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ImageIcon, XIcon, GripVerticalIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -64,14 +65,14 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="pdf-header">
-		<ImageIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.images_to_pdf.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.images_to_pdf.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.images_to_pdf.title']()}
+		description={m['tool_pages.images_to_pdf.desc']()}
+		icon={ImageIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader
 		bind:files
@@ -119,8 +120,7 @@
 
 <style lang="postcss">
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.file-list { @apply flex flex-col gap-2; }
+.file-list { @apply flex flex-col gap-2; }
 	.file-row { @apply flex items-center gap-3 px-4 py-3 rounded-xl bg-panel shadow-panel; }
 	.icon-btn { @apply w-6 h-6 rounded-full flex items-center justify-center text-muted hover:bg-separator transition-colors; }
 	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }

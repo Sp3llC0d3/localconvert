@@ -23,6 +23,7 @@
 	import { ToastManager } from "$lib/util/toast.svelte.js";
 	import { m } from "$lib/paraglide/messages.js";
 	import { log } from "$lib/util/logger.js";
+	import { commandPalette } from "$lib/store/commandPalette.svelte";
 
 	let { children, data } = $props();
 	let scrollPositions = new Map<string, number>();
@@ -73,6 +74,14 @@
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("paste", handlePaste);
 
+		const handleCmdK = (e: KeyboardEvent) => {
+			if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+				e.preventDefault();
+				commandPalette.toggle();
+			}
+		};
+		window.addEventListener("keydown", handleCmdK);
+
 		effects.set(localStorage.getItem("effects") !== "false");
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
@@ -115,6 +124,7 @@
 		return () => {
 			window.removeEventListener("paste", handlePaste);
 			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("keydown", handleCmdK);
 		};
 	});
 
@@ -125,21 +135,21 @@
 	<meta name="theme-color" content="#0F6E56" />
 	<meta
 		name="title"
-		content="{VERT_NAME} — Free, fast, and awesome file converter"
+		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
 	/>
 	<meta
 		name="description"
-		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
+		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="og:url" content="https://localconvert.app" />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="{VERT_NAME} — Free, fast, and awesome file converter"
+		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
 	/>
 	<meta
 		property="og:description"
-		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
+		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="og:image" content={featuredImage} />
 	<meta name="twitter:card" content="summary_large_image" />
@@ -147,11 +157,11 @@
 	<meta property="twitter:url" content="https://localconvert.app" />
 	<meta
 		property="twitter:title"
-		content="{VERT_NAME} — Free, fast, and awesome file converter"
+		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
 	/>
 	<meta
 		property="twitter:description"
-		content="Free, private file converter. Convert images, audio, video, and documents in your browser — no uploads, no accounts, no file size limits. Completely open source."
+		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
@@ -189,6 +199,7 @@
 		<Layout.Toasts />
 		<Layout.Dialogs />
 		<Layout.IOSInstallBanner />
+		<Layout.CommandPalette />
 
 		<div>
 			<Layout.Footer />

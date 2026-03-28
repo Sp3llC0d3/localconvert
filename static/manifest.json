@@ -1,7 +1,7 @@
 {
 	"name": "LocalConvert",
 	"short_name": "LocalConvert",
-	"description": "Convert anything. Your files never leave your device.",
+	"description": "36 tools for PDFs, images, and code — all private, all in your browser.",
 	"start_url": "/",
 	"id": "/",
 	"display": "standalone",

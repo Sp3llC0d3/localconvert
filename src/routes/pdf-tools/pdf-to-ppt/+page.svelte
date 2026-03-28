@@ -4,6 +4,7 @@
 	import { pdfToPpt } from '$lib/pdf/pdf-to-ppt';
 	import { downloadBlob, formatFileSize } from '$lib/pdf/utils';
 	import { PresentationIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let files = $state<File[]>([]);
 	let slideSize = $state<'16:9' | '4:3'>('16:9');
@@ -44,14 +45,14 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
-	<div class="pdf-header">
-		<PresentationIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.pdf_to_ppt.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.pdf_to_ppt.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="pdf"
+		title={m['tool_pages.pdf_to_ppt.title']()}
+		description={m['tool_pages.pdf_to_ppt.desc']()}
+		icon={PresentationIcon}
+		backHref="/pdf-tools/"
+		backLabel={m['tools_common.back_pdf']()}
+	/>
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
@@ -91,8 +92,7 @@
 
 <style lang="postcss">
 	.pdf-page { @apply max-w-2xl mx-auto px-4 py-10 flex flex-col gap-6; }
-	.pdf-header { @apply flex items-center gap-3; }
-	.opt-section { @apply flex flex-col gap-4 p-4 rounded-2xl bg-panel shadow-panel; }
+.opt-section { @apply flex flex-col gap-4 p-4 rounded-2xl bg-panel shadow-panel; }
 	.opt-row { @apply flex items-center gap-4 flex-wrap; }
 	.opt-label { @apply text-sm font-semibold w-20 flex-shrink-0; }
 	.result-box { @apply flex flex-col gap-3 p-4 rounded-2xl bg-panel shadow-panel; }

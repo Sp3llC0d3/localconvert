@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { BracesIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
+	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
 	let input = $state('{\n  "name": "LocalConvert",\n  "version": 1\n}');
 	let output = $state('');
@@ -59,14 +60,14 @@
 </svelte:head>
 
 <div class="json-page">
-	<a href="/dev-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_dev']()}</a>
-	<div class="json-header">
-		<BracesIcon size={28} />
-		<div>
-			<h1 class="text-2xl font-semibold">{m['tool_pages.json_formatter.title']()}</h1>
-			<p class="text-sm text-muted">{m['tool_pages.json_formatter.desc']()}</p>
-		</div>
-	</div>
+	<ToolPageHeader
+		category="dev"
+		title={m['tool_pages.json_formatter.title']()}
+		description={m['tool_pages.json_formatter.desc']()}
+		icon={BracesIcon}
+		backHref="/dev-tools/"
+		backLabel={m['tools_common.back_dev']()}
+	/>
 
 	<div class="panels">
 		<div class="panel">
@@ -109,8 +110,7 @@
 
 <style>
 	.json-page { max-width: 52rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
-	.json-header { display: flex; align-items: center; gap: 0.75rem; }
-	.panels { display: flex; flex-direction: column; gap: 1rem; }
+.panels { display: flex; flex-direction: column; gap: 1rem; }
 	@media (min-width: 640px) { .panels { flex-direction: row; } .panel { flex: 1; } }
 	.panel { display: flex; flex-direction: column; gap: 0.25rem; }
 	.panel-label { font-size: 0.75rem; font-weight: 600; color: var(--fg-muted); }
