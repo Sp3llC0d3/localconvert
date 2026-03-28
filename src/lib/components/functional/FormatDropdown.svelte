@@ -113,6 +113,16 @@
 			return false;
 		}
 
+		// If we have a specific file, only show formats its converters can output
+		if (file && from) {
+			const canOutput = file.converters.some((conv) => {
+				const hasFrom = conv.supportedFormats.find((f) => f.name === from);
+				const hasTo = conv.supportedFormats.find((f) => f.name === format);
+				return hasFrom && hasTo && hasTo.toSupported;
+			});
+			if (!canOutput) return false;
+		}
+
 		return true;
 	};
 
