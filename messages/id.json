@@ -380,6 +380,13 @@
 			"dev_desc": "JSON, hash, Base64, markdown, diff, dan lainnya",
 			"dev_count": "8 alat",
 			"explore": "Jelajahi →"
+		},
+		"gpu": {
+			"badge": "Akselerasi perangkat keras",
+			"title": "Konversi video dengan GPU",
+			"desc": "Konversi bertanda ⚡ menggunakan perangkat keras grafis perangkat Anda. Konversi lebih cepat, penggunaan CPU lebih rendah — tetap 100% lokal.",
+			"full_label": "GPU penuh — semua arah",
+			"input_label": "GPU saat mengonversi ke format di atas"
 		}
 	},
 	"pdf_tools": {

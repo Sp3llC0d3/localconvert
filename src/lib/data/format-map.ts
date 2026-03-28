@@ -10,7 +10,8 @@ export interface FormatEntry {
 	category: 'image' | 'audio' | 'video' | 'doc';
 	canBeInput: boolean;
 	canBeOutput: boolean;
-	gpuAccelerated: boolean;
+	gpuInput: boolean;
+	gpuOutput: boolean;
 	outputFormats: string[];
 	inputFromFormats: string[];
 }
@@ -48,7 +49,8 @@ function buildFormatMap() {
 					category,
 					canBeInput: fmt.fromSupported,
 					canBeOutput: fmt.toSupported,
-					gpuAccelerated: GPU_INPUT_FORMATS.has(fmt.name) || GPU_OUTPUT_FORMATS.has(fmt.name),
+					gpuInput: GPU_INPUT_FORMATS.has(fmt.name),
+					gpuOutput: GPU_OUTPUT_FORMATS.has(fmt.name),
 					outputFormats: [],
 					inputFromFormats: [],
 				});

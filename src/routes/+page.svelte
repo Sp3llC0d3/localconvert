@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
-	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench } from "lucide-svelte";
+	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench, ZapIcon } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
 	import FormatExplorer from "$lib/components/functional/FormatExplorer.svelte";
 
@@ -164,6 +164,56 @@
 			<a href="/formats/" class="formats-link">
 				See all formats &rarr;
 			</a>
+		</div>
+	</div>
+</section>
+
+<!-- ═══ GPU CALLOUT ═══ -->
+<section class="section-wrapper">
+	<div class="section-inner">
+		<div class="gpu-callout">
+			<div class="gpu-callout-left">
+				<div class="gpu-callout-icon">
+					<ZapIcon size={20} />
+				</div>
+				<div class="gpu-callout-text">
+					<span class="gpu-callout-badge">{m["landing.gpu.badge"]()}</span>
+					<h3 class="gpu-callout-title">{m["landing.gpu.title"]()}</h3>
+					<p class="gpu-callout-desc">
+						{m["landing.gpu.desc"]()}
+					</p>
+				</div>
+			</div>
+
+			<!-- Schematic -->
+			<div class="gpu-schematic">
+				<!-- Full GPU formats (bidirectional) -->
+				<div class="gpu-group">
+					<span class="gpu-group-label">
+						<ZapIcon size={9} />
+						{m["landing.gpu.full_label"]()}
+					</span>
+					<div class="gpu-format-ring">
+						{#each ['MP4', 'WebM', 'MOV', 'M4V', '3GP'] as fmt, i}
+							<span class="gpu-format gpu-format--full">{fmt}</span>
+							{#if i < 4}<span class="gpu-arrow">⇄</span>{/if}
+						{/each}
+					</div>
+				</div>
+
+				<!-- Input-only GPU formats -->
+				<div class="gpu-group">
+					<span class="gpu-group-label gpu-group-label--muted">
+						<ZapIcon size={9} />
+						{m["landing.gpu.input_label"]()}
+					</span>
+					<div class="gpu-format-ring">
+						{#each ['MKV', 'AVI', 'FLV', 'TS', 'WMV', 'OGG', 'OGV'] as fmt}
+							<span class="gpu-format gpu-format--input">{fmt}</span>
+						{/each}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -479,6 +529,162 @@
 
 .formats-link:hover {
 	color: var(--accent);
+}
+
+/* ── GPU Callout ── */
+.gpu-callout {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	background: var(--bg-panel);
+	border: 1px solid var(--bg-separator);
+	border-left: 3px solid var(--accent-red);
+	box-shadow: var(--shadow-panel);
+}
+
+@media (min-width: 768px) {
+	.gpu-callout {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+}
+
+.gpu-callout-left {
+	display: flex;
+	gap: 1rem;
+	flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+	.gpu-callout-left { max-width: 20rem; }
+}
+
+.gpu-callout-icon {
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 0.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	background: hsla(14, 80%, 60%, 0.1);
+	color: var(--accent-red);
+}
+
+.gpu-callout-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+}
+
+.gpu-callout-badge {
+	font-family: var(--font-mono);
+	font-size: 0.5625rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent-red);
+	opacity: 0.85;
+}
+
+.gpu-callout-title {
+	font-family: var(--font-display);
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: var(--fg);
+}
+
+.gpu-callout-desc {
+	font-size: 0.8125rem;
+	font-weight: 400;
+	line-height: 1.65;
+	color: var(--fg-muted);
+}
+
+.gpu-inline-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 1px;
+	padding: 0 3px;
+	border-radius: 3px;
+	background: hsla(14, 80%, 60%, 0.1);
+	color: var(--accent-red);
+	vertical-align: middle;
+}
+
+/* ── GPU Schematic ── */
+.gpu-schematic {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	min-width: 0;
+}
+
+@media (min-width: 768px) {
+	.gpu-schematic {
+		border-left: 1px solid var(--bg-separator);
+		padding-left: 1.5rem;
+	}
+}
+
+.gpu-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.gpu-group-label {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-family: var(--font-mono);
+	font-size: 0.5625rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent-red);
+}
+
+.gpu-group-label--muted {
+	color: var(--fg-muted);
+}
+
+.gpu-format-ring {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.gpu-format {
+	font-family: var(--font-mono);
+	font-size: 0.625rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	padding: 3px 8px;
+	border-radius: 5px;
+}
+
+.gpu-format--full {
+	background: hsla(14, 80%, 60%, 0.12);
+	color: var(--accent-red);
+	border: 1px solid hsla(14, 80%, 60%, 0.2);
+}
+
+.gpu-format--input {
+	background: var(--bg-panel-highlight);
+	color: var(--fg-muted);
+	border: 1px solid var(--bg-separator);
+}
+
+.gpu-arrow {
+	font-size: 0.625rem;
+	color: var(--accent-red);
+	opacity: 0.5;
 }
 
 /* ── Privacy ── */

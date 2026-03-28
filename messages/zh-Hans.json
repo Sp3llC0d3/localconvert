@@ -380,6 +380,13 @@
 			"dev_desc": "JSON、哈希、Base64、Markdown、文本对比等",
 			"dev_count": "8个工具",
 			"explore": "探索 →"
+		},
+		"gpu": {
+			"badge": "硬件加速",
+			"title": "GPU 视频转换",
+			"desc": "标有 ⚡ 的转换使用设备的图形硬件。转换更快、CPU 占用更低 — 仍然 100% 本地处理。",
+			"full_label": "完整 GPU — 任意方向",
+			"input_label": "转换为上述格式时使用 GPU"
 		}
 	},
 	"pdf_tools": {

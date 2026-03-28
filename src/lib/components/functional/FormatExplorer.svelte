@@ -52,6 +52,10 @@
 
 	const activeResults = $derived(outputMode === 'to' ? outputFormats : inputFromFormats);
 
+	const selectedIsGpuInput = $derived(
+		selectedFormat && formatMap[selectedFormat] ? formatMap[selectedFormat].gpuInput : false
+	);
+
 	const resultsByCategory = $derived.by(() => {
 		const groups: Record<string, FormatEntry[]> = {};
 		for (const fmt of activeResults) {
@@ -137,9 +141,6 @@
 						onclick={() => selectFormat(fmt.name)}
 					>
 						{fmt.displayName}
-						{#if fmt.gpuAccelerated}
-							<ZapIcon size={9} class="explorer-gpu-icon" />
-						{/if}
 					</button>
 				{/each}
 				{#if inputFormats.length === 0 && isSearching}
@@ -198,8 +199,8 @@
 											style="--chip-color: var(--accent-{groupMeta.color}); animation-delay: {(groupIdx * formats.length + i) * 18}ms"
 										>
 											{fmt.displayName}
-											{#if fmt.gpuAccelerated}
-												<ZapIcon size={8} />
+											{#if outputMode === 'to' && selectedIsGpuInput && fmt.gpuOutput}
+												<span title="This conversion uses GPU acceleration"><ZapIcon size={8} /></span>
 											{/if}
 										</span>
 									{/each}
@@ -219,6 +220,15 @@
 				{/if}
 			</div>
 		</div>
+	</div>
+
+	<!-- Legend -->
+	<div class="explorer-legend">
+		<span class="explorer-legend-item">
+			<ZapIcon size={10} class="explorer-legend-zap" />
+			<span class="explorer-legend-label">GPU Accelerated</span>
+			<span class="explorer-legend-desc">— this conversion path uses hardware acceleration</span>
+		</span>
 	</div>
 </div>
 
@@ -492,14 +502,6 @@
 		box-shadow: 0 2px 8px color-mix(in srgb, var(--chip-color) 30%, transparent);
 	}
 
-	:global(.explorer-gpu-icon) {
-		color: var(--accent-red);
-		flex-shrink: 0;
-	}
-
-	.explorer-chip--active :global(.explorer-gpu-icon) {
-		color: var(--fg-on-accent);
-	}
 
 	/* ── Flow indicator ── */
 	.explorer-flow {
@@ -622,5 +624,44 @@
 		color: var(--fg-muted);
 		font-size: 0.8125rem;
 		font-style: italic;
+	}
+
+	/* ── Legend ── */
+	.explorer-legend {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 1rem;
+		border-top: 1px solid var(--bg-separator);
+		background: var(--bg-panel-highlight);
+	}
+
+	.explorer-legend-item {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	:global(.explorer-legend-zap) {
+		color: var(--accent-red);
+		flex-shrink: 0;
+	}
+
+	.explorer-legend-label {
+		font-family: var(--font-mono);
+		font-size: 0.5625rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: var(--accent-red);
+	}
+
+	.explorer-legend-desc {
+		font-size: 0.5625rem;
+		color: var(--fg-muted);
+		font-weight: 400;
+	}
+
+	@media (max-width: 480px) {
+		.explorer-legend-desc { display: none; }
 	}
 </style>

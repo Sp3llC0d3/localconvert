@@ -380,6 +380,13 @@
 			"dev_desc": "JSON, hash, Base64, markdown, usporedba i više",
 			"dev_count": "8 alata",
 			"explore": "Istraži →"
+		},
+		"gpu": {
+			"badge": "Hardversko ubrzanje",
+			"title": "GPU video konverzija",
+			"desc": "Konverzije označene sa ⚡ koriste grafički hardver vašeg uređaja. Brže konverzije, manje opterećenje procesora — i dalje 100% lokalno.",
+			"full_label": "Puni GPU — bilo koji smjer",
+			"input_label": "GPU pri konverziji u gornje formate"
 		}
 	},
 	"pdf_tools": {

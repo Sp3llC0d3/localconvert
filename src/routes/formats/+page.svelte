@@ -136,10 +136,15 @@
 					<div class="fmt-card" style="--card-color: var(--accent-{meta.color})">
 						<button class="fmt-card-header" onclick={() => toggleExpand(fmt.name)}>
 							<span class="fmt-card-name">{fmt.displayName}</span>
-							{#if fmt.gpuAccelerated}
-								<span class="fmt-card-gpu">
+							{#if fmt.gpuInput && fmt.gpuOutput}
+								<span class="fmt-card-gpu" title="Full GPU acceleration — input and output">
 									<ZapIcon size={10} />
 									GPU
+								</span>
+							{:else if fmt.gpuInput}
+								<span class="fmt-card-gpu fmt-card-gpu--input" title="GPU accelerated when converting to MP4, WebM, MOV, M4V, or 3GP">
+									<ZapIcon size={10} />
+									GPU In
 								</span>
 							{/if}
 							<span class="fmt-card-dir" class:fmt-card-dir--both={fmt.canBeInput && fmt.canBeOutput}>
@@ -437,6 +442,11 @@
 		background: hsla(14, 80%, 60%, 0.1);
 		color: var(--accent-red);
 		letter-spacing: 0.06em;
+	}
+
+	.fmt-card-gpu--input {
+		background: var(--bg-panel-highlight);
+		color: var(--fg-muted);
 	}
 
 	.fmt-card-arrow {

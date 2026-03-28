@@ -428,6 +428,13 @@
 			"dev_desc": "JSON、雜湊、Base64、Markdown、文字比較等",
 			"dev_count": "8個工具",
 			"explore": "探索 →"
+		},
+		"gpu": {
+			"badge": "硬體加速",
+			"title": "GPU 影片轉換",
+			"desc": "標有 ⚡ 的轉換使用裝置的圖形硬體。轉換更快、CPU 佔用更低 — 仍然 100% 本機處理。",
+			"full_label": "完整 GPU — 任意方向",
+			"input_label": "轉換為上述格式時使用 GPU"
 		}
 	},
 	"image_tools": {

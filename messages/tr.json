@@ -380,6 +380,13 @@
 			"dev_desc": "JSON, hash, Base64, markdown, fark ve daha fazlası",
 			"dev_count": "8 araç",
 			"explore": "Keşfet →"
+		},
+		"gpu": {
+			"badge": "Donanım hızlandırmalı",
+			"title": "GPU destekli video dönüştürme",
+			"desc": "⚡ işaretli dönüştürmeler cihazınızın grafik donanımını kullanır. Daha hızlı dönüştürme, düşük CPU kullanımı — hâlâ %100 yerel.",
+			"full_label": "Tam GPU — her yön",
+			"input_label": "Yukarıdaki formatlara dönüştürürken GPU"
 		}
 	},
 	"pdf_tools": {

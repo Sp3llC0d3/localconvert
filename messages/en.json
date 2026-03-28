@@ -541,6 +541,13 @@
 			"dev_count": "8 tools",
 			"explore": "Explore →"
 		},
+		"gpu": {
+			"badge": "Hardware Accelerated",
+			"title": "GPU-powered video conversion",
+			"desc": "Conversions marked with ⚡ use your device's graphics hardware. Faster conversions, lower CPU usage — still 100% local.",
+			"full_label": "Full GPU — any direction",
+			"input_label": "GPU when converting to formats above"
+		},
 		"formats": {
 			"title": "200+ Format Conversions",
 			"label": "Converter"

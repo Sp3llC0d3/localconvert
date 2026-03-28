@@ -380,6 +380,13 @@
 			"dev_desc": "JSON, hash, Base64, markdown, diff y más",
 			"dev_count": "8 herramientas",
 			"explore": "Explorar →"
+		},
+		"gpu": {
+			"badge": "Aceleración por hardware",
+			"title": "Conversión de video con GPU",
+			"desc": "Las conversiones marcadas con ⚡ usan el hardware gráfico de tu dispositivo. Conversiones más rápidas, menor uso de CPU — todo local.",
+			"full_label": "GPU completa — cualquier dirección",
+			"input_label": "GPU al convertir a los formatos anteriores"
 		}
 	},
 	"pdf_tools": {

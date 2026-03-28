@@ -428,6 +428,13 @@
 			"dev_desc": "JSON, 해시, Base64, 마크다운, 비교 등",
 			"dev_count": "8개 도구",
 			"explore": "탐색 →"
+		},
+		"gpu": {
+			"badge": "하드웨어 가속",
+			"title": "GPU 비디오 변환",
+			"desc": "⚡ 표시된 변환은 기기의 그래픽 하드웨어를 사용합니다. 더 빠른 변환, 낮은 CPU 사용량 — 100% 로컬.",
+			"full_label": "풀 GPU — 양방향",
+			"input_label": "위 포맷으로 변환 시 GPU 사용"
 		}
 	},
 	"image_tools": {
