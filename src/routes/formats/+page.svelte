@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { allFormats, categoryMeta, formatMap, type FormatEntry } from '$lib/data/format-map';
-	import { Image, AudioLines, Film, BookText, SearchIcon, ChevronDown, ArrowRight } from 'lucide-svelte';
+	import { Image, AudioLines, Film, BookText, SearchIcon, ChevronDown, ArrowRight, ZapIcon } from 'lucide-svelte';
 
 	const icons: Record<string, typeof Image> = { image: Image, audio: AudioLines, video: Film, doc: BookText };
 	const categories = ['image', 'audio', 'video', 'doc'] as const;
@@ -136,6 +136,12 @@
 					<div class="fmt-card" style="--card-color: var(--accent-{meta.color})">
 						<button class="fmt-card-header" onclick={() => toggleExpand(fmt.name)}>
 							<span class="fmt-card-name">{fmt.displayName}</span>
+							{#if fmt.gpuAccelerated}
+								<span class="fmt-card-gpu">
+									<ZapIcon size={10} />
+									GPU
+								</span>
+							{/if}
 							<span class="fmt-card-dir" class:fmt-card-dir--both={fmt.canBeInput && fmt.canBeOutput}>
 								{directionLabel(fmt)}
 							</span>
@@ -417,6 +423,20 @@
 	.fmt-card-dir--both {
 		background: color-mix(in srgb, var(--card-color) 10%, transparent);
 		color: var(--card-color);
+	}
+
+	.fmt-card-gpu {
+		display: inline-flex;
+		align-items: center;
+		gap: 2px;
+		font-size: 0.5625rem;
+		font-weight: 700;
+		font-family: var(--font-mono);
+		padding: 1px 6px;
+		border-radius: 4px;
+		background: hsla(14, 80%, 60%, 0.1);
+		color: var(--accent-red);
+		letter-spacing: 0.06em;
 	}
 
 	.fmt-card-arrow {

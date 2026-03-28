@@ -1,11 +1,16 @@
 import { converters } from '$lib/converters';
 
+// Video formats that support GPU acceleration via WebCodecs
+const GPU_INPUT_FORMATS = new Set(['.mp4', '.webm', '.mkv', '.ogg', '.ogv', '.m4v', '.mov', '.avi', '.flv', '.3gp', '.ts', '.wmv']);
+const GPU_OUTPUT_FORMATS = new Set(['.mp4', '.m4v', '.mov', '.3gp', '.webm']);
+
 export interface FormatEntry {
 	name: string;
 	displayName: string;
 	category: 'image' | 'audio' | 'video' | 'doc';
 	canBeInput: boolean;
 	canBeOutput: boolean;
+	gpuAccelerated: boolean;
 	outputFormats: string[];
 	inputFromFormats: string[];
 }
@@ -43,6 +48,7 @@ function buildFormatMap() {
 					category,
 					canBeInput: fmt.fromSupported,
 					canBeOutput: fmt.toSupported,
+					gpuAccelerated: GPU_INPUT_FORMATS.has(fmt.name) || GPU_OUTPUT_FORMATS.has(fmt.name),
 					outputFormats: [],
 					inputFromFormats: [],
 				});

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { formatsByCategory, categoryMeta, formatMap, allInputFormats, type FormatEntry } from '$lib/data/format-map';
-	import { Image, AudioLines, Film, BookText, ArrowRight, SearchIcon } from 'lucide-svelte';
+	import { Image, AudioLines, Film, BookText, ArrowRight, SearchIcon, ZapIcon } from 'lucide-svelte';
 
 	const icons = { image: Image, audio: AudioLines, video: Film, doc: BookText };
 	const categories = ['image', 'audio', 'video', 'doc'] as const;
@@ -137,6 +137,9 @@
 						onclick={() => selectFormat(fmt.name)}
 					>
 						{fmt.displayName}
+						{#if fmt.gpuAccelerated}
+							<ZapIcon size={9} class="explorer-gpu-icon" />
+						{/if}
 					</button>
 				{/each}
 				{#if inputFormats.length === 0 && isSearching}
@@ -195,6 +198,9 @@
 											style="--chip-color: var(--accent-{groupMeta.color}); animation-delay: {(groupIdx * formats.length + i) * 18}ms"
 										>
 											{fmt.displayName}
+											{#if fmt.gpuAccelerated}
+												<ZapIcon size={8} />
+											{/if}
 										</span>
 									{/each}
 								</div>
@@ -484,6 +490,15 @@
 		color: var(--fg-on-accent);
 		border-color: var(--chip-color);
 		box-shadow: 0 2px 8px color-mix(in srgb, var(--chip-color) 30%, transparent);
+	}
+
+	:global(.explorer-gpu-icon) {
+		color: var(--accent-red);
+		flex-shrink: 0;
+	}
+
+	.explorer-chip--active :global(.explorer-gpu-icon) {
+		color: var(--fg-on-accent);
 	}
 
 	/* ── Flow indicator ── */
