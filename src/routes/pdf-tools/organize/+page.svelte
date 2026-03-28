@@ -116,13 +116,13 @@
 					<img src={thumbs[item.origIdx]} alt="Page {item.origIdx + 1}" class="org-thumb" />
 					<span class="text-sm flex-1">Page {item.origIdx + 1}</span>
 					<div class="flex gap-1">
-						<button class="icon-btn" onclick={() => moveUp(i)} disabled={i === 0} aria-label="Move up">
+						<button class="icon-btn" onclick={() => moveUp(i)} disabled={i === 0} aria-label={m['tool_pages.organize.move_up']()}>
 							<ArrowUpIcon size={14} />
 						</button>
-						<button class="icon-btn" onclick={() => moveDown(i)} disabled={i === items.length - 1} aria-label="Move down">
+						<button class="icon-btn" onclick={() => moveDown(i)} disabled={i === items.length - 1} aria-label={m['tool_pages.organize.move_down']()}>
 							<ArrowDownIcon size={14} />
 						</button>
-						<button class="icon-btn del-btn" onclick={() => deletePage(i)} aria-label="Delete page">
+						<button class="icon-btn del-btn" onclick={() => deletePage(i)} aria-label={m['tool_pages.organize.delete_page']()}>
 							<Trash2Icon size={14} />
 						</button>
 					</div>

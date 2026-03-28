@@ -318,7 +318,7 @@
 				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>{m['tools_common.clear']()}</button>
 			{:else if mode === 'type'}
 				<input
-					type="text" bind:value={typedName} placeholder="Your name"
+					type="text" bind:value={typedName} placeholder={m['tool_pages.sign.your_name']()}
 					class="sig-text-input"
 				/>
 				<canvas bind:this={sigCanvas} width={400} height={120} class="hidden"></canvas>
@@ -353,7 +353,7 @@
 						onmouseup={onPageMouseUp}
 						onclick={onPageClick}
 						role="application"
-						aria-label="Click to place signature"
+						aria-label={m['tool_pages.sign.click_place']()}
 					>
 						<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
 

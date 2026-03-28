@@ -258,7 +258,7 @@
 				ontouchend={onPointerUp}
 				ontouchcancel={onPointerUp}
 				role="application"
-				aria-label="Drag edges to crop PDF"
+				aria-label={m['tool_pages.crop_pdf.aria_drag']()}
 			>
 				<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
 

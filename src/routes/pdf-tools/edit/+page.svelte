@@ -299,7 +299,7 @@
 			<input
 				type="text"
 				bind:value={newText}
-				placeholder="Text to place…"
+				placeholder={m['tool_pages.edit.placeholder']()}
 				class="text-input"
 			/>
 			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
@@ -338,7 +338,7 @@
 				onmouseup={onPageMouseUp}
 				onclick={onPageClick}
 				role="application"
-				aria-label="PDF page editor"
+				aria-label={m['tool_pages.edit.aria_editor']()}
 			>
 				<!-- Rendered page -->
 				<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
@@ -369,7 +369,7 @@
 							<button
 								class="delete-btn"
 								onclick={(e) => { e.stopPropagation(); removeElement(el.id); }}
-								aria-label="Remove text"
+								aria-label={m['tool_pages.edit.remove_text']()}
 							>
 								<Trash2Icon size={12} />
 							</button>

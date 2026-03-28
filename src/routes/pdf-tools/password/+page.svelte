@@ -81,7 +81,7 @@
 						id="pw-user"
 						type={showPassword ? 'text' : 'password'}
 						bind:value={userPassword}
-						placeholder="Enter password…"
+						placeholder={m['tool_pages.password.password_placeholder']()}
 						class="field-input"
 						autocomplete="new-password"
 					/>
@@ -103,7 +103,7 @@
 						id="pw-owner"
 						type={showPassword ? 'text' : 'password'}
 						bind:value={ownerPassword}
-						placeholder="Owner password…"
+						placeholder={m['tool_pages.password.owner_placeholder']()}
 						class="field-input"
 						autocomplete="new-password"
 					/>

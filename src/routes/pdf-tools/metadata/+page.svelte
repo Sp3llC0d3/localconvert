@@ -110,7 +110,7 @@
 			</div>
 			<div class="field">
 				<label for="meta-keywords" class="field-label">{m['tool_pages.metadata.field_keywords']()}</label>
-				<input id="meta-keywords" type="text" bind:value={keywords} placeholder="keyword1, keyword2" class="field-input" />
+				<input id="meta-keywords" type="text" bind:value={keywords} placeholder={m['tool_pages.metadata.keywords_placeholder']()} class="field-input" />
 			</div>
 			<div class="field">
 				<label for="meta-creator" class="field-label">{m['tool_pages.metadata.field_creator']()}</label>
