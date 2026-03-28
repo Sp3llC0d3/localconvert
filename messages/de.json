@@ -545,7 +545,7 @@
 		"upload_images_pdf": "Bilddateien hinzufügen (JPG, PNG, WEBP)",
 		"loading_thumbs": "Miniaturansichten laden…",
 		"ready": "Fertig!",
-		"output": "Output:",
+		"output": "Ausgabe:",
 		"failed": "Fehlgeschlagen.",
 		"failed_read_pdf": "PDF konnte nicht gelesen werden.",
 		"page_of": "Seite {currentPage} / {pageCount}",
