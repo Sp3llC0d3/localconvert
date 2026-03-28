@@ -69,6 +69,7 @@ const pdfToolPaths = [
 const imageToolPaths = [
 	'/image-tools/','/image-tools/rotate/','/image-tools/crop/',
 	'/image-tools/watermark/','/image-tools/meme/','/image-tools/batch/','/image-tools/qr/','/image-tools/color-picker/','/image-tools/blur/',
+	'/dev-tools/','/dev-tools/json/','/dev-tools/hash/','/dev-tools/base64/',
 ];
 
 // ── Static pages ──────────────────────────────────────────────────────────

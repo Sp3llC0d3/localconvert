@@ -16,6 +16,7 @@
 		FileTextIcon,
 		GlobeIcon,
 		ImageIcon,
+		CodeIcon,
 		InfoIcon,
 		MoonIcon,
 		RefreshCw,
@@ -121,6 +122,12 @@
 			url: "/image-tools/",
 			activeMatch: (pathname: string) => pathname.startsWith("/image-tools"),
 			icon: ImageIcon,
+		},
+		{
+			name: m["navbar.dev_tools"](),
+			url: "/dev-tools/",
+			activeMatch: (pathname: string) => pathname.startsWith("/dev-tools"),
+			icon: CodeIcon,
 		},
 	]);
 

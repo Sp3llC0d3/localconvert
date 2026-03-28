@@ -8,7 +8,8 @@
 		"about": "について",
 		"toggle_theme": "テーマを切り替える",
 		"image_tools": "画像ツール",
-		"tools": "ツール"
+		"tools": "ツール",
+		"dev_tools": "Dev Tools"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. VERT.shをベースに構築。",
@@ -499,7 +500,8 @@
 		"meme": "Meme",
 		"foreground": "Foreground",
 		"background": "Background",
-		"input": "Input:"
+		"input": "Input:",
+		"back_dev": "← Dev Tools"
 	},
 	"tool_pages": {
 		"merge": {
@@ -793,6 +795,50 @@
 			"btn_busy": "Converting page {progress} of {total}…",
 			"grayscale": "Grayscale",
 			"save": "Save grayscale PDF"
+		},
+		"json_formatter": {
+			"title": "JSON Formatter",
+			"desc": "Format, minify, and validate JSON.",
+			"input_label": "Input",
+			"output_label": "Output",
+			"btn_format": "Format",
+			"btn_minify": "Minify",
+			"btn_copy": "Copy",
+			"indent": "Indent"
+		},
+		"hash_generator": {
+			"title": "Hash Generator",
+			"desc": "Generate hashes for text or files.",
+			"text_mode": "Text",
+			"file_mode": "File",
+			"text_placeholder": "Enter text to hash…",
+			"file_placeholder": "Click to select a file",
+			"algorithm": "Algorithm",
+			"computing": "Computing…"
+		},
+		"base64": {
+			"title": "Base64 Encode / Decode",
+			"desc": "Encode text to Base64 or decode Base64 to text.",
+			"btn_encode": "Encode",
+			"btn_decode": "Decode",
+			"input_text": "Text",
+			"input_base64": "Base64",
+			"decoded": "Decoded text",
+			"or_file": "Or encode a file:",
+			"select_file": "Select file"
+		}
+	},
+	"dev_tools": {
+		"title": "Developer Tools",
+		"subtitle": "Format, encode, and hash — all in your browser. Nothing leaves your device.",
+		"badge": "100% local — no uploads, no server",
+		"tools": {
+			"json_name": "JSON Formatter",
+			"json_desc": "Format, minify, and validate JSON",
+			"hash_name": "Hash Generator",
+			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
+			"base64_name": "Base64 Codec",
+			"base64_desc": "Encode and decode Base64 strings"
 		}
 	}
 }
