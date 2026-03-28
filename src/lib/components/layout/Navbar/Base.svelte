@@ -22,10 +22,10 @@
 		RefreshCw,
 		SettingsIcon,
 		SunIcon,
-		FolderOpen,
 		WrenchIcon,
 		ChevronDownIcon,
 		SearchIcon,
+		ShieldIcon,
 		type Icon as IconType,
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
@@ -96,10 +96,10 @@
 		}[]
 	>([
 		{
-			name: m["navbar.upload"](),
+			name: m["navbar.home"](),
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
-			icon: FolderOpen,
+			icon: ShieldIcon,
 		},
 		{
 			name: m["navbar.convert"](),

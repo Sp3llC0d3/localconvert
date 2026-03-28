@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Pilih",
 		"convert": "Konversi",
 		"pdf_tools": "Alat PDF",
 		"settings": "Pengaturan",
@@ -9,7 +8,8 @@
 		"toggle_theme": "Ganti Tema",
 		"image_tools": "Alat Gambar",
 		"tools": "Alat",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "Beranda"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Berbasis VERT.sh",
@@ -340,7 +340,7 @@
 			"no_uploads": "Tanpa Unggahan ke Server",
 			"open_source": "Gratis & Sumber Terbuka",
 			"tools_count": "36+ Alat",
-			"works_offline": "Berfungsi offline"
+			"works_locally": "Berjalan lokal"
 		},
 		"formats": {
 			"title": "200+ konversi format",

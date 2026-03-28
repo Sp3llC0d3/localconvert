@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Επιλογή",
 		"convert": "Μετατροπή",
 		"pdf_tools": "Εργαλεία PDF",
 		"settings": "Ρυθμίσεις",
@@ -9,7 +8,8 @@
 		"toggle_theme": "Εναλλαγή θέματος",
 		"image_tools": "Εργαλεία εικόνας",
 		"tools": "Εργαλεία",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "Αρχική"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Βασισμένο στο VERT.sh",
@@ -340,7 +340,7 @@
 			"no_uploads": "Χωρίς Μεταφορτώσεις σε Διακομιστή",
 			"open_source": "Δωρεάν & Ανοιχτού Κώδικα",
 			"tools_count": "36+ Εργαλεία",
-			"works_offline": "Λειτουργεί εκτός σύνδεσης"
+			"works_locally": "Τοπική λειτουργία"
 		},
 		"formats": {
 			"title": "200+ μετατροπές μορφής",

@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "選択",
 		"convert": "変換",
 		"pdf_tools": "PDFツール",
 		"settings": "設定",
@@ -9,7 +8,8 @@
 		"toggle_theme": "テーマを切り替える",
 		"image_tools": "画像ツール",
 		"tools": "ツール",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "ホーム"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. VERT.shをベースに構築。",
@@ -388,7 +388,7 @@
 			"no_uploads": "サーバーへのアップロードなし",
 			"open_source": "無料・オープンソース",
 			"tools_count": "36以上のツール",
-			"works_offline": "オフライン対応"
+			"works_locally": "ローカル動作"
 		},
 		"formats": {
 			"title": "200以上のフォーマット変換",

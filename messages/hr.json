@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Odaberi",
 		"convert": "Pretvori",
 		"pdf_tools": "PDF Alati",
 		"settings": "Postavke",
@@ -9,7 +8,8 @@
 		"toggle_theme": "Promjeni izgled",
 		"image_tools": "Alati za slike",
 		"tools": "Alati",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "Početna"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Bazirano na VERT.sh",
@@ -340,7 +340,7 @@
 			"no_uploads": "Bez prijenosa na poslužitelj",
 			"open_source": "Besplatno i otvorenog koda",
 			"tools_count": "36+ Alata",
-			"works_offline": "Radi offline"
+			"works_locally": "Radi lokalno"
 		},
 		"formats": {
 			"title": "200+ konverzija formata",

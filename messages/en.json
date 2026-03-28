@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Select",
+		"home": "Home",
 		"convert": "Convert",
 		"pdf_tools": "PDF Tools",
 		"image_tools": "Image Tools",
@@ -525,7 +525,7 @@
 			"no_uploads": "No server uploads",
 			"tools_count": "36+ Tools",
 			"open_source": "Free & Open Source",
-			"works_offline": "Works Offline"
+			"works_locally": "Works Locally"
 		},
 		"toolkit": {
 			"label": "Your workshop",

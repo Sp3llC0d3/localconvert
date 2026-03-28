@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "اختر",
 		"convert": "تحويل",
 		"pdf_tools": "⁧أدوات ⁦PDF⁩⁩",
 		"settings": "الإعدادات",
@@ -9,7 +8,8 @@
 		"toggle_theme": "تبديل المظهر",
 		"image_tools": "أدوات الصور",
 		"tools": "الأدوات",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "الرئيسية"
 	},
 	"footer": {
 		"copyright": "⁧© {year} ⁦LocalConvert⁩. مبني على ⁦VERT.sh⁩⁩",
@@ -388,7 +388,7 @@
 			"no_uploads": "بدون رفع للخوادم",
 			"open_source": "مجاني ومفتوح المصدر",
 			"tools_count": "36+ أداة",
-			"works_offline": "يعمل بدون إنترنت"
+			"works_locally": "يعمل محلياً"
 		},
 		"formats": {
 			"title": "200+ تحويل صيغة",

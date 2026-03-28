@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Seleziona",
 		"convert": "Converti",
 		"pdf_tools": "Strumenti PDF",
 		"settings": "Impostazioni",
@@ -9,7 +8,8 @@
 		"toggle_theme": "Cambia tema",
 		"image_tools": "Strumenti immagine",
 		"tools": "Strumenti",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "Home"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Basato su VERT.sh",
@@ -340,7 +340,7 @@
 			"no_uploads": "Nessun Upload su Server",
 			"open_source": "Gratuito e Open Source",
 			"tools_count": "36+ Strumenti",
-			"works_offline": "Funziona offline"
+			"works_locally": "Funziona localmente"
 		},
 		"formats": {
 			"title": "200+ conversioni di formato",

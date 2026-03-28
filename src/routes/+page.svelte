@@ -11,7 +11,7 @@
 		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
 		{ icon: Wrench, label: m["landing.pills.tools_count"]() },
 		{ icon: Code, label: m["landing.pills.open_source"]() },
-		{ icon: ShieldCheck, label: m["landing.pills.works_offline"]() },
+		{ icon: ShieldCheck, label: m["landing.pills.works_locally"]() },
 	];
 
 	const toolkitCategories = [

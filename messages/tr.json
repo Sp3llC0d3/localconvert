@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "Seç",
 		"convert": "Dönüştür",
 		"pdf_tools": "PDF Araçları",
 		"settings": "Ayarlar",
@@ -9,7 +8,8 @@
 		"toggle_theme": "Temayı değiştir",
 		"image_tools": "Görsel Araçları",
 		"tools": "Araçlar",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "Ana Sayfa"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. VERT.sh Tabanlı",
@@ -340,7 +340,7 @@
 			"no_uploads": "Sunucu Yüklemesi Yok",
 			"open_source": "Ücretsiz ve Açık Kaynak",
 			"tools_count": "36+ Araç",
-			"works_offline": "Çevrimdışı çalışır"
+			"works_locally": "Yerel çalışır"
 		},
 		"formats": {
 			"title": "200+ format dönüşümü",

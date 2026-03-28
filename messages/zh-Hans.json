@@ -1,7 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"navbar": {
-		"upload": "选择",
 		"convert": "转换",
 		"pdf_tools": "PDF工具",
 		"settings": "设置",
@@ -9,7 +8,8 @@
 		"toggle_theme": "切换主题",
 		"image_tools": "图片工具",
 		"tools": "工具",
-		"dev_tools": "Dev Tools"
+		"dev_tools": "Dev Tools",
+		"home": "首页"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. 基于 VERT.sh",
@@ -340,7 +340,7 @@
 			"no_uploads": "无服务器上传",
 			"open_source": "免费且开源",
 			"tools_count": "36+ 工具",
-			"works_offline": "离线可用"
+			"works_locally": "本地运行"
 		},
 		"formats": {
 			"title": "200+ 格式转换",
