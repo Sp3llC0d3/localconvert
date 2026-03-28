@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
@@ -38,14 +39,14 @@
 	function onDragEnd() { dragIndex = null; }
 
 	async function convert() {
-		if (files.length === 0) { error = 'Add at least one image.'; return; }
+		if (files.length === 0) { error = m['tool_pages.images_to_pdf.err_min'](); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await imagesToPdf(files);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Conversion failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.images_to_pdf.err_fail']();
 		}
 		processing = false;
 	}
@@ -63,19 +64,19 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<ImageIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Images → PDF</h1>
-			<p class="text-sm text-muted">Convert JPG, PNG, or WEBP images to a single PDF. Drag to reorder.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.images_to_pdf.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.images_to_pdf.desc']()}</p>
 		</div>
 	</div>
 
 	<PdfUploader
 		bind:files
 		accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
-		label="Add image files (JPG, PNG, WEBP)"
+		label={m['tools_common.upload_images_pdf']()}
 	/>
 
 	{#if files.length > 0}
@@ -100,7 +101,7 @@
 		</ul>
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? 'Converting…' : 'Convert to PDF'}
+			{processing ? m['tool_pages.images_to_pdf.btn_busy']() : m['tool_pages.images_to_pdf.btn']()}
 		</button>
 	{/if}
 
@@ -108,12 +109,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Download images.pdf</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.images_to_pdf.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

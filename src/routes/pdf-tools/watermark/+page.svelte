@@ -6,6 +6,7 @@
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { PenLineIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let text = $state('CONFIDENTIAL');
@@ -47,7 +48,7 @@
 			currentPage = 1;
 			await renderCurrentPage();
 		} catch {
-			error = 'Failed to read PDF.';
+			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
@@ -129,8 +130,8 @@
 	}
 
 	async function apply() {
-		if (files.length === 0) { error = 'Add a PDF file.'; return; }
-		if (!text.trim()) { error = 'Enter watermark text.'; return; }
+		if (files.length === 0) { error = m['tools_common.upload_pdf'](); return; }
+		if (!text.trim()) { error = m['tool_pages.watermark_pdf.err_text'](); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
@@ -143,7 +144,7 @@
 				position,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -161,16 +162,16 @@
 </svelte:head>
 
 <div class="wm-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="wm-header">
 		<PenLineIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Add Watermark</h1>
-			<p class="text-sm text-muted">Adjust settings and see the watermark live on the page.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.watermark_pdf.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.watermark_pdf.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<!-- Live preview -->
@@ -181,7 +182,7 @@
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
 						<ChevronLeftIcon size={16} />
 					</button>
-					<span class="text-xs text-muted">Page {currentPage} / {pageCount}</span>
+					<span class="text-xs text-muted">{m['tools_common.page_of']({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
 						<ChevronRightIcon size={16} />
 					</button>
@@ -192,35 +193,35 @@
 		<!-- Options -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<label class="opt-label" for="wm-text">Text</label>
+				<label class="opt-label" for="wm-text">{m['tools_common.text']()}</label>
 				<input id="wm-text" type="text" bind:value={text} placeholder="CONFIDENTIAL" class="opt-input" maxlength={80} />
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Opacity</span>
+				<span class="opt-label">{m['tools_common.opacity']()}</span>
 				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label="Opacity" />
 				<span class="val">{opacity}%</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Font size</span>
+				<span class="opt-label">{m['tools_common.font_size']()}</span>
 				<input type="range" min={20} max={120} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Rotation</span>
+				<span class="opt-label">{m['tools_common.rotation']()}</span>
 				<input type="range" min={0} max={90} bind:value={rotation} class="slider flex-1" aria-label="Rotation" />
 				<span class="val">{rotation}°</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Position</span>
+				<span class="opt-label">{m['tools_common.position']()}</span>
 				<div class="flex gap-2">
-					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>Center</button>
-					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>Tile</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>{m['tools_common.center']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>{m['tools_common.tile']()}</button>
 				</div>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={processing || !text.trim()} onclick={apply}>
-			{processing ? 'Applying…' : 'Apply to all pages'}
+			{processing ? m['tool_pages.watermark_pdf.btn_busy']() : m['tool_pages.watermark_pdf.btn']()}
 		</button>
 	{/if}
 
@@ -228,12 +229,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save watermarked PDF</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.watermark_pdf.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

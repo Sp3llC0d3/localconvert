@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { cropImage, type CropRect } from '$lib/image/crop';
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -29,7 +30,7 @@
 	let aspectRatio = $state<string>('free');
 	let circleMode = $state(false);
 	const ratios: { label: string; value: string }[] = [
-		{ label: 'Free', value: 'free' },
+		{ label: m['tool_pages.crop_image.free'](), value: 'free' },
 		{ label: '1:1', value: '1' },
 		{ label: '4:3', value: '1.333' },
 		{ label: '16:9', value: '1.778' },
@@ -237,7 +238,7 @@
 
 	async function apply() {
 		if (files.length === 0 || crop.width < 4 || crop.height < 4) {
-			error = 'Select a crop area on the image.';
+			error = m['tool_pages.crop_image.err_area']();
 			return;
 		}
 		error = '';
@@ -246,7 +247,7 @@
 		try {
 			resultBlob = await cropImage(files[0], crop, circleMode);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -273,16 +274,16 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">← Image Tools</a>
+	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
 	<div class="tool-header">
 		<CropIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Crop Image</h1>
-			<p class="text-sm text-muted">Drag corners, edges, or draw a new selection.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.crop_image.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.crop_image.desc']()}</p>
 		</div>
 	</div>
 
-	<ImageUploader bind:files label="Drop an image here" />
+	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
 	{#if imgEl && previewUrl}
 		<!-- Shape & aspect ratio presets -->
@@ -290,14 +291,14 @@
 			<button
 				class="btn text-sm px-3 py-1.5 {!circleMode ? '' : 'highlight'}"
 				onclick={() => { circleMode = !circleMode; if (circleMode) aspectRatio = '1'; }}
-			>Circle</button>
+			>{m['tool_pages.crop_image.circle']()}</button>
 			{#each ratios as r}
 				<button
 					class="btn text-sm px-3 py-1.5 {!circleMode && aspectRatio === r.value ? 'highlight' : ''}"
 					onclick={() => { circleMode = false; aspectRatio = r.value; }}
 				>{r.label}</button>
 			{/each}
-			<button class="btn text-sm px-3 py-1.5" onclick={() => { circleMode = false; resetCrop(); }}>Reset</button>
+			<button class="btn text-sm px-3 py-1.5" onclick={() => { circleMode = false; resetCrop(); }}>{m['tools_common.reset']()}</button>
 		</div>
 
 		<!-- Crop workspace -->
@@ -375,7 +376,7 @@
 		</div>
 
 		<button class="btn highlight" disabled={processing || crop.width < 4} onclick={apply}>
-			{processing ? 'Cropping…' : 'Crop image'}
+			{processing ? m['tool_pages.crop_image.btn_busy']() : m['tool_pages.crop_image.btn']()}
 		</button>
 	{/if}
 
@@ -383,12 +384,12 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>Save cropped image</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.crop_image.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

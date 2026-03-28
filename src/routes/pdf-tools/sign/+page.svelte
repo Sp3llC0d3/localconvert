@@ -5,6 +5,7 @@
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
 	import { PenToolIcon } from 'lucide-svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -65,7 +66,7 @@
 			thumbs = await renderAllThumbnails(files[0], 0.7);
 			calcDisplaySize();
 		} catch {
-			error = 'Failed to read PDF.';
+			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
@@ -226,9 +227,9 @@
 	}
 
 	async function apply() {
-		if (!files.length) { error = 'Add a PDF.'; return; }
-		if (!hasSignature) { error = 'Create a signature first.'; return; }
-		if (!placed) { error = 'Click on the page to place your signature.'; return; }
+		if (!files.length) { error = m['tool_pages.sign.err_pdf'](); return; }
+		if (!hasSignature) { error = m['tool_pages.sign.err_sig'](); return; }
+		if (!placed) { error = m['tool_pages.sign.err_place'](); return; }
 
 		error = '';
 		processing = true;
@@ -250,7 +251,7 @@
 				height: Math.round(pdfH),
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -280,25 +281,25 @@
 </svelte:head>
 
 <div class="sign-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="sign-header">
 		<PenToolIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Sign PDF</h1>
-			<p class="text-sm text-muted">Create a signature, then click on the page to place it.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.sign.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.sign.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if thumbs.length > 0 && displayW > 0}
 		<!-- Step 1: Create signature -->
 		<div class="step-section">
-			<p class="step-label">1. Create your signature</p>
+			<p class="step-label">{m['tool_pages.sign.step1']()}</p>
 			<div class="flex gap-2 mb-2">
-				<button class="btn text-sm px-3 py-1.5 {mode === 'draw' ? 'highlight' : ''}" onclick={() => { mode = 'draw'; clearSignature(); }}>Draw</button>
-				<button class="btn text-sm px-3 py-1.5 {mode === 'type' ? 'highlight' : ''}" onclick={() => { mode = 'type'; clearSignature(); }}>Type</button>
-				<button class="btn text-sm px-3 py-1.5 {mode === 'upload' ? 'highlight' : ''}" onclick={() => { mode = 'upload'; clearSignature(); }}>Upload</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'draw' ? 'highlight' : ''}" onclick={() => { mode = 'draw'; clearSignature(); }}>{m['tool_pages.sign.draw']()}</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'type' ? 'highlight' : ''}" onclick={() => { mode = 'type'; clearSignature(); }}>{m['tool_pages.sign.type']()}</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'upload' ? 'highlight' : ''}" onclick={() => { mode = 'upload'; clearSignature(); }}>{m['tool_pages.sign.upload']()}</button>
 			</div>
 
 			{#if mode === 'draw'}
@@ -314,7 +315,7 @@
 					ontouchmove={doDraw}
 					ontouchend={endDraw}
 				></canvas>
-				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>Clear</button>
+				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>{m['tools_common.clear']()}</button>
 			{:else if mode === 'type'}
 				<input
 					type="text" bind:value={typedName} placeholder="Your name"
@@ -330,7 +331,7 @@
 		<!-- Step 2: Place on page -->
 		{#if hasSignature}
 			<div class="step-section">
-				<p class="step-label">2. Click on the page to place your signature</p>
+				<p class="step-label">{m['tool_pages.sign.step2']()}</p>
 
 				{#if thumbs.length > 1}
 					<div class="flex gap-2 flex-wrap mb-2">
@@ -385,7 +386,7 @@
 
 		{#if placed}
 			<button class="btn highlight" disabled={processing} onclick={apply}>
-				{processing ? 'Signing…' : 'Save signed PDF'}
+				{processing ? m['tool_pages.sign.btn_busy']() : m['tool_pages.sign.save']()}
 			</button>
 		{/if}
 	{/if}
@@ -394,12 +395,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Download</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

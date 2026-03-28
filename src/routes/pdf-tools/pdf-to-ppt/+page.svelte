@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToPpt } from '$lib/pdf/pdf-to-ppt';
 	import { downloadBlob, formatFileSize } from '$lib/pdf/utils';
@@ -25,7 +26,7 @@
 				total = tot;
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -43,30 +44,30 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<PresentationIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">PDF to PowerPoint</h1>
-			<p class="text-sm text-muted">Convert each PDF page into a presentation slide.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.pdf_to_ppt.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.pdf_to_ppt.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	<div class="opt-section">
 		<div class="opt-row">
-			<span class="opt-label">Slide size</span>
+			<span class="opt-label">{m['tool_pages.pdf_to_ppt.slide_size']()}</span>
 			<div class="flex gap-2">
-				<button class="btn text-sm px-3 py-1.5 {slideSize === '16:9' ? 'highlight' : ''}" onclick={() => slideSize = '16:9'}>16:9 Widescreen</button>
-				<button class="btn text-sm px-3 py-1.5 {slideSize === '4:3' ? 'highlight' : ''}" onclick={() => slideSize = '4:3'}>4:3 Standard</button>
+				<button class="btn text-sm px-3 py-1.5 {slideSize === '16:9' ? 'highlight' : ''}" onclick={() => slideSize = '16:9'}>{m['tool_pages.pdf_to_ppt.widescreen']()}</button>
+				<button class="btn text-sm px-3 py-1.5 {slideSize === '4:3' ? 'highlight' : ''}" onclick={() => slideSize = '4:3'}>{m['tool_pages.pdf_to_ppt.standard']()}</button>
 			</div>
 		</div>
 	</div>
 
 	{#if files.length > 0}
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? `Converting page ${progress} of ${total}…` : 'Convert to PPTX'}
+			{processing ? m['tool_pages.pdf_to_ppt.btn_busy']({ progress, total }) : m['tool_pages.pdf_to_ppt.btn']()}
 		</button>
 	{/if}
 
@@ -80,12 +81,12 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>Save PPTX</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.pdf_to_ppt.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

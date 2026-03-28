@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { compressPdf } from '$lib/pdf/compress';
@@ -20,11 +21,11 @@
 	let compCanvas = $state<HTMLCanvasElement>();
 	let compareView = $state<'original' | 'compressed'>('compressed');
 
-	const presets = [
-		{ label: 'Low compression', value: 90, desc: '~20–40% smaller, great quality' },
-		{ label: 'Medium', value: 60, desc: '~50–70% smaller, good quality' },
-		{ label: 'High compression', value: 30, desc: '~70–90% smaller, visible loss' },
-	];
+	const presets = $derived([
+		{ label: m['tool_pages.compress.preset_low'](), value: 90, desc: m['tool_pages.compress.preset_low_desc']() },
+		{ label: m['tool_pages.compress.preset_med'](), value: 60, desc: m['tool_pages.compress.preset_med_desc']() },
+		{ label: m['tool_pages.compress.preset_high'](), value: 30, desc: m['tool_pages.compress.preset_high_desc']() },
+	]);
 
 	async function compress() {
 		if (!browser || files.length === 0) return;
@@ -41,7 +42,7 @@
 				(p, t) => { progress = p; total = t; }
 			);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Compression failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.compress.err_fail']();
 		}
 		processing = false;
 
@@ -87,12 +88,12 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<ZapIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Compress PDF</h1>
-			<p class="text-sm text-muted">Reduce file size by re-rendering each page as JPEG.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.compress.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.compress.desc']()}</p>
 		</div>
 	</div>
 
@@ -100,11 +101,11 @@
 	<div class="warn-box">
 		<AlertTriangleIcon size={16} class="flex-shrink-0 mt-0.5" />
 		<p class="text-sm">
-			<b>Note:</b> Compressed PDFs have image-only pages. Text will <b>not</b> be selectable, and links/forms will be removed.
+			<b>{m['tool_pages.compress.note']()}</b> {@html m['tool_pages.compress.warning']()}
 		</p>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
@@ -120,16 +121,16 @@
 				{/each}
 			</div>
 			<div class="flex items-center gap-3 mt-2">
-				<span class="text-sm text-muted w-20">JPEG quality</span>
+				<span class="text-sm text-muted w-20">{m['tool_pages.compress.jpeg_quality']()}</span>
 				<input type="range" min={10} max={95} bind:value={quality} class="quality-slider flex-1" />
 				<span class="text-sm text-muted w-8">{quality}%</span>
 			</div>
-			<p class="text-xs text-muted">Input: <b>{formatFileSize(files[0].size)}</b></p>
+			<p class="text-xs text-muted">{m['tool_pages.compress.input']()} <b>{formatFileSize(files[0].size)}</b></p>
 		</div>
 
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">Compressing page {progress} of {total}…</p>
+				<p class="text-sm text-muted">{m['tool_pages.compress.btn_busy']({ progress, total })}</p>
 				<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 					<div class="h-full bg-accent transition-all" style="width: {total > 0 ? (progress/total*100) : 0}%"></div>
 				</div>
@@ -137,7 +138,7 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={compress}>
-			{processing ? 'Compressing…' : 'Compress PDF'}
+			{processing ? m['tool_pages.compress.btn_busy']({ progress, total }) : m['tool_pages.compress.btn']()}
 		</button>
 	{/if}
 
@@ -146,17 +147,17 @@
 	{#if resultBytes}
 		<div class="result-box">
 			<p class="text-sm font-medium">
-				Output: <b>{formatFileSize(resultBytes.byteLength)}</b>
+				{m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b>
 				{#if savings && savings.saved > 0}
-					— saved <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
+					— {m['tool_pages.compress.saved']()} <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
 				{/if}
 			</p>
 
 			<!-- Before/after comparison -->
 			<div class="compare-section">
 				<div class="compare-toggle">
-					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>Original</button>
-					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>Compressed</button>
+					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>{m['tool_pages.compress.original']()}</button>
+					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>{m['tool_pages.compress.compressed']()}</button>
 				</div>
 				<div class="compare-canvas-wrap">
 					<canvas bind:this={origCanvas} class="compare-canvas" class:compare-hidden={compareView !== 'original'}></canvas>
@@ -164,11 +165,11 @@
 				</div>
 			</div>
 
-			<button class="btn" onclick={download}>Download compressed.pdf</button>
+			<button class="btn" onclick={download}>{m['tool_pages.compress.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

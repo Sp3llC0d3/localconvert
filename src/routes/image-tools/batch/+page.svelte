@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { rotateImage, type RotationAngle } from '$lib/image/rotate';
 	import { watermarkImage } from '$lib/image/watermark';
@@ -36,9 +37,9 @@
 	}
 
 	async function applyAll() {
-		if (files.length === 0) { error = 'Add images first.'; return; }
-		if (operation === 'meme' && !memeTop.trim() && !memeBottom.trim()) { error = 'Enter at least one line of text.'; return; }
-		if (operation === 'watermark' && !wmText.trim()) { error = 'Enter watermark text.'; return; }
+		if (files.length === 0) { error = m['tool_pages.batch.err_images'](); return; }
+		if (operation === 'meme' && !memeTop.trim() && !memeBottom.trim()) { error = m['tool_pages.batch.err_text'](); return; }
+		if (operation === 'watermark' && !wmText.trim()) { error = m['tool_pages.batch.err_watermark'](); return; }
 		error = '';
 		processing = true;
 		progress = 0;
@@ -77,7 +78,7 @@
 				}
 				output.push({ name: getOutputName(files[i].name, suffix, 'png'), blob });
 			} catch {
-				output.push({ name: `${files[i].name} — failed`, blob: new Blob([]) });
+				output.push({ name: `${files[i].name} — ${m['tools_common.failed']()}`, blob: new Blob([]) });
 			}
 			progress = i + 1;
 		}
@@ -108,16 +109,16 @@
 </svelte:head>
 
 <div class="batch-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">← Image Tools</a>
+	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
 	<div class="batch-header">
 		<LayersIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Batch Processing</h1>
-			<p class="text-sm text-muted">Apply the same operation to multiple images at once.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.batch.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.batch.desc']()}</p>
 		</div>
 	</div>
 
-	<ImageUploader bind:files multiple={true} label="Drop multiple images here" />
+	<ImageUploader bind:files multiple={true} label={m['tools_common.upload_images']()} />
 
 	{#if files.length > 0}
 		<!-- File list -->
@@ -131,24 +132,24 @@
 					</button>
 				</div>
 			{/each}
-			<p class="text-xs text-muted">{files.length} image{files.length !== 1 ? 's' : ''} selected</p>
+			<p class="text-xs text-muted">{m['tools_common.images_selected']({ count: files.length })}</p>
 		</div>
 
 		<!-- Operation selector -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">Operation</span>
+				<span class="opt-label">{m['tools_common.operation']()}</span>
 				<div class="flex gap-2 flex-wrap">
-					<button class="btn text-sm px-3 py-1.5 {operation === 'rotate' ? 'highlight' : ''}" onclick={() => operation = 'rotate'}>Rotate</button>
-					<button class="btn text-sm px-3 py-1.5 {operation === 'watermark' ? 'highlight' : ''}" onclick={() => operation = 'watermark'}>Watermark</button>
-					<button class="btn text-sm px-3 py-1.5 {operation === 'crop' ? 'highlight' : ''}" onclick={() => operation = 'crop'}>Crop</button>
-					<button class="btn text-sm px-3 py-1.5 {operation === 'meme' ? 'highlight' : ''}" onclick={() => operation = 'meme'}>Meme</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'rotate' ? 'highlight' : ''}" onclick={() => operation = 'rotate'}>{m['tools_common.rotate']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'watermark' ? 'highlight' : ''}" onclick={() => operation = 'watermark'}>{m['tools_common.watermark']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'crop' ? 'highlight' : ''}" onclick={() => operation = 'crop'}>{m['tools_common.crop']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {operation === 'meme' ? 'highlight' : ''}" onclick={() => operation = 'meme'}>{m['tools_common.meme']()}</button>
 				</div>
 			</div>
 
 			{#if operation === 'rotate'}
 				<div class="opt-row">
-					<span class="opt-label">Angle</span>
+					<span class="opt-label">{m['tools_common.angle']()}</span>
 					<div class="flex gap-2">
 						{#each [90, 180, 270] as a}
 							<button class="btn text-sm px-3 py-1.5 {rotateAngle === a ? 'highlight' : ''}" onclick={() => rotateAngle = a as RotationAngle}>{a}°</button>
@@ -157,47 +158,47 @@
 				</div>
 			{:else if operation === 'watermark'}
 				<div class="opt-row">
-					<label class="opt-label" for="batch-wm">Text</label>
+					<label class="opt-label" for="batch-wm">{m['tools_common.text']()}</label>
 					<input id="batch-wm" type="text" bind:value={wmText} class="opt-input" maxlength={80} />
 				</div>
 				<div class="opt-row">
-					<span class="opt-label">Opacity</span>
+					<span class="opt-label">{m['tools_common.opacity']()}</span>
 					<input type="range" min={5} max={80} bind:value={wmOpacity} class="slider flex-1" aria-label="Opacity" />
 					<span class="val">{wmOpacity}%</span>
 				</div>
 				<div class="opt-row">
-					<span class="opt-label">Font size</span>
+					<span class="opt-label">{m['tools_common.font_size']()}</span>
 					<input type="range" min={16} max={120} bind:value={wmFontSize} class="slider flex-1" aria-label="Font size" />
 					<span class="val">{wmFontSize}px</span>
 				</div>
 				<div class="opt-row">
-					<span class="opt-label">Position</span>
+					<span class="opt-label">{m['tools_common.position']()}</span>
 					<div class="flex gap-2">
-						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'center' ? 'highlight' : ''}" onclick={() => wmPosition = 'center'}>Center</button>
-						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'tile' ? 'highlight' : ''}" onclick={() => wmPosition = 'tile'}>Tile</button>
+						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'center' ? 'highlight' : ''}" onclick={() => wmPosition = 'center'}>{m['tools_common.center']()}</button>
+						<button class="btn text-sm px-3 py-1.5 {wmPosition === 'tile' ? 'highlight' : ''}" onclick={() => wmPosition = 'tile'}>{m['tools_common.tile']()}</button>
 					</div>
 				</div>
 			{:else if operation === 'crop'}
 				<div class="opt-row">
-					<span class="opt-label">Trim</span>
+					<span class="opt-label">{m['tool_pages.batch.trim']()}</span>
 					<input type="range" min={1} max={40} bind:value={cropPercent} class="slider flex-1" aria-label="Crop percentage" />
 					<span class="val">{cropPercent}%</span>
 				</div>
-				<p class="text-xs text-muted">Trims {cropPercent}% from each edge of every image.</p>
+				<p class="text-xs text-muted">{m['tool_pages.batch.trim_help']({ percent: cropPercent })}</p>
 			{:else if operation === 'meme'}
 				<div class="opt-row">
-					<label class="opt-label" for="batch-meme-top">Top text</label>
+					<label class="opt-label" for="batch-meme-top">{m['tool_pages.meme.top_text']()}</label>
 					<input id="batch-meme-top" type="text" bind:value={memeTop} placeholder="TOP TEXT" class="opt-input" maxlength={100} />
 				</div>
 				<div class="opt-row">
-					<label class="opt-label" for="batch-meme-btm">Bottom</label>
+					<label class="opt-label" for="batch-meme-btm">{m['tool_pages.meme.bottom_text']()}</label>
 					<input id="batch-meme-btm" type="text" bind:value={memeBottom} placeholder="BOTTOM TEXT" class="opt-input" maxlength={100} />
 				</div>
 			{/if}
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={applyAll}>
-			{processing ? `Processing ${progress} / ${files.length}…` : `Process ${files.length} image${files.length !== 1 ? 's' : ''}`}
+			{processing ? m['tool_pages.batch.btn_busy']({ progress, total: files.length }) : m['tool_pages.batch.btn']({ count: files.length })}
 		</button>
 
 		{#if processing}
@@ -212,22 +213,22 @@
 	{#if results.length > 0}
 		<div class="result-section">
 			<div class="flex items-center justify-between">
-				<p class="text-sm font-semibold">{results.filter(r => r.blob.size > 0).length} results ready</p>
-				<button class="btn text-sm px-3 py-1.5" onclick={downloadAll}>Save all</button>
+				<p class="text-sm font-semibold">{m['tools_common.results_ready']({ count: results.filter(r => r.blob.size > 0).length })}</p>
+				<button class="btn text-sm px-3 py-1.5" onclick={downloadAll}>{m['tools_common.save_all']()}</button>
 			</div>
 			{#each results as r}
 				<div class="file-row">
 					<span class="text-sm truncate flex-1">{r.name}</span>
-					<span class="text-xs text-muted">{r.blob.size > 0 ? formatFileSize(r.blob.size) : 'failed'}</span>
+					<span class="text-xs text-muted">{r.blob.size > 0 ? formatFileSize(r.blob.size) : m['tools_common.failed']()}</span>
 					{#if r.blob.size > 0}
-						<button class="text-xs text-accent hover:underline" onclick={() => downloadOne(r)}>Save</button>
+						<button class="text-xs text-accent hover:underline" onclick={() => downloadOne(r)}>{m['tools_common.save']()}</button>
 					{/if}
 				</div>
 			{/each}
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

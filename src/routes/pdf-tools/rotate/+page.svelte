@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
@@ -42,7 +43,7 @@
 			const bytes = await rotatePdf(files[0], rotation, indices);
 			downloadPdf(bytes, files[0].name.replace(/\.pdf$/i, `_rotated${rotation}.pdf`));
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Rotate failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.rotate_pdf.err_fail']();
 		}
 		processing = false;
 	}
@@ -55,22 +56,22 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<RotateCwIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Rotate Pages</h1>
-			<p class="text-sm text-muted">Rotate individual pages or the entire PDF.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.rotate_pdf.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.rotate_pdf.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<!-- Options -->
 		<div class="flex flex-wrap items-center gap-4">
 			<div class="flex flex-col gap-1">
-				<span class="text-xs font-semibold text-muted">Rotation</span>
+				<span class="text-xs font-semibold text-muted">{m['tool_pages.rotate_pdf.rotation']()}</span>
 				<div class="flex gap-2">
 					{#each [90, 180, 270] as deg}
 						<button
@@ -81,22 +82,22 @@
 				</div>
 			</div>
 			<div class="flex flex-col gap-1">
-				<span class="text-xs font-semibold text-muted">Apply to</span>
+				<span class="text-xs font-semibold text-muted">{m['tool_pages.rotate_pdf.apply_to']()}</span>
 				<div class="flex gap-2">
 					<button
 						class="btn text-sm px-3 py-1.5 {applyTo === 'all' ? 'highlight' : ''}"
 						onclick={() => applyTo = 'all'}
-					>All pages</button>
+					>{m['tool_pages.rotate_pdf.all_pages']()}</button>
 					<button
 						class="btn text-sm px-3 py-1.5 {applyTo === 'selected' ? 'highlight' : ''}"
 						onclick={() => applyTo = 'selected'}
-					>Selected pages</button>
+					>{m['tool_pages.rotate_pdf.selected_pages']()}</button>
 				</div>
 			</div>
 		</div>
 
 		{#if loadingThumbs}
-			<p class="text-sm text-muted">Loading thumbnails…</p>
+			<p class="text-sm text-muted">{m['tools_common.loading_thumbs']()}</p>
 		{:else if thumbs.length > 0}
 			<div class="thumb-grid">
 				{#each thumbs as thumb, i}
@@ -118,17 +119,17 @@
 				{/each}
 			</div>
 			{#if applyTo === 'selected'}
-				<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle</p>
+				<p class="text-xs text-muted">{m['tools_common.pages_selected']({ count: selectedPages.size })} — {m['tool_pages.rotate_pdf.help']()}</p>
 			{/if}
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={rotate}>
-			{processing ? 'Processing…' : `Rotate ${applyTo === 'all' ? 'all pages' : 'selected'} ${rotation}°`}
+			{processing ? m['tool_pages.rotate_pdf.btn_busy']() : `${m['tools_common.rotate']()} ${applyTo === 'all' ? m['tool_pages.rotate_pdf.all_pages']() : m['tool_pages.rotate_pdf.selected_pages']()} ${rotation}°`}
 		</button>
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

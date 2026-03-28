@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { organizePdf } from '$lib/pdf/organize';
@@ -61,7 +62,7 @@
 	}
 
 	async function save() {
-		if (items.length === 0) { error = 'No pages remaining.'; return; }
+		if (items.length === 0) { error = m['tool_pages.organize.no_pages'](); return; }
 		error = '';
 		processing = true;
 		try {
@@ -69,7 +70,7 @@
 			const bytes = await organizePdf(files[0], order);
 			downloadPdf(bytes, files[0].name.replace(/\.pdf$/i, '_organized.pdf'));
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -82,20 +83,20 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<LayoutGridIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Organize Pages</h1>
-			<p class="text-sm text-muted">Drag to reorder, or use arrows. Delete pages you don't need.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.organize.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.organize.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if loadingThumbs}
 		<div class="flex flex-col gap-2">
-			<p class="text-sm text-muted">Loading thumbnails… {thumbProgress}%</p>
+			<p class="text-sm text-muted">{m['tools_common.loading_thumbs']()} {thumbProgress}%</p>
 			<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 				<div class="h-full bg-accent transition-all" style="width: {thumbProgress}%"></div>
 			</div>
@@ -109,7 +110,7 @@
 		>
 			{#each items as item, i (item.id)}
 				<div class="org-row" aria-label="Page {item.origIdx + 1}">
-					<div class="drag-handle" aria-label="Drag to reorder">
+					<div class="drag-handle" aria-label={m['tool_pages.organize.drag_reorder']()}>
 						<GripVerticalIcon size={16} />
 					</div>
 					<img src={thumbs[item.origIdx]} alt="Page {item.origIdx + 1}" class="org-thumb" />
@@ -129,15 +130,15 @@
 			{/each}
 		</div>
 
-		<p class="text-xs text-muted">{items.length} page{items.length !== 1 ? 's' : ''} remaining</p>
+		<p class="text-xs text-muted">{m['tools_common.pages_remaining']({ count: items.length })}</p>
 
 		<button class="btn highlight" disabled={processing} onclick={save}>
-			{processing ? 'Saving…' : 'Save organized PDF'}
+			{processing ? m['tool_pages.organize.btn_busy']() : m['tool_pages.organize.btn']()}
 		</button>
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

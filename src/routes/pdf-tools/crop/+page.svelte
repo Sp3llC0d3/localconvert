@@ -6,6 +6,7 @@
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { CropIcon } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -59,7 +60,7 @@
 			pageCount = pdfDoc.numPages;
 			await renderPage();
 		} catch {
-			error = 'Failed to read PDF.';
+			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
@@ -203,7 +204,7 @@
 		if (files.length === 0) return;
 		const box = getCropBox();
 		if (box.right <= box.left || box.top <= box.bottom) {
-			error = 'Margins are too large — no area left.';
+			error = m['tool_pages.crop_pdf.err_margins']();
 			return;
 		}
 		error = '';
@@ -212,7 +213,7 @@
 		try {
 			resultBytes = await cropPdf(files[0], box, applyToAll ? undefined : [0]);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -230,16 +231,16 @@
 </svelte:head>
 
 <div class="crop-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="crop-header">
 		<CropIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Crop PDF</h1>
-			<p class="text-sm text-muted">Drag the edges to set margins, or type values below.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.crop_pdf.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.crop_pdf.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if baseImageData && displayW > 0}
 		<!-- Interactive preview -->
@@ -276,27 +277,27 @@
 		<!-- Margin inputs (synced with handles) -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">Left</span>
+				<span class="opt-label">{m['tools_common.left']()}</span>
 				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input" aria-label="Left margin" />
-				<span class="opt-label">Right</span>
+				<span class="opt-label">{m['tools_common.right']()}</span>
 				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input" aria-label="Right margin" />
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Top</span>
+				<span class="opt-label">{m['tools_common.top']()}</span>
 				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input" aria-label="Top margin" />
-				<span class="opt-label">Bottom</span>
+				<span class="opt-label">{m['tools_common.bottom']()}</span>
 				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input" aria-label="Bottom margin" />
 			</div>
 			{#if pageCount > 1}
 				<label class="flex items-center gap-2 cursor-pointer text-sm">
 					<input type="checkbox" bind:checked={applyToAll} />
-					Apply to all pages
+					{m['tools_common.apply_all_pages']()}
 				</label>
 			{/if}
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? 'Cropping…' : 'Crop PDF'}
+			{processing ? m['tool_pages.crop_pdf.btn_busy']() : m['tool_pages.crop_pdf.btn']()}
 		</button>
 	{/if}
 
@@ -304,12 +305,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save cropped PDF</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.crop_pdf.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

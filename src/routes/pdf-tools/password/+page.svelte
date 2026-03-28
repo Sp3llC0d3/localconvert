@@ -3,6 +3,7 @@
 	import { protectPdf } from '$lib/pdf/password';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { LockIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let userPassword = $state('');
@@ -24,9 +25,9 @@
 	});
 
 	async function apply() {
-		if (files.length === 0) { error = 'Add a PDF file.'; return; }
-		if (!userPassword.trim()) { error = 'Enter a password.'; return; }
-		if (userPassword.trim().length < 4) { error = 'Password must be at least 4 characters.'; return; }
+		if (files.length === 0) { error = m['tool_pages.password.err_pdf'](); return; }
+		if (!userPassword.trim()) { error = m['tool_pages.password.err_password'](); return; }
+		if (userPassword.trim().length < 4) { error = m['tool_pages.password.err_min_length'](); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
@@ -42,7 +43,7 @@
 				},
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Encryption failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.password.err_fail']();
 		}
 		processing = false;
 	}
@@ -60,21 +61,21 @@
 </svelte:head>
 
 <div class="pw-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pw-header">
 		<LockIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Password Protect PDF</h1>
-			<p class="text-sm text-muted">Encrypt a PDF with a password and set access permissions.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.password.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.password.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
 			<div class="field">
-				<label for="pw-user" class="field-label">Password</label>
+				<label for="pw-user" class="field-label">{m['tool_pages.password.password_label']()}</label>
 				<div class="pw-row">
 					<input
 						id="pw-user"
@@ -85,19 +86,19 @@
 						autocomplete="new-password"
 					/>
 					<button class="show-btn" onclick={() => showPassword = !showPassword} type="button">
-						{showPassword ? 'Hide' : 'Show'}
+						{showPassword ? m['tools_common.hide']() : m['tools_common.show']()}
 					</button>
 				</div>
 			</div>
 
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={useOwnerPassword} />
-				Set a separate owner password
+				{m['tool_pages.password.owner_toggle']()}
 			</label>
 
 			{#if useOwnerPassword}
 				<div class="field">
-					<label for="pw-owner" class="field-label">Owner password</label>
+					<label for="pw-owner" class="field-label">{m['tool_pages.password.owner_label']()}</label>
 					<input
 						id="pw-owner"
 						type={showPassword ? 'text' : 'password'}
@@ -106,34 +107,34 @@
 						class="field-input"
 						autocomplete="new-password"
 					/>
-					<p class="text-xs text-muted mt-1">Owner password grants full access. User password enforces the permissions below.</p>
+					<p class="text-xs text-muted mt-1">{m['tool_pages.password.owner_help']()}</p>
 				</div>
 			{/if}
 		</div>
 
 		<div class="opt-section">
-			<p class="field-label">Permissions (for users opening with the password)</p>
+			<p class="field-label">{m['tool_pages.password.permissions_label']()}</p>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowPrinting} />
-				Allow printing
+				{m['tool_pages.password.allow_printing']()}
 			</label>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowCopying} />
-				Allow copying text
+				{m['tool_pages.password.allow_copying']()}
 			</label>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowModifying} />
-				Allow editing / annotating
+				{m['tool_pages.password.allow_editing']()}
 			</label>
 		</div>
 
 		<div class="info-box">
 			<ShieldCheckIcon size={16} class="flex-shrink-0 mt-0.5" />
-			<p class="text-sm">Encryption happens entirely in your browser. Your password and file never leave your device.</p>
+			<p class="text-sm">{m['tool_pages.password.info']()}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing || !userPassword.trim()} onclick={apply}>
-			{processing ? 'Encrypting…' : 'Protect PDF'}
+			{processing ? m['tool_pages.password.btn_busy']() : m['tool_pages.password.btn']()}
 		</button>
 	{/if}
 
@@ -141,12 +142,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Protected! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save protected PDF</button>
+			<p class="text-sm font-medium">{m['tool_pages.password.result']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.password.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

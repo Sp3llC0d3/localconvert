@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { SmileIcon } from 'lucide-svelte';
@@ -78,7 +79,7 @@
 		try {
 			resultBlob = await canvasToBlob(previewCanvas, 'png');
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 	}
 
@@ -103,16 +104,16 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">← Image Tools</a>
+	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
 	<div class="tool-header">
 		<SmileIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Meme Generator</h1>
-			<p class="text-sm text-muted">Type and see your meme update live.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.meme.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.meme.desc']()}</p>
 		</div>
 	</div>
 
-	<ImageUploader bind:files label="Drop an image here" />
+	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
 	{#if imgEl}
 		<!-- Live canvas preview -->
@@ -123,17 +124,17 @@
 
 		<div class="opt-section">
 			<div class="opt-row">
-				<label class="opt-label" for="meme-top">Top text</label>
+				<label class="opt-label" for="meme-top">{m['tool_pages.meme.top_text']()}</label>
 				<input id="meme-top" type="text" bind:value={topText} placeholder="TOP TEXT" class="opt-input flex-1" maxlength={100} />
 			</div>
 			<div class="opt-row">
-				<label class="opt-label" for="meme-bottom">Bottom text</label>
+				<label class="opt-label" for="meme-bottom">{m['tool_pages.meme.bottom_text']()}</label>
 				<input id="meme-bottom" type="text" bind:value={bottomText} placeholder="BOTTOM TEXT" class="opt-input flex-1" maxlength={100} />
 			</div>
 		</div>
 
 		<button class="btn highlight" onclick={save} disabled={!topText.trim() && !bottomText.trim()}>
-			Save meme
+			{m['tool_pages.meme.save']()}
 		</button>
 	{/if}
 
@@ -141,12 +142,12 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>Download</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

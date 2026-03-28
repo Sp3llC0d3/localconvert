@@ -3,6 +3,7 @@
 	import { unlockPdf } from '$lib/pdf/unlock';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { UnlockIcon } from 'lucide-svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -16,14 +17,14 @@
 	});
 
 	async function apply() {
-		if (files.length === 0) { error = 'Add a PDF file.'; return; }
+		if (files.length === 0) { error = m['tool_pages.unlock.err_pdf'](); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await unlockPdf(files[0]);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed to unlock. The file may not be encrypted or uses unsupported encryption.';
+			error = e instanceof Error ? e.message : m['tool_pages.unlock.err_fail']();
 		}
 		processing = false;
 	}
@@ -41,24 +42,24 @@
 </svelte:head>
 
 <div class="unlock-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="unlock-header">
 		<UnlockIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Unlock PDF</h1>
-			<p class="text-sm text-muted">Remove password protection from a PDF file.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.unlock.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.unlock.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a password-protected PDF" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf_protected']()} />
 
 	{#if files.length > 0}
 		<div class="info-box">
-			<p class="text-sm">This tool removes restrictions (printing, copying, editing) from PDFs. It works with most permission-locked files. Files with strong open-password encryption may not be supported.</p>
+			<p class="text-sm">{m['tool_pages.unlock.info']()}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? 'Unlocking…' : 'Unlock PDF'}
+			{processing ? m['tool_pages.unlock.btn_busy']() : m['tool_pages.unlock.btn']()}
 		</button>
 	{/if}
 
@@ -66,12 +67,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Unlocked! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save unlocked PDF</button>
+			<p class="text-sm font-medium">{m['tool_pages.unlock.result']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.unlock.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

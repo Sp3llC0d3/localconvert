@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToImages } from '$lib/pdf/pdf-to-images';
@@ -42,7 +43,7 @@
 			}
 			done = true;
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Conversion failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.pdf_to_images.err_fail']();
 		}
 		processing = false;
 	}
@@ -55,21 +56,21 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<FileDownIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">PDF → Images</h1>
-			<p class="text-sm text-muted">Export each PDF page as a JPG or PNG image.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.pdf_to_images.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.pdf_to_images.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">Format</span>
+				<span class="opt-label">{m['tools_common.format']()}</span>
 				<div class="flex gap-2">
 					<button class="btn text-sm px-3 py-1.5 {format === 'image/jpeg' ? 'highlight' : ''}" onclick={() => format = 'image/jpeg'}>JPG</button>
 					<button class="btn text-sm px-3 py-1.5 {format === 'image/png' ? 'highlight' : ''}" onclick={() => format = 'image/png'}>PNG</button>
@@ -77,13 +78,13 @@
 			</div>
 			{#if format === 'image/jpeg'}
 				<div class="opt-row">
-					<span class="opt-label">Quality</span>
+					<span class="opt-label">{m['tools_common.quality']()}</span>
 					<input type="range" min={10} max={100} bind:value={quality} class="quality-slider flex-1" />
 					<span class="text-sm text-muted w-10">{quality}%</span>
 				</div>
 			{/if}
 			<div class="opt-row">
-				<span class="opt-label">Resolution</span>
+				<span class="opt-label">{m['tool_pages.pdf_to_images.resolution']()}</span>
 				<div class="flex gap-2">
 					{#each [[1, '1×'], [1.5, '1.5×'], [2, '2×'], [3, '3×']] as [val, label]}
 						<button class="btn text-sm px-3 py-1.5 {scale === val ? 'highlight' : ''}" onclick={() => scale = val as number}>{label}</button>
@@ -94,7 +95,7 @@
 
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">Converting page {progress} of {total}…</p>
+				<p class="text-sm text-muted">{m['tool_pages.pdf_to_images.btn_busy']({ progress, total })}</p>
 				<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 					<div class="h-full bg-accent transition-all" style="width: {total > 0 ? (progress/total*100) : 0}%"></div>
 				</div>
@@ -102,16 +103,16 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? 'Converting…' : 'Export as images'}
+			{processing ? m['tool_pages.pdf_to_images.btn_busy']({ progress, total }) : m['tool_pages.pdf_to_images.btn']()}
 		</button>
 
 		{#if done}
-			<p class="text-sm font-medium text-accent">✓ Download started!</p>
+			<p class="text-sm font-medium text-accent">✓ {m['tools_common.ready']()}</p>
 		{/if}
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import { canvasToBlob, downloadBlob } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
@@ -41,7 +42,7 @@
 			});
 			error = '';
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed to generate QR code.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 	}
 
@@ -50,7 +51,7 @@
 		try {
 			resultBlob = await canvasToBlob(previewCanvas, 'png');
 		} catch {
-			error = 'Failed to export.';
+			error = m['tools_common.failed']();
 		}
 	}
 
@@ -60,10 +61,10 @@
 	}
 
 	const levels = [
-		{ value: 'L' as const, label: 'Low (7%)' },
-		{ value: 'M' as const, label: 'Medium (15%)' },
-		{ value: 'Q' as const, label: 'Quartile (25%)' },
-		{ value: 'H' as const, label: 'High (30%)' },
+		{ value: 'L' as const, label: m['tool_pages.qr.low']() },
+		{ value: 'M' as const, label: m['tool_pages.qr.medium']() },
+		{ value: 'Q' as const, label: m['tool_pages.qr.quartile']() },
+		{ value: 'H' as const, label: m['tool_pages.qr.high']() },
 	];
 </script>
 
@@ -74,12 +75,12 @@
 </svelte:head>
 
 <div class="qr-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">← Image Tools</a>
+	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
 	<div class="qr-header">
 		<QrCodeIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">QR Code Generator</h1>
-			<p class="text-sm text-muted">Generate a QR code and see it update live.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.qr.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.qr.desc']()}</p>
 		</div>
 	</div>
 
@@ -91,22 +92,22 @@
 	<!-- Options -->
 	<div class="opt-section">
 		<div class="field">
-			<label for="qr-text" class="field-label">Text or URL</label>
+			<label for="qr-text" class="field-label">{m['tool_pages.qr.text_url']()}</label>
 			<input id="qr-text" type="text" bind:value={text} placeholder="https://example.com" class="field-input" />
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">Size</span>
+			<span class="opt-label">{m['tools_common.size']()}</span>
 			<input type="range" min={100} max={800} step={50} bind:value={size} class="slider flex-1" aria-label="QR code size" />
 			<span class="val">{size}px</span>
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">Foreground</span>
+			<span class="opt-label">{m['tools_common.foreground']()}</span>
 			<input type="color" bind:value={fgColor} class="color-input" aria-label="Foreground color" />
-			<span class="opt-label">Background</span>
+			<span class="opt-label">{m['tools_common.background']()}</span>
 			<input type="color" bind:value={bgColor} class="color-input" aria-label="Background color" />
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">Error correction</span>
+			<span class="opt-label">{m['tool_pages.qr.error_correction']()}</span>
 			<div class="flex gap-2 flex-wrap">
 				{#each levels as lvl}
 					<button class="btn text-xs px-2.5 py-1 {errorLevel === lvl.value ? 'highlight' : ''}" onclick={() => errorLevel = lvl.value}>{lvl.label}</button>
@@ -116,19 +117,19 @@
 	</div>
 
 	<button class="btn highlight" disabled={!text.trim()} onclick={save}>
-		Save QR code
+		{m['tool_pages.qr.save']()}
 	</button>
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready!</p>
-			<button class="btn" onclick={download}>Download qrcode.png</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()}</p>
+			<button class="btn" onclick={download}>{m['tool_pages.qr.save_file']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Generated entirely in your browser.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
 </div>
 
 <style>

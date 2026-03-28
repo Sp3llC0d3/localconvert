@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { mergePdfs } from '$lib/pdf/merge';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
@@ -29,14 +30,14 @@
 	function onDragEnd() { dragIndex = null; }
 
 	async function merge() {
-		if (files.length < 2) { error = 'Add at least 2 PDF files.'; return; }
+		if (files.length < 2) { error = m['tool_pages.merge.err_min'](); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await mergePdfs(files);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Merge failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.merge.err_fail']();
 		}
 		processing = false;
 	}
@@ -55,16 +56,16 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<GitMergeIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Merge PDF</h1>
-			<p class="text-sm text-muted">Combine multiple PDFs into one. Drag rows to reorder.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.merge.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.merge.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files label="Add PDF files" />
+	<PdfUploader bind:files label={m['tools_common.upload_pdfs']()} />
 
 	{#if files.length > 0}
 		<ul class="file-list">
@@ -85,7 +86,7 @@
 		</ul>
 
 		<button class="btn highlight" disabled={processing} onclick={merge}>
-			{processing ? 'Merging…' : 'Merge PDFs'}
+			{processing ? m['tool_pages.merge.btn_busy']() : m['tool_pages.merge.btn']()}
 		</button>
 	{/if}
 
@@ -93,12 +94,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Download merged.pdf</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.merge.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

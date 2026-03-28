@@ -6,6 +6,7 @@
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let position = $state<NumberPosition>('bottom-center');
@@ -27,14 +28,14 @@
 	let pdfDoc = $state<PdfDocProxy | null>(null);
 	let rafId: number | null = null;
 
-	const positions: { value: NumberPosition; label: string }[] = [
-		{ value: 'bottom-left', label: 'Bottom left' },
-		{ value: 'bottom-center', label: 'Bottom center' },
-		{ value: 'bottom-right', label: 'Bottom right' },
-		{ value: 'top-left', label: 'Top left' },
-		{ value: 'top-center', label: 'Top center' },
-		{ value: 'top-right', label: 'Top right' },
-	];
+	const positions = $derived<{ value: NumberPosition; label: string }[]>([
+		{ value: 'bottom-left', label: m['tool_pages.page_numbers.bottom_left']() },
+		{ value: 'bottom-center', label: m['tool_pages.page_numbers.bottom_center']() },
+		{ value: 'bottom-right', label: m['tool_pages.page_numbers.bottom_right']() },
+		{ value: 'top-left', label: m['tool_pages.page_numbers.top_left']() },
+		{ value: 'top-center', label: m['tool_pages.page_numbers.top_center']() },
+		{ value: 'top-right', label: m['tool_pages.page_numbers.top_right']() },
+	]);
 
 	const formats: { value: NumberFormat; label: string }[] = [
 		{ value: 'plain', label: '1, 2, 3' },
@@ -63,7 +64,7 @@
 			currentPage = 1;
 			await renderCurrentPage();
 		} catch {
-			error = 'Failed to read PDF.';
+			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
@@ -171,7 +172,7 @@
 				skipFirstPage: skipFirst,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -189,16 +190,16 @@
 </svelte:head>
 
 <div class="pn-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pn-header">
 		<ListOrderedIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Add Page Numbers</h1>
-			<p class="text-sm text-muted">See the page number update live as you change settings.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.page_numbers.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.page_numbers.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<!-- Live preview -->
@@ -209,7 +210,7 @@
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
 						<ChevronLeftIcon size={16} />
 					</button>
-					<span class="text-xs text-muted">Page {currentPage} / {pageCount}</span>
+					<span class="text-xs text-muted">{m['tools_common.page_of']({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
 						<ChevronRightIcon size={16} />
 					</button>
@@ -220,7 +221,7 @@
 		<!-- Options -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">Position</span>
+				<span class="opt-label">{m['tool_pages.page_numbers.position']()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each positions as pos}
 						<button class="btn text-sm px-3 py-1.5 {position === pos.value ? 'highlight' : ''}" onclick={() => position = pos.value}>{pos.label}</button>
@@ -228,7 +229,7 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Format</span>
+				<span class="opt-label">{m['tools_common.format']()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each formats as fmt}
 						<button class="btn text-sm px-3 py-1.5 {format === fmt.value ? 'highlight' : ''}" onclick={() => format = fmt.value}>{fmt.label}</button>
@@ -236,24 +237,24 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Font size</span>
+				<span class="opt-label">{m['tools_common.font_size']()}</span>
 				<input type="range" min={8} max={24} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">Start from</span>
+				<span class="opt-label">{m['tool_pages.page_numbers.start_from']()}</span>
 				<input type="number" min={1} max={9999} bind:value={startFrom} class="num-input" aria-label="Starting page number" />
 			</div>
 			<div class="opt-row">
 				<label class="flex items-center gap-2 cursor-pointer text-sm">
 					<input type="checkbox" bind:checked={skipFirst} />
-					Skip first page (e.g. cover page)
+					{m['tool_pages.page_numbers.skip_first']()}
 				</label>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? 'Adding numbers…' : 'Apply to all pages'}
+			{processing ? m['tool_pages.page_numbers.btn_busy']() : m['tool_pages.page_numbers.btn']()}
 		</button>
 	{/if}
 
@@ -261,12 +262,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save numbered PDF</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.page_numbers.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

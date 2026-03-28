@@ -3,6 +3,7 @@
 	import { getMetadata, updateMetadata, type PdfMetadata } from '$lib/pdf/metadata';
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { FileTextIcon } from 'lucide-svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let meta = $state<PdfMetadata | null>(null);
@@ -33,15 +34,15 @@
 		meta = null;
 		resultBytes = null;
 		try {
-			const m = await getMetadata(files[0]);
-			meta = m;
-			title = m.title;
-			author = m.author;
-			subject = m.subject;
-			keywords = m.keywords;
-			creator = m.creator;
+			const result = await getMetadata(files[0]);
+			meta = result;
+			title = result.title;
+			author = result.author;
+			subject = result.subject;
+			keywords = result.keywords;
+			creator = result.creator;
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed to read metadata.';
+			error = e instanceof Error ? e.message : m['tool_pages.metadata.err_read']();
 		}
 		loading = false;
 	}
@@ -60,7 +61,7 @@
 				creator,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed to update metadata.';
+			error = e instanceof Error ? e.message : m['tool_pages.metadata.err_update']();
 		}
 		saving = false;
 	}
@@ -78,54 +79,54 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<FileTextIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Edit Metadata</h1>
-			<p class="text-sm text-muted">View and edit title, author, and other PDF properties.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.metadata.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.metadata.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if loading}
-		<p class="text-sm text-muted">Reading metadata…</p>
+		<p class="text-sm text-muted">{m['tool_pages.metadata.reading']()}</p>
 	{/if}
 
 	{#if meta}
 		<div class="opt-section">
 			<div class="field">
-				<label for="meta-title" class="field-label">Title</label>
+				<label for="meta-title" class="field-label">{m['tool_pages.metadata.field_title']()}</label>
 				<input id="meta-title" type="text" bind:value={title} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-author" class="field-label">Author</label>
+				<label for="meta-author" class="field-label">{m['tool_pages.metadata.field_author']()}</label>
 				<input id="meta-author" type="text" bind:value={author} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-subject" class="field-label">Subject</label>
+				<label for="meta-subject" class="field-label">{m['tool_pages.metadata.field_subject']()}</label>
 				<input id="meta-subject" type="text" bind:value={subject} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-keywords" class="field-label">Keywords</label>
+				<label for="meta-keywords" class="field-label">{m['tool_pages.metadata.field_keywords']()}</label>
 				<input id="meta-keywords" type="text" bind:value={keywords} placeholder="keyword1, keyword2" class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-creator" class="field-label">Creator</label>
+				<label for="meta-creator" class="field-label">{m['tool_pages.metadata.field_creator']()}</label>
 				<input id="meta-creator" type="text" bind:value={creator} class="field-input" />
 			</div>
 
 			<!-- Read-only fields -->
 			<div class="flex flex-col gap-1 pt-2 border-t" style="border-color: var(--bg-separator)">
-				<p class="text-xs text-muted">Producer: {meta.producer || '—'}</p>
-				<p class="text-xs text-muted">Created: {meta.creationDate || '—'}</p>
-				<p class="text-xs text-muted">Modified: {meta.modificationDate || '—'}</p>
+				<p class="text-xs text-muted">{m['tool_pages.metadata.producer']()} {meta.producer || m['tool_pages.metadata.none']()}</p>
+				<p class="text-xs text-muted">{m['tool_pages.metadata.created']()} {meta.creationDate || m['tool_pages.metadata.none']()}</p>
+				<p class="text-xs text-muted">{m['tool_pages.metadata.modified']()} {meta.modificationDate || m['tool_pages.metadata.none']()}</p>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={saving} onclick={save}>
-			{saving ? 'Saving…' : 'Save metadata'}
+			{saving ? m['tool_pages.metadata.btn_busy']() : m['tool_pages.metadata.btn']()}
 		</button>
 	{/if}
 
@@ -133,12 +134,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! Output: <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Save updated PDF</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tool_pages.metadata.save']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

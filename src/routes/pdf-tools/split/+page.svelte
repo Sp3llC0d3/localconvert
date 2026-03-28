@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
@@ -47,7 +48,7 @@
 			const baseName = files[0].name.replace(/\.pdf$/i, '');
 			downloadPdf(bytes, `${baseName}_page${pageIndex + 1}.pdf`);
 		} catch {
-			error = 'Failed to extract page.';
+			error = m['tool_pages.split.err_extract']();
 		}
 	}
 
@@ -67,14 +68,14 @@
 					downloadBlob(new Blob([zip], { type: 'application/zip' }), files[0].name.replace(/\.pdf$/i, '_pages.zip'));
 				}
 			} else {
-				if (selectedPages.size === 0) { error = 'Select at least one page.'; processing = false; return; }
+				if (selectedPages.size === 0) { error = m['tool_pages.split.err_select'](); processing = false; return; }
 				const indices = [...selectedPages].sort((a, b) => a - b);
 				const bytes = await splitPdf(files[0], indices);
 				const name = files[0].name.replace(/\.pdf$/i, `_pages_${indices.map(i => i + 1).join('-')}.pdf`);
 				downloadPdf(bytes, name);
 			}
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Split failed.';
+			error = e instanceof Error ? e.message : m['tool_pages.split.err_fail']();
 		}
 		processing = false;
 	}
@@ -87,36 +88,36 @@
 </svelte:head>
 
 <div class="pdf-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="pdf-header">
 		<ScissorsIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Split PDF</h1>
-			<p class="text-sm text-muted">Extract pages or split every page into its own file.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.split.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.split.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if files.length > 0}
 		<div class="flex items-center gap-2 flex-wrap">
 			<button
 				class="btn text-sm px-4 py-2 {mode === 'select' ? 'highlight' : ''}"
 				onclick={() => mode = 'select'}
-			>Select pages</button>
+			>{m['tool_pages.split.select_pages']()}</button>
 			<button
 				class="btn text-sm px-4 py-2 {mode === 'all' ? 'highlight' : ''}"
 				onclick={() => mode = 'all'}
-			>Split all pages</button>
+			>{m['tool_pages.split.split_all']()}</button>
 			<button class="icon-btn ml-2" onclick={() => { files = []; thumbs = []; selectedPages = new Set(); }}>
 				<XIcon size={14} />
-				<span class="text-xs ml-1">Clear</span>
+				<span class="text-xs ml-1">{m['tools_common.clear']()}</span>
 			</button>
 		</div>
 
 		{#if loadingThumbs}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">Loading thumbnails… {thumbProgress}%</p>
+				<p class="text-sm text-muted">{m['tools_common.loading_thumbs']()} {thumbProgress}%</p>
 				<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 					<div class="h-full bg-accent transition-all" style="width: {thumbProgress}%"></div>
 				</div>
@@ -141,16 +142,16 @@
 					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted">{selectedPages.size} page{selectedPages.size !== 1 ? 's' : ''} selected — click to toggle, <span style="color: var(--accent)">●</span> to save single page</p>
+			<p class="text-xs text-muted">{m['tools_common.pages_selected']({ count: selectedPages.size })} — {m['tool_pages.split.help']()}</p>
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={doSplit}>
-			{processing ? 'Processing…' : mode === 'all' ? 'Split all pages' : 'Download selected pages'}
+			{processing ? m['tool_pages.split.btn_busy']() : mode === 'all' ? m['tool_pages.split.split_all']() : m['tool_pages.split.download_selected']()}
 		</button>
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style lang="postcss">

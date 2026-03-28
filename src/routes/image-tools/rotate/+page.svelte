@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { RotateCwIcon } from 'lucide-svelte';
@@ -56,7 +57,7 @@
 		try {
 			resultBlob = await canvasToBlob(previewCanvas, 'png');
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 	}
 
@@ -81,23 +82,23 @@
 </svelte:head>
 
 <div class="tool-page">
-	<a href="/image-tools/" class="text-sm text-muted hover:underline">← Image Tools</a>
+	<a href="/image-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_image']()}</a>
 	<div class="tool-header">
 		<RotateCwIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Rotate Image</h1>
-			<p class="text-sm text-muted">Pick an angle and see the result instantly.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.rotate_image.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.rotate_image.desc']()}</p>
 		</div>
 	</div>
 
-	<ImageUploader bind:files label="Drop an image here" />
+	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
 
 	{#if imgEl}
 		<canvas bind:this={previewCanvas} class="live-preview"></canvas>
 
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">Angle</span>
+				<span class="opt-label">{m['tools_common.angle']()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each [90, 180, 270] as a}
 						<button class="btn text-sm px-4 py-1.5 {angle === a ? 'highlight' : ''}" onclick={() => angle = a as RotationAngle}>{a}°</button>
@@ -107,7 +108,7 @@
 		</div>
 
 		<button class="btn highlight" onclick={save}>
-			Save rotated image
+			{m['tool_pages.rotate_image.save']()}
 		</button>
 	{/if}
 
@@ -115,12 +116,12 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>Download</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>

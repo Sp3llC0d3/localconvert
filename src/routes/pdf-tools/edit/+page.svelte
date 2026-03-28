@@ -6,6 +6,7 @@
 	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
 	import { EditIcon, Trash2Icon, Undo2Icon, Redo2Icon } from 'lucide-svelte';
 	import { createHistory } from '$lib/util/history.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -95,7 +96,7 @@
 			thumbs = await renderAllThumbnails(files[0], 0.7);
 			calcDisplaySize();
 		} catch {
-			error = 'Failed to read PDF.';
+			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
@@ -244,7 +245,7 @@
 
 	async function apply() {
 		if (files.length === 0 || elements.length === 0) {
-			error = elements.length === 0 ? 'Click on the page to place text.' : 'Add a PDF.';
+			error = elements.length === 0 ? m['tool_pages.edit.err_text']() : m['tool_pages.edit.err_pdf']();
 			return;
 		}
 		error = '';
@@ -261,7 +262,7 @@
 			}));
 			resultBytes = await editPdf(files[0], currentPage, pdfEdits);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : 'Failed.';
+			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
 		processing = false;
 	}
@@ -281,16 +282,16 @@
 </svelte:head>
 
 <div class="edit-page">
-	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">← PDF Tools</a>
+	<a href="/pdf-tools/" class="text-sm text-muted hover:underline">{m['tools_common.back_pdf']()}</a>
 	<div class="edit-header">
 		<EditIcon size={28} />
 		<div>
-			<h1 class="text-2xl font-semibold">Edit PDF</h1>
-			<p class="text-sm text-muted">Click on the page to place text. Drag to reposition.</p>
+			<h1 class="text-2xl font-semibold">{m['tool_pages.edit.title']()}</h1>
+			<p class="text-sm text-muted">{m['tool_pages.edit.desc']()}</p>
 		</div>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label="Add a PDF file" />
+	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
 	{#if thumbs.length > 0 && displayW > 0}
 		<!-- Text input bar -->
@@ -313,7 +314,7 @@
 				</button>
 			</div>
 		</div>
-		<p class="text-xs text-muted">Ctrl+Z undo · Del remove · Arrow keys nudge · Esc deselect</p>
+		<p class="text-xs text-muted">{m['tool_pages.edit.keyboard_help']()}</p>
 
 		<!-- Page selector -->
 		{#if thumbs.length > 1}
@@ -376,11 +377,11 @@
 					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted mt-2">{elements.length} element{elements.length !== 1 ? 's' : ''} placed</p>
+			<p class="text-xs text-muted mt-2">{m['tool_pages.edit.elements_placed']({ count: elements.length })}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing || elements.length === 0} onclick={apply}>
-			{processing ? 'Applying…' : 'Save edited PDF'}
+			{processing ? m['tool_pages.edit.btn_busy']() : m['tool_pages.edit.save']()}
 		</button>
 	{/if}
 
@@ -388,12 +389,12 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">Ready! <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>Download</button>
+			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">✓ Your files never leave your device.</p>
+	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 
 <style>
