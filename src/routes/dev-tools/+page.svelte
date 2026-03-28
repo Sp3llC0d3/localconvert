@@ -1,11 +1,16 @@
 <script lang="ts">
-	import { CodeIcon, BracesIcon, HashIcon, Binary, ShieldCheckIcon } from 'lucide-svelte';
+	import { CodeIcon, BracesIcon, HashIcon, Binary, FileTextIcon, GitCompareArrowsIcon, TypeIcon, LinkIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const tools = [
 		{ href: '/dev-tools/json/', icon: BracesIcon, name: m['dev_tools.tools.json_name'](), desc: m['dev_tools.tools.json_desc']() },
 		{ href: '/dev-tools/hash/', icon: HashIcon, name: m['dev_tools.tools.hash_name'](), desc: m['dev_tools.tools.hash_desc']() },
 		{ href: '/dev-tools/base64/', icon: Binary, name: m['dev_tools.tools.base64_name'](), desc: m['dev_tools.tools.base64_desc']() },
+		{ href: '/dev-tools/markdown/', icon: FileTextIcon, name: m['dev_tools.tools.markdown_name'](), desc: m['dev_tools.tools.markdown_desc']() },
+		{ href: '/dev-tools/diff/', icon: GitCompareArrowsIcon, name: m['dev_tools.tools.diff_name'](), desc: m['dev_tools.tools.diff_desc']() },
+		{ href: '/dev-tools/word-count/', icon: TypeIcon, name: m['dev_tools.tools.word_count_name'](), desc: m['dev_tools.tools.word_count_desc']() },
+		{ href: '/dev-tools/url-encode/', icon: LinkIcon, name: m['dev_tools.tools.url_encode_name'](), desc: m['dev_tools.tools.url_encode_desc']() },
+		{ href: '/dev-tools/css-minify/', icon: CodeIcon, name: m['dev_tools.tools.css_minify_name'](), desc: m['dev_tools.tools.css_minify_desc']() },
 	];
 </script>
 

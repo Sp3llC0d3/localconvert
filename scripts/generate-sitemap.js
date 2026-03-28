@@ -70,6 +70,7 @@ const imageToolPaths = [
 	'/image-tools/','/image-tools/rotate/','/image-tools/crop/',
 	'/image-tools/watermark/','/image-tools/meme/','/image-tools/batch/','/image-tools/qr/','/image-tools/color-picker/','/image-tools/blur/','/image-tools/filters/','/image-tools/video-to-gif/',
 	'/dev-tools/','/dev-tools/json/','/dev-tools/hash/','/dev-tools/base64/',
+	'/dev-tools/markdown/','/dev-tools/diff/','/dev-tools/word-count/','/dev-tools/url-encode/','/dev-tools/css-minify/',
 ];
 
 // ── Static pages ──────────────────────────────────────────────────────────

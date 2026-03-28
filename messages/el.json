@@ -851,6 +851,41 @@
 			"btn": "Convert to GIF",
 			"btn_busy": "Converting…",
 			"save": "Save GIF"
+		},
+		"markdown": {
+			"title": "Markdown Preview",
+			"desc": "Write markdown and see rendered HTML live.",
+			"preview": "Preview"
+		},
+		"diff": {
+			"title": "Text Diff",
+			"desc": "Compare two texts and see differences highlighted.",
+			"original": "Original",
+			"modified": "Modified",
+			"btn": "Compare"
+		},
+		"word_count": {
+			"title": "Word Counter",
+			"desc": "Paste or type text to see live stats.",
+			"placeholder": "Paste or type your text here…",
+			"words": "Words",
+			"characters": "Characters",
+			"chars_no_spaces": "No spaces",
+			"sentences": "Sentences",
+			"paragraphs": "Paragraphs",
+			"reading_time": "Min read"
+		},
+		"url_encode": {
+			"title": "URL Encode / Decode",
+			"desc": "Encode or decode URL strings."
+		},
+		"css_minify": {
+			"title": "CSS Minifier",
+			"desc": "Remove comments and whitespace from CSS.",
+			"input_label": "CSS Input",
+			"output_label": "Minified Output",
+			"btn": "Minify",
+			"saved": "Saved {pct}%"
 		}
 	},
 	"dev_tools": {
@@ -863,7 +898,17 @@
 			"hash_name": "Hash Generator",
 			"hash_desc": "Generate SHA-256, SHA-1, SHA-512 hashes",
 			"base64_name": "Base64 Codec",
-			"base64_desc": "Encode and decode Base64 strings"
+			"base64_desc": "Encode and decode Base64 strings",
+			"markdown_name": "Markdown Preview",
+			"markdown_desc": "Write markdown and preview rendered HTML",
+			"diff_name": "Text Diff",
+			"diff_desc": "Compare two texts and highlight differences",
+			"word_count_name": "Word Counter",
+			"word_count_desc": "Count words, characters, sentences, and more",
+			"url_encode_name": "URL Encode/Decode",
+			"url_encode_desc": "Encode and decode URL strings",
+			"css_minify_name": "CSS Minifier",
+			"css_minify_desc": "Minify CSS by removing comments and whitespace"
 		}
 	}
 }
