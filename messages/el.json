@@ -439,7 +439,9 @@
 			"qr_name": "Δημιουργός QR κώδικα",
 			"qr_desc": "Δημιουργήστε κώδικες QR από κείμενο ή URL",
 			"color_picker_name": "Επιλογέας χρωμάτων",
-			"color_picker_desc": "Επιλέξτε χρώματα από οποιαδήποτε εικόνα"
+			"color_picker_desc": "Επιλέξτε χρώματα από οποιαδήποτε εικόνα",
+			"blur_name": "Θόλωση περιοχής",
+			"blur_desc": "Θολώστε μια περιοχή εικόνας για ιδιωτικότητα"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Color Picker",
 			"desc": "Click anywhere on the image to pick a color."
+		},
+		"blur": {
+			"title": "Blur Region",
+			"desc": "Draw a rectangle over the area you want to blur.",
+			"radius": "Blur strength",
+			"err_area": "Draw a region to blur.",
+			"help": "drag to draw, click inside to move",
+			"btn": "Apply blur",
+			"btn_busy": "Blurring…",
+			"save": "Save blurred image"
 		}
 	}
 }

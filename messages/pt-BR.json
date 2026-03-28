@@ -439,7 +439,9 @@
 			"qr_name": "Gerador de QR Code",
 			"qr_desc": "Gerar códigos QR a partir de texto ou URLs",
 			"color_picker_name": "Seletor de cores",
-			"color_picker_desc": "Selecionar cores de qualquer imagem"
+			"color_picker_desc": "Selecionar cores de qualquer imagem",
+			"blur_name": "Borrar região",
+			"blur_desc": "Borrar uma região da imagem para privacidade"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Color Picker",
 			"desc": "Click anywhere on the image to pick a color."
+		},
+		"blur": {
+			"title": "Blur Region",
+			"desc": "Draw a rectangle over the area you want to blur.",
+			"radius": "Blur strength",
+			"err_area": "Draw a region to blur.",
+			"help": "drag to draw, click inside to move",
+			"btn": "Apply blur",
+			"btn_busy": "Blurring…",
+			"save": "Save blurred image"
 		}
 	}
 }

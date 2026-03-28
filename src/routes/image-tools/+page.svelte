@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const tools = [
@@ -10,6 +10,7 @@
 		{ href: '/image-tools/batch/', icon: LayersIcon, name: m['image_tools.tools.batch_name'](), desc: m['image_tools.tools.batch_desc']() },
 		{ href: '/image-tools/qr/', icon: QrCodeIcon, name: m['image_tools.tools.qr_name'](), desc: m['image_tools.tools.qr_desc']() },
 		{ href: '/image-tools/color-picker/', icon: PipetteIcon, name: m['image_tools.tools.color_picker_name'](), desc: m['image_tools.tools.color_picker_desc']() },
+		{ href: '/image-tools/blur/', icon: EyeOffIcon, name: m['image_tools.tools.blur_name'](), desc: m['image_tools.tools.blur_desc']() },
 	];
 </script>
 

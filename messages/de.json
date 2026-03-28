@@ -439,7 +439,9 @@
 			"qr_name": "QR-Code Generator",
 			"qr_desc": "QR-Codes aus Text oder URLs erstellen",
 			"color_picker_name": "Farbwähler",
-			"color_picker_desc": "Farben von jedem Bild auswählen"
+			"color_picker_desc": "Farben von jedem Bild auswählen",
+			"blur_name": "Bereich verwischen",
+			"blur_desc": "Einen Bildbereich für den Datenschutz verwischen"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Farbwähler",
 			"desc": "Klicken Sie auf das Bild um eine Farbe auszuwählen."
+		},
+		"blur": {
+			"title": "Bereich verwischen",
+			"desc": "Zeichnen Sie ein Rechteck über den zu verwischenden Bereich.",
+			"radius": "Unschärfestärke",
+			"err_area": "Bereich zum Verwischen zeichnen.",
+			"help": "Ziehen zum Zeichnen, Klicken zum Verschieben",
+			"btn": "Unschärfe anwenden",
+			"btn_busy": "Verwischen…",
+			"save": "Unscharfes Bild speichern"
 		}
 	}
 }

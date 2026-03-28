@@ -439,7 +439,9 @@
 			"qr_name": "QR 코드 생성기",
 			"qr_desc": "텍스트 또는 URL에서 QR 코드 생성",
 			"color_picker_name": "색상 선택기",
-			"color_picker_desc": "이미지에서 색상 선택"
+			"color_picker_desc": "이미지에서 색상 선택",
+			"blur_name": "영역 흐리기",
+			"blur_desc": "개인정보 보호를 위해 이미지 영역 흐리기"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Color Picker",
 			"desc": "Click anywhere on the image to pick a color."
+		},
+		"blur": {
+			"title": "Blur Region",
+			"desc": "Draw a rectangle over the area you want to blur.",
+			"radius": "Blur strength",
+			"err_area": "Draw a region to blur.",
+			"help": "drag to draw, click inside to move",
+			"btn": "Apply blur",
+			"btn_busy": "Blurring…",
+			"save": "Save blurred image"
 		}
 	}
 }

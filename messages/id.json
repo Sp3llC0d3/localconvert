@@ -439,7 +439,9 @@
 			"qr_name": "Generator Kode QR",
 			"qr_desc": "Buat kode QR dari teks atau URL",
 			"color_picker_name": "Pemilih Warna",
-			"color_picker_desc": "Pilih warna dari gambar apa pun"
+			"color_picker_desc": "Pilih warna dari gambar apa pun",
+			"blur_name": "Blur Area",
+			"blur_desc": "Blur area gambar untuk privasi"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Color Picker",
 			"desc": "Click anywhere on the image to pick a color."
+		},
+		"blur": {
+			"title": "Blur Region",
+			"desc": "Draw a rectangle over the area you want to blur.",
+			"radius": "Blur strength",
+			"err_area": "Draw a region to blur.",
+			"help": "drag to draw, click inside to move",
+			"btn": "Apply blur",
+			"btn_busy": "Blurring…",
+			"save": "Save blurred image"
 		}
 	}
 }

@@ -439,7 +439,9 @@
 			"qr_name": "QR碼生成器",
 			"qr_desc": "從文字或網址生成QR碼",
 			"color_picker_name": "顏色選擇器",
-			"color_picker_desc": "從圖片中選取顏色"
+			"color_picker_desc": "從圖片中選取顏色",
+			"blur_name": "模糊區域",
+			"blur_desc": "模糊圖像區域以保護隱私"
 		}
 	},
 	"tools_common": {
@@ -756,6 +758,16 @@
 		"color_picker": {
 			"title": "Color Picker",
 			"desc": "Click anywhere on the image to pick a color."
+		},
+		"blur": {
+			"title": "Blur Region",
+			"desc": "Draw a rectangle over the area you want to blur.",
+			"radius": "Blur strength",
+			"err_area": "Draw a region to blur.",
+			"help": "drag to draw, click inside to move",
+			"btn": "Apply blur",
+			"btn_busy": "Blurring…",
+			"save": "Save blurred image"
 		}
 	}
 }
