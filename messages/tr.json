@@ -437,7 +437,9 @@
 			"batch_name": "Toplu İşleme",
 			"batch_desc": "Aynı işlemi birden fazla görsele uygulayın",
 			"qr_name": "QR Kod Oluşturucu",
-			"qr_desc": "Metin veya URL'lerden QR kodları oluşturun"
+			"qr_desc": "Metin veya URL'lerden QR kodları oluşturun",
+			"color_picker_name": "Renk Seçici",
+			"color_picker_desc": "Herhangi bir görselden renk seçin"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

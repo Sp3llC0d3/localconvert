@@ -437,7 +437,9 @@
 			"batch_name": "Stapelverarbeitung",
 			"batch_desc": "Dieselbe Operation auf mehrere Bilder anwenden",
 			"qr_name": "QR-Code Generator",
-			"qr_desc": "QR-Codes aus Text oder URLs erstellen"
+			"qr_desc": "QR-Codes aus Text oder URLs erstellen",
+			"color_picker_name": "Farbwähler",
+			"color_picker_desc": "Farben von jedem Bild auswählen"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "Hoch (30%)",
 			"save": "QR-Code speichern",
 			"save_file": "qrcode.png herunterladen"
+		},
+		"color_picker": {
+			"title": "Farbwähler",
+			"desc": "Klicken Sie auf das Bild um eine Farbe auszuwählen."
 		}
 	}
 }

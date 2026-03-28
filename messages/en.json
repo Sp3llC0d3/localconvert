@@ -391,7 +391,9 @@
 			"batch_name": "Batch Processing",
 			"batch_desc": "Apply the same operation to multiple images",
 			"qr_name": "QR Code Generator",
-			"qr_desc": "Generate QR codes from text or URLs"
+			"qr_desc": "Generate QR codes from text or URLs",
+			"color_picker_name": "Color Picker",
+			"color_picker_desc": "Pick colors from any image"
 		}
 	},
 	"tools_common": {
@@ -704,6 +706,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	},
 	"toast": {

@@ -437,7 +437,9 @@
 			"batch_name": "一括処理",
 			"batch_desc": "複数の画像に同じ操作を適用",
 			"qr_name": "QRコード生成",
-			"qr_desc": "テキストやURLからQRコードを生成"
+			"qr_desc": "テキストやURLからQRコードを生成",
+			"color_picker_name": "カラーピッカー",
+			"color_picker_desc": "画像から色を選択"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

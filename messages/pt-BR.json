@@ -437,7 +437,9 @@
 			"batch_name": "Processamento em lote",
 			"batch_desc": "Aplicar a mesma operação a várias imagens",
 			"qr_name": "Gerador de QR Code",
-			"qr_desc": "Gerar códigos QR a partir de texto ou URLs"
+			"qr_desc": "Gerar códigos QR a partir de texto ou URLs",
+			"color_picker_name": "Seletor de cores",
+			"color_picker_desc": "Selecionar cores de qualquer imagem"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

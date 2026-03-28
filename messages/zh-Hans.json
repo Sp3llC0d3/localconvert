@@ -437,7 +437,9 @@
 			"batch_name": "批量处理",
 			"batch_desc": "将相同操作应用于多张图片",
 			"qr_name": "QR码生成器",
-			"qr_desc": "从文字或网址生成QR码"
+			"qr_desc": "从文字或网址生成QR码",
+			"color_picker_name": "颜色选择器",
+			"color_picker_desc": "从图片中选取颜色"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

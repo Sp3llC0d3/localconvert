@@ -437,7 +437,9 @@
 			"batch_name": "Ομαδική επεξεργασία",
 			"batch_desc": "Εφαρμόστε την ίδια λειτουργία σε πολλές εικόνες",
 			"qr_name": "Δημιουργός QR κώδικα",
-			"qr_desc": "Δημιουργήστε κώδικες QR από κείμενο ή URL"
+			"qr_desc": "Δημιουργήστε κώδικες QR από κείμενο ή URL",
+			"color_picker_name": "Επιλογέας χρωμάτων",
+			"color_picker_desc": "Επιλέξτε χρώματα από οποιαδήποτε εικόνα"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

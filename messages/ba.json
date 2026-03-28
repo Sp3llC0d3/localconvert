@@ -437,7 +437,9 @@
 			"batch_name": "Grupna obrada",
 			"batch_desc": "Primijenite istu operaciju na više slika",
 			"qr_name": "QR kod generator",
-			"qr_desc": "Generirajte QR kodove iz teksta ili URL-ova"
+			"qr_desc": "Generirajte QR kodove iz teksta ili URL-ova",
+			"color_picker_name": "Birač boja",
+			"color_picker_desc": "Odaberite boje s bilo koje slike"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

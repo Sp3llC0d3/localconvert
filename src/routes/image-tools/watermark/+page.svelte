@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
+	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { DropletIcon } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
@@ -13,6 +14,8 @@
 	let position = $state<'center' | 'tile'>('center');
 	let error = $state('');
 	let resultBlob = $state<Blob | null>(null);
+	let beforeUrl = $state('');
+	let afterUrl = $state('');
 
 	let imgEl = $state<HTMLImageElement | null>(null);
 	let previewCanvas = $state<HTMLCanvasElement>();
@@ -82,10 +85,14 @@
 	}
 
 	async function save() {
-		if (!previewCanvas) return;
+		if (!previewCanvas || !files[0]) return;
 		error = '';
+		if (afterUrl) URL.revokeObjectURL(afterUrl);
+		if (beforeUrl) URL.revokeObjectURL(beforeUrl);
 		try {
 			resultBlob = await canvasToBlob(previewCanvas, 'png');
+			beforeUrl = URL.createObjectURL(files[0]);
+			afterUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}
@@ -164,6 +171,9 @@
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
 
 	{#if resultBlob}
+		{#if beforeUrl && afterUrl}
+			<BeforeAfter beforeSrc={beforeUrl} afterSrc={afterUrl} />
+		{/if}
 		<div class="result-box">
 			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
 			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>

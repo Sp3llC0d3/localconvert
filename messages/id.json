@@ -437,7 +437,9 @@
 			"batch_name": "Pemrosesan Massal",
 			"batch_desc": "Terapkan operasi yang sama ke beberapa gambar",
 			"qr_name": "Generator Kode QR",
-			"qr_desc": "Buat kode QR dari teks atau URL"
+			"qr_desc": "Buat kode QR dari teks atau URL",
+			"color_picker_name": "Pemilih Warna",
+			"color_picker_desc": "Pilih warna dari gambar apa pun"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

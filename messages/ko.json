@@ -437,7 +437,9 @@
 			"batch_name": "일괄 처리",
 			"batch_desc": "여러 이미지에 동일한 작업 적용",
 			"qr_name": "QR 코드 생성기",
-			"qr_desc": "텍스트 또는 URL에서 QR 코드 생성"
+			"qr_desc": "텍스트 또는 URL에서 QR 코드 생성",
+			"color_picker_name": "색상 선택기",
+			"color_picker_desc": "이미지에서 색상 선택"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

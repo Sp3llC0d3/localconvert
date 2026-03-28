@@ -437,7 +437,9 @@
 			"batch_name": "معالجة دفعية",
 			"batch_desc": "تطبيق نفس العملية على عدة صور",
 			"qr_name": "مولد رمز QR",
-			"qr_desc": "إنشاء رموز QR من نص أو روابط"
+			"qr_desc": "إنشاء رموز QR من نص أو روابط",
+			"color_picker_name": "منتقي الألوان",
+			"color_picker_desc": "انتقاء الألوان من أي صورة"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }

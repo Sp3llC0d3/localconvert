@@ -437,7 +437,9 @@
 			"batch_name": "批次處理",
 			"batch_desc": "將相同操作套用於多張圖片",
 			"qr_name": "QR碼生成器",
-			"qr_desc": "從文字或網址生成QR碼"
+			"qr_desc": "從文字或網址生成QR碼",
+			"color_picker_name": "顏色選擇器",
+			"color_picker_desc": "從圖片中選取顏色"
 		}
 	},
 	"tools_common": {
@@ -750,6 +752,10 @@
 			"high": "High (30%)",
 			"save": "Save QR code",
 			"save_file": "Download qrcode.png"
+		},
+		"color_picker": {
+			"title": "Color Picker",
+			"desc": "Click anywhere on the image to pick a color."
 		}
 	}
 }
