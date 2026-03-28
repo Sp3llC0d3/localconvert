@@ -448,7 +448,9 @@
 			"blur_name": "영역 흐리기",
 			"blur_desc": "개인정보 보호를 위해 이미지 영역 흐리기",
 			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more"
+			"filters_desc": "Adjust brightness, contrast, saturation, and more",
+			"video_to_gif_name": "Video to GIF",
+			"video_to_gif_desc": "Convert any video to an animated GIF"
 		}
 	},
 	"tools_common": {
@@ -838,6 +840,17 @@
 			"sepia": "Sepia",
 			"hue": "Hue rotate",
 			"save": "Save filtered image"
+		},
+		"video_to_gif": {
+			"title": "Video to GIF",
+			"desc": "Convert any video to an animated GIF.",
+			"upload": "Drop a video file here",
+			"width": "Width",
+			"start": "Start time",
+			"duration": "Duration",
+			"btn": "Convert to GIF",
+			"btn_busy": "Converting…",
+			"save": "Save GIF"
 		}
 	},
 	"dev_tools": {

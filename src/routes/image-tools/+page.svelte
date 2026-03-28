@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, FilmIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const tools = [
@@ -12,6 +12,7 @@
 		{ href: '/image-tools/color-picker/', icon: PipetteIcon, name: m['image_tools.tools.color_picker_name'](), desc: m['image_tools.tools.color_picker_desc']() },
 		{ href: '/image-tools/blur/', icon: EyeOffIcon, name: m['image_tools.tools.blur_name'](), desc: m['image_tools.tools.blur_desc']() },
 		{ href: '/image-tools/filters/', icon: SlidersHorizontalIcon, name: m['image_tools.tools.filters_name'](), desc: m['image_tools.tools.filters_desc']() },
+		{ href: '/image-tools/video-to-gif/', icon: FilmIcon, name: m['image_tools.tools.video_to_gif_name'](), desc: m['image_tools.tools.video_to_gif_desc']() },
 	];
 </script>
 

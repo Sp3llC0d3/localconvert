@@ -402,7 +402,9 @@
 			"blur_name": "Blur Region",
 			"blur_desc": "Blur a region of an image for privacy",
 			"filters_name": "Image Filters",
-			"filters_desc": "Adjust brightness, contrast, saturation, and more"
+			"filters_desc": "Adjust brightness, contrast, saturation, and more",
+			"video_to_gif_name": "Video to GIF",
+			"video_to_gif_desc": "Convert any video to an animated GIF"
 		}
 	},
 	"dev_tools": {
@@ -745,6 +747,17 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"video_to_gif": {
+			"title": "Video to GIF",
+			"desc": "Convert any video to an animated GIF.",
+			"upload": "Drop a video file here",
+			"width": "Width",
+			"start": "Start time",
+			"duration": "Duration",
+			"btn": "Convert to GIF",
+			"btn_busy": "Converting…",
+			"save": "Save GIF"
 		},
 		"filters": {
 			"title": "Image Filters",

@@ -1076,6 +1076,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://localconvert.app/image-tools/video-to-gif/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://localconvert.app/dev-tools/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
