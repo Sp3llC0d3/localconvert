@@ -2,7 +2,6 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { PiggyBankIcon, CopyIcon, CheckIcon } from "lucide-svelte";
 	import HotMilk from "$lib/assets/hotmilk.svg?component";
-	import { DISCORD_URL } from "$lib/util/consts";
 	import { error } from "$lib/util/logger";
 	import { m } from "$lib/paraglide/messages";
 	import { link, sanitize } from "$lib/store/index.svelte";
@@ -48,12 +47,7 @@
 			</a>
 		</div>
 		<p class="text-muted">
-			{@html sanitize(link(
-				"discord_link",
-				m["about.sponsors.description"](),
-				DISCORD_URL,
-				true
-			))}
+			{m["about.sponsors.description"]()}
 			<span class="inline-block mx-[2px] relative top-[2px]">
 				<button
 					id="email"
