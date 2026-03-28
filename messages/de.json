@@ -446,7 +446,9 @@
 			"color_picker_name": "Farbwähler",
 			"color_picker_desc": "Farben von jedem Bild auswählen",
 			"blur_name": "Bereich verwischen",
-			"blur_desc": "Einen Bildbereich für den Datenschutz verwischen"
+			"blur_desc": "Einen Bildbereich für den Datenschutz verwischen",
+			"filters_name": "Image Filters",
+			"filters_desc": "Adjust brightness, contrast, saturation, and more"
 		}
 	},
 	"tools_common": {
@@ -826,6 +828,16 @@
 			"decoded": "Decoded text",
 			"or_file": "Or encode a file:",
 			"select_file": "Select file"
+		},
+		"filters": {
+			"title": "Image Filters",
+			"desc": "Adjust brightness, contrast, saturation, sepia, and hue.",
+			"brightness": "Brightness",
+			"contrast": "Contrast",
+			"saturation": "Saturation",
+			"sepia": "Sepia",
+			"hue": "Hue rotate",
+			"save": "Save filtered image"
 		}
 	},
 	"dev_tools": {

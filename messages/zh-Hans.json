@@ -446,7 +446,9 @@
 			"color_picker_name": "颜色选择器",
 			"color_picker_desc": "从图片中选取颜色",
 			"blur_name": "模糊区域",
-			"blur_desc": "模糊图像区域以保护隐私"
+			"blur_desc": "模糊图像区域以保护隐私",
+			"filters_name": "Image Filters",
+			"filters_desc": "Adjust brightness, contrast, saturation, and more"
 		}
 	},
 	"tools_common": {
@@ -826,6 +828,16 @@
 			"decoded": "Decoded text",
 			"or_file": "Or encode a file:",
 			"select_file": "Select file"
+		},
+		"filters": {
+			"title": "Image Filters",
+			"desc": "Adjust brightness, contrast, saturation, sepia, and hue.",
+			"brightness": "Brightness",
+			"contrast": "Contrast",
+			"saturation": "Saturation",
+			"sepia": "Sepia",
+			"hue": "Hue rotate",
+			"save": "Save filtered image"
 		}
 	},
 	"dev_tools": {

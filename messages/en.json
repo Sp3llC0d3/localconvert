@@ -400,7 +400,9 @@
 			"color_picker_name": "Color Picker",
 			"color_picker_desc": "Pick colors from any image",
 			"blur_name": "Blur Region",
-			"blur_desc": "Blur a region of an image for privacy"
+			"blur_desc": "Blur a region of an image for privacy",
+			"filters_name": "Image Filters",
+			"filters_desc": "Adjust brightness, contrast, saturation, and more"
 		}
 	},
 	"dev_tools": {
@@ -743,6 +745,16 @@
 			"btn": "Apply blur",
 			"btn_busy": "Blurring…",
 			"save": "Save blurred image"
+		},
+		"filters": {
+			"title": "Image Filters",
+			"desc": "Adjust brightness, contrast, saturation, sepia, and hue.",
+			"brightness": "Brightness",
+			"contrast": "Contrast",
+			"saturation": "Saturation",
+			"sepia": "Sepia",
+			"hue": "Hue rotate",
+			"save": "Save filtered image"
 		},
 		"pdf_to_text": {
 			"title": "PDF to Text",

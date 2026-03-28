@@ -446,7 +446,9 @@
 			"color_picker_name": "Birač boja",
 			"color_picker_desc": "Odaberite boje s bilo koje slike",
 			"blur_name": "Zamuti područje",
-			"blur_desc": "Zamutite dio slike za privatnost"
+			"blur_desc": "Zamutite dio slike za privatnost",
+			"filters_name": "Image Filters",
+			"filters_desc": "Adjust brightness, contrast, saturation, and more"
 		}
 	},
 	"tools_common": {
@@ -826,6 +828,16 @@
 			"decoded": "Decoded text",
 			"or_file": "Or encode a file:",
 			"select_file": "Select file"
+		},
+		"filters": {
+			"title": "Image Filters",
+			"desc": "Adjust brightness, contrast, saturation, sepia, and hue.",
+			"brightness": "Brightness",
+			"contrast": "Contrast",
+			"saturation": "Saturation",
+			"sepia": "Sepia",
+			"hue": "Hue rotate",
+			"save": "Save filtered image"
 		}
 	},
 	"dev_tools": {

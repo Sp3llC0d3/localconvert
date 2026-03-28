@@ -68,7 +68,7 @@ const pdfToolPaths = [
 // ── Image tool pages ──────────────────────────────────────────────────────
 const imageToolPaths = [
 	'/image-tools/','/image-tools/rotate/','/image-tools/crop/',
-	'/image-tools/watermark/','/image-tools/meme/','/image-tools/batch/','/image-tools/qr/','/image-tools/color-picker/','/image-tools/blur/',
+	'/image-tools/watermark/','/image-tools/meme/','/image-tools/batch/','/image-tools/qr/','/image-tools/color-picker/','/image-tools/blur/','/image-tools/filters/',
 	'/dev-tools/','/dev-tools/json/','/dev-tools/hash/','/dev-tools/base64/',
 ];
 
