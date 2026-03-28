@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Acasa",
+		"convert": "Conversie",
+		"pdf_tools": "Instrumente PDF",
+		"image_tools": "Instrumente imagine",
+		"dev_tools": "Instrumente dezvoltator",
+		"tools": "Instrumente",
+		"settings": "Setari",
+		"about": "Despre",
+		"toggle_theme": "Schimbati tema"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Bazat pe VERT.sh",
+		"source_code": "Cod sursa",
+		"discord_server": "Server Discord",
+		"privacy_policy": "Politica de confidentialitate",
+		"tagline": "Trusa ta privată de instrumente",
+		"pdf_tools_count": "Instrumente PDF - 18",
+		"image_tools_count": "Instrumente Imagine - 10",
+		"dev_tools_count": "Instrumente Dev - 8"
+	},
+	"upload": {
+		"title": "Setul dumneavoastra privat de instrumente pentru fisiere si cod.",
+		"subtitle": "36 de instrumente pentru PDF-uri, imagini si fluxuri de lucru pentru dezvoltatori -- toate ruleaza in browserul dumneavoastra. Fara incarcari pe server, fara conturi, gratuit pentru totdeauna.",
+		"uploader": {
+			"text": "Trageti sau faceti clic pentru a {action}",
+			"convert": "converti"
+		},
+		"cards": {
+			"title": "LocalConvert accepta...",
+			"images": "Imagini",
+			"audio": "Audio",
+			"documents": "Documente",
+			"video": "Video",
+			"video_server_processing": "Procesare locala disponibila",
+			"local_supported": "Procesare locala disponibila",
+			"status": {
+				"text": "<b>Stare:</b> {status}",
+				"ready": "pregatit",
+				"not_ready": "nu este pregatit",
+				"not_initialized": "neinitializat",
+				"downloading": "se incarca instrumentele...",
+				"initializing": "se initializeaza...",
+				"unknown": "stare necunoscuta"
+			},
+			"supported_formats": "Formate acceptate:"
+		},
+		"tooltip": {
+			"partial_support": "Acest format poate fi convertit doar ca {direction}.",
+			"direction_input": "intrare (din)",
+			"direction_output": "iesire (in)",
+			"video_server_processing": "Toate conversiile au loc local pe dispozitivul dumneavoastra."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Extrageti arhiva",
+			"extracting": "Arhiva detectata: {filename}",
+			"extracted": "S-au extras {extract_count} fisiere din {filename}. {ignore_count} elemente au fost ignorate.",
+			"detected": "S-au detectat fisiere {type} in {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "document",
+			"image": "imagine",
+			"extract_error": "Eroare la extragerea {filename}: {error}"
+		},
+		"large_file_warning": "Din cauza limitarilor browserului / dispozitivului, conversia este dezactivata pentru acest fisier deoarece depaseste {limit}GB. Va recomandam sa utilizati Firefox sau Safari pentru fisiere de aceasta dimensiune, deoarece au mai putine limitari.",
+		"external_warning": {
+			"title": "Avertisment fisier mare",
+			"text": "Acest fisier este destul de mare si poate dura mai mult pentru conversie in browser. Doriti sa continuati?",
+			"yes": "Da",
+			"no": "Nu"
+		},
+		"panel": {
+			"convert_all": "Convertiti toate",
+			"download_all": "Salvati toate ca .zip",
+			"remove_all": "Eliminati toate fisierele",
+			"set_all_to": "Setati toate la",
+			"na": "N/A"
+		},
+		"dropdown": {
+			"audio": "Audio",
+			"video": "Video",
+			"doc": "Document",
+			"image": "Imagine",
+			"placeholder": "Cautati formatul",
+			"no_formats": "Niciun format disponibil",
+			"no_results": "Niciun format nu corespunde cautarii"
+		},
+		"tooltips": {
+			"unknown_file": "Tip de fisier necunoscut",
+			"audio_file": "Fisier audio",
+			"video_file": "Fisier video",
+			"document_file": "Fisier document",
+			"image_file": "Fisier imagine",
+			"convert_file": "Convertiti acest fisier",
+			"download_file": "Salvati pe dispozitiv"
+		},
+		"errors": {
+			"cant_convert": "Nu putem converti acest fisier.",
+			"vertd_server": "Acest format de fisier nu este acceptat pentru conversie.",
+			"vertd_generic_view": "Vizualizati detaliile erorii",
+			"vertd_generic_body": "A aparut o eroare la conversia fisierului dumneavoastra. Va rugam sa incercati din nou sau sa incercati un alt format.",
+			"vertd_generic_title": "Eroare de conversie",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Anulati",
+			"vertd_failed_to_keep": "Conversia a esuat: {error}",
+			"vertd_details": "Vizualizati detaliile erorii",
+			"vertd_details_body": "Urmatoarele informatii despre eroare pot ajuta la depanare:",
+			"vertd_details_footer": "Consultati [privacy_link]politica noastra de confidentialitate[/privacy_link] pentru mai multe detalii.",
+			"vertd_details_job_id": "<b>ID lucrare:</b> {jobId}",
+			"vertd_details_from": "<b>Format sursa:</b> {from}",
+			"vertd_details_to": "<b>Format destinatie:</b> {to}",
+			"vertd_details_error_message": "<b>Mesaj de eroare:</b> [view_link]Vizualizati jurnalele de erori[/view_link]",
+			"vertd_details_close": "Inchideti",
+			"vertd_ratelimit": "Fisierul '{filename}' nu a putut fi convertit de mai multe ori. Va rugam sa incercati un alt format sau un fisier mai mic.",
+			"unsupported_format": "Sunt acceptate doar fisiere imagine, video, audio si document",
+			"pdf_redirect_title": "Acesta este un fisier PDF.",
+			"pdf_redirect_desc": "Fisierele PDF nu sunt convertite aici -- utilizati Instrumente PDF pentru a combina, diviza, comprima, roti si multe altele.",
+			"pdf_redirect_button": "Deschideti Instrumente PDF",
+			"format_output_only": "Acest format poate fi utilizat in prezent doar ca iesire (convertit in), nu ca intrare.",
+			"vertd_not_found": "Convertorul video nu a putut fi initializat. Va rugam sa reincarcati pagina si sa incercati din nou.",
+			"worker_downloading": "Convertorul {type} se incarca, va rugam sa asteptati cateva momente.",
+			"worker_error": "Convertorul {type} a intampinat o eroare la initializare, va rugam sa incercati mai tarziu.",
+			"worker_timeout": "Convertorul {type} dureaza mai mult decat era de asteptat pentru initializare, va rugam sa asteptati cateva momente sau sa reincarcati pagina.",
+			"audio": "audio",
+			"doc": "document",
+			"image": "imagine"
+		},
+		"options": {
+			"quality": "Calitate",
+			"resize": "Redimensionare",
+			"bitrate": "Rata de biti",
+			"trim": "Decupare"
+		}
+	},
+	"settings": {
+		"title": "Setari",
+		"errors": {
+			"save_failed": "Salvarea setarilor a esuat!"
+		},
+		"appearance": {
+			"title": "Aspect",
+			"brightness_theme": "Tema de luminozitate",
+			"brightness_description": "Preferati un flash luminos sau o noapte linistita?",
+			"light": "Luminos",
+			"dark": "Intunecat",
+			"effect_settings": "Setari efecte",
+			"effect_description": "Preferati efecte vizuale sau o experienta mai statica?",
+			"enable": "Activati",
+			"disable": "Dezactivati"
+		},
+		"conversion": {
+			"title": "Conversie",
+			"advanced_settings": "Setari avansate",
+			"filename_format": "Formatul numelui fisierului",
+			"filename_description": "Aceasta va determina numele fisierului la salvare, <b>fara a include extensia fisierului.</b> Puteti utiliza urmatoarele sabloane in format, care vor fi inlocuite cu informatiile relevante: <b>%name%</b> pentru numele original al fisierului, <b>%extension%</b> pentru extensia originala a fisierului si <b>%date%</b> pentru data la care fisierul a fost convertit.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Formatul implicit de conversie",
+			"default_format_enable": "Activati",
+			"default_format_disable": "Dezactivati",
+			"default_format_description": "Aceasta va schimba formatul implicit selectat cand selectati un fisier de acest tip.",
+			"default_format_image": "Imagini",
+			"default_format_video": "Videoclipuri",
+			"default_format_audio": "Audio",
+			"default_format_document": "Documente",
+			"metadata": "Metadate fisier",
+			"metadata_description": "Aceasta controleaza daca metadatele (EXIF, informatii melodie etc.) din fisierul original sunt pastrate in fisierele convertite.",
+			"keep": "Pastrati",
+			"remove": "Eliminati",
+			"quality": "Calitatea conversiei",
+			"quality_description": "Aceasta schimba calitatea implicita a fisierelor convertite (in categoria sa). Valorile mai mari pot duce la timpi de conversie mai lungi si dimensiuni mai mari ale fisierelor.",
+			"quality_video": "Aceasta schimba calitatea implicita a fisierelor video convertite. Valorile mai mari pot duce la timpi de conversie mai lungi si dimensiuni mai mari ale fisierelor.",
+			"quality_audio": "Audio (kbps)",
+			"quality_images": "Imagine (%)",
+			"rate": "Rata de esantionare (Hz)"
+		},
+		"vertd": {
+			"title": "Conversie video",
+			"status": "stare:",
+			"loading": "se incarca...",
+			"available": "pregatit",
+			"unavailable": "indisponibil",
+			"description": "Conversia video este gestionata local folosind FFmpeg WebAssembly. Videoclipurile dumneavoastra nu parasesc niciodata dispozitivul.",
+			"hosting_info": "Toata procesarea video are loc in browserul dumneavoastra folosind tehnologia WebAssembly.",
+			"instance": "Motor",
+			"url_placeholder": "FFmpeg WASM (local)",
+			"conversion_speed": "Viteza de conversie",
+			"speed_description": "Aceasta descrie compromisul intre viteza si calitate. Vitezele mai mari vor duce la o calitate mai scazuta, dar vor finaliza sarcina mai repede.",
+			"speeds": {
+				"very_slow": "Foarte lent",
+				"slower": "Mai lent",
+				"slow": "Lent",
+				"medium": "Mediu",
+				"fast": "Rapid",
+				"ultra_fast": "Ultra rapid"
+			},
+			"auto_instance": "Automat (recomandat)",
+			"eu_instance": "Local",
+			"us_instance": "Local",
+			"custom_instance": "Local"
+		},
+		"privacy": {
+			"title": "Confidentialitate si date",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Utilizam [plausible_link]Cloudflare Web Analytics[/plausible_link], un instrument de analiza axat pe confidentialitate, pentru a colecta statistici complet anonime. Toate datele sunt anonimizate si agregate, iar nicio informatie identificabila nu este trimisa sau stocata vreodata. Puteti alege sa renuntati mai jos.",
+			"opt_in": "Activati",
+			"opt_out": "Dezactivati",
+			"cache_title": "Gestionarea memoriei cache",
+			"cache_description": "Stocam in cache fisierele convertorului in browserul dumneavoastra pentru a nu fi nevoie sa le reincarcati de fiecare data, imbunatatind performanta si reducand utilizarea datelor.",
+			"refresh_cache": "Reimprospatati cache-ul",
+			"clear_cache": "Stergeti cache-ul",
+			"files_cached": "{size} ({count} fisiere)",
+			"loading_cache": "Se incarca...",
+			"total_size": "Dimensiune totala",
+			"files_cached_label": "Fisiere in cache",
+			"cache_cleared": "Cache-ul a fost sters cu succes!",
+			"cache_clear_error": "Stergerea cache-ului a esuat.",
+			"site_data_title": "Gestionarea datelor site-ului",
+			"site_data_description": "Stergeti toate datele site-ului, inclusiv setarile si fisierele din cache, resetand LocalConvert la starea sa implicita si reincarcand pagina.",
+			"clear_all_data": "Stergeti toate datele site-ului",
+			"clear_all_data_confirm_title": "Stergeti toate datele site-ului?",
+			"clear_all_data_confirm": "Aceasta va reseta toate setarile si cache-ul, apoi va reincarca pagina. Aceasta actiune nu poate fi anulata.",
+			"clear_all_data_cancel": "Anulati",
+			"all_data_cleared": "Toate datele site-ului au fost sterse! Se reincarca pagina...",
+			"all_data_clear_error": "Stergerea tuturor datelor site-ului a esuat."
+		},
+		"language": {
+			"title": "Limba",
+			"description": "Selectati limba preferata pentru interfata LocalConvert."
+		}
+	},
+	"about": {
+		"title": "Despre",
+		"why": {
+			"title": "De ce LocalConvert?",
+			"description": "<b>Convertoarele de fisiere ne-au dezamagit intotdeauna.</b> Sunt lente, necesita conturi si trimit fisierele dumneavoastra catre servere terte despre care nu stiti nimic. Am decis sa remediem aceasta problema.<br/><br/>Fiecare fisier pe care il convertiti -- imagini, audio, video si documente -- este procesat in intregime pe dispozitivul dumneavoastra folosind WebAssembly. Nimic nu paraseste browserul dumneavoastra. Nu exista servere implicate, nu exista incarcari si nimeni nu va poate vedea fisierele."
+		},
+		"sponsors": {
+			"title": "Sustinere",
+			"description": "LocalConvert este gratuit si cu sursa deschisa. Daca il gasiti util, luati in considerare sustinerea proiectului. Contactati-ne la",
+			"email_copied": "Adresa de e-mail copiata in clipboard!"
+		},
+		"resources": {
+			"title": "Resurse",
+			"discord": "Discord",
+			"source": "Cod sursa",
+			"email": "E-mail"
+		},
+		"donate": {
+			"title": "Sustineti LocalConvert",
+			"description": "Cu sprijinul dumneavoastra, putem continua sa mentinam si sa imbunatatim LocalConvert.",
+			"one_time": "O singura data",
+			"monthly": "Lunar",
+			"custom": "Personalizat",
+			"pay_now": "Platiti acum",
+			"donate_amount": "Donati ${amount} USD",
+			"thank_you": "Va multumim pentru sprijinul dumneavoastra!",
+			"payment_failed": "Plata a esuat: {message}{period} Nu ati fost taxat.",
+			"donation_error": "A aparut o eroare la procesarea donatiei dumneavoastra. Va rugam sa incercati mai tarziu.",
+			"payment_error": "Eroare la preluarea detaliilor de plata. Va rugam sa incercati mai tarziu.",
+			"donation_notice_official": "Sprijinul dumneavoastra ajuta la mentenanta si imbunatatirea LocalConvert.",
+			"donation_notice_unofficial": "Aceasta este o instanta terta a LocalConvert. Daca doriti sa sustineti proiectul original, va rugam sa vizitati site-ul oficial."
+		},
+		"credits": {
+			"title": "Mentiuni",
+			"contact_team": "Daca doriti sa contactati echipa de dezvoltare, va rugam sa utilizati adresa de e-mail din sectiunea 'Resurse'.",
+			"notable_contributors": "Contributori notabili",
+			"notable_description": "Dorim sa le multumim acestor persoane pentru contributiile lor majore la VERT, proiectul pe care se bazeaza LocalConvert.",
+			"github_contributors": "Contributori GitHub",
+			"github_description": "Multumiri tuturor acestor persoane pentru ajutor! [github_link]Doriti sa contribuiti si dumneavoastra?[/github_link]",
+			"no_contributors": "Se pare ca nimeni nu a contribuit inca... [contribute_link]fiti primul care contribuie![/contribute_link]",
+			"libraries": "Biblioteci",
+			"libraries_description": "Multumiri deosebite pentru FFmpeg (audio, video), ImageMagick (imagini) si Pandoc (documente) pentru mentinerea unor biblioteci atat de excelente de-a lungul atator ani. LocalConvert se bazeaza pe acestea pentru a va oferi conversiile.",
+			"roles": {
+				"lead_developer": "Dezvoltator principal; backend conversie, implementare interfata",
+				"developer": "Dezvoltator; implementare interfata",
+				"designer": "Designer; UX, branding, marketing",
+				"docker_ci": "Mentenanta Docker si CI",
+				"former_cofounder": "Fost co-fondator si designer"
+			}
+		},
+		"errors": {
+			"github_contributors": "Eroare la preluarea contributorilor GitHub"
+		},
+		"hero_title": "Creat pentru că instrumentele de conversie nu ar trebui să aibă nevoie de fișierele tale.",
+		"stats": {
+			"tools": "instrumente",
+			"format_conversions": "conversii de format",
+			"languages": "limbi",
+			"bytes_uploaded": "octeți încărcați"
+		},
+		"principles": {
+			"label": "Principii",
+			"p1_title": "Fișierele tale rămân pe dispozitivul tău",
+			"p1_desc": "Fiecare instrument rulează local în browserul tău prin WebAssembly. Nu există server. Fișierele tale nu sunt niciodată încărcate, transmise sau stocate.",
+			"p2_title": "Gratuit, fără cont, fără condiții",
+			"p2_desc": "Fără înregistrare, fără email, fără plată, fără limită de mărime. Deschide siteul, folosește instrumentele, închide tabul.",
+			"p3_title": "Sursă deschisă, verificabil",
+			"p3_desc": "Întregul cod sursă este public sub licența AGPL-3.0. Citește codul. Fiecare afirmație despre confidențialitate este verificabilă."
+		},
+		"inside": {
+			"label": "Ce conține",
+			"title": "Trei categorii de instrumente"
+		},
+		"stack": {
+			"label": "Inventarul atelierului",
+			"title": "Motoarele din spatele scenei",
+			"imagemagick": "60+ formate de imagine prin WASM",
+			"ffmpeg": "Conversie audio și video prin WASM",
+			"webcodecs": "Procesare video accelerată GPU",
+			"pandoc": "Conversie documente prin WASM",
+			"pdflib": "Creare, editare și randare PDF",
+			"sveltekit": "Framework și generare de site static"
+		},
+		"origin": {
+			"title": "Origine",
+			"description": "Acest proiect a început ca un fork al VERT.sh (AGPL-3.0). De atunci am reconstruit brandul, am adăugat peste 30 de instrumente, am reproiectat interfața și am extins la 28 de limbi."
+		},
+		"credit_groups": {
+			"engines": "Motoare de Conversie",
+			"engines_ffmpeg": "Conversie audio și video",
+			"engines_imagemagick": "Conversie formate de imagine",
+			"engines_pandoc": "Conversie documente",
+			"engines_mediabunny": "Accelerare video GPU",
+			"engines_webdemuxer": "Demuxare video WebCodecs",
+			"pdf_toolkit": "Kit de Instrumente PDF",
+			"pdf_pdflib": "Creare, editare și îmbinare PDF",
+			"pdf_pdfjs": "Randare și extragere text din PDF",
+			"pdf_encrypt": "Protecție cu parolă PDF",
+			"pdf_pptx": "Conversie PDF în PowerPoint",
+			"tool_libs": "Biblioteci de Instrumente",
+			"tool_qrcode": "Generare coduri QR",
+			"tool_marked": "Randare Markdown în HTML",
+			"framework": "Framework și Interfață",
+			"fw_sveltekit": "Framework de aplicație",
+			"fw_tailwind": "Stilizare utility-first",
+			"fw_lucide": "Sistem de iconițe",
+			"fw_paraglide": "Internaționalizare (28 de limbi)"
+		},
+		"links": {
+			"source_code": "Cod Sursă",
+			"privacy_policy": "Politica de Confidențialitate"
+		},
+		"install": "Instalare"
+	},
+	"workers": {
+		"errors": {
+			"general": "Eroare la conversia {file}: {message}",
+			"cancel": "Eroare la anularea conversiei pentru {file}: {message}",
+			"magick": "Eroare in procesul Magick, conversia imaginilor poate sa nu functioneze conform asteptarilor.",
+			"ffmpeg": "Eroare la incarcarea FFmpeg, unele functionalitati pot sa nu functioneze conform asteptarilor.",
+			"pandoc": "Eroare la incarcarea procesului Pandoc, conversia documentelor poate sa nu functioneze conform asteptarilor.",
+			"no_audio": "Nu s-a gasit niciun flux audio.",
+			"invalid_rate": "Rata de esantionare specificata este invalida: {rate}Hz",
+			"file_too_large": "Acest fisier depaseste limita de {limit}GB a browserului / dispozitivului. Incercati Firefox sau Safari pentru a converti acest fisier mare, deoarece au de obicei limite mai ridicate."
+		}
+	},
+	"privacy": {
+		"title": "Politica de confidentialitate",
+		"summary": {
+			"title": "Rezumat",
+			"description": "Politica de confidentialitate a LocalConvert este simpla: fisierele dumneavoastra nu parasesc niciodata dispozitivul. Toate conversiile -- imagini, audio, video si documente -- au loc in intregime in browserul dumneavoastra folosind WebAssembly. Nu utilizam cookie-uri sau sisteme de urmarire, iar analizele sunt complet anonime prin Cloudflare Web Analytics.<br/><br/>LocalConvert se bazeaza pe [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Conversii",
+			"description": "Toate conversiile au loc in intregime local pe dispozitivul dumneavoastra folosind versiunile WebAssembly ale instrumentelor relevante (FFmpeg, ImageMagick, Pandoc). Aceasta inseamna ca fisierele dumneavoastra nu parasesc niciodata dispozitivul si nimeni nu va avea acces la ele. Spre deosebire de alte convertoare, aceasta include si video -- conversia video se face de asemenea local in browserul dumneavoastra."
+		},
+		"donations": {
+			"title": "Donatii",
+			"description": "Daca functionalitatea de donatii este disponibila, procesarea platilor poate fi gestionata de un furnizor tert. Cererile de retea externe catre furnizorul de plati sunt amanate si sunt efectuate doar dupa ce faceti clic pe butonul de plata."
+		},
+		"conversion_errors": {
+			"title": "Erori de conversie",
+			"description": "Cand o conversie esueaza, informatiile despre eroare raman pe dispozitivul dumneavoastra. Nicio informatie despre eroare nu este trimisa automat catre vreun server. Detaliile erorii pot include:",
+			"list_job_id": "Tipul fisierului",
+			"list_format_from": "Formatul din care ati convertit",
+			"list_format_to": "Formatul in care ati convertit",
+			"list_stderr": "Rezultatul erorii FFmpeg",
+			"list_video": "Niciun fisier nu este incarcat vreodata pe server",
+			"footer": "Toate informatiile despre erori raman pe dispozitivul dumneavoastra si nu sunt transmise niciodata."
+		},
+		"analytics": {
+			"title": "Analize",
+			"description": "Utilizam Cloudflare Web Analytics pentru analize complet anonime si agregate. Cloudflare Web Analytics nu utilizeaza cookie-uri si respecta toate reglementarile majore de confidentialitate (GDPR/CCPA/PECR). Puteti renunta la analize din sectiunea 'Confidentialitate si date' din [settings_link]setari[/settings_link] si puteti citi mai multe despre Cloudflare Web Analytics [plausible_link]aici[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Stocare locala",
+			"description": "Utilizam stocarea locala a browserului dumneavoastra pentru a salva setarile. Nu sunt stocate sau transmise date personale.<br/><br/>Versiunile WebAssembly ale instrumentelor de conversie pe care le utilizam (FFmpeg, ImageMagick, Pandoc) sunt de asemenea stocate local in browserul dumneavoastra cand vizitati site-ul pentru prima data, astfel incat nu trebuie sa le reincarcati la fiecare vizita. Nu sunt stocate sau transmise date personale. Puteti vizualiza sau sterge aceste date oricand din sectiunea 'Confidentialitate si date' din [settings_link]setari[/settings_link]."
+		},
+		"contact": {
+			"title": "Contact",
+			"description": "Pentru intrebari, scrieti-ne la: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Ultima actualizare: 22.03.2026"
+	},
+	"pdf_tools": {
+		"title": "Instrumente PDF",
+		"subtitle": "Fiecare operatiune ruleaza in intregime in browserul dumneavoastra. Fisierele dumneavoastra nu parasesc niciodata dispozitivul.",
+		"badge": "100% local -- fara incarcari pe server",
+		"categories": {
+			"organize": "Organizare",
+			"convert": "Conversie",
+			"optimize": "Optimizare si editare"
+		},
+		"tools": {
+			"merge_name": "Combinare PDF",
+			"merge_desc": "Combinati mai multe fisiere PDF intr-un singur fisier",
+			"split_name": "Divizare PDF",
+			"split_desc": "Extrageti pagini sau divizati in fisiere individuale",
+			"rotate_name": "Rotire pagini",
+			"rotate_desc": "Rotiti pagini individuale sau toate paginile la 90°/180°/270°",
+			"organize_name": "Organizare pagini",
+			"organize_desc": "Reordonati sau stergeti pagini cu miniaturi vizuale",
+			"images_to_pdf_name": "Imagini → PDF",
+			"images_to_pdf_desc": "Convertiti imagini JPG, PNG sau WEBP intr-un PDF",
+			"pdf_to_images_name": "PDF → Imagini",
+			"pdf_to_images_desc": "Exportati fiecare pagina ca imagine JPG sau PNG",
+			"compress_name": "Comprimare PDF",
+			"compress_desc": "Reduceti dimensiunea fisierului prin re-randarea paginilor ca JPEG",
+			"watermark_name": "Adaugare filigran",
+			"watermark_desc": "Aplicati text pe fiecare pagina a unui PDF",
+			"page_numbers_name": "Adaugare numere de pagina",
+			"page_numbers_desc": "Adaugati numerotare secventiala pe fiecare pagina",
+			"metadata_name": "Editare metadate",
+			"metadata_desc": "Vizualizati si editati titlul, autorul si alte proprietati PDF",
+			"crop_name": "Decupare PDF",
+			"crop_desc": "Taiati marginile paginilor PDF",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Convertiti fiecare pagina PDF intr-un diapozitiv de prezentare",
+			"sign_name": "Semnare PDF",
+			"sign_desc": "Desenati, tastati sau incarcati o semnatura",
+			"edit_name": "Editare PDF",
+			"edit_desc": "Adaugati text pe orice pagina a unui PDF",
+			"password_name": "Protectie cu parola",
+			"password_desc": "Criptati un PDF cu o parola si setati permisiunile",
+			"unlock_name": "Deblocare PDF",
+			"unlock_desc": "Eliminati protectia cu parola dintr-un PDF",
+			"pdf_to_text_name": "PDF in text",
+			"pdf_to_text_desc": "Extrageti tot textul dintr-un PDF",
+			"grayscale_name": "PDF in tonuri de gri",
+			"grayscale_desc": "Convertiti paginile PDF in alb-negru"
+		}
+	},
+	"image_tools": {
+		"title": "Instrumente imagine",
+		"subtitle": "Fiecare operatiune ruleaza in intregime in browserul dumneavoastra. Fisierele dumneavoastra nu parasesc niciodata dispozitivul.",
+		"badge": "100% local -- fara incarcari pe server",
+		"categories": {
+			"edit": "Editare",
+			"create": "Creare"
+		},
+		"tools": {
+			"rotate_name": "Rotire imagine",
+			"rotate_desc": "Rotiti o imagine la 90°, 180° sau 270°",
+			"crop_name": "Decupare imagine",
+			"crop_desc": "Desenati un dreptunghi pentru a decupa orice zona",
+			"watermark_name": "Filigran imagine",
+			"watermark_desc": "Aplicati text pe orice imagine",
+			"meme_name": "Generator de meme-uri",
+			"meme_desc": "Adaugati text sus si jos pe orice imagine",
+			"batch_name": "Procesare in lot",
+			"batch_desc": "Aplicati aceeasi operatiune pe mai multe imagini",
+			"qr_name": "Generator cod QR",
+			"qr_desc": "Generati coduri QR din text sau URL-uri",
+			"color_picker_name": "Selector de culori",
+			"color_picker_desc": "Selectati culori din orice imagine",
+			"blur_name": "Estompare zona",
+			"blur_desc": "Estompati o zona dintr-o imagine pentru confidentialitate",
+			"filters_name": "Filtre imagine",
+			"filters_desc": "Ajustati luminozitatea, contrastul, saturatia si altele",
+			"video_to_gif_name": "Video in GIF",
+			"video_to_gif_desc": "Convertiti orice videoclip intr-un GIF animat"
+		}
+	},
+	"dev_tools": {
+		"title": "Instrumente pentru dezvoltatori",
+		"subtitle": "Formatati, codificati si generati hash-uri -- totul in browserul dumneavoastra. Nimic nu paraseste dispozitivul.",
+		"badge": "100% local -- fara incarcari pe server",
+		"categories": {
+			"format": "Formatare si transformare",
+			"analyze": "Analiza"
+		},
+		"tools": {
+			"json_name": "Formatare JSON",
+			"json_desc": "Formatati, minimizati si validati JSON",
+			"hash_name": "Generator de hash-uri",
+			"hash_desc": "Generati hash-uri SHA-256, SHA-1, SHA-512",
+			"base64_name": "Codec Base64",
+			"base64_desc": "Codificati si decodificati siruri Base64",
+			"markdown_name": "Previzualizare Markdown",
+			"markdown_desc": "Scrieti markdown si previzualizati HTML-ul randat",
+			"diff_name": "Comparare text",
+			"diff_desc": "Comparati doua texte si evidentiati diferentele",
+			"word_count_name": "Numarator de cuvinte",
+			"word_count_desc": "Numarati cuvinte, caractere, propozitii si altele",
+			"url_encode_name": "Codificare/Decodificare URL",
+			"url_encode_desc": "Codificati si decodificati siruri URL",
+			"css_minify_name": "Minimizare CSS",
+			"css_minify_desc": "Minimizati CSS prin eliminarea comentariilor si spatiilor"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Instrumente imagine",
+		"upload_image": "Trageti o imagine aici",
+		"upload_images": "Trageti mai multe imagini aici",
+		"angle": "Unghi",
+		"ready": "Pregatit!",
+		"download": "Descarcati",
+		"privacy_note": "✓ Fisierele dumneavoastra nu parasesc niciodata dispozitivul.",
+		"privacy_note_browser": "✓ Generat in intregime in browserul dumneavoastra.",
+		"reset": "Resetati",
+		"text": "Text",
+		"opacity": "Opacitate",
+		"font_size": "Dimensiune font",
+		"rotation": "Rotatie",
+		"position": "Pozitie",
+		"center": "Centru",
+		"tile": "Mozaic",
+		"size": "Dimensiune",
+		"foreground": "Prim-plan",
+		"background": "Fundal",
+		"operation": "Operatiune",
+		"rotate": "Rotire",
+		"watermark": "Filigran",
+		"crop": "Decupare",
+		"meme": "Meme",
+		"save": "Salvati",
+		"save_all": "Salvati toate",
+		"bottom": "Jos",
+		"failed": "Esuat."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Rotire imagine",
+			"desc": "Alegeti un unghi si vedeti rezultatul instantaneu.",
+			"save": "Salvati imaginea rotita"
+		},
+		"crop_image": {
+			"title": "Decupare imagine",
+			"desc": "Trageti colturile, marginile sau desenati o noua selectie.",
+			"circle": "Cerc",
+			"free": "Liber",
+			"err_area": "Selectati o zona de decupare pe imagine.",
+			"btn_busy": "Se decupeaza...",
+			"btn": "Decupati imaginea",
+			"save": "Salvati imaginea decupata"
+		},
+		"watermark_image": {
+			"title": "Filigran imagine",
+			"desc": "Ajustati setarile si vedeti filigranul actualizandu-se in timp real.",
+			"save": "Salvati imaginea cu filigran"
+		},
+		"meme": {
+			"title": "Generator de meme-uri",
+			"desc": "Tastati si vedeti meme-ul actualizandu-se in timp real.",
+			"top_text": "Text sus",
+			"bottom_text": "Text jos",
+			"save": "Salvati meme-ul"
+		},
+		"batch": {
+			"title": "Procesare in lot",
+			"desc": "Aplicati aceeasi operatiune pe mai multe imagini simultan.",
+			"trim": "Taiati",
+			"err_images": "Adaugati mai intai imagini.",
+			"err_text": "Introduceti cel putin o linie de text.",
+			"err_watermark": "Introduceti textul filigranului."
+		},
+		"qr": {
+			"title": "Generator cod QR",
+			"desc": "Generati un cod QR si vedeti-l actualizandu-se in timp real.",
+			"text_url": "Text sau URL",
+			"error_correction": "Corectie erori",
+			"low": "Scazut (7%)",
+			"medium": "Mediu (15%)",
+			"quartile": "Quartila (25%)",
+			"high": "Ridicat (30%)",
+			"save": "Salvati codul QR",
+			"save_file": "Descarcati qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "Vizitati LocalConvert intr-un context nesecurizat (de exemplu, accesare prin HTTP in loc de HTTPS). Unele functionalitati pot sa nu functioneze conform asteptarilor."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Fara incarcari pe server",
+			"tools_count": "36+ instrumente",
+			"open_source": "Gratuit si cu sursa deschisa",
+			"works_locally": "Functioneaza local"
+		},
+		"toolkit": {
+			"label": "Atelierul dumneavoastra",
+			"title": "Fiecare instrument ruleaza in browserul dumneavoastra",
+			"pdf_title": "Instrumente PDF",
+			"pdf_desc": "Combinare, divizare, comprimare, filigran, semnare, editare si inca 12",
+			"pdf_count": "18 instrumente",
+			"image_title": "Instrumente imagine",
+			"image_desc": "Decupare, redimensionare, filtre, estompare, filigran, meme si altele",
+			"image_count": "10 instrumente",
+			"dev_title": "Instrumente pentru dezvoltatori",
+			"dev_desc": "JSON, hash, Base64, markdown, comparare si altele",
+			"dev_count": "8 instrumente",
+			"explore": "Explorati →"
+		},
+		"gpu": {
+			"badge": "Accelerare hardware",
+			"title": "Conversie video cu GPU",
+			"desc": "Conversiile marcate cu ⚡ utilizeaza hardware-ul grafic al dispozitivului dumneavoastra. Conversii mai rapide, utilizare mai scazuta a procesorului -- in continuare 100% local.",
+			"full_label": "GPU complet -- orice directie",
+			"input_label": "GPU la conversia catre formatele de mai sus"
+		},
+		"formats": {
+			"title": "Peste 200 de conversii de formate",
+			"label": "Convertor"
+		},
+		"privacy": {
+			"title": "100% privat prin design",
+			"point1": "Fisierele dumneavoastra nu parasesc niciodata dispozitivul",
+			"point2": "Toate cele 36 de instrumente ruleaza in intregime in browserul dumneavoastra -- zero incarcari pe server",
+			"point3": "Sursa deschisa -- verificati singur",
+			"label": "Confidentialitate mai intai"
+		},
+		"faq": {
+			"title": "Intrebari frecvente",
+			"q1": "Este LocalConvert cu adevarat gratuit?",
+			"a1": "Da -- complet gratuit, fara cont necesar, fara taxe ascunse. LocalConvert este cu sursa deschisa sub licenta AGPL-3.0.",
+			"q2": "Sunt fisierele mele private?",
+			"a2": "Absolut. Toata procesarea ruleaza in browserul dumneavoastra folosind WebAssembly. Fisierele dumneavoastra nu ajung niciodata pe serverele noastre -- nici macar pentru o clipa.",
+			"q3": "Ce poate face LocalConvert?",
+			"a3": "Convertiti peste 200 de formate de fisiere (imagini, audio, video, documente), 18 instrumente PDF (combinare, divizare, comprimare, filigran, semnare, editare si altele), 10 instrumente imagine (decupare, redimensionare, filtre, estompare, filigran) si 8 instrumente pentru dezvoltatori (JSON, hash, Base64, comparare, markdown).",
+			"q4": "Exista o limita de dimensiune a fisierelor?",
+			"a4": "Nu exista o limita stricta -- depinde de memoria disponibila a dispozitivului dumneavoastra. Pentru fisiere video foarte mari, Firefox sau Safari le gestioneaza de obicei mai bine.",
+			"q5": "Trebuie sa instalez ceva?",
+			"a5": "Nu este necesara nicio instalare. LocalConvert functioneaza direct in orice browser modern. Il puteti instala si ca PWA din bara de adrese pentru o experienta similara unei aplicatii.",
+			"label": "Intrebari"
+		}
+	}
+}

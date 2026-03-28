@@ -15,7 +15,11 @@
 		"copyright": "© {year} LocalConvert. Basiert auf VERT.sh",
 		"source_code": "Quellcode",
 		"discord_server": "Discord-Server",
-		"privacy_policy": "Datenschutzerklärung"
+		"privacy_policy": "Datenschutzerklärung",
+		"tagline": "Dein privates Werkzeugset",
+		"pdf_tools_count": "PDF-Werkzeuge - 18",
+		"image_tools_count": "Bildwerkzeuge - 10",
+		"dev_tools_count": "Entwickler-Tools - 8"
 	},
 	"upload": {
 		"title": "Ihr privates Toolkit für Dateien & Code.",
@@ -280,7 +284,67 @@
 		},
 		"errors": {
 			"github_contributors": "Fehler beim Abrufen der GitHub-Mitwirkenden"
-		}
+		},
+		"hero_title": "Entstanden, weil Dateikonverter nie Zugriff auf deine Dateien brauchen sollten.",
+		"stats": {
+			"tools": "Werkzeuge",
+			"format_conversions": "Formatkonvertierungen",
+			"languages": "Sprachen",
+			"bytes_uploaded": "hochgeladene Bytes"
+		},
+		"principles": {
+			"label": "Grundsätze",
+			"p1_title": "Deine Dateien bleiben auf deinem Gerät",
+			"p1_desc": "Jedes Werkzeug läuft lokal in deinem Browser über WebAssembly. Es gibt keinen Server. Deine Dateien werden niemals hochgeladen, übertragen oder gespeichert.",
+			"p2_title": "Kostenlos, kein Konto, keine Haken",
+			"p2_desc": "Keine Registrierung, keine E-Mail, keine Bezahlschranke, keine Dateigrößenlimits. Seite öffnen, Werkzeuge nutzen, Tab schließen.",
+			"p3_title": "Open Source und nachprüfbar",
+			"p3_desc": "Der gesamte Quellcode ist öffentlich unter AGPL-3.0. Lies den Code. Jede Datenschutzaussage ist überprüfbar."
+		},
+		"inside": {
+			"label": "Was steckt drin",
+			"title": "Drei Werkzeugkategorien"
+		},
+		"stack": {
+			"label": "Technische Ausstattung",
+			"title": "Die Motoren unter der Haube",
+			"imagemagick": "60+ Bildformate über WASM",
+			"ffmpeg": "Audio- und Videokonvertierung über WASM",
+			"webcodecs": "GPU-beschleunigte Videoverarbeitung",
+			"pandoc": "Dokumentenkonvertierung über WASM",
+			"pdflib": "PDF-Erstellung, -Bearbeitung und -Darstellung",
+			"sveltekit": "Framework und statische Seitengenerierung"
+		},
+		"origin": {
+			"title": "Ursprung",
+			"description": "Dieses Projekt begann als Fork von VERT.sh (AGPL-3.0). Seitdem haben wir die Marke neu aufgebaut, über 30 Werkzeuge hinzugefügt, die Oberfläche neu gestaltet und auf 28 Sprachen erweitert."
+		},
+		"credit_groups": {
+			"engines": "Konvertierungsmotoren",
+			"engines_ffmpeg": "Audio- und Videokonvertierung",
+			"engines_imagemagick": "Bildformatkonvertierung",
+			"engines_pandoc": "Dokumentenkonvertierung",
+			"engines_mediabunny": "GPU-Videobeschleunigung",
+			"engines_webdemuxer": "Video-Demuxing über WebCodecs",
+			"pdf_toolkit": "PDF-Werkzeugkasten",
+			"pdf_pdflib": "PDF-Erstellung, -Bearbeitung und -Zusammenführung",
+			"pdf_pdfjs": "PDF-Darstellung und Textextraktion",
+			"pdf_encrypt": "PDF-Passwortschutz",
+			"pdf_pptx": "PDF-zu-PowerPoint-Konvertierung",
+			"tool_libs": "Werkzeugbibliotheken",
+			"tool_qrcode": "QR-Code-Erzeugung",
+			"tool_marked": "Markdown-zu-HTML-Darstellung",
+			"framework": "Framework und Oberfläche",
+			"fw_sveltekit": "Anwendungsframework",
+			"fw_tailwind": "Utility-basiertes Styling",
+			"fw_lucide": "Symbolsystem",
+			"fw_paraglide": "Internationalisierung (28 Sprachen)"
+		},
+		"links": {
+			"source_code": "Quellcode",
+			"privacy_policy": "Datenschutzerklärung"
+		},
+		"install": "Installieren"
 	},
 	"workers": {
 		"errors": {
@@ -459,9 +523,9 @@
 			"blur_name": "Bereich verwischen",
 			"blur_desc": "Einen Bildbereich für den Datenschutz verwischen",
 			"filters_name": "Bildfilter",
-			"filters_desc": "Helligkeit, Kontrast, Sättigung, Sepia und Farbton anpassen",
+			"filters_desc": "Helligkeit, Kontrast, Sattigung und mehr anpassen",
 			"video_to_gif_name": "Video zu GIF",
-			"video_to_gif_desc": "Ein Video in ein animiertes GIF umwandeln"
+			"video_to_gif_desc": "Jedes Video in ein animiertes GIF umwandeln"
 		},
 		"categories": {
 			"edit": "Bearbeiten",
@@ -915,15 +979,15 @@
 			"base64_name": "Base64 Kodieren/Dekodieren",
 			"base64_desc": "Base64 kodieren oder dekodieren",
 			"markdown_name": "Markdown-Vorschau",
-			"markdown_desc": "Live Markdown zu HTML",
+			"markdown_desc": "Markdown schreiben und gerenderte HTML-Vorschau anzeigen",
 			"diff_name": "Textvergleich",
-			"diff_desc": "Zwei Texte vergleichen und Unterschiede anzeigen",
-			"word_count_name": "Wortzähler",
-			"word_count_desc": "Wörter, Zeichen, Lesezeit",
-			"url_encode_name": "URL Kodieren/Dekodieren",
-			"url_encode_desc": "URLs kodieren oder dekodieren",
-			"css_minify_name": "CSS Minimieren",
-			"css_minify_desc": "CSS-Code minimieren"
+			"diff_desc": "Zwei Texte vergleichen und Unterschiede hervorheben",
+			"word_count_name": "Wortzahler",
+			"word_count_desc": "Worter, Zeichen, Satze und mehr zahlen",
+			"url_encode_name": "URL-Kodierung/-Dekodierung",
+			"url_encode_desc": "URL-Zeichenketten kodieren und dekodieren",
+			"css_minify_name": "CSS-Komprimierer",
+			"css_minify_desc": "CSS durch Entfernen von Kommentaren und Leerzeichen komprimieren"
 		},
 		"categories": {
 			"format": "Formatieren & Transformieren",

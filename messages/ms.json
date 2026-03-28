@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Laman Utama",
+		"convert": "Tukar",
+		"pdf_tools": "Alat PDF",
+		"image_tools": "Alat Imej",
+		"dev_tools": "Alat Pembangun",
+		"tools": "Alat",
+		"settings": "Tetapan",
+		"about": "Perihal",
+		"toggle_theme": "Tukar tema"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Berdasarkan VERT.sh",
+		"source_code": "Kod sumber",
+		"discord_server": "Pelayan Discord",
+		"privacy_policy": "Dasar privasi",
+		"tagline": "Kit alat peribadi anda",
+		"pdf_tools_count": "Alat PDF - 18",
+		"image_tools_count": "Alat Imej - 10",
+		"dev_tools_count": "Alat Dev - 8"
+	},
+	"upload": {
+		"title": "Kit alat peribadi anda untuk fail & kod.",
+		"subtitle": "36 alat untuk PDF, imej dan aliran kerja pembangun — semuanya berjalan dalam pelayar anda. Tiada muat naik, tiada akaun, percuma selama-lamanya.",
+		"uploader": {
+			"text": "Lepas atau klik untuk {action}",
+			"convert": "menukar"
+		},
+		"cards": {
+			"title": "LocalConvert menyokong...",
+			"images": "Imej",
+			"audio": "Audio",
+			"documents": "Dokumen",
+			"video": "Video",
+			"video_server_processing": "Disokong secara tempatan",
+			"local_supported": "Disokong secara tempatan",
+			"status": {
+				"text": "<b>Status:</b> {status}",
+				"ready": "sedia",
+				"not_ready": "tidak sedia",
+				"not_initialized": "tidak dimulakan",
+				"downloading": "memuat alat...",
+				"initializing": "memulakan...",
+				"unknown": "status tidak diketahui"
+			},
+			"supported_formats": "Format yang disokong:"
+		},
+		"tooltip": {
+			"partial_support": "Format ini hanya boleh ditukar sebagai {direction}.",
+			"direction_input": "input (daripada)",
+			"direction_output": "output (kepada)",
+			"video_server_processing": "Semua penukaran berlaku secara tempatan pada peranti anda."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Ekstrak arkib",
+			"extracting": "Arkib dikesan: {filename}",
+			"extracted": "{extract_count} fail diekstrak daripada {filename}. {ignore_count} item diabaikan.",
+			"detected": "{type} fail dikesan dalam {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "dokumen",
+			"image": "imej",
+			"extract_error": "Ralat mengekstrak {filename}: {error}"
+		},
+		"large_file_warning": "Disebabkan oleh had pelayar / peranti, penukaran dilumpuhkan untuk fail ini kerana ia melebihi {limit}GB. Kami mengesyorkan penggunaan Firefox atau Safari untuk fail sebesar ini kerana ia mempunyai had yang lebih tinggi.",
+		"external_warning": {
+			"title": "Amaran fail besar",
+			"text": "Fail ini agak besar dan mungkin mengambil masa yang lama untuk ditukar dalam pelayar. Adakah anda ingin meneruskan?",
+			"yes": "Ya",
+			"no": "Tidak"
+		},
+		"panel": {
+			"convert_all": "Tukar semua",
+			"download_all": "Simpan semua sebagai .zip",
+			"remove_all": "Buang semua fail",
+			"set_all_to": "Tetapkan semua kepada",
+			"na": "T/B"
+		},
+		"dropdown": {
+			"audio": "Audio",
+			"video": "Video",
+			"doc": "Dokumen",
+			"image": "Imej",
+			"placeholder": "Cari format",
+			"no_formats": "Tiada format tersedia",
+			"no_results": "Tiada format sepadan dengan carian anda"
+		},
+		"tooltips": {
+			"unknown_file": "Jenis fail tidak diketahui",
+			"audio_file": "Fail audio",
+			"video_file": "Fail video",
+			"document_file": "Fail dokumen",
+			"image_file": "Fail imej",
+			"convert_file": "Tukar fail ini",
+			"download_file": "Simpan ke peranti"
+		},
+		"errors": {
+			"cant_convert": "Kami tidak dapat menukar fail ini.",
+			"vertd_server": "Format fail ini tidak disokong untuk penukaran.",
+			"vertd_generic_view": "Lihat butiran ralat",
+			"vertd_generic_body": "Ralat berlaku semasa cuba menukar fail anda. Sila cuba lagi atau cuba format lain.",
+			"vertd_generic_title": "Ralat penukaran",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Batal",
+			"vertd_failed_to_keep": "Penukaran gagal: {error}",
+			"vertd_details": "Lihat butiran ralat",
+			"vertd_details_body": "Maklumat ralat berikut mungkin membantu penyelesaian masalah:",
+			"vertd_details_footer": "Lihat [privacy_link]dasar privasi[/privacy_link] kami untuk maklumat lanjut.",
+			"vertd_details_job_id": "<b>ID Tugas:</b> {jobId}",
+			"vertd_details_from": "<b>Format asal:</b> {from}",
+			"vertd_details_to": "<b>Format sasaran:</b> {to}",
+			"vertd_details_error_message": "<b>Mesej ralat:</b> [view_link]Lihat log ralat[/view_link]",
+			"vertd_details_close": "Tutup",
+			"vertd_ratelimit": "Fail '{filename}' telah gagal ditukar beberapa kali. Sila cuba format lain atau fail yang lebih kecil.",
+			"unsupported_format": "Hanya fail imej, video, audio dan dokumen yang disokong",
+			"pdf_redirect_title": "Ini adalah fail PDF.",
+			"pdf_redirect_desc": "PDF tidak ditukar di sini — gunakan Alat PDF untuk menggabung, memisah, memampatkan, memutar dan banyak lagi.",
+			"pdf_redirect_button": "Buka Alat PDF",
+			"format_output_only": "Format ini pada masa ini hanya boleh digunakan sebagai output (ditukar kepada), bukan sebagai input.",
+			"vertd_not_found": "Penukar video tidak dapat dimulakan. Sila muat semula halaman dan cuba lagi.",
+			"worker_downloading": "Penukar {type} sedang dimuat, sila tunggu sebentar.",
+			"worker_error": "Penukar {type} mengalami ralat semasa pemulaan, sila cuba lagi kemudian.",
+			"worker_timeout": "Penukar {type} mengambil masa lebih lama daripada jangkaan untuk dimulakan, sila tunggu beberapa saat lagi atau muat semula halaman.",
+			"audio": "audio",
+			"doc": "dokumen",
+			"image": "imej"
+		},
+		"options": {
+			"quality": "Kualiti",
+			"resize": "Ubah saiz",
+			"bitrate": "Kadar bit",
+			"trim": "Potong"
+		}
+	},
+	"settings": {
+		"title": "Tetapan",
+		"errors": {
+			"save_failed": "Gagal menyimpan tetapan!"
+		},
+		"appearance": {
+			"title": "Penampilan",
+			"brightness_theme": "Tema kecerahan",
+			"brightness_description": "Mahukan kilat cerah, atau malam yang tenang?",
+			"light": "Cerah",
+			"dark": "Gelap",
+			"effect_settings": "Tetapan kesan",
+			"effect_description": "Adakah anda mahukan kesan menarik, atau pengalaman yang lebih statik?",
+			"enable": "Dayakan",
+			"disable": "Lumpuhkan"
+		},
+		"conversion": {
+			"title": "Penukaran",
+			"advanced_settings": "Tetapan lanjutan",
+			"filename_format": "Format nama fail",
+			"filename_description": "Ini akan menentukan nama fail semasa dimuat turun, <b>tidak termasuk sambungan fail.</b> Anda boleh meletakkan templat berikut dalam format, yang akan digantikan dengan maklumat berkaitan: <b>%name%</b> untuk nama fail asal, <b>%extension%</b> untuk sambungan fail asal, dan <b>%date%</b> untuk rentetan tarikh bila fail ditukar.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Format penukaran lalai",
+			"default_format_enable": "Dayakan",
+			"default_format_disable": "Lumpuhkan",
+			"default_format_description": "Ini akan menukar format lalai yang dipilih apabila anda memilih fail berjenis ini.",
+			"default_format_image": "Imej",
+			"default_format_video": "Video",
+			"default_format_audio": "Audio",
+			"default_format_document": "Dokumen",
+			"metadata": "Metadata fail",
+			"metadata_description": "Ini mengubah sama ada sebarang metadata (EXIF, maklumat lagu, dsb.) pada fail asal dikekalkan dalam fail yang ditukar.",
+			"keep": "Kekalkan",
+			"remove": "Buang",
+			"quality": "Kualiti penukaran",
+			"quality_description": "Ini mengubah kualiti output lalai fail yang ditukar (dalam kategorinya). Nilai yang lebih tinggi mungkin mengakibatkan masa penukaran yang lebih lama dan saiz fail yang lebih besar.",
+			"quality_video": "Ini mengubah kualiti output lalai fail video yang ditukar. Nilai yang lebih tinggi mungkin mengakibatkan masa penukaran yang lebih lama dan saiz fail yang lebih besar.",
+			"quality_audio": "Audio (kbps)",
+			"quality_images": "Imej (%)",
+			"rate": "Kadar sampel (Hz)"
+		},
+		"vertd": {
+			"title": "Penukaran video",
+			"status": "status:",
+			"loading": "memuat...",
+			"available": "sedia",
+			"unavailable": "tidak tersedia",
+			"description": "Penukaran video dikendalikan secara tempatan menggunakan FFmpeg WebAssembly. Video anda tidak akan meninggalkan peranti anda.",
+			"hosting_info": "Semua pemprosesan video berlaku dalam pelayar anda menggunakan teknologi WebAssembly.",
+			"instance": "Enjin",
+			"url_placeholder": "FFmpeg WASM (tempatan)",
+			"conversion_speed": "Kelajuan penukaran",
+			"speed_description": "Ini menerangkan pertukaran antara kelajuan dan kualiti. Kelajuan yang lebih tinggi akan menghasilkan kualiti yang lebih rendah, tetapi akan menyelesaikan tugas dengan lebih cepat.",
+			"speeds": {
+				"very_slow": "Sangat Perlahan",
+				"slower": "Lebih Perlahan",
+				"slow": "Perlahan",
+				"medium": "Sederhana",
+				"fast": "Pantas",
+				"ultra_fast": "Sangat Pantas"
+			},
+			"auto_instance": "Automatik (disyorkan)",
+			"eu_instance": "Tempatan",
+			"us_instance": "Tempatan",
+			"custom_instance": "Tempatan"
+		},
+		"privacy": {
+			"title": "Privasi & data",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Kami menggunakan [plausible_link]Cloudflare Web Analytics[/plausible_link], alat analitik yang mengutamakan privasi, untuk mengumpul statistik tanpa nama sepenuhnya. Semua data dianonimkan dan diagregatkan, dan tiada maklumat yang boleh dikenal pasti pernah dihantar atau disimpan. Anda boleh memilih untuk menarik diri di bawah.",
+			"opt_in": "Sertai",
+			"opt_out": "Tarik diri",
+			"cache_title": "Pengurusan cache",
+			"cache_description": "Kami menyimpan cache fail penukar pada pelayar anda supaya anda tidak perlu memuatnya semula setiap kali, meningkatkan prestasi dan mengurangkan penggunaan data.",
+			"refresh_cache": "Muat semula cache",
+			"clear_cache": "Kosongkan cache",
+			"files_cached": "{size} ({count} fail)",
+			"loading_cache": "Memuat...",
+			"total_size": "Jumlah Saiz",
+			"files_cached_label": "Fail Dicache",
+			"cache_cleared": "Cache berjaya dikosongkan!",
+			"cache_clear_error": "Gagal mengosongkan cache.",
+			"site_data_title": "Pengurusan data laman",
+			"site_data_description": "Kosongkan semua data laman termasuk tetapan dan fail cache, menetapkan semula LocalConvert ke keadaan lalai dan memuat semula halaman.",
+			"clear_all_data": "Kosongkan semua data laman",
+			"clear_all_data_confirm_title": "Kosongkan semua data laman?",
+			"clear_all_data_confirm": "Ini akan menetapkan semula semua tetapan & cache, kemudian memuat semula halaman. Tindakan ini tidak boleh dibatalkan.",
+			"clear_all_data_cancel": "Batal",
+			"all_data_cleared": "Semua data laman dikosongkan! Memuat semula halaman...",
+			"all_data_clear_error": "Gagal mengosongkan semua data laman."
+		},
+		"language": {
+			"title": "Bahasa",
+			"description": "Pilih bahasa pilihan anda untuk antara muka LocalConvert."
+		}
+	},
+	"about": {
+		"title": "Perihal",
+		"why": {
+			"title": "Mengapa LocalConvert?",
+			"description": "<b>Penukar fail sentiasa mengecewakan kami.</b> Ia perlahan, memerlukan akaun, dan menghantar fail anda ke pelayan pihak ketiga yang tidak anda kenali. Kami memutuskan untuk memperbaikinya.<br/><br/>Setiap fail yang anda tukar — imej, audio, video dan dokumen — diproses sepenuhnya pada peranti anda menggunakan WebAssembly. Tiada apa-apa yang meninggalkan pelayar anda. Tiada pelayan yang terlibat, tiada muat naik, dan tiada sesiapa yang boleh melihat fail anda."
+		},
+		"sponsors": {
+			"title": "Sokongan",
+			"description": "LocalConvert adalah percuma dan sumber terbuka. Jika anda mendapatinya berguna, pertimbangkan untuk menyokong projek ini. Hubungi kami di",
+			"email_copied": "E-mel disalin ke papan keratan!"
+		},
+		"resources": {
+			"title": "Sumber",
+			"discord": "Discord",
+			"source": "Sumber",
+			"email": "E-mel"
+		},
+		"donate": {
+			"title": "Sokong LocalConvert",
+			"description": "Dengan sokongan anda, kami boleh terus menyelenggara dan menambah baik LocalConvert.",
+			"one_time": "Sekali",
+			"monthly": "Bulanan",
+			"custom": "Tersuai",
+			"pay_now": "Bayar sekarang",
+			"donate_amount": "Derma ${amount} USD",
+			"thank_you": "Terima kasih atas sokongan anda!",
+			"payment_failed": "Pembayaran gagal: {message}{period} Anda tidak dikenakan caj.",
+			"donation_error": "Ralat berlaku semasa memproses derma anda. Sila cuba lagi kemudian.",
+			"payment_error": "Ralat mendapatkan butiran pembayaran. Sila cuba lagi kemudian.",
+			"donation_notice_official": "Sokongan anda membantu menyelenggara dan menambah baik LocalConvert.",
+			"donation_notice_unofficial": "Ini adalah tika pihak ketiga LocalConvert. Jika anda ingin menyokong projek asal, sila lawati laman rasmi sebaliknya."
+		},
+		"credits": {
+			"title": "Kredit",
+			"contact_team": "Jika anda ingin menghubungi pasukan pembangunan, sila gunakan e-mel yang terdapat pada kad 'Sumber'.",
+			"notable_contributors": "Penyumbang utama",
+			"notable_description": "Kami ingin mengucapkan terima kasih kepada individu-individu ini atas sumbangan besar mereka kepada VERT, projek yang menjadi asas LocalConvert.",
+			"github_contributors": "Penyumbang GitHub",
+			"github_description": "Terima kasih kepada semua yang membantu! [github_link]Mahu membantu juga?[/github_link]",
+			"no_contributors": "Nampaknya belum ada yang menyumbang... [contribute_link]jadilah yang pertama menyumbang![/contribute_link]",
+			"libraries": "Perpustakaan",
+			"libraries_description": "Terima kasih yang besar kepada FFmpeg (audio, video), ImageMagick (imej) dan Pandoc (dokumen) kerana menyelenggara perpustakaan yang begitu cemerlang selama bertahun-tahun. LocalConvert bergantung pada mereka untuk menyediakan penukaran anda.",
+			"roles": {
+				"lead_developer": "Pembangun utama; bahagian belakang penukaran, pelaksanaan UI",
+				"developer": "Pembangun; pelaksanaan UI",
+				"designer": "Pereka; UX, penjenamaan, pemasaran",
+				"docker_ci": "Menyelenggara sokongan Docker & CI",
+				"former_cofounder": "Bekas pengasas bersama & pereka"
+			}
+		},
+		"errors": {
+			"github_contributors": "Ralat mendapatkan penyumbang GitHub"
+		},
+		"hero_title": "Dibina kerana alat penukaran fail tidak sepatutnya memerlukan fail anda.",
+		"stats": {
+			"tools": "alat",
+			"format_conversions": "penukaran format",
+			"languages": "bahasa",
+			"bytes_uploaded": "bait dimuat naik"
+		},
+		"principles": {
+			"label": "Prinsip",
+			"p1_title": "Fail anda kekal pada peranti anda",
+			"p1_desc": "Setiap alat berjalan secara tempatan dalam pelayar anda melalui WebAssembly. Tiada pelayan. Fail anda tidak pernah dimuat naik, dihantar, atau disimpan di mana-mana.",
+			"p2_title": "Percuma, tanpa akaun, tanpa syarat",
+			"p2_desc": "Tanpa pendaftaran, tanpa e-mel, tanpa bayaran, tanpa had saiz fail. Buka laman, guna alat, tutup tab.",
+			"p3_title": "Sumber terbuka, boleh disahkan",
+			"p3_desc": "Keseluruhan kod sumber adalah awam di bawah lesen AGPL-3.0. Baca kodnya. Setiap dakwaan privasi boleh disahkan."
+		},
+		"inside": {
+			"label": "Apa yang ada di dalam",
+			"title": "Tiga kategori alat"
+		},
+		"stack": {
+			"label": "Inventori bengkel",
+			"title": "Enjin di sebalik tabir",
+			"imagemagick": "60+ format imej melalui WASM",
+			"ffmpeg": "Penukaran audio dan video melalui WASM",
+			"webcodecs": "Pemprosesan video dipercepat GPU",
+			"pandoc": "Penukaran dokumen melalui WASM",
+			"pdflib": "Penciptaan, penyuntingan dan pemaparan PDF",
+			"sveltekit": "Rangka kerja dan penjanaan laman statik"
+		},
+		"origin": {
+			"title": "Asal Usul",
+			"description": "Projek ini bermula sebagai fork VERT.sh (AGPL-3.0). Sejak itu kami telah membina semula jenama, menambah 30+ alat, mereka bentuk semula antara muka, dan mengembangkan ke 28 bahasa."
+		},
+		"credit_groups": {
+			"engines": "Enjin Penukaran",
+			"engines_ffmpeg": "Penukaran audio dan video",
+			"engines_imagemagick": "Penukaran format imej",
+			"engines_pandoc": "Penukaran dokumen",
+			"engines_mediabunny": "Pecutan video GPU",
+			"engines_webdemuxer": "Penyahmultipleksan video WebCodecs",
+			"pdf_toolkit": "Kit Alat PDF",
+			"pdf_pdflib": "Penciptaan, penyuntingan dan penggabungan PDF",
+			"pdf_pdfjs": "Pemaparan dan pengekstrakan teks PDF",
+			"pdf_encrypt": "Perlindungan kata laluan PDF",
+			"pdf_pptx": "Penukaran PDF ke PowerPoint",
+			"tool_libs": "Pustaka Alat",
+			"tool_qrcode": "Penjanaan kod QR",
+			"tool_marked": "Pemaparan Markdown ke HTML",
+			"framework": "Rangka Kerja dan Antara Muka",
+			"fw_sveltekit": "Rangka kerja aplikasi",
+			"fw_tailwind": "Penggayaan utility-first",
+			"fw_lucide": "Sistem ikon",
+			"fw_paraglide": "Pengantarabangsaan (28 bahasa)"
+		},
+		"links": {
+			"source_code": "Kod Sumber",
+			"privacy_policy": "Dasar Privasi"
+		},
+		"install": "Pasang"
+	},
+	"workers": {
+		"errors": {
+			"general": "Ralat menukar {file}: {message}",
+			"cancel": "Ralat membatalkan penukaran untuk {file}: {message}",
+			"magick": "Ralat dalam pekerja Magick, penukaran imej mungkin tidak berfungsi seperti yang dijangkakan.",
+			"ffmpeg": "Ralat memuatkan FFmpeg, beberapa ciri mungkin tidak berfungsi seperti yang dijangkakan.",
+			"pandoc": "Ralat memuatkan pekerja Pandoc, penukaran dokumen mungkin tidak berfungsi seperti yang dijangkakan.",
+			"no_audio": "Tiada strim audio ditemui.",
+			"invalid_rate": "Kadar sampel tidak sah dinyatakan: {rate}Hz",
+			"file_too_large": "Fail ini melebihi had pelayar / peranti {limit}GB. Cuba Firefox atau Safari untuk menukar fail besar ini, yang biasanya mempunyai had yang lebih tinggi."
+		}
+	},
+	"privacy": {
+		"title": "Dasar Privasi",
+		"summary": {
+			"title": "Ringkasan",
+			"description": "Dasar privasi LocalConvert adalah ringkas: fail anda tidak akan meninggalkan peranti anda. Semua penukaran — imej, audio, video dan dokumen — berlaku sepenuhnya dalam pelayar anda menggunakan WebAssembly. Kami tidak menggunakan kuki atau penjejak, dan analitik adalah tanpa nama sepenuhnya melalui Cloudflare Web Analytics.<br/><br/>LocalConvert berdasarkan [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Penukaran",
+			"description": "Semua penukaran berlaku sepenuhnya secara tempatan pada peranti anda menggunakan versi WebAssembly alat yang berkaitan (FFmpeg, ImageMagick, Pandoc). Ini bermakna fail anda tidak akan meninggalkan peranti anda dan tiada sesiapa yang akan mempunyai akses kepadanya. Tidak seperti penukar lain, ini termasuk video — penukaran video juga dilakukan secara tempatan dalam pelayar anda."
+		},
+		"donations": {
+			"title": "Derma",
+			"description": "Jika fungsi derma tersedia, pemprosesan pembayaran mungkin dikendalikan oleh pembekal pihak ketiga. Permintaan rangkaian luaran kepada pembekal pembayaran ditangguhkan, dan hanya dibuat selepas anda mengklik butang untuk membayar."
+		},
+		"conversion_errors": {
+			"title": "Ralat Penukaran",
+			"description": "Apabila penukaran gagal, maklumat ralat kekal pada peranti anda. Tiada data ralat dihantar secara automatik ke mana-mana pelayan. Butiran ralat mungkin termasuk:",
+			"list_job_id": "Jenis fail",
+			"list_format_from": "Format asal penukaran",
+			"list_format_to": "Format sasaran penukaran",
+			"list_stderr": "Output ralat FFmpeg",
+			"list_video": "Tiada fail yang pernah dimuat naik",
+			"footer": "Semua maklumat ralat kekal pada peranti anda dan tidak pernah dihantar."
+		},
+		"analytics": {
+			"title": "Analitik",
+			"description": "Kami menggunakan Cloudflare Web Analytics untuk analitik tanpa nama dan agregat sepenuhnya. Cloudflare Web Analytics tidak menggunakan kuki dan mematuhi semua peraturan privasi utama (GDPR/CCPA/PECR). Anda boleh menarik diri daripada analitik di bahagian 'Privasi & data' dalam [settings_link]tetapan[/settings_link] dan membaca lebih lanjut tentang Cloudflare Web Analytics [plausible_link]di sini[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Storan Tempatan",
+			"description": "Kami menggunakan storan tempatan pelayar anda untuk menyimpan tetapan anda. Tiada data peribadi disimpan atau dihantar.<br/><br/>Versi WebAssembly alat penukaran yang kami gunakan (FFmpeg, ImageMagick, Pandoc) juga disimpan secara tempatan pada pelayar anda apabila anda pertama kali melawat laman web, supaya anda tidak perlu memuatnya semula setiap kali. Tiada data peribadi disimpan atau dihantar. Anda boleh melihat atau memadam data ini pada bila-bila masa di bahagian 'Privasi & data' dalam [settings_link]tetapan[/settings_link]."
+		},
+		"contact": {
+			"title": "Hubungi",
+			"description": "Untuk pertanyaan, e-mel kami di: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Kemaskini terakhir: 2026-03-22"
+	},
+	"pdf_tools": {
+		"title": "Alat PDF",
+		"subtitle": "Setiap operasi berjalan sepenuhnya dalam pelayar anda. Fail anda tidak akan meninggalkan peranti anda.",
+		"badge": "100% tempatan — tiada muat naik, tiada pelayan",
+		"categories": {
+			"organize": "Susun",
+			"convert": "Tukar",
+			"optimize": "Optimumkan & Edit"
+		},
+		"tools": {
+			"merge_name": "Gabung PDF",
+			"merge_desc": "Gabungkan beberapa PDF menjadi satu fail",
+			"split_name": "Pisah PDF",
+			"split_desc": "Ekstrak halaman atau pisahkan kepada fail individu",
+			"rotate_name": "Putar Halaman",
+			"rotate_desc": "Putar halaman individu atau semua halaman 90°/180°/270°",
+			"organize_name": "Susun Halaman",
+			"organize_desc": "Susun semula atau padam halaman dengan lakaran kecil visual",
+			"images_to_pdf_name": "Imej → PDF",
+			"images_to_pdf_desc": "Tukar imej JPG, PNG atau WEBP kepada PDF",
+			"pdf_to_images_name": "PDF → Imej",
+			"pdf_to_images_desc": "Eksport setiap halaman sebagai imej JPG atau PNG",
+			"compress_name": "Mampat PDF",
+			"compress_desc": "Kurangkan saiz fail dengan merender semula halaman sebagai JPEG",
+			"watermark_name": "Tambah Tera Air",
+			"watermark_desc": "Capkan teks pada setiap halaman PDF",
+			"page_numbers_name": "Tambah Nombor Halaman",
+			"page_numbers_desc": "Tambah penomboran berurutan pada setiap halaman",
+			"metadata_name": "Edit Metadata",
+			"metadata_desc": "Lihat dan edit tajuk, pengarang dan sifat PDF lain",
+			"crop_name": "Pangkas PDF",
+			"crop_desc": "Potong jidar daripada halaman PDF",
+			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_desc": "Tukar setiap halaman PDF menjadi slaid pembentangan",
+			"sign_name": "Tandatangan PDF",
+			"sign_desc": "Lukis, taip atau muat naik tandatangan",
+			"edit_name": "Edit PDF",
+			"edit_desc": "Tambah teks pada mana-mana halaman PDF",
+			"password_name": "Perlindungan Kata Laluan",
+			"password_desc": "Enkripsikan PDF dengan kata laluan dan tetapkan kebenaran",
+			"unlock_name": "Buka Kunci PDF",
+			"unlock_desc": "Buang perlindungan kata laluan daripada PDF",
+			"pdf_to_text_name": "PDF ke Teks",
+			"pdf_to_text_desc": "Ekstrak semua teks daripada PDF",
+			"grayscale_name": "PDF ke Skala Kelabu",
+			"grayscale_desc": "Tukar halaman PDF ke hitam dan putih"
+		}
+	},
+	"image_tools": {
+		"title": "Alat Imej",
+		"subtitle": "Setiap operasi berjalan sepenuhnya dalam pelayar anda. Fail anda tidak akan meninggalkan peranti anda.",
+		"badge": "100% tempatan — tiada muat naik, tiada pelayan",
+		"categories": {
+			"edit": "Sunting",
+			"create": "Cipta"
+		},
+		"tools": {
+			"rotate_name": "Putar Imej",
+			"rotate_desc": "Putar imej sebanyak 90°, 180° atau 270°",
+			"crop_name": "Pangkas Imej",
+			"crop_desc": "Lukis segi empat tepat untuk memangkas mana-mana kawasan",
+			"watermark_name": "Tera Air Imej",
+			"watermark_desc": "Capkan teks pada mana-mana imej",
+			"meme_name": "Penjana Meme",
+			"meme_desc": "Tambah teks atas dan bawah pada mana-mana imej",
+			"batch_name": "Pemprosesan Kelompok",
+			"batch_desc": "Gunakan operasi yang sama pada beberapa imej",
+			"qr_name": "Penjana Kod QR",
+			"qr_desc": "Jana kod QR daripada teks atau URL",
+			"color_picker_name": "Pemilih Warna",
+			"color_picker_desc": "Pilih warna daripada mana-mana imej",
+			"blur_name": "Kaburkan Kawasan",
+			"blur_desc": "Kaburkan kawasan imej untuk privasi",
+			"filters_name": "Penapis Imej",
+			"filters_desc": "Laraskan kecerahan, kontras, ketepuan dan banyak lagi",
+			"video_to_gif_name": "Video ke GIF",
+			"video_to_gif_desc": "Tukar mana-mana video kepada GIF beranimasi"
+		}
+	},
+	"dev_tools": {
+		"title": "Alat Pembangun",
+		"subtitle": "Format, enkod dan cincang — semuanya dalam pelayar anda. Tiada apa-apa yang meninggalkan peranti anda.",
+		"badge": "100% tempatan — tiada muat naik, tiada pelayan",
+		"categories": {
+			"format": "Format & Transformasi",
+			"analyze": "Analisis"
+		},
+		"tools": {
+			"json_name": "Pemformat JSON",
+			"json_desc": "Format, kecilkan dan sahkan JSON",
+			"hash_name": "Penjana Hash",
+			"hash_desc": "Jana hash SHA-256, SHA-1, SHA-512",
+			"base64_name": "Kodek Base64",
+			"base64_desc": "Enkod dan dekod rentetan Base64",
+			"markdown_name": "Pratonton Markdown",
+			"markdown_desc": "Tulis markdown dan pratonton HTML yang dirender",
+			"diff_name": "Perbezaan Teks",
+			"diff_desc": "Bandingkan dua teks dan serlahkan perbezaan",
+			"word_count_name": "Pengira Perkataan",
+			"word_count_desc": "Kira perkataan, aksara, ayat dan banyak lagi",
+			"url_encode_name": "Enkod/Dekod URL",
+			"url_encode_desc": "Enkod dan dekod rentetan URL",
+			"css_minify_name": "Pengecil CSS",
+			"css_minify_desc": "Kecilkan CSS dengan membuang ulasan dan ruang putih"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Alat Imej",
+		"upload_image": "Lepaskan imej di sini",
+		"upload_images": "Lepaskan beberapa imej di sini",
+		"angle": "Sudut",
+		"ready": "Sedia!",
+		"download": "Muat Turun",
+		"privacy_note": "✓ Fail anda tidak akan meninggalkan peranti anda.",
+		"privacy_note_browser": "✓ Dijana sepenuhnya dalam pelayar anda.",
+		"reset": "Set semula",
+		"text": "Teks",
+		"opacity": "Kelegapan",
+		"font_size": "Saiz fon",
+		"rotation": "Putaran",
+		"position": "Kedudukan",
+		"center": "Tengah",
+		"tile": "Jubin",
+		"size": "Saiz",
+		"foreground": "Latar depan",
+		"background": "Latar belakang",
+		"operation": "Operasi",
+		"rotate": "Putar",
+		"watermark": "Tera air",
+		"crop": "Pangkas",
+		"meme": "Meme",
+		"save": "Simpan",
+		"save_all": "Simpan semua",
+		"bottom": "Bawah",
+		"failed": "Gagal."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Putar Imej",
+			"desc": "Pilih sudut dan lihat hasilnya serta-merta.",
+			"save": "Simpan imej yang diputar"
+		},
+		"crop_image": {
+			"title": "Pangkas Imej",
+			"desc": "Seret penjuru, tepi atau lukis pemilihan baharu.",
+			"circle": "Bulatan",
+			"free": "Bebas",
+			"err_area": "Pilih kawasan pangkasan pada imej.",
+			"btn_busy": "Memangkas...",
+			"btn": "Pangkas imej",
+			"save": "Simpan imej yang dipangkas"
+		},
+		"watermark_image": {
+			"title": "Tera Air Imej",
+			"desc": "Laraskan tetapan dan lihat tera air dikemas kini secara langsung.",
+			"save": "Simpan imej bertera air"
+		},
+		"meme": {
+			"title": "Penjana Meme",
+			"desc": "Taip dan lihat meme anda dikemas kini secara langsung.",
+			"top_text": "Teks atas",
+			"bottom_text": "Teks bawah",
+			"save": "Simpan meme"
+		},
+		"batch": {
+			"title": "Pemprosesan Kelompok",
+			"desc": "Gunakan operasi yang sama pada beberapa imej sekaligus.",
+			"trim": "Potong",
+			"err_images": "Tambah imej dahulu.",
+			"err_text": "Masukkan sekurang-kurangnya satu baris teks.",
+			"err_watermark": "Masukkan teks tera air."
+		},
+		"qr": {
+			"title": "Penjana Kod QR",
+			"desc": "Jana kod QR dan lihat ia dikemas kini secara langsung.",
+			"text_url": "Teks atau URL",
+			"error_correction": "Pembetulan ralat",
+			"low": "Rendah (7%)",
+			"medium": "Sederhana (15%)",
+			"quartile": "Kuartil (25%)",
+			"high": "Tinggi (30%)",
+			"save": "Simpan kod QR",
+			"save_file": "Muat turun qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "Anda melawat LocalConvert dalam konteks tidak selamat (cth. mengakses melalui HTTP dan bukannya HTTPS). Beberapa ciri mungkin tidak berfungsi seperti yang dijangkakan."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Tiada muat naik pelayan",
+			"tools_count": "36+ Alat",
+			"open_source": "Percuma & Sumber Terbuka",
+			"works_locally": "Berfungsi Secara Tempatan"
+		},
+		"toolkit": {
+			"label": "Bengkel anda",
+			"title": "Setiap alat berjalan dalam pelayar anda",
+			"pdf_title": "Alat PDF",
+			"pdf_desc": "Gabung, pisah, mampat, tera air, tandatangan, edit dan 12 lagi",
+			"pdf_count": "18 alat",
+			"image_title": "Alat Imej",
+			"image_desc": "Pangkas, ubah saiz, penapis, kabur, tera air, meme dan banyak lagi",
+			"image_count": "10 alat",
+			"dev_title": "Alat Pembangun",
+			"dev_desc": "JSON, hash, Base64, markdown, diff dan banyak lagi",
+			"dev_count": "8 alat",
+			"explore": "Terokai →"
+		},
+		"gpu": {
+			"badge": "Pecutan Perkakasan",
+			"title": "Penukaran video berkuasa GPU",
+			"desc": "Penukaran bertanda ⚡ menggunakan perkakasan grafik peranti anda. Penukaran lebih pantas, penggunaan CPU lebih rendah — masih 100% tempatan.",
+			"full_label": "GPU penuh — mana-mana arah",
+			"input_label": "GPU apabila menukar ke format di atas"
+		},
+		"formats": {
+			"title": "200+ Penukaran Format",
+			"label": "Penukar"
+		},
+		"privacy": {
+			"title": "100% Peribadi Secara Reka Bentuk",
+			"point1": "Fail anda tidak akan meninggalkan peranti anda",
+			"point2": "Semua 36 alat berjalan sepenuhnya dalam pelayar anda — sifar muat naik pelayan",
+			"point3": "Sumber terbuka — sahkan sendiri",
+			"label": "Privasi diutamakan"
+		},
+		"faq": {
+			"title": "Soalan Lazim",
+			"q1": "Adakah LocalConvert benar-benar percuma?",
+			"a1": "Ya — percuma sepenuhnya, tiada akaun diperlukan, tiada caj tersembunyi. LocalConvert adalah sumber terbuka di bawah lesen AGPL-3.0.",
+			"q2": "Adakah fail saya peribadi?",
+			"a2": "Sepenuhnya. Semua pemprosesan berjalan dalam pelayar anda menggunakan WebAssembly. Fail anda tidak pernah menyentuh pelayan kami — walaupun untuk sesaat.",
+			"q3": "Apakah yang boleh dilakukan oleh LocalConvert?",
+			"a3": "Tukar 200+ format fail (imej, audio, video, dokumen), 18 alat PDF (gabung, pisah, mampat, tera air, tandatangan, edit dan banyak lagi), 10 alat imej (pangkas, ubah saiz, penapis, kabur, tera air), dan 8 alat pembangun (JSON, hash, Base64, diff, markdown).",
+			"q4": "Adakah terdapat had saiz fail?",
+			"a4": "Tiada had tetap — ia bergantung pada memori peranti anda yang tersedia. Untuk fail video yang sangat besar, Firefox atau Safari biasanya mengendalikannya dengan lebih baik.",
+			"q5": "Adakah saya perlu memasang apa-apa?",
+			"a5": "Tiada pemasangan diperlukan. LocalConvert berfungsi terus dalam mana-mana pelayar moden. Anda juga boleh memasangnya sebagai PWA dari bar alamat untuk pengalaman seperti aplikasi.",
+			"label": "Soalan"
+		}
+	}
+}

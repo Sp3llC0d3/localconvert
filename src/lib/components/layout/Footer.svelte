@@ -10,22 +10,22 @@
 		<!-- Brand -->
 		<div class="footer-brand">
 			<span class="footer-name">LocalConvert</span>
-			<span class="footer-tagline">Your private toolkit</span>
+			<span class="footer-tagline">{m["footer.tagline"]()}</span>
 		</div>
 
 		<!-- Tool categories -->
 		<nav class="footer-tools" aria-label="Tool categories">
 			<a href="/pdf-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--pdf"></span>
-				PDF Tools · 18
+				{m["footer.pdf_tools_count"]()}
 			</a>
 			<a href="/image-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--image"></span>
-				Image Tools · 10
+				{m["footer.image_tools_count"]()}
 			</a>
 			<a href="/dev-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--dev"></span>
-				Dev Tools · 8
+				{m["footer.dev_tools_count"]()}
 			</a>
 		</nav>
 

@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Home",
+		"convert": "Converteren",
+		"pdf_tools": "PDF-tools",
+		"image_tools": "Afbeeldingstools",
+		"dev_tools": "Ontwikkelaarstools",
+		"tools": "Hulpmiddelen",
+		"settings": "Instellingen",
+		"about": "Over",
+		"toggle_theme": "Thema wisselen"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Gebaseerd op VERT.sh",
+		"source_code": "Broncode",
+		"discord_server": "Discord-server",
+		"privacy_policy": "Privacybeleid",
+		"tagline": "Je persoonlijke toolkit",
+		"pdf_tools_count": "PDF-tools - 18",
+		"image_tools_count": "Afbeeldingstools - 10",
+		"dev_tools_count": "Devtools - 8"
+	},
+	"upload": {
+		"title": "Uw privétoolkit voor bestanden en code.",
+		"subtitle": "36 tools voor PDF's, afbeeldingen en ontwikkelaarswerkstromen — volledig in uw browser. Geen uploads, geen accounts, voor altijd gratis.",
+		"uploader": {
+			"text": "Sleep of klik om te {action}",
+			"convert": "converteren"
+		},
+		"cards": {
+			"title": "LocalConvert ondersteunt...",
+			"images": "Afbeeldingen",
+			"audio": "Audio",
+			"documents": "Documenten",
+			"video": "Video",
+			"video_server_processing": "Lokaal ondersteund",
+			"local_supported": "Lokaal ondersteund",
+			"status": {
+				"text": "<b>Status:</b> {status}",
+				"ready": "gereed",
+				"not_ready": "niet gereed",
+				"not_initialized": "niet geïnitialiseerd",
+				"downloading": "tools laden...",
+				"initializing": "initialiseren...",
+				"unknown": "onbekende status"
+			},
+			"supported_formats": "Ondersteunde formaten:"
+		},
+		"tooltip": {
+			"partial_support": "Dit formaat kan alleen worden geconverteerd als {direction}.",
+			"direction_input": "invoer (van)",
+			"direction_output": "uitvoer (naar)",
+			"video_server_processing": "Alle conversies vinden lokaal plaats op uw apparaat."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Archief uitpakken",
+			"extracting": "Archief gedetecteerd: {filename}",
+			"extracted": "{extract_count} bestanden uitgepakt uit {filename}. {ignore_count} items zijn genegeerd.",
+			"detected": "{type} bestanden gedetecteerd in {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "document",
+			"image": "afbeelding",
+			"extract_error": "Fout bij het uitpakken van {filename}: {error}"
+		},
+		"large_file_warning": "Vanwege browser-/apparaatbeperkingen is de conversie voor dit bestand uitgeschakeld omdat het groter is dan {limit}GB. Wij raden Firefox of Safari aan voor bestanden van deze omvang, aangezien die minder beperkingen hebben.",
+		"external_warning": {
+			"title": "Waarschuwing groot bestand",
+			"text": "Dit bestand is vrij groot en het converteren in de browser kan enige tijd duren. Wilt u doorgaan?",
+			"yes": "Ja",
+			"no": "Nee"
+		},
+		"panel": {
+			"convert_all": "Alles converteren",
+			"download_all": "Alles opslaan als .zip",
+			"remove_all": "Alle bestanden verwijderen",
+			"set_all_to": "Alles instellen op",
+			"na": "N.v.t."
+		},
+		"dropdown": {
+			"audio": "Audio",
+			"video": "Video",
+			"doc": "Document",
+			"image": "Afbeelding",
+			"placeholder": "Formaat zoeken",
+			"no_formats": "Geen formaten beschikbaar",
+			"no_results": "Geen formaten gevonden"
+		},
+		"tooltips": {
+			"unknown_file": "Onbekend bestandstype",
+			"audio_file": "Audiobestand",
+			"video_file": "Videobestand",
+			"document_file": "Documentbestand",
+			"image_file": "Afbeeldingsbestand",
+			"convert_file": "Dit bestand converteren",
+			"download_file": "Opslaan op apparaat"
+		},
+		"errors": {
+			"cant_convert": "Dit bestand kan niet worden geconverteerd.",
+			"vertd_server": "Dit bestandsformaat wordt niet ondersteund voor conversie.",
+			"vertd_generic_view": "Foutdetails bekijken",
+			"vertd_generic_body": "Er is een fout opgetreden bij het converteren van uw bestand. Probeer het opnieuw of probeer een ander formaat.",
+			"vertd_generic_title": "Conversiefout",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Annuleren",
+			"vertd_failed_to_keep": "Conversie mislukt: {error}",
+			"vertd_details": "Foutdetails bekijken",
+			"vertd_details_body": "De volgende foutinformatie kan helpen bij het oplossen van problemen:",
+			"vertd_details_footer": "Bekijk ons [privacy_link]privacybeleid[/privacy_link] voor meer informatie.",
+			"vertd_details_job_id": "<b>Taak-ID:</b> {jobId}",
+			"vertd_details_from": "<b>Bronformaat:</b> {from}",
+			"vertd_details_to": "<b>Doelformaat:</b> {to}",
+			"vertd_details_error_message": "<b>Foutmelding:</b> [view_link]Foutlogboeken bekijken[/view_link]",
+			"vertd_details_close": "Sluiten",
+			"vertd_ratelimit": "Het bestand '{filename}' kon meerdere keren niet worden geconverteerd. Probeer een ander formaat of een kleiner bestand.",
+			"unsupported_format": "Alleen afbeeldings-, video-, audio- en documentbestanden worden ondersteund",
+			"pdf_redirect_title": "Dit is een PDF-bestand.",
+			"pdf_redirect_desc": "PDF's worden hier niet geconverteerd — gebruik PDF-tools om samen te voegen, te splitsen, te comprimeren, te roteren en meer.",
+			"pdf_redirect_button": "PDF-tools openen",
+			"format_output_only": "Dit formaat kan momenteel alleen als uitvoer worden gebruikt (naar geconverteerd), niet als invoer.",
+			"vertd_not_found": "De videoconverter kon niet worden geïnitialiseerd. Vernieuw de pagina en probeer het opnieuw.",
+			"worker_downloading": "De {type}-converter wordt geladen, even geduld alstublieft.",
+			"worker_error": "De {type}-converter heeft een fout ondervonden tijdens de initialisatie, probeer het later opnieuw.",
+			"worker_timeout": "De {type}-converter heeft meer tijd nodig dan verwacht om te initialiseren, wacht nog even of vernieuw de pagina.",
+			"audio": "audio",
+			"doc": "document",
+			"image": "afbeelding"
+		},
+		"options": {
+			"quality": "Kwaliteit",
+			"resize": "Formaat wijzigen",
+			"bitrate": "Bitsnelheid",
+			"trim": "Bijsnijden"
+		}
+	},
+	"settings": {
+		"title": "Instellingen",
+		"errors": {
+			"save_failed": "Instellingen opslaan mislukt!"
+		},
+		"appearance": {
+			"title": "Uiterlijk",
+			"brightness_theme": "Helderheidsthema",
+			"brightness_description": "Wilt u een verblindende flits, of een rustige donkere omgeving?",
+			"light": "Licht",
+			"dark": "Donker",
+			"effect_settings": "Effectinstellingen",
+			"effect_description": "Wilt u fraaie effecten, of een meer statische ervaring?",
+			"enable": "Inschakelen",
+			"disable": "Uitschakelen"
+		},
+		"conversion": {
+			"title": "Conversie",
+			"advanced_settings": "Geavanceerde instellingen",
+			"filename_format": "Bestandsnaamformaat",
+			"filename_description": "Dit bepaalt de naam van het bestand bij het opslaan, <b>exclusief de bestandsextensie.</b> U kunt de volgende sjablonen in het formaat gebruiken, die worden vervangen door de relevante informatie: <b>%name%</b> voor de oorspronkelijke bestandsnaam, <b>%extension%</b> voor de oorspronkelijke bestandsextensie, en <b>%date%</b> voor een datumstring van wanneer het bestand is geconverteerd.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Standaard conversieformaat",
+			"default_format_enable": "Inschakelen",
+			"default_format_disable": "Uitschakelen",
+			"default_format_description": "Dit wijzigt het standaard geselecteerde formaat wanneer u een bestand van dit bestandstype selecteert.",
+			"default_format_image": "Afbeeldingen",
+			"default_format_video": "Video's",
+			"default_format_audio": "Audio",
+			"default_format_document": "Documenten",
+			"metadata": "Bestandsmetadata",
+			"metadata_description": "Dit bepaalt of eventuele metadata (EXIF, muziekinformatie, enz.) van het oorspronkelijke bestand wordt behouden in geconverteerde bestanden.",
+			"keep": "Behouden",
+			"remove": "Verwijderen",
+			"quality": "Conversiekwaliteit",
+			"quality_description": "Dit wijzigt de standaard uitvoerkwaliteit van de geconverteerde bestanden (in de betreffende categorie). Hogere waarden kunnen leiden tot langere conversietijden en grotere bestanden.",
+			"quality_video": "Dit wijzigt de standaard uitvoerkwaliteit van de geconverteerde videobestanden. Hogere waarden kunnen leiden tot langere conversietijden en grotere bestanden.",
+			"quality_audio": "Audio (kbps)",
+			"quality_images": "Afbeelding (%)",
+			"rate": "Samplefrequentie (Hz)"
+		},
+		"vertd": {
+			"title": "Videoconversie",
+			"status": "status:",
+			"loading": "laden...",
+			"available": "gereed",
+			"unavailable": "niet beschikbaar",
+			"description": "Videoconversie wordt lokaal verwerkt met behulp van FFmpeg WebAssembly. Uw video's verlaten nooit uw apparaat.",
+			"hosting_info": "Alle videoverwerking vindt plaats in uw browser met behulp van WebAssembly-technologie.",
+			"instance": "Engine",
+			"url_placeholder": "FFmpeg WASM (lokaal)",
+			"conversion_speed": "Conversiesnelheid",
+			"speed_description": "Dit beschrijft de afweging tussen snelheid en kwaliteit. Hogere snelheden resulteren in lagere kwaliteit, maar de taak wordt sneller voltooid.",
+			"speeds": {
+				"very_slow": "Zeer langzaam",
+				"slower": "Langzamer",
+				"slow": "Langzaam",
+				"medium": "Gemiddeld",
+				"fast": "Snel",
+				"ultra_fast": "Ultrasnel"
+			},
+			"auto_instance": "Automatisch (aanbevolen)",
+			"eu_instance": "Lokaal",
+			"us_instance": "Lokaal",
+			"custom_instance": "Lokaal"
+		},
+		"privacy": {
+			"title": "Privacy en gegevens",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Wij gebruiken [plausible_link]Cloudflare Web Analytics[/plausible_link], een privacygerichte analysetool, om volledig anonieme statistieken te verzamelen. Alle gegevens worden geanonimiseerd en geaggregeerd, en er wordt nooit identificeerbare informatie verzonden of opgeslagen. U kunt hieronder ervoor kiezen om af te melden.",
+			"opt_in": "Aanmelden",
+			"opt_out": "Afmelden",
+			"cache_title": "Cachebeheer",
+			"cache_description": "Wij slaan de converterbestanden op in de cache van uw browser, zodat u ze niet elke keer opnieuw hoeft te laden, wat de prestaties verbetert en het dataverbruik vermindert.",
+			"refresh_cache": "Cache vernieuwen",
+			"clear_cache": "Cache wissen",
+			"files_cached": "{size} ({count} bestanden)",
+			"loading_cache": "Laden...",
+			"total_size": "Totale grootte",
+			"files_cached_label": "Bestanden in cache",
+			"cache_cleared": "Cache succesvol gewist!",
+			"cache_clear_error": "Cache wissen mislukt.",
+			"site_data_title": "Sitegegevensbeheer",
+			"site_data_description": "Wis alle sitegegevens inclusief instellingen en cachebestanden, waardoor LocalConvert wordt teruggezet naar de standaardstatus en de pagina wordt herladen.",
+			"clear_all_data": "Alle sitegegevens wissen",
+			"clear_all_data_confirm_title": "Alle sitegegevens wissen?",
+			"clear_all_data_confirm": "Dit zal alle instellingen en cache resetten en vervolgens de pagina herladen. Deze actie kan niet ongedaan worden gemaakt.",
+			"clear_all_data_cancel": "Annuleren",
+			"all_data_cleared": "Alle sitegegevens gewist! Pagina wordt herladen...",
+			"all_data_clear_error": "Alle sitegegevens wissen mislukt."
+		},
+		"language": {
+			"title": "Taal",
+			"description": "Selecteer uw voorkeurstaal voor de LocalConvert-interface."
+		}
+	},
+	"about": {
+		"title": "Over",
+		"why": {
+			"title": "Waarom LocalConvert?",
+			"description": "<b>Bestandsconverters hebben ons altijd teleurgesteld.</b> Ze zijn traag, vereisen accounts en sturen uw bestanden naar servers van derden waar u niets van weet. Wij besloten dat te veranderen.<br/><br/>Elk bestand dat u converteert — afbeeldingen, audio, video en documenten — wordt volledig op uw apparaat verwerkt met behulp van WebAssembly. Niets verlaat ooit uw browser. Er zijn geen servers betrokken, geen uploads, en niemand kan ooit uw bestanden zien."
+		},
+		"sponsors": {
+			"title": "Ondersteuning",
+			"description": "LocalConvert is gratis en open source. Als u het nuttig vindt, overweeg dan het project te ondersteunen. Neem contact met ons op via",
+			"email_copied": "E-mailadres gekopieerd naar klembord!"
+		},
+		"resources": {
+			"title": "Bronnen",
+			"discord": "Discord",
+			"source": "Broncode",
+			"email": "E-mail"
+		},
+		"donate": {
+			"title": "Ondersteun LocalConvert",
+			"description": "Met uw steun kunnen wij LocalConvert blijven onderhouden en verbeteren.",
+			"one_time": "Eenmalig",
+			"monthly": "Maandelijks",
+			"custom": "Aangepast",
+			"pay_now": "Nu betalen",
+			"donate_amount": "Doneer ${amount} USD",
+			"thank_you": "Hartelijk dank voor uw steun!",
+			"payment_failed": "Betaling mislukt: {message}{period} Er is niets in rekening gebracht.",
+			"donation_error": "Er is een fout opgetreden bij het verwerken van uw donatie. Probeer het later opnieuw.",
+			"payment_error": "Fout bij het ophalen van betalingsgegevens. Probeer het later opnieuw.",
+			"donation_notice_official": "Uw steun helpt bij het onderhouden en verbeteren van LocalConvert.",
+			"donation_notice_unofficial": "Dit is een externe instantie van LocalConvert. Als u het oorspronkelijke project wilt ondersteunen, bezoek dan de officiële website."
+		},
+		"credits": {
+			"title": "Credits",
+			"contact_team": "Als u contact wilt opnemen met het ontwikkelteam, gebruik dan het e-mailadres op de kaart \"Bronnen\".",
+			"notable_contributors": "Belangrijke bijdragers",
+			"notable_description": "Wij willen deze mensen bedanken voor hun grote bijdragen aan VERT, het project waarop LocalConvert is gebaseerd.",
+			"github_contributors": "GitHub-bijdragers",
+			"github_description": "Hartelijk dank aan al deze mensen voor hun hulp! [github_link]Wilt u ook helpen?[/github_link]",
+			"no_contributors": "Het lijkt erop dat er nog niemand heeft bijgedragen... [contribute_link]wees de eerste die bijdraagt![/contribute_link]",
+			"libraries": "Bibliotheken",
+			"libraries_description": "Veel dank aan FFmpeg (audio, video), ImageMagick (afbeeldingen) en Pandoc (documenten) voor het jarenlang onderhouden van zulke uitstekende bibliotheken. LocalConvert maakt gebruik van deze bibliotheken om uw conversies mogelijk te maken.",
+			"roles": {
+				"lead_developer": "Hoofdontwikkelaar; conversie-backend, UI-implementatie",
+				"developer": "Ontwikkelaar; UI-implementatie",
+				"designer": "Ontwerper; UX, branding, marketing",
+				"docker_ci": "Onderhoud van Docker & CI-ondersteuning",
+				"former_cofounder": "Voormalig medeoprichter & ontwerper"
+			}
+		},
+		"errors": {
+			"github_contributors": "Fout bij het ophalen van GitHub-bijdragers"
+		},
+		"hero_title": "Bestandsconverters zouden je bestanden niet nodig moeten hebben.",
+		"stats": {
+			"tools": "tools",
+			"format_conversions": "formaatconversies",
+			"languages": "talen",
+			"bytes_uploaded": "bytes geupload naar servers"
+		},
+		"principles": {
+			"label": "Principes",
+			"p1_title": "Je bestanden blijven op je apparaat",
+			"p1_desc": "Alle tools draaien lokaal in je browser via WebAssembly. Er is geen server. Je bestanden worden nooit geupload, verzonden of ergens opgeslagen.",
+			"p2_title": "Gratis, geen account, geen addertjes",
+			"p2_desc": "Geen registratie, geen e-mail, geen betaalmuur, geen bestandslimiet. Open de site, gebruik de tools, sluit het tabblad.",
+			"p3_title": "Open source, verifieerbaar",
+			"p3_desc": "De volledige codebase is openbaar onder AGPL-3.0. Lees de code. Elke privacyclaim is verifieerbaar."
+		},
+		"inside": {
+			"label": "Wat zit erin",
+			"title": "Drie toolcategorieen"
+		},
+		"stack": {
+			"label": "Werkplaatsinventaris",
+			"title": "De motoren onder de kap",
+			"imagemagick": "60+ afbeeldingsformaten via WASM",
+			"ffmpeg": "Audio- en videoconversie via WASM",
+			"webcodecs": "GPU-versnelde videoverwerking",
+			"pandoc": "Documentconversie via WASM",
+			"pdflib": "PDF-creatie, bewerking en weergave",
+			"sveltekit": "Framework en statische sitegeneratie"
+		},
+		"origin": {
+			"title": "Oorsprong",
+			"description": "Dit project begon als een fork van VERT.sh (AGPL-3.0). Sindsdien hebben we het merk opnieuw opgebouwd, 30+ tools toegevoegd, de interface herontworpen en uitgebreid naar 28 talen."
+		},
+		"credit_groups": {
+			"engines": "Conversiemotoren",
+			"engines_ffmpeg": "Audio- en videoconversie",
+			"engines_imagemagick": "Afbeeldingsformaatconversie",
+			"engines_pandoc": "Documentconversie",
+			"engines_mediabunny": "GPU-videoversnelling",
+			"engines_webdemuxer": "WebCodecs video-demuxing",
+			"pdf_toolkit": "PDF-gereedschapsset",
+			"pdf_pdflib": "PDF-creatie, bewerking en samenvoegen",
+			"pdf_pdfjs": "PDF-weergave en tekstextractie",
+			"pdf_encrypt": "PDF-wachtwoordbeveiliging",
+			"pdf_pptx": "PDF naar PowerPoint-conversie",
+			"tool_libs": "Toolbibliotheken",
+			"tool_qrcode": "QR-codegeneratie",
+			"tool_marked": "Markdown naar HTML-weergave",
+			"framework": "Framework en UI",
+			"fw_sveltekit": "Applicatieframework",
+			"fw_tailwind": "Utility-first styling",
+			"fw_lucide": "Iconensysteem",
+			"fw_paraglide": "Internationalisatie (28 talen)"
+		},
+		"links": {
+			"source_code": "Broncode",
+			"privacy_policy": "Privacybeleid"
+		},
+		"install": "Installeren"
+	},
+	"workers": {
+		"errors": {
+			"general": "Fout bij het converteren van {file}: {message}",
+			"cancel": "Fout bij het annuleren van de conversie voor {file}: {message}",
+			"magick": "Fout in Magick-worker, afbeeldingsconversie werkt mogelijk niet naar verwachting.",
+			"ffmpeg": "Fout bij het laden van FFmpeg, sommige functies werken mogelijk niet naar verwachting.",
+			"pandoc": "Fout bij het laden van Pandoc-worker, documentconversie werkt mogelijk niet naar verwachting.",
+			"no_audio": "Geen audiostream gevonden.",
+			"invalid_rate": "Ongeldige samplefrequentie opgegeven: {rate}Hz",
+			"file_too_large": "Dit bestand overschrijdt de {limit}GB browser-/apparaatlimiet. Probeer Firefox of Safari om dit grote bestand te converteren; deze hebben doorgaans hogere limieten."
+		}
+	},
+	"privacy": {
+		"title": "Privacybeleid",
+		"summary": {
+			"title": "Samenvatting",
+			"description": "Het privacybeleid van LocalConvert is eenvoudig: uw bestanden verlaten nooit uw apparaat. Alle conversies — afbeeldingen, audio, video en documenten — vinden volledig plaats in uw browser met behulp van WebAssembly. Wij gebruiken geen cookies of trackers, en analyses zijn volledig anoniem via Cloudflare Web Analytics.<br/><br/>LocalConvert is gebaseerd op [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Conversies",
+			"description": "Alle conversies vinden volledig lokaal plaats op uw apparaat met behulp van WebAssembly-versies van de relevante tools (FFmpeg, ImageMagick, Pandoc). Dit betekent dat uw bestanden nooit uw apparaat verlaten en dat niemand er ooit toegang toe heeft. In tegenstelling tot andere converters geldt dit ook voor video — videoconversie wordt eveneens lokaal in uw browser uitgevoerd."
+		},
+		"donations": {
+			"title": "Donaties",
+			"description": "Als donatiefunctionaliteit beschikbaar is, kan de betalingsverwerking worden afgehandeld door een externe aanbieder. Externe netwerkverzoeken naar de betalingsaanbieder worden uitgesteld en worden pas uitgevoerd nadat u op de betaalknop klikt."
+		},
+		"conversion_errors": {
+			"title": "Conversiefouten",
+			"description": "Wanneer een conversie mislukt, blijft de foutinformatie op uw apparaat. Er worden geen foutgegevens automatisch naar een server verzonden. Foutdetails kunnen het volgende bevatten:",
+			"list_job_id": "Het bestandstype",
+			"list_format_from": "Het formaat waarvan u hebt geconverteerd",
+			"list_format_to": "Het formaat waarnaar u hebt geconverteerd",
+			"list_stderr": "De FFmpeg-foutuitvoer",
+			"list_video": "Er worden nooit bestanden geüpload",
+			"footer": "Alle foutinformatie blijft op uw apparaat en wordt nooit verzonden."
+		},
+		"analytics": {
+			"title": "Analyses",
+			"description": "Wij gebruiken Cloudflare Web Analytics voor volledig anonieme en geaggregeerde analyses. Cloudflare Web Analytics maakt geen gebruik van cookies en voldoet aan alle belangrijke privacyregelgeving (GDPR/CCPA/PECR). U kunt analyses uitschakelen in het gedeelte \"Privacy en gegevens\" in [settings_link]instellingen[/settings_link] en meer lezen over Cloudflare Web Analytics [plausible_link]hier[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Lokale opslag",
+			"description": "Wij gebruiken de lokale opslag van uw browser om uw instellingen op te slaan. Er worden geen persoonsgegevens opgeslagen of verzonden.<br/><br/>De WebAssembly-versies van de conversietools die wij gebruiken (FFmpeg, ImageMagick, Pandoc) worden ook lokaal in uw browser opgeslagen wanneer u de website voor het eerst bezoekt, zodat u ze niet elke keer opnieuw hoeft te laden. Er worden geen persoonsgegevens opgeslagen of verzonden. U kunt deze gegevens op elk moment bekijken of verwijderen in het gedeelte \"Privacy en gegevens\" in [settings_link]instellingen[/settings_link]."
+		},
+		"contact": {
+			"title": "Contact",
+			"description": "Voor vragen kunt u ons e-mailen op: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Laatst bijgewerkt: 22-03-2026"
+	},
+	"pdf_tools": {
+		"title": "PDF-tools",
+		"subtitle": "Elke bewerking wordt volledig in uw browser uitgevoerd. Uw bestanden verlaten nooit uw apparaat.",
+		"badge": "100% lokaal — geen uploads, geen server",
+		"categories": {
+			"organize": "Organiseren",
+			"convert": "Converteren",
+			"optimize": "Optimaliseren en bewerken"
+		},
+		"tools": {
+			"merge_name": "PDF samenvoegen",
+			"merge_desc": "Combineer meerdere PDF's tot één bestand",
+			"split_name": "PDF splitsen",
+			"split_desc": "Pagina's extraheren of splitsen in afzonderlijke bestanden",
+			"rotate_name": "Pagina's roteren",
+			"rotate_desc": "Individuele of alle pagina's 90°/180°/270° roteren",
+			"organize_name": "Pagina's ordenen",
+			"organize_desc": "Pagina's herschikken of verwijderen met visuele miniaturen",
+			"images_to_pdf_name": "Afbeeldingen → PDF",
+			"images_to_pdf_desc": "Converteer JPG-, PNG- of WEBP-afbeeldingen naar een PDF",
+			"pdf_to_images_name": "PDF → Afbeeldingen",
+			"pdf_to_images_desc": "Exporteer elke pagina als een JPG- of PNG-afbeelding",
+			"compress_name": "PDF comprimeren",
+			"compress_desc": "Bestandsgrootte verkleinen door pagina's als JPEG te renderen",
+			"watermark_name": "Watermerk toevoegen",
+			"watermark_desc": "Tekst op elke pagina van een PDF stempelen",
+			"page_numbers_name": "Paginanummers toevoegen",
+			"page_numbers_desc": "Doorlopende nummering aan elke pagina toevoegen",
+			"metadata_name": "Metadata bewerken",
+			"metadata_desc": "Titel, auteur en andere PDF-eigenschappen bekijken en bewerken",
+			"crop_name": "PDF bijsnijden",
+			"crop_desc": "Marges van PDF-pagina's bijsnijden",
+			"pdf_to_ppt_name": "PDF naar PowerPoint",
+			"pdf_to_ppt_desc": "Elke PDF-pagina omzetten naar een presentatiedia",
+			"sign_name": "PDF ondertekenen",
+			"sign_desc": "Teken, typ of upload een handtekening",
+			"edit_name": "PDF bewerken",
+			"edit_desc": "Tekst toevoegen aan elke pagina van een PDF",
+			"password_name": "Wachtwoordbeveiliging",
+			"password_desc": "Een PDF versleutelen met een wachtwoord en machtigingen instellen",
+			"unlock_name": "PDF ontgrendelen",
+			"unlock_desc": "Wachtwoordbeveiliging van een PDF verwijderen",
+			"pdf_to_text_name": "PDF naar tekst",
+			"pdf_to_text_desc": "Alle tekst uit een PDF extraheren",
+			"grayscale_name": "PDF naar grijstinten",
+			"grayscale_desc": "PDF-pagina's converteren naar zwart-wit"
+		}
+	},
+	"image_tools": {
+		"title": "Afbeeldingstools",
+		"subtitle": "Elke bewerking wordt volledig in uw browser uitgevoerd. Uw bestanden verlaten nooit uw apparaat.",
+		"badge": "100% lokaal — geen uploads, geen server",
+		"categories": {
+			"edit": "Bewerken",
+			"create": "Maken"
+		},
+		"tools": {
+			"rotate_name": "Afbeelding roteren",
+			"rotate_desc": "Een afbeelding 90°, 180° of 270° roteren",
+			"crop_name": "Afbeelding bijsnijden",
+			"crop_desc": "Teken een rechthoek om een gebied bij te snijden",
+			"watermark_name": "Afbeelding watermerken",
+			"watermark_desc": "Tekst op een afbeelding stempelen",
+			"meme_name": "Memegenerator",
+			"meme_desc": "Boven- en ondertekst aan een afbeelding toevoegen",
+			"batch_name": "Batchverwerking",
+			"batch_desc": "Dezelfde bewerking op meerdere afbeeldingen toepassen",
+			"qr_name": "QR-codegenerator",
+			"qr_desc": "QR-codes genereren van tekst of URL's",
+			"color_picker_name": "Kleurkiezer",
+			"color_picker_desc": "Kleuren selecteren uit een afbeelding",
+			"blur_name": "Gebied vervagen",
+			"blur_desc": "Een gebied van een afbeelding vervagen voor privacy",
+			"filters_name": "Afbeeldingsfilters",
+			"filters_desc": "Helderheid, contrast, verzadiging en meer aanpassen",
+			"video_to_gif_name": "Video naar GIF",
+			"video_to_gif_desc": "Elke video converteren naar een geanimeerde GIF"
+		}
+	},
+	"dev_tools": {
+		"title": "Ontwikkelaarstools",
+		"subtitle": "Formatteren, coderen en hashen — volledig in uw browser. Niets verlaat uw apparaat.",
+		"badge": "100% lokaal — geen uploads, geen server",
+		"categories": {
+			"format": "Formatteren en transformeren",
+			"analyze": "Analyseren"
+		},
+		"tools": {
+			"json_name": "JSON-formatter",
+			"json_desc": "JSON formatteren, minificeren en valideren",
+			"hash_name": "Hashgenerator",
+			"hash_desc": "SHA-256-, SHA-1- en SHA-512-hashes genereren",
+			"base64_name": "Base64-codec",
+			"base64_desc": "Base64-tekenreeksen coderen en decoderen",
+			"markdown_name": "Markdown-voorbeeld",
+			"markdown_desc": "Markdown schrijven en gerenderde HTML bekijken",
+			"diff_name": "Tekstvergelijking",
+			"diff_desc": "Twee teksten vergelijken en verschillen markeren",
+			"word_count_name": "Woordenteller",
+			"word_count_desc": "Woorden, tekens, zinnen en meer tellen",
+			"url_encode_name": "URL coderen/decoderen",
+			"url_encode_desc": "URL-tekenreeksen coderen en decoderen",
+			"css_minify_name": "CSS-minifier",
+			"css_minify_desc": "CSS minificeren door opmerkingen en witruimte te verwijderen"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Afbeeldingstools",
+		"upload_image": "Sleep hier een afbeelding",
+		"upload_images": "Sleep hier meerdere afbeeldingen",
+		"angle": "Hoek",
+		"ready": "Gereed!",
+		"download": "Downloaden",
+		"privacy_note": "✓ Uw bestanden verlaten nooit uw apparaat.",
+		"privacy_note_browser": "✓ Volledig gegenereerd in uw browser.",
+		"reset": "Resetten",
+		"text": "Tekst",
+		"opacity": "Dekking",
+		"font_size": "Lettergrootte",
+		"rotation": "Rotatie",
+		"position": "Positie",
+		"center": "Midden",
+		"tile": "Tegels",
+		"size": "Grootte",
+		"foreground": "Voorgrond",
+		"background": "Achtergrond",
+		"operation": "Bewerking",
+		"rotate": "Roteren",
+		"watermark": "Watermerk",
+		"crop": "Bijsnijden",
+		"meme": "Meme",
+		"save": "Opslaan",
+		"save_all": "Alles opslaan",
+		"bottom": "Onder",
+		"failed": "Mislukt."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Afbeelding roteren",
+			"desc": "Kies een hoek en bekijk het resultaat direct.",
+			"save": "Geroteerde afbeelding opslaan"
+		},
+		"crop_image": {
+			"title": "Afbeelding bijsnijden",
+			"desc": "Versleep hoeken, randen of teken een nieuwe selectie.",
+			"circle": "Cirkel",
+			"free": "Vrij",
+			"err_area": "Selecteer een bijsnijdgebied op de afbeelding.",
+			"btn_busy": "Bijsnijden…",
+			"btn": "Afbeelding bijsnijden",
+			"save": "Bijgesneden afbeelding opslaan"
+		},
+		"watermark_image": {
+			"title": "Afbeelding watermerken",
+			"desc": "Pas de instellingen aan en zie het watermerk direct bijwerken.",
+			"save": "Afbeelding met watermerk opslaan"
+		},
+		"meme": {
+			"title": "Memegenerator",
+			"desc": "Typ en zie uw meme direct bijwerken.",
+			"top_text": "Boventekst",
+			"bottom_text": "Ondertekst",
+			"save": "Meme opslaan"
+		},
+		"batch": {
+			"title": "Batchverwerking",
+			"desc": "Dezelfde bewerking tegelijkertijd op meerdere afbeeldingen toepassen.",
+			"trim": "Bijsnijden",
+			"err_images": "Voeg eerst afbeeldingen toe.",
+			"err_text": "Voer ten minste één regel tekst in.",
+			"err_watermark": "Voer watermerktekst in."
+		},
+		"qr": {
+			"title": "QR-codegenerator",
+			"desc": "Genereer een QR-code en zie deze direct bijwerken.",
+			"text_url": "Tekst of URL",
+			"error_correction": "Foutcorrectie",
+			"low": "Laag (7%)",
+			"medium": "Gemiddeld (15%)",
+			"quartile": "Kwartiel (25%)",
+			"high": "Hoog (30%)",
+			"save": "QR-code opslaan",
+			"save_file": "qrcode.png downloaden"
+		}
+	},
+	"toast": {
+		"insecure_context": "U bezoekt LocalConvert in een onbeveiligde context (bijvoorbeeld via HTTP in plaats van HTTPS). Sommige functies werken mogelijk niet naar verwachting."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Geen serveruploads",
+			"tools_count": "36+ tools",
+			"open_source": "Gratis en open source",
+			"works_locally": "Werkt lokaal"
+		},
+		"toolkit": {
+			"label": "Uw werkplaats",
+			"title": "Elke tool draait in uw browser",
+			"pdf_title": "PDF-tools",
+			"pdf_desc": "Samenvoegen, splitsen, comprimeren, watermerken, ondertekenen, bewerken en 12 meer",
+			"pdf_count": "18 hulpmiddelen",
+			"image_title": "Afbeeldingstools",
+			"image_desc": "Bijsnijden, formaat wijzigen, filters, vervagen, watermerken, memes en meer",
+			"image_count": "10 hulpmiddelen",
+			"dev_title": "Ontwikkelaarstools",
+			"dev_desc": "JSON, hash, Base64, markdown, diff en meer",
+			"dev_count": "8 hulpmiddelen",
+			"explore": "Verkennen →"
+		},
+		"gpu": {
+			"badge": "Hardwareversneld",
+			"title": "GPU-aangedreven videoconversie",
+			"desc": "Conversies gemarkeerd met ⚡ gebruiken de grafische hardware van uw apparaat. Snellere conversies, lager CPU-gebruik — nog steeds 100% lokaal.",
+			"full_label": "Volledige GPU — elke richting",
+			"input_label": "GPU bij het converteren naar bovenstaande formaten"
+		},
+		"formats": {
+			"title": "200+ formaatconversies",
+			"label": "Converter"
+		},
+		"privacy": {
+			"title": "100% privé door ontwerp",
+			"point1": "Uw bestanden verlaten nooit uw apparaat",
+			"point2": "Alle 36 tools draaien volledig in uw browser — nul serveruploads",
+			"point3": "Open source — controleer het zelf",
+			"label": "Privacy voorop"
+		},
+		"faq": {
+			"title": "Veelgestelde vragen",
+			"q1": "Is LocalConvert echt gratis?",
+			"a1": "Ja — volledig gratis, geen account vereist, geen verborgen kosten. LocalConvert is open source onder de AGPL-3.0-licentie.",
+			"q2": "Zijn mijn bestanden privé?",
+			"a2": "Volledig. Alle verwerking vindt plaats in uw browser met behulp van WebAssembly. Uw bestanden komen nooit in de buurt van onze servers — zelfs niet voor een moment.",
+			"q3": "Wat kan LocalConvert?",
+			"a3": "Meer dan 200 bestandsformaten converteren (afbeeldingen, audio, video, documenten), 18 PDF-tools (samenvoegen, splitsen, comprimeren, watermerken, ondertekenen, bewerken en meer), 10 afbeeldingstools (bijsnijden, formaat wijzigen, filters, vervagen, watermerken) en 8 ontwikkelaarstools (JSON, hash, Base64, diff, markdown).",
+			"q4": "Is er een bestandsgroottelimiet?",
+			"a4": "Geen harde limiet — het hangt af van het beschikbare geheugen van uw apparaat. Voor zeer grote videobestanden kunnen Firefox of Safari deze doorgaans beter verwerken.",
+			"q5": "Moet ik iets installeren?",
+			"a5": "Geen installatie nodig. LocalConvert werkt direct in elke moderne browser. U kunt het ook als PWA installeren vanuit de adresbalk voor een app-achtige ervaring.",
+			"label": "Vragen"
+		}
+	}
+}

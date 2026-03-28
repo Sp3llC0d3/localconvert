@@ -15,7 +15,11 @@
 		"copyright": "© {year} LocalConvert. Based on VERT.sh",
 		"source_code": "Source code",
 		"discord_server": "Discord server",
-		"privacy_policy": "Privacy policy"
+		"privacy_policy": "Privacy policy",
+		"tagline": "Your private toolkit",
+		"pdf_tools_count": "PDF Tools · 18",
+		"image_tools_count": "Image Tools · 10",
+		"dev_tools_count": "Dev Tools · 8"
 	},
 	"upload": {
 		"title": "Your private toolkit for files & code.",
@@ -230,10 +234,70 @@
 	},
 	"about": {
 		"title": "About",
+		"hero_title": "Built because file converters shouldn't need your files.",
 		"why": {
 			"title": "Why LocalConvert?",
 			"description": "<b>File converters have always disappointed us.</b> They're slow, require accounts, and send your files to third-party servers you know nothing about. We decided to fix that.<br/><br/>Every single file you convert — images, audio, video, and documents — is processed entirely on your device using WebAssembly. Nothing ever leaves your browser. There are no servers involved, no uploads, and no one can ever see your files."
 		},
+		"stats": {
+			"tools": "tools",
+			"format_conversions": "format conversions",
+			"languages": "languages",
+			"bytes_uploaded": "bytes uploaded"
+		},
+		"principles": {
+			"label": "Principles",
+			"p1_title": "Your files stay on your device",
+			"p1_desc": "Every tool runs locally in your browser via WebAssembly. There is no server. Your files are never uploaded, transmitted, or stored anywhere.",
+			"p2_title": "Free, no account, no strings",
+			"p2_desc": "No signup, no email, no payment wall, no file size limits. Open the site, use the tools, close the tab. That's it.",
+			"p3_title": "Open source, verifiable",
+			"p3_desc": "The entire codebase is public under AGPL-3.0. Don't trust us — read the code. Every privacy claim is verifiable."
+		},
+		"inside": {
+			"label": "What's inside",
+			"title": "Three tool categories"
+		},
+		"stack": {
+			"label": "Workshop inventory",
+			"title": "The engines under the hood",
+			"imagemagick": "60+ image formats via WASM",
+			"ffmpeg": "Audio & video conversion via WASM",
+			"webcodecs": "GPU-accelerated video processing",
+			"pandoc": "Document conversion via WASM",
+			"pdflib": "PDF creation, editing & rendering",
+			"sveltekit": "Framework & static site generation"
+		},
+		"origin": {
+			"title": "Origin",
+			"description": "This project started as a fork of VERT.sh (AGPL-3.0). We've since rebuilt the brand, added 30+ tools, redesigned the interface, and expanded to 28 languages — but the core conversion architecture traces back to the VERT team's excellent work."
+		},
+		"credit_groups": {
+			"engines": "Conversion Engines",
+			"engines_ffmpeg": "Audio & video conversion",
+			"engines_imagemagick": "Image format conversion",
+			"engines_pandoc": "Document conversion",
+			"engines_mediabunny": "GPU video acceleration",
+			"engines_webdemuxer": "WebCodecs video demuxing",
+			"pdf_toolkit": "PDF Toolkit",
+			"pdf_pdflib": "PDF creation, editing & merging",
+			"pdf_pdfjs": "PDF rendering & text extraction",
+			"pdf_encrypt": "PDF password protection",
+			"pdf_pptx": "PDF to PowerPoint conversion",
+			"tool_libs": "Tool Libraries",
+			"tool_qrcode": "QR code generation",
+			"tool_marked": "Markdown to HTML rendering",
+			"framework": "Framework & UI",
+			"fw_sveltekit": "Application framework",
+			"fw_tailwind": "Utility-first styling",
+			"fw_lucide": "Icon system",
+			"fw_paraglide": "Internationalization (28 locales)"
+		},
+		"links": {
+			"source_code": "Source Code",
+			"privacy_policy": "Privacy Policy"
+		},
+		"install": "Install",
 		"sponsors": {
 			"title": "Support",
 			"description": "LocalConvert is free and open source. If you find it useful, consider supporting the project. Contact us at",

@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Trang chủ",
+		"convert": "Chuyển đổi",
+		"pdf_tools": "Công cụ PDF",
+		"image_tools": "Công cụ Hình ảnh",
+		"dev_tools": "Công cụ Lập trình",
+		"tools": "Công cụ",
+		"settings": "Cài đặt",
+		"about": "Giới thiệu",
+		"toggle_theme": "Chuyển đổi giao diện"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Dựa trên VERT.sh",
+		"source_code": "Mã nguồn",
+		"discord_server": "Máy chủ Discord",
+		"privacy_policy": "Chính sách bảo mật",
+		"tagline": "Bo cong cu rieng tu cua ban",
+		"pdf_tools_count": "Cong cu PDF - 18",
+		"image_tools_count": "Cong cu Hinh anh - 10",
+		"dev_tools_count": "Cong cu Dev - 8"
+	},
+	"upload": {
+		"title": "Bộ công cụ riêng tư dành cho tệp và mã nguồn của bạn.",
+		"subtitle": "36 công cụ cho PDF, hình ảnh và quy trình làm việc dành cho lập trình viên — tất cả đều chạy trong trình duyệt của bạn. Không tải lên máy chủ, không cần tài khoản, miễn phí mãi mãi.",
+		"uploader": {
+			"text": "Kéo thả hoặc nhấp để {action}",
+			"convert": "chuyển đổi"
+		},
+		"cards": {
+			"title": "LocalConvert hỗ trợ...",
+			"images": "Hình ảnh",
+			"audio": "Âm thanh",
+			"documents": "Tài liệu",
+			"video": "Video",
+			"video_server_processing": "Hỗ trợ xử lý cục bộ",
+			"local_supported": "Hỗ trợ xử lý cục bộ",
+			"status": {
+				"text": "<b>Trạng thái:</b> {status}",
+				"ready": "sẵn sàng",
+				"not_ready": "chưa sẵn sàng",
+				"not_initialized": "chưa khởi tạo",
+				"downloading": "đang tải công cụ...",
+				"initializing": "đang khởi tạo...",
+				"unknown": "trạng thái không xác định"
+			},
+			"supported_formats": "Các định dạng được hỗ trợ:"
+		},
+		"tooltip": {
+			"partial_support": "Định dạng này chỉ có thể chuyển đổi ở dạng {direction}.",
+			"direction_input": "đầu vào (từ)",
+			"direction_output": "đầu ra (sang)",
+			"video_server_processing": "Tất cả quá trình chuyển đổi đều diễn ra cục bộ trên thiết bị của bạn."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Giải nén tệp lưu trữ",
+			"extracting": "Đã phát hiện tệp lưu trữ: {filename}",
+			"extracted": "Đã giải nén {extract_count} tệp từ {filename}. {ignore_count} mục đã bị bỏ qua.",
+			"detected": "Đã phát hiện {type} tệp trong {filename}.",
+			"audio": "âm thanh",
+			"video": "video",
+			"doc": "tài liệu",
+			"image": "hình ảnh",
+			"extract_error": "Lỗi khi giải nén {filename}: {error}"
+		},
+		"large_file_warning": "Do giới hạn của trình duyệt / thiết bị, chức năng chuyển đổi bị vô hiệu hóa cho tệp này vì nó lớn hơn {limit}GB. Chúng tôi khuyến nghị sử dụng Firefox hoặc Safari cho các tệp có kích thước này vì chúng có ít giới hạn hơn.",
+		"external_warning": {
+			"title": "Cảnh báo tệp lớn",
+			"text": "Tệp này khá lớn và có thể mất một lúc để chuyển đổi trong trình duyệt. Bạn có muốn tiếp tục không?",
+			"yes": "Có",
+			"no": "Không"
+		},
+		"panel": {
+			"convert_all": "Chuyển đổi tất cả",
+			"download_all": "Lưu tất cả dưới dạng .zip",
+			"remove_all": "Xóa tất cả tệp",
+			"set_all_to": "Đặt tất cả thành",
+			"na": "Không áp dụng"
+		},
+		"dropdown": {
+			"audio": "Âm thanh",
+			"video": "Video",
+			"doc": "Tài liệu",
+			"image": "Hình ảnh",
+			"placeholder": "Tìm kiếm định dạng",
+			"no_formats": "Không có định dạng khả dụng",
+			"no_results": "Không có định dạng nào phù hợp với tìm kiếm của bạn"
+		},
+		"tooltips": {
+			"unknown_file": "Loại tệp không xác định",
+			"audio_file": "Tệp âm thanh",
+			"video_file": "Tệp video",
+			"document_file": "Tệp tài liệu",
+			"image_file": "Tệp hình ảnh",
+			"convert_file": "Chuyển đổi tệp này",
+			"download_file": "Lưu vào thiết bị"
+		},
+		"errors": {
+			"cant_convert": "Chúng tôi không thể chuyển đổi tệp này.",
+			"vertd_server": "Định dạng tệp này không được hỗ trợ để chuyển đổi.",
+			"vertd_generic_view": "Xem chi tiết lỗi",
+			"vertd_generic_body": "Đã xảy ra lỗi khi cố gắng chuyển đổi tệp của bạn. Vui lòng thử lại hoặc thử định dạng khác.",
+			"vertd_generic_title": "Lỗi chuyển đổi",
+			"vertd_generic_yes": "Đồng ý",
+			"vertd_generic_no": "Hủy bỏ",
+			"vertd_failed_to_keep": "Chuyển đổi thất bại: {error}",
+			"vertd_details": "Xem chi tiết lỗi",
+			"vertd_details_body": "Thông tin lỗi sau đây có thể hữu ích cho việc khắc phục sự cố:",
+			"vertd_details_footer": "Xem [privacy_link]chính sách bảo mật[/privacy_link] của chúng tôi để biết thêm chi tiết.",
+			"vertd_details_job_id": "<b>Mã công việc:</b> {jobId}",
+			"vertd_details_from": "<b>Định dạng nguồn:</b> {from}",
+			"vertd_details_to": "<b>Định dạng đích:</b> {to}",
+			"vertd_details_error_message": "<b>Thông báo lỗi:</b> [view_link]Xem nhật ký lỗi[/view_link]",
+			"vertd_details_close": "Đóng",
+			"vertd_ratelimit": "Tệp '{filename}' đã chuyển đổi thất bại nhiều lần. Vui lòng thử định dạng khác hoặc tệp nhỏ hơn.",
+			"unsupported_format": "Chỉ hỗ trợ các tệp hình ảnh, video, âm thanh và tài liệu",
+			"pdf_redirect_title": "Đây là tệp PDF.",
+			"pdf_redirect_desc": "Tệp PDF không được chuyển đổi tại đây — hãy sử dụng Công cụ PDF để hợp nhất, tách, nén, xoay và nhiều hơn nữa.",
+			"pdf_redirect_button": "Mở Công cụ PDF",
+			"format_output_only": "Định dạng này hiện chỉ có thể được sử dụng làm đầu ra (chuyển đổi sang), không phải đầu vào.",
+			"vertd_not_found": "Không thể khởi tạo trình chuyển đổi video. Vui lòng tải lại trang và thử lại.",
+			"worker_downloading": "Trình chuyển đổi {type} đang tải, vui lòng chờ một vài giây.",
+			"worker_error": "Trình chuyển đổi {type} gặp lỗi trong quá trình khởi tạo, vui lòng thử lại sau.",
+			"worker_timeout": "Trình chuyển đổi {type} mất nhiều thời gian hơn dự kiến để khởi tạo, vui lòng chờ thêm hoặc tải lại trang.",
+			"audio": "âm thanh",
+			"doc": "tài liệu",
+			"image": "hình ảnh"
+		},
+		"options": {
+			"quality": "Chất lượng",
+			"resize": "Thay đổi kích thước",
+			"bitrate": "Tốc độ bit",
+			"trim": "Cắt"
+		}
+	},
+	"settings": {
+		"title": "Cài đặt",
+		"errors": {
+			"save_failed": "Không thể lưu cài đặt!"
+		},
+		"appearance": {
+			"title": "Giao diện",
+			"brightness_theme": "Chủ đề độ sáng",
+			"brightness_description": "Bạn muốn giao diện sáng chói hay một đêm tối yên tĩnh?",
+			"light": "Sáng",
+			"dark": "Tối",
+			"effect_settings": "Cài đặt hiệu ứng",
+			"effect_description": "Bạn muốn hiệu ứng đẹp mắt hay trải nghiệm tĩnh hơn?",
+			"enable": "Bật",
+			"disable": "Tắt"
+		},
+		"conversion": {
+			"title": "Chuyển đổi",
+			"advanced_settings": "Cài đặt nâng cao",
+			"filename_format": "Định dạng tên tệp",
+			"filename_description": "Cài đặt này xác định tên tệp khi tải về, <b>không bao gồm phần mở rộng tệp.</b> Bạn có thể sử dụng các mẫu sau trong định dạng, chúng sẽ được thay thế bằng thông tin tương ứng: <b>%name%</b> cho tên tệp gốc, <b>%extension%</b> cho phần mở rộng tệp gốc, và <b>%date%</b> cho chuỗi ngày khi tệp được chuyển đổi.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Định dạng chuyển đổi mặc định",
+			"default_format_enable": "Bật",
+			"default_format_disable": "Tắt",
+			"default_format_description": "Cài đặt này sẽ thay đổi định dạng mặc định được chọn khi bạn chọn một tệp thuộc loại tệp này.",
+			"default_format_image": "Hình ảnh",
+			"default_format_video": "Video",
+			"default_format_audio": "Âm thanh",
+			"default_format_document": "Tài liệu",
+			"metadata": "Siêu dữ liệu tệp",
+			"metadata_description": "Cài đặt này thay đổi việc siêu dữ liệu (EXIF, thông tin bài hát, v.v.) trên tệp gốc có được giữ lại trong các tệp đã chuyển đổi hay không.",
+			"keep": "Giữ lại",
+			"remove": "Xóa bỏ",
+			"quality": "Chất lượng chuyển đổi",
+			"quality_description": "Cài đặt này thay đổi chất lượng đầu ra mặc định của các tệp đã chuyển đổi (trong danh mục tương ứng). Giá trị cao hơn có thể dẫn đến thời gian chuyển đổi lâu hơn và kích thước tệp lớn hơn.",
+			"quality_video": "Cài đặt này thay đổi chất lượng đầu ra mặc định của các tệp video đã chuyển đổi. Giá trị cao hơn có thể dẫn đến thời gian chuyển đổi lâu hơn và kích thước tệp lớn hơn.",
+			"quality_audio": "Âm thanh (kbps)",
+			"quality_images": "Hình ảnh (%)",
+			"rate": "Tần số lấy mẫu (Hz)"
+		},
+		"vertd": {
+			"title": "Chuyển đổi video",
+			"status": "trạng thái:",
+			"loading": "đang tải...",
+			"available": "sẵn sàng",
+			"unavailable": "không khả dụng",
+			"description": "Chuyển đổi video được xử lý cục bộ bằng FFmpeg WebAssembly. Video của bạn không bao giờ rời khỏi thiết bị.",
+			"hosting_info": "Tất cả quá trình xử lý video diễn ra trong trình duyệt của bạn bằng công nghệ WebAssembly.",
+			"instance": "Công cụ",
+			"url_placeholder": "FFmpeg WASM (cục bộ)",
+			"conversion_speed": "Tốc độ chuyển đổi",
+			"speed_description": "Cài đặt này mô tả sự đánh đổi giữa tốc độ và chất lượng. Tốc độ nhanh hơn sẽ cho chất lượng thấp hơn, nhưng hoàn thành nhanh hơn.",
+			"speeds": {
+				"very_slow": "Rất chậm",
+				"slower": "Chậm hơn",
+				"slow": "Chậm",
+				"medium": "Trung bình",
+				"fast": "Nhanh",
+				"ultra_fast": "Cực nhanh"
+			},
+			"auto_instance": "Tự động (khuyến nghị)",
+			"eu_instance": "Cục bộ",
+			"us_instance": "Cục bộ",
+			"custom_instance": "Cục bộ"
+		},
+		"privacy": {
+			"title": "Quyền riêng tư & dữ liệu",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Chúng tôi sử dụng [plausible_link]Cloudflare Web Analytics[/plausible_link], một công cụ phân tích tập trung vào quyền riêng tư, để thu thập số liệu thống kê hoàn toàn ẩn danh. Tất cả dữ liệu đều được ẩn danh và tổng hợp, và không có thông tin nhận dạng nào được gửi hoặc lưu trữ. Bạn có thể chọn từ chối bên dưới.",
+			"opt_in": "Đồng ý",
+			"opt_out": "Từ chối",
+			"cache_title": "Quản lý bộ nhớ đệm",
+			"cache_description": "Chúng tôi lưu trữ các tệp chuyển đổi trong bộ nhớ đệm trên trình duyệt của bạn để bạn không phải tải lại chúng mỗi lần, cải thiện hiệu suất và giảm lượng dữ liệu sử dụng.",
+			"refresh_cache": "Làm mới bộ nhớ đệm",
+			"clear_cache": "Xóa bộ nhớ đệm",
+			"files_cached": "{size} ({count} tệp)",
+			"loading_cache": "Đang tải...",
+			"total_size": "Tổng dung lượng",
+			"files_cached_label": "Tệp đã lưu đệm",
+			"cache_cleared": "Đã xóa bộ nhớ đệm thành công!",
+			"cache_clear_error": "Không thể xóa bộ nhớ đệm.",
+			"site_data_title": "Quản lý dữ liệu trang web",
+			"site_data_description": "Xóa tất cả dữ liệu trang web bao gồm cài đặt và tệp đã lưu đệm, đặt lại LocalConvert về trạng thái mặc định và tải lại trang.",
+			"clear_all_data": "Xóa tất cả dữ liệu trang web",
+			"clear_all_data_confirm_title": "Xóa tất cả dữ liệu trang web?",
+			"clear_all_data_confirm": "Thao tác này sẽ đặt lại tất cả cài đặt & bộ nhớ đệm, sau đó tải lại trang. Hành động này không thể hoàn tác.",
+			"clear_all_data_cancel": "Hủy bỏ",
+			"all_data_cleared": "Đã xóa tất cả dữ liệu trang web! Đang tải lại trang...",
+			"all_data_clear_error": "Không thể xóa tất cả dữ liệu trang web."
+		},
+		"language": {
+			"title": "Ngôn ngữ",
+			"description": "Chọn ngôn ngữ ưa thích cho giao diện LocalConvert."
+		}
+	},
+	"about": {
+		"title": "Giới thiệu",
+		"why": {
+			"title": "Tại sao chọn LocalConvert?",
+			"description": "<b>Các công cụ chuyển đổi tệp luôn khiến chúng tôi thất vọng.</b> Chúng chậm, yêu cầu tài khoản và gửi tệp của bạn đến các máy chủ bên thứ ba mà bạn không biết gì. Chúng tôi quyết định khắc phục điều đó.<br/><br/>Mọi tệp bạn chuyển đổi — hình ảnh, âm thanh, video và tài liệu — đều được xử lý hoàn toàn trên thiết bị của bạn bằng WebAssembly. Không có gì rời khỏi trình duyệt của bạn. Không có máy chủ nào tham gia, không có tải lên, và không ai có thể xem tệp của bạn."
+		},
+		"sponsors": {
+			"title": "Hỗ trợ",
+			"description": "LocalConvert là phần mềm miễn phí và mã nguồn mở. Nếu bạn thấy hữu ích, hãy cân nhắc hỗ trợ dự án. Liên hệ với chúng tôi tại",
+			"email_copied": "Đã sao chép email vào bộ nhớ tạm!"
+		},
+		"resources": {
+			"title": "Tài nguyên",
+			"discord": "Discord",
+			"source": "Mã nguồn",
+			"email": "Email"
+		},
+		"donate": {
+			"title": "Hỗ trợ LocalConvert",
+			"description": "Với sự hỗ trợ của bạn, chúng tôi có thể tiếp tục duy trì và cải thiện LocalConvert.",
+			"one_time": "Một lần",
+			"monthly": "Hàng tháng",
+			"custom": "Tùy chỉnh",
+			"pay_now": "Thanh toán ngay",
+			"donate_amount": "Quyên góp ${amount} USD",
+			"thank_you": "Cảm ơn bạn đã hỗ trợ!",
+			"payment_failed": "Thanh toán thất bại: {message}{period} Bạn chưa bị tính phí.",
+			"donation_error": "Đã xảy ra lỗi khi xử lý khoản quyên góp của bạn. Vui lòng thử lại sau.",
+			"payment_error": "Lỗi khi tải thông tin thanh toán. Vui lòng thử lại sau.",
+			"donation_notice_official": "Sự hỗ trợ của bạn giúp duy trì và cải thiện LocalConvert.",
+			"donation_notice_unofficial": "Đây là phiên bản bên thứ ba của LocalConvert. Nếu bạn muốn hỗ trợ dự án gốc, vui lòng truy cập trang web chính thức."
+		},
+		"credits": {
+			"title": "Ghi nhận",
+			"contact_team": "Nếu bạn muốn liên hệ với nhóm phát triển, vui lòng sử dụng email có trong thẻ \"Tài nguyên\".",
+			"notable_contributors": "Người đóng góp nổi bật",
+			"notable_description": "Chúng tôi xin cảm ơn những người này vì những đóng góp quan trọng của họ cho VERT, dự án mà LocalConvert được xây dựng dựa trên.",
+			"github_contributors": "Người đóng góp trên GitHub",
+			"github_description": "Xin chân thành cảm ơn tất cả những người đã giúp đỡ! [github_link]Bạn cũng muốn đóng góp?[/github_link]",
+			"no_contributors": "Có vẻ như chưa có ai đóng góp... [contribute_link]hãy là người đầu tiên đóng góp![/contribute_link]",
+			"libraries": "Thư viện",
+			"libraries_description": "Xin chân thành cảm ơn FFmpeg (âm thanh, video), ImageMagick (hình ảnh) và Pandoc (tài liệu) vì đã duy trì các thư viện xuất sắc trong nhiều năm. LocalConvert dựa vào chúng để cung cấp dịch vụ chuyển đổi cho bạn.",
+			"roles": {
+				"lead_developer": "Trưởng nhóm phát triển; hệ thống chuyển đổi, triển khai giao diện",
+				"developer": "Nhà phát triển; triển khai giao diện",
+				"designer": "Nhà thiết kế; trải nghiệm người dùng, thương hiệu, tiếp thị",
+				"docker_ci": "Bảo trì Docker & CI",
+				"former_cofounder": "Cựu đồng sáng lập & nhà thiết kế"
+			}
+		},
+		"errors": {
+			"github_contributors": "Lỗi khi tải danh sách người đóng góp trên GitHub"
+		},
+		"hero_title": "Cong cu chuyen doi file khong nen can den file cua ban.",
+		"stats": {
+			"tools": "cong cu",
+			"format_conversions": "chuyen doi dinh dang",
+			"languages": "ngon ngu",
+			"bytes_uploaded": "byte gui len may chu"
+		},
+		"principles": {
+			"label": "Nguyen tac",
+			"p1_title": "File cua ban o lai tren thiet bi cua ban",
+			"p1_desc": "Tat ca cong cu chay cuc bo tren trinh duyet cua ban qua WebAssembly. Khong co may chu nao. File cua ban khong bao gio duoc tai len, truyen di hay luu tru bat ky dau.",
+			"p2_title": "Mien phi, khong can tai khoan, khong dieu kien",
+			"p2_desc": "Khong dang ky, khong email, khong tuong phi, khong gioi han kich thuoc file. Mo trang web, dung cong cu, dong tab.",
+			"p3_title": "Ma nguon mo, co the xac minh",
+			"p3_desc": "Toan bo ma nguon duoc cong khai theo giay phep AGPL-3.0. Doc ma nguon. Moi tuyen bo ve quyen rieng tu deu co the xac minh."
+		},
+		"inside": {
+			"label": "Ben trong co gi",
+			"title": "Ba danh muc cong cu"
+		},
+		"stack": {
+			"label": "Kho cong cu",
+			"title": "Cac dong co ben trong",
+			"imagemagick": "60+ dinh dang anh qua WASM",
+			"ffmpeg": "Chuyen doi am thanh va video qua WASM",
+			"webcodecs": "Xu ly video tang toc GPU",
+			"pandoc": "Chuyen doi tai lieu qua WASM",
+			"pdflib": "Tao, chinh sua va render PDF",
+			"sveltekit": "Framework va tao trang tinh"
+		},
+		"origin": {
+			"title": "Nguon goc",
+			"description": "Du an nay bat dau tu mot fork cua VERT.sh (AGPL-3.0). Tu do, chung toi da xay dung lai thuong hieu, them 30+ cong cu, thiet ke lai giao dien va mo rong len 28 ngon ngu."
+		},
+		"credit_groups": {
+			"engines": "Dong co chuyen doi",
+			"engines_ffmpeg": "Chuyen doi am thanh va video",
+			"engines_imagemagick": "Chuyen doi dinh dang anh",
+			"engines_pandoc": "Chuyen doi tai lieu",
+			"engines_mediabunny": "Tang toc video bang GPU",
+			"engines_webdemuxer": "Demuxing video qua WebCodecs",
+			"pdf_toolkit": "Bo cong cu PDF",
+			"pdf_pdflib": "Tao, chinh sua va gop PDF",
+			"pdf_pdfjs": "Render va trich xuat van ban PDF",
+			"pdf_encrypt": "Bao ve PDF bang mat khau",
+			"pdf_pptx": "Chuyen doi PDF sang PowerPoint",
+			"tool_libs": "Thu vien cong cu",
+			"tool_qrcode": "Tao ma QR",
+			"tool_marked": "Chuyen doi Markdown sang HTML",
+			"framework": "Framework va giao dien",
+			"fw_sveltekit": "Framework ung dung",
+			"fw_tailwind": "Dinh kieu theo tien ich",
+			"fw_lucide": "He thong bieu tuong",
+			"fw_paraglide": "Da ngon ngu hoa (28 ngon ngu)"
+		},
+		"links": {
+			"source_code": "Ma nguon",
+			"privacy_policy": "Chinh sach bao mat"
+		},
+		"install": "Cài đặt"
+	},
+	"workers": {
+		"errors": {
+			"general": "Lỗi khi chuyển đổi {file}: {message}",
+			"cancel": "Lỗi khi hủy chuyển đổi cho {file}: {message}",
+			"magick": "Lỗi trong trình xử lý Magick, chuyển đổi hình ảnh có thể không hoạt động như mong đợi.",
+			"ffmpeg": "Lỗi khi tải FFmpeg, một số tính năng có thể không hoạt động như mong đợi.",
+			"pandoc": "Lỗi khi tải trình xử lý Pandoc, chuyển đổi tài liệu có thể không hoạt động như mong đợi.",
+			"no_audio": "Không tìm thấy luồng âm thanh.",
+			"invalid_rate": "Tần số lấy mẫu không hợp lệ: {rate}Hz",
+			"file_too_large": "Tệp này vượt quá giới hạn {limit}GB của trình duyệt / thiết bị. Hãy thử Firefox hoặc Safari để chuyển đổi tệp lớn này, vì chúng thường có giới hạn cao hơn."
+		}
+	},
+	"privacy": {
+		"title": "Chính sách Bảo mật",
+		"summary": {
+			"title": "Tóm tắt",
+			"description": "Chính sách bảo mật của LocalConvert rất đơn giản: tệp của bạn không bao giờ rời khỏi thiết bị. Tất cả quá trình chuyển đổi — hình ảnh, âm thanh, video và tài liệu — đều diễn ra hoàn toàn trong trình duyệt của bạn bằng WebAssembly. Chúng tôi không sử dụng cookie hoặc trình theo dõi, và phân tích hoàn toàn ẩn danh thông qua Cloudflare Web Analytics.<br/><br/>LocalConvert được xây dựng dựa trên [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Chuyển đổi",
+			"description": "Tất cả quá trình chuyển đổi diễn ra hoàn toàn cục bộ trên thiết bị của bạn bằng các phiên bản WebAssembly của các công cụ liên quan (FFmpeg, ImageMagick, Pandoc). Điều này có nghĩa là tệp của bạn không bao giờ rời khỏi thiết bị và không ai có thể truy cập chúng. Khác với các trình chuyển đổi khác, điều này bao gồm cả video — chuyển đổi video cũng được thực hiện cục bộ trong trình duyệt của bạn."
+		},
+		"donations": {
+			"title": "Quyên góp",
+			"description": "Nếu chức năng quyên góp khả dụng, việc xử lý thanh toán có thể được thực hiện bởi nhà cung cấp bên thứ ba. Các yêu cầu mạng bên ngoài đến nhà cung cấp thanh toán được hoãn lại, và chỉ được thực hiện sau khi bạn nhấp nút thanh toán."
+		},
+		"conversion_errors": {
+			"title": "Lỗi chuyển đổi",
+			"description": "Khi quá trình chuyển đổi thất bại, thông tin lỗi được giữ trên thiết bị của bạn. Không có dữ liệu lỗi nào được tự động gửi đến bất kỳ máy chủ nào. Chi tiết lỗi có thể bao gồm:",
+			"list_job_id": "Loại tệp",
+			"list_format_from": "Định dạng bạn đã chuyển đổi từ",
+			"list_format_to": "Định dạng bạn đã chuyển đổi sang",
+			"list_stderr": "Đầu ra lỗi của FFmpeg",
+			"list_video": "Không có tệp nào được tải lên",
+			"footer": "Tất cả thông tin lỗi đều được giữ trên thiết bị của bạn và không bao giờ được truyền đi."
+		},
+		"analytics": {
+			"title": "Phân tích",
+			"description": "Chúng tôi sử dụng Cloudflare Web Analytics để phân tích hoàn toàn ẩn danh và tổng hợp. Cloudflare Web Analytics không sử dụng cookie và tuân thủ tất cả các quy định bảo mật chính (GDPR/CCPA/PECR). Bạn có thể từ chối phân tích trong phần \"Quyền riêng tư & dữ liệu\" trong [settings_link]cài đặt[/settings_link] và đọc thêm về Cloudflare Web Analytics [plausible_link]tại đây[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Bộ nhớ cục bộ",
+			"description": "Chúng tôi sử dụng bộ nhớ cục bộ của trình duyệt để lưu cài đặt của bạn. Không có dữ liệu cá nhân nào được lưu trữ hoặc truyền đi.<br/><br/>Các phiên bản WebAssembly của các công cụ chuyển đổi mà chúng tôi sử dụng (FFmpeg, ImageMagick, Pandoc) cũng được lưu trữ cục bộ trên trình duyệt của bạn khi bạn truy cập trang web lần đầu, để bạn không cần tải lại chúng mỗi lần truy cập. Không có dữ liệu cá nhân nào được lưu trữ hoặc truyền đi. Bạn có thể xem hoặc xóa dữ liệu này bất cứ lúc nào trong phần \"Quyền riêng tư & dữ liệu\" trong [settings_link]cài đặt[/settings_link]."
+		},
+		"contact": {
+			"title": "Liên hệ",
+			"description": "Nếu có câu hỏi, vui lòng gửi email cho chúng tôi tại: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Cập nhật lần cuối: 22-03-2026"
+	},
+	"pdf_tools": {
+		"title": "Công cụ PDF",
+		"subtitle": "Mọi thao tác đều chạy hoàn toàn trong trình duyệt của bạn. Tệp của bạn không bao giờ rời khỏi thiết bị.",
+		"badge": "100% cục bộ — không tải lên máy chủ",
+		"categories": {
+			"organize": "Sắp xếp",
+			"convert": "Chuyển đổi",
+			"optimize": "Tối ưu hóa & Chỉnh sửa"
+		},
+		"tools": {
+			"merge_name": "Hợp nhất PDF",
+			"merge_desc": "Kết hợp nhiều tệp PDF thành một tệp",
+			"split_name": "Tách PDF",
+			"split_desc": "Trích xuất trang hoặc tách thành các tệp riêng lẻ",
+			"rotate_name": "Xoay trang",
+			"rotate_desc": "Xoay từng trang hoặc tất cả các trang 90°/180°/270°",
+			"organize_name": "Sắp xếp trang",
+			"organize_desc": "Sắp xếp lại hoặc xóa trang bằng hình thu nhỏ trực quan",
+			"images_to_pdf_name": "Hình ảnh → PDF",
+			"images_to_pdf_desc": "Chuyển đổi hình ảnh JPG, PNG hoặc WEBP thành PDF",
+			"pdf_to_images_name": "PDF → Hình ảnh",
+			"pdf_to_images_desc": "Xuất mỗi trang dưới dạng hình ảnh JPG hoặc PNG",
+			"compress_name": "Nén PDF",
+			"compress_desc": "Giảm kích thước tệp bằng cách kết xuất lại trang dưới dạng JPEG",
+			"watermark_name": "Thêm hình mờ",
+			"watermark_desc": "Đóng dấu văn bản lên mọi trang của PDF",
+			"page_numbers_name": "Thêm số trang",
+			"page_numbers_desc": "Thêm đánh số tuần tự vào mọi trang",
+			"metadata_name": "Chỉnh sửa siêu dữ liệu",
+			"metadata_desc": "Xem và chỉnh sửa tiêu đề, tác giả và các thuộc tính PDF khác",
+			"crop_name": "Cắt PDF",
+			"crop_desc": "Cắt lề từ các trang PDF",
+			"pdf_to_ppt_name": "PDF sang PowerPoint",
+			"pdf_to_ppt_desc": "Chuyển đổi mỗi trang PDF thành một trang trình bày",
+			"sign_name": "Ký PDF",
+			"sign_desc": "Vẽ, nhập hoặc tải lên chữ ký",
+			"edit_name": "Chỉnh sửa PDF",
+			"edit_desc": "Thêm văn bản vào bất kỳ trang nào của PDF",
+			"password_name": "Bảo vệ bằng mật khẩu",
+			"password_desc": "Mã hóa PDF bằng mật khẩu và đặt quyền truy cập",
+			"unlock_name": "Mở khóa PDF",
+			"unlock_desc": "Xóa bảo vệ bằng mật khẩu khỏi PDF",
+			"pdf_to_text_name": "PDF sang Văn bản",
+			"pdf_to_text_desc": "Trích xuất toàn bộ văn bản từ PDF",
+			"grayscale_name": "PDF sang Thang xám",
+			"grayscale_desc": "Chuyển đổi các trang PDF sang đen trắng"
+		}
+	},
+	"image_tools": {
+		"title": "Công cụ Hình ảnh",
+		"subtitle": "Mọi thao tác đều chạy hoàn toàn trong trình duyệt của bạn. Tệp của bạn không bao giờ rời khỏi thiết bị.",
+		"badge": "100% cục bộ — không tải lên máy chủ",
+		"categories": {
+			"edit": "Chỉnh sửa",
+			"create": "Tạo mới"
+		},
+		"tools": {
+			"rotate_name": "Xoay hình ảnh",
+			"rotate_desc": "Xoay hình ảnh 90°, 180° hoặc 270°",
+			"crop_name": "Cắt hình ảnh",
+			"crop_desc": "Vẽ hình chữ nhật để cắt bất kỳ vùng nào",
+			"watermark_name": "Hình mờ trên ảnh",
+			"watermark_desc": "Đóng dấu văn bản lên bất kỳ hình ảnh nào",
+			"meme_name": "Tạo Meme",
+			"meme_desc": "Thêm văn bản phía trên và phía dưới vào bất kỳ hình ảnh nào",
+			"batch_name": "Xử lý hàng loạt",
+			"batch_desc": "Áp dụng cùng một thao tác cho nhiều hình ảnh",
+			"qr_name": "Tạo mã QR",
+			"qr_desc": "Tạo mã QR từ văn bản hoặc URL",
+			"color_picker_name": "Chọn màu",
+			"color_picker_desc": "Chọn màu từ bất kỳ hình ảnh nào",
+			"blur_name": "Làm mờ vùng",
+			"blur_desc": "Làm mờ một vùng của hình ảnh để bảo vệ quyền riêng tư",
+			"filters_name": "Bộ lọc hình ảnh",
+			"filters_desc": "Điều chỉnh độ sáng, độ tương phản, độ bão hòa và nhiều hơn nữa",
+			"video_to_gif_name": "Video sang GIF",
+			"video_to_gif_desc": "Chuyển đổi bất kỳ video nào thành GIF động"
+		}
+	},
+	"dev_tools": {
+		"title": "Công cụ Lập trình",
+		"subtitle": "Định dạng, mã hóa và băm — tất cả trong trình duyệt của bạn. Không có gì rời khỏi thiết bị.",
+		"badge": "100% cục bộ — không tải lên máy chủ",
+		"categories": {
+			"format": "Định dạng & Chuyển đổi",
+			"analyze": "Phân tích"
+		},
+		"tools": {
+			"json_name": "Định dạng JSON",
+			"json_desc": "Định dạng, rút gọn và xác thực JSON",
+			"hash_name": "Tạo mã băm",
+			"hash_desc": "Tạo mã băm SHA-256, SHA-1, SHA-512",
+			"base64_name": "Bộ mã hóa Base64",
+			"base64_desc": "Mã hóa và giải mã chuỗi Base64",
+			"markdown_name": "Xem trước Markdown",
+			"markdown_desc": "Viết markdown và xem trước HTML đã kết xuất",
+			"diff_name": "So sánh văn bản",
+			"diff_desc": "So sánh hai văn bản và đánh dấu sự khác biệt",
+			"word_count_name": "Đếm từ",
+			"word_count_desc": "Đếm từ, ký tự, câu và nhiều hơn nữa",
+			"url_encode_name": "Mã hóa/Giải mã URL",
+			"url_encode_desc": "Mã hóa và giải mã chuỗi URL",
+			"css_minify_name": "Rút gọn CSS",
+			"css_minify_desc": "Rút gọn CSS bằng cách xóa chú thích và khoảng trắng"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Công cụ Hình ảnh",
+		"upload_image": "Kéo thả hình ảnh vào đây",
+		"upload_images": "Kéo thả nhiều hình ảnh vào đây",
+		"angle": "Góc",
+		"ready": "Sẵn sàng!",
+		"download": "Tải về",
+		"privacy_note": "✓ Tệp của bạn không bao giờ rời khỏi thiết bị.",
+		"privacy_note_browser": "✓ Được tạo hoàn toàn trong trình duyệt của bạn.",
+		"reset": "Đặt lại",
+		"text": "Văn bản",
+		"opacity": "Độ mờ",
+		"font_size": "Cỡ chữ",
+		"rotation": "Xoay",
+		"position": "Vị trí",
+		"center": "Giữa",
+		"tile": "Lát",
+		"size": "Kích thước",
+		"foreground": "Màu nền trước",
+		"background": "Màu nền sau",
+		"operation": "Thao tác",
+		"rotate": "Xoay",
+		"watermark": "Hình mờ",
+		"crop": "Cắt",
+		"meme": "Meme",
+		"save": "Lưu",
+		"save_all": "Lưu tất cả",
+		"bottom": "Dưới",
+		"failed": "Thất bại."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Xoay hình ảnh",
+			"desc": "Chọn một góc và xem kết quả ngay lập tức.",
+			"save": "Lưu hình ảnh đã xoay"
+		},
+		"crop_image": {
+			"title": "Cắt hình ảnh",
+			"desc": "Kéo các góc, cạnh hoặc vẽ vùng chọn mới.",
+			"circle": "Hình tròn",
+			"free": "Tự do",
+			"err_area": "Chọn vùng cắt trên hình ảnh.",
+			"btn_busy": "Đang cắt…",
+			"btn": "Cắt hình ảnh",
+			"save": "Lưu hình ảnh đã cắt"
+		},
+		"watermark_image": {
+			"title": "Hình mờ trên ảnh",
+			"desc": "Điều chỉnh cài đặt và xem hình mờ cập nhật trực tiếp.",
+			"save": "Lưu hình ảnh có hình mờ"
+		},
+		"meme": {
+			"title": "Tạo Meme",
+			"desc": "Nhập và xem meme của bạn cập nhật trực tiếp.",
+			"top_text": "Văn bản phía trên",
+			"bottom_text": "Văn bản phía dưới",
+			"save": "Lưu meme"
+		},
+		"batch": {
+			"title": "Xử lý hàng loạt",
+			"desc": "Áp dụng cùng một thao tác cho nhiều hình ảnh cùng lúc.",
+			"trim": "Cắt",
+			"err_images": "Vui lòng thêm hình ảnh trước.",
+			"err_text": "Vui lòng nhập ít nhất một dòng văn bản.",
+			"err_watermark": "Vui lòng nhập văn bản hình mờ."
+		},
+		"qr": {
+			"title": "Tạo mã QR",
+			"desc": "Tạo mã QR và xem cập nhật trực tiếp.",
+			"text_url": "Văn bản hoặc URL",
+			"error_correction": "Mức sửa lỗi",
+			"low": "Thấp (7%)",
+			"medium": "Trung bình (15%)",
+			"quartile": "Phần tư (25%)",
+			"high": "Cao (30%)",
+			"save": "Lưu mã QR",
+			"save_file": "Tải về qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "Bạn đang truy cập LocalConvert trong ngữ cảnh không an toàn (ví dụ: truy cập qua HTTP thay vì HTTPS). Một số tính năng có thể không hoạt động như mong đợi."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Không tải lên máy chủ",
+			"tools_count": "Hơn 36 công cụ",
+			"open_source": "Miễn phí & Mã nguồn mở",
+			"works_locally": "Hoạt động cục bộ"
+		},
+		"toolkit": {
+			"label": "Xưởng làm việc của bạn",
+			"title": "Mọi công cụ đều chạy trong trình duyệt của bạn",
+			"pdf_title": "Công cụ PDF",
+			"pdf_desc": "Hợp nhất, tách, nén, hình mờ, ký, chỉnh sửa và 12 công cụ khác",
+			"pdf_count": "18 công cụ",
+			"image_title": "Công cụ Hình ảnh",
+			"image_desc": "Cắt, thay đổi kích thước, bộ lọc, làm mờ, hình mờ, meme và nhiều hơn nữa",
+			"image_count": "10 công cụ",
+			"dev_title": "Công cụ Lập trình",
+			"dev_desc": "JSON, mã băm, Base64, markdown, so sánh và nhiều hơn nữa",
+			"dev_count": "8 công cụ",
+			"explore": "Khám phá →"
+		},
+		"gpu": {
+			"badge": "Tăng tốc phần cứng",
+			"title": "Chuyển đổi video bằng GPU",
+			"desc": "Các chuyển đổi được đánh dấu ⚡ sử dụng phần cứng đồ họa của thiết bị. Chuyển đổi nhanh hơn, sử dụng CPU ít hơn — vẫn 100% cục bộ.",
+			"full_label": "GPU đầy đủ — mọi hướng",
+			"input_label": "GPU khi chuyển đổi sang các định dạng phía trên"
+		},
+		"formats": {
+			"title": "Hơn 200 định dạng chuyển đổi",
+			"label": "Trình chuyển đổi"
+		},
+		"privacy": {
+			"title": "100% Riêng tư theo thiết kế",
+			"point1": "Tệp của bạn không bao giờ rời khỏi thiết bị",
+			"point2": "Tất cả 36 công cụ đều chạy hoàn toàn trong trình duyệt — không tải lên máy chủ",
+			"point3": "Mã nguồn mở — tự xác minh",
+			"label": "Quyền riêng tư là ưu tiên hàng đầu"
+		},
+		"faq": {
+			"title": "Câu hỏi thường gặp",
+			"q1": "LocalConvert có thực sự miễn phí không?",
+			"a1": "Có — hoàn toàn miễn phí, không cần tài khoản, không có phí ẩn. LocalConvert là mã nguồn mở theo giấy phép AGPL-3.0.",
+			"q2": "Tệp của tôi có được bảo mật không?",
+			"a2": "Hoàn toàn bảo mật. Tất cả quá trình xử lý đều chạy trong trình duyệt của bạn bằng WebAssembly. Tệp của bạn không bao giờ chạm đến máy chủ của chúng tôi — dù chỉ một khoảnh khắc.",
+			"q3": "LocalConvert có thể làm gì?",
+			"a3": "Chuyển đổi hơn 200 định dạng tệp (hình ảnh, âm thanh, video, tài liệu), 18 công cụ PDF (hợp nhất, tách, nén, hình mờ, ký, chỉnh sửa và nhiều hơn nữa), 10 công cụ hình ảnh (cắt, thay đổi kích thước, bộ lọc, làm mờ, hình mờ) và 8 công cụ lập trình (JSON, mã băm, Base64, so sánh, markdown).",
+			"q4": "Có giới hạn kích thước tệp không?",
+			"a4": "Không có giới hạn cố định — tùy thuộc vào bộ nhớ khả dụng của thiết bị. Đối với các tệp video rất lớn, Firefox hoặc Safari thường xử lý tốt hơn.",
+			"q5": "Tôi có cần cài đặt gì không?",
+			"a5": "Không cần cài đặt. LocalConvert hoạt động trực tiếp trong bất kỳ trình duyệt hiện đại nào. Bạn cũng có thể cài đặt dưới dạng PWA từ thanh địa chỉ để có trải nghiệm giống ứng dụng.",
+			"label": "Câu hỏi"
+		}
+	}
+}

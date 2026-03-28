@@ -90,7 +90,7 @@
 			updateLocale(storedLocale);
 		} else {
 			// No stored preference — detect from browser language
-			const availableKeys = ["en","ar","es","fr","de","it","ba","hr","id","tr","ja","ko","el","zh-Hans","zh-Hant","pt-BR"];
+			const availableKeys = ["en","ar","es","fa","fr","de","hi","it","ba","hr","id","ms","nl","pl","pt","ro","tr","ru","sv","th","uk","vi","ja","ko","el","zh-Hans","zh-Hant","pt-BR"];
 			const browserLangs = navigator.languages?.length ? navigator.languages : [navigator.language];
 			let detected = "en";
 			for (const lang of browserLangs) {

@@ -8,14 +8,18 @@
 		"toggle_theme": "Ganti Tema",
 		"image_tools": "Alat Gambar",
 		"tools": "Alat",
-		"dev_tools": "Dev Tools",
+		"dev_tools": "Alat Pengembang",
 		"home": "Beranda"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Berbasis VERT.sh",
 		"source_code": "Kode sumber",
 		"discord_server": "Peladen Discord",
-		"privacy_policy": "Kebijakan privasi"
+		"privacy_policy": "Kebijakan privasi",
+		"tagline": "Perangkat pribadi Anda",
+		"pdf_tools_count": "Alat PDF - 18",
+		"image_tools_count": "Alat Gambar - 10",
+		"dev_tools_count": "Alat Dev - 8"
 	},
 	"upload": {
 		"title": "Toolkit pribadi Anda untuk file dan kode.",
@@ -280,7 +284,67 @@
 		},
 		"errors": {
 			"github_contributors": "Kesalahan mengambil kontributor GitHub"
-		}
+		},
+		"hero_title": "Dibuat karena alat konversi file seharusnya tidak perlu mengakses file Anda.",
+		"stats": {
+			"tools": "alat",
+			"format_conversions": "konversi format",
+			"languages": "bahasa",
+			"bytes_uploaded": "byte diunggah"
+		},
+		"principles": {
+			"label": "Prinsip",
+			"p1_title": "File Anda tetap di perangkat Anda",
+			"p1_desc": "Setiap alat berjalan secara lokal di browser Anda melalui WebAssembly. Tidak ada server. File Anda tidak pernah diunggah, dikirim, atau disimpan di mana pun.",
+			"p2_title": "Gratis, tanpa akun, tanpa syarat",
+			"p2_desc": "Tanpa pendaftaran, tanpa email, tanpa pembayaran, tanpa batas ukuran file. Buka situs, gunakan alatnya, tutup tab.",
+			"p3_title": "Sumber terbuka, dapat diverifikasi",
+			"p3_desc": "Seluruh kode sumber bersifat publik di bawah lisensi AGPL-3.0. Baca kodenya. Setiap klaim privasi dapat diverifikasi."
+		},
+		"inside": {
+			"label": "Apa saja di dalamnya",
+			"title": "Tiga kategori alat"
+		},
+		"stack": {
+			"label": "Inventaris bengkel",
+			"title": "Mesin di balik layar",
+			"imagemagick": "60+ format gambar via WASM",
+			"ffmpeg": "Konversi audio dan video via WASM",
+			"webcodecs": "Pemrosesan video dengan akselerasi GPU",
+			"pandoc": "Konversi dokumen via WASM",
+			"pdflib": "Pembuatan, pengeditan, dan rendering PDF",
+			"sveltekit": "Framework dan pembuatan situs statis"
+		},
+		"origin": {
+			"title": "Asal Usul",
+			"description": "Proyek ini dimulai sebagai fork dari VERT.sh (AGPL-3.0). Sejak itu kami telah membangun ulang merek, menambahkan 30+ alat, mendesain ulang antarmuka, dan memperluas ke 28 bahasa."
+		},
+		"credit_groups": {
+			"engines": "Mesin Konversi",
+			"engines_ffmpeg": "Konversi audio dan video",
+			"engines_imagemagick": "Konversi format gambar",
+			"engines_pandoc": "Konversi dokumen",
+			"engines_mediabunny": "Akselerasi video GPU",
+			"engines_webdemuxer": "Demuxing video WebCodecs",
+			"pdf_toolkit": "Perangkat PDF",
+			"pdf_pdflib": "Pembuatan, pengeditan, dan penggabungan PDF",
+			"pdf_pdfjs": "Rendering dan ekstraksi teks PDF",
+			"pdf_encrypt": "Perlindungan kata sandi PDF",
+			"pdf_pptx": "Konversi PDF ke PowerPoint",
+			"tool_libs": "Pustaka Alat",
+			"tool_qrcode": "Pembuatan kode QR",
+			"tool_marked": "Rendering Markdown ke HTML",
+			"framework": "Framework dan Antarmuka",
+			"fw_sveltekit": "Framework aplikasi",
+			"fw_tailwind": "Styling utility-first",
+			"fw_lucide": "Sistem ikon",
+			"fw_paraglide": "Internasionalisasi (28 bahasa)"
+		},
+		"links": {
+			"source_code": "Kode Sumber",
+			"privacy_policy": "Kebijakan Privasi"
+		},
+		"install": "Pasang"
 	},
 	"workers": {
 		"errors": {
@@ -464,25 +528,25 @@
 			"video_to_gif_desc": "Konversi video menjadi GIF animasi"
 		},
 		"categories": {
-			"edit": "Edit",
+			"edit": "Sunting",
 			"create": "Buat"
 		}
 	},
 	"tools_common": {
 		"back_pdf": "← PDF Tools",
-		"back_image": "← Image Tools",
-		"privacy_note": "✓ Your files never leave your device.",
-		"privacy_note_browser": "✓ Generated entirely in your browser.",
+		"back_image": "← Alat Gambar",
+		"privacy_note": "✓ File Anda tidak pernah meninggalkan perangkat Anda.",
+		"privacy_note_browser": "✓ Dibuat sepenuhnya di browser Anda.",
 		"upload_pdf": "Add a PDF file",
 		"upload_pdfs": "Add PDF files",
-		"upload_image": "Drop an image here",
-		"upload_images": "Drop multiple images here",
+		"upload_image": "Letakkan gambar di sini",
+		"upload_images": "Letakkan beberapa gambar di sini",
 		"upload_pdf_protected": "Add a password-protected PDF",
 		"upload_images_pdf": "Add image files (JPG, PNG, WEBP)",
 		"loading_thumbs": "Loading thumbnails…",
-		"ready": "Ready!",
+		"ready": "Siap!",
 		"output": "Output:",
-		"failed": "Failed.",
+		"failed": "Gagal.",
 		"failed_read_pdf": "Failed to read PDF.",
 		"page_of": "Page {currentPage} / {pageCount}",
 		"pages_remaining": "{count} page(s) remaining",
@@ -490,35 +554,35 @@
 		"images_selected": "{count} image(s) selected",
 		"results_ready": "{count} result(s) ready",
 		"apply_all_pages": "Apply to all pages",
-		"save_all": "Save all",
-		"download": "Download",
-		"save": "Save",
+		"save_all": "Simpan semua",
+		"download": "Unduh",
+		"save": "Simpan",
 		"clear": "Clear",
-		"reset": "Reset",
+		"reset": "Atur ulang",
 		"show": "Show",
 		"hide": "Hide",
-		"text": "Text",
-		"opacity": "Opacity",
-		"font_size": "Font size",
-		"rotation": "Rotation",
-		"position": "Position",
-		"center": "Center",
-		"tile": "Tile",
-		"angle": "Angle",
+		"text": "Teks",
+		"opacity": "Opasitas",
+		"font_size": "Ukuran font",
+		"rotation": "Rotasi",
+		"position": "Posisi",
+		"center": "Tengah",
+		"tile": "Ubin",
+		"angle": "Sudut",
 		"format": "Format",
 		"quality": "Quality",
-		"size": "Size",
+		"size": "Ukuran",
 		"left": "Left",
 		"right": "Right",
 		"top": "Top",
-		"bottom": "Bottom",
-		"operation": "Operation",
-		"rotate": "Rotate",
-		"watermark": "Watermark",
-		"crop": "Crop",
+		"bottom": "Bawah",
+		"operation": "Operasi",
+		"rotate": "Putar",
+		"watermark": "Tanda air",
+		"crop": "Potong",
 		"meme": "Meme",
-		"foreground": "Foreground",
-		"background": "Background",
+		"foreground": "Latar depan",
+		"background": "Latar belakang",
 		"input": "Input:",
 		"back_dev": "← Alat Pengembang"
 	},
@@ -732,54 +796,54 @@
 			"save": "Save unlocked PDF"
 		},
 		"rotate_image": {
-			"title": "Rotate Image",
-			"desc": "Pick an angle and see the result instantly.",
-			"save": "Save rotated image"
+			"title": "Putar Gambar",
+			"desc": "Pilih sudut dan lihat hasilnya langsung.",
+			"save": "Simpan gambar yang diputar"
 		},
 		"crop_image": {
-			"title": "Crop Image",
-			"desc": "Drag corners, edges, or draw a new selection.",
-			"circle": "Circle",
-			"free": "Free",
-			"err_area": "Select a crop area on the image.",
-			"btn": "Crop image",
-			"btn_busy": "Cropping…",
-			"save": "Save cropped image"
+			"title": "Potong Gambar",
+			"desc": "Seret sudut, tepi, atau gambar pilihan baru.",
+			"circle": "Lingkaran",
+			"free": "Bebas",
+			"err_area": "Pilih area pemotongan pada gambar.",
+			"btn": "Potong gambar",
+			"btn_busy": "Memotong…",
+			"save": "Simpan gambar yang dipotong"
 		},
 		"watermark_image": {
-			"title": "Watermark Image",
-			"desc": "Adjust settings and see the watermark update live.",
-			"save": "Save watermarked image"
+			"title": "Tanda Air Gambar",
+			"desc": "Sesuaikan pengaturan dan lihat tanda air diperbarui secara langsung.",
+			"save": "Simpan gambar bertanda air"
 		},
 		"meme": {
-			"title": "Meme Generator",
-			"desc": "Type and see your meme update live.",
-			"top_text": "Top text",
-			"bottom_text": "Bottom text",
-			"save": "Save meme"
+			"title": "Pembuat Meme",
+			"desc": "Ketik dan lihat meme Anda diperbarui secara langsung.",
+			"top_text": "Teks atas",
+			"bottom_text": "Teks bawah",
+			"save": "Simpan meme"
 		},
 		"batch": {
-			"title": "Batch Processing",
-			"desc": "Apply the same operation to multiple images at once.",
-			"trim": "Trim",
+			"title": "Pemrosesan Massal",
+			"desc": "Terapkan operasi yang sama ke beberapa gambar sekaligus.",
+			"trim": "Pangkas",
 			"trim_help": "Trims {percent}% from each edge of every image.",
-			"err_images": "Add images first.",
-			"err_text": "Enter at least one line of text.",
-			"err_watermark": "Enter watermark text.",
+			"err_images": "Tambahkan gambar terlebih dahulu.",
+			"err_text": "Masukkan setidaknya satu baris teks.",
+			"err_watermark": "Masukkan teks tanda air.",
 			"btn": "Process {count} image(s)",
 			"btn_busy": "Processing {progress} / {total}…"
 		},
 		"qr": {
-			"title": "QR Code Generator",
-			"desc": "Generate a QR code and see it update live.",
-			"text_url": "Text or URL",
-			"error_correction": "Error correction",
-			"low": "Low (7%)",
-			"medium": "Medium (15%)",
-			"quartile": "Quartile (25%)",
-			"high": "High (30%)",
-			"save": "Save QR code",
-			"save_file": "Download qrcode.png"
+			"title": "Pembuat Kode QR",
+			"desc": "Buat kode QR dan lihat pembaruan secara langsung.",
+			"text_url": "Teks atau URL",
+			"error_correction": "Koreksi kesalahan",
+			"low": "Rendah (7%)",
+			"medium": "Sedang (15%)",
+			"quartile": "Kuartil (25%)",
+			"high": "Tinggi (30%)",
+			"save": "Simpan kode QR",
+			"save_file": "Unduh qrcode.png"
 		},
 		"color_picker": {
 			"title": "Color Picker",

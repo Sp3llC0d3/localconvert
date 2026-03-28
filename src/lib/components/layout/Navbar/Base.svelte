@@ -433,10 +433,10 @@
 			<button
 				onclick={handleInstall}
 				class="nav-install"
-				aria-label="Install app"
+				aria-label={m["about.install"]()}
 			>
 				<DownloadIcon size={16} />
-				<span class="hidden md:inline">Install</span>
+				<span class="hidden md:inline">{m["about.install"]()}</span>
 			</button>
 		{/if}
 	</Panel>

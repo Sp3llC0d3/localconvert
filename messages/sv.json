@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Hem",
+		"convert": "Konvertera",
+		"pdf_tools": "PDF-verktyg",
+		"image_tools": "Bildverktyg",
+		"dev_tools": "Utvecklarverktyg",
+		"tools": "Verktyg",
+		"settings": "Installningar",
+		"about": "Om",
+		"toggle_theme": "Byt tema"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Baserad pa VERT.sh",
+		"source_code": "Kallkod",
+		"discord_server": "Discord-server",
+		"privacy_policy": "Integritetspolicy",
+		"tagline": "Din privata verktygslåda",
+		"pdf_tools_count": "PDF-verktyg - 18",
+		"image_tools_count": "Bildverktyg - 10",
+		"dev_tools_count": "Dev-verktyg - 8"
+	},
+	"upload": {
+		"title": "Ditt privata verktyg for filer och kod.",
+		"subtitle": "36 verktyg for PDF:er, bilder och utvecklararbetsfloden -- allt kors i din webblasare. Inga uppladdningar, inga konton, gratis for alltid.",
+		"uploader": {
+			"text": "Slapp eller klicka for att {action}",
+			"convert": "konvertera"
+		},
+		"cards": {
+			"title": "LocalConvert stoder...",
+			"images": "Bilder",
+			"audio": "Ljud",
+			"documents": "Dokument",
+			"video": "Video",
+			"video_server_processing": "Lokalt stod",
+			"local_supported": "Lokalt stod",
+			"status": {
+				"text": "<b>Status:</b> {status}",
+				"ready": "redo",
+				"not_ready": "inte redo",
+				"not_initialized": "inte initialiserad",
+				"downloading": "laddar verktyg...",
+				"initializing": "initialiserar...",
+				"unknown": "okand status"
+			},
+			"supported_formats": "Format som stods:"
+		},
+		"tooltip": {
+			"partial_support": "Detta format kan endast konverteras som {direction}.",
+			"direction_input": "indata (fran)",
+			"direction_output": "utdata (till)",
+			"video_server_processing": "Alla konverteringar sker lokalt pa din enhet."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Extrahera arkiv",
+			"extracting": "Upptackt arkiv: {filename}",
+			"extracted": "Extraherade {extract_count} filer fran {filename}. {ignore_count} objekt ignorerades.",
+			"detected": "Upptackte {type}-filer i {filename}.",
+			"audio": "ljud",
+			"video": "video",
+			"doc": "dokument",
+			"image": "bild",
+			"extract_error": "Fel vid extrahering av {filename}: {error}"
+		},
+		"large_file_warning": "Pa grund av webblasarens/enhetens begransningar ar konvertering inaktiverad for denna fil eftersom den ar storre an {limit}GB. Vi rekommenderar att anvanda Firefox eller Safari for filer av denna storlek eftersom de har farre begransningar.",
+		"external_warning": {
+			"title": "Varning for stor fil",
+			"text": "Denna fil ar ganska stor och kan ta ett tag att konvertera i webblasaren. Vill du fortsatta?",
+			"yes": "Ja",
+			"no": "Nej"
+		},
+		"panel": {
+			"convert_all": "Konvertera alla",
+			"download_all": "Spara alla som .zip",
+			"remove_all": "Ta bort alla filer",
+			"set_all_to": "Stall in alla till",
+			"na": "Ej tillganglig"
+		},
+		"dropdown": {
+			"audio": "Ljud",
+			"video": "Video",
+			"doc": "Dokument",
+			"image": "Bild",
+			"placeholder": "Sok format",
+			"no_formats": "Inga format tillgangliga",
+			"no_results": "Inga format matchar din sokning"
+		},
+		"tooltips": {
+			"unknown_file": "Okand filtyp",
+			"audio_file": "Ljudfil",
+			"video_file": "Videofil",
+			"document_file": "Dokumentfil",
+			"image_file": "Bildfil",
+			"convert_file": "Konvertera denna fil",
+			"download_file": "Spara till enhet"
+		},
+		"errors": {
+			"cant_convert": "Vi kan inte konvertera denna fil.",
+			"vertd_server": "Detta filformat stods inte for konvertering.",
+			"vertd_generic_view": "Visa felinformation",
+			"vertd_generic_body": "Ett fel uppstod vid konvertering av din fil. Forsok igen eller prova ett annat format.",
+			"vertd_generic_title": "Konverteringsfel",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Avbryt",
+			"vertd_failed_to_keep": "Konvertering misslyckades: {error}",
+			"vertd_details": "Visa felinformation",
+			"vertd_details_body": "Foljande felinformation kan hjalpa vid felsokning:",
+			"vertd_details_footer": "Se var [privacy_link]integritetspolicy[/privacy_link] for mer information.",
+			"vertd_details_job_id": "<b>Jobb-ID:</b> {jobId}",
+			"vertd_details_from": "<b>Fran format:</b> {from}",
+			"vertd_details_to": "<b>Till format:</b> {to}",
+			"vertd_details_error_message": "<b>Felmeddelande:</b> [view_link]Visa felloggar[/view_link]",
+			"vertd_details_close": "Stang",
+			"vertd_ratelimit": "Filen '{filename}' har misslyckats att konverteras flera ganger. Forsok med ett annat format eller en mindre fil.",
+			"unsupported_format": "Endast bild-, video-, ljud- och dokumentfiler stods",
+			"pdf_redirect_title": "Detta ar en PDF-fil.",
+			"pdf_redirect_desc": "PDF:er konverteras inte har -- anvand PDF-verktyg for att sammanfoga, dela, komprimera, rotera och mer.",
+			"pdf_redirect_button": "Oppna PDF-verktyg",
+			"format_output_only": "Detta format kan for narvarande endast anvandas som utdata (konverteras till), inte som indata.",
+			"vertd_not_found": "Videokonverteraren kunde inte initialiseras. Ladda om sidan och forsok igen.",
+			"worker_downloading": "{type}-konverteraren laddar, vanligen vanta nagra ogonblick.",
+			"worker_error": "{type}-konverteraren hade ett fel under initialisering, forsok igen senare.",
+			"worker_timeout": "{type}-konverteraren tar langre tid an vantat att initialisera, vanligen vanta ytterligare nagra ogonblick eller ladda om sidan.",
+			"audio": "ljud",
+			"doc": "dokument",
+			"image": "bild"
+		},
+		"options": {
+			"quality": "Kvalitet",
+			"resize": "Andra storlek",
+			"bitrate": "Bithastighet",
+			"trim": "Trimma"
+		}
+	},
+	"settings": {
+		"title": "Installningar",
+		"errors": {
+			"save_failed": "Kunde inte spara installningar!"
+		},
+		"appearance": {
+			"title": "Utseende",
+			"brightness_theme": "Ljustema",
+			"brightness_description": "Vill du ha ett soligt ljussken eller en lugn mork natt?",
+			"light": "Ljust",
+			"dark": "Morkt",
+			"effect_settings": "Effektinstallningar",
+			"effect_description": "Vill du ha snygga effekter eller en mer statisk upplevelse?",
+			"enable": "Aktivera",
+			"disable": "Inaktivera"
+		},
+		"conversion": {
+			"title": "Konvertering",
+			"advanced_settings": "Avancerade installningar",
+			"filename_format": "Filnamnsformat",
+			"filename_description": "Detta bestammer filens namn vid nedladdning, <b>utan filtillagger.</b> Du kan anvanda foljande mallar i formatet, som ersatts med relevant information: <b>%name%</b> for det ursprungliga filnamnet, <b>%extension%</b> for det ursprungliga filtillagget och <b>%date%</b> for en datumsträng for nar filen konverterades.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Standardformat for konvertering",
+			"default_format_enable": "Aktivera",
+			"default_format_disable": "Inaktivera",
+			"default_format_description": "Detta andrar det forvalda formatet som valjs nar du valjer en fil av denna filtyp.",
+			"default_format_image": "Bilder",
+			"default_format_video": "Videor",
+			"default_format_audio": "Ljud",
+			"default_format_document": "Dokument",
+			"metadata": "Filmetadata",
+			"metadata_description": "Detta andrar huruvida metadata (EXIF, sanginformation etc.) pa originalfilen bevaras i konverterade filer.",
+			"keep": "Behall",
+			"remove": "Ta bort",
+			"quality": "Konverteringskvalitet",
+			"quality_description": "Detta andrar standardkvaliteten for konverterade filer (inom dess kategori). Hogre varden kan resultera i langre konverteringstider och storre filstorlek.",
+			"quality_video": "Detta andrar standardkvaliteten for konverterade videofiler. Hogre varden kan resultera i langre konverteringstider och storre filstorlek.",
+			"quality_audio": "Ljud (kbps)",
+			"quality_images": "Bild (%)",
+			"rate": "Samplingshastighet (Hz)"
+		},
+		"vertd": {
+			"title": "Videokonvertering",
+			"status": "status:",
+			"loading": "laddar...",
+			"available": "redo",
+			"unavailable": "inte tillganglig",
+			"description": "Videokonvertering hanteras lokalt med FFmpeg WebAssembly. Dina videor lamnar aldrig din enhet.",
+			"hosting_info": "All videobearbetning sker i din webblasare med WebAssembly-teknik.",
+			"instance": "Motor",
+			"url_placeholder": "FFmpeg WASM (lokal)",
+			"conversion_speed": "Konverteringshastighet",
+			"speed_description": "Detta beskriver avvagningen mellan hastighet och kvalitet. Snabbare hastigheter resulterar i lagre kvalitet men far jobbet gjort snabbare.",
+			"speeds": {
+				"very_slow": "Mycket langsam",
+				"slower": "Langsammare",
+				"slow": "Langsam",
+				"medium": "Medel",
+				"fast": "Snabb",
+				"ultra_fast": "Ultrasnabb"
+			},
+			"auto_instance": "Automatisk (rekommenderad)",
+			"eu_instance": "Lokal",
+			"us_instance": "Lokal",
+			"custom_instance": "Lokal"
+		},
+		"privacy": {
+			"title": "Integritet och data",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Vi anvander [plausible_link]Cloudflare Web Analytics[/plausible_link], ett integritetsfokuserat analysverktyg, for att samla in helt anonym statistik. All data ar anonymiserad och aggregerad, och ingen identifierbar information skickas eller lagras nagonsin. Du kan valja att avsta nedan.",
+			"opt_in": "Delta",
+			"opt_out": "Avsta",
+			"cache_title": "Cachehantering",
+			"cache_description": "Vi cachar konverteringsfilerna i din webblasare sa att du inte behover ladda om dem varje gang, vilket forbattrar prestanda och minskar dataanvandning.",
+			"refresh_cache": "Uppdatera cache",
+			"clear_cache": "Rensa cache",
+			"files_cached": "{size} ({count} filer)",
+			"loading_cache": "Laddar...",
+			"total_size": "Total storlek",
+			"files_cached_label": "Cachade filer",
+			"cache_cleared": "Cachen rensades!",
+			"cache_clear_error": "Kunde inte rensa cachen.",
+			"site_data_title": "Hantering av webbplatsdata",
+			"site_data_description": "Rensa all webbplatsdata inklusive installningar och cachade filer, vilket aterstaller LocalConvert till standardlaget och laddar om sidan.",
+			"clear_all_data": "Rensa all webbplatsdata",
+			"clear_all_data_confirm_title": "Rensa all webbplatsdata?",
+			"clear_all_data_confirm": "Detta aterstaller alla installningar och cache, och laddar sedan om sidan. Denna atgard kan inte angras.",
+			"clear_all_data_cancel": "Avbryt",
+			"all_data_cleared": "All webbplatsdata rensad! Laddar om sidan...",
+			"all_data_clear_error": "Kunde inte rensa all webbplatsdata."
+		},
+		"language": {
+			"title": "Sprak",
+			"description": "Valj ditt foredragna sprak for LocalConvert-granssnittet."
+		}
+	},
+	"about": {
+		"title": "Om",
+		"why": {
+			"title": "Varfor LocalConvert?",
+			"description": "<b>Filkonverterare har alltid gjort oss besvikna.</b> De ar langsamma, kraver konton och skickar dina filer till tredjepartsservrar som du inte vet nagot om. Vi bestamde oss for att losa det.<br/><br/>Varje fil du konverterar -- bilder, ljud, video och dokument -- bearbetas helt pa din enhet med WebAssembly. Inget lamnar nagonsin din webblasare. Det finns inga servrar inblandade, inga uppladdningar, och ingen kan nagonsin se dina filer."
+		},
+		"sponsors": {
+			"title": "Stod",
+			"description": "LocalConvert ar gratis och har oppen kallkod. Om du tycker att det ar anvandbart, overvag att stodja projektet. Kontakta oss pa",
+			"email_copied": "E-postadressen kopierades till urklipp!"
+		},
+		"resources": {
+			"title": "Resurser",
+			"discord": "Discord",
+			"source": "Kallkod",
+			"email": "E-post"
+		},
+		"donate": {
+			"title": "Stod LocalConvert",
+			"description": "Med ditt stod kan vi fortsatta underhalla och forbattra LocalConvert.",
+			"one_time": "Engangsbidrag",
+			"monthly": "Manadsvis",
+			"custom": "Valfritt",
+			"pay_now": "Betala nu",
+			"donate_amount": "Donera ${amount} USD",
+			"thank_you": "Tack for ditt stod!",
+			"payment_failed": "Betalningen misslyckades: {message}{period} Du har inte debiterats.",
+			"donation_error": "Ett fel uppstod vid bearbetning av din donation. Forsok igen senare.",
+			"payment_error": "Fel vid hamtning av betalningsinformation. Forsok igen senare.",
+			"donation_notice_official": "Ditt stod hjalper till att underhalla och forbattra LocalConvert.",
+			"donation_notice_unofficial": "Detta ar en tredjepartsinstans av LocalConvert. Om du vill stodja det ursprungliga projektet, besok den officiella webbplatsen istallet."
+		},
+		"credits": {
+			"title": "Erkannanden",
+			"contact_team": "Om du vill kontakta utvecklingsteamet, anvand e-postadressen som finns pa kortet 'Resurser'.",
+			"notable_contributors": "Framstaende bidragsgivare",
+			"notable_description": "Vi vill tacka dessa personer for deras stora bidrag till VERT, projektet som LocalConvert bygger pa.",
+			"github_contributors": "GitHub-bidragsgivare",
+			"github_description": "Stort tack till alla dessa personer for deras hjalp! [github_link]Vill du hjalpa till ocksa?[/github_link]",
+			"no_contributors": "Det verkar som att ingen har bidragit annu... [contribute_link]bli den forsta att bidra![/contribute_link]",
+			"libraries": "Bibliotek",
+			"libraries_description": "Ett stort tack till FFmpeg (ljud, video), ImageMagick (bilder) och Pandoc (dokument) for att de underhaller sa utmarkta bibliotek i sa manga ar. LocalConvert forlitar sig pa dem for att tillhandahalla dina konverteringar.",
+			"roles": {
+				"lead_developer": "Huvudutvecklare; konverteringsbackend, UI-implementation",
+				"developer": "Utvecklare; UI-implementation",
+				"designer": "Designer; UX, varumarke, marknadsforing",
+				"docker_ci": "Underhall av Docker- och CI-stod",
+				"former_cofounder": "Tidigare medgrundare och designer"
+			}
+		},
+		"errors": {
+			"github_contributors": "Fel vid hamtning av GitHub-bidragsgivare"
+		},
+		"hero_title": "Byggt eftersom filkonverterare inte borde behöva dina filer.",
+		"stats": {
+			"tools": "verktyg",
+			"format_conversions": "formatkonverteringar",
+			"languages": "språk",
+			"bytes_uploaded": "byte uppladdade"
+		},
+		"principles": {
+			"label": "Principer",
+			"p1_title": "Dina filer stannar på din enhet",
+			"p1_desc": "Varje verktyg körs lokalt i din webbläsare via WebAssembly. Det finns ingen server. Dina filer laddas aldrig upp, skickas eller lagras någonstans.",
+			"p2_title": "Gratis, inget konto, inga fällor",
+			"p2_desc": "Ingen registrering, ingen e-post, ingen betalning, ingen filstorleksgräns. Öppna sidan, använd verktygen, stäng fliken.",
+			"p3_title": "Öppen källkod, verifierbart",
+			"p3_desc": "Hela kodbasen är offentlig under AGPL-3.0. Läs koden. Varje integritetspåstående är verifierbart."
+		},
+		"inside": {
+			"label": "Vad som ingår",
+			"title": "Tre verktygskategorier"
+		},
+		"stack": {
+			"label": "Verkstadsinventarier",
+			"title": "Motorerna under huven",
+			"imagemagick": "60+ bildformat via WASM",
+			"ffmpeg": "Ljud- och videokonvertering via WASM",
+			"webcodecs": "GPU-accelererad videobearbetning",
+			"pandoc": "Dokumentkonvertering via WASM",
+			"pdflib": "Skapande, redigering och rendering av PDF",
+			"sveltekit": "Ramverk och generering av statiska sidor"
+		},
+		"origin": {
+			"title": "Ursprung",
+			"description": "Det här projektet började som en fork av VERT.sh (AGPL-3.0). Sedan dess har vi byggt ett nytt varumärke, lagt till 30+ verktyg, gjort om gränssnittet och expanderat till 28 språk."
+		},
+		"credit_groups": {
+			"engines": "Konverteringsmotorer",
+			"engines_ffmpeg": "Ljud- och videokonvertering",
+			"engines_imagemagick": "Bildformatkonvertering",
+			"engines_pandoc": "Dokumentkonvertering",
+			"engines_mediabunny": "GPU-videoacceleration",
+			"engines_webdemuxer": "WebCodecs videodemuxing",
+			"pdf_toolkit": "PDF-verktyg",
+			"pdf_pdflib": "Skapande, redigering och sammanfogning av PDF",
+			"pdf_pdfjs": "Rendering och textextraktion från PDF",
+			"pdf_encrypt": "Lösenordsskydd för PDF",
+			"pdf_pptx": "Konvertering av PDF till PowerPoint",
+			"tool_libs": "Verktygsbibliotek",
+			"tool_qrcode": "QR-kodgenerering",
+			"tool_marked": "Rendering av Markdown till HTML",
+			"framework": "Ramverk och gränssnitt",
+			"fw_sveltekit": "Applikationsramverk",
+			"fw_tailwind": "Utility-first-styling",
+			"fw_lucide": "Ikonsystem",
+			"fw_paraglide": "Internationalisering (28 språkkoder)"
+		},
+		"links": {
+			"source_code": "Källkod",
+			"privacy_policy": "Integritetspolicy"
+		},
+		"install": "Installera"
+	},
+	"workers": {
+		"errors": {
+			"general": "Fel vid konvertering av {file}: {message}",
+			"cancel": "Fel vid avbrytning av konvertering for {file}: {message}",
+			"magick": "Fel i Magick-arbetaren, bildkonvertering kanske inte fungerar som forvantat.",
+			"ffmpeg": "Fel vid laddning av FFmpeg, vissa funktioner kanske inte fungerar som forvantat.",
+			"pandoc": "Fel vid laddning av Pandoc-arbetaren, dokumentkonvertering kanske inte fungerar som forvantat.",
+			"no_audio": "Inget ljudspar hittades.",
+			"invalid_rate": "Ogiltig samplingshastighet angiven: {rate}Hz",
+			"file_too_large": "Denna fil overskrider webblasarens/enhetens grans pa {limit}GB. Prova Firefox eller Safari for att konvertera denna stora fil, vilka vanligtvis har hogre granser."
+		}
+	},
+	"privacy": {
+		"title": "Integritetspolicy",
+		"summary": {
+			"title": "Sammanfattning",
+			"description": "LocalConverts integritetspolicy ar enkel: dina filer lamnar aldrig din enhet. Alla konverteringar -- bilder, ljud, video och dokument -- sker helt i din webblasare med WebAssembly. Vi anvander inga kakor eller sparare, och analysen ar helt anonym via Cloudflare Web Analytics.<br/><br/>LocalConvert baseras pa [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Konverteringar",
+			"description": "Alla konverteringar sker helt lokalt pa din enhet med WebAssembly-versioner av relevanta verktyg (FFmpeg, ImageMagick, Pandoc). Detta innebar att dina filer aldrig lamnar din enhet och ingen kommer nagonsin att ha tillgang till dem. Till skillnad fran andra konverterare inkluderar detta video -- videokonvertering gors ocksa lokalt i din webblasare."
+		},
+		"donations": {
+			"title": "Donationer",
+			"description": "Om donationsfunktionalitet ar tillganglig kan betalningsbearbetning hanteras av en tredjepartsleverantor. Externa natverksforfragan till betalningsleverantoren skjuts upp och gors forst efter att du klickar pa betalningsknappen."
+		},
+		"conversion_errors": {
+			"title": "Konverteringsfel",
+			"description": "Nar en konvertering misslyckas stannar felinformationen pa din enhet. Ingen feldata skickas automatiskt till nagon server. Feldetaljer kan inkludera:",
+			"list_job_id": "Filtypen",
+			"list_format_from": "Formatet du konverterade fran",
+			"list_format_to": "Formatet du konverterade till",
+			"list_stderr": "FFmpeg-felutdata",
+			"list_video": "Inga filer laddas nagonsin upp",
+			"footer": "All felinformation stannar pa din enhet och oversfors aldrig."
+		},
+		"analytics": {
+			"title": "Analys",
+			"description": "Vi anvander Cloudflare Web Analytics for helt anonym och aggregerad analys. Cloudflare Web Analytics anvander inga kakor och foljer alla stora integritetsforordningar (GDPR/CCPA/PECR). Du kan valja bort analys i avsnittet 'Integritet och data' i [settings_link]installningar[/settings_link] och lasa mer om Cloudflare Web Analytics [plausible_link]har[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Lokal lagring",
+			"description": "Vi anvander din webblasares lokala lagring for att spara dina installningar. Inga personuppgifter lagras eller overfors.<br/><br/>WebAssembly-versionerna av konverteringsverktygen vi anvander (FFmpeg, ImageMagick, Pandoc) lagras ocksa lokalt i din webblasare nar du forst besoker webbplatsen, sa att du inte behover ladda om dem vid varje besok. Inga personuppgifter lagras eller overfors. Du kan visa eller radera dessa data nar som helst i avsnittet 'Integritet och data' i [settings_link]installningar[/settings_link]."
+		},
+		"contact": {
+			"title": "Kontakt",
+			"description": "For fragor, skicka e-post till oss pa: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Senast uppdaterad: 2026-03-22"
+	},
+	"pdf_tools": {
+		"title": "PDF-verktyg",
+		"subtitle": "Varje operation kors helt i din webblasare. Dina filer lamnar aldrig din enhet.",
+		"badge": "100% lokalt -- inga uppladdningar, ingen server",
+		"categories": {
+			"organize": "Organisera",
+			"convert": "Konvertera",
+			"optimize": "Optimera och redigera"
+		},
+		"tools": {
+			"merge_name": "Sammanfoga PDF",
+			"merge_desc": "Kombinera flera PDF:er till en fil",
+			"split_name": "Dela PDF",
+			"split_desc": "Extrahera sidor eller dela upp i enskilda filer",
+			"rotate_name": "Rotera sidor",
+			"rotate_desc": "Rotera enskilda eller alla sidor 90/180/270 grader",
+			"organize_name": "Organisera sidor",
+			"organize_desc": "Ordna om eller ta bort sidor med visuella miniatyrbilder",
+			"images_to_pdf_name": "Bilder till PDF",
+			"images_to_pdf_desc": "Konvertera JPG-, PNG- eller WEBP-bilder till en PDF",
+			"pdf_to_images_name": "PDF till bilder",
+			"pdf_to_images_desc": "Exportera varje sida som en JPG- eller PNG-bild",
+			"compress_name": "Komprimera PDF",
+			"compress_desc": "Minska filstorleken genom att aterge sidor som JPEG",
+			"watermark_name": "Lagg till vattenmarke",
+			"watermark_desc": "Stampla text pa varje sida i en PDF",
+			"page_numbers_name": "Lagg till sidnummer",
+			"page_numbers_desc": "Lagg till sekventiell numrering pa varje sida",
+			"metadata_name": "Redigera metadata",
+			"metadata_desc": "Visa och redigera titel, forfattare och andra PDF-egenskaper",
+			"crop_name": "Beskir PDF",
+			"crop_desc": "Trimma marginaler fran PDF-sidor",
+			"pdf_to_ppt_name": "PDF till PowerPoint",
+			"pdf_to_ppt_desc": "Konvertera varje PDF-sida till en presentationsbild",
+			"sign_name": "Signera PDF",
+			"sign_desc": "Rita, skriv eller ladda upp en signatur",
+			"edit_name": "Redigera PDF",
+			"edit_desc": "Lagg till text pa valfri sida i en PDF",
+			"password_name": "Losenordsskydda",
+			"password_desc": "Kryptera en PDF med ett losenord och ange behorigheter",
+			"unlock_name": "Las upp PDF",
+			"unlock_desc": "Ta bort losenordsskydd fran en PDF",
+			"pdf_to_text_name": "PDF till text",
+			"pdf_to_text_desc": "Extrahera all text fran en PDF",
+			"grayscale_name": "PDF till graskalig",
+			"grayscale_desc": "Konvertera PDF-sidor till svartvitt"
+		}
+	},
+	"image_tools": {
+		"title": "Bildverktyg",
+		"subtitle": "Varje operation kors helt i din webblasare. Dina filer lamnar aldrig din enhet.",
+		"badge": "100% lokalt -- inga uppladdningar, ingen server",
+		"categories": {
+			"edit": "Redigera",
+			"create": "Skapa"
+		},
+		"tools": {
+			"rotate_name": "Rotera bild",
+			"rotate_desc": "Rotera en bild 90, 180 eller 270 grader",
+			"crop_name": "Beskir bild",
+			"crop_desc": "Rita en rektangel for att beskara valfritt omrade",
+			"watermark_name": "Vattenmarke pa bild",
+			"watermark_desc": "Stampla text pa valfri bild",
+			"meme_name": "Meme-generator",
+			"meme_desc": "Lagg till text overst och nederst pa valfri bild",
+			"batch_name": "Batchbearbetning",
+			"batch_desc": "Tillampa samma operation pa flera bilder",
+			"qr_name": "QR-kodgenerator",
+			"qr_desc": "Generera QR-koder fran text eller URL:er",
+			"color_picker_name": "Fargvaljare",
+			"color_picker_desc": "Valj farger fran valfri bild",
+			"blur_name": "Oskarp region",
+			"blur_desc": "Gor en del av en bild oskarp for integritetsskydd",
+			"filters_name": "Bildfilter",
+			"filters_desc": "Justera ljusstyrka, kontrast, mattnad och mer",
+			"video_to_gif_name": "Video till GIF",
+			"video_to_gif_desc": "Konvertera valfri video till en animerad GIF"
+		}
+	},
+	"dev_tools": {
+		"title": "Utvecklarverktyg",
+		"subtitle": "Formatera, koda och hasha -- allt i din webblasare. Inget lamnar din enhet.",
+		"badge": "100% lokalt -- inga uppladdningar, ingen server",
+		"categories": {
+			"format": "Formatera och transformera",
+			"analyze": "Analysera"
+		},
+		"tools": {
+			"json_name": "JSON-formaterare",
+			"json_desc": "Formatera, minifiera och validera JSON",
+			"hash_name": "Hash-generator",
+			"hash_desc": "Generera SHA-256-, SHA-1-, SHA-512-hashar",
+			"base64_name": "Base64-kodek",
+			"base64_desc": "Koda och avkoda Base64-strangar",
+			"markdown_name": "Markdown-forhandsvisning",
+			"markdown_desc": "Skriv markdown och forhandsgranska renderad HTML",
+			"diff_name": "Textjamforelse",
+			"diff_desc": "Jamfor tva texter och markera skillnader",
+			"word_count_name": "Ordraknare",
+			"word_count_desc": "Rakna ord, tecken, meningar och mer",
+			"url_encode_name": "URL-kodning/avkodning",
+			"url_encode_desc": "Koda och avkoda URL-strangar",
+			"css_minify_name": "CSS-minifierare",
+			"css_minify_desc": "Minifiera CSS genom att ta bort kommentarer och blanksteg"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Bildverktyg",
+		"upload_image": "Slapp en bild har",
+		"upload_images": "Slapp flera bilder har",
+		"angle": "Vinkel",
+		"ready": "Redo!",
+		"download": "Ladda ner",
+		"privacy_note": "✓ Dina filer lamnar aldrig din enhet.",
+		"privacy_note_browser": "✓ Genererat helt i din webblasare.",
+		"reset": "Aterstall",
+		"text": "Text",
+		"opacity": "Opacitet",
+		"font_size": "Teckenstorlek",
+		"rotation": "Rotation",
+		"position": "Position",
+		"center": "Centrera",
+		"tile": "Kakel",
+		"size": "Storlek",
+		"foreground": "Forgrund",
+		"background": "Bakgrund",
+		"operation": "Funktion",
+		"rotate": "Rotera",
+		"watermark": "Vattenmarke",
+		"crop": "Beskir",
+		"meme": "Meme",
+		"save": "Spara",
+		"save_all": "Spara alla",
+		"bottom": "Nederkant",
+		"failed": "Misslyckades."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Rotera bild",
+			"desc": "Valj en vinkel och se resultatet omedelbart.",
+			"save": "Spara roterad bild"
+		},
+		"crop_image": {
+			"title": "Beskir bild",
+			"desc": "Dra i horn, kanter eller rita ett nytt urval.",
+			"circle": "Cirkel",
+			"free": "Fri",
+			"err_area": "Valj ett beskarningsomrade pa bilden.",
+			"btn_busy": "Beskar...",
+			"btn": "Beskar bild",
+			"save": "Spara beskuren bild"
+		},
+		"watermark_image": {
+			"title": "Vattenmarke pa bild",
+			"desc": "Justera installningar och se vattenmarket uppdateras i realtid.",
+			"save": "Spara bild med vattenmarke"
+		},
+		"meme": {
+			"title": "Meme-generator",
+			"desc": "Skriv och se ditt meme uppdateras i realtid.",
+			"top_text": "Ovre text",
+			"bottom_text": "Nedre text",
+			"save": "Spara meme"
+		},
+		"batch": {
+			"title": "Batchbearbetning",
+			"desc": "Tillampa samma operation pa flera bilder samtidigt.",
+			"trim": "Trimma",
+			"err_images": "Lagg till bilder forst.",
+			"err_text": "Ange minst en rad text.",
+			"err_watermark": "Ange vattenmarkestext."
+		},
+		"qr": {
+			"title": "QR-kodgenerator",
+			"desc": "Generera en QR-kod och se den uppdateras i realtid.",
+			"text_url": "Text eller URL",
+			"error_correction": "Felkorrigering",
+			"low": "Lag (7%)",
+			"medium": "Medel (15%)",
+			"quartile": "Kvartil (25%)",
+			"high": "Hog (30%)",
+			"save": "Spara QR-kod",
+			"save_file": "Ladda ner qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "Du besoker LocalConvert i en osaker kontext (t.ex. via HTTP istallet for HTTPS). Vissa funktioner kanske inte fungerar som forvantat."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Inga serveruppladdningar",
+			"tools_count": "36+ verktyg",
+			"open_source": "Gratis och oppen kallkod",
+			"works_locally": "Fungerar lokalt"
+		},
+		"toolkit": {
+			"label": "Din verkstad",
+			"title": "Varje verktyg kors i din webblasare",
+			"pdf_title": "PDF-verktyg",
+			"pdf_desc": "Sammanfoga, dela, komprimera, vattenmarke, signera, redigera och 12 till",
+			"pdf_count": "18 verktyg",
+			"image_title": "Bildverktyg",
+			"image_desc": "Beskara, andra storlek, filter, oskarphet, vattenmarke, meme och mer",
+			"image_count": "10 verktyg",
+			"dev_title": "Utvecklarverktyg",
+			"dev_desc": "JSON, hash, Base64, markdown, diff och mer",
+			"dev_count": "8 verktyg",
+			"explore": "Utforska →"
+		},
+		"gpu": {
+			"badge": "Hardvaruaccelererat",
+			"title": "GPU-driven videokonvertering",
+			"desc": "Konverteringar markerade med ⚡ anvander din enhets grafikhardvara. Snabbare konverteringar, lagre CPU-anvandning -- fortfarande 100% lokalt.",
+			"full_label": "Full GPU -- alla riktningar",
+			"input_label": "GPU vid konvertering till formaten ovan"
+		},
+		"formats": {
+			"title": "200+ formatkonverteringar",
+			"label": "Konverterare"
+		},
+		"privacy": {
+			"title": "100% privat genom design",
+			"point1": "Dina filer lamnar aldrig din enhet",
+			"point2": "Alla 36 verktyg kors helt i din webblasare -- inga serveruppladdningar",
+			"point3": "Oppen kallkod -- verifiera det sjalv",
+			"label": "Integritet forst"
+		},
+		"faq": {
+			"title": "Vanliga fragor",
+			"q1": "Ar LocalConvert verkligen gratis?",
+			"a1": "Ja -- helt gratis, inget konto kravs, inga dolda avgifter. LocalConvert ar oppen kallkod under AGPL-3.0-licensen.",
+			"q2": "Ar mina filer privata?",
+			"a2": "Helt och hallet. All bearbetning sker i din webblasare med WebAssembly. Dina filer beror aldrig vara servrar -- inte ens for ett ogonblick.",
+			"q3": "Vad kan LocalConvert gora?",
+			"a3": "Konvertera 200+ filformat (bilder, ljud, video, dokument), 18 PDF-verktyg (sammanfoga, dela, komprimera, vattenmarke, signera, redigera och mer), 10 bildverktyg (beskara, andra storlek, filter, oskarphet, vattenmarke) och 8 utvecklarverktyg (JSON, hash, Base64, diff, markdown).",
+			"q4": "Finns det en filstorleksgrans?",
+			"a4": "Ingen fast grans -- det beror pa din enhets tillgangliga minne. For mycket stora videofiler hanterar Firefox eller Safari dem vanligtvis battre.",
+			"q5": "Behover jag installera nagot?",
+			"a5": "Ingen installation behovs. LocalConvert fungerar direkt i alla moderna webblasare. Du kan aven installera det som en PWA fran adressfialtet for en appliknande upplevelse.",
+			"label": "Fragor"
+		}
+	}
+}

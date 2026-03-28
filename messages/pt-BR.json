@@ -8,14 +8,18 @@
 		"toggle_theme": "Alternar tema",
 		"image_tools": "Ferramentas de imagem",
 		"tools": "Ferramentas",
-		"dev_tools": "Dev Tools",
+		"dev_tools": "Ferramentas Dev",
 		"home": "Início"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert.",
 		"source_code": "Código fonte",
 		"discord_server": "Servidor Discord",
-		"privacy_policy": "Política de privacidade"
+		"privacy_policy": "Política de privacidade",
+		"tagline": "Seu kit de ferramentas privado",
+		"pdf_tools_count": "Ferramentas PDF - 18",
+		"image_tools_count": "Ferramentas de Imagem - 10",
+		"dev_tools_count": "Ferramentas Dev - 8"
 	},
 	"upload": {
 		"title": "Seu kit de ferramentas privado para arquivos e código.",
@@ -128,7 +132,7 @@
 		"options": {
 			"quality": "Qualidade",
 			"resize": "Redimensionar",
-			"bitrate": "Bitrate",
+			"bitrate": "Taxa de bits",
 			"trim": "Cortar"
 		}
 	},
@@ -273,14 +277,74 @@
 			"roles": {
 				"lead_developer": "Desenvolvedor principal; backend de conversão, implementação da interface do usuário",
 				"developer": "Desenvolvedor; implementação da interface do usuário",
-				"designer": "Designer; UX, branding, marketing",
+				"designer": "Designer; UX, identidade visual, marketing",
 				"docker_ci": "Manutenção do Docker e suporte CI",
 				"former_cofounder": "Ex-cofundador e designer"
 			}
 		},
 		"errors": {
 			"github_contributors": "Erro ao buscar contribuintes do GitHub"
-		}
+		},
+		"hero_title": "Conversores de arquivos nao deveriam precisar dos seus arquivos.",
+		"stats": {
+			"tools": "ferramentas",
+			"format_conversions": "conversoes de formato",
+			"languages": "idiomas",
+			"bytes_uploaded": "bytes enviados a servidores"
+		},
+		"principles": {
+			"label": "Principios",
+			"p1_title": "Seus arquivos ficam no seu dispositivo",
+			"p1_desc": "Todas as ferramentas rodam localmente no seu navegador via WebAssembly. Nao existe servidor. Seus arquivos nunca sao enviados, transmitidos ou armazenados em lugar nenhum.",
+			"p2_title": "Gratis, sem conta, sem pegadinhas",
+			"p2_desc": "Sem cadastro, sem email, sem paywall, sem limite de tamanho. Abra o site, use as ferramentas, feche a aba.",
+			"p3_title": "Codigo aberto e verificavel",
+			"p3_desc": "Todo o codigo-fonte e publico sob licenca AGPL-3.0. Leia o codigo. Cada alegacao de privacidade pode ser verificada."
+		},
+		"inside": {
+			"label": "O que tem dentro",
+			"title": "Tres categorias de ferramentas"
+		},
+		"stack": {
+			"label": "Inventario da oficina",
+			"title": "Os motores por baixo do capo",
+			"imagemagick": "60+ formatos de imagem via WASM",
+			"ffmpeg": "Conversao de audio e video via WASM",
+			"webcodecs": "Processamento de video com aceleracao GPU",
+			"pandoc": "Conversao de documentos via WASM",
+			"pdflib": "Criacao, edicao e renderizacao de PDFs",
+			"sveltekit": "Framework e geracao de site estatico"
+		},
+		"origin": {
+			"title": "Origem",
+			"description": "Este projeto comecou como um fork do VERT.sh (AGPL-3.0). Desde entao, reconstruimos a marca, adicionamos 30+ ferramentas, redesenhamos a interface e expandimos para 28 idiomas."
+		},
+		"credit_groups": {
+			"engines": "Motores de Conversao",
+			"engines_ffmpeg": "Conversao de audio e video",
+			"engines_imagemagick": "Conversao de formatos de imagem",
+			"engines_pandoc": "Conversao de documentos",
+			"engines_mediabunny": "Aceleracao de video por GPU",
+			"engines_webdemuxer": "Demuxing de video via WebCodecs",
+			"pdf_toolkit": "Kit de Ferramentas PDF",
+			"pdf_pdflib": "Criacao, edicao e mesclagem de PDFs",
+			"pdf_pdfjs": "Renderizacao e extracao de texto de PDFs",
+			"pdf_encrypt": "Protecao de PDF por senha",
+			"pdf_pptx": "Conversao de PDF para PowerPoint",
+			"tool_libs": "Bibliotecas de Ferramentas",
+			"tool_qrcode": "Geracao de codigos QR",
+			"tool_marked": "Renderizacao de Markdown para HTML",
+			"framework": "Framework e Interface",
+			"fw_sveltekit": "Framework da aplicacao",
+			"fw_tailwind": "Estilizacao utilitaria",
+			"fw_lucide": "Sistema de icones",
+			"fw_paraglide": "Internacionalizacao (28 idiomas)"
+		},
+		"links": {
+			"source_code": "Codigo Fonte",
+			"privacy_policy": "Politica de Privacidade"
+		},
+		"install": "Instalar"
 	},
 	"workers": {
 		"errors": {
@@ -319,7 +383,7 @@
 			"footer": "Todas as informações de erro permanecem no seu dispositivo e nunca são transmitidas."
 		},
 		"analytics": {
-			"title": "Analytics",
+			"title": "Dados de uso",
 			"description": "Usamos o Cloudflare Web Analytics para análises completamente anônimas e agregadas. O Cloudflare Web Analytics não usa cookies e está em conformidade com todas as principais regulamentações de privacidade (GDPR/CCPA/PECR). Você pode optar por não participar das análises na seção \"Privacidade e dados\" em [settings_link]configurações[/settings_link] e ler mais sobre o Cloudflare Web Analytics [plausible_link]aqui[/plausible_link]."
 		},
 		"local_storage": {
@@ -421,7 +485,7 @@
 			"metadata_desc": "Visualizar e editar título, autor e outras propriedades do PDF",
 			"crop_name": "Cortar PDF",
 			"crop_desc": "Aparar margens das páginas do PDF",
-			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_name": "PDF para PowerPoint",
 			"pdf_to_ppt_desc": "Converter cada página do PDF em um slide de apresentação",
 			"sign_name": "Assinar PDF",
 			"sign_desc": "Desenhe, digite ou envie uma assinatura",
@@ -470,19 +534,19 @@
 	},
 	"tools_common": {
 		"back_pdf": "← PDF Tools",
-		"back_image": "← Image Tools",
-		"privacy_note": "✓ Your files never leave your device.",
-		"privacy_note_browser": "✓ Generated entirely in your browser.",
+		"back_image": "← Ferramentas de Imagem",
+		"privacy_note": "✓ Seus arquivos nunca saem do seu dispositivo.",
+		"privacy_note_browser": "✓ Gerado inteiramente no seu navegador.",
 		"upload_pdf": "Add a PDF file",
 		"upload_pdfs": "Add PDF files",
-		"upload_image": "Drop an image here",
-		"upload_images": "Drop multiple images here",
+		"upload_image": "Solte uma imagem aqui",
+		"upload_images": "Solte varias imagens aqui",
 		"upload_pdf_protected": "Add a password-protected PDF",
 		"upload_images_pdf": "Add image files (JPG, PNG, WEBP)",
 		"loading_thumbs": "Loading thumbnails…",
-		"ready": "Ready!",
+		"ready": "Pronto!",
 		"output": "Output:",
-		"failed": "Failed.",
+		"failed": "Falhou.",
 		"failed_read_pdf": "Failed to read PDF.",
 		"page_of": "Page {currentPage} / {pageCount}",
 		"pages_remaining": "{count} page(s) remaining",
@@ -490,35 +554,35 @@
 		"images_selected": "{count} image(s) selected",
 		"results_ready": "{count} result(s) ready",
 		"apply_all_pages": "Apply to all pages",
-		"save_all": "Save all",
-		"download": "Download",
-		"save": "Save",
+		"save_all": "Salvar todos",
+		"download": "Baixar",
+		"save": "Salvar",
 		"clear": "Clear",
-		"reset": "Reset",
+		"reset": "Redefinir",
 		"show": "Show",
 		"hide": "Hide",
-		"text": "Text",
-		"opacity": "Opacity",
-		"font_size": "Font size",
-		"rotation": "Rotation",
-		"position": "Position",
-		"center": "Center",
-		"tile": "Tile",
-		"angle": "Angle",
+		"text": "Texto",
+		"opacity": "Opacidade",
+		"font_size": "Tamanho da fonte",
+		"rotation": "Rotacao",
+		"position": "Posicao",
+		"center": "Centro",
+		"tile": "Lado a lado",
+		"angle": "Angulo",
 		"format": "Format",
 		"quality": "Quality",
-		"size": "Size",
+		"size": "Tamanho",
 		"left": "Left",
 		"right": "Right",
 		"top": "Top",
-		"bottom": "Bottom",
-		"operation": "Operation",
-		"rotate": "Rotate",
-		"watermark": "Watermark",
-		"crop": "Crop",
+		"bottom": "Inferior",
+		"operation": "Operacao",
+		"rotate": "Girar",
+		"watermark": "Marca d'agua",
+		"crop": "Recortar",
 		"meme": "Meme",
-		"foreground": "Foreground",
-		"background": "Background",
+		"foreground": "Primeiro plano",
+		"background": "Plano de fundo",
 		"input": "Input:",
 		"back_dev": "← Ferramentas de desenvolvimento"
 	},
@@ -732,54 +796,54 @@
 			"save": "Save unlocked PDF"
 		},
 		"rotate_image": {
-			"title": "Rotate Image",
-			"desc": "Pick an angle and see the result instantly.",
-			"save": "Save rotated image"
+			"title": "Girar Imagem",
+			"desc": "Escolha um angulo e veja o resultado na hora.",
+			"save": "Salvar imagem girada"
 		},
 		"crop_image": {
-			"title": "Crop Image",
-			"desc": "Drag corners, edges, or draw a new selection.",
-			"circle": "Circle",
-			"free": "Free",
-			"err_area": "Select a crop area on the image.",
-			"btn": "Crop image",
-			"btn_busy": "Cropping…",
-			"save": "Save cropped image"
+			"title": "Recortar Imagem",
+			"desc": "Arraste cantos, bordas ou desenhe uma nova selecao.",
+			"circle": "Circulo",
+			"free": "Livre",
+			"err_area": "Selecione uma area de recorte na imagem.",
+			"btn": "Recortar imagem",
+			"btn_busy": "Recortando…",
+			"save": "Salvar imagem recortada"
 		},
 		"watermark_image": {
-			"title": "Watermark Image",
-			"desc": "Adjust settings and see the watermark update live.",
-			"save": "Save watermarked image"
+			"title": "Marca d'Agua na Imagem",
+			"desc": "Ajuste as configuracoes e veja a marca d'agua atualizar ao vivo.",
+			"save": "Salvar imagem com marca d'agua"
 		},
 		"meme": {
-			"title": "Meme Generator",
-			"desc": "Type and see your meme update live.",
-			"top_text": "Top text",
-			"bottom_text": "Bottom text",
-			"save": "Save meme"
+			"title": "Gerador de Memes",
+			"desc": "Digite e veja seu meme atualizar ao vivo.",
+			"top_text": "Texto superior",
+			"bottom_text": "Texto inferior",
+			"save": "Salvar meme"
 		},
 		"batch": {
-			"title": "Batch Processing",
-			"desc": "Apply the same operation to multiple images at once.",
-			"trim": "Trim",
+			"title": "Processamento em Lote",
+			"desc": "Aplique a mesma operacao em varias imagens de uma vez.",
+			"trim": "Aparar",
 			"trim_help": "Trims {percent}% from each edge of every image.",
-			"err_images": "Add images first.",
-			"err_text": "Enter at least one line of text.",
-			"err_watermark": "Enter watermark text.",
+			"err_images": "Adicione imagens primeiro.",
+			"err_text": "Insira pelo menos uma linha de texto.",
+			"err_watermark": "Insira o texto da marca d'agua.",
 			"btn": "Process {count} image(s)",
 			"btn_busy": "Processing {progress} / {total}…"
 		},
 		"qr": {
-			"title": "QR Code Generator",
-			"desc": "Generate a QR code and see it update live.",
-			"text_url": "Text or URL",
-			"error_correction": "Error correction",
-			"low": "Low (7%)",
-			"medium": "Medium (15%)",
-			"quartile": "Quartile (25%)",
-			"high": "High (30%)",
-			"save": "Save QR code",
-			"save_file": "Download qrcode.png"
+			"title": "Gerador de QR Code",
+			"desc": "Gere um QR code e veja a atualizacao ao vivo.",
+			"text_url": "Texto ou URL",
+			"error_correction": "Correcao de erros",
+			"low": "Baixo (7%)",
+			"medium": "Medio (15%)",
+			"quartile": "Quartil (25%)",
+			"high": "Alto (30%)",
+			"save": "Salvar QR code",
+			"save_file": "Baixar qrcode.png"
 		},
 		"color_picker": {
 			"title": "Color Picker",

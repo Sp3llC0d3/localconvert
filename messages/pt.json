@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "Inicio",
+		"convert": "Converter",
+		"pdf_tools": "Ferramentas PDF",
+		"image_tools": "Ferramentas de Imagem",
+		"dev_tools": "Ferramentas Dev",
+		"tools": "Ferramentas",
+		"settings": "Definicoes",
+		"about": "Sobre",
+		"toggle_theme": "Alternar tema"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert. Baseado em VERT.sh",
+		"source_code": "Codigo-fonte",
+		"discord_server": "Servidor Discord",
+		"privacy_policy": "Politica de privacidade",
+		"tagline": "O seu kit de ferramentas privado",
+		"pdf_tools_count": "Ferramentas PDF - 18",
+		"image_tools_count": "Ferramentas de Imagem - 10",
+		"dev_tools_count": "Ferramentas Dev - 8"
+	},
+	"upload": {
+		"title": "O seu conjunto de ferramentas privado para ficheiros e codigo.",
+		"subtitle": "36 ferramentas para PDFs, imagens e fluxos de trabalho de desenvolvimento — tudo no seu navegador. Sem transferencias, sem contas, gratuito para sempre.",
+		"uploader": {
+			"text": "Arraste ou clique para {action}",
+			"convert": "converter"
+		},
+		"cards": {
+			"title": "O LocalConvert suporta...",
+			"images": "Imagens",
+			"audio": "Audio",
+			"documents": "Documentos",
+			"video": "Video",
+			"video_server_processing": "Suportado localmente",
+			"local_supported": "Suportado localmente",
+			"status": {
+				"text": "<b>Estado:</b> {status}",
+				"ready": "pronto",
+				"not_ready": "nao pronto",
+				"not_initialized": "nao inicializado",
+				"downloading": "a carregar ferramentas...",
+				"initializing": "a inicializar...",
+				"unknown": "estado desconhecido"
+			},
+			"supported_formats": "Formatos suportados:"
+		},
+		"tooltip": {
+			"partial_support": "Este formato so pode ser convertido como {direction}.",
+			"direction_input": "entrada (de)",
+			"direction_output": "saida (para)",
+			"video_server_processing": "Todas as conversoes acontecem localmente no seu dispositivo."
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "Extrair ficheiro comprimido",
+			"extracting": "Ficheiro comprimido detetado: {filename}",
+			"extracted": "Extraidos {extract_count} ficheiros de {filename}. {ignore_count} itens foram ignorados.",
+			"detected": "Detetados {type} ficheiros em {filename}.",
+			"audio": "audio",
+			"video": "video",
+			"doc": "documento",
+			"image": "imagem",
+			"extract_error": "Erro ao extrair {filename}: {error}"
+		},
+		"large_file_warning": "Devido a limitacoes do navegador/dispositivo, a conversao esta desativada para este ficheiro, pois e maior que {limit}GB. Recomendamos utilizar o Firefox ou o Safari para ficheiros deste tamanho, uma vez que possuem menos limitacoes.",
+		"external_warning": {
+			"title": "Aviso de ficheiro grande",
+			"text": "Este ficheiro e bastante grande e pode demorar algum tempo a converter no navegador. Deseja continuar?",
+			"yes": "Sim",
+			"no": "Nao"
+		},
+		"panel": {
+			"convert_all": "Converter tudo",
+			"download_all": "Guardar tudo como .zip",
+			"remove_all": "Remover todos os ficheiros",
+			"set_all_to": "Definir todos para",
+			"na": "N/D"
+		},
+		"dropdown": {
+			"audio": "Audio",
+			"video": "Video",
+			"doc": "Documento",
+			"image": "Imagem",
+			"placeholder": "Pesquisar formato",
+			"no_formats": "Nenhum formato disponivel",
+			"no_results": "Nenhum formato corresponde a sua pesquisa"
+		},
+		"tooltips": {
+			"unknown_file": "Tipo de ficheiro desconhecido",
+			"audio_file": "Ficheiro de audio",
+			"video_file": "Ficheiro de video",
+			"document_file": "Ficheiro de documento",
+			"image_file": "Ficheiro de imagem",
+			"convert_file": "Converter este ficheiro",
+			"download_file": "Guardar no dispositivo"
+		},
+		"errors": {
+			"cant_convert": "Nao e possivel converter este ficheiro.",
+			"vertd_server": "Este formato de ficheiro nao e suportado para conversao.",
+			"vertd_generic_view": "Ver detalhes do erro",
+			"vertd_generic_body": "Ocorreu um erro ao tentar converter o seu ficheiro. Tente novamente ou experimente um formato diferente.",
+			"vertd_generic_title": "Erro de conversao",
+			"vertd_generic_yes": "OK",
+			"vertd_generic_no": "Cancelar",
+			"vertd_failed_to_keep": "A conversao falhou: {error}",
+			"vertd_details": "Ver detalhes do erro",
+			"vertd_details_body": "As seguintes informacoes de erro podem ajudar na resolucao do problema:",
+			"vertd_details_footer": "Consulte a nossa [privacy_link]politica de privacidade[/privacy_link] para mais detalhes.",
+			"vertd_details_job_id": "<b>ID da tarefa:</b> {jobId}",
+			"vertd_details_from": "<b>Formato de origem:</b> {from}",
+			"vertd_details_to": "<b>Formato de destino:</b> {to}",
+			"vertd_details_error_message": "<b>Mensagem de erro:</b> [view_link]Ver registos de erro[/view_link]",
+			"vertd_details_close": "Fechar",
+			"vertd_ratelimit": "O ficheiro '{filename}' falhou a conversao varias vezes. Tente um formato diferente ou um ficheiro mais pequeno.",
+			"unsupported_format": "Apenas ficheiros de imagem, video, audio e documentos sao suportados",
+			"pdf_redirect_title": "Este e um ficheiro PDF.",
+			"pdf_redirect_desc": "Os PDFs nao sao convertidos aqui — utilize as Ferramentas PDF para unir, dividir, comprimir, rodar e muito mais.",
+			"pdf_redirect_button": "Abrir Ferramentas PDF",
+			"format_output_only": "Este formato atualmente so pode ser utilizado como saida (converter para), nao como entrada.",
+			"vertd_not_found": "Nao foi possivel inicializar o conversor de video. Atualize a pagina e tente novamente.",
+			"worker_downloading": "O conversor de {type} esta a carregar, aguarde alguns instantes.",
+			"worker_error": "O conversor de {type} teve um erro durante a inicializacao, tente novamente mais tarde.",
+			"worker_timeout": "O conversor de {type} esta a demorar mais do que o esperado a inicializar, aguarde mais alguns instantes ou atualize a pagina.",
+			"audio": "audio",
+			"doc": "documento",
+			"image": "imagem"
+		},
+		"options": {
+			"quality": "Qualidade",
+			"resize": "Redimensionar",
+			"bitrate": "Taxa de bits",
+			"trim": "Cortar"
+		}
+	},
+	"settings": {
+		"title": "Definicoes",
+		"errors": {
+			"save_failed": "Falha ao guardar as definicoes!"
+		},
+		"appearance": {
+			"title": "Aparencia",
+			"brightness_theme": "Tema de luminosidade",
+			"brightness_description": "Prefere um claridade ofuscante ou uma noite calma e solitaria?",
+			"light": "Claro",
+			"dark": "Escuro",
+			"effect_settings": "Definicoes de efeitos",
+			"effect_description": "Prefere efeitos elaborados ou uma experiencia mais estatica?",
+			"enable": "Ativar",
+			"disable": "Desativar"
+		},
+		"conversion": {
+			"title": "Conversao",
+			"advanced_settings": "Definicoes avancadas",
+			"filename_format": "Formato do nome do ficheiro",
+			"filename_description": "Isto determina o nome do ficheiro ao guardar, <b>sem incluir a extensao do ficheiro.</b> Pode utilizar os seguintes modelos no formato, que serao substituidos pela informacao relevante: <b>%name%</b> para o nome original do ficheiro, <b>%extension%</b> para a extensao original do ficheiro, e <b>%date%</b> para uma cadeia de data de quando o ficheiro foi convertido.",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "Formato de conversao predefinido",
+			"default_format_enable": "Ativar",
+			"default_format_disable": "Desativar",
+			"default_format_description": "Isto altera o formato predefinido selecionado quando seleciona um ficheiro deste tipo.",
+			"default_format_image": "Imagens",
+			"default_format_video": "Videos",
+			"default_format_audio": "Audio",
+			"default_format_document": "Documentos",
+			"metadata": "Metadados do ficheiro",
+			"metadata_description": "Isto altera se os metadados (EXIF, informacao da musica, etc.) do ficheiro original sao preservados nos ficheiros convertidos.",
+			"keep": "Manter",
+			"remove": "Remover",
+			"quality": "Qualidade da conversao",
+			"quality_description": "Isto altera a qualidade predefinida de saida dos ficheiros convertidos (na sua categoria). Valores mais elevados podem resultar em tempos de conversao mais longos e ficheiros maiores.",
+			"quality_video": "Isto altera a qualidade predefinida de saida dos ficheiros de video convertidos. Valores mais elevados podem resultar em tempos de conversao mais longos e ficheiros maiores.",
+			"quality_audio": "Audio (kbps)",
+			"quality_images": "Imagem (%)",
+			"rate": "Taxa de amostragem (Hz)"
+		},
+		"vertd": {
+			"title": "Conversao de video",
+			"status": "estado:",
+			"loading": "a carregar...",
+			"available": "pronto",
+			"unavailable": "indisponivel",
+			"description": "A conversao de video e feita localmente utilizando FFmpeg WebAssembly. Os seus videos nunca saem do seu dispositivo.",
+			"hosting_info": "Todo o processamento de video acontece no seu navegador utilizando tecnologia WebAssembly.",
+			"instance": "Motor",
+			"url_placeholder": "FFmpeg WASM (local)",
+			"conversion_speed": "Velocidade de conversao",
+			"speed_description": "Isto descreve o compromisso entre velocidade e qualidade. Velocidades mais rapidas resultam em menor qualidade, mas completam a tarefa mais rapidamente.",
+			"speeds": {
+				"very_slow": "Muito lento",
+				"slower": "Mais lento",
+				"slow": "Lento",
+				"medium": "Medio",
+				"fast": "Rapido",
+				"ultra_fast": "Ultra rapido"
+			},
+			"auto_instance": "Automatico (recomendado)",
+			"eu_instance": "Local",
+			"us_instance": "Local",
+			"custom_instance": "Local"
+		},
+		"privacy": {
+			"title": "Privacidade e dados",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "Utilizamos o [plausible_link]Cloudflare Web Analytics[/plausible_link], uma ferramenta de analise focada na privacidade, para recolher estatisticas completamente anonimas. Todos os dados sao anonimizados e agregados, e nenhuma informacao identificavel e alguma vez enviada ou armazenada. Pode optar por nao participar abaixo.",
+			"opt_in": "Participar",
+			"opt_out": "Nao participar",
+			"cache_title": "Gestao de cache",
+			"cache_description": "Armazenamos em cache os ficheiros do conversor no seu navegador para que nao precise de os recarregar sempre, melhorando o desempenho e reduzindo a utilizacao de dados.",
+			"refresh_cache": "Atualizar cache",
+			"clear_cache": "Limpar cache",
+			"files_cached": "{size} ({count} ficheiros)",
+			"loading_cache": "A carregar...",
+			"total_size": "Tamanho total",
+			"files_cached_label": "Ficheiros em cache",
+			"cache_cleared": "Cache limpa com sucesso!",
+			"cache_clear_error": "Falha ao limpar a cache.",
+			"site_data_title": "Gestao de dados do site",
+			"site_data_description": "Limpar todos os dados do site, incluindo definicoes e ficheiros em cache, repondo o LocalConvert para o seu estado predefinido e recarregando a pagina.",
+			"clear_all_data": "Limpar todos os dados do site",
+			"clear_all_data_confirm_title": "Limpar todos os dados do site?",
+			"clear_all_data_confirm": "Isto ira repor todas as definicoes e cache e depois recarregar a pagina. Esta acao nao pode ser desfeita.",
+			"clear_all_data_cancel": "Cancelar",
+			"all_data_cleared": "Todos os dados do site foram limpos! A recarregar a pagina...",
+			"all_data_clear_error": "Falha ao limpar todos os dados do site."
+		},
+		"language": {
+			"title": "Idioma",
+			"description": "Selecione o seu idioma preferido para a interface do LocalConvert."
+		}
+	},
+	"about": {
+		"title": "Sobre",
+		"why": {
+			"title": "Porque o LocalConvert?",
+			"description": "<b>Os conversores de ficheiros sempre nos desiludiram.</b> Sao lentos, exigem contas e enviam os seus ficheiros para servidores de terceiros sobre os quais nada sabe. Decidimos resolver isso.<br/><br/>Cada ficheiro que converte — imagens, audio, video e documentos — e processado inteiramente no seu dispositivo utilizando WebAssembly. Nada sai do seu navegador. Nao ha servidores envolvidos, nao ha transferencias, e ninguem pode alguma vez ver os seus ficheiros."
+		},
+		"sponsors": {
+			"title": "Apoio",
+			"description": "O LocalConvert e gratuito e de codigo aberto. Se o considera util, considere apoiar o projeto. Contacte-nos em",
+			"email_copied": "E-mail copiado para a area de transferencia!"
+		},
+		"resources": {
+			"title": "Recursos",
+			"discord": "Discord",
+			"source": "Codigo-fonte",
+			"email": "E-mail"
+		},
+		"donate": {
+			"title": "Apoiar o LocalConvert",
+			"description": "Com o seu apoio, podemos continuar a manter e melhorar o LocalConvert.",
+			"one_time": "Unico",
+			"monthly": "Mensal",
+			"custom": "Personalizado",
+			"pay_now": "Pagar agora",
+			"donate_amount": "Doar ${amount} USD",
+			"thank_you": "Obrigado pelo seu apoio!",
+			"payment_failed": "O pagamento falhou: {message}{period} Nao foi cobrado.",
+			"donation_error": "Ocorreu um erro ao processar a sua doacao. Tente novamente mais tarde.",
+			"payment_error": "Erro ao obter detalhes do pagamento. Tente novamente mais tarde.",
+			"donation_notice_official": "O seu apoio ajuda a manter e melhorar o LocalConvert.",
+			"donation_notice_unofficial": "Esta e uma instancia de terceiros do LocalConvert. Se deseja apoiar o projeto original, visite o site oficial."
+		},
+		"credits": {
+			"title": "Creditos",
+			"contact_team": "Se pretende contactar a equipa de desenvolvimento, utilize o e-mail disponivel no cartao 'Recursos'.",
+			"notable_contributors": "Contribuidores notaveis",
+			"notable_description": "Gostavamos de agradecer a estas pessoas pelas suas contribuicoes significativas para o VERT, o projeto no qual o LocalConvert se baseia.",
+			"github_contributors": "Contribuidores do GitHub",
+			"github_description": "Um grande obrigado a todas estas pessoas por ajudarem! [github_link]Tambem quer ajudar?[/github_link]",
+			"no_contributors": "Parece que ainda ninguem contribuiu... [contribute_link]seja o primeiro a contribuir![/contribute_link]",
+			"libraries": "Bibliotecas",
+			"libraries_description": "Um grande obrigado ao FFmpeg (audio, video), ImageMagick (imagens) e Pandoc (documentos) por manterem bibliotecas tao excelentes durante tantos anos. O LocalConvert depende delas para fornecer as suas conversoes.",
+			"roles": {
+				"lead_developer": "Programador principal; backend de conversao, implementacao da interface",
+				"developer": "Programador; implementacao da interface",
+				"designer": "Designer; UX, marca, marketing",
+				"docker_ci": "Manutencao de Docker e CI",
+				"former_cofounder": "Ex-cofundador e designer"
+			}
+		},
+		"errors": {
+			"github_contributors": "Erro ao obter contribuidores do GitHub"
+		},
+		"hero_title": "Os conversores de ficheiros nao deviam precisar dos seus ficheiros.",
+		"stats": {
+			"tools": "ferramentas",
+			"format_conversions": "conversoes de formato",
+			"languages": "idiomas",
+			"bytes_uploaded": "bytes enviados para servidores"
+		},
+		"principles": {
+			"label": "Principios",
+			"p1_title": "Os seus ficheiros ficam no seu dispositivo",
+			"p1_desc": "Todas as ferramentas funcionam localmente no seu navegador via WebAssembly. Nao ha servidor. Os seus ficheiros nunca sao enviados, transmitidos ou armazenados.",
+			"p2_title": "Gratuito, sem conta, sem compromissos",
+			"p2_desc": "Sem registo, sem email, sem paywall, sem limites de tamanho. Abra o site, use as ferramentas, feche o separador.",
+			"p3_title": "Codigo aberto e verificavel",
+			"p3_desc": "Todo o codigo-fonte e publico sob a licenca AGPL-3.0. Leia o codigo. Cada afirmacao de privacidade e verificavel."
+		},
+		"inside": {
+			"label": "O que contem",
+			"title": "Tres categorias de ferramentas"
+		},
+		"stack": {
+			"label": "Inventario da oficina",
+			"title": "Os motores por baixo do capo",
+			"imagemagick": "60+ formatos de imagem via WASM",
+			"ffmpeg": "Conversao de audio e video via WASM",
+			"webcodecs": "Processamento de video com aceleracao GPU",
+			"pandoc": "Conversao de documentos via WASM",
+			"pdflib": "Criacao, edicao e renderizacao de PDFs",
+			"sveltekit": "Framework e geracao de site estatico"
+		},
+		"origin": {
+			"title": "Origem",
+			"description": "Este projeto comecou como um fork do VERT.sh (AGPL-3.0). Desde entao, reconstruimos a marca, adicionamos 30+ ferramentas, redesenhamos a interface e expandimos para 28 idiomas."
+		},
+		"credit_groups": {
+			"engines": "Motores de Conversao",
+			"engines_ffmpeg": "Conversao de audio e video",
+			"engines_imagemagick": "Conversao de formatos de imagem",
+			"engines_pandoc": "Conversao de documentos",
+			"engines_mediabunny": "Aceleracao de video por GPU",
+			"engines_webdemuxer": "Demuxing de video via WebCodecs",
+			"pdf_toolkit": "Kit de Ferramentas PDF",
+			"pdf_pdflib": "Criacao, edicao e fusao de PDFs",
+			"pdf_pdfjs": "Renderizacao e extracao de texto de PDFs",
+			"pdf_encrypt": "Protecao de PDF por palavra-passe",
+			"pdf_pptx": "Conversao de PDF para PowerPoint",
+			"tool_libs": "Bibliotecas de Ferramentas",
+			"tool_qrcode": "Geracao de codigos QR",
+			"tool_marked": "Renderizacao de Markdown para HTML",
+			"framework": "Framework e Interface",
+			"fw_sveltekit": "Framework da aplicacao",
+			"fw_tailwind": "Estilizacao utilitaria",
+			"fw_lucide": "Sistema de icones",
+			"fw_paraglide": "Internacionalizacao (28 idiomas)"
+		},
+		"links": {
+			"source_code": "Codigo Fonte",
+			"privacy_policy": "Politica de Privacidade"
+		},
+		"install": "Instalar"
+	},
+	"workers": {
+		"errors": {
+			"general": "Erro ao converter {file}: {message}",
+			"cancel": "Erro ao cancelar a conversao de {file}: {message}",
+			"magick": "Erro no motor Magick; a conversao de imagens pode nao funcionar como esperado.",
+			"ffmpeg": "Erro ao carregar o FFmpeg; algumas funcionalidades podem nao funcionar como esperado.",
+			"pandoc": "Erro ao carregar o motor Pandoc; a conversao de documentos pode nao funcionar como esperado.",
+			"no_audio": "Nenhuma faixa de audio encontrada.",
+			"invalid_rate": "Taxa de amostragem invalida especificada: {rate}Hz",
+			"file_too_large": "Este ficheiro excede o limite de {limit}GB do navegador/dispositivo. Experimente o Firefox ou o Safari para converter este ficheiro grande, pois normalmente possuem limites superiores."
+		}
+	},
+	"privacy": {
+		"title": "Politica de Privacidade",
+		"summary": {
+			"title": "Resumo",
+			"description": "A politica de privacidade do LocalConvert e simples: os seus ficheiros nunca saem do seu dispositivo. Todas as conversoes — imagens, audio, video e documentos — acontecem inteiramente no seu navegador utilizando WebAssembly. Nao utilizamos cookies nem rastreadores, e a analise e completamente anonima atraves do Cloudflare Web Analytics.<br/><br/>O LocalConvert e baseado no [vert_link]VERT.sh[/vert_link] (AGPL-3.0)."
+		},
+		"conversions": {
+			"title": "Conversoes",
+			"description": "Todas as conversoes acontecem inteiramente no seu dispositivo de forma local, utilizando versoes WebAssembly das ferramentas relevantes (FFmpeg, ImageMagick, Pandoc). Isto significa que os seus ficheiros nunca saem do seu dispositivo e ninguem tera acesso a eles. Ao contrario de outros conversores, isto inclui video — a conversao de video tambem e feita localmente no seu navegador."
+		},
+		"donations": {
+			"title": "Doacoes",
+			"description": "Se a funcionalidade de doacoes estiver disponivel, o processamento de pagamentos pode ser tratado por um fornecedor externo. Os pedidos de rede externos ao fornecedor de pagamentos sao diferidos e so sao feitos apos clicar no botao para pagar."
+		},
+		"conversion_errors": {
+			"title": "Erros de Conversao",
+			"description": "Quando uma conversao falha, as informacoes de erro permanecem no seu dispositivo. Nenhum dado de erro e enviado automaticamente para qualquer servidor. Os detalhes do erro podem incluir:",
+			"list_job_id": "O tipo de ficheiro",
+			"list_format_from": "O formato de origem da conversao",
+			"list_format_to": "O formato de destino da conversao",
+			"list_stderr": "A saida de erro do FFmpeg",
+			"list_video": "Nenhum ficheiro e alguma vez transferido",
+			"footer": "Todas as informacoes de erro permanecem no seu dispositivo e nunca sao transmitidas."
+		},
+		"analytics": {
+			"title": "Analise",
+			"description": "Utilizamos o Cloudflare Web Analytics para analises completamente anonimas e agregadas. O Cloudflare Web Analytics nao utiliza cookies e cumpre todas as principais regulamentacoes de privacidade (GDPR/CCPA/PECR). Pode optar por nao participar da analise na seccao 'Privacidade e dados' nas [settings_link]definicoes[/settings_link] e ler mais sobre o Cloudflare Web Analytics [plausible_link]aqui[/plausible_link]."
+		},
+		"local_storage": {
+			"title": "Armazenamento Local",
+			"description": "Utilizamos o armazenamento local do seu navegador para guardar as suas definicoes. Nenhum dado pessoal e armazenado ou transmitido.<br/><br/>As versoes WebAssembly das ferramentas de conversao que utilizamos (FFmpeg, ImageMagick, Pandoc) tambem sao armazenadas localmente no seu navegador quando visita o site pela primeira vez, para que nao precise de as recarregar em cada visita. Nenhum dado pessoal e armazenado ou transmitido. Pode ver ou eliminar estes dados a qualquer momento na seccao 'Privacidade e dados' nas [settings_link]definicoes[/settings_link]."
+		},
+		"contact": {
+			"title": "Contacto",
+			"description": "Para questoes, envie-nos um e-mail para: [email_link]hello@localconvert.app[/email_link]."
+		},
+		"last_updated": "Ultima atualizacao: 2026-03-22"
+	},
+	"pdf_tools": {
+		"title": "Ferramentas PDF",
+		"subtitle": "Todas as operacoes sao executadas inteiramente no seu navegador. Os seus ficheiros nunca saem do seu dispositivo.",
+		"badge": "100% local — sem transferencias, sem servidor",
+		"categories": {
+			"organize": "Organizar",
+			"convert": "Converter",
+			"optimize": "Otimizar e Editar"
+		},
+		"tools": {
+			"merge_name": "Unir PDF",
+			"merge_desc": "Combinar varios PDFs num unico ficheiro",
+			"split_name": "Dividir PDF",
+			"split_desc": "Extrair paginas ou dividir em ficheiros individuais",
+			"rotate_name": "Rodar Paginas",
+			"rotate_desc": "Rodar paginas individuais ou todas 90/180/270 graus",
+			"organize_name": "Organizar Paginas",
+			"organize_desc": "Reordenar ou eliminar paginas com miniaturas visuais",
+			"images_to_pdf_name": "Imagens para PDF",
+			"images_to_pdf_desc": "Converter imagens JPG, PNG ou WEBP para um PDF",
+			"pdf_to_images_name": "PDF para Imagens",
+			"pdf_to_images_desc": "Exportar cada pagina como imagem JPG ou PNG",
+			"compress_name": "Comprimir PDF",
+			"compress_desc": "Reduzir o tamanho do ficheiro ao renderizar paginas como JPEG",
+			"watermark_name": "Adicionar Marca de Agua",
+			"watermark_desc": "Carimbar texto em todas as paginas de um PDF",
+			"page_numbers_name": "Adicionar Numeros de Pagina",
+			"page_numbers_desc": "Adicionar numeracao sequencial a todas as paginas",
+			"metadata_name": "Editar Metadados",
+			"metadata_desc": "Ver e editar titulo, autor e outras propriedades do PDF",
+			"crop_name": "Recortar PDF",
+			"crop_desc": "Cortar margens das paginas do PDF",
+			"pdf_to_ppt_name": "PDF para PowerPoint",
+			"pdf_to_ppt_desc": "Converter cada pagina do PDF num diapositivo de apresentacao",
+			"sign_name": "Assinar PDF",
+			"sign_desc": "Desenhar, escrever ou carregar uma assinatura",
+			"edit_name": "Editar PDF",
+			"edit_desc": "Adicionar texto a qualquer pagina de um PDF",
+			"password_name": "Proteger com Palavra-passe",
+			"password_desc": "Encriptar um PDF com uma palavra-passe e definir permissoes",
+			"unlock_name": "Desbloquear PDF",
+			"unlock_desc": "Remover a protecao por palavra-passe de um PDF",
+			"pdf_to_text_name": "PDF para Texto",
+			"pdf_to_text_desc": "Extrair todo o texto de um PDF",
+			"grayscale_name": "PDF para Escala de Cinzentos",
+			"grayscale_desc": "Converter paginas do PDF para preto e branco"
+		}
+	},
+	"image_tools": {
+		"title": "Ferramentas de Imagem",
+		"subtitle": "Todas as operacoes sao executadas inteiramente no seu navegador. Os seus ficheiros nunca saem do seu dispositivo.",
+		"badge": "100% local — sem transferencias, sem servidor",
+		"categories": {
+			"edit": "Editar",
+			"create": "Criar"
+		},
+		"tools": {
+			"rotate_name": "Rodar Imagem",
+			"rotate_desc": "Rodar uma imagem 90, 180 ou 270 graus",
+			"crop_name": "Recortar Imagem",
+			"crop_desc": "Desenhar um retangulo para recortar qualquer area",
+			"watermark_name": "Marca de Agua em Imagem",
+			"watermark_desc": "Carimbar texto em qualquer imagem",
+			"meme_name": "Gerador de Memes",
+			"meme_desc": "Adicionar texto superior e inferior a qualquer imagem",
+			"batch_name": "Processamento em Lote",
+			"batch_desc": "Aplicar a mesma operacao a varias imagens",
+			"qr_name": "Gerador de Codigo QR",
+			"qr_desc": "Gerar codigos QR a partir de texto ou URLs",
+			"color_picker_name": "Seletor de Cores",
+			"color_picker_desc": "Selecionar cores de qualquer imagem",
+			"blur_name": "Desfocar Regiao",
+			"blur_desc": "Desfocar uma regiao de uma imagem para privacidade",
+			"filters_name": "Filtros de Imagem",
+			"filters_desc": "Ajustar brilho, contraste, saturacao e muito mais",
+			"video_to_gif_name": "Video para GIF",
+			"video_to_gif_desc": "Converter qualquer video para um GIF animado"
+		}
+	},
+	"dev_tools": {
+		"title": "Ferramentas de Desenvolvimento",
+		"subtitle": "Formatar, codificar e gerar hashes — tudo no seu navegador. Nada sai do seu dispositivo.",
+		"badge": "100% local — sem transferencias, sem servidor",
+		"categories": {
+			"format": "Formatar e Transformar",
+			"analyze": "Analisar"
+		},
+		"tools": {
+			"json_name": "Formatador JSON",
+			"json_desc": "Formatar, minificar e validar JSON",
+			"hash_name": "Gerador de Hashes",
+			"hash_desc": "Gerar hashes SHA-256, SHA-1, SHA-512",
+			"base64_name": "Codec Base64",
+			"base64_desc": "Codificar e descodificar cadeias Base64",
+			"markdown_name": "Pre-visualizacao Markdown",
+			"markdown_desc": "Escrever markdown e pre-visualizar o HTML renderizado",
+			"diff_name": "Comparacao de Texto",
+			"diff_desc": "Comparar dois textos e destacar as diferencas",
+			"word_count_name": "Contador de Palavras",
+			"word_count_desc": "Contar palavras, caracteres, frases e muito mais",
+			"url_encode_name": "Codificar/Descodificar URL",
+			"url_encode_desc": "Codificar e descodificar cadeias URL",
+			"css_minify_name": "Minificador CSS",
+			"css_minify_desc": "Minificar CSS removendo comentarios e espacos em branco"
+		}
+	},
+	"tools_common": {
+		"back_image": "← Ferramentas de Imagem",
+		"upload_image": "Arraste uma imagem para aqui",
+		"upload_images": "Arraste varias imagens para aqui",
+		"angle": "Angulo",
+		"ready": "Pronto!",
+		"download": "Transferir",
+		"privacy_note": "Os seus ficheiros nunca saem do seu dispositivo.",
+		"privacy_note_browser": "Gerado inteiramente no seu navegador.",
+		"reset": "Repor",
+		"text": "Texto",
+		"opacity": "Opacidade",
+		"font_size": "Tamanho da letra",
+		"rotation": "Rotacao",
+		"position": "Posicao",
+		"center": "Centro",
+		"tile": "Mosaico",
+		"size": "Tamanho",
+		"foreground": "Primeiro plano",
+		"background": "Fundo",
+		"operation": "Operacao",
+		"rotate": "Rodar",
+		"watermark": "Marca de agua",
+		"crop": "Recortar",
+		"meme": "Meme",
+		"save": "Guardar",
+		"save_all": "Guardar tudo",
+		"bottom": "Inferior",
+		"failed": "Falhou."
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "Rodar Imagem",
+			"desc": "Escolha um angulo e veja o resultado instantaneamente.",
+			"save": "Guardar imagem rodada"
+		},
+		"crop_image": {
+			"title": "Recortar Imagem",
+			"desc": "Arraste cantos, arestas ou desenhe uma nova selecao.",
+			"circle": "Circulo",
+			"free": "Livre",
+			"err_area": "Selecione uma area de recorte na imagem.",
+			"btn_busy": "A recortar...",
+			"btn": "Recortar imagem",
+			"save": "Guardar imagem recortada"
+		},
+		"watermark_image": {
+			"title": "Marca de Agua em Imagem",
+			"desc": "Ajuste as definicoes e veja a marca de agua atualizar em tempo real.",
+			"save": "Guardar imagem com marca de agua"
+		},
+		"meme": {
+			"title": "Gerador de Memes",
+			"desc": "Escreva e veja o seu meme atualizar em tempo real.",
+			"top_text": "Texto superior",
+			"bottom_text": "Texto inferior",
+			"save": "Guardar meme"
+		},
+		"batch": {
+			"title": "Processamento em Lote",
+			"desc": "Aplicar a mesma operacao a varias imagens de uma so vez.",
+			"trim": "Cortar",
+			"err_images": "Adicione imagens primeiro.",
+			"err_text": "Introduza pelo menos uma linha de texto.",
+			"err_watermark": "Introduza o texto da marca de agua."
+		},
+		"qr": {
+			"title": "Gerador de Codigo QR",
+			"desc": "Gere um codigo QR e veja-o atualizar em tempo real.",
+			"text_url": "Texto ou URL",
+			"error_correction": "Correcao de erros",
+			"low": "Baixa (7%)",
+			"medium": "Media (15%)",
+			"quartile": "Quartil (25%)",
+			"high": "Alta (30%)",
+			"save": "Guardar codigo QR",
+			"save_file": "Transferir qrcode.png"
+		}
+	},
+	"toast": {
+		"insecure_context": "Esta a visitar o LocalConvert num contexto inseguro (por exemplo, a aceder via HTTP em vez de HTTPS). Algumas funcionalidades podem nao funcionar como esperado."
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "Sem transferencias para servidor",
+			"tools_count": "36+ Ferramentas",
+			"open_source": "Gratuito e Codigo Aberto",
+			"works_locally": "Funciona Localmente"
+		},
+		"toolkit": {
+			"label": "A sua oficina",
+			"title": "Todas as ferramentas funcionam no seu navegador",
+			"pdf_title": "Ferramentas PDF",
+			"pdf_desc": "Unir, dividir, comprimir, marca de agua, assinar, editar e mais 12",
+			"pdf_count": "18 ferramentas",
+			"image_title": "Ferramentas de Imagem",
+			"image_desc": "Recortar, redimensionar, filtros, desfocar, marca de agua, meme e mais",
+			"image_count": "10 ferramentas",
+			"dev_title": "Ferramentas de Desenvolvimento",
+			"dev_desc": "JSON, hash, Base64, markdown, diff e mais",
+			"dev_count": "8 ferramentas",
+			"explore": "Explorar →"
+		},
+		"gpu": {
+			"badge": "Aceleracao por Hardware",
+			"title": "Conversao de video com GPU",
+			"desc": "As conversoes marcadas com o simbolo de relampago utilizam o hardware grafico do seu dispositivo. Conversoes mais rapidas, menor utilizacao do CPU — ainda 100% local.",
+			"full_label": "GPU completa — qualquer direcao",
+			"input_label": "GPU ao converter para os formatos acima"
+		},
+		"formats": {
+			"title": "Mais de 200 Conversoes de Formatos",
+			"label": "Conversor"
+		},
+		"privacy": {
+			"title": "100% Privado por Concepcao",
+			"point1": "Os seus ficheiros nunca saem do seu dispositivo",
+			"point2": "Todas as 36 ferramentas funcionam inteiramente no seu navegador — zero transferencias para servidor",
+			"point3": "Codigo aberto — verifique voce mesmo",
+			"label": "Privacidade em primeiro lugar"
+		},
+		"faq": {
+			"title": "Perguntas Frequentes",
+			"q1": "O LocalConvert e realmente gratuito?",
+			"a1": "Sim — completamente gratuito, sem necessidade de conta, sem custos ocultos. O LocalConvert e de codigo aberto sob a licenca AGPL-3.0.",
+			"q2": "Os meus ficheiros sao privados?",
+			"a2": "Completamente. Todo o processamento e executado no seu navegador utilizando WebAssembly. Os seus ficheiros nunca tocam nos nossos servidores — nem por um instante.",
+			"q3": "O que pode o LocalConvert fazer?",
+			"a3": "Converter mais de 200 formatos de ficheiro (imagens, audio, video, documentos), 18 ferramentas PDF (unir, dividir, comprimir, marca de agua, assinar, editar e mais), 10 ferramentas de imagem (recortar, redimensionar, filtros, desfocar, marca de agua) e 8 ferramentas de desenvolvimento (JSON, hash, Base64, diff, markdown).",
+			"q4": "Existe um limite de tamanho de ficheiro?",
+			"a4": "Sem limite rigido — depende da memoria disponivel do seu dispositivo. Para ficheiros de video muito grandes, o Firefox ou o Safari normalmente lidam melhor com eles.",
+			"q5": "Preciso de instalar alguma coisa?",
+			"a5": "Nenhuma instalacao necessaria. O LocalConvert funciona diretamente em qualquer navegador moderno. Tambem pode instala-lo como PWA a partir da barra de enderecos para uma experiencia semelhante a uma aplicacao.",
+			"label": "Questoes"
+		}
+	}
+}

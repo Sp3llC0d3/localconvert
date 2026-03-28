@@ -1,0 +1,641 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navbar": {
+		"home": "मुखपृष्ठ",
+		"convert": "रूपांतरण",
+		"pdf_tools": "PDF उपकरण",
+		"image_tools": "छवि उपकरण",
+		"dev_tools": "डेवलपर उपकरण",
+		"tools": "उपकरण",
+		"settings": "सेटिंग्स",
+		"about": "परिचय",
+		"toggle_theme": "थीम बदलें"
+	},
+	"footer": {
+		"copyright": "© {year} LocalConvert। VERT.sh पर आधारित",
+		"source_code": "स्रोत कोड",
+		"discord_server": "Discord सर्वर",
+		"privacy_policy": "गोपनीयता नीति",
+		"tagline": "Aapka niji toolkit",
+		"pdf_tools_count": "PDF Tools - 18",
+		"image_tools_count": "Image Tools - 10",
+		"dev_tools_count": "Dev Tools - 8"
+	},
+	"upload": {
+		"title": "फ़ाइलों और कोड के लिए आपका निजी टूलकिट।",
+		"subtitle": "PDF, छवियों और डेवलपर कार्यप्रवाह के लिए 36 उपकरण — सभी आपके ब्राउज़र में चलते हैं। कोई अपलोड नहीं, कोई खाता नहीं, सदैव निःशुल्क।",
+		"uploader": {
+			"text": "{action} के लिए यहाँ छोड़ें या क्लिक करें",
+			"convert": "रूपांतरित करें"
+		},
+		"cards": {
+			"title": "LocalConvert समर्थन करता है...",
+			"images": "छवियाँ",
+			"audio": "ऑडियो",
+			"documents": "दस्तावेज़",
+			"video": "वीडियो",
+			"video_server_processing": "स्थानीय रूप से समर्थित",
+			"local_supported": "स्थानीय रूप से समर्थित",
+			"status": {
+				"text": "<b>स्थिति:</b> {status}",
+				"ready": "तैयार",
+				"not_ready": "तैयार नहीं",
+				"not_initialized": "आरंभ नहीं किया गया",
+				"downloading": "उपकरण लोड हो रहे हैं...",
+				"initializing": "आरंभ हो रहा है...",
+				"unknown": "अज्ञात स्थिति"
+			},
+			"supported_formats": "समर्थित प्रारूप:"
+		},
+		"tooltip": {
+			"partial_support": "इस प्रारूप को केवल {direction} के रूप में रूपांतरित किया जा सकता है।",
+			"direction_input": "इनपुट (से)",
+			"direction_output": "आउटपुट (में)",
+			"video_server_processing": "सभी रूपांतरण आपके उपकरण पर स्थानीय रूप से होते हैं।"
+		}
+	},
+	"convert": {
+		"archive_file": {
+			"extract": "संग्रह निकालें",
+			"extracting": "संग्रह पहचाना गया: {filename}",
+			"extracted": "{filename} से {extract_count} फ़ाइलें निकाली गईं। {ignore_count} आइटम अनदेखा किए गए।",
+			"detected": "{filename} में {type} फ़ाइलें पहचानी गईं।",
+			"audio": "ऑडियो",
+			"video": "वीडियो",
+			"doc": "दस्तावेज़",
+			"image": "छवि",
+			"extract_error": "{filename} निकालने में त्रुटि: {error}"
+		},
+		"large_file_warning": "ब्राउज़र / उपकरण सीमाओं के कारण, इस फ़ाइल के लिए रूपांतरण अक्षम है क्योंकि यह {limit}GB से बड़ी है। इस आकार की फ़ाइलों के लिए हम Firefox या Safari का उपयोग करने की सलाह देते हैं क्योंकि उनकी सीमाएँ कम होती हैं।",
+		"external_warning": {
+			"title": "बड़ी फ़ाइल चेतावनी",
+			"text": "यह फ़ाइल काफ़ी बड़ी है और ब्राउज़र में रूपांतरित होने में कुछ समय लग सकता है। क्या आप जारी रखना चाहते हैं?",
+			"yes": "हाँ",
+			"no": "नहीं"
+		},
+		"panel": {
+			"convert_all": "सभी रूपांतरित करें",
+			"download_all": "सभी .zip के रूप में सहेजें",
+			"remove_all": "सभी फ़ाइलें हटाएँ",
+			"set_all_to": "सभी को इस पर सेट करें",
+			"na": "लागू नहीं"
+		},
+		"dropdown": {
+			"audio": "ऑडियो",
+			"video": "वीडियो",
+			"doc": "दस्तावेज़",
+			"image": "छवि",
+			"placeholder": "प्रारूप खोजें",
+			"no_formats": "कोई प्रारूप उपलब्ध नहीं",
+			"no_results": "आपकी खोज से कोई प्रारूप मेल नहीं खाता"
+		},
+		"tooltips": {
+			"unknown_file": "अज्ञात फ़ाइल प्रकार",
+			"audio_file": "ऑडियो फ़ाइल",
+			"video_file": "वीडियो फ़ाइल",
+			"document_file": "दस्तावेज़ फ़ाइल",
+			"image_file": "छवि फ़ाइल",
+			"convert_file": "इस फ़ाइल को रूपांतरित करें",
+			"download_file": "उपकरण पर सहेजें"
+		},
+		"errors": {
+			"cant_convert": "हम इस फ़ाइल को रूपांतरित नहीं कर सकते।",
+			"vertd_server": "इस फ़ाइल प्रारूप का रूपांतरण समर्थित नहीं है।",
+			"vertd_generic_view": "त्रुटि विवरण देखें",
+			"vertd_generic_body": "आपकी फ़ाइल रूपांतरित करने का प्रयास करते समय एक त्रुटि हुई। कृपया पुनः प्रयास करें या कोई भिन्न प्रारूप आज़माएँ।",
+			"vertd_generic_title": "रूपांतरण त्रुटि",
+			"vertd_generic_yes": "ठीक है",
+			"vertd_generic_no": "रद्द करें",
+			"vertd_failed_to_keep": "रूपांतरण विफल: {error}",
+			"vertd_details": "त्रुटि विवरण देखें",
+			"vertd_details_body": "निम्नलिखित त्रुटि जानकारी समस्या निवारण में सहायक हो सकती है:",
+			"vertd_details_footer": "अधिक विवरण के लिए हमारी [privacy_link]गोपनीयता नीति[/privacy_link] देखें।",
+			"vertd_details_job_id": "<b>कार्य ID:</b> {jobId}",
+			"vertd_details_from": "<b>स्रोत प्रारूप:</b> {from}",
+			"vertd_details_to": "<b>लक्ष्य प्रारूप:</b> {to}",
+			"vertd_details_error_message": "<b>त्रुटि संदेश:</b> [view_link]त्रुटि लॉग देखें[/view_link]",
+			"vertd_details_close": "बंद करें",
+			"vertd_ratelimit": "फ़ाइल '{filename}' का रूपांतरण कई बार विफल हो चुका है। कृपया कोई भिन्न प्रारूप या छोटी फ़ाइल का प्रयास करें।",
+			"unsupported_format": "केवल छवि, वीडियो, ऑडियो और दस्तावेज़ फ़ाइलें समर्थित हैं",
+			"pdf_redirect_title": "यह एक PDF फ़ाइल है।",
+			"pdf_redirect_desc": "PDF यहाँ रूपांतरित नहीं होते — मर्ज, स्प्लिट, कंप्रेस, रोटेट और अन्य कार्यों के लिए PDF उपकरण का उपयोग करें।",
+			"pdf_redirect_button": "PDF उपकरण खोलें",
+			"format_output_only": "यह प्रारूप वर्तमान में केवल आउटपुट (में रूपांतरित) के रूप में उपयोग किया जा सकता है, इनपुट के रूप में नहीं।",
+			"vertd_not_found": "वीडियो कनवर्टर आरंभ नहीं हो सका। कृपया पृष्ठ को रिफ़्रेश करें और पुनः प्रयास करें।",
+			"worker_downloading": "{type} कनवर्टर लोड हो रहा है, कृपया कुछ क्षण प्रतीक्षा करें।",
+			"worker_error": "{type} कनवर्टर में आरंभीकरण के दौरान त्रुटि हुई, कृपया बाद में पुनः प्रयास करें।",
+			"worker_timeout": "{type} कनवर्टर को आरंभ होने में अपेक्षा से अधिक समय लग रहा है, कृपया कुछ और क्षण प्रतीक्षा करें या पृष्ठ को रिफ़्रेश करें।",
+			"audio": "ऑडियो",
+			"doc": "दस्तावेज़",
+			"image": "छवि"
+		},
+		"options": {
+			"quality": "गुणवत्ता",
+			"resize": "आकार बदलें",
+			"bitrate": "बिटरेट",
+			"trim": "ट्रिम"
+		}
+	},
+	"settings": {
+		"title": "सेटिंग्स",
+		"errors": {
+			"save_failed": "सेटिंग्स सहेजने में विफल!"
+		},
+		"appearance": {
+			"title": "प्रकटन",
+			"brightness_theme": "चमक थीम",
+			"brightness_description": "क्या आप चमकदार फ़्लैश चाहते हैं, या शांत अँधेरी रात?",
+			"light": "प्रकाश",
+			"dark": "अँधेरा",
+			"effect_settings": "प्रभाव सेटिंग्स",
+			"effect_description": "क्या आप आकर्षक प्रभाव चाहते हैं, या अधिक स्थिर अनुभव?",
+			"enable": "सक्षम करें",
+			"disable": "अक्षम करें"
+		},
+		"conversion": {
+			"title": "रूपांतरण",
+			"advanced_settings": "उन्नत सेटिंग्स",
+			"filename_format": "फ़ाइल नाम प्रारूप",
+			"filename_description": "यह डाउनलोड पर फ़ाइल का नाम निर्धारित करेगा, <b>फ़ाइल एक्सटेंशन को छोड़कर।</b> आप प्रारूप में निम्नलिखित टेम्पलेट रख सकते हैं, जो संबंधित जानकारी से प्रतिस्थापित हो जाएँगे: मूल फ़ाइल नाम के लिए <b>%name%</b>, मूल फ़ाइल एक्सटेंशन के लिए <b>%extension%</b>, और फ़ाइल रूपांतरण की तिथि के लिए <b>%date%</b>।",
+			"placeholder": "LocalConvert_%name%",
+			"default_format": "डिफ़ॉल्ट रूपांतरण प्रारूप",
+			"default_format_enable": "सक्षम करें",
+			"default_format_disable": "अक्षम करें",
+			"default_format_description": "जब आप इस फ़ाइल प्रकार की कोई फ़ाइल चुनते हैं तो यह डिफ़ॉल्ट रूप से चयनित प्रारूप बदल देगा।",
+			"default_format_image": "छवियाँ",
+			"default_format_video": "वीडियो",
+			"default_format_audio": "ऑडियो",
+			"default_format_document": "दस्तावेज़",
+			"metadata": "फ़ाइल मेटाडेटा",
+			"metadata_description": "यह निर्धारित करता है कि मूल फ़ाइल पर कोई मेटाडेटा (EXIF, गीत जानकारी, आदि) रूपांतरित फ़ाइलों में संरक्षित किया जाए या नहीं।",
+			"keep": "रखें",
+			"remove": "हटाएँ",
+			"quality": "रूपांतरण गुणवत्ता",
+			"quality_description": "यह रूपांतरित फ़ाइलों (अपनी श्रेणी में) की डिफ़ॉल्ट आउटपुट गुणवत्ता बदलता है। उच्च मान के परिणामस्वरूप रूपांतरण में अधिक समय और अधिक फ़ाइल आकार हो सकता है।",
+			"quality_video": "यह रूपांतरित वीडियो फ़ाइलों की डिफ़ॉल्ट आउटपुट गुणवत्ता बदलता है। उच्च मान के परिणामस्वरूप रूपांतरण में अधिक समय और अधिक फ़ाइल आकार हो सकता है।",
+			"quality_audio": "ऑडियो (kbps)",
+			"quality_images": "छवि (%)",
+			"rate": "सैंपल रेट (Hz)"
+		},
+		"vertd": {
+			"title": "वीडियो रूपांतरण",
+			"status": "स्थिति:",
+			"loading": "लोड हो रहा है...",
+			"available": "तैयार",
+			"unavailable": "उपलब्ध नहीं",
+			"description": "वीडियो रूपांतरण FFmpeg WebAssembly का उपयोग करके स्थानीय रूप से किया जाता है। आपके वीडियो कभी आपका उपकरण नहीं छोड़ते।",
+			"hosting_info": "सभी वीडियो प्रसंस्करण WebAssembly तकनीक का उपयोग करके आपके ब्राउज़र में होता है।",
+			"instance": "इंजन",
+			"url_placeholder": "FFmpeg WASM (स्थानीय)",
+			"conversion_speed": "रूपांतरण गति",
+			"speed_description": "यह गति और गुणवत्ता के बीच का संतुलन दर्शाता है। तेज़ गति से गुणवत्ता कम होगी, लेकिन कार्य शीघ्र पूर्ण होगा।",
+			"speeds": {
+				"very_slow": "अति धीमा",
+				"slower": "धीमा",
+				"slow": "मंद",
+				"medium": "मध्यम",
+				"fast": "तेज़",
+				"ultra_fast": "अति तेज़"
+			},
+			"auto_instance": "स्वचालित (अनुशंसित)",
+			"eu_instance": "स्थानीय",
+			"us_instance": "स्थानीय",
+			"custom_instance": "स्थानीय"
+		},
+		"privacy": {
+			"title": "गोपनीयता एवं डेटा",
+			"plausible_title": "Cloudflare Web Analytics",
+			"plausible_description": "हम [plausible_link]Cloudflare Web Analytics[/plausible_link] का उपयोग करते हैं, जो गोपनीयता-केंद्रित विश्लेषण उपकरण है, जो पूर्णतः अनाम आँकड़े एकत्र करता है। सभी डेटा अनामित और समेकित होता है, और कोई भी पहचान योग्य जानकारी कभी प्रेषित या संग्रहीत नहीं की जाती। आप नीचे ऑप्ट-आउट कर सकते हैं।",
+			"opt_in": "ऑप्ट-इन",
+			"opt_out": "ऑप्ट-आउट",
+			"cache_title": "कैश प्रबंधन",
+			"cache_description": "हम कनवर्टर फ़ाइलों को आपके ब्राउज़र पर कैश करते हैं ताकि आपको हर बार उन्हें पुनः लोड न करना पड़े, जिससे प्रदर्शन में सुधार होता है और डेटा उपयोग कम होता है।",
+			"refresh_cache": "कैश ताज़ा करें",
+			"clear_cache": "कैश साफ़ करें",
+			"files_cached": "{size} ({count} फ़ाइलें)",
+			"loading_cache": "लोड हो रहा है...",
+			"total_size": "कुल आकार",
+			"files_cached_label": "कैश की गई फ़ाइलें",
+			"cache_cleared": "कैश सफलतापूर्वक साफ़ हो गया!",
+			"cache_clear_error": "कैश साफ़ करने में विफल।",
+			"site_data_title": "साइट डेटा प्रबंधन",
+			"site_data_description": "सेटिंग्स और कैश की गई फ़ाइलों सहित सभी साइट डेटा साफ़ करें, LocalConvert को उसकी डिफ़ॉल्ट स्थिति में रीसेट करें और पृष्ठ को पुनः लोड करें।",
+			"clear_all_data": "सभी साइट डेटा साफ़ करें",
+			"clear_all_data_confirm_title": "सभी साइट डेटा साफ़ करें?",
+			"clear_all_data_confirm": "यह सभी सेटिंग्स और कैश रीसेट करेगा, फिर पृष्ठ को पुनः लोड करेगा। यह क्रिया पूर्ववत नहीं की जा सकती।",
+			"clear_all_data_cancel": "रद्द करें",
+			"all_data_cleared": "सभी साइट डेटा साफ़ हो गया! पृष्ठ पुनः लोड हो रहा है...",
+			"all_data_clear_error": "सभी साइट डेटा साफ़ करने में विफल।"
+		},
+		"language": {
+			"title": "भाषा",
+			"description": "LocalConvert इंटरफ़ेस के लिए अपनी पसंदीदा भाषा चुनें।"
+		}
+	},
+	"about": {
+		"title": "परिचय",
+		"why": {
+			"title": "LocalConvert क्यों?",
+			"description": "<b>फ़ाइल कनवर्टरों ने हमें सदैव निराश किया है।</b> वे धीमे हैं, खाते की आवश्यकता होती है, और आपकी फ़ाइलों को ऐसे तृतीय-पक्ष सर्वरों पर भेजते हैं जिनके बारे में आप कुछ नहीं जानते। हमने इसे ठीक करने का निर्णय लिया।<br/><br/>आप जो भी फ़ाइल रूपांतरित करते हैं — छवियाँ, ऑडियो, वीडियो और दस्तावेज़ — सभी WebAssembly का उपयोग करके पूरी तरह आपके उपकरण पर प्रसंस्करित होती हैं। कुछ भी आपके ब्राउज़र से बाहर नहीं जाता। कोई सर्वर शामिल नहीं, कोई अपलोड नहीं, और कोई भी कभी आपकी फ़ाइलें नहीं देख सकता।"
+		},
+		"sponsors": {
+			"title": "सहयोग",
+			"description": "LocalConvert निःशुल्क और ओपन सोर्स है। यदि आपको यह उपयोगी लगता है, तो परियोजना का सहयोग करने पर विचार करें। हमसे संपर्क करें",
+			"email_copied": "ईमेल क्लिपबोर्ड पर कॉपी हो गया!"
+		},
+		"resources": {
+			"title": "संसाधन",
+			"discord": "Discord",
+			"source": "स्रोत",
+			"email": "ईमेल"
+		},
+		"donate": {
+			"title": "LocalConvert का समर्थन करें",
+			"description": "आपके सहयोग से हम LocalConvert का रखरखाव और सुधार जारी रख सकते हैं।",
+			"one_time": "एकबारगी",
+			"monthly": "मासिक",
+			"custom": "कस्टम",
+			"pay_now": "अभी भुगतान करें",
+			"donate_amount": "${amount} USD दान करें",
+			"thank_you": "आपके सहयोग के लिए धन्यवाद!",
+			"payment_failed": "भुगतान विफल: {message}{period} आपसे कोई शुल्क नहीं लिया गया।",
+			"donation_error": "आपका दान प्रसंस्करित करते समय एक त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
+			"payment_error": "भुगतान विवरण प्राप्त करने में त्रुटि। कृपया बाद में पुनः प्रयास करें।",
+			"donation_notice_official": "आपका सहयोग LocalConvert के रखरखाव और सुधार में सहायक होता है।",
+			"donation_notice_unofficial": "यह LocalConvert का तृतीय-पक्ष इंस्टेंस है। यदि आप मूल परियोजना का सहयोग करना चाहते हैं, तो कृपया इसके बजाय आधिकारिक साइट पर जाएँ।"
+		},
+		"credits": {
+			"title": "श्रेय",
+			"contact_team": "यदि आप विकास दल से संपर्क करना चाहते हैं, तो कृपया \"संसाधन\" कार्ड पर दिए गए ईमेल का उपयोग करें।",
+			"notable_contributors": "प्रमुख योगदानकर्ता",
+			"notable_description": "हम इन व्यक्तियों को VERT में उनके महत्वपूर्ण योगदान के लिए धन्यवाद देना चाहते हैं, जिस परियोजना पर LocalConvert आधारित है।",
+			"github_contributors": "GitHub योगदानकर्ता",
+			"github_description": "सहायता के लिए इन सभी लोगों का हार्दिक धन्यवाद! [github_link]क्या आप भी सहायता करना चाहते हैं?[/github_link]",
+			"no_contributors": "ऐसा लगता है कि अभी तक किसी ने योगदान नहीं दिया है... [contribute_link]पहले योगदानकर्ता बनें![/contribute_link]",
+			"libraries": "लाइब्रेरीज़",
+			"libraries_description": "FFmpeg (ऑडियो, वीडियो), ImageMagick (छवियाँ) और Pandoc (दस्तावेज़) को इतने वर्षों तक ऐसी उत्कृष्ट लाइब्रेरीज़ बनाए रखने के लिए हार्दिक धन्यवाद। LocalConvert आपको रूपांतरण प्रदान करने के लिए इन पर निर्भर करता है।",
+			"roles": {
+				"lead_developer": "प्रमुख डेवलपर; रूपांतरण बैकएंड, UI कार्यान्वयन",
+				"developer": "डेवलपर; UI कार्यान्वयन",
+				"designer": "डिज़ाइनर; UX, ब्रांडिंग, मार्केटिंग",
+				"docker_ci": "Docker और CI समर्थन का रखरखाव",
+				"former_cofounder": "पूर्व सह-संस्थापक एवं डिज़ाइनर"
+			}
+		},
+		"errors": {
+			"github_contributors": "GitHub योगदानकर्ताओं को प्राप्त करने में त्रुटि"
+		},
+		"hero_title": "File converters ko aapki files ki zaroorat nahi honi chahiye.",
+		"stats": {
+			"tools": "उपकरण",
+			"format_conversions": "फाइल रूपांतरण",
+			"languages": "bhashayen",
+			"bytes_uploaded": "bytes server par bheje gaye"
+		},
+		"principles": {
+			"label": "Siddhant",
+			"p1_title": "Aapki files aapke device par rehti hain",
+			"p1_desc": "Sabhi tools aapke browser mein WebAssembly ke zariye locally chalte hain. Koi server nahi hai. Aapki files kabhi upload, transmit ya store nahi ki jaati hain.",
+			"p2_title": "Muft, bina account, bina sharton ke",
+			"p2_desc": "Koi signup nahi, koi email nahi, koi payment wall nahi, koi file size limit nahi. Site kholein, tools use karein, tab band karein.",
+			"p3_title": "Open source, satyanit karne yogya",
+			"p3_desc": "Pura codebase AGPL-3.0 ke tahat public hai. Code padhein. Har privacy ka dawa verify kiya ja sakta hai."
+		},
+		"inside": {
+			"label": "Andar kya hai",
+			"title": "Teen tool categories"
+		},
+		"stack": {
+			"label": "Workshop saamgri",
+			"title": "Andar ke engine",
+			"imagemagick": "WASM dwara 60+ image formats",
+			"ffmpeg": "WASM dwara audio aur video conversion",
+			"webcodecs": "GPU-tvarit video processing",
+			"pandoc": "WASM dwara document conversion",
+			"pdflib": "PDF nirman, editing aur rendering",
+			"sveltekit": "Framework aur static site generation"
+		},
+		"origin": {
+			"title": "Utpatti",
+			"description": "Yeh project VERT.sh (AGPL-3.0) ke fork ke roop mein shuru hua. Tab se humne brand ko naya roop diya, 30+ tools jode, interface ko naya design diya, aur 28 bhashaon mein vistaar kiya."
+		},
+		"credit_groups": {
+			"engines": "रूपांतरण इंजन",
+			"engines_ffmpeg": "Audio aur video conversion",
+			"engines_imagemagick": "चित्र प्रारूप रूपांतरण",
+			"engines_pandoc": "दस्तावेज़ रूपांतरण",
+			"engines_mediabunny": "GPU video tvarit",
+			"engines_webdemuxer": "WebCodecs वीडियो डीमक्सिंग",
+			"pdf_toolkit": "PDF टूलकिट",
+			"pdf_pdflib": "PDF nirman, editing aur merging",
+			"pdf_pdfjs": "PDF rendering aur text extraction",
+			"pdf_encrypt": "PDF password suraksha",
+			"pdf_pptx": "PDF se PowerPoint conversion",
+			"tool_libs": "टूल लाइब्रेरीज़",
+			"tool_qrcode": "QR code nirman",
+			"tool_marked": "Markdown se HTML rendering",
+			"framework": "Framework aur UI",
+			"fw_sveltekit": "एप्लिकेशन फ्रेमवर्क",
+			"fw_tailwind": "यूटिलिटी-फर्स्ट स्टाइलिंग",
+			"fw_lucide": "आइकॉन सिस्टम",
+			"fw_paraglide": "Antarrashtriyakaran (28 bhashayen)"
+		},
+		"links": {
+			"source_code": "सोर्स कोड",
+			"privacy_policy": "Gopniyata Niti"
+		},
+		"install": "इंस्टॉल करें"
+	},
+	"workers": {
+		"errors": {
+			"general": "{file} रूपांतरित करने में त्रुटि: {message}",
+			"cancel": "{file} के लिए रूपांतरण रद्द करने में त्रुटि: {message}",
+			"magick": "Magick वर्कर में त्रुटि, छवि रूपांतरण अपेक्षित रूप से कार्य नहीं कर सकता।",
+			"ffmpeg": "FFmpeg लोड करने में त्रुटि, कुछ सुविधाएँ अपेक्षित रूप से कार्य नहीं कर सकतीं।",
+			"pandoc": "Pandoc वर्कर लोड करने में त्रुटि, दस्तावेज़ रूपांतरण अपेक्षित रूप से कार्य नहीं कर सकता।",
+			"no_audio": "कोई ऑडियो स्ट्रीम नहीं मिली।",
+			"invalid_rate": "अमान्य सैंपल रेट निर्दिष्ट: {rate}Hz",
+			"file_too_large": "यह फ़ाइल {limit}GB ब्राउज़र / उपकरण सीमा से अधिक है। इस बड़ी फ़ाइल को रूपांतरित करने के लिए Firefox या Safari का प्रयास करें, जिनकी सीमाएँ सामान्यतः अधिक होती हैं।"
+		}
+	},
+	"privacy": {
+		"title": "गोपनीयता नीति",
+		"summary": {
+			"title": "सारांश",
+			"description": "LocalConvert की गोपनीयता नीति सरल है: आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं। सभी रूपांतरण — छवियाँ, ऑडियो, वीडियो और दस्तावेज़ — WebAssembly का उपयोग करके पूरी तरह आपके ब्राउज़र में होते हैं। हम कुकीज़ या ट्रैकर्स का उपयोग नहीं करते, और विश्लेषण Cloudflare Web Analytics के माध्यम से पूर्णतः अनाम होते हैं।<br/><br/>LocalConvert [vert_link]VERT.sh[/vert_link] (AGPL-3.0) पर आधारित है।"
+		},
+		"conversions": {
+			"title": "रूपांतरण",
+			"description": "सभी रूपांतरण संबंधित उपकरणों (FFmpeg, ImageMagick, Pandoc) के WebAssembly संस्करणों का उपयोग करके पूरी तरह आपके उपकरण पर स्थानीय रूप से होते हैं। इसका अर्थ है कि आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं और कोई भी कभी उन तक पहुँच नहीं पाएगा। अन्य कनवर्टरों के विपरीत, इसमें वीडियो भी शामिल है — वीडियो रूपांतरण भी आपके ब्राउज़र में स्थानीय रूप से किया जाता है।"
+		},
+		"donations": {
+			"title": "दान",
+			"description": "यदि दान की सुविधा उपलब्ध है, तो भुगतान प्रसंस्करण किसी तृतीय-पक्ष प्रदाता द्वारा किया जा सकता है। भुगतान प्रदाता को बाहरी नेटवर्क अनुरोध स्थगित रहते हैं, और केवल आपके भुगतान बटन पर क्लिक करने के बाद ही किए जाते हैं।"
+		},
+		"conversion_errors": {
+			"title": "रूपांतरण त्रुटियाँ",
+			"description": "जब कोई रूपांतरण विफल होता है, तो त्रुटि जानकारी आपके उपकरण पर ही रहती है। कोई त्रुटि डेटा स्वचालित रूप से किसी सर्वर को नहीं भेजा जाता। त्रुटि विवरण में शामिल हो सकते हैं:",
+			"list_job_id": "फ़ाइल प्रकार",
+			"list_format_from": "जिस प्रारूप से आपने रूपांतरित किया",
+			"list_format_to": "जिस प्रारूप में आपने रूपांतरित किया",
+			"list_stderr": "FFmpeg त्रुटि आउटपुट",
+			"list_video": "कोई फ़ाइल कभी अपलोड नहीं की जाती",
+			"footer": "सभी त्रुटि जानकारी आपके उपकरण पर रहती है और कभी प्रेषित नहीं की जाती।"
+		},
+		"analytics": {
+			"title": "विश्लेषण",
+			"description": "हम पूर्णतः अनाम और समेकित विश्लेषण के लिए Cloudflare Web Analytics का उपयोग करते हैं। Cloudflare Web Analytics कुकीज़ का उपयोग नहीं करता और सभी प्रमुख गोपनीयता विनियमों (GDPR/CCPA/PECR) का अनुपालन करता है। आप [settings_link]सेटिंग्स[/settings_link] में \"गोपनीयता एवं डेटा\" अनुभाग में विश्लेषण से ऑप्ट-आउट कर सकते हैं और Cloudflare Web Analytics के बारे में अधिक [plausible_link]यहाँ[/plausible_link] पढ़ सकते हैं।"
+		},
+		"local_storage": {
+			"title": "स्थानीय संग्रहण",
+			"description": "हम आपकी सेटिंग्स सहेजने के लिए आपके ब्राउज़र के स्थानीय संग्रहण का उपयोग करते हैं। कोई व्यक्तिगत डेटा संग्रहीत या प्रेषित नहीं किया जाता।<br/><br/>हमारे द्वारा उपयोग किए जाने वाले रूपांतरण उपकरणों (FFmpeg, ImageMagick, Pandoc) के WebAssembly संस्करण भी आपकी पहली वेबसाइट विज़िट पर आपके ब्राउज़र पर स्थानीय रूप से संग्रहीत होते हैं, ताकि आपको हर बार उन्हें पुनः लोड न करना पड़े। कोई व्यक्तिगत डेटा संग्रहीत या प्रेषित नहीं किया जाता। आप [settings_link]सेटिंग्स[/settings_link] में \"गोपनीयता एवं डेटा\" अनुभाग में इस डेटा को कभी भी देख या हटा सकते हैं।"
+		},
+		"contact": {
+			"title": "संपर्क",
+			"description": "प्रश्नों के लिए, हमें ईमेल करें: [email_link]hello@localconvert.app[/email_link]।"
+		},
+		"last_updated": "अंतिम अपडेट: 2026-03-22"
+	},
+	"pdf_tools": {
+		"title": "PDF उपकरण",
+		"subtitle": "प्रत्येक कार्य पूरी तरह आपके ब्राउज़र में चलता है। आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं।",
+		"badge": "100% स्थानीय — कोई अपलोड नहीं, कोई सर्वर नहीं",
+		"categories": {
+			"organize": "व्यवस्थित करें",
+			"convert": "रूपांतरित करें",
+			"optimize": "अनुकूलन एवं संपादन"
+		},
+		"tools": {
+			"merge_name": "PDF मर्ज करें",
+			"merge_desc": "एकाधिक PDF को एक फ़ाइल में संयोजित करें",
+			"split_name": "PDF विभाजित करें",
+			"split_desc": "पृष्ठ निकालें या अलग-अलग फ़ाइलों में विभाजित करें",
+			"rotate_name": "पृष्ठ घुमाएँ",
+			"rotate_desc": "अलग-अलग या सभी पृष्ठों को 90°/180°/270° घुमाएँ",
+			"organize_name": "पृष्ठ व्यवस्थित करें",
+			"organize_desc": "दृश्य थंबनेल के साथ पृष्ठों को पुनर्व्यवस्थित या हटाएँ",
+			"images_to_pdf_name": "छवियाँ → PDF",
+			"images_to_pdf_desc": "JPG, PNG, या WEBP छवियों को PDF में रूपांतरित करें",
+			"pdf_to_images_name": "PDF → छवियाँ",
+			"pdf_to_images_desc": "प्रत्येक पृष्ठ को JPG या PNG छवि के रूप में निर्यात करें",
+			"compress_name": "PDF संपीड़ित करें",
+			"compress_desc": "पृष्ठों को JPEG के रूप में पुनः रेंडर करके फ़ाइल आकार कम करें",
+			"watermark_name": "वॉटरमार्क जोड़ें",
+			"watermark_desc": "PDF के प्रत्येक पृष्ठ पर टेक्स्ट स्टैम्प करें",
+			"page_numbers_name": "पृष्ठ संख्या जोड़ें",
+			"page_numbers_desc": "प्रत्येक पृष्ठ पर क्रमिक संख्यांकन जोड़ें",
+			"metadata_name": "मेटाडेटा संपादित करें",
+			"metadata_desc": "शीर्षक, लेखक और अन्य PDF गुण देखें और संपादित करें",
+			"crop_name": "PDF क्रॉप करें",
+			"crop_desc": "PDF पृष्ठों से हाशिये काटें",
+			"pdf_to_ppt_name": "PDF से PowerPoint",
+			"pdf_to_ppt_desc": "प्रत्येक PDF पृष्ठ को प्रस्तुति स्लाइड में रूपांतरित करें",
+			"sign_name": "PDF पर हस्ताक्षर करें",
+			"sign_desc": "हस्ताक्षर बनाएँ, टाइप करें, या अपलोड करें",
+			"edit_name": "PDF संपादित करें",
+			"edit_desc": "PDF के किसी भी पृष्ठ पर टेक्स्ट जोड़ें",
+			"password_name": "पासवर्ड सुरक्षा",
+			"password_desc": "PDF को पासवर्ड से एन्क्रिप्ट करें और अनुमतियाँ सेट करें",
+			"unlock_name": "PDF अनलॉक करें",
+			"unlock_desc": "PDF से पासवर्ड सुरक्षा हटाएँ",
+			"pdf_to_text_name": "PDF से टेक्स्ट",
+			"pdf_to_text_desc": "PDF से सभी टेक्स्ट निकालें",
+			"grayscale_name": "PDF को ग्रेस्केल में",
+			"grayscale_desc": "PDF पृष्ठों को श्वेत-श्याम में रूपांतरित करें"
+		}
+	},
+	"image_tools": {
+		"title": "छवि उपकरण",
+		"subtitle": "प्रत्येक कार्य पूरी तरह आपके ब्राउज़र में चलता है। आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं।",
+		"badge": "100% स्थानीय — कोई अपलोड नहीं, कोई सर्वर नहीं",
+		"categories": {
+			"edit": "संपादन",
+			"create": "निर्माण"
+		},
+		"tools": {
+			"rotate_name": "छवि घुमाएँ",
+			"rotate_desc": "छवि को 90°, 180°, या 270° घुमाएँ",
+			"crop_name": "छवि क्रॉप करें",
+			"crop_desc": "किसी भी क्षेत्र को क्रॉप करने के लिए आयत बनाएँ",
+			"watermark_name": "छवि पर वॉटरमार्क",
+			"watermark_desc": "किसी भी छवि पर टेक्स्ट स्टैम्प करें",
+			"meme_name": "मीम जनरेटर",
+			"meme_desc": "किसी भी छवि पर ऊपर और नीचे टेक्स्ट जोड़ें",
+			"batch_name": "बैच प्रसंस्करण",
+			"batch_desc": "एकाधिक छवियों पर एक ही ऑपरेशन लागू करें",
+			"qr_name": "QR कोड जनरेटर",
+			"qr_desc": "टेक्स्ट या URL से QR कोड बनाएँ",
+			"color_picker_name": "कलर पिकर",
+			"color_picker_desc": "किसी भी छवि से रंग चुनें",
+			"blur_name": "क्षेत्र धुँधला करें",
+			"blur_desc": "गोपनीयता के लिए छवि के किसी क्षेत्र को धुँधला करें",
+			"filters_name": "छवि फ़िल्टर",
+			"filters_desc": "चमक, कंट्रास्ट, संतृप्ति और अन्य समायोजित करें",
+			"video_to_gif_name": "वीडियो से GIF",
+			"video_to_gif_desc": "किसी भी वीडियो को एनिमेटेड GIF में रूपांतरित करें"
+		}
+	},
+	"dev_tools": {
+		"title": "डेवलपर उपकरण",
+		"subtitle": "फ़ॉर्मेट, एन्कोड और हैश करें — सब आपके ब्राउज़र में। कुछ भी आपके उपकरण से बाहर नहीं जाता।",
+		"badge": "100% स्थानीय — कोई अपलोड नहीं, कोई सर्वर नहीं",
+		"categories": {
+			"format": "फ़ॉर्मेट एवं रूपांतरण",
+			"analyze": "विश्लेषण"
+		},
+		"tools": {
+			"json_name": "JSON फ़ॉर्मेटर",
+			"json_desc": "JSON को फ़ॉर्मेट, मिनिफ़ाई और मान्य करें",
+			"hash_name": "हैश जनरेटर",
+			"hash_desc": "SHA-256, SHA-1, SHA-512 हैश बनाएँ",
+			"base64_name": "Base64 कोडेक",
+			"base64_desc": "Base64 स्ट्रिंग्स को एन्कोड और डिकोड करें",
+			"markdown_name": "Markdown पूर्वावलोकन",
+			"markdown_desc": "Markdown लिखें और रेंडर किया गया HTML देखें",
+			"diff_name": "टेक्स्ट तुलना",
+			"diff_desc": "दो टेक्स्ट की तुलना करें और अंतर हाइलाइट करें",
+			"word_count_name": "शब्द गणक",
+			"word_count_desc": "शब्द, अक्षर, वाक्य और अन्य गिनें",
+			"url_encode_name": "URL एन्कोड/डिकोड",
+			"url_encode_desc": "URL स्ट्रिंग्स को एन्कोड और डिकोड करें",
+			"css_minify_name": "CSS मिनिफ़ायर",
+			"css_minify_desc": "टिप्पणियाँ और रिक्त स्थान हटाकर CSS मिनिफ़ाई करें"
+		}
+	},
+	"tools_common": {
+		"back_image": "← छवि उपकरण",
+		"upload_image": "यहाँ एक छवि छोड़ें",
+		"upload_images": "यहाँ एकाधिक छवियाँ छोड़ें",
+		"angle": "कोण",
+		"ready": "तैयार!",
+		"download": "डाउनलोड",
+		"privacy_note": "✓ आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं।",
+		"privacy_note_browser": "✓ पूरी तरह आपके ब्राउज़र में निर्मित।",
+		"reset": "रीसेट",
+		"text": "टेक्स्ट",
+		"opacity": "अपारदर्शिता",
+		"font_size": "फ़ॉन्ट आकार",
+		"rotation": "घूर्णन",
+		"position": "स्थिति",
+		"center": "केंद्र",
+		"tile": "टाइल",
+		"size": "आकार",
+		"foreground": "अग्रभूमि",
+		"background": "पृष्ठभूमि",
+		"operation": "ऑपरेशन",
+		"rotate": "घुमाएँ",
+		"watermark": "वॉटरमार्क",
+		"crop": "क्रॉप",
+		"meme": "मीम",
+		"save": "सहेजें",
+		"save_all": "सभी सहेजें",
+		"bottom": "नीचे",
+		"failed": "विफल।"
+	},
+	"tool_pages": {
+		"rotate_image": {
+			"title": "छवि घुमाएँ",
+			"desc": "कोण चुनें और परिणाम तुरंत देखें।",
+			"save": "घुमाई गई छवि सहेजें"
+		},
+		"crop_image": {
+			"title": "छवि क्रॉप करें",
+			"desc": "कोनों, किनारों को खींचें, या नया चयन बनाएँ।",
+			"circle": "वृत्त",
+			"free": "मुक्त",
+			"err_area": "छवि पर क्रॉप क्षेत्र चुनें।",
+			"btn_busy": "क्रॉप हो रहा है…",
+			"btn": "छवि क्रॉप करें",
+			"save": "क्रॉप की गई छवि सहेजें"
+		},
+		"watermark_image": {
+			"title": "छवि पर वॉटरमार्क",
+			"desc": "सेटिंग्स समायोजित करें और वॉटरमार्क को लाइव अपडेट होते देखें।",
+			"save": "वॉटरमार्क वाली छवि सहेजें"
+		},
+		"meme": {
+			"title": "मीम जनरेटर",
+			"desc": "टाइप करें और अपना मीम लाइव अपडेट होते देखें।",
+			"top_text": "ऊपर का टेक्स्ट",
+			"bottom_text": "नीचे का टेक्स्ट",
+			"save": "मीम सहेजें"
+		},
+		"batch": {
+			"title": "बैच प्रसंस्करण",
+			"desc": "एकाधिक छवियों पर एक साथ एक ही ऑपरेशन लागू करें।",
+			"trim": "ट्रिम",
+			"err_images": "पहले छवियाँ जोड़ें।",
+			"err_text": "कम से कम एक पंक्ति टेक्स्ट दर्ज करें।",
+			"err_watermark": "वॉटरमार्क टेक्स्ट दर्ज करें।"
+		},
+		"qr": {
+			"title": "QR कोड जनरेटर",
+			"desc": "QR कोड बनाएँ और इसे लाइव अपडेट होते देखें।",
+			"text_url": "टेक्स्ट या URL",
+			"error_correction": "त्रुटि सुधार",
+			"low": "निम्न (7%)",
+			"medium": "मध्यम (15%)",
+			"quartile": "चतुर्थक (25%)",
+			"high": "उच्च (30%)",
+			"save": "QR कोड सहेजें",
+			"save_file": "qrcode.png डाउनलोड करें"
+		}
+	},
+	"toast": {
+		"insecure_context": "आप LocalConvert को असुरक्षित संदर्भ में देख रहे हैं (जैसे HTTPS के बजाय HTTP से पहुँच)। कुछ सुविधाएँ अपेक्षित रूप से कार्य नहीं कर सकतीं।"
+	},
+	"landing": {
+		"pills": {
+			"no_uploads": "कोई सर्वर अपलोड नहीं",
+			"tools_count": "36+ उपकरण",
+			"open_source": "निःशुल्क एवं ओपन सोर्स",
+			"works_locally": "स्थानीय रूप से कार्य करता है"
+		},
+		"toolkit": {
+			"label": "आपकी कार्यशाला",
+			"title": "प्रत्येक उपकरण आपके ब्राउज़र में चलता है",
+			"pdf_title": "PDF उपकरण",
+			"pdf_desc": "मर्ज, स्प्लिट, कंप्रेस, वॉटरमार्क, हस्ताक्षर, संपादन और 12 अन्य",
+			"pdf_count": "18 उपकरण",
+			"image_title": "छवि उपकरण",
+			"image_desc": "क्रॉप, आकार बदलें, फ़िल्टर, धुँधला, वॉटरमार्क, मीम और अन्य",
+			"image_count": "10 उपकरण",
+			"dev_title": "डेवलपर उपकरण",
+			"dev_desc": "JSON, हैश, Base64, Markdown, तुलना और अन्य",
+			"dev_count": "8 उपकरण",
+			"explore": "अन्वेषण करें →"
+		},
+		"gpu": {
+			"badge": "हार्डवेयर त्वरित",
+			"title": "GPU-संचालित वीडियो रूपांतरण",
+			"desc": "⚡ चिह्नित रूपांतरण आपके उपकरण के ग्राफ़िक्स हार्डवेयर का उपयोग करते हैं। तेज़ रूपांतरण, कम CPU उपयोग — फिर भी 100% स्थानीय।",
+			"full_label": "पूर्ण GPU — किसी भी दिशा में",
+			"input_label": "ऊपर दिए गए प्रारूपों में रूपांतरित करते समय GPU"
+		},
+		"formats": {
+			"title": "200+ प्रारूप रूपांतरण",
+			"label": "कनवर्टर"
+		},
+		"privacy": {
+			"title": "100% गोपनीयता डिज़ाइन द्वारा",
+			"point1": "आपकी फ़ाइलें कभी आपका उपकरण नहीं छोड़तीं",
+			"point2": "सभी 36 उपकरण पूरी तरह आपके ब्राउज़र में चलते हैं — शून्य सर्वर अपलोड",
+			"point3": "ओपन सोर्स — स्वयं सत्यापित करें",
+			"label": "गोपनीयता प्रथम"
+		},
+		"faq": {
+			"title": "अक्सर पूछे जाने वाले प्रश्न",
+			"q1": "क्या LocalConvert वास्तव में निःशुल्क है?",
+			"a1": "हाँ — पूर्णतः निःशुल्क, कोई खाता आवश्यक नहीं, कोई छिपी फ़ीस नहीं। LocalConvert AGPL-3.0 लाइसेंस के अंतर्गत ओपन सोर्स है।",
+			"q2": "क्या मेरी फ़ाइलें निजी हैं?",
+			"a2": "पूर्णतः। सभी प्रसंस्करण WebAssembly का उपयोग करके आपके ब्राउज़र में चलता है। आपकी फ़ाइलें कभी हमारे सर्वर तक नहीं पहुँचतीं — एक क्षण के लिए भी नहीं।",
+			"q3": "LocalConvert क्या कर सकता है?",
+			"a3": "200+ फ़ाइल प्रारूप रूपांतरित करें (छवियाँ, ऑडियो, वीडियो, दस्तावेज़), 18 PDF उपकरण (मर्ज, स्प्लिट, कंप्रेस, वॉटरमार्क, हस्ताक्षर, संपादन और अन्य), 10 छवि उपकरण (क्रॉप, आकार बदलें, फ़िल्टर, धुँधला, वॉटरमार्क), और 8 डेवलपर उपकरण (JSON, हैश, Base64, तुलना, Markdown)।",
+			"q4": "क्या कोई फ़ाइल आकार सीमा है?",
+			"a4": "कोई निश्चित सीमा नहीं — यह आपके उपकरण की उपलब्ध मेमोरी पर निर्भर करता है। बहुत बड़ी वीडियो फ़ाइलों के लिए, Firefox या Safari सामान्यतः उन्हें बेहतर संभालते हैं।",
+			"q5": "क्या मुझे कुछ इंस्टॉल करना होगा?",
+			"a5": "किसी इंस्टॉलेशन की आवश्यकता नहीं। LocalConvert किसी भी आधुनिक ब्राउज़र में सीधे कार्य करता है। आप ऐप जैसे अनुभव के लिए एड्रेस बार से इसे PWA के रूप में भी इंस्टॉल कर सकते हैं।",
+			"label": "प्रश्न"
+		}
+	}
+}

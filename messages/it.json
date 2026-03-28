@@ -8,14 +8,18 @@
 		"toggle_theme": "Cambia tema",
 		"image_tools": "Strumenti immagine",
 		"tools": "Strumenti",
-		"dev_tools": "Dev Tools",
+		"dev_tools": "Strumenti Dev",
 		"home": "Home"
 	},
 	"footer": {
 		"copyright": "© {year} LocalConvert. Basato su VERT.sh",
 		"source_code": "Codice sorgente",
 		"discord_server": "Server Discord",
-		"privacy_policy": "Informativa sulla privacy"
+		"privacy_policy": "Informativa sulla privacy",
+		"tagline": "Il tuo kit di strumenti privato",
+		"pdf_tools_count": "Strumenti PDF - 18",
+		"image_tools_count": "Strumenti immagine - 10",
+		"dev_tools_count": "Strumenti sviluppo - 8"
 	},
 	"upload": {
 		"title": "Il tuo toolkit privato per file e codice.",
@@ -280,7 +284,67 @@
 		},
 		"errors": {
 			"github_contributors": "Errore nel recupero dei contributori GitHub"
-		}
+		},
+		"hero_title": "Nato perché i convertitori di file non dovrebbero mai aver bisogno dei tuoi file.",
+		"stats": {
+			"tools": "strumenti",
+			"format_conversions": "conversioni di formato",
+			"languages": "lingue",
+			"bytes_uploaded": "byte caricati"
+		},
+		"principles": {
+			"label": "Principi",
+			"p1_title": "I tuoi file restano sul tuo dispositivo",
+			"p1_desc": "Ogni strumento funziona localmente nel tuo browser tramite WebAssembly. Nessun server. I tuoi file non vengono mai caricati, trasmessi o archiviati da nessuna parte.",
+			"p2_title": "Gratuito, senza account, senza vincoli",
+			"p2_desc": "Nessuna registrazione, nessuna email, nessun paywall, nessun limite di dimensione. Apri il sito, usa gli strumenti, chiudi la scheda.",
+			"p3_title": "Open source e verificabile",
+			"p3_desc": "L'intero codice sorgente è pubblico sotto licenza AGPL-3.0. Leggi il codice. Ogni dichiarazione sulla privacy è verificabile."
+		},
+		"inside": {
+			"label": "Cosa contiene",
+			"title": "Tre categorie di strumenti"
+		},
+		"stack": {
+			"label": "Dotazione tecnica",
+			"title": "I motori sotto il cofano",
+			"imagemagick": "Oltre 60 formati immagine via WASM",
+			"ffmpeg": "Conversione audio e video via WASM",
+			"webcodecs": "Elaborazione video accelerata via GPU",
+			"pandoc": "Conversione documenti via WASM",
+			"pdflib": "Creazione, modifica e rendering PDF",
+			"sveltekit": "Framework e generazione sito statico"
+		},
+		"origin": {
+			"title": "Origine",
+			"description": "Questo progetto è nato come fork di VERT.sh (AGPL-3.0). Da allora abbiamo ricostruito il brand, aggiunto oltre 30 strumenti, ridisegnato l'interfaccia e ampliato il supporto a 28 lingue."
+		},
+		"credit_groups": {
+			"engines": "Motori di conversione",
+			"engines_ffmpeg": "Conversione audio e video",
+			"engines_imagemagick": "Conversione formati immagine",
+			"engines_pandoc": "Conversione documenti",
+			"engines_mediabunny": "Accelerazione video via GPU",
+			"engines_webdemuxer": "Demuxing video via WebCodecs",
+			"pdf_toolkit": "Strumenti PDF",
+			"pdf_pdflib": "Creazione, modifica e unione PDF",
+			"pdf_pdfjs": "Rendering PDF ed estrazione testo",
+			"pdf_encrypt": "Protezione PDF con password",
+			"pdf_pptx": "Conversione da PDF a PowerPoint",
+			"tool_libs": "Librerie strumenti",
+			"tool_qrcode": "Generazione codici QR",
+			"tool_marked": "Rendering da Markdown a HTML",
+			"framework": "Framework e interfaccia",
+			"fw_sveltekit": "Framework applicativo",
+			"fw_tailwind": "Stili basati su utility",
+			"fw_lucide": "Sistema di icone",
+			"fw_paraglide": "Internazionalizzazione (28 lingue)"
+		},
+		"links": {
+			"source_code": "Codice sorgente",
+			"privacy_policy": "Informativa sulla privacy"
+		},
+		"install": "Installa"
 	},
 	"workers": {
 		"errors": {
@@ -347,46 +411,46 @@
 			"label": "Convertitore"
 		},
 		"privacy": {
-			"title": "100% Privato per Progettazione",
-			"point1": "I Suoi file non lasciano mai il Suo dispositivo",
-			"point2": "Tutti i 36 strumenti funzionano interamente nel tuo browser — zero caricamenti sul server",
-			"point3": "Open source — verifichi Lei stesso",
-			"label": "Privacy prima di tutto"
+			"title": "100% privato per progettazione",
+			"point1": "I tuoi file non lasciano mai il tuo dispositivo",
+			"point2": "Tutti i 36 strumenti funzionano interamente nel tuo browser — zero caricamenti",
+			"point3": "Open source — verificalo tu stesso",
+			"label": "Privacy al primo posto"
 		},
 		"faq": {
-			"title": "Domande Frequenti",
-			"q1": "LocalConvert è davvero gratuito?",
-			"a1": "Sì — completamente gratuito, nessun account richiesto, nessun costo nascosto. LocalConvert è open source con licenza AGPL-3.0.",
+			"title": "Domande frequenti",
+			"q1": "LocalConvert e davvero gratuito?",
+			"a1": "Si — completamente gratuito, nessun account necessario, nessun costo nascosto. LocalConvert e open source con licenza AGPL-3.0.",
 			"q2": "I miei file sono privati?",
-			"a2": "Assolutamente. Tutte le conversioni vengono eseguite nel Suo browser tramite WebAssembly. I Suoi file non toccano mai i nostri server — nemmeno per un istante.",
-			"q3": "Cosa può fare LocalConvert?",
-			"a3": "Convertire oltre 200 formati di file (immagini, audio, video, documenti), 18 strumenti PDF (unire, dividere, comprimere, filigrana, firmare, modificare e altro), 10 strumenti immagine (ritagliare, ridimensionare, filtri, sfocatura, filigrana) e 8 strumenti sviluppatore (JSON, hash, Base64, diff, markdown).",
-			"q4": "Esiste un limite di dimensione per i file?",
-			"a4": "Nessun limite rigido — dipende dalla memoria disponibile sul Suo dispositivo. Per file video molto grandi, Firefox o Safari in genere li gestiscono meglio.",
+			"a2": "Assolutamente. Tutta l'elaborazione avviene nel tuo browser con WebAssembly. I tuoi file non toccano mai i nostri server — neanche per un istante.",
+			"q3": "Cosa puo fare LocalConvert?",
+			"a3": "Convertire oltre 200 formati di file (immagini, audio, video, documenti), 18 strumenti PDF (unisci, dividi, comprimi, filigrana, firma, modifica e altro), 10 strumenti immagine (ritaglia, ridimensiona, filtri, sfocatura, filigrana), e 8 strumenti per sviluppatori (JSON, hash, Base64, confronto, Markdown).",
+			"q4": "C'e un limite di dimensione del file?",
+			"a4": "Nessun limite fisso — dipende dalla memoria disponibile del tuo dispositivo. Per file video molto grandi, Firefox o Safari di solito li gestiscono meglio.",
 			"q5": "Devo installare qualcosa?",
-			"a5": "Nessuna installazione necessaria. LocalConvert funziona direttamente in qualsiasi browser moderno. È anche possibile installarlo come PWA dalla barra degli indirizzi per un'esperienza simile a un'app.",
+			"a5": "Nessuna installazione necessaria. LocalConvert funziona direttamente in qualsiasi browser moderno. Puoi anche installarlo come PWA dalla barra degli indirizzi per un'esperienza simile a un'app.",
 			"label": "Domande"
 		},
 		"toolkit": {
 			"label": "La tua officina",
 			"title": "Ogni strumento funziona nel tuo browser",
 			"pdf_title": "Strumenti PDF",
-			"pdf_desc": "Unire, dividere, comprimere, filigrana, firmare, modificare e altri 12",
+			"pdf_desc": "Unisci, dividi, comprimi, filigrana, firma, modifica e altri 12",
 			"pdf_count": "18 strumenti",
 			"image_title": "Strumenti immagine",
-			"image_desc": "Ritagliare, ridimensionare, filtri, sfocatura, filigrana, meme e altro",
+			"image_desc": "Ritaglia, ridimensiona, filtri, sfocatura, filigrana, meme e altro",
 			"image_count": "10 strumenti",
-			"dev_title": "Strumenti sviluppatore",
-			"dev_desc": "JSON, hash, Base64, markdown, diff e altro",
+			"dev_title": "Strumenti per sviluppatori",
+			"dev_desc": "JSON, hash, Base64, Markdown, confronto e altro",
 			"dev_count": "8 strumenti",
 			"explore": "Esplora →"
 		},
 		"gpu": {
 			"badge": "Accelerazione hardware",
-			"title": "Conversione video con GPU",
-			"desc": "Le conversioni contrassegnate con ⚡ usano l'hardware grafico del dispositivo. Conversioni più veloci, minor utilizzo CPU — sempre 100% locale.",
+			"title": "Conversione video accelerata da GPU",
+			"desc": "Le conversioni contrassegnate con ⚡ usano l'hardware grafico del tuo dispositivo. Conversioni piu veloci, minor utilizzo CPU — sempre 100% locale.",
 			"full_label": "GPU completa — qualsiasi direzione",
-			"input_label": "GPU per la conversione ai formati sopra"
+			"input_label": "GPU durante la conversione nei formati sopra"
 		}
 	},
 	"pdf_tools": {
@@ -439,29 +503,29 @@
 	},
 	"image_tools": {
 		"title": "Strumenti immagine",
-		"subtitle": "Tutte le operazioni vengono eseguite interamente nel tuo browser. I tuoi file non lasciano mai il tuo dispositivo.",
+		"subtitle": "Ogni operazione viene eseguita interamente nel tuo browser. I tuoi file non lasciano mai il tuo dispositivo.",
 		"badge": "100% locale — nessun caricamento, nessun server",
 		"tools": {
 			"rotate_name": "Ruota immagine",
-			"rotate_desc": "Ruota un'immagine di 90°, 180° o 270°",
+			"rotate_desc": "Ruota un'immagine di 90, 180 o 270 gradi",
 			"crop_name": "Ritaglia immagine",
 			"crop_desc": "Disegna un rettangolo per ritagliare qualsiasi area",
-			"watermark_name": "Filigrana sull'immagine",
+			"watermark_name": "Filigrana immagine",
 			"watermark_desc": "Applica un testo su qualsiasi immagine",
 			"meme_name": "Generatore di meme",
-			"meme_desc": "Aggiungi testo in alto e in basso su qualsiasi immagine",
-			"batch_name": "Elaborazione in blocco",
-			"batch_desc": "Applica la stessa operazione a più immagini",
-			"qr_name": "Generatore di codici QR",
+			"meme_desc": "Aggiungi testo in alto e in basso a qualsiasi immagine",
+			"batch_name": "Elaborazione batch",
+			"batch_desc": "Applica la stessa operazione a piu immagini",
+			"qr_name": "Generatore codice QR",
 			"qr_desc": "Genera codici QR da testo o URL",
-			"color_picker_name": "Selettore colori",
-			"color_picker_desc": "Scegli colori da qualsiasi immagine",
-			"blur_name": "Sfoca regione",
-			"blur_desc": "Sfoca una regione dell'immagine per la privacy",
+			"color_picker_name": "Selettore colore",
+			"color_picker_desc": "Seleziona colori da qualsiasi immagine",
+			"blur_name": "Sfoca area",
+			"blur_desc": "Sfoca un'area di un'immagine per la privacy",
 			"filters_name": "Filtri immagine",
-			"filters_desc": "Regola luminosità, contrasto, saturazione, seppia e tonalità",
+			"filters_desc": "Regola luminosita, contrasto, saturazione e altro",
 			"video_to_gif_name": "Video in GIF",
-			"video_to_gif_desc": "Converti un video in una GIF animata"
+			"video_to_gif_desc": "Converti qualsiasi video in una GIF animata"
 		},
 		"categories": {
 			"edit": "Modifica",
@@ -470,19 +534,19 @@
 	},
 	"tools_common": {
 		"back_pdf": "← PDF Tools",
-		"back_image": "← Image Tools",
-		"privacy_note": "✓ Your files never leave your device.",
-		"privacy_note_browser": "✓ Generated entirely in your browser.",
+		"back_image": "← Strumenti immagine",
+		"privacy_note": "✓ I tuoi file non lasciano mai il tuo dispositivo.",
+		"privacy_note_browser": "✓ Generato interamente nel tuo browser.",
 		"upload_pdf": "Add a PDF file",
 		"upload_pdfs": "Add PDF files",
-		"upload_image": "Drop an image here",
-		"upload_images": "Drop multiple images here",
+		"upload_image": "Trascina un'immagine qui",
+		"upload_images": "Trascina piu immagini qui",
 		"upload_pdf_protected": "Add a password-protected PDF",
 		"upload_images_pdf": "Add image files (JPG, PNG, WEBP)",
 		"loading_thumbs": "Loading thumbnails…",
-		"ready": "Ready!",
+		"ready": "Pronto!",
 		"output": "Output:",
-		"failed": "Failed.",
+		"failed": "Fallito.",
 		"failed_read_pdf": "Failed to read PDF.",
 		"page_of": "Page {currentPage} / {pageCount}",
 		"pages_remaining": "{count} page(s) remaining",
@@ -490,35 +554,35 @@
 		"images_selected": "{count} image(s) selected",
 		"results_ready": "{count} result(s) ready",
 		"apply_all_pages": "Apply to all pages",
-		"save_all": "Save all",
-		"download": "Download",
+		"save_all": "Salva tutto",
+		"download": "Scarica",
 		"save": "Save",
 		"clear": "Clear",
-		"reset": "Reset",
+		"reset": "Reimposta",
 		"show": "Show",
 		"hide": "Hide",
 		"text": "Text",
-		"opacity": "Opacity",
-		"font_size": "Font size",
-		"rotation": "Rotation",
-		"position": "Position",
-		"center": "Center",
+		"opacity": "Opacita",
+		"font_size": "Dimensione carattere",
+		"rotation": "Rotazione",
+		"position": "Posizione",
+		"center": "Centro",
 		"tile": "Tile",
-		"angle": "Angle",
+		"angle": "Angolo",
 		"format": "Format",
 		"quality": "Quality",
 		"size": "Size",
 		"left": "Left",
 		"right": "Right",
 		"top": "Top",
-		"bottom": "Bottom",
-		"operation": "Operation",
-		"rotate": "Rotate",
-		"watermark": "Watermark",
+		"bottom": "Basso",
+		"operation": "Operazione",
+		"rotate": "Ruota",
+		"watermark": "Filigrana",
 		"crop": "Crop",
 		"meme": "Meme",
-		"foreground": "Foreground",
-		"background": "Background",
+		"foreground": "Primo piano",
+		"background": "Sfondo",
 		"input": "Input:",
 		"back_dev": "← Strumenti sviluppatore"
 	},
@@ -732,54 +796,54 @@
 			"save": "Save unlocked PDF"
 		},
 		"rotate_image": {
-			"title": "Rotate Image",
-			"desc": "Pick an angle and see the result instantly.",
-			"save": "Save rotated image"
+			"title": "Ruota immagine",
+			"desc": "Scegli un angolo e vedi il risultato istantaneamente.",
+			"save": "Salva immagine ruotata"
 		},
 		"crop_image": {
-			"title": "Crop Image",
-			"desc": "Drag corners, edges, or draw a new selection.",
-			"circle": "Circle",
+			"title": "Ritaglia immagine",
+			"desc": "Trascina angoli, bordi o disegna una nuova selezione.",
+			"circle": "Cerchio",
 			"free": "Free",
-			"err_area": "Select a crop area on the image.",
-			"btn": "Crop image",
-			"btn_busy": "Cropping…",
-			"save": "Save cropped image"
+			"err_area": "Seleziona un'area di ritaglio sull'immagine.",
+			"btn": "Ritaglia immagine",
+			"btn_busy": "Ritaglio in corso...",
+			"save": "Salva immagine ritagliata"
 		},
 		"watermark_image": {
-			"title": "Watermark Image",
-			"desc": "Adjust settings and see the watermark update live.",
-			"save": "Save watermarked image"
+			"title": "Filigrana immagine",
+			"desc": "Regola le impostazioni e vedi la filigrana aggiornarsi in tempo reale.",
+			"save": "Salva immagine con filigrana"
 		},
 		"meme": {
-			"title": "Meme Generator",
-			"desc": "Type and see your meme update live.",
-			"top_text": "Top text",
-			"bottom_text": "Bottom text",
-			"save": "Save meme"
+			"title": "Generatore di meme",
+			"desc": "Digita e vedi il tuo meme aggiornarsi in tempo reale.",
+			"top_text": "Testo in alto",
+			"bottom_text": "Testo in basso",
+			"save": "Salva meme"
 		},
 		"batch": {
-			"title": "Batch Processing",
-			"desc": "Apply the same operation to multiple images at once.",
+			"title": "Elaborazione batch",
+			"desc": "Applica la stessa operazione a piu immagini contemporaneamente.",
 			"trim": "Trim",
 			"trim_help": "Trims {percent}% from each edge of every image.",
-			"err_images": "Add images first.",
-			"err_text": "Enter at least one line of text.",
-			"err_watermark": "Enter watermark text.",
+			"err_images": "Aggiungi prima delle immagini.",
+			"err_text": "Inserisci almeno una riga di testo.",
+			"err_watermark": "Inserisci il testo della filigrana.",
 			"btn": "Process {count} image(s)",
 			"btn_busy": "Processing {progress} / {total}…"
 		},
 		"qr": {
-			"title": "QR Code Generator",
-			"desc": "Generate a QR code and see it update live.",
-			"text_url": "Text or URL",
-			"error_correction": "Error correction",
-			"low": "Low (7%)",
-			"medium": "Medium (15%)",
+			"title": "Generatore codice QR",
+			"desc": "Genera un codice QR e guardalo aggiornarsi in tempo reale.",
+			"text_url": "Testo o URL",
+			"error_correction": "Correzione errori",
+			"low": "Basso (7%)",
+			"medium": "Medio (15%)",
 			"quartile": "Quartile (25%)",
-			"high": "High (30%)",
-			"save": "Save QR code",
-			"save_file": "Download qrcode.png"
+			"high": "Alto (30%)",
+			"save": "Salva codice QR",
+			"save_file": "Scarica qrcode.png"
 		},
 		"color_picker": {
 			"title": "Color Picker",
@@ -904,30 +968,30 @@
 		}
 	},
 	"dev_tools": {
-		"title": "Strumenti sviluppatore",
+		"title": "Strumenti per sviluppatori",
 		"subtitle": "Formatta, codifica e genera hash — tutto nel tuo browser. Nulla lascia il tuo dispositivo.",
 		"badge": "100% locale — nessun caricamento, nessun server",
 		"tools": {
 			"json_name": "Formattatore JSON",
-			"json_desc": "Formattare, minimizzare e validare JSON",
+			"json_desc": "Formatta, minimizza e valida JSON",
 			"hash_name": "Generatore di hash",
-			"hash_desc": "SHA-256, SHA-1, SHA-512",
-			"base64_name": "Codifica/Decodifica Base64",
-			"base64_desc": "Codificare o decodificare Base64",
+			"hash_desc": "Genera hash SHA-256, SHA-1, SHA-512",
+			"base64_name": "Codec Base64",
+			"base64_desc": "Codifica e decodifica stringhe Base64",
 			"markdown_name": "Anteprima Markdown",
-			"markdown_desc": "Markdown in HTML dal vivo",
+			"markdown_desc": "Scrivi Markdown e visualizza l'HTML renderizzato",
 			"diff_name": "Confronto testi",
-			"diff_desc": "Confrontare due testi e mostrare le differenze",
+			"diff_desc": "Confronta due testi ed evidenzia le differenze",
 			"word_count_name": "Contaparole",
-			"word_count_desc": "Parole, caratteri, tempo di lettura",
+			"word_count_desc": "Conta parole, caratteri, frasi e altro",
 			"url_encode_name": "Codifica/Decodifica URL",
-			"url_encode_desc": "Codificare o decodificare URL",
-			"css_minify_name": "Minimizza CSS",
-			"css_minify_desc": "Minimizzare il codice CSS"
+			"url_encode_desc": "Codifica e decodifica stringhe URL",
+			"css_minify_name": "Minificatore CSS",
+			"css_minify_desc": "Minimizza CSS rimuovendo commenti e spazi bianchi"
 		},
 		"categories": {
-			"format": "Formattare e trasformare",
-			"analyze": "Analizzare"
+			"format": "Formatta e trasforma",
+			"analyze": "Analizza"
 		}
 	}
 }

@@ -401,7 +401,7 @@
 
 .section-label {
 	font-family: var(--font-mono);
-	font-size: 0.7rem;
+	font-size: 0.85rem;
 	font-weight: 700;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
@@ -581,7 +581,7 @@
 
 .gpu-callout-badge {
 	font-family: var(--font-mono);
-	font-size: 0.5625rem;
+	font-size: 0.75rem;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
