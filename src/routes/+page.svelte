@@ -1,45 +1,11 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
-	import { AudioLines, BookText, Check, Film, Image, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench } from "lucide-svelte";
+	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { browser } from "$app/environment";
+	import FormatExplorer from "$lib/components/functional/FormatExplorer.svelte";
 
 	import privacyBadge from "$lib/assets/privacy-badge.png";
-
-	const worker: {
-		[key: string]: {
-			formats: string[];
-			icon: typeof Image;
-			title: string;
-			color: string;
-		};
-	} = $derived.by(() => ({
-		Images: {
-			formats: ["jpg", "png", "webp", "avif", "gif", "svg", "jxl", "heic", "ico", "bmp", "tiff", "psd", "eps", "dng", "nef", "arw", "cr2", "raw"],
-			icon: Image,
-			title: m["upload.cards.images"](),
-			color: "blue",
-		},
-		Audio: {
-			formats: ["mp3", "wav", "flac", "aac", "ogg", "opus", "m4a", "alac", "wma", "aiff", "amr", "ac3", "mp2", "au", "weba"],
-			icon: AudioLines,
-			title: m["upload.cards.audio"](),
-			color: "purple",
-		},
-		Video: {
-			formats: ["mp4", "mkv", "webm", "avi", "mov", "wmv", "flv", "mpeg", "3gp", "ts", "m4v", "vob", "m2ts", "mxf", "ogv", "divx"],
-			icon: Film,
-			title: m["upload.cards.video"](),
-			color: "red",
-		},
-		Documents: {
-			formats: ["docx", "doc", "html", "md", "epub", "odt", "rtf", "csv", "tsv", "rst", "json", "docbook"],
-			icon: BookText,
-			title: m["upload.cards.documents"](),
-			color: "green",
-		},
-	}));
 
 	const pills = [
 		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
@@ -192,33 +158,12 @@
 		<div class="section-label">{m["landing.formats.label"]()}</div>
 		<h2 class="section-headline">{m["landing.formats.title"]()}</h2>
 
-		<div class="formats-grid">
-			{#if browser}
-				{#each Object.entries(worker) as [key, s]}
-					{@const Icon = s.icon}
-					<div class={clsx("format-card", `format-card--${s.color}`)}>
-						<div class="format-card-header">
-							<div class={clsx("format-icon", `format-icon--${s.color}`)}>
-								<Icon size="16" />
-							</div>
-							<span class="format-title">{s.title}</span>
-						</div>
-						<div class="format-chips">
-							{#each s.formats as fmt}
-								<span class={clsx("format-chip", `format-chip--${s.color}`)}>{fmt.toUpperCase()}</span>
-							{/each}
-						</div>
-					</div>
-				{/each}
-			{:else}
-				{#each [["Images","blue"],["Audio","purple"],["Video","red"],["Documents","green"]] as [label, color]}
-					<div class={clsx("format-card opacity-50", `format-card--${color}`)}>
-						<div class="format-card-header">
-							<span class="format-title">{label}</span>
-						</div>
-					</div>
-				{/each}
-			{/if}
+		<FormatExplorer />
+
+		<div class="flex justify-center mt-6">
+			<a href="/formats/" class="formats-link">
+				See all formats &rarr;
+			</a>
 		</div>
 	</div>
 </section>
@@ -521,85 +466,20 @@
 	color: var(--fg);
 }
 
-/* ── Formats ── */
-.formats-grid {
-	@apply grid grid-cols-1 sm:grid-cols-2 gap-4;
-}
-
-.format-card {
-	@apply rounded-2xl p-5 flex flex-col gap-4;
-	background: var(--bg-panel);
-	box-shadow: var(--shadow-panel);
-	border: 1px solid var(--bg-separator);
-	position: relative;
-	overflow: hidden;
-	transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.format-card::before {
-	content: '';
-	position: absolute;
-	top: 0; left: 0; right: 0;
-	height: 3px;
-	border-radius: 2px 2px 0 0;
-}
-
-.format-card--blue::before  { background: var(--accent-blue); }
-.format-card--purple::before { background: var(--accent-purple); }
-.format-card--red::before   { background: var(--accent-red); }
-.format-card--green::before { background: var(--accent-green); }
-
-.format-card:hover {
-	transform: translateY(-2px);
-}
-
-.format-card--blue:hover  { border-color: var(--accent-blue); }
-.format-card--purple:hover { border-color: var(--accent-purple); }
-.format-card--red:hover   { border-color: var(--accent-red); }
-.format-card--green:hover { border-color: var(--accent-green); }
-
-.format-card-header {
-	@apply flex items-center gap-3;
-}
-
-.format-icon {
-	@apply w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0;
-	color: white;
-}
-
-.format-icon--blue   { background: var(--accent-blue); }
-.format-icon--purple { background: var(--accent-purple); }
-.format-icon--red    { background: var(--accent-red); }
-.format-icon--green  { background: var(--accent-green); }
-
-.format-title {
-	font-family: var(--font-display);
-	font-size: 0.9rem;
-	font-weight: 700;
-	letter-spacing: -0.025em;
-	color: var(--fg);
-}
-
-.format-chips {
-	@apply flex flex-wrap gap-1.5;
-}
-
-.format-chip {
+/* ── Formats link ── */
+.formats-link {
 	font-family: var(--font-mono);
-	font-size: 0.62rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	letter-spacing: 0.06em;
-	padding: 2px 7px;
-	border-radius: 5px;
-	background: var(--bg-panel-highlight);
+	letter-spacing: 0.02em;
 	color: var(--fg-muted);
-	transition: background-color 0.15s ease, color 0.15s ease;
+	text-decoration: none;
+	transition: color 0.15s ease;
 }
 
-.format-card--blue:hover  .format-chip { background: hsla(217, 82%, 58%, 0.12); color: var(--accent-blue); }
-.format-card--purple:hover .format-chip { background: hsla(258, 68%, 62%, 0.12); color: var(--accent-purple); }
-.format-card--red:hover   .format-chip { background: hsla(14, 80%, 60%, 0.12); color: var(--accent-red); }
-.format-card--green:hover .format-chip { background: hsla(158, 65%, 37%, 0.12); color: var(--accent-green); }
+.formats-link:hover {
+	color: var(--accent);
+}
 
 /* ── Privacy ── */
 .privacy-section {

@@ -183,13 +183,18 @@
 
 	.palette-input {
 		flex: 1;
-		background: none;
-		border: none;
-		outline: none;
+		background: none !important;
+		border: none !important;
+		outline: none !important;
+		padding: 0 !important;
 		font-size: 0.9375rem;
 		font-weight: 400;
 		color: var(--fg);
 		font-family: var(--font-body);
+	}
+
+	.palette-input:focus {
+		outline: none !important;
 	}
 
 	.palette-input::placeholder {

@@ -74,7 +74,7 @@ const imageToolPaths = [
 ];
 
 // ── Static pages ──────────────────────────────────────────────────────────
-const staticPages = ['/', '/convert/', '/settings/', '/about/', '/privacy/'];
+const staticPages = ['/', '/convert/', '/settings/', '/about/', '/privacy/', '/formats/'];
 
 function urlEntry(path, priority, changefreq) {
 	return `  <url>
