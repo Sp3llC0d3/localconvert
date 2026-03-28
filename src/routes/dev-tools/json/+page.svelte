@@ -39,8 +39,9 @@
 		} catch {}
 	}
 
-	// Live validation
+	// Live validation — clear stale output on input change
 	$effect(() => {
+		output = '';
 		if (!input.trim()) { error = ''; return; }
 		try {
 			JSON.parse(input);

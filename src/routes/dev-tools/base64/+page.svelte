@@ -114,7 +114,7 @@
 				</button>
 			</div>
 			<textarea readonly value={output} class="code-area out" spellcheck="false"></textarea>
-			<p class="text-xs text-muted">{formatFileSize(output.length)} characters</p>
+			<p class="text-xs text-muted">{output.length.toLocaleString()} characters</p>
 		</div>
 	{/if}
 

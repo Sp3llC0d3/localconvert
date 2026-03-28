@@ -10,6 +10,7 @@
 	let processing = $state(false);
 	let error = $state('');
 	let resultBlob = $state<Blob | null>(null);
+	let previewUrl = $state('');
 	let beforeUrl = $state('');
 	let afterUrl = $state('');
 
@@ -30,13 +31,16 @@
 	let rectAtDragStart = $state<BlurRect>({ x: 0, y: 0, width: 0, height: 0 });
 
 	$effect(() => {
-		if (beforeUrl) { URL.revokeObjectURL(beforeUrl); beforeUrl = ''; }
-		if (afterUrl) { URL.revokeObjectURL(afterUrl); afterUrl = ''; }
+		if (previewUrl) URL.revokeObjectURL(previewUrl);
+		if (beforeUrl) URL.revokeObjectURL(beforeUrl);
+		if (afterUrl) URL.revokeObjectURL(afterUrl);
+		previewUrl = ''; beforeUrl = ''; afterUrl = '';
 		if (files.length === 0) {
 			imgEl = null;
 			resultBlob = null;
 			return;
 		}
+		previewUrl = URL.createObjectURL(files[0]);
 		loadImage(files[0]).then((img) => {
 			imgEl = img;
 			resultBlob = null;
@@ -196,7 +200,7 @@
 				role="application"
 				aria-label="Draw rectangle to blur"
 			>
-				<img src={URL.createObjectURL(files[0])} alt="Source" class="preview-img" draggable="false" />
+				<img src={previewUrl} alt="Source" class="preview-img" draggable="false" />
 
 				<!-- Selection overlay -->
 				<div class="blur-selection" style="left: {dRect.x}px; top: {dRect.y}px; width: {dRect.w}px; height: {dRect.h}px;">
