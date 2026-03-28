@@ -485,7 +485,7 @@
 			"metadata_desc": "Titel, Autor und andere PDF-Eigenschaften anzeigen und bearbeiten",
 			"crop_name": "PDF zuschneiden",
 			"crop_desc": "Ränder von PDF-Seiten abschneiden",
-			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_name": "PDF in PowerPoint",
 			"pdf_to_ppt_desc": "Jede PDF-Seite in eine Präsentationsfolie umwandeln",
 			"sign_name": "PDF unterschreiben",
 			"sign_desc": "Unterschrift zeichnen, eintippen oder hochladen",

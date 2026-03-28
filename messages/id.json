@@ -485,7 +485,7 @@
 			"metadata_desc": "Lihat dan edit judul, penulis, dan properti PDF lainnya",
 			"crop_name": "Potong PDF",
 			"crop_desc": "Pangkas margin dari halaman PDF",
-			"pdf_to_ppt_name": "PDF → PowerPoint",
+			"pdf_to_ppt_name": "PDF ke PowerPoint",
 			"pdf_to_ppt_desc": "Ubah setiap halaman PDF menjadi slide presentasi",
 			"sign_name": "Tanda Tangani PDF",
 			"sign_desc": "Gambar, ketik, atau unggah tanda tangan",
