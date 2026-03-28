@@ -2,8 +2,8 @@
 	import { onMount } from "svelte";
 	import { goto, beforeNavigate, afterNavigate } from "$app/navigation";
 
-	import { PUB_PLAUSIBLE_URL, PUB_HOSTNAME } from "$env/static/public";
-	import { DISABLE_ALL_EXTERNAL_REQUESTS, VERT_NAME } from "$lib/util/consts.js";
+	import { PUB_HOSTNAME } from "$env/static/public";
+	import { VERT_NAME } from "$lib/util/consts.js";
 	import { browser } from "$app/environment";
 	import * as Layout from "$lib/components/layout";
 	import * as Navbar from "$lib/components/layout/Navbar";
@@ -25,8 +25,6 @@
 	import { log } from "$lib/util/logger.js";
 
 	let { children, data } = $props();
-	let enablePlausible = $state(false);
-
 	let scrollPositions = new Map<string, number>();
 
 	beforeNavigate((nav) => {
@@ -120,16 +118,6 @@
 		};
 	});
 
-	$effect(() => {
-		enablePlausible =
-			!!PUB_PLAUSIBLE_URL &&
-			Settings.instance.settings.plausible &&
-			!DISABLE_ALL_EXTERNAL_REQUESTS;
-		if (!enablePlausible && browser) {
-			history.pushState = History.prototype.pushState;
-		}
-	});
-	
 </script>
 
 <svelte:head>
@@ -168,13 +156,6 @@
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />
 	<link rel="search" type="application/opensearchdescription+xml" title="LocalConvert" href="/opensearch.xml" />
-	{#if enablePlausible}
-		<script
-			defer
-			data-domain={PUB_HOSTNAME || "localconvert.app"}
-			src="{PUB_PLAUSIBLE_URL}/js/script.js"
-		></script>
-	{/if}
 	{#if data.isAprilFools}
 		<style>
 			* {
