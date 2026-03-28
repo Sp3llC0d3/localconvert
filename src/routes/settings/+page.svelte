@@ -2,12 +2,10 @@
 	import { browser } from "$app/environment";
 	import { log } from "$lib/util/logger";
 	import * as Settings from "$lib/sections/settings/index.svelte";
-	import { PUB_PLAUSIBLE_URL } from "$env/static/public";
 	import { SettingsIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
 	import { m } from "$lib/paraglide/messages";
 	import { ToastManager } from "$lib/util/toast.svelte";
-	import { DISABLE_ALL_EXTERNAL_REQUESTS } from "$lib/util/consts";
 
 	let settings = $state(Settings.Settings.instance.settings);
 
@@ -64,16 +62,10 @@
 	>
 		<div class="flex flex-col gap-4 flex-1">
 			<Settings.Conversion bind:settings />
-			{#if PUB_PLAUSIBLE_URL}
-				<Settings.Privacy bind:settings />
-			{/if}
 		</div>
 
 		<div class="flex flex-col gap-4 flex-1">
 			<Settings.Appearance />
-			{#if PUB_PLAUSIBLE_URL && !DISABLE_ALL_EXTERNAL_REQUESTS}
-				<Settings.Privacy bind:settings />
-			{/if}
 		</div>
 	</div>
 </div>

@@ -3,12 +3,14 @@ import type { Converter } from "./converter.svelte";
 import { FFmpegConverter } from "./ffmpeg.svelte";
 import { PandocConverter } from "./pandoc.svelte";
 import { MagickConverter } from "./magick.svelte";
+import { PdfConverter } from "./pdf.svelte";
 
 const getConverters = (): Converter[] => {
 	const converters: Converter[] = [
 		new MagickConverter(),
 		new FFmpegConverter(),
 		new PandocConverter(),
+		new PdfConverter(),
 	];
 
 	return converters;
@@ -46,6 +48,10 @@ categories.image.formats =
 	converters
 		.find((c) => c.name === "imagemagick")
 		?.formatStrings((f) => f.toSupported) || [];
+// Add PDF as an image output format (Image → PDF via pdf converter)
+if (!categories.image.formats.includes(".pdf")) {
+	categories.image.formats.push(".pdf");
+}
 categories.doc.formats =
 	converters
 		.find((c) => c.name === "pandoc")

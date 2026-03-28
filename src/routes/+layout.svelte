@@ -2,7 +2,6 @@
 	import { onMount } from "svelte";
 	import { goto, beforeNavigate, afterNavigate } from "$app/navigation";
 
-	import { PUB_HOSTNAME } from "$env/static/public";
 	import { VERT_NAME } from "$lib/util/consts.js";
 	import { browser } from "$app/environment";
 	import * as Layout from "$lib/components/layout";

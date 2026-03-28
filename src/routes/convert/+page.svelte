@@ -48,7 +48,7 @@
 
 	let processedFileIds = $state(new Set<string>());
 
-	// Auto-remove PDF files and show a redirect toast (PDFs can't be converted here)
+	// Redirect files with no available converter (e.g. unsupported formats) to relevant tools page
 	const pdfRemovedIds = new Set<string>();
 	$effect(() => {
 		const pdfs = files.files.filter(
