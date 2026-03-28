@@ -57,7 +57,9 @@
 
 	<!-- Before (clipped) -->
 	<div class="ba-before" style="width: {sliderPos}%;">
-		<img src={beforeSrc} alt="{alt} — before" class="ba-img" draggable="false" />
+		<img src={beforeSrc} alt="{alt} — before" class="ba-img ba-before-img" draggable="false"
+			style="width: {containerEl ? containerEl.offsetWidth : 0}px;"
+		/>
 	</div>
 
 	<!-- Slider line + handle -->
@@ -101,14 +103,11 @@
 		overflow: hidden;
 	}
 
-	.ba-before .ba-img {
+	.ba-before-img {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: auto;
-		min-width: 100%;
-		height: 100%;
-		object-fit: cover;
+		height: auto;
 	}
 
 	.ba-line {

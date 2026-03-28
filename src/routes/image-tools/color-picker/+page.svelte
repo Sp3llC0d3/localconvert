@@ -14,7 +14,7 @@
 	let cursorColor = $state('');
 	let cursorPos = $state({ x: 0, y: 0 });
 	let showCursor = $state(false);
-	let copied = $state(false);
+	let copiedLabel = $state('');
 
 	$effect(() => {
 		if (files.length === 0) {
@@ -90,16 +90,16 @@
 			rgb: `rgb(${c.r}, ${c.g}, ${c.b})`,
 			hsl: toHsl(c.r, c.g, c.b),
 		};
-		copied = false;
+		copiedLabel = '';
 	}
 
 	function onLeave() { showCursor = false; }
 
-	async function copyColor(text: string) {
+	async function copyColor(label: string, text: string) {
 		try {
 			await navigator.clipboard.writeText(text);
-			copied = true;
-			setTimeout(() => copied = false, 1500);
+			copiedLabel = label;
+			setTimeout(() => copiedLabel = '', 1500);
 		} catch { /* clipboard API may fail in insecure context */ }
 	}
 </script>
@@ -151,8 +151,8 @@
 					<div class="color-row">
 						<span class="color-label">{cv.label}</span>
 						<code class="color-code">{cv.value}</code>
-						<button class="copy-btn" onclick={() => copyColor(cv.value)} aria-label="Copy {cv.label}">
-							{#if copied}
+						<button class="copy-btn" onclick={() => copyColor(cv.label, cv.value)} aria-label="Copy {cv.label}">
+							{#if copiedLabel === cv.label}
 								<CheckIcon size={14} />
 							{:else}
 								<CopyIcon size={14} />

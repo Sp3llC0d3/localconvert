@@ -22,6 +22,8 @@
 	let rafId: number | null = null;
 
 	$effect(() => {
+		if (beforeUrl) { URL.revokeObjectURL(beforeUrl); beforeUrl = ''; }
+		if (afterUrl) { URL.revokeObjectURL(afterUrl); afterUrl = ''; }
 		if (files.length === 0) {
 			imgEl = null;
 			resultBlob = null;
