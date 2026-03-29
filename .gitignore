@@ -1,5 +1,9 @@
 node_modules
 
+# Claude Code context (local only)
+CLAUDE_CODE_CONTEXT.md
+CLAUDE_CODE_PDF_TOOLS.md
+
 # Output
 .output
 .vercel
