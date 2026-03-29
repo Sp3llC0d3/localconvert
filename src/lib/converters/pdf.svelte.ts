@@ -1,5 +1,5 @@
 import { Converter, FormatInfo } from "./converter.svelte";
-import type { VertFile } from "$lib/types";
+import { VertFile } from "$lib/types";
 
 /**
  * PDF converter — handles PDF ↔ Image conversions.
@@ -50,7 +50,7 @@ export class PdfConverter extends Converter {
 		if (pages.length === 1) {
 			// Single page → return as image file
 			const outName = input.file.name.replace(/\.pdf$/i, toExt);
-			return new (await import("$lib/types")).VertFile(
+			return new VertFile(
 				new File([pages[0].blob], outName, { type: pages[0].blob.type }),
 				toExt,
 			);
@@ -63,7 +63,7 @@ export class PdfConverter extends Converter {
 		);
 		const zipBlob = await createZip(imageFiles);
 		const zipName = input.file.name.replace(/\.pdf$/i, ".zip");
-		return new (await import("$lib/types")).VertFile(
+		return new VertFile(
 			new File([zipBlob], zipName),
 			".zip",
 		);
@@ -73,7 +73,7 @@ export class PdfConverter extends Converter {
 		const { imagesToPdf } = await import("$lib/pdf/images-to-pdf");
 		const pdfBytes = await imagesToPdf([input.file]);
 		const outName = input.file.name.replace(/\.[^.]+$/, ".pdf");
-		return new (await import("$lib/types")).VertFile(
+		return new VertFile(
 			new File([pdfBytes], outName, { type: "application/pdf" }),
 			".pdf",
 		);
