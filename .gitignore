@@ -1,8 +1,9 @@
 node_modules
 
-# Claude Code context (local only)
+# Local-only docs (never push)
 CLAUDE_CODE_CONTEXT.md
 CLAUDE_CODE_PDF_TOOLS.md
+PRODUCT_HUNT.md
 
 # Output
 .output
