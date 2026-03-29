@@ -998,5 +998,11 @@
 			"a5": "Geen installatie nodig. LocalConvert werkt direct in elke moderne browser. U kunt het ook als PWA installeren vanuit de adresbalk voor een app-achtige ervaring.",
 			"label": "Vragen"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Gereedschap zoeken...",
+		"no_results": "Geen gereedschap gevonden",
+		"converter_name": "Bestandsconverter",
+		"converter_desc": "Converteer 200+ formaten"
 	}
 }

@@ -54,6 +54,12 @@
 			"video_server_processing": "All conversions happen locally on your device."
 		}
 	},
+	"command_palette": {
+		"placeholder": "Search tools...",
+		"no_results": "No tools found",
+		"converter_name": "File Converter",
+		"converter_desc": "Convert 200+ formats"
+	},
 	"convert": {
 		"archive_file": {
 			"extract": "Extract archive",

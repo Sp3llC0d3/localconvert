@@ -998,5 +998,11 @@
 			"a5": "Ingen installation behovs. LocalConvert fungerar direkt i alla moderna webblasare. Du kan aven installera det som en PWA fran adressfialtet for en appliknande upplevelse.",
 			"label": "Fragor"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Sök verktyg...",
+		"no_results": "Inga verktyg hittades",
+		"converter_name": "Filkonverterare",
+		"converter_desc": "Konvertera 200+ format"
 	}
 }

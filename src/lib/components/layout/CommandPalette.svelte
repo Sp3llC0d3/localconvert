@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { SearchIcon, FileTextIcon, ImageIcon, CodeIcon, RefreshCw } from 'lucide-svelte';
+	import { SearchIcon } from 'lucide-svelte';
 	import { fade } from '$lib/util/animation';
 	import { commandPalette } from '$lib/store/commandPalette.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let query = $state('');
 	let selectedIndex = $state(0);
@@ -16,55 +17,58 @@
 		}
 	});
 
-	const categoryIcons = { pdf: FileTextIcon, image: ImageIcon, dev: CodeIcon, convert: RefreshCw };
 	const categoryColors = { pdf: 'var(--accent-green)', image: 'var(--accent-blue)', dev: 'var(--accent-purple)', convert: 'var(--accent)' };
 
-	const allTools: { name: string; desc: string; href: string; category: 'pdf' | 'image' | 'dev' | 'convert' }[] = [
-		// PDF Tools
-		{ name: 'Merge PDF', desc: 'Combine multiple PDFs', href: '/pdf-tools/merge/', category: 'pdf' },
-		{ name: 'Split PDF', desc: 'Extract pages from a PDF', href: '/pdf-tools/split/', category: 'pdf' },
-		{ name: 'Rotate PDF', desc: 'Rotate PDF pages', href: '/pdf-tools/rotate/', category: 'pdf' },
-		{ name: 'Organize Pages', desc: 'Reorder PDF pages', href: '/pdf-tools/organize/', category: 'pdf' },
-		{ name: 'Compress PDF', desc: 'Reduce PDF file size', href: '/pdf-tools/compress/', category: 'pdf' },
-		{ name: 'Watermark PDF', desc: 'Add text watermark', href: '/pdf-tools/watermark/', category: 'pdf' },
-		{ name: 'Page Numbers', desc: 'Add page numbers to PDF', href: '/pdf-tools/page-numbers/', category: 'pdf' },
-		{ name: 'Edit Metadata', desc: 'Edit PDF properties', href: '/pdf-tools/metadata/', category: 'pdf' },
-		{ name: 'Crop PDF', desc: 'Trim PDF margins', href: '/pdf-tools/crop/', category: 'pdf' },
-		{ name: 'Sign PDF', desc: 'Add signature to PDF', href: '/pdf-tools/sign/', category: 'pdf' },
-		{ name: 'Edit PDF', desc: 'Add text to PDF pages', href: '/pdf-tools/edit/', category: 'pdf' },
-		{ name: 'Password Protect', desc: 'Encrypt PDF with password', href: '/pdf-tools/password/', category: 'pdf' },
-		{ name: 'Unlock PDF', desc: 'Remove PDF password', href: '/pdf-tools/unlock/', category: 'pdf' },
-		{ name: 'Images to PDF', desc: 'Convert images to PDF', href: '/pdf-tools/images-to-pdf/', category: 'pdf' },
-		{ name: 'PDF to Images', desc: 'Extract pages as images', href: '/pdf-tools/pdf-to-images/', category: 'pdf' },
-		{ name: 'PDF to PowerPoint', desc: 'Convert PDF to slides', href: '/pdf-tools/pdf-to-ppt/', category: 'pdf' },
-		{ name: 'PDF to Text', desc: 'Extract text from PDF', href: '/pdf-tools/pdf-to-text/', category: 'pdf' },
-		{ name: 'Grayscale PDF', desc: 'Convert PDF to grayscale', href: '/pdf-tools/grayscale/', category: 'pdf' },
-		// Image Tools
-		{ name: 'Rotate Image', desc: 'Rotate by 90/180/270', href: '/image-tools/rotate/', category: 'image' },
-		{ name: 'Crop Image', desc: 'Crop with handles or circle', href: '/image-tools/crop/', category: 'image' },
-		{ name: 'Watermark Image', desc: 'Add text watermark', href: '/image-tools/watermark/', category: 'image' },
-		{ name: 'Meme Generator', desc: 'Add meme text to image', href: '/image-tools/meme/', category: 'image' },
-		{ name: 'Batch Processing', desc: 'Process multiple images', href: '/image-tools/batch/', category: 'image' },
-		{ name: 'QR Code Generator', desc: 'Generate QR codes', href: '/image-tools/qr/', category: 'image' },
-		{ name: 'Color Picker', desc: 'Pick colors from image', href: '/image-tools/color-picker/', category: 'image' },
-		{ name: 'Blur Region', desc: 'Blur part of an image', href: '/image-tools/blur/', category: 'image' },
-		{ name: 'Image Filters', desc: 'Brightness, contrast, sepia', href: '/image-tools/filters/', category: 'image' },
-		{ name: 'Video to GIF', desc: 'Convert video to GIF', href: '/image-tools/video-to-gif/', category: 'image' },
-		// Dev Tools
-		{ name: 'JSON Formatter', desc: 'Format and validate JSON', href: '/dev-tools/json/', category: 'dev' },
-		{ name: 'Hash Generator', desc: 'SHA-256, SHA-1, SHA-512', href: '/dev-tools/hash/', category: 'dev' },
-		{ name: 'Base64 Encode/Decode', desc: 'Encode or decode Base64', href: '/dev-tools/base64/', category: 'dev' },
-		{ name: 'Markdown Preview', desc: 'Live markdown to HTML', href: '/dev-tools/markdown/', category: 'dev' },
-		{ name: 'Text Diff', desc: 'Compare two texts', href: '/dev-tools/diff/', category: 'dev' },
-		{ name: 'Word Counter', desc: 'Words, chars, reading time', href: '/dev-tools/word-count/', category: 'dev' },
-		{ name: 'URL Encode/Decode', desc: 'Encode or decode URLs', href: '/dev-tools/url-encode/', category: 'dev' },
-		{ name: 'CSS Minifier', desc: 'Minify CSS code', href: '/dev-tools/css-minify/', category: 'dev' },
-		// Pages
-		{ name: 'File Converter', desc: 'Convert 200+ formats', href: '/convert', category: 'convert' },
-		{ name: 'PDF Tools', desc: '18 PDF tools', href: '/pdf-tools/', category: 'pdf' },
-		{ name: 'Image Tools', desc: '10 image tools', href: '/image-tools/', category: 'image' },
-		{ name: 'Developer Tools', desc: '8 dev tools', href: '/dev-tools/', category: 'dev' },
-	];
+	// Build tool list from i18n — reactive so it updates on language change
+	const allTools = $derived.by(() => {
+		const tools: { name: string; desc: string; href: string; category: 'pdf' | 'image' | 'dev' | 'convert' }[] = [
+			// PDF Tools
+			{ name: m['pdf_tools.tools.merge_name'](), desc: m['pdf_tools.tools.merge_desc'](), href: '/pdf-tools/merge/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.split_name'](), desc: m['pdf_tools.tools.split_desc'](), href: '/pdf-tools/split/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.rotate_name'](), desc: m['pdf_tools.tools.rotate_desc'](), href: '/pdf-tools/rotate/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.organize_name'](), desc: m['pdf_tools.tools.organize_desc'](), href: '/pdf-tools/organize/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc'](), href: '/pdf-tools/compress/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc'](), href: '/pdf-tools/watermark/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.page_numbers_name'](), desc: m['pdf_tools.tools.page_numbers_desc'](), href: '/pdf-tools/page-numbers/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.metadata_name'](), desc: m['pdf_tools.tools.metadata_desc'](), href: '/pdf-tools/metadata/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.crop_name'](), desc: m['pdf_tools.tools.crop_desc'](), href: '/pdf-tools/crop/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.sign_name'](), desc: m['pdf_tools.tools.sign_desc'](), href: '/pdf-tools/sign/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.edit_name'](), desc: m['pdf_tools.tools.edit_desc'](), href: '/pdf-tools/edit/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.password_name'](), desc: m['pdf_tools.tools.password_desc'](), href: '/pdf-tools/password/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.unlock_name'](), desc: m['pdf_tools.tools.unlock_desc'](), href: '/pdf-tools/unlock/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc'](), href: '/pdf-tools/images-to-pdf/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc'](), href: '/pdf-tools/pdf-to-images/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc'](), href: '/pdf-tools/pdf-to-ppt/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc'](), href: '/pdf-tools/pdf-to-text/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc'](), href: '/pdf-tools/grayscale/', category: 'pdf' },
+			// Image Tools
+			{ name: m['image_tools.tools.rotate_name'](), desc: m['image_tools.tools.rotate_desc'](), href: '/image-tools/rotate/', category: 'image' },
+			{ name: m['image_tools.tools.crop_name'](), desc: m['image_tools.tools.crop_desc'](), href: '/image-tools/crop/', category: 'image' },
+			{ name: m['image_tools.tools.watermark_name'](), desc: m['image_tools.tools.watermark_desc'](), href: '/image-tools/watermark/', category: 'image' },
+			{ name: m['image_tools.tools.meme_name'](), desc: m['image_tools.tools.meme_desc'](), href: '/image-tools/meme/', category: 'image' },
+			{ name: m['image_tools.tools.batch_name'](), desc: m['image_tools.tools.batch_desc'](), href: '/image-tools/batch/', category: 'image' },
+			{ name: m['image_tools.tools.qr_name'](), desc: m['image_tools.tools.qr_desc'](), href: '/image-tools/qr/', category: 'image' },
+			{ name: m['image_tools.tools.color_picker_name'](), desc: m['image_tools.tools.color_picker_desc'](), href: '/image-tools/color-picker/', category: 'image' },
+			{ name: m['image_tools.tools.blur_name'](), desc: m['image_tools.tools.blur_desc'](), href: '/image-tools/blur/', category: 'image' },
+			{ name: m['image_tools.tools.filters_name'](), desc: m['image_tools.tools.filters_desc'](), href: '/image-tools/filters/', category: 'image' },
+			{ name: m['image_tools.tools.video_to_gif_name'](), desc: m['image_tools.tools.video_to_gif_desc'](), href: '/image-tools/video-to-gif/', category: 'image' },
+			// Dev Tools
+			{ name: m['dev_tools.tools.json_name'](), desc: m['dev_tools.tools.json_desc'](), href: '/dev-tools/json/', category: 'dev' },
+			{ name: m['dev_tools.tools.hash_name'](), desc: m['dev_tools.tools.hash_desc'](), href: '/dev-tools/hash/', category: 'dev' },
+			{ name: m['dev_tools.tools.base64_name'](), desc: m['dev_tools.tools.base64_desc'](), href: '/dev-tools/base64/', category: 'dev' },
+			{ name: m['dev_tools.tools.markdown_name'](), desc: m['dev_tools.tools.markdown_desc'](), href: '/dev-tools/markdown/', category: 'dev' },
+			{ name: m['dev_tools.tools.diff_name'](), desc: m['dev_tools.tools.diff_desc'](), href: '/dev-tools/diff/', category: 'dev' },
+			{ name: m['dev_tools.tools.word_count_name'](), desc: m['dev_tools.tools.word_count_desc'](), href: '/dev-tools/word-count/', category: 'dev' },
+			{ name: m['dev_tools.tools.url_encode_name'](), desc: m['dev_tools.tools.url_encode_desc'](), href: '/dev-tools/url-encode/', category: 'dev' },
+			{ name: m['dev_tools.tools.css_minify_name'](), desc: m['dev_tools.tools.css_minify_desc'](), href: '/dev-tools/css-minify/', category: 'dev' },
+			// Pages
+			{ name: m['command_palette.converter_name'](), desc: m['command_palette.converter_desc'](), href: '/convert', category: 'convert' },
+			{ name: m['footer.pdf_tools_count'](), desc: m['pdf_tools.badge'](), href: '/pdf-tools/', category: 'pdf' },
+			{ name: m['footer.image_tools_count'](), desc: m['image_tools.badge'](), href: '/image-tools/', category: 'image' },
+			{ name: m['footer.dev_tools_count'](), desc: m['dev_tools.badge'](), href: '/dev-tools/', category: 'dev' },
+		];
+		return tools;
+	});
 
 	const filtered = $derived(
 		query.trim() === ''
@@ -105,7 +109,7 @@
 	></div>
 
 	<!-- Palette -->
-	<div class="palette" role="dialog" aria-label="Search tools" transition:fade={{ duration: 120 }}>
+	<div class="palette" role="dialog" aria-label={m['command_palette.placeholder']()} transition:fade={{ duration: 120 }}>
 		<div class="palette-input-wrap">
 			<SearchIcon size={16} class="palette-input-icon" />
 			<input
@@ -113,7 +117,7 @@
 				bind:value={query}
 				onkeydown={onKeydown}
 				type="text"
-				placeholder="Search tools..."
+				placeholder={m['command_palette.placeholder']()}
 				class="palette-input"
 				autocomplete="off"
 				spellcheck="false"
@@ -125,7 +129,6 @@
 
 		<div class="palette-results">
 			{#each filtered.slice(0, 12) as tool, i}
-				{@const Icon = categoryIcons[tool.category]}
 				<button
 					class="palette-item"
 					class:palette-item--active={i === selectedIndex}
@@ -140,7 +143,7 @@
 				</button>
 			{/each}
 			{#if filtered.length === 0}
-				<div class="palette-empty">No tools found</div>
+				<div class="palette-empty">{m['command_palette.no_results']()}</div>
 			{/if}
 		</div>
 	</div>

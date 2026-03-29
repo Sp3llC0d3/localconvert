@@ -998,5 +998,11 @@
 			"format": "Formatiraj i transformiraj",
 			"analyze": "Analiziraj"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Pretraži alate...",
+		"no_results": "Alati nisu pronađeni",
+		"converter_name": "Pretvarač datoteka",
+		"converter_desc": "Pretvori 200+ formata"
 	}
 }

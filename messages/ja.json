@@ -998,5 +998,11 @@
 			"format": "フォーマットと変換",
 			"analyze": "分析"
 		}
+	},
+	"command_palette": {
+		"placeholder": "ツールを検索...",
+		"no_results": "ツールが見つかりません",
+		"converter_name": "ファイルコンバーター",
+		"converter_desc": "200以上の形式を変換"
 	}
 }

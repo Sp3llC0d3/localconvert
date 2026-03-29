@@ -998,5 +998,11 @@
 			"a5": "Không cần cài đặt. LocalConvert hoạt động trực tiếp trong bất kỳ trình duyệt hiện đại nào. Bạn cũng có thể cài đặt dưới dạng PWA từ thanh địa chỉ để có trải nghiệm giống ứng dụng.",
 			"label": "Câu hỏi"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Tìm kiếm công cụ...",
+		"no_results": "Không tìm thấy công cụ",
+		"converter_name": "Trình chuyển đổi tệp",
+		"converter_desc": "Chuyển đổi hơn 200 định dạng"
 	}
 }

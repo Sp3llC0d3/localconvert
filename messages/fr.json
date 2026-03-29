@@ -998,5 +998,11 @@
 			"format": "Formater et transformer",
 			"analyze": "Analyser"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Rechercher des outils...",
+		"no_results": "Aucun outil trouvé",
+		"converter_name": "Convertisseur de fichiers",
+		"converter_desc": "Convertir plus de 200 formats"
 	}
 }

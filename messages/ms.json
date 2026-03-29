@@ -998,5 +998,11 @@
 			"a5": "Tiada pemasangan diperlukan. LocalConvert berfungsi terus dalam mana-mana pelayar moden. Anda juga boleh memasangnya sebagai PWA dari bar alamat untuk pengalaman seperti aplikasi.",
 			"label": "Soalan"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Cari alat...",
+		"no_results": "Tiada alat ditemui",
+		"converter_name": "Penukar Fail",
+		"converter_desc": "Tukar 200+ format"
 	}
 }

@@ -998,5 +998,11 @@
 			"format": "Biçimlendir ve Dönüştür",
 			"analyze": "Analiz Et"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Araç ara...",
+		"no_results": "Araç bulunamadı",
+		"converter_name": "Dosya Dönüştürücü",
+		"converter_desc": "200+ format dönüştür"
 	}
 }

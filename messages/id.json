@@ -998,5 +998,11 @@
 			"format": "Format & Transformasi",
 			"analyze": "Analisis"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Cari alat...",
+		"no_results": "Tidak ada alat ditemukan",
+		"converter_name": "Konverter File",
+		"converter_desc": "Konversi 200+ format"
 	}
 }

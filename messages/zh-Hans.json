@@ -998,5 +998,11 @@
 			"format": "格式化与转换",
 			"analyze": "分析"
 		}
+	},
+	"command_palette": {
+		"placeholder": "搜索工具...",
+		"no_results": "未找到工具",
+		"converter_name": "文件转换器",
+		"converter_desc": "转换 200+ 种格式"
 	}
 }

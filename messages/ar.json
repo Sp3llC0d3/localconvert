@@ -998,5 +998,11 @@
 			"format": "تنسيق وتحويل",
 			"analyze": "تحليل"
 		}
+	},
+	"command_palette": {
+		"placeholder": "البحث عن الأدوات...",
+		"no_results": "لم يتم العثور على أدوات",
+		"converter_name": "محول الملفات",
+		"converter_desc": "تحويل أكثر من 200 تنسيق"
 	}
 }

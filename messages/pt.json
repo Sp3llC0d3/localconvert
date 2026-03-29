@@ -998,5 +998,11 @@
 			"a5": "Nenhuma instalacao necessaria. O LocalConvert funciona diretamente em qualquer navegador moderno. Tambem pode instala-lo como PWA a partir da barra de enderecos para uma experiencia semelhante a uma aplicacao.",
 			"label": "Questoes"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Pesquisar ferramentas...",
+		"no_results": "Nenhuma ferramenta encontrada",
+		"converter_name": "Conversor de ficheiros",
+		"converter_desc": "Converta mais de 200 formatos"
 	}
 }

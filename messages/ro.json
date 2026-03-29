@@ -998,5 +998,11 @@
 			"a5": "Nu este necesara nicio instalare. LocalConvert functioneaza direct in orice browser modern. Il puteti instala si ca PWA din bara de adrese pentru o experienta similara unei aplicatii.",
 			"label": "Intrebari"
 		}
+	},
+	"command_palette": {
+		"placeholder": "Caută instrumente...",
+		"no_results": "Nu au fost găsite instrumente",
+		"converter_name": "Convertor de fișiere",
+		"converter_desc": "Convertește peste 200 de formate"
 	}
 }
