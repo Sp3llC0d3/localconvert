@@ -5,7 +5,7 @@
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
 	import { rotatePdf } from '$lib/pdf/rotate';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { RotateCwIcon, XIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -42,7 +42,7 @@
 		try {
 			const indices = applyTo === 'selected' ? [...selectedPages] : undefined;
 			const bytes = await rotatePdf(files[0], rotation, indices);
-			downloadPdf(bytes, files[0].name.replace(/\.pdf$/i, `_rotated${rotation}.pdf`));
+			downloadPdf(bytes, getOutputName(files[0].name, `rotated${rotation}`, 'pdf'));
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : m['tool_pages.rotate_pdf.err_fail']();
 		}

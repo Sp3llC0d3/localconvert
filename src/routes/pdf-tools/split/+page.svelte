@@ -5,7 +5,7 @@
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
 	import { splitPdf, splitAllPages } from '$lib/pdf/split';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf, downloadBlob, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { ScissorsIcon, XIcon, DownloadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -46,8 +46,7 @@
 	async function downloadSinglePage(pageIndex: number) {
 		try {
 			const bytes = await splitPdf(files[0], [pageIndex]);
-			const baseName = files[0].name.replace(/\.pdf$/i, '');
-			downloadPdf(bytes, `${baseName}_page${pageIndex + 1}.pdf`);
+			downloadPdf(bytes, getOutputName(files[0].name, `page${pageIndex + 1}`, 'pdf'));
 		} catch {
 			error = m['tool_pages.split.err_extract']();
 		}
@@ -66,7 +65,7 @@
 					const { createZip } = await import('$lib/util/zip');
 					const fileObjs = pages.map(p => new File([p.bytes], p.name));
 					const zip = await createZip(fileObjs);
-					downloadBlob(new Blob([zip], { type: 'application/zip' }), files[0].name.replace(/\.pdf$/i, '_pages.zip'));
+					downloadBlob(new Blob([zip], { type: 'application/zip' }), getOutputName(files[0].name, 'pages', 'zip'));
 				}
 			} else {
 				if (selectedPages.size === 0) { error = m['tool_pages.split.err_select'](); processing = false; return; }

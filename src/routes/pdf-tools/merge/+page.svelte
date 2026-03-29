@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { mergePdfs } from '$lib/pdf/merge';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { XIcon, GitMergeIcon, GripVerticalIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -45,8 +45,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		const name = files[0]?.name.replace(/\.pdf$/i, '') ?? 'merged';
-		downloadPdf(resultBytes, `${name}_merged.pdf`);
+		downloadPdf(resultBytes, getOutputName(files[0]?.name ?? 'merged', 'merged', 'pdf'));
 	}
 </script>
 

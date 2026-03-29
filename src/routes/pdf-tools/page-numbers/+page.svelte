@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { addPageNumbers, type NumberPosition, type NumberFormat } from '$lib/pdf/page-numbers';
 	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -180,7 +180,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_numbered.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'numbered', 'pdf'));
 	}
 </script>
 

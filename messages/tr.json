@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Ayarlar",
+		"subtitle": "Senin atölyen, senin kuralların.",
 		"errors": {
 			"save_failed": "Ayarlar kaydedilirken hata oluştu!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Dönüştürme",
 			"advanced_settings": "Gelişmiş ayarlar",
 			"filename_format": "Dosya adı formatı",
-			"filename_description": "Bu ayar, <b>dosya uzantısını etkilemeden</b> indirilen dosyanın adını belirleyecektir. Aşağıdaki şablonları formata ekleyebilirsiniz, bunlar ilgili bilgilerle değiştirilecektir: orijinal dosya adı için <b>%name%</b>, orijinal dosya uzantısı için <b>%extension%</b> ve dosyanın dönüştürüldüğü tarihin tarih için <b>%date%</b>.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Çıktı dosya adı düzenini ayarlayın. Uzantı otomatik olarak eklenir.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Varsayılan dönüştürme formatı",
 			"default_format_enable": "Etkinleştir",
 			"default_format_disable": "Devre dışı bırak",
@@ -175,7 +176,11 @@
 			"quality_video": "Bu, dönüştürülen videoların varsayılan çıktı kalitesini değiştirir. Yüksek değerler, uzun dönüştürme sürelerine ve büyük dosya boyutuna neden olabilir.",
 			"quality_audio": "Ses (kbps)",
 			"quality_images": "Görsel (%)",
-			"rate": "Örnekleme oranı (Hz)"
+			"rate": "Örnekleme oranı (Hz)",
+			"filename_var_name": "Dosya adı",
+			"filename_var_date": "Tarih",
+			"filename_prefix": "Ön ek",
+			"filename_preview": "Önizleme:"
 		},
 		"vertd": {
 			"title": "Video dönüştürme",

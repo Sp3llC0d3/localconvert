@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Setari",
+		"subtitle": "Atelierul tău, regulile tale.",
 		"errors": {
 			"save_failed": "Salvarea setarilor a esuat!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Conversie",
 			"advanced_settings": "Setari avansate",
 			"filename_format": "Formatul numelui fisierului",
-			"filename_description": "Aceasta va determina numele fisierului la salvare, <b>fara a include extensia fisierului.</b> Puteti utiliza urmatoarele sabloane in format, care vor fi inlocuite cu informatiile relevante: <b>%name%</b> pentru numele original al fisierului, <b>%extension%</b> pentru extensia originala a fisierului si <b>%date%</b> pentru data la care fisierul a fost convertit.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Setați modelul numelui fișierului de ieșire. Extensia este adăugată automat.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Formatul implicit de conversie",
 			"default_format_enable": "Activati",
 			"default_format_disable": "Dezactivati",
@@ -175,7 +176,11 @@
 			"quality_video": "Aceasta schimba calitatea implicita a fisierelor video convertite. Valorile mai mari pot duce la timpi de conversie mai lungi si dimensiuni mai mari ale fisierelor.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Imagine (%)",
-			"rate": "Rata de esantionare (Hz)"
+			"rate": "Rata de esantionare (Hz)",
+			"filename_var_name": "Numele fișierului",
+			"filename_var_date": "Data",
+			"filename_prefix": "Prefix",
+			"filename_preview": "Previzualizare:"
 		},
 		"vertd": {
 			"title": "Conversie video",

@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { editPdf, type PdfEdit, type TextEdit } from '$lib/pdf/edit';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { EditIcon, Trash2Icon, Undo2Icon, Redo2Icon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { createHistory } from '$lib/util/history.svelte';
@@ -270,7 +270,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_edited.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'edited', 'pdf'));
 	}
 </script>
 

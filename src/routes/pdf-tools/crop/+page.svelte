@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { cropPdf, type PdfCropBox } from '$lib/pdf/crop';
 	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -221,7 +221,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_cropped.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'cropped', 'pdf'));
 	}
 </script>
 

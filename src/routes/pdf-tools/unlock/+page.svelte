@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { unlockPdf } from '$lib/pdf/unlock';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockOpenIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
@@ -32,7 +32,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_unlocked.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'unlocked', 'pdf'));
 	}
 </script>
 

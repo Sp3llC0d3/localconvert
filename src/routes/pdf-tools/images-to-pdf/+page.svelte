@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { ImageIcon, XIcon, GripVerticalIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -54,7 +54,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, 'images.pdf');
+		downloadPdf(resultBytes, getOutputName('images', '', 'pdf'));
 	}
 </script>
 

@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Pengaturan",
+		"subtitle": "Bengkel Anda, aturan Anda.",
 		"errors": {
 			"save_failed": "Gagal menyimpan pengaturan!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Konversi",
 			"advanced_settings": "Pengaturan lanjutan",
 			"filename_format": "Format nama berkas",
-			"filename_description": "Ini akan menentukan nama berkas saat diunduh, <b>tidak termasuk ekstensi berkas.</b> Anda dapat menggunakan template berikut dalam format, yang akan diganti dengan informasi terkait: <b>%name%</b> untuk nama berkas asli, <b>%extension%</b> untuk ekstensi berkas asli, dan <b>%date%</b> untuk tanggal saat berkas dikonversi.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Atur pola nama file keluaran. Ekstensi ditambahkan secara otomatis.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Format konversi baku",
 			"default_format_enable": "Aktifkan",
 			"default_format_disable": "Nonaktifkan",
@@ -175,7 +176,11 @@
 			"quality_video": "Mengubah kualitas keluaran baku berkas video hasil konversi. Nilai yang lebih tinggi dapat memperpanjang waktu dan ukuran berkas.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Gambar (%)",
-			"rate": "Laju sampel (Hz)"
+			"rate": "Laju sampel (Hz)",
+			"filename_var_name": "Nama file",
+			"filename_var_date": "Tanggal",
+			"filename_prefix": "Awalan",
+			"filename_preview": "Pratinjau:"
 		},
 		"vertd": {
 			"title": "Konversi video",

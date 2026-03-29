@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Definicoes",
+		"subtitle": "A sua oficina, as suas regras.",
 		"errors": {
 			"save_failed": "Falha ao guardar as definicoes!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Conversao",
 			"advanced_settings": "Definicoes avancadas",
 			"filename_format": "Formato do nome do ficheiro",
-			"filename_description": "Isto determina o nome do ficheiro ao guardar, <b>sem incluir a extensao do ficheiro.</b> Pode utilizar os seguintes modelos no formato, que serao substituidos pela informacao relevante: <b>%name%</b> para o nome original do ficheiro, <b>%extension%</b> para a extensao original do ficheiro, e <b>%date%</b> para uma cadeia de data de quando o ficheiro foi convertido.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Defina o padrão do nome do ficheiro de saída. A extensão é adicionada automaticamente.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Formato de conversao predefinido",
 			"default_format_enable": "Ativar",
 			"default_format_disable": "Desativar",
@@ -175,7 +176,11 @@
 			"quality_video": "Isto altera a qualidade predefinida de saida dos ficheiros de video convertidos. Valores mais elevados podem resultar em tempos de conversao mais longos e ficheiros maiores.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Imagem (%)",
-			"rate": "Taxa de amostragem (Hz)"
+			"rate": "Taxa de amostragem (Hz)",
+			"filename_var_name": "Nome do ficheiro",
+			"filename_var_date": "Data",
+			"filename_prefix": "Prefixo",
+			"filename_preview": "Pré-visualização:"
 		},
 		"vertd": {
 			"title": "Conversao de video",

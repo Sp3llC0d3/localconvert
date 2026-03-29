@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Installningar",
+		"subtitle": "Din verkstad, dina regler.",
 		"errors": {
 			"save_failed": "Kunde inte spara installningar!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Konvertering",
 			"advanced_settings": "Avancerade installningar",
 			"filename_format": "Filnamnsformat",
-			"filename_description": "Detta bestammer filens namn vid nedladdning, <b>utan filtillagger.</b> Du kan anvanda foljande mallar i formatet, som ersatts med relevant information: <b>%name%</b> for det ursprungliga filnamnet, <b>%extension%</b> for det ursprungliga filtillagget och <b>%date%</b> for en datumsträng for nar filen konverterades.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Ange mönstret för utdatafilnamnet. Filändelsen läggs till automatiskt.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Standardformat for konvertering",
 			"default_format_enable": "Aktivera",
 			"default_format_disable": "Inaktivera",
@@ -175,7 +176,11 @@
 			"quality_video": "Detta andrar standardkvaliteten for konverterade videofiler. Hogre varden kan resultera i langre konverteringstider och storre filstorlek.",
 			"quality_audio": "Ljud (kbps)",
 			"quality_images": "Bild (%)",
-			"rate": "Samplingshastighet (Hz)"
+			"rate": "Samplingshastighet (Hz)",
+			"filename_var_name": "Filnamn",
+			"filename_var_date": "Datum",
+			"filename_prefix": "Prefix",
+			"filename_preview": "Förhandsvisning:"
 		},
 		"vertd": {
 			"title": "Videokonvertering",

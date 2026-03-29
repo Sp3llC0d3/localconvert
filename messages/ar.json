@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "الإعدادات",
+		"subtitle": "ورشتك، قواعدك.",
 		"errors": {
 			"save_failed": "فشل حفظ الإعدادات!"
 		},
@@ -156,8 +157,8 @@
 			"title": "التحويل",
 			"advanced_settings": "الإعدادات المتقدمة",
 			"filename_format": "تنسيق اسم الملف",
-			"filename_description": "⁧سيحدد هذا اسم الملف عند التنزيل <b>دون تضمين امتداد الملف.</b> يمكنك استخدام القوالب التالية في التنسيق، وسيتم استبدالها بالمعلومات ذات الصلة: <b>⁦%name%⁩</b> لاسم الملف الأصلي، <b>⁦%extension%⁩</b> لامتداد الملف الأصلي، و<b>⁦%date%⁩</b> لسلسلة التاريخ عند إجراء التحويل.⁩",
-			"placeholder": "⁧⁦LocalConvert_%name%⁩⁩",
+			"filename_description": "حدد نمط اسم ملف الإخراج. يتم إضافة الامتداد تلقائياً.",
+			"placeholder": "⁧⁦LocalConvert.app_%name%⁩⁩",
 			"default_format": "صيغة التحويل الافتراضية",
 			"default_format_enable": "تفعيل",
 			"default_format_disable": "تعطيل",
@@ -175,7 +176,11 @@
 			"quality_video": "يغيّر هذا الجودة الافتراضية لملفات الفيديو المحوّلة. قد تؤدي القيم العالية إلى أوقات تحويل أطول وأحجام ملفات أكبر.",
 			"quality_audio": "الصوت (كيلوبت في الثانية)",
 			"quality_images": "الصورة (%)",
-			"rate": "معدل أخذ العينات (هرتز)"
+			"rate": "معدل أخذ العينات (هرتز)",
+			"filename_var_name": "اسم الملف",
+			"filename_var_date": "التاريخ",
+			"filename_prefix": "البادئة",
+			"filename_preview": "معاينة:"
 		},
 		"vertd": {
 			"title": "تحويل الفيديو",

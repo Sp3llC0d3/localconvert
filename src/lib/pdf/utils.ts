@@ -1,3 +1,5 @@
+export { formatOutputName as getOutputName } from '$lib/util/filename';
+
 export function downloadPdf(bytes: Uint8Array, filename: string): void {
 	const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer], { type: 'application/pdf' });
 	const url = URL.createObjectURL(blob);

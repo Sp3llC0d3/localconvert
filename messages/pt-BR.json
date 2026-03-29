@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Configurações",
+		"subtitle": "Sua oficina, suas regras.",
 		"errors": {
 			"save_failed": "Falha ao salvar as configurações!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Conversão",
 			"advanced_settings": "Configurações avançadas",
 			"filename_format": "Formato do nome do arquivo",
-			"filename_description": "Isso determinará o nome do arquivo no download, <b>não incluindo a extensão do arquivo.</b> Você pode colocar os seguintes modelos no formato, que serão substituídos pelas informações relevantes: <b>%name%</b> para o nome original do arquivo, <b>%extension%</b> para a extensão original do arquivo e <b>%date%</b> para uma string de data de quando o arquivo foi convertido.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Defina o padrão do nome do arquivo de saída. A extensão é adicionada automaticamente.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Formato de conversão padrão",
 			"default_format_enable": "Habilitar",
 			"default_format_disable": "Desabilitar",
@@ -175,7 +176,11 @@
 			"quality_video": "Isso altera a qualidade de saída padrão dos arquivos de vídeo convertidos. Valores mais altos podem resultar em tempos de conversão mais longos e tamanho de arquivo maior.",
 			"quality_audio": "Áudio (kbps)",
 			"quality_images": "Imagem (%)",
-			"rate": "Taxa de amostragem (Hz)"
+			"rate": "Taxa de amostragem (Hz)",
+			"filename_var_name": "Nome do arquivo",
+			"filename_var_date": "Data",
+			"filename_prefix": "Prefixo",
+			"filename_preview": "Prévia:"
 		},
 		"vertd": {
 			"title": "Conversão de vídeo",

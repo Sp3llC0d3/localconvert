@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { signPdf } from '$lib/pdf/sign';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf, formatFileSize, getPdfJs } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { PenToolIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
@@ -269,7 +269,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_signed.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'signed', 'pdf'));
 	}
 </script>
 

@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Ustawienia",
+		"subtitle": "Twój warsztat, twoje zasady.",
 		"errors": {
 			"save_failed": "Nie udało się zapisać ustawień!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Konwersja",
 			"advanced_settings": "Ustawienia zaawansowane",
 			"filename_format": "Format nazwy pliku",
-			"filename_description": "Określa nazwę pliku po pobraniu, <b>bez rozszerzenia pliku.</b> W formacie można użyć następujących szablonów, które zostaną zastąpione odpowiednimi informacjami: <b>%name%</b> dla oryginalnej nazwy pliku, <b>%extension%</b> dla oryginalnego rozszerzenia pliku oraz <b>%date%</b> dla daty konwersji pliku.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Ustaw wzorzec nazwy pliku wyjściowego. Rozszerzenie jest dodawane automatycznie.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Domyślny format konwersji",
 			"default_format_enable": "Włącz",
 			"default_format_disable": "Wyłącz",
@@ -175,7 +176,11 @@
 			"quality_video": "Zmienia domyślną jakość wyjściową przekonwertowanych plików wideo. Wyższe wartości mogą wydłużyć czas konwersji i zwiększyć rozmiar pliku.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Obraz (%)",
-			"rate": "Częstotliwość próbkowania (Hz)"
+			"rate": "Częstotliwość próbkowania (Hz)",
+			"filename_var_name": "Nazwa pliku",
+			"filename_var_date": "Data",
+			"filename_prefix": "Prefiks",
+			"filename_preview": "Podgląd:"
 		},
 		"vertd": {
 			"title": "Konwersja wideo",

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
-		ChartColumnIcon,
 		XIcon,
 		CheckIcon,
 		RefreshCwIcon,
@@ -10,7 +8,7 @@
 	import type { ISettings } from "./index.svelte";
 	import { effects } from "$lib/store/index.svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { link, sanitize } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/store/index.svelte";
 	import { swManager, type CacheInfo } from "$lib/util/sw";
 	import { onMount } from "svelte";
 	import { error } from "$lib/util/logger";
@@ -122,102 +120,93 @@
 	});
 </script>
 
-<Panel class="flex flex-col gap-8 p-6">
-	<div class="flex flex-col gap-3">
-		<h2 class="text-2xl font-bold">
-			<ChartColumnIcon
-				size="40"
-				class="inline-block -mt-1 mr-2 bg-accent p-2 rounded-full text-on-accent"
-			/>
-			{m["settings.privacy.title"]()}
-		</h2>
-		<div class="flex flex-col gap-8">
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">
-						{m["settings.privacy.cache_title"]()}
-					</p>
-					<p class="text-sm text-muted font-normal">
-						{m["settings.privacy.cache_description"]()}
-					</p>
-				</div>
+<div class="flex flex-col gap-8">
+	<!-- Cache management -->
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
+			<p class="text-base font-bold">
+				{m["settings.privacy.cache_title"]()}
+			</p>
+			<p class="text-sm text-muted font-normal">
+				{m["settings.privacy.cache_description"]()}
+			</p>
+		</div>
 
-				<div class="grid grid-cols-2 gap-4">
-					<div class="bg-button p-4 rounded-lg">
-						<div class="text-sm text-muted">
-							{m["settings.privacy.total_size"]()}
-						</div>
-						<div class="text-lg font-bold flex items-center gap-2">
-							{#if isLoadingCache}
-								<RefreshCwIcon size="16" class="animate-spin" />
-								{m["settings.privacy.loading_cache"]()}
-							{:else}
-								{cacheInfo
-									? swManager.formatSize(cacheInfo.totalSize)
-									: "0 B"}
-							{/if}
-						</div>
-					</div>
-					<div class="bg-button p-4 rounded-lg">
-						<div class="text-sm text-muted">
-							{m["settings.privacy.files_cached_label"]()}
-						</div>
-						<div class="text-lg font-bold flex items-center gap-2">
-							{#if isLoadingCache}
-								<RefreshCwIcon size="16" class="animate-spin" />
-								{m["settings.privacy.loading_cache"]()}
-							{:else}
-								{cacheInfo?.fileCount ?? 0}
-							{/if}
-						</div>
-					</div>
+		<div class="grid grid-cols-2 gap-4">
+			<div class="bg-button p-4 rounded-lg">
+				<div class="text-sm text-muted">
+					{m["settings.privacy.total_size"]()}
 				</div>
-
-				<div class="flex gap-3 w-full">
-					<button
-						onclick={loadCacheInfo}
-						class="btn {$effects
-							? ''
-							: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-						disabled={isLoadingCache}
-					>
-						<RefreshCwIcon size="24" class="inline-block mr-2" />
-						{m["settings.privacy.refresh_cache"]()}
-					</button>
-					<button
-						onclick={clearCache}
-						class="btn {$effects
-							? ''
-							: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-						disabled={isLoadingCache}
-					>
-						<Trash2Icon size="24" class="inline-block mr-2" />
-						{m["settings.privacy.clear_cache"]()}
-					</button>
+				<div class="text-lg font-bold flex items-center gap-2">
+					{#if isLoadingCache}
+						<RefreshCwIcon size="16" class="animate-spin" />
+						{m["settings.privacy.loading_cache"]()}
+					{:else}
+						{cacheInfo
+							? swManager.formatSize(cacheInfo.totalSize)
+							: "0 B"}
+					{/if}
 				</div>
 			</div>
-
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">
-						{m["settings.privacy.site_data_title"]()}
-					</p>
-					<p class="text-sm text-muted font-normal">
-						{m["settings.privacy.site_data_description"]()}
-					</p>
+			<div class="bg-button p-4 rounded-lg">
+				<div class="text-sm text-muted">
+					{m["settings.privacy.files_cached_label"]()}
 				</div>
-
-				<button
-					onclick={clearAllData}
-					class="btn {$effects
-						? ''
-						: '!scale-100'} w-full p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-					disabled={isLoadingCache}
-				>
-					<Trash2Icon size="24" class="inline-block mr-2" />
-					{m["settings.privacy.clear_all_data"]()}
-				</button>
+				<div class="text-lg font-bold flex items-center gap-2">
+					{#if isLoadingCache}
+						<RefreshCwIcon size="16" class="animate-spin" />
+						{m["settings.privacy.loading_cache"]()}
+					{:else}
+						{cacheInfo?.fileCount ?? 0}
+					{/if}
+				</div>
 			</div>
 		</div>
-	</div></Panel
->
+
+		<div class="flex gap-3 w-full">
+			<button
+				onclick={loadCacheInfo}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+				disabled={isLoadingCache}
+			>
+				<RefreshCwIcon size="24" class="inline-block mr-2" />
+				{m["settings.privacy.refresh_cache"]()}
+			</button>
+			<button
+				onclick={clearCache}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+				disabled={isLoadingCache}
+			>
+				<Trash2Icon size="24" class="inline-block mr-2" />
+				{m["settings.privacy.clear_cache"]()}
+			</button>
+		</div>
+	</div>
+
+	<!-- Site data -->
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
+			<p class="text-base font-bold">
+				{m["settings.privacy.site_data_title"]()}
+			</p>
+			<p class="text-sm text-muted font-normal">
+				{m["settings.privacy.site_data_description"]()}
+			</p>
+		</div>
+
+		<button
+			onclick={clearAllData}
+			class="btn {$effects
+				? ''
+				: '!scale-100'} w-full p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+			disabled={isLoadingCache}
+		>
+			<Trash2Icon size="24" class="inline-block mr-2" />
+			{m["settings.privacy.clear_all_data"]()}
+		</button>
+	</div>
+</div>

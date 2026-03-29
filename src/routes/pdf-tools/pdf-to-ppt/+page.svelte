@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToPpt } from '$lib/pdf/pdf-to-ppt';
-	import { downloadBlob, formatFileSize } from '$lib/pdf/utils';
+	import { downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { PresentationIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -34,7 +34,7 @@
 
 	function download() {
 		if (!resultBlob) return;
-		downloadBlob(resultBlob, files[0].name.replace(/\.pdf$/i, '.pptx'));
+		downloadBlob(resultBlob, getOutputName(files[0].name, '', 'pptx'));
 	}
 </script>
 

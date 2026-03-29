@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "設定",
+		"subtitle": "あなたの工房、あなたのルール。",
 		"errors": {
 			"save_failed": "設定の保存に失敗しました！"
 		},
@@ -156,8 +157,8 @@
 			"title": "変換",
 			"advanced_settings": "詳細設定",
 			"filename_format": "ファイル名フォーマット",
-			"filename_description": "これはダウンロード時のファイル名を決定します（<b>拡張子を除く</b>）。以下のテンプレートを使用できます：<b>%name%</b>（元のファイル名）、<b>%extension%</b>（元の拡張子）、<b>%date%</b>（変換日時）。",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "出力ファイル名のパターンを設定します。拡張子は自動的に追加されます。",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "デフォルト変換フォーマット",
 			"default_format_enable": "有効",
 			"default_format_disable": "無効",
@@ -175,7 +176,11 @@
 			"quality_video": "変換後の動画ファイルのデフォルト出力品質を変更します。高品質ほど変換時間とサイズが増加する場合があります。",
 			"quality_audio": "音声（kbps）",
 			"quality_images": "画像（%）",
-			"rate": "サンプリングレート（Hz）"
+			"rate": "サンプリングレート（Hz）",
+			"filename_var_name": "ファイル名",
+			"filename_var_date": "日付",
+			"filename_prefix": "プレフィックス",
+			"filename_preview": "プレビュー:"
 		},
 		"vertd": {
 			"title": "動画変換",

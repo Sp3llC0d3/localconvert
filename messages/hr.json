@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Postavke",
+		"subtitle": "Tvoja radionica, tvoja pravila.",
 		"errors": {
 			"save_failed": "Spremanje postavki nije uspjelo!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Pretvorba",
 			"advanced_settings": "Napredne postavke",
 			"filename_format": "Format naziva datoteke",
-			"filename_description": "Ovo će odrediti naziv datoteke pri preuzimanju, <b>ne uključujući nastavak datoteke.</b> Možete koristiti sljedeće predloške u formatu koji će biti zamijenjeni relevantnim informacijama: <b>%name%</b> za originalni naziv datoteke, <b>%extension%</b> za originalni nastavak, i <b>%date%</b> za datum kada je datoteka bila pretvorena.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Postavite obrazac naziva izlazne datoteke. Nastavak se dodaje automatski.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Zadani format pretvorbe",
 			"default_format_enable": "Uključi",
 			"default_format_disable": "Isključi",
@@ -175,7 +176,11 @@
 			"quality_video": "Ovo mijenja zadanu izlaznu kvalitetu pretvorenih videozapisa. Veće vrijednosti mogu uzrokovati dulje vrijeme pretvorbe i veličinu datoteke.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Slika (%)",
-			"rate": "Frekvencija uzorkovanja (Hz)"
+			"rate": "Frekvencija uzorkovanja (Hz)",
+			"filename_var_name": "Naziv datoteke",
+			"filename_var_date": "Datum",
+			"filename_prefix": "Prefiks",
+			"filename_preview": "Pregled:"
 		},
 		"vertd": {
 			"title": "Pretvorba videozapisa",

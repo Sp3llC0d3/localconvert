@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Postavke",
+		"subtitle": "Tvoja radionica, tvoja pravila.",
 		"errors": {
 			"save_failed": "Neuspješno spremanje postavki!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Konverzija",
 			"advanced_settings": "Napredne postavke",
 			"filename_format": "Format imena datoteke",
-			"filename_description": "Ovo određuje ime datoteke pri preuzimanju, <b>bez ekstenzije</b>. Možete koristiti sljedeće šablone: <b>%name%</b> originalno ime, <b>%extension%</b> originalna ekstenzija, <b>%date%</b> datum konverzije.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Postavite obrazac za naziv izlazne datoteke. Ekstenzija se dodaje automatski.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Podrazumijevani format konverzije",
 			"default_format_enable": "Uključi",
 			"default_format_disable": "Isključi",
@@ -175,7 +176,11 @@
 			"quality_video": "Mijenja izlazni kvalitet videa.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Slika (%)",
-			"rate": "Sample rate (Hz)"
+			"rate": "Sample rate (Hz)",
+			"filename_var_name": "Naziv datoteke",
+			"filename_var_date": "Datum",
+			"filename_prefix": "Prefiks",
+			"filename_preview": "Pregled:"
 		},
 		"vertd": {
 			"title": "Konverzija videa",

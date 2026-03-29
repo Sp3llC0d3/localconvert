@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { protectPdf } from '$lib/pdf/password';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
@@ -51,7 +51,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_protected.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'protected', 'pdf'));
 	}
 </script>
 

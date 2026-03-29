@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Cài đặt",
+		"subtitle": "Xưởng của bạn, quy tắc của bạn.",
 		"errors": {
 			"save_failed": "Không thể lưu cài đặt!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Chuyển đổi",
 			"advanced_settings": "Cài đặt nâng cao",
 			"filename_format": "Định dạng tên tệp",
-			"filename_description": "Cài đặt này xác định tên tệp khi tải về, <b>không bao gồm phần mở rộng tệp.</b> Bạn có thể sử dụng các mẫu sau trong định dạng, chúng sẽ được thay thế bằng thông tin tương ứng: <b>%name%</b> cho tên tệp gốc, <b>%extension%</b> cho phần mở rộng tệp gốc, và <b>%date%</b> cho chuỗi ngày khi tệp được chuyển đổi.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Đặt mẫu tên tệp đầu ra. Phần mở rộng được thêm tự động.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Định dạng chuyển đổi mặc định",
 			"default_format_enable": "Bật",
 			"default_format_disable": "Tắt",
@@ -175,7 +176,11 @@
 			"quality_video": "Cài đặt này thay đổi chất lượng đầu ra mặc định của các tệp video đã chuyển đổi. Giá trị cao hơn có thể dẫn đến thời gian chuyển đổi lâu hơn và kích thước tệp lớn hơn.",
 			"quality_audio": "Âm thanh (kbps)",
 			"quality_images": "Hình ảnh (%)",
-			"rate": "Tần số lấy mẫu (Hz)"
+			"rate": "Tần số lấy mẫu (Hz)",
+			"filename_var_name": "Tên tệp",
+			"filename_var_date": "Ngày",
+			"filename_prefix": "Tiền tố",
+			"filename_preview": "Xem trước:"
 		},
 		"vertd": {
 			"title": "Chuyển đổi video",

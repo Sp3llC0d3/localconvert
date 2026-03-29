@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Panel from "$lib/components/visual/Panel.svelte";
 	import {
 		theme,
 		effects,
@@ -10,7 +9,6 @@
 	} from "$lib/store/index.svelte";
 	import {
 		MoonIcon,
-		PaletteIcon,
 		XIcon,
 		CheckIcon,
 		SunIcon,
@@ -94,105 +92,92 @@
 	}
 </script>
 
-<Panel class="flex flex-col gap-8 p-6">
-	<div class="flex flex-col gap-3">
-		<h2 class="text-2xl font-bold">
-			<PaletteIcon
-				size="40"
-				class="inline-block -mt-1 mr-2 bg-accent p-2 rounded-full text-on-accent"
-			/>
-			{m["settings.appearance.title"]()}
-		</h2>
-		<div class="flex flex-col gap-8">
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">
-						{m["settings.appearance.brightness_theme"]()}
-					</p>
-					<p class="text-sm text-muted font-normal italic">
-						{m["settings.appearance.brightness_description"]()}
-					</p>
-				</div>
-				<div class="flex flex-col gap-3 w-full">
-					<div class="flex gap-3 w-full">
-						<button
-							bind:this={lightElement}
-							onclick={() => setTheme("light")}
-							class="btn {$effects
-								? ''
-								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-						>
-							<SunIcon size="24" class="inline-block mr-2" />
-							{m["settings.appearance.light"]()}
-						</button>
+<div class="flex flex-col gap-8">
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
+			<p class="text-base font-bold">
+				{m["settings.appearance.brightness_theme"]()}
+			</p>
+			<p class="text-sm text-muted font-normal italic">
+				{m["settings.appearance.brightness_description"]()}
+			</p>
+		</div>
+		<div class="flex gap-3 w-full">
+			<button
+				bind:this={lightElement}
+				onclick={() => setTheme("light")}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+			>
+				<SunIcon size="24" class="inline-block mr-2" />
+				{m["settings.appearance.light"]()}
+			</button>
 
-						<button
-							bind:this={darkElement}
-							onclick={() => setTheme("dark")}
-							class="btn {$effects
-								? ''
-								: '!scale-100'} flex-1 p-4 rounded-lg text-black flex items-center justify-center"
-						>
-							<MoonIcon size="24" class="inline-block mr-2" />
-							{m["settings.appearance.dark"]()}
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">
-						{m["settings.appearance.effect_settings"]()}
-					</p>
-					<p class="text-sm text-muted font-normal italic">
-						{m["settings.appearance.effect_description"]()}
-					</p>
-				</div>
-				<div class="flex flex-col gap-3 w-full">
-					<div class="flex gap-3 w-full">
-						<button
-							bind:this={enableEffectsElement}
-							onclick={() => setEffects(true)}
-							class="btn {$effects
-								? ''
-								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-						>
-							<CheckIcon size="24" class="inline-block mr-2" />
-							{m["settings.appearance.enable"]()}
-						</button>
-
-						<button
-							bind:this={disableEffectsElement}
-							onclick={() => setEffects(false)}
-							class="btn {$effects
-								? ''
-								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
-						>
-							<XIcon size="24" class="inline-block mr-2" />
-							{m["settings.appearance.disable"]()}
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">
-						{m["settings.language.title"]()}
-						{#if currentLocale !== "en"} (Language){/if}
-					</p>
-					<p class="text-sm text-muted font-normal italic">
-						{m["settings.language.description"]()}
-					</p>
-				</div>
-				<div class="flex flex-col gap-3 w-full">
-					<Dropdown
-						options={languageOptions}
-						settingsStyle
-						selected={getLanguageDisplayName(currentLocale)}
-						onselect={handleLanguageChange}
-					/>
-				</div>
-			</div>
+			<button
+				bind:this={darkElement}
+				onclick={() => setTheme("dark")}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black flex items-center justify-center"
+			>
+				<MoonIcon size="24" class="inline-block mr-2" />
+				{m["settings.appearance.dark"]()}
+			</button>
 		</div>
 	</div>
-</Panel>
+
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
+			<p class="text-base font-bold">
+				{m["settings.appearance.effect_settings"]()}
+			</p>
+			<p class="text-sm text-muted font-normal italic">
+				{m["settings.appearance.effect_description"]()}
+			</p>
+		</div>
+		<div class="flex gap-3 w-full">
+			<button
+				bind:this={enableEffectsElement}
+				onclick={() => setEffects(true)}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+			>
+				<CheckIcon size="24" class="inline-block mr-2" />
+				{m["settings.appearance.enable"]()}
+			</button>
+
+			<button
+				bind:this={disableEffectsElement}
+				onclick={() => setEffects(false)}
+				class="btn {$effects
+					? ''
+					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
+			>
+				<XIcon size="24" class="inline-block mr-2" />
+				{m["settings.appearance.disable"]()}
+			</button>
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
+			<p class="text-base font-bold">
+				{m["settings.language.title"]()}
+				{#if currentLocale !== "en"} (Language){/if}
+			</p>
+			<p class="text-sm text-muted font-normal italic">
+				{m["settings.language.description"]()}
+			</p>
+		</div>
+		<div class="flex flex-col gap-3 w-full">
+			<Dropdown
+				options={languageOptions}
+				settingsStyle
+				selected={getLanguageDisplayName(currentLocale)}
+				onselect={handleLanguageChange}
+			/>
+		</div>
+	</div>
+</div>

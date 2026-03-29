@@ -285,29 +285,19 @@ export class VertFile {
 		// give the freedom to the converter to set the extension (ie. pandoc uses this to output zips)
 		let to = this.result.to;
 		if (!to.startsWith(".")) to = `.${to}`;
+		const ext = to.slice(1);
 
-		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-		const filenameFormat = settings.filenameFormat || "LocalConvert_%name%";
-
-		const format = (name: string) => {
-			const date = new Date().toISOString();
-			const baseName = this.file.name.replace(/\.[^/.]+$/, "");
-			const originalExtension = this.file.name.split(".").pop()!;
-			return name
-				.replace(/%date%/g, date)
-				.replace(/%name%/g, baseName)
-				.replace(/%extension%/g, originalExtension);
-		};
+		const { formatOutputName } = await import("$lib/util/filename");
+		const outputName = formatOutputName(this.file.name, '', ext);
 
 		const blob = URL.createObjectURL(
 			new Blob([await this.result.file.arrayBuffer()], {
-				// type: to.slice(1),
 				type: "application/octet-stream", // use generic type to prevent browsers changing extension
 			}),
 		);
 		const a = document.createElement("a");
 		a.href = blob;
-		a.download = `${format(filenameFormat)}${to}`;
+		a.download = outputName;
 		// force it to not open in a new tab
 		a.target = "_blank";
 		a.style.display = "none";

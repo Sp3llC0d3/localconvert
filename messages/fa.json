@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "تنظیمات",
+		"subtitle": "کارگاه تو، قوانین تو.",
 		"errors": {
 			"save_failed": "ذخیره تنظیمات ناموفق بود!"
 		},
@@ -156,8 +157,8 @@
 			"title": "تبدیل",
 			"advanced_settings": "تنظیمات پیشرفته",
 			"filename_format": "فرمت نام فایل",
-			"filename_description": "این مشخص‌کننده نام فایل هنگام دانلود است، <b>بدون احتساب پسوند فایل.</b> می‌توانید الگوهای زیر را در فرمت قرار دهید که با اطلاعات مربوطه جایگزین می‌شوند: <b>%⁦name⁩%</b> برای نام اصلی فایل، <b>%⁦extension⁩%</b> برای پسوند اصلی فایل، و <b>%⁦date⁩%</b> برای رشته تاریخ زمان تبدیل فایل.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "الگوی نام فایل خروجی را تنظیم کنید. پسوند به طور خودکار اضافه می‌شود.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "فرمت تبدیل پیش‌فرض",
 			"default_format_enable": "فعال",
 			"default_format_disable": "غیرفعال",
@@ -175,7 +176,11 @@
 			"quality_video": "این تنظیم کیفیت خروجی پیش‌فرض فایل‌های ویدئویی تبدیل‌شده را تغییر می‌دهد. مقادیر بالاتر ممکن است منجر به زمان تبدیل طولانی‌تر و حجم فایل بیشتر شوند.",
 			"quality_audio": "صدا (⁦kbps⁩)",
 			"quality_images": "تصویر (%)",
-			"rate": "نرخ نمونه‌برداری (⁦Hz⁩)"
+			"rate": "نرخ نمونه‌برداری (⁦Hz⁩)",
+			"filename_var_name": "نام فایل",
+			"filename_var_date": "تاریخ",
+			"filename_prefix": "پیشوند",
+			"filename_preview": "پیش‌نمایش:"
 		},
 		"vertd": {
 			"title": "تبدیل ویدئو",

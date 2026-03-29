@@ -55,8 +55,4 @@ export function validateImageSize(file: File): { ok: boolean; warning?: string }
 	return { ok: true };
 }
 
-export function getOutputName(original: string, suffix: string, ext?: string): string {
-	const base = original.replace(/\.[^.]+$/, '');
-	const outExt = ext ?? original.split('.').pop() ?? 'png';
-	return `${base}_${suffix}.${outExt}`;
-}
+export { formatOutputName as getOutputName } from '$lib/util/filename';

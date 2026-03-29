@@ -4,7 +4,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { compressPdf } from '$lib/pdf/compress';
 	import { renderPageToCanvas } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { ZapIcon, AlertTriangleIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { tick } from 'svelte';
@@ -71,7 +71,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_compressed.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'compressed', 'pdf'));
 	}
 
 	const savings = $derived.by(() => {

@@ -351,20 +351,12 @@ class Files {
 		const blob = await downloadZip(dlFiles, "converted.zip").blob();
 		const url = URL.createObjectURL(blob);
 
-		const settings = JSON.parse(localStorage.getItem("settings") ?? "{}");
-		const filenameFormat = settings.filenameFormat || "LocalConvert_%name%";
-
-		const format = (name: string) => {
-			const date = new Date().toISOString();
-			return name
-				.replace(/%date%/g, date)
-				.replace(/%name%/g, "Multi")
-				.replace(/%extension%/g, "");
-		};
+		const { formatOutputName } = await import("$lib/util/filename");
+		const zipName = formatOutputName("converted", '', 'zip');
 
 		const a = document.createElement("a");
 		a.href = url;
-		a.download = `${format(filenameFormat)}.zip`;
+		a.download = zipName;
 		a.click();
 		URL.revokeObjectURL(url);
 		a.remove();

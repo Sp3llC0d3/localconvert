@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
-	import { canvasToBlob, downloadBlob } from '$lib/image/utils';
+	import { canvasToBlob, downloadBlob, getOutputName } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -58,7 +58,7 @@
 
 	function download() {
 		if (!resultBlob) return;
-		downloadBlob(resultBlob, 'qrcode.png');
+		downloadBlob(resultBlob, getOutputName('qrcode', '', 'png'));
 	}
 
 	const levels = [

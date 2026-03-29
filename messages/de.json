@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Optionen",
+		"subtitle": "Deine Werkstatt, deine Regeln.",
 		"errors": {
 			"save_failed": "Speichern der Einstellungen fehlgeschlagen!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Konvertierung",
 			"advanced_settings": "Erweiterte Einstellungen",
 			"filename_format": "Dateinamensformat",
-			"filename_description": "Dies bestimmt den Namen der Datei beim Herunterladen, <b>ohne die Dateiendung.</b> Sie können folgende Platzhalter verwenden: <b>%name%</b> für den ursprünglichen Dateinamen, <b>%extension%</b> für die ursprüngliche Dateiendung und <b>%date%</b> für das Datum der Konvertierung.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Legen Sie das Muster für den Ausgabedateinamen fest. Die Erweiterung wird automatisch hinzugefügt.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Standard-Konvertierungsformat",
 			"default_format_enable": "Aktivieren",
 			"default_format_disable": "Deaktivieren",
@@ -175,7 +176,11 @@
 			"quality_video": "Dies ändert die Standard-Ausgabequalität der konvertierten Videodateien. Höhere Werte können zu längeren Konvertierungszeiten und größeren Dateien führen.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Bild (%)",
-			"rate": "Abtastrate (Hz)"
+			"rate": "Abtastrate (Hz)",
+			"filename_var_name": "Dateiname",
+			"filename_var_date": "Datum",
+			"filename_prefix": "Präfix",
+			"filename_preview": "Vorschau:"
 		},
 		"vertd": {
 			"title": "Videokonvertierung",

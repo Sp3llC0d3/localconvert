@@ -4,7 +4,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { organizePdf } from '$lib/pdf/organize';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
-	import { downloadPdf } from '$lib/pdf/utils';
+	import { downloadPdf, getOutputName } from '$lib/pdf/utils';
 	import { LayoutGridIcon, Trash2Icon, ArrowUpIcon, ArrowDownIcon, GripVerticalIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { dndzone } from 'svelte-dnd-action';
@@ -69,7 +69,7 @@
 		try {
 			const order = items.map(item => item.origIdx);
 			const bytes = await organizePdf(files[0], order);
-			downloadPdf(bytes, files[0].name.replace(/\.pdf$/i, '_organized.pdf'));
+			downloadPdf(bytes, getOutputName(files[0].name, 'organized', 'pdf'));
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : m['tools_common.failed']();
 		}

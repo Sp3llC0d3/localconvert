@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "設定",
+		"subtitle": "你的工坊，你的規則。",
 		"errors": {
 			"save_failed": "儲存設定失敗！"
 		},
@@ -156,8 +157,8 @@
 			"title": "轉換",
 			"advanced_settings": "進階設定",
 			"filename_format": "檔案名稱格式",
-			"filename_description": "這將決定下載時的檔案名稱，<b>不包括副檔名。</b>你可以在格式中使用以下範本，它們將被替換為相關資訊：<b>%name%</b>表示原始檔案名稱，<b>%extension%</b>表示原始副檔名，<b>%date%</b>表示檔案轉換時的日期字串。",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "設定輸出檔案名稱模式。副檔名會自動新增。",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "預設轉換格式",
 			"default_format_enable": "啟用",
 			"default_format_disable": "停用",
@@ -175,7 +176,11 @@
 			"quality_video": "這將更改影片轉換的預設輸出品質。值越高，處理時間和檔案大小越大。",
 			"quality_audio": "音訊（kbps）",
 			"quality_images": "圖片（%）",
-			"rate": "取樣率（Hz）"
+			"rate": "取樣率（Hz）",
+			"filename_var_name": "檔案名稱",
+			"filename_var_date": "日期",
+			"filename_prefix": "前綴",
+			"filename_preview": "預覽："
 		},
 		"vertd": {
 			"title": "影片轉換",

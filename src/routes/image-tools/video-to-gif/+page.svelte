@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
 	import { videoToGif } from '$lib/converters/video-to-gif';
-	import { downloadBlob, formatFileSize } from '$lib/image/utils';
+	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { FilmIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -57,7 +57,7 @@
 
 	function download() {
 		if (!resultBlob) return;
-		downloadBlob(resultBlob, files[0].name.replace(/\.[^.]+$/, '.gif'));
+		downloadBlob(resultBlob, getOutputName(files[0].name, '', 'gif'));
 	}
 </script>
 

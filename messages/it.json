@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Impostazioni",
+		"subtitle": "Il tuo laboratorio, le tue regole.",
 		"errors": {
 			"save_failed": "Impossibile salvare le impostazioni!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Conversione",
 			"advanced_settings": "Impostazioni avanzate",
 			"filename_format": "Formato nome file",
-			"filename_description": "Questo determinerà il nome del file al momento del download, <b>esclusa l'estensione del file.</b> È possibile inserire i seguenti segnaposto nel formato, che verranno sostituiti con le informazioni pertinenti: <b>%name%</b> per il nome del file originale, <b>%extension%</b> per l'estensione del file originale e <b>%date%</b> per la data di conversione del file.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Imposta il modello del nome del file di output. L'estensione viene aggiunta automaticamente.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Formato di conversione predefinito",
 			"default_format_enable": "Abilita",
 			"default_format_disable": "Disabilita",
@@ -175,7 +176,11 @@
 			"quality_video": "Questa impostazione modifica la qualità di output predefinita dei file video convertiti. Valori più alti possono comportare tempi di conversione più lunghi e file di dimensioni maggiori.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Immagine (%)",
-			"rate": "Frequenza di campionamento (Hz)"
+			"rate": "Frequenza di campionamento (Hz)",
+			"filename_var_name": "Nome file",
+			"filename_var_date": "Data",
+			"filename_prefix": "Prefisso",
+			"filename_preview": "Anteprima:"
 		},
 		"vertd": {
 			"title": "Conversione video",

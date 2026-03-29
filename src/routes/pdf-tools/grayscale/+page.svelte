@@ -4,7 +4,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { grayscalePdf } from '$lib/pdf/grayscale';
 	import { renderPageToCanvas } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { PaletteIcon, AlertTriangleIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { tick } from 'svelte';
@@ -67,7 +67,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_grayscale.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'grayscale', 'pdf'));
 	}
 
 	const savings = $derived.by(() => {

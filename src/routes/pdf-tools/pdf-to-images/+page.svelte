@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToImages } from '$lib/pdf/pdf-to-images';
-	import { downloadBlob, formatFileSize } from '$lib/pdf/utils';
+	import { downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { FileDownIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -39,8 +39,7 @@
 				const { createZip } = await import('$lib/util/zip');
 				const fileObjs = results.map(r => new File([r.blob], r.filename));
 				const zip = await createZip(fileObjs);
-				const baseName = files[0].name.replace(/\.pdf$/i, '');
-				downloadBlob(new Blob([zip], { type: 'application/zip' }), `${baseName}_images.zip`);
+				downloadBlob(new Blob([zip], { type: 'application/zip' }), getOutputName(files[0].name, 'images', 'zip'));
 			}
 			done = true;
 		} catch (e: unknown) {

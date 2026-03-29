@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Settings",
+		"subtitle": "Your workshop, your rules.",
 		"errors": {
 			"save_failed": "Failed to save settings!"
 		},
@@ -156,8 +157,12 @@
 			"title": "Conversion",
 			"advanced_settings": "Advanced settings",
 			"filename_format": "File name format",
-			"filename_description": "This will determine the name of the file on download, <b>not including the file extension.</b> You can put these following templates in the format, which will be replaced with the relevant information: <b>%name%</b> for the original file name, <b>%extension%</b> for the original file extension, and <b>%date%</b> for a date string of when the file was converted.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Set the output file name pattern. The extension is added automatically.",
+			"filename_prefix": "Prefix",
+			"filename_var_name": "File name",
+			"filename_var_date": "Date",
+			"filename_preview": "Preview:",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Default conversion format",
 			"default_format_enable": "Enable",
 			"default_format_disable": "Disable",

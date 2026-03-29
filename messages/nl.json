@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Instellingen",
+		"subtitle": "Jouw werkplaats, jouw regels.",
 		"errors": {
 			"save_failed": "Instellingen opslaan mislukt!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Conversie",
 			"advanced_settings": "Geavanceerde instellingen",
 			"filename_format": "Bestandsnaamformaat",
-			"filename_description": "Dit bepaalt de naam van het bestand bij het opslaan, <b>exclusief de bestandsextensie.</b> U kunt de volgende sjablonen in het formaat gebruiken, die worden vervangen door de relevante informatie: <b>%name%</b> voor de oorspronkelijke bestandsnaam, <b>%extension%</b> voor de oorspronkelijke bestandsextensie, en <b>%date%</b> voor een datumstring van wanneer het bestand is geconverteerd.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Stel het patroon voor de uitvoerbestandsnaam in. De extensie wordt automatisch toegevoegd.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Standaard conversieformaat",
 			"default_format_enable": "Inschakelen",
 			"default_format_disable": "Uitschakelen",
@@ -175,7 +176,11 @@
 			"quality_video": "Dit wijzigt de standaard uitvoerkwaliteit van de geconverteerde videobestanden. Hogere waarden kunnen leiden tot langere conversietijden en grotere bestanden.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Afbeelding (%)",
-			"rate": "Samplefrequentie (Hz)"
+			"rate": "Samplefrequentie (Hz)",
+			"filename_var_name": "Bestandsnaam",
+			"filename_var_date": "Datum",
+			"filename_prefix": "Voorvoegsel",
+			"filename_preview": "Voorbeeld:"
 		},
 		"vertd": {
 			"title": "Videoconversie",

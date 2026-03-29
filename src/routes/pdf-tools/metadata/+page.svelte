@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { getMetadata, updateMetadata, type PdfMetadata } from '$lib/pdf/metadata';
-	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { FileTextIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
@@ -69,7 +69,7 @@
 
 	function download() {
 		if (!resultBytes) return;
-		downloadPdf(resultBytes, files[0].name.replace(/\.pdf$/i, '_metadata.pdf'));
+		downloadPdf(resultBytes, getOutputName(files[0].name, 'metadata', 'pdf'));
 	}
 </script>
 

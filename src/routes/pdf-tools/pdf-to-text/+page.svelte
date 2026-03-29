@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToText } from '$lib/pdf/pdf-to-text';
-	import { downloadBlob } from '$lib/pdf/utils';
+	import { downloadBlob, getOutputName } from '$lib/pdf/utils';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -45,7 +45,7 @@
 
 	function downloadTxt() {
 		const blob = new Blob([text], { type: 'text/plain' });
-		downloadBlob(blob, files[0].name.replace(/\.pdf$/i, '.txt'));
+		downloadBlob(blob, getOutputName(files[0].name, '', 'txt'));
 	}
 </script>
 

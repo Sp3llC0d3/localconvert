@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "Tetapan",
+		"subtitle": "Bengkel anda, peraturan anda.",
 		"errors": {
 			"save_failed": "Gagal menyimpan tetapan!"
 		},
@@ -156,8 +157,8 @@
 			"title": "Penukaran",
 			"advanced_settings": "Tetapan lanjutan",
 			"filename_format": "Format nama fail",
-			"filename_description": "Ini akan menentukan nama fail semasa dimuat turun, <b>tidak termasuk sambungan fail.</b> Anda boleh meletakkan templat berikut dalam format, yang akan digantikan dengan maklumat berkaitan: <b>%name%</b> untuk nama fail asal, <b>%extension%</b> untuk sambungan fail asal, dan <b>%date%</b> untuk rentetan tarikh bila fail ditukar.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "Tetapkan corak nama fail output. Sambungan ditambah secara automatik.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "Format penukaran lalai",
 			"default_format_enable": "Dayakan",
 			"default_format_disable": "Lumpuhkan",
@@ -175,7 +176,11 @@
 			"quality_video": "Ini mengubah kualiti output lalai fail video yang ditukar. Nilai yang lebih tinggi mungkin mengakibatkan masa penukaran yang lebih lama dan saiz fail yang lebih besar.",
 			"quality_audio": "Audio (kbps)",
 			"quality_images": "Imej (%)",
-			"rate": "Kadar sampel (Hz)"
+			"rate": "Kadar sampel (Hz)",
+			"filename_var_name": "Nama fail",
+			"filename_var_date": "Tarikh",
+			"filename_prefix": "Awalan",
+			"filename_preview": "Pratonton:"
 		},
 		"vertd": {
 			"title": "Penukaran video",

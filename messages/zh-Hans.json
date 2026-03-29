@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "设置",
+		"subtitle": "你的工坊，你的规则。",
 		"errors": {
 			"save_failed": "保存设置失败！"
 		},
@@ -156,8 +157,8 @@
 			"title": "转换",
 			"advanced_settings": "高级设置",
 			"filename_format": "文件名格式",
-			"filename_description": "这将决定下载时的文件名，<b>不包括文件扩展名。</b>你可以在格式中使用以下模板，它们将被替换为相关信息：<b>%name%</b>表示原始文件名，<b>%extension%</b>表示原始文件扩展名，<b>%date%</b>表示文件转换时的日期字符串。",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "设置输出文件名模式。扩展名会自动添加。",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "默认转换格式",
 			"default_format_enable": "启用",
 			"default_format_disable": "禁用",
@@ -175,7 +176,11 @@
 			"quality_video": "这将更改视频转换的默认输出质量。值越高，处理时间和文件大小越大。",
 			"quality_audio": "音频（kbps）",
 			"quality_images": "图片（%）",
-			"rate": "采样率（Hz）"
+			"rate": "采样率（Hz）",
+			"filename_var_name": "文件名",
+			"filename_var_date": "日期",
+			"filename_prefix": "前缀",
+			"filename_preview": "预览："
 		},
 		"vertd": {
 			"title": "视频转换",

@@ -138,6 +138,7 @@
 	},
 	"settings": {
 		"title": "설정",
+		"subtitle": "당신의 작업실, 당신의 규칙.",
 		"errors": {
 			"save_failed": "설정을 저장하는 데 실패했습니다!"
 		},
@@ -156,8 +157,8 @@
 			"title": "변환",
 			"advanced_settings": "고급 설정",
 			"filename_format": "파일 이름 형식",
-			"filename_description": "다운로드할 파일의 이름을 설정합니다. <b>파일 확장자(포맷)는 포함되지 않습니다.</b> 다음 템플릿을 형식에 넣을 수 있으며, 관련 정보로 대체됩니다: <b>%name%</b> 원본 파일 이름, <b>%extension%</b> 원본 파일 확장자, <b>%date%</b> 파일이 변환된 날짜.",
-			"placeholder": "LocalConvert_%name%",
+			"filename_description": "출력 파일 이름 패턴을 설정하세요. 확장자는 자동으로 추가됩니다.",
+			"placeholder": "LocalConvert.app_%name%",
 			"default_format": "기본 변환 형식",
 			"default_format_enable": "활성화",
 			"default_format_disable": "비활성화",
@@ -175,7 +176,11 @@
 			"quality_video": "변환된 동영상 파일의 기본 출력 품질을 변경합니다. 높은 값은 더 긴 시간과 파일 크기를 초래할 수 있습니다.",
 			"quality_audio": "오디오 (kbps)",
 			"quality_images": "이미지 (%)",
-			"rate": "샘플링 주파수 (Hz)"
+			"rate": "샘플링 주파수 (Hz)",
+			"filename_var_name": "파일 이름",
+			"filename_var_date": "날짜",
+			"filename_prefix": "접두사",
+			"filename_preview": "미리보기:"
 		},
 		"vertd": {
 			"title": "동영상 변환",

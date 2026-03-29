@@ -27,7 +27,7 @@ export class Settings {
   public static instance = new Settings();
 
   public settings: ISettings = $state({
-    filenameFormat: "LocalConvert_%name%",
+    filenameFormat: "LocalConvert.app_%name%",
     defaultFormat: {
       image: ".png",
       video: ".mp4",
