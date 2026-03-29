@@ -60,7 +60,7 @@
 				const pages = await splitAllPages(files[0]);
 				// download as zip if multiple
 				if (pages.length === 1) {
-					downloadPdf(pages[0].bytes, pages[0].name);
+					downloadPdf(pages[0].bytes, getOutputName(files[0].name, 'page1', 'pdf'));
 				} else {
 					const { createZip } = await import('$lib/util/zip');
 					const fileObjs = pages.map(p => new File([p.bytes], p.name));
@@ -71,8 +71,7 @@
 				if (selectedPages.size === 0) { error = m['tool_pages.split.err_select'](); processing = false; return; }
 				const indices = [...selectedPages].sort((a, b) => a - b);
 				const bytes = await splitPdf(files[0], indices);
-				const name = files[0].name.replace(/\.pdf$/i, `_pages_${indices.map(i => i + 1).join('-')}.pdf`);
-				downloadPdf(bytes, name);
+				downloadPdf(bytes, getOutputName(files[0].name, `pages_${indices.map(i => i + 1).join('-')}`, 'pdf'));
 			}
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : m['tool_pages.split.err_fail']();

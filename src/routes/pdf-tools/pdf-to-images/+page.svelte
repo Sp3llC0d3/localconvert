@@ -34,7 +34,8 @@
 			);
 			// zip if multiple pages
 			if (results.length === 1) {
-				downloadBlob(results[0].blob, results[0].filename);
+				const ext = format === 'image/png' ? 'png' : 'jpg';
+				downloadBlob(results[0].blob, getOutputName(files[0].name, '', ext));
 			} else {
 				const { createZip } = await import('$lib/util/zip');
 				const fileObjs = results.map(r => new File([r.blob], r.filename));
