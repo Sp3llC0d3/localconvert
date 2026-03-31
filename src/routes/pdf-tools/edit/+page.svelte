@@ -40,6 +40,8 @@
 
 	// Undo/redo
 	const history = createHistory<PlacedText[]>([]);
+	let canUndo = $derived(history.canUndo);
+	let canRedo = $derived(history.canRedo);
 
 	function pushHistory() {
 		history.push(elements.map((e) => ({ ...e })));
@@ -315,10 +317,10 @@
 			<span class="text-xs text-muted">pt</span>
 			<input type="color" bind:value={newColor} class="color-input" aria-label="Text color" />
 			<div class="hist-btns">
-				<button class="hist-btn" onclick={doUndo} disabled={!history.canUndo} aria-label="Undo (Ctrl+Z)">
+				<button class="hist-btn" onclick={doUndo} disabled={!canUndo} aria-label="Undo (Ctrl+Z)">
 					<Undo2Icon size={16} />
 				</button>
-				<button class="hist-btn" onclick={doRedo} disabled={!history.canRedo} aria-label="Redo (Ctrl+Shift+Z)">
+				<button class="hist-btn" onclick={doRedo} disabled={!canRedo} aria-label="Redo (Ctrl+Shift+Z)">
 					<Redo2Icon size={16} />
 				</button>
 			</div>

@@ -214,9 +214,9 @@
 			>
 				<img src={previewUrl} alt="Source" class="preview-img" draggable="false" />
 
-				<!-- Selection overlay -->
-				<div class="blur-selection" style="left: {dRect.x}px; top: {dRect.y}px; width: {dRect.w}px; height: {dRect.h}px;">
-					<div class="blur-label">blur</div>
+				<!-- Selection overlay with live blur preview -->
+				<div class="blur-selection" style="left: {dRect.x}px; top: {dRect.y}px; width: {dRect.w}px; height: {dRect.h}px; backdrop-filter: blur({radius}px); -webkit-backdrop-filter: blur({radius}px);">
+					<div class="blur-label">blur {radius}px</div>
 				</div>
 
 				<!-- Border -->
@@ -263,9 +263,7 @@
 
 	.blur-selection {
 		position: absolute; pointer-events: none;
-		background: rgba(255, 0, 0, 0.12);
-		backdrop-filter: blur(4px);
-		-webkit-backdrop-filter: blur(4px);
+		background: rgba(255, 0, 0, 0.08);
 	}
 	.blur-label {
 		position: absolute; top: 4px; left: 4px;
