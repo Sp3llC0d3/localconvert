@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { cropPdf, type PdfCropBox } from '$lib/pdf/crop';
 	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize, getOutputName, validatePdfLib } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -57,7 +57,6 @@
 	async function loadFile() {
 		pdfDoc?.destroy();
 		try {
-			await validatePdfLib(files[0]);
 			pdfDoc = await loadPdfDocument(files[0]);
 			pageCount = pdfDoc.numPages;
 			await renderPage();

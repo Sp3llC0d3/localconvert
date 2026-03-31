@@ -69,6 +69,7 @@
 	// Dragging
 	let dragging = $state<{ id: string; offsetX: number; offsetY: number } | null>(null);
 	let dragMoved = $state(false);
+	let suppressNextClick = $state(false);
 
 	// Page container ref
 	let pageContainer = $state<HTMLDivElement>();
@@ -173,6 +174,7 @@
 
 	// Click to place text
 	function onPageClick(e: MouseEvent) {
+		if (suppressNextClick) { suppressNextClick = false; return; }
 		if (dragging) return;
 		if (!newText.trim()) return;
 		const pos = getRelPos(e);
@@ -193,6 +195,7 @@
 	// Element drag
 	function onElementPointerDown(e: MouseEvent, el: PlacedText) {
 		e.stopPropagation();
+		suppressNextClick = true;
 		dragMoved = false;
 		selectedId = el.id;
 		const pos = getRelPos(e);
@@ -374,7 +377,7 @@
 						{#if selectedId === el.id}
 							<button
 								class="delete-btn"
-								onmousedown={(e) => e.stopPropagation()}
+								onmousedown={(e) => { e.stopPropagation(); suppressNextClick = true; }}
 								onclick={(e) => { e.stopPropagation(); removeElement(el.id); }}
 								aria-label={m['tool_pages.edit.remove_text']()}
 							>

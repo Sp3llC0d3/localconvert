@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { validateFileSize } from '$lib/pdf/utils';
 	import { m } from '$lib/paraglide/messages';
+	import { dropping } from '$lib/store/index.svelte';
 
 	type Props = {
 		files: File[];
@@ -46,6 +47,7 @@
 		e.preventDefault();
 		e.stopPropagation();
 		dragging = false;
+		dropping.set(false);
 		processFiles(e.dataTransfer?.files ?? null);
 	}
 </script>

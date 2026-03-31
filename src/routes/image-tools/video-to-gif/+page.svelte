@@ -3,6 +3,7 @@
 	import { browser } from '$app/environment';
 	import { videoToGif } from '$lib/converters/video-to-gif';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
+	import { dropping } from '$lib/store/index.svelte';
 	import { FilmIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -19,13 +20,18 @@
 	let previewUrl = $state('');
 
 	$effect(() => {
-		if (previewUrl) URL.revokeObjectURL(previewUrl);
-		previewUrl = '';
+		void files; // track files for cleanup
+		return () => {
+			if (previewUrl) URL.revokeObjectURL(previewUrl);
+		};
+	});
+
+	$effect(() => {
+		if (files.length === 0) return;
+		// Reset state on new file
 		resultBlob = null;
+		previewUrl = '';
 		error = '';
-		if (files.length > 0) {
-			// No video preview needed — just show file info
-		}
 	});
 
 	function onFileSelect(e: Event) {
@@ -35,6 +41,8 @@
 
 	function onDrop(e: DragEvent) {
 		e.preventDefault();
+		e.stopPropagation();
+		dropping.set(false);
 		const f = e.dataTransfer?.files;
 		if (f?.[0] && f[0].type.startsWith('video/')) files = [f[0]];
 	}

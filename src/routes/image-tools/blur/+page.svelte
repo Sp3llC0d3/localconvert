@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
-	import { untrack } from 'svelte';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { blurRegion, type BlurRect } from '$lib/image/blur';
@@ -32,31 +31,38 @@
 	let dragOrigin = $state({ x: 0, y: 0 });
 	let rectAtDragStart = $state<BlurRect>({ x: 0, y: 0, width: 0, height: 0 });
 
+	// Track only files — cleanup and setup without triggering reactive loops
 	$effect(() => {
-		// Only track `files` — use untrack for URL cleanup to avoid infinite reactive loop
-		const currentFiles = files;
-		untrack(() => {
+		void files; // track files for cleanup
+		return () => {
 			if (previewUrl) URL.revokeObjectURL(previewUrl);
 			if (beforeUrl) URL.revokeObjectURL(beforeUrl);
 			if (afterUrl) URL.revokeObjectURL(afterUrl);
-		});
-		previewUrl = ''; beforeUrl = ''; afterUrl = '';
-		if (currentFiles.length === 0) {
+		};
+	});
+
+	$effect(() => {
+		if (files.length === 0) {
 			imgEl = null;
 			resultBlob = null;
+			previewUrl = '';
+			beforeUrl = '';
+			afterUrl = '';
 			return;
 		}
-		previewUrl = URL.createObjectURL(currentFiles[0]);
-		loadImage(currentFiles[0]).then((img) => {
+		// New file selected — reset and load
+		resultBlob = null;
+		beforeUrl = '';
+		afterUrl = '';
+		previewUrl = URL.createObjectURL(files[0]);
+		loadImage(files[0]).then((img) => {
 			imgEl = img;
-			resultBlob = null;
 			const maxW = Math.min(600, window.innerWidth - 48);
 			const maxH = 500;
 			const fitScale = Math.min(maxW / img.width, maxH / img.height, 1);
 			displayW = Math.round(img.width * fitScale);
 			displayH = Math.round(img.height * fitScale);
 			scale = img.width / displayW;
-			// Default selection: center 30%
 			const margin = 0.35;
 			rect = {
 				x: Math.round(img.width * margin),

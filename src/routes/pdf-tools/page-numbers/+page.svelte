@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { addPageNumbers, type NumberPosition, type NumberFormat } from '$lib/pdf/page-numbers';
 	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize, getOutputName, validatePdfLib } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -60,7 +60,6 @@
 	async function loadFile() {
 		pdfDoc?.destroy();
 		try {
-			await validatePdfLib(files[0]);
 			pdfDoc = await loadPdfDocument(files[0]);
 			pageCount = pdfDoc.numPages;
 			currentPage = 1;
