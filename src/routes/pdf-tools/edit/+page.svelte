@@ -68,6 +68,7 @@
 
 	// Dragging
 	let dragging = $state<{ id: string; offsetX: number; offsetY: number } | null>(null);
+	let dragMoved = $state(false);
 
 	// Page container ref
 	let pageContainer = $state<HTMLDivElement>();
@@ -149,6 +150,7 @@
 	function onPageMouseMove(e: MouseEvent) {
 		if (dragging) {
 			// Drag element
+			dragMoved = true;
 			const pos = getRelPos(e);
 			const pdf = toPdfCoords(pos.x - dragging.offsetX, pos.y - dragging.offsetY);
 			const el = elements.find((el) => el.id === dragging.id);
@@ -191,6 +193,7 @@
 	// Element drag
 	function onElementPointerDown(e: MouseEvent, el: PlacedText) {
 		e.stopPropagation();
+		dragMoved = false;
 		selectedId = el.id;
 		const pos = getRelPos(e);
 		const disp = toDisplayCoords(el.x, el.y);
@@ -204,8 +207,10 @@
 
 	function onPageMouseUp() {
 		if (dragging) {
+			const moved = dragMoved;
 			dragging = null;
-			pushHistory();
+			dragMoved = false;
+			if (moved) pushHistory();
 		}
 	}
 
@@ -369,6 +374,7 @@
 						{#if selectedId === el.id}
 							<button
 								class="delete-btn"
+								onmousedown={(e) => e.stopPropagation()}
 								onclick={(e) => { e.stopPropagation(); removeElement(el.id); }}
 								aria-label={m['tool_pages.edit.remove_text']()}
 							>

@@ -26,7 +26,8 @@
 		"subtitle": "36 alat untuk PDF, imej dan aliran kerja pembangun — semuanya berjalan dalam pelayar anda. Tiada muat naik, tiada akaun, percuma selama-lamanya.",
 		"uploader": {
 			"text": "Lepas atau klik untuk {action}",
-			"convert": "menukar"
+			"convert": "menukar",
+			"browse": "atau klik untuk melayari"
 		},
 		"cards": {
 			"title": "LocalConvert menyokong...",

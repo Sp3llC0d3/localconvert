@@ -26,7 +26,8 @@
 		"subtitle": "36 Werkzeuge für PDFs, Bilder und Entwickler-Workflows — alles in Ihrem Browser. Kein Upload, kein Konto, für immer kostenlos.",
 		"uploader": {
 			"text": "Dateien hier ablegen oder klicken zum {action}",
-			"convert": "Konvertieren"
+			"convert": "Konvertieren",
+			"browse": "oder klicken zum Durchsuchen"
 		},
 		"cards": {
 			"title": "LocalConvert unterstützt...",

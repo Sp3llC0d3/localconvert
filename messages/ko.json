@@ -26,7 +26,8 @@
 		"subtitle": "PDF, 이미지, 개발자 워크플로를 위한 36개 도구 — 모두 브라우저에서 작동. 업로드 없음, 계정 없음, 영원히 무료.",
 		"uploader": {
 			"text": "드래그하거나 클릭해서 {action}",
-			"convert": "변환하기"
+			"convert": "변환하기",
+			"browse": "또는 클릭하여 찾아보기"
 		},
 		"cards": {
 			"title": "LocalConvert가 지원하는 포맷",

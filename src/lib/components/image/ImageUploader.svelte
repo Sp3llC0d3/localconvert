@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { validateImageSize } from '$lib/image/utils';
+	import { m } from '$lib/paraglide/messages';
 
 	type Props = {
 		files: File[];
@@ -43,6 +44,7 @@
 
 	function onDrop(e: DragEvent) {
 		e.preventDefault();
+		e.stopPropagation();
 		dragging = false;
 		processFiles(e.dataTransfer?.files ?? null);
 	}
@@ -69,7 +71,7 @@
 		<path d="M12 16V8m0 0-3 3m3-3 3 3M20 16.5A3.5 3.5 0 0 0 16.5 13H15a5 5 0 1 0-9.9 1"/>
 	</svg>
 	<p class="drop-label">{label}</p>
-	<p class="drop-sub">or click to browse</p>
+	<p class="drop-sub">{m['upload.uploader.browse']()}</p>
 </button>
 
 {#if warnings.length > 0}

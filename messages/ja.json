@@ -26,7 +26,8 @@
 		"subtitle": "PDF、画像、開発者ワークフローのための36のツール — すべてブラウザで動作。アップロード不要、アカウント不要、永久無料。",
 		"uploader": {
 			"text": "ドロップまたはクリックして{action}",
-			"convert": "変換"
+			"convert": "変換",
+			"browse": "またはクリックして参照"
 		},
 		"cards": {
 			"title": "LocalConvertが対応している形式",

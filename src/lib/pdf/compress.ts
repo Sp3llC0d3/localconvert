@@ -32,6 +32,7 @@ export async function compressPdf(
 		const jpegBlob = await new Promise<Blob>((resolve) =>
 			canvas.toBlob((b) => resolve(b!), 'image/jpeg', quality)
 		);
+		canvas.width = 0; canvas.height = 0; // release canvas memory
 		const jpegBytes = new Uint8Array(await jpegBlob.arrayBuffer());
 
 		// Use original page dimensions (PDF points, not pixels)
@@ -46,5 +47,6 @@ export async function compressPdf(
 		onProgress?.(i, total);
 	}
 
+	pdfDoc.destroy();
 	return newPdf.save();
 }

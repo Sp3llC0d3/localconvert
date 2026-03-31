@@ -6,7 +6,11 @@ import { PDFDocument } from 'pdf-lib';
  * The caller must ensure they have the right to unlock the file.
  */
 export async function unlockPdf(file: File): Promise<Uint8Array> {
-	const bytes = await file.arrayBuffer();
-	const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
-	return doc.save();
+	try {
+		const bytes = await file.arrayBuffer();
+		const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+		return doc.save();
+	} catch (e) {
+		throw new Error('This PDF cannot be unlocked. It may be corrupted or use an unsupported encryption method.');
+	}
 }

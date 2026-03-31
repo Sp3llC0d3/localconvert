@@ -26,7 +26,8 @@
 		"subtitle": "36 alat untuk PDF, gambar, dan alur kerja pengembang — semua berjalan di browser Anda. Tanpa unggahan, tanpa akun, gratis selamanya.",
 		"uploader": {
 			"text": "Jatuhkan atau klik untuk {action}",
-			"convert": "konversi"
+			"convert": "konversi",
+			"browse": "atau klik untuk menelusuri"
 		},
 		"cards": {
 			"title": "LocalConvert mendukung...",

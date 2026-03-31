@@ -53,5 +53,5 @@ export async function videoToGif(
 		throw new Error('FFmpeg produced empty output');
 	}
 
-	return new Blob([output.buffer], { type: 'image/gif' });
+	return new Blob([output], { type: 'image/gif' });
 }

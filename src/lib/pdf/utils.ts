@@ -1,5 +1,15 @@
 export { formatOutputName as getOutputName } from '$lib/util/filename';
 
+/**
+ * Validate that a file can be loaded by pdf-lib (used for processing).
+ * Call early to catch incompatible PDFs before the user starts editing.
+ */
+export async function validatePdfLib(file: File): Promise<void> {
+	const { PDFDocument } = await import('pdf-lib');
+	const bytes = await file.arrayBuffer();
+	await PDFDocument.load(bytes, { ignoreEncryption: true });
+}
+
 export function downloadPdf(bytes: Uint8Array, filename: string): void {
 	const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer], { type: 'application/pdf' });
 	const url = URL.createObjectURL(blob);

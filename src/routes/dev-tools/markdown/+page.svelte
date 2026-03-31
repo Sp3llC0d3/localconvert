@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
+	import { sanitize } from '$lib/store/index.svelte';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 
@@ -56,7 +57,7 @@
 					</button>
 				{/if}
 			</div>
-			<div class="preview-box prose">{@html html}</div>
+			<div class="preview-box prose">{@html sanitize(html, ['h1','h2','h3','h4','h5','h6','p','a','b','strong','i','em','ul','ol','li','code','pre','blockquote','br','hr','table','thead','tbody','tr','th','td','del','sup','sub','span','div'])}</div>
 		</div>
 	</div>
 

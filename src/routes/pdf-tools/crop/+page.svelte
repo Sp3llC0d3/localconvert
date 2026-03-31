@@ -3,7 +3,7 @@
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { cropPdf, type PdfCropBox } from '$lib/pdf/crop';
 	import { loadPdfDocument, renderDocPageToCanvas, type PdfDocProxy } from '$lib/pdf/preview';
-	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
+	import { downloadPdf, formatFileSize, getOutputName, validatePdfLib } from '$lib/pdf/utils';
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
@@ -57,6 +57,7 @@
 	async function loadFile() {
 		pdfDoc?.destroy();
 		try {
+			await validatePdfLib(files[0]);
 			pdfDoc = await loadPdfDocument(files[0]);
 			pageCount = pdfDoc.numPages;
 			await renderPage();
@@ -66,7 +67,12 @@
 	}
 
 	async function renderPage() {
-		if (!previewCanvas || !pdfDoc) return;
+		if (!pdfDoc) return;
+		// Canvas might not be bound yet if Svelte hasn't flushed DOM — wait one frame
+		if (!previewCanvas) {
+			await new Promise((r) => requestAnimationFrame(r));
+			if (!previewCanvas) return;
+		}
 		const dims = await renderDocPageToCanvas(pdfDoc, 1, previewCanvas, 0.5);
 		pageWidth = dims.width;
 		pageHeight = dims.height;
@@ -243,9 +249,9 @@
 
 	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
 
-	{#if baseImageData && displayW > 0}
+	{#if files.length > 0}
 		<!-- Interactive preview -->
-		<div class="preview-wrap">
+		<div class="preview-wrap" class:hidden={!baseImageData || displayW <= 0}>
 			<div
 				bind:this={previewContainer}
 				class="preview-container"

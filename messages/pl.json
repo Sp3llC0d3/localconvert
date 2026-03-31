@@ -26,7 +26,8 @@
 		"subtitle": "36 narzędzi do plików PDF, obrazów i zadań deweloperskich — wszystko działa w przeglądarce. Bez przesyłania, bez kont, na zawsze za darmo.",
 		"uploader": {
 			"text": "Upuść lub kliknij, aby {action}",
-			"convert": "konwertować"
+			"convert": "konwertować",
+			"browse": "lub kliknij, aby przeglądać"
 		},
 		"cards": {
 			"title": "LocalConvert obsługuje...",

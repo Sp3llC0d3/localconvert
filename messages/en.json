@@ -26,7 +26,8 @@
 		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Drop or click to {action}",
-			"convert": "convert"
+			"convert": "convert",
+			"browse": "or click to browse"
 		},
 		"cards": {
 			"title": "LocalConvert supports...",

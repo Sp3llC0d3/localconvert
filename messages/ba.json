@@ -26,7 +26,8 @@
 		"subtitle": "36 alata za PDF-ove, slike i razvojne tokove — sve radi u vašem pregledniku. Bez otpremanja, bez naloga, zauvijek besplatno.",
 		"uploader": {
 			"text": "Prevucite ili kliknite da {action}",
-			"convert": "konvertujete"
+			"convert": "konvertujete",
+			"browse": "ili kliknite za pregledanje"
 		},
 		"cards": {
 			"title": "LocalConvert podržava...",

@@ -26,7 +26,8 @@
 		"subtitle": "36 verktyg for PDF:er, bilder och utvecklararbetsfloden -- allt kors i din webblasare. Inga uppladdningar, inga konton, gratis for alltid.",
 		"uploader": {
 			"text": "Slapp eller klicka for att {action}",
-			"convert": "konvertera"
+			"convert": "konvertera",
+			"browse": "eller klicka för att bläddra"
 		},
 		"cards": {
 			"title": "LocalConvert stoder...",

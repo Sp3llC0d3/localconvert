@@ -26,7 +26,8 @@
 		"subtitle": "36款PDF、图片和开发者工具 — 全部在浏览器中运行。无需上传、无需账户、永久免费。",
 		"uploader": {
 			"text": "拖放或点击以{action}",
-			"convert": "转换"
+			"convert": "转换",
+			"browse": "或点击浏览"
 		},
 		"cards": {
 			"title": "LocalConvert 支持...",

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
+	import { untrack } from 'svelte';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { blurRegion, type BlurRect } from '$lib/image/blur';
@@ -32,17 +33,21 @@
 	let rectAtDragStart = $state<BlurRect>({ x: 0, y: 0, width: 0, height: 0 });
 
 	$effect(() => {
-		if (previewUrl) URL.revokeObjectURL(previewUrl);
-		if (beforeUrl) URL.revokeObjectURL(beforeUrl);
-		if (afterUrl) URL.revokeObjectURL(afterUrl);
+		// Only track `files` — use untrack for URL cleanup to avoid infinite reactive loop
+		const currentFiles = files;
+		untrack(() => {
+			if (previewUrl) URL.revokeObjectURL(previewUrl);
+			if (beforeUrl) URL.revokeObjectURL(beforeUrl);
+			if (afterUrl) URL.revokeObjectURL(afterUrl);
+		});
 		previewUrl = ''; beforeUrl = ''; afterUrl = '';
-		if (files.length === 0) {
+		if (currentFiles.length === 0) {
 			imgEl = null;
 			resultBlob = null;
 			return;
 		}
-		previewUrl = URL.createObjectURL(files[0]);
-		loadImage(files[0]).then((img) => {
+		previewUrl = URL.createObjectURL(currentFiles[0]);
+		loadImage(currentFiles[0]).then((img) => {
 			imgEl = img;
 			resultBlob = null;
 			const maxW = Math.min(600, window.innerWidth - 48);

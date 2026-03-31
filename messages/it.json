@@ -26,7 +26,8 @@
 		"subtitle": "36 strumenti per PDF, immagini e flussi di sviluppo — tutto nel tuo browser. Senza caricamenti, senza account, gratis per sempre.",
 		"uploader": {
 			"text": "Trascini o clicchi per {action}",
-			"convert": "convertire"
+			"convert": "convertire",
+			"browse": "o clicca per sfogliare"
 		},
 		"cards": {
 			"title": "LocalConvert supporta...",

@@ -26,7 +26,8 @@
 		"subtitle": "36 de instrumente pentru PDF-uri, imagini si fluxuri de lucru pentru dezvoltatori -- toate ruleaza in browserul dumneavoastra. Fara incarcari pe server, fara conturi, gratuit pentru totdeauna.",
 		"uploader": {
 			"text": "Trageti sau faceti clic pentru a {action}",
-			"convert": "converti"
+			"convert": "converti",
+			"browse": "sau faceți clic pentru a răsfoi"
 		},
 		"cards": {
 			"title": "LocalConvert accepta...",

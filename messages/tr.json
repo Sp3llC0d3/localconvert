@@ -26,7 +26,8 @@
 		"subtitle": "PDF'ler, görseller ve geliştirici iş akışları için 36 araç — hepsi tarayıcınızda çalışır. Yükleme yok, hesap yok, sonsuza kadar ücretsiz.",
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
-			"convert": "dönüştürmek"
+			"convert": "dönüştürmek",
+			"browse": "veya göz atmak için tıklayın"
 		},
 		"cards": {
 			"title": "LocalConvert şunları destekler...",

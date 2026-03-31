@@ -19,7 +19,10 @@ export async function renderThumbnail(file: File, pageNum: number, scale = 0.3):
 	canvas.height = viewport.height;
 	const ctx = canvas.getContext('2d')!;
 	await page.render({ canvasContext: ctx, viewport, canvas }).promise;
-	return canvas.toDataURL('image/jpeg', 0.7);
+	const url = canvas.toDataURL('image/jpeg', 0.7);
+	canvas.width = 0; canvas.height = 0;
+	pdfDoc.destroy();
+	return url;
 }
 
 /**
@@ -46,7 +49,9 @@ export async function renderAllThumbnails(
 		const ctx = canvas.getContext('2d')!;
 		await page.render({ canvasContext: ctx, viewport, canvas }).promise;
 		thumbs.push(canvas.toDataURL('image/jpeg', 0.7));
+		canvas.width = 0; canvas.height = 0;
 		onProgress?.(i, total);
 	}
+	pdfDoc.destroy();
 	return thumbs;
 }

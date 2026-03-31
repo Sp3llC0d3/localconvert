@@ -26,7 +26,8 @@
 		"subtitle": "36 tools voor PDF's, afbeeldingen en ontwikkelaarswerkstromen — volledig in uw browser. Geen uploads, geen accounts, voor altijd gratis.",
 		"uploader": {
 			"text": "Sleep of klik om te {action}",
-			"convert": "converteren"
+			"convert": "converteren",
+			"browse": "of klik om te bladeren"
 		},
 		"cards": {
 			"title": "LocalConvert ondersteunt...",

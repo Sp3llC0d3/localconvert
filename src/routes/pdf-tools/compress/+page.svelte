@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
+	import { sanitize } from '$lib/store/index.svelte';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { compressPdf } from '$lib/pdf/compress';
 	import { renderPageToCanvas } from '$lib/pdf/preview';
@@ -102,7 +103,7 @@
 	<div class="warn-box">
 		<AlertTriangleIcon size={16} class="flex-shrink-0 mt-0.5" />
 		<p class="text-sm">
-			<b>{m['tool_pages.compress.note']()}</b> {@html m['tool_pages.compress.warning']()}
+			<b>{m['tool_pages.compress.note']()}</b> {@html sanitize(m['tool_pages.compress.warning']())}
 		</p>
 	</div>
 

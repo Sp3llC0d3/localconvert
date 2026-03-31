@@ -40,9 +40,11 @@ export async function pdfToImages(
 		const blob = await new Promise<Blob>((resolve) =>
 			canvas.toBlob((b) => resolve(b!), format, quality)
 		);
+		canvas.width = 0; canvas.height = 0;
 		results.push({ pageNum: i, blob, filename: `${baseName}_page${i}.${ext}` });
 		onProgress?.(i, total);
 	}
 
+	pdfDoc.destroy();
 	return results;
 }

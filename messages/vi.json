@@ -26,7 +26,8 @@
 		"subtitle": "36 công cụ cho PDF, hình ảnh và quy trình làm việc dành cho lập trình viên — tất cả đều chạy trong trình duyệt của bạn. Không tải lên máy chủ, không cần tài khoản, miễn phí mãi mãi.",
 		"uploader": {
 			"text": "Kéo thả hoặc nhấp để {action}",
-			"convert": "chuyển đổi"
+			"convert": "chuyển đổi",
+			"browse": "hoặc nhấp để duyệt"
 		},
 		"cards": {
 			"title": "LocalConvert hỗ trợ...",

@@ -44,5 +44,6 @@ export async function pdfToPpt(
 		onProgress?.(i, total);
 	}
 
+	pdfDoc.destroy();
 	return await pres.write({ outputType: 'blob' }) as Blob;
 }
