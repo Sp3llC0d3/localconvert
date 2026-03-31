@@ -819,7 +819,10 @@
 			"btn": "Buka Kunci PDF",
 			"result": "Dibuka kunci!",
 			"save": "Simpan PDF dibuka kunci",
-			"btn_busy": "Membuka kunci…"
+			"btn_busy": "Membuka kunci…",
+			"password_label": "Kata laluan (jika perlu)",
+			"password_placeholder": "Biarkan kosong jika tiada",
+			"password_hint": "Hanya diperlukan untuk PDF yang memerlukan kata laluan."
 		},
 		"color_picker": {
 			"title": "Pemilih Warna",

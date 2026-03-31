@@ -799,7 +799,10 @@
 			"btn": "PDF 잠금 해제",
 			"btn_busy": "잠금 해제 중…",
 			"result": "잠금 해제됨!",
-			"save": "잠금 해제된 PDF 저장"
+			"save": "잠금 해제된 PDF 저장",
+			"password_label": "비밀번호 (필요한 경우)",
+			"password_placeholder": "없으면 비워두세요",
+			"password_hint": "열기에 비밀번호가 필요한 PDF에만 필요합니다."
 		},
 		"rotate_image": {
 			"title": "이미지 회전",

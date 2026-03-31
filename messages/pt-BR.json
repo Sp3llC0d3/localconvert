@@ -799,7 +799,10 @@
 			"btn": "Desbloquear PDF",
 			"btn_busy": "Desbloqueando…",
 			"result": "Desbloqueado!",
-			"save": "Salvar PDF desbloqueado"
+			"save": "Salvar PDF desbloqueado",
+			"password_label": "Senha (se necessária)",
+			"password_placeholder": "Deixe vazio se não houver",
+			"password_hint": "Necessária apenas para PDFs protegidos por senha."
 		},
 		"rotate_image": {
 			"title": "Girar Imagem",

@@ -799,7 +799,10 @@
 			"btn": "Deverrouiller PDF",
 			"btn_busy": "Deverrouillage…",
 			"result": "Deverrouille !",
-			"save": "Enregistrer le PDF deverrouille"
+			"save": "Enregistrer le PDF deverrouille",
+			"password_label": "Mot de passe (si requis)",
+			"password_placeholder": "Laisser vide si aucun",
+			"password_hint": "Requis uniquement pour les PDF protégés par mot de passe."
 		},
 		"rotate_image": {
 			"title": "Pivoter l'image",

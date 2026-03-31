@@ -825,7 +825,10 @@
 			"btn": "Unlock PDF",
 			"result": "Unlocked!",
 			"save": "Save unlocked PDF",
-			"btn_busy": "Unlocking…"
+			"btn_busy": "Unlocking…",
+			"password_label": "Password (if required)",
+			"password_placeholder": "Leave empty if none",
+			"password_hint": "Only needed for PDFs that require a password to open."
 		},
 		"color_picker": {
 			"title": "Color Picker",

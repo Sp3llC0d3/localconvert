@@ -819,7 +819,10 @@
 			"btn": "Las upp PDF",
 			"result": "Upplast!",
 			"save": "Spara upplast PDF",
-			"btn_busy": "Laser upp…"
+			"btn_busy": "Laser upp…",
+			"password_label": "Lösenord (om det krävs)",
+			"password_placeholder": "Lämna tomt om inget",
+			"password_hint": "Behövs bara för PDF som kräver lösenord."
 		},
 		"color_picker": {
 			"title": "Fargvaljare",

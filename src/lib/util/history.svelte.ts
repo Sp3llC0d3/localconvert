@@ -8,18 +8,16 @@ const MAX_HISTORY = 50;
 export function createHistory<T>(initial: T) {
 	let stack = $state<T[]>([structuredClone(initial)]);
 	let pointer = $state(0);
+	let _canUndo = $derived(pointer > 0);
+	let _canRedo = $derived(pointer < stack.length - 1);
 
 	return {
-		get current(): T {
-			return stack[pointer];
-		},
-
 		get canUndo(): boolean {
-			return pointer > 0;
+			return _canUndo;
 		},
 
 		get canRedo(): boolean {
-			return pointer < stack.length - 1;
+			return _canRedo;
 		},
 
 		push(state: T) {

@@ -819,7 +819,10 @@
 			"btn": "Desbloquear PDF",
 			"result": "Desbloqueado!",
 			"save": "Guardar PDF desbloqueado",
-			"btn_busy": "A desbloquear…"
+			"btn_busy": "A desbloquear…",
+			"password_label": "Palavra-passe (se necessária)",
+			"password_placeholder": "Deixe vazio se não houver",
+			"password_hint": "Necessária apenas para PDFs protegidos por palavra-passe."
 		},
 		"color_picker": {
 			"title": "Seletor de cores",

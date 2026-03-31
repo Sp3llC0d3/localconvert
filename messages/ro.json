@@ -819,7 +819,10 @@
 			"btn": "Deblocheaza PDF",
 			"result": "Deblocat!",
 			"save": "Salvati PDF-ul deblocat",
-			"btn_busy": "Se deblocheaza…"
+			"btn_busy": "Se deblocheaza…",
+			"password_label": "Parolă (dacă este necesară)",
+			"password_placeholder": "Lăsați gol dacă nu este",
+			"password_hint": "Necesară doar pentru PDF-uri protejate cu parolă."
 		},
 		"color_picker": {
 			"title": "Selector de culori",

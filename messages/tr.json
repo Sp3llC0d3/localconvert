@@ -799,7 +799,10 @@
 			"btn": "PDF kilidini ac",
 			"btn_busy": "Kilit aciliyor…",
 			"result": "Kilidi acildi!",
-			"save": "Kilidi acilmis PDF'i kaydet"
+			"save": "Kilidi acilmis PDF'i kaydet",
+			"password_label": "Şifre (gerekiyorsa)",
+			"password_placeholder": "Yoksa boş bırakın",
+			"password_hint": "Yalnızca açmak için şifre gereken PDF'ler için gerekli."
 		},
 		"rotate_image": {
 			"title": "Gorsel Dondur",

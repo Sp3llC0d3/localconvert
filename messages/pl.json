@@ -819,7 +819,10 @@
 			"btn": "Odblokuj PDF",
 			"result": "Odblokowany!",
 			"save": "Zapisz odblokowany PDF",
-			"btn_busy": "Odblokowywanie…"
+			"btn_busy": "Odblokowywanie…",
+			"password_label": "Hasło (jeśli wymagane)",
+			"password_placeholder": "Zostaw puste, jeśli brak",
+			"password_hint": "Wymagane tylko dla plików PDF chronionych hasłem."
 		},
 		"color_picker": {
 			"title": "Wybor koloru",

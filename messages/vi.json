@@ -819,7 +819,10 @@
 			"btn": "Mo khoa PDF",
 			"result": "Da mo khoa!",
 			"save": "Luu PDF da mo khoa",
-			"btn_busy": "Dang mo khoa…"
+			"btn_busy": "Dang mo khoa…",
+			"password_label": "Mật khẩu (nếu cần)",
+			"password_placeholder": "Để trống nếu không có",
+			"password_hint": "Chỉ cần cho PDF yêu cầu mật khẩu để mở."
 		},
 		"color_picker": {
 			"title": "Chon mau",

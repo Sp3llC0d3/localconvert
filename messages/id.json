@@ -799,7 +799,10 @@
 			"btn": "Buka Kunci PDF",
 			"btn_busy": "Membuka kunci…",
 			"result": "Terbuka!",
-			"save": "Simpan PDF yang dibuka kuncinya"
+			"save": "Simpan PDF yang dibuka kuncinya",
+			"password_label": "Kata sandi (jika diperlukan)",
+			"password_placeholder": "Kosongkan jika tidak ada",
+			"password_hint": "Hanya diperlukan untuk PDF yang membutuhkan kata sandi."
 		},
 		"rotate_image": {
 			"title": "Putar Gambar",

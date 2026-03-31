@@ -55,11 +55,9 @@
 	<!-- After (full image behind) -->
 	<img src={afterSrc} alt="{alt} — after" class="ba-img" draggable="false" />
 
-	<!-- Before (clipped) -->
+	<!-- Before (clipped by overflow:hidden on .ba-before) -->
 	<div class="ba-before" style="width: {sliderPos}%;">
-		<img src={beforeSrc} alt="{alt} — before" class="ba-img ba-before-img" draggable="false"
-			style="width: {containerEl ? containerEl.offsetWidth : 0}px;"
-		/>
+		<img src={beforeSrc} alt="{alt} — before" class="ba-before-img" draggable="false" />
 	</div>
 
 	<!-- Slider line + handle -->
@@ -104,10 +102,14 @@
 	}
 
 	.ba-before-img {
+		display: block;
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: auto;
+		height: 100%;
+		width: auto;
+		max-width: none;
+		pointer-events: none;
 	}
 
 	.ba-line {

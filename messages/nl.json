@@ -819,7 +819,10 @@
 			"btn": "PDF ontgrendelen",
 			"result": "Ontgrendeld!",
 			"save": "Ontgrendelde PDF opslaan",
-			"btn_busy": "Ontgrendelen…"
+			"btn_busy": "Ontgrendelen…",
+			"password_label": "Wachtwoord (indien vereist)",
+			"password_placeholder": "Laat leeg als er geen is",
+			"password_hint": "Alleen nodig voor PDF's met een wachtwoord."
 		},
 		"color_picker": {
 			"title": "Kleurkiezer",

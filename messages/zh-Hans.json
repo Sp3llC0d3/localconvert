@@ -799,7 +799,10 @@
 			"btn": "解锁 PDF",
 			"btn_busy": "解锁中…",
 			"result": "已解锁！",
-			"save": "保存已解锁的 PDF"
+			"save": "保存已解锁的 PDF",
+			"password_label": "密码（如需要）",
+			"password_placeholder": "没有则留空",
+			"password_hint": "仅用于需要密码才能打开的PDF。"
 		},
 		"rotate_image": {
 			"title": "旋转图片",

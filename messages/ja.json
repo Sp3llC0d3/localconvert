@@ -799,7 +799,10 @@
 			"btn": "PDFのロックを解除",
 			"btn_busy": "ロック解除中…",
 			"result": "ロック解除完了!",
-			"save": "ロック解除したPDFを保存"
+			"save": "ロック解除したPDFを保存",
+			"password_label": "パスワード（必要な場合）",
+			"password_placeholder": "なければ空欄",
+			"password_hint": "開くのにパスワードが必要なPDFの場合のみ。"
 		},
 		"rotate_image": {
 			"title": "画像回転",

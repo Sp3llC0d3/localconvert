@@ -7,6 +7,7 @@
 	import { m } from '$lib/paraglide/messages';
 
 	let files = $state<File[]>([]);
+	let password = $state('');
 	let processing = $state(false);
 	let error = $state('');
 	let resultBytes = $state<Uint8Array | null>(null);
@@ -23,7 +24,7 @@
 		processing = true;
 		resultBytes = null;
 		try {
-			resultBytes = await unlockPdf(files[0]);
+			resultBytes = await unlockPdf(files[0], password);
 		} catch (e: unknown) {
 			error = e instanceof Error ? e.message : m['tool_pages.unlock.err_fail']();
 		}
@@ -59,6 +60,17 @@
 			<p class="text-sm">{m['tool_pages.unlock.info']()}</p>
 		</div>
 
+		<div class="opt-section">
+			<label class="text-sm font-medium">{m['tool_pages.unlock.password_label']()}</label>
+			<input
+				type="password"
+				bind:value={password}
+				placeholder={m['tool_pages.unlock.password_placeholder']()}
+				class="pwd-input"
+			/>
+			<p class="text-xs text-muted">{m['tool_pages.unlock.password_hint']()}</p>
+		</div>
+
 		<button class="btn highlight" disabled={processing} onclick={apply}>
 			{processing ? m['tool_pages.unlock.btn_busy']() : m['tool_pages.unlock.btn']()}
 		</button>
@@ -80,4 +92,10 @@
 	.unlock-page { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; }
 .result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.info-box { padding: 0.75rem 1rem; border-radius: 0.75rem; background: var(--bg-panel-alt); color: var(--fg-muted); }
+	.opt-section { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
+	.pwd-input {
+		width: 100%; padding: 0.6rem 0.75rem; border-radius: 0.5rem; font-size: 0.875rem;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
+	}
+	.pwd-input:focus { outline: 1.5px solid var(--accent); }
 </style>

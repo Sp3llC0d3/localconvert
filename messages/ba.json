@@ -799,7 +799,10 @@
 			"btn": "Otkljucaj PDF",
 			"btn_busy": "Otkljucavanje…",
 			"result": "Otkljucano!",
-			"save": "Sacuvaj otkljucani PDF"
+			"save": "Sacuvaj otkljucani PDF",
+			"password_label": "Lozinka (ako je potrebna)",
+			"password_placeholder": "Ostavite prazno ako nema",
+			"password_hint": "Potrebna samo za PDF-ove koji zahtijevaju lozinku za otvaranje."
 		},
 		"rotate_image": {
 			"title": "Rotiraj sliku",

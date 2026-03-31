@@ -799,7 +799,10 @@
 			"btn": "PDF entsperren",
 			"btn_busy": "Entsperren…",
 			"result": "Entsperrt!",
-			"save": "Entsperrte PDF speichern"
+			"save": "Entsperrte PDF speichern",
+			"password_label": "Passwort (falls erforderlich)",
+			"password_placeholder": "Leer lassen, wenn keines",
+			"password_hint": "Nur nötig für PDFs, die ein Passwort zum Öffnen erfordern."
 		},
 		"rotate_image": {
 			"title": "Bild drehen",

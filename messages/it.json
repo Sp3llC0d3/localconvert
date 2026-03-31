@@ -799,7 +799,10 @@
 			"btn": "Sblocca PDF",
 			"btn_busy": "Sblocco…",
 			"result": "Sbloccato!",
-			"save": "Salva PDF sbloccato"
+			"save": "Salva PDF sbloccato",
+			"password_label": "Password (se richiesta)",
+			"password_placeholder": "Lasciare vuoto se assente",
+			"password_hint": "Necessaria solo per PDF protetti da password."
 		},
 		"rotate_image": {
 			"title": "Ruota immagine",
