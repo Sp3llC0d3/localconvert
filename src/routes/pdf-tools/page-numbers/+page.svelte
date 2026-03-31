@@ -45,32 +45,45 @@
 		{ value: 'roman', label: 'I, II, III' },
 	];
 
+	let lastFileRef: File | null = null;
+
 	$effect(() => {
-		if (!browser || files.length === 0) {
+		const currentFile = files.length > 0 ? files[0] : null;
+		if (currentFile === lastFileRef) return;
+		lastFileRef = currentFile;
+		if (!browser || !currentFile) {
+			pdfDoc?.destroy();
+			pdfDoc = null;
 			pageCount = 0;
 			baseImageData = null;
 			resultBytes = null;
-			pdfDoc?.destroy();
-			pdfDoc = null;
 			return;
 		}
-		loadFile();
+		loadFile(currentFile);
 	});
 
-	async function loadFile() {
+	async function loadFile(file: File) {
 		pdfDoc?.destroy();
+		pdfDoc = null;
 		try {
-			pdfDoc = await loadPdfDocument(files[0]);
-			pageCount = pdfDoc.numPages;
+			const doc = await loadPdfDocument(file);
+			if (lastFileRef !== file) { doc.destroy(); return; }
+			pdfDoc = doc;
+			pageCount = doc.numPages;
 			currentPage = 1;
 			await renderCurrentPage();
 		} catch {
+			if (lastFileRef !== file) return;
 			error = m['tools_common.failed_read_pdf']();
 		}
 	}
 
 	async function renderCurrentPage() {
-		if (!previewCanvas || !pdfDoc) return;
+		if (!pdfDoc) return;
+		if (!previewCanvas) {
+			await new Promise((r) => requestAnimationFrame(r));
+			if (!previewCanvas || !pdfDoc) return;
+		}
 		const dims = await renderDocPageToCanvas(pdfDoc, currentPage, previewCanvas, 0.5);
 		pageWidth = dims.width;
 		pageHeight = dims.height;

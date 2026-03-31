@@ -40,27 +40,36 @@
 	let dragStartPos = $state(0);
 	let dragStartMargin = $state(0);
 
+	let lastFileRef: File | null = null;
+
 	$effect(() => {
-		if (!browser || files.length === 0) {
+		const currentFile = files.length > 0 ? files[0] : null;
+		if (currentFile === lastFileRef) return;
+		lastFileRef = currentFile;
+		if (!browser || !currentFile) {
+			pdfDoc?.destroy();
+			pdfDoc = null;
 			pageCount = 0;
 			baseImageData = null;
 			resultBytes = null;
-			pdfDoc?.destroy();
-			pdfDoc = null;
 			return;
 		}
-		loadFile();
+		loadFile(currentFile);
 	});
 
 	onDestroy(() => { pdfDoc?.destroy(); });
 
-	async function loadFile() {
+	async function loadFile(file: File) {
 		pdfDoc?.destroy();
+		pdfDoc = null;
 		try {
-			pdfDoc = await loadPdfDocument(files[0]);
-			pageCount = pdfDoc.numPages;
+			const doc = await loadPdfDocument(file);
+			if (lastFileRef !== file) { doc.destroy(); return; }
+			pdfDoc = doc;
+			pageCount = doc.numPages;
 			await renderPage();
 		} catch {
+			if (lastFileRef !== file) return;
 			error = m['tools_common.failed_read_pdf']();
 		}
 	}
