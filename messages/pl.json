@@ -560,7 +560,9 @@
 		"top": "Gora",
 		"input": "Wejscie:",
 		"loading_thumbs": "Ladowanie miniatur…",
-		"back_dev": "← Narzedzia deweloperskie"
+		"back_dev": "← Narzedzia deweloperskie",
+		"font": "Czcionka",
+		"color": "Kolor"
 	},
 	"tool_pages": {
 		"rotate_image": {

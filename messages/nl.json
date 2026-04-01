@@ -560,7 +560,9 @@
 		"top": "Boven",
 		"input": "Invoer:",
 		"loading_thumbs": "Miniaturen laden…",
-		"back_dev": "← Ontwikkelaarstools"
+		"back_dev": "← Ontwikkelaarstools",
+		"font": "Lettertype",
+		"color": "Kleur"
 	},
 	"tool_pages": {
 		"rotate_image": {

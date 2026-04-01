@@ -590,7 +590,9 @@
 		"foreground": "전경색",
 		"background": "배경색",
 		"input": "입력:",
-		"back_dev": "← 개발자 도구"
+		"back_dev": "← 개발자 도구",
+		"font": "글꼴",
+		"color": "색상"
 	},
 	"tool_pages": {
 		"merge": {

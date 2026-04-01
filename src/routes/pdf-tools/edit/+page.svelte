@@ -4,7 +4,7 @@
 	import { editPdf, type PdfEdit, type TextEdit } from '$lib/pdf/edit';
 	import { renderAllThumbnails } from '$lib/pdf/thumbnails';
 	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
-	import { EditIcon, Trash2Icon } from 'lucide-svelte';
+	import { EditIcon, Trash2Icon, UploadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
 
@@ -29,6 +29,7 @@
 		y: number; // PDF points from bottom
 		fontSize: number;
 		color: string;
+		fontFamily: string;
 	}
 
 	let elements = $state<PlacedText[]>([]);
@@ -36,6 +37,33 @@
 	let newText = $state('Type here');
 	let newFontSize = $state(14);
 	let newColor = $state('#000000');
+	let newFontFamily = $state('sans-serif');
+	let customFontName = $state('');
+	let fontInput = $state<HTMLInputElement>();
+
+	const builtinFonts = [
+		{ label: 'Default', value: 'sans-serif' },
+		{ label: 'Serif', value: 'serif' },
+		{ label: 'Monospace', value: 'monospace' },
+	];
+
+	async function uploadFont(e: Event) {
+		const input = e.target as HTMLInputElement;
+		if (!input.files?.[0]) return;
+		const file = input.files[0];
+		const buffer = await file.arrayBuffer();
+		const name = 'CustomEditFont';
+		try {
+			const face = new FontFace(name, buffer);
+			await face.load();
+			document.fonts.add(face);
+			newFontFamily = `"${name}"`;
+			customFontName = file.name;
+		} catch {
+			error = 'Failed to load font. Please use a .ttf or .otf file.';
+		}
+		input.value = '';
+	}
 
 
 	// Ghost preview (follows cursor before placing)
@@ -160,6 +188,7 @@
 			y: pdf.y,
 			fontSize: newFontSize,
 			color: newColor,
+			fontFamily: newFontFamily,
 		}];
 		selectedId = elements[elements.length - 1].id;
 	}
@@ -206,6 +235,7 @@
 				y: el.y,
 				fontSize: el.fontSize,
 				color: hexToRgb(el.color),
+				fontFamily: el.fontFamily,
 			}));
 			resultBytes = await editPdf(files[0], currentPage, pdfEdits);
 		} catch (e: unknown) {
@@ -250,6 +280,20 @@
 			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
 			<span class="text-xs text-muted">pt</span>
 			<input type="color" bind:value={newColor} class="color-input" aria-label="Text color" />
+			<div class="font-controls">
+				<select class="font-select" bind:value={newFontFamily}>
+					{#each builtinFonts as f}
+						<option value={f.value}>{f.label}</option>
+					{/each}
+					{#if customFontName}
+						<option value='"CustomEditFont"'>{customFontName}</option>
+					{/if}
+				</select>
+				<input bind:this={fontInput} type="file" accept=".ttf,.otf,.woff,.woff2" class="hidden" onchange={uploadFont} />
+				<button class="upload-font-btn" onclick={() => fontInput?.click()} title="Upload custom font">
+					<UploadIcon size={14} />
+				</button>
+			</div>
 		</div>
 
 		<!-- Page selector -->
@@ -283,7 +327,7 @@
 				{#if showGhost && newText.trim() && !dragging}
 					<div
 						class="ghost-text"
-						style="left: {ghostPos.x}px; top: {ghostPos.y}px; font-size: {newFontSize * (displayW / pageWidth)}px; color: {newColor};"
+						style="left: {ghostPos.x}px; top: {ghostPos.y}px; font-size: {newFontSize * (displayW / pageWidth)}px; color: {newColor}; font-family: {newFontFamily};"
 					>
 						{newText}
 					</div>
@@ -295,7 +339,7 @@
 					<div
 						class="placed-text"
 						class:selected={selectedId === el.id}
-						style="left: {disp.x}px; top: {disp.y}px; font-size: {el.fontSize * (displayW / pageWidth)}px; color: {el.color};"
+						style="left: {disp.x}px; top: {disp.y}px; font-size: {el.fontSize * (displayW / pageWidth)}px; color: {el.color}; font-family: {el.fontFamily};"
 						onmousedown={(e) => onElementPointerDown(e, el)}
 						role="button"
 						tabindex="0"
@@ -355,6 +399,21 @@
 	.size-input:focus { outline: 1.5px solid var(--accent); }
 	.color-input { width: 2rem; height: 2rem; border-radius: 0.375rem; cursor: pointer; border: 1px solid var(--bg-separator); padding: 0; }
 
+	/* Font controls */
+	.font-controls { display: flex; align-items: center; gap: 0.375rem; }
+	.font-select {
+		width: 6rem; padding: 0.375rem 0.375rem; border-radius: 0.5rem; font-size: 0.75rem;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);
+		cursor: pointer; appearance: auto;
+	}
+	.font-select:focus { outline: 1.5px solid var(--accent); }
+	.upload-font-btn {
+		display: flex; align-items: center; justify-content: center;
+		width: 2rem; height: 2rem; border-radius: 0.375rem; flex-shrink: 0;
+		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel));
+		cursor: pointer; color: var(--fg-muted); transition: color 0.15s;
+	}
+	.upload-font-btn:hover { color: var(--accent); border-color: var(--accent); }
 
 	/* Page workspace */
 	.page-workspace { display: flex; flex-direction: column; align-items: center; }
@@ -367,14 +426,14 @@
 	/* Ghost preview */
 	.ghost-text {
 		position: absolute; pointer-events: none; opacity: 0.4;
-		white-space: nowrap; font-family: sans-serif; font-weight: normal;
+		white-space: nowrap; font-weight: normal;
 		transform: translateY(-100%);
 	}
 
 	/* Placed text elements */
 	.placed-text {
 		position: absolute; cursor: move; white-space: nowrap;
-		font-family: sans-serif; font-weight: normal;
+		font-weight: normal;
 		padding: 1px 3px; border-radius: 2px;
 		transform: translateY(-100%);
 		transition: box-shadow 0.1s ease;

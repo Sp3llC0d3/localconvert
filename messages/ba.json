@@ -590,7 +590,9 @@
 		"foreground": "Prednji plan",
 		"background": "Pozadina",
 		"input": "Ulaz:",
-		"back_dev": "← Razvojni alati"
+		"back_dev": "← Razvojni alati",
+		"font": "Font",
+		"color": "Boja"
 	},
 	"tool_pages": {
 		"merge": {

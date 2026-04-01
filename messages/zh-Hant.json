@@ -590,7 +590,9 @@
 		"foreground": "前景色",
 		"background": "背景色",
 		"input": "輸入：",
-		"back_dev": "← 開發者工具"
+		"back_dev": "← 開發者工具",
+		"font": "字型",
+		"color": "顏色"
 	},
 	"tool_pages": {
 		"merge": {

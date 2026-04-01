@@ -590,7 +590,9 @@
 		"foreground": "Premier plan",
 		"background": "Arriere-plan",
 		"input": "Entree :",
-		"back_dev": "← Outils développeur"
+		"back_dev": "← Outils développeur",
+		"font": "Police",
+		"color": "Couleur"
 	},
 	"tool_pages": {
 		"merge": {

@@ -560,7 +560,9 @@
 		"top": "Atas",
 		"input": "Input:",
 		"loading_thumbs": "Memuatkan lakaran kecil…",
-		"back_dev": "← Alat Pembangun"
+		"back_dev": "← Alat Pembangun",
+		"font": "Fon",
+		"color": "Warna"
 	},
 	"tool_pages": {
 		"rotate_image": {

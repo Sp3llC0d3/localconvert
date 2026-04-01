@@ -560,7 +560,9 @@
 		"top": "Tren",
 		"input": "Dau vao:",
 		"loading_thumbs": "Dang tai hinh thu nho…",
-		"back_dev": "← Cong cu lap trinh"
+		"back_dev": "← Cong cu lap trinh",
+		"font": "Phông chữ",
+		"color": "Màu sắc"
 	},
 	"tool_pages": {
 		"rotate_image": {

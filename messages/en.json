@@ -525,6 +525,8 @@
 		"privacy_note_browser": "✓ Generated entirely in your browser.",
 		"reset": "Reset",
 		"text": "Text",
+		"font": "Font",
+		"color": "Color",
 		"opacity": "Opacity",
 		"font_size": "Font size",
 		"rotation": "Rotation",

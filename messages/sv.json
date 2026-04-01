@@ -560,7 +560,9 @@
 		"top": "Topp",
 		"input": "Indata:",
 		"loading_thumbs": "Laddar miniatyrbilder…",
-		"back_dev": "← Utvecklarverktyg"
+		"back_dev": "← Utvecklarverktyg",
+		"font": "Typsnitt",
+		"color": "Färg"
 	},
 	"tool_pages": {
 		"rotate_image": {

@@ -590,7 +590,9 @@
 		"foreground": "المقدمة",
 		"background": "الخلفية",
 		"input": "المدخل:",
-		"back_dev": "← أدوات المطورين"
+		"back_dev": "← أدوات المطورين",
+		"font": "الخط",
+		"color": "اللون"
 	},
 	"tool_pages": {
 		"merge": {

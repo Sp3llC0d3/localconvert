@@ -560,7 +560,9 @@
 		"top": "Topo",
 		"input": "Entrada:",
 		"loading_thumbs": "A carregar miniaturas…",
-		"back_dev": "← Ferramentas de desenvolvimento"
+		"back_dev": "← Ferramentas de desenvolvimento",
+		"font": "Fonte",
+		"color": "Cor"
 	},
 	"tool_pages": {
 		"rotate_image": {

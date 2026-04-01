@@ -1,12 +1,14 @@
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument, rgb } from 'pdf-lib';
+import { canvasToPngBytes } from '$lib/util/text-to-png';
 
 export interface TextEdit {
 	type: 'text';
 	text: string;
 	x: number;       // PDF points from left
-	y: number;       // PDF points from bottom
+	y: number;       // PDF points from bottom (baseline)
 	fontSize: number;
 	color: [number, number, number]; // RGB 0-1
+	fontFamily?: string; // CSS font-family, default 'sans-serif'
 }
 
 export interface ImageEdit {
@@ -32,6 +34,55 @@ export interface RectEdit {
 
 export type PdfEdit = TextEdit | ImageEdit | RectEdit;
 
+/**
+ * Render a text edit to a transparent PNG for embedding.
+ * Uses canvas for universal script support (Arabic, CJK, RTL, emoji).
+ * Positions text with baseline at the bottom of the canvas so
+ * drawImage(x, y) aligns with where drawText(x, y) would place the baseline.
+ */
+async function renderTextEdit(edit: TextEdit, scale: number): Promise<{
+	pngBytes: Uint8Array;
+	widthPt: number;
+	heightPt: number;
+}> {
+	const fontFamily = edit.fontFamily || 'sans-serif';
+	const scaledSize = edit.fontSize * scale;
+	const cssColor = `rgb(${Math.round(edit.color[0] * 255)}, ${Math.round(edit.color[1] * 255)}, ${Math.round(edit.color[2] * 255)})`;
+
+	// Measure text
+	const measureCanvas = document.createElement('canvas');
+	const mCtx = measureCanvas.getContext('2d')!;
+	mCtx.font = `${scaledSize}px ${fontFamily}`;
+	const metrics = mCtx.measureText(edit.text);
+	measureCanvas.width = 0;
+	measureCanvas.height = 0;
+
+	const textW = Math.ceil(metrics.width) + 4;
+	const ascent = Math.ceil(metrics.actualBoundingBoxAscent || scaledSize * 0.8);
+	const descent = Math.ceil(metrics.actualBoundingBoxDescent || scaledSize * 0.2);
+	const textH = ascent + descent + 4;
+
+	// Create canvas — text baseline at (2, ascent+2) so baseline aligns with bottom edge minus descent
+	const canvas = document.createElement('canvas');
+	canvas.width = textW;
+	canvas.height = textH;
+	const ctx = canvas.getContext('2d')!;
+	ctx.font = `${scaledSize}px ${fontFamily}`;
+	ctx.fillStyle = cssColor;
+	ctx.textBaseline = 'alphabetic';
+	ctx.fillText(edit.text, 2, ascent + 2);
+
+	const pngBytes = await canvasToPngBytes(canvas);
+	canvas.width = 0;
+	canvas.height = 0;
+
+	return {
+		pngBytes,
+		widthPt: textW / scale,
+		heightPt: textH / scale,
+	};
+}
+
 export async function editPdf(
 	file: File,
 	pageIndex: number,
@@ -40,16 +91,23 @@ export async function editPdf(
 	const bytes = await file.arrayBuffer();
 	const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
 	const page = doc.getPage(pageIndex);
-	const font = await doc.embedFont(StandardFonts.Helvetica);
+	const scale = 3; // render resolution
 
 	for (const edit of edits) {
 		if (edit.type === 'text') {
-			page.drawText(edit.text, {
+			// Render text to PNG via canvas (supports all scripts)
+			const { pngBytes, widthPt, heightPt } = await renderTextEdit(edit, scale);
+			const img = await doc.embedPng(pngBytes);
+
+			// Position: x = left edge, y = baseline position
+			// drawImage y is bottom edge of image, baseline is at (heightPt - descent)
+			// Approximate: place image so its top aligns with text top
+			const descent = edit.fontSize * 0.2;
+			page.drawImage(img, {
 				x: edit.x,
-				y: edit.y,
-				size: edit.fontSize,
-				font,
-				color: rgb(...edit.color),
+				y: edit.y - descent,
+				width: widthPt,
+				height: heightPt,
 			});
 		} else if (edit.type === 'image') {
 			const img = edit.format === 'jpg'

@@ -590,7 +590,9 @@
 		"foreground": "Primer plano",
 		"background": "Fondo",
 		"input": "Entrada:",
-		"back_dev": "← Herramientas de desarrollo"
+		"back_dev": "← Herramientas de desarrollo",
+		"font": "Fuente",
+		"color": "Color"
 	},
 	"tool_pages": {
 		"merge": {

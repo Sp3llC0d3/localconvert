@@ -590,7 +590,9 @@
 		"foreground": "On plan",
 		"background": "Arka plan",
 		"input": "Girdi:",
-		"back_dev": "← Gelistirici Araclari"
+		"back_dev": "← Gelistirici Araclari",
+		"font": "Yazı tipi",
+		"color": "Renk"
 	},
 	"tool_pages": {
 		"merge": {

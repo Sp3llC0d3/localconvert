@@ -560,7 +560,9 @@
 		"top": "Sus",
 		"input": "Intrare:",
 		"loading_thumbs": "Se incarca miniaturile…",
-		"back_dev": "← Instrumente dezvoltare"
+		"back_dev": "← Instrumente dezvoltare",
+		"font": "Font",
+		"color": "Culoare"
 	},
 	"tool_pages": {
 		"rotate_image": {
