@@ -149,8 +149,11 @@ export class WebCodecsConverter extends Converter {
 					}
 				}, 200);
 
-				await conversion.execute();
-				clearInterval(progressInterval);
+				try {
+					await conversion.execute();
+				} finally {
+					clearInterval(progressInterval);
+				}
 			} else {
 				await conversion.execute();
 			}

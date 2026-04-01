@@ -592,7 +592,9 @@
 		"input": "输入：",
 		"back_dev": "← 开发者工具",
 		"font": "字体",
-		"color": "颜色"
+		"color": "颜色",
+		"before": "之前",
+		"after": "之后"
 	},
 	"tool_pages": {
 		"merge": {

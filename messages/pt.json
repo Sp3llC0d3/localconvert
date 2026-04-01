@@ -562,7 +562,9 @@
 		"loading_thumbs": "A carregar miniaturas…",
 		"back_dev": "← Ferramentas de desenvolvimento",
 		"font": "Fonte",
-		"color": "Cor"
+		"color": "Cor",
+		"before": "Antes",
+		"after": "Depois"
 	},
 	"tool_pages": {
 		"rotate_image": {

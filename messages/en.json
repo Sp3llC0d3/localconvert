@@ -541,6 +541,8 @@
 		"watermark": "Watermark",
 		"crop": "Crop",
 		"meme": "Meme",
+		"before": "Before",
+		"after": "After",
 		"save": "Save",
 		"save_all": "Save all",
 		"bottom": "Bottom",

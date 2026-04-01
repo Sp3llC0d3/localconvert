@@ -44,29 +44,38 @@
 	let mode = $state<'draw' | 'type' | 'upload'>('draw');
 	let typedName = $state('');
 
+	let lastFileRef: File | null = null;
+
 	$effect(() => {
-		if (!browser || files.length === 0) {
+		const currentFile = files.length > 0 ? files[0] : null;
+		if (currentFile === lastFileRef) return;
+		lastFileRef = currentFile;
+		if (!browser || !currentFile) {
 			thumbs = [];
 			resultBytes = null;
 			placed = false;
+			hasSignature = false;
 			return;
 		}
-		loadPdf();
+		loadPdf(currentFile);
 	});
 
-	async function loadPdf() {
+	async function loadPdf(file: File) {
 		try {
 			const pdfjs = await getPdfJs();
-			const buf = await files[0].arrayBuffer();
+			const buf = await file.arrayBuffer();
 			const doc = await pdfjs.getDocument({ data: buf }).promise;
+			if (lastFileRef !== file) return;
 			const page = await doc.getPage(1);
 			const vp = page.getViewport({ scale: 1 });
 			pageWidth = Math.round(vp.width);
 			pageHeight = Math.round(vp.height);
 			currentPage = 0;
-			thumbs = await renderAllThumbnails(files[0], 0.7);
+			thumbs = await renderAllThumbnails(file, 0.7);
+			if (lastFileRef !== file) return;
 			calcDisplaySize();
 		} catch {
+			if (lastFileRef !== file) return;
 			error = m['tools_common.failed_read_pdf']();
 		}
 	}
@@ -329,63 +338,61 @@
 			{/if}
 		</div>
 
-		<!-- Step 2: Place on page -->
-		{#if hasSignature}
-			<div class="step-section">
-				<p class="step-label">{m['tool_pages.sign.step2']()}</p>
+		<!-- Step 2: Place on page (always visible, disabled until signature exists) -->
+		<div class="step-section" class:step-disabled={!hasSignature}>
+			<p class="step-label">{m['tool_pages.sign.step2']()}</p>
 
-				{#if thumbs.length > 1}
-					<div class="flex gap-2 flex-wrap mb-2">
-						{#each thumbs as _, i}
-							<button class="btn text-sm px-3 py-1.5 {currentPage === i ? 'highlight' : ''}" onclick={() => { currentPage = i; placed = false; }}>
-								Page {i + 1}
-							</button>
-						{/each}
-					</div>
-				{/if}
+			{#if thumbs.length > 1}
+				<div class="flex gap-2 flex-wrap mb-2">
+					{#each thumbs as _, i}
+						<button class="btn text-sm px-3 py-1.5 {currentPage === i ? 'highlight' : ''}" onclick={() => { currentPage = i; placed = false; }} disabled={!hasSignature}>
+							Page {i + 1}
+						</button>
+					{/each}
+				</div>
+			{/if}
 
-				<div class="page-workspace">
-					<div
-						bind:this={pageContainer}
-						class="page-container"
-						style="width: {displayW}px; max-width: 100%; height: {displayH}px;"
-						onmousemove={onPageMouseMove}
-						onmouseleave={onPageMouseLeave}
-						onmouseup={onPageMouseUp}
-						onclick={onPageClick}
-						role="application"
-						aria-label={m['tool_pages.sign.click_place']()}
-					>
-						<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
+			<div class="page-workspace">
+				<div
+					bind:this={pageContainer}
+					class="page-container"
+					style="width: {displayW}px; max-width: 100%; height: {displayH}px; {!hasSignature ? 'pointer-events: none;' : ''}"
+					onmousemove={onPageMouseMove}
+					onmouseleave={onPageMouseLeave}
+					onmouseup={onPageMouseUp}
+					onclick={onPageClick}
+					role="application"
+					aria-label={m['tool_pages.sign.click_place']()}
+				>
+					<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
 
-						<!-- Ghost (follows cursor before placement) -->
-						{#if showGhost && !placed && sigPreviewUrl}
-							<img
-								src={sigPreviewUrl}
-								alt=""
-								class="sig-ghost"
-								style="left: {ghostPos.x - sigDisplayW / 2}px; top: {ghostPos.y - sigDisplayH / 2}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
-							/>
-						{/if}
+					<!-- Ghost (follows cursor before placement) -->
+					{#if showGhost && !placed && sigPreviewUrl && hasSignature}
+						<img
+							src={sigPreviewUrl}
+							alt=""
+							class="sig-ghost"
+							style="left: {ghostPos.x - sigDisplayW / 2}px; top: {ghostPos.y - sigDisplayH / 2}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
+						/>
+					{/if}
 
-						<!-- Placed signature -->
-						{#if placed && sigPreviewUrl}
-							<img
-								src={sigPreviewUrl}
-								alt="Signature"
-								class="sig-placed"
-								style="left: {sigDisplayX}px; top: {sigDisplayY}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
-								onmousedown={onSigPointerDown}
-								ontouchstart={onSigPointerDown}
-								draggable="false"
-							/>
-						{/if}
-					</div>
+					<!-- Placed signature -->
+					{#if placed && sigPreviewUrl}
+						<img
+							src={sigPreviewUrl}
+							alt="Signature"
+							class="sig-placed"
+							style="left: {sigDisplayX}px; top: {sigDisplayY}px; width: {sigDisplayW}px; height: {sigDisplayH}px;"
+							onmousedown={onSigPointerDown}
+							ontouchstart={onSigPointerDown}
+							draggable="false"
+						/>
+					{/if}
 				</div>
 			</div>
-		{/if}
+		</div>
 
-		{#if placed}
+		{#if placed && hasSignature}
 			<button class="btn highlight" disabled={processing} onclick={apply}>
 				{processing ? m['tool_pages.sign.btn_busy']() : m['tool_pages.sign.save']()}
 			</button>
@@ -414,6 +421,7 @@
 		background: var(--bg-panel); box-shadow: var(--shadow-panel);
 	}
 	.step-label { font-size: 0.8125rem; font-weight: 600; }
+	.step-disabled { opacity: 0.4; pointer-events: none; }
 
 	/* Signature canvas */
 	.sig-canvas {

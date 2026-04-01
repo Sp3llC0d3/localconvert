@@ -592,7 +592,9 @@
 		"input": "入力:",
 		"back_dev": "← 開発者ツール",
 		"font": "フォント",
-		"color": "色"
+		"color": "色",
+		"before": "前",
+		"after": "後"
 	},
 	"tool_pages": {
 		"merge": {

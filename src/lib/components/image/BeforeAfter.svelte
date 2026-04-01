@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
+
 	type Props = {
 		beforeSrc: string;
 		afterSrc: string;
@@ -70,8 +72,8 @@
 	</div>
 
 	<!-- Labels -->
-	<span class="ba-label ba-label-before">Before</span>
-	<span class="ba-label ba-label-after">After</span>
+	<span class="ba-label ba-label-before">{m['tools_common.before']?.() ?? 'Before'}</span>
+	<span class="ba-label ba-label-after">{m['tools_common.after']?.() ?? 'After'}</span>
 </div>
 
 <style>

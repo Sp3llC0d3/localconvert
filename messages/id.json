@@ -592,7 +592,9 @@
 		"input": "Masukan:",
 		"back_dev": "← Alat Pengembang",
 		"font": "Font",
-		"color": "Warna"
+		"color": "Warna",
+		"before": "Sebelum",
+		"after": "Sesudah"
 	},
 	"tool_pages": {
 		"merge": {

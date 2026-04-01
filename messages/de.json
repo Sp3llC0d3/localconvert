@@ -592,7 +592,9 @@
 		"input": "Input:",
 		"back_dev": "← Entwicklerwerkzeuge",
 		"font": "Schriftart",
-		"color": "Farbe"
+		"color": "Farbe",
+		"before": "Vorher",
+		"after": "Nachher"
 	},
 	"tool_pages": {
 		"merge": {

@@ -562,7 +562,9 @@
 		"loading_thumbs": "Se incarca miniaturile…",
 		"back_dev": "← Instrumente dezvoltare",
 		"font": "Font",
-		"color": "Culoare"
+		"color": "Culoare",
+		"before": "Înainte",
+		"after": "După"
 	},
 	"tool_pages": {
 		"rotate_image": {

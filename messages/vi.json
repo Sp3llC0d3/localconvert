@@ -562,7 +562,9 @@
 		"loading_thumbs": "Dang tai hinh thu nho…",
 		"back_dev": "← Cong cu lap trinh",
 		"font": "Phông chữ",
-		"color": "Màu sắc"
+		"color": "Màu sắc",
+		"before": "Trước",
+		"after": "Sau"
 	},
 	"tool_pages": {
 		"rotate_image": {

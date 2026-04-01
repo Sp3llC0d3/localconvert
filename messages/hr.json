@@ -592,7 +592,9 @@
 		"input": "Unos:",
 		"back_dev": "← Razvojni alati",
 		"font": "Font",
-		"color": "Boja"
+		"color": "Boja",
+		"before": "Prije",
+		"after": "Poslije"
 	},
 	"tool_pages": {
 		"merge": {

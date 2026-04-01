@@ -592,7 +592,9 @@
 		"input": "المدخل:",
 		"back_dev": "← أدوات المطورين",
 		"font": "الخط",
-		"color": "اللون"
+		"color": "اللون",
+		"before": "قبل",
+		"after": "بعد"
 	},
 	"tool_pages": {
 		"merge": {

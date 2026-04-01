@@ -35,7 +35,7 @@
 	import { m } from "$lib/paraglide/messages";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { getLocale } from "$lib/paraglide/runtime";
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
 
 	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
 
@@ -56,11 +56,12 @@
 	}
 
 	if (browser) {
-		window.addEventListener("beforeinstallprompt", (e: Event) => {
+		const onInstallPrompt = (e: Event) => {
 			e.preventDefault();
 			installPrompt = e;
 			(window as any).__installPrompt = e;
-		});
+		};
+		window.addEventListener("beforeinstallprompt", onInstallPrompt);
 
 		const checkPrompt = setInterval(() => {
 			if ((window as any).__installPrompt && !installPrompt) {
@@ -69,7 +70,13 @@
 			if (installPrompt) clearInterval(checkPrompt);
 		}, 1000);
 
-		setTimeout(() => clearInterval(checkPrompt), 30000);
+		const checkTimeout = setTimeout(() => clearInterval(checkPrompt), 30000);
+
+		onDestroy(() => {
+			window.removeEventListener("beforeinstallprompt", onInstallPrompt);
+			clearInterval(checkPrompt);
+			clearTimeout(checkTimeout);
+		});
 	}
 
 	async function handleInstall() {
@@ -204,9 +211,8 @@
 
 	$effect(() => {
 		if (containerRect && linkRects.length > 0 && links.length > 0) {
-			setTimeout(() => {
-				isInitialized = true;
-			}, 10);
+			const id = setTimeout(() => { isInitialized = true; }, 10);
+			return () => clearTimeout(id);
 		} else {
 			isInitialized = false;
 		}

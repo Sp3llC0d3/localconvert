@@ -562,7 +562,9 @@
 		"loading_thumbs": "थंबनेल लोड हो रहे हैं…",
 		"back_dev": "← डेव टूल्स",
 		"font": "फ़ॉन्ट",
-		"color": "रंग"
+		"color": "रंग",
+		"before": "पहले",
+		"after": "बाद में"
 	},
 	"tool_pages": {
 		"rotate_image": {

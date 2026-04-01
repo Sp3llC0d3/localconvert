@@ -592,7 +592,9 @@
 		"input": "Girdi:",
 		"back_dev": "← Gelistirici Araclari",
 		"font": "Yazı tipi",
-		"color": "Renk"
+		"color": "Renk",
+		"before": "Önce",
+		"after": "Sonra"
 	},
 	"tool_pages": {
 		"merge": {

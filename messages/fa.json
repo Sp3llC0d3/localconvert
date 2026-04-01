@@ -562,7 +562,9 @@
 		"loading_thumbs": "بارگذاری تصاویر بندانگشتی…",
 		"back_dev": "← ابزارهای توسعه‌دهنده",
 		"font": "فونت",
-		"color": "رنگ"
+		"color": "رنگ",
+		"before": "قبل",
+		"after": "بعد"
 	},
 	"tool_pages": {
 		"rotate_image": {

@@ -562,7 +562,9 @@
 		"loading_thumbs": "Memuatkan lakaran kecil…",
 		"back_dev": "← Alat Pembangun",
 		"font": "Fon",
-		"color": "Warna"
+		"color": "Warna",
+		"before": "Sebelum",
+		"after": "Selepas"
 	},
 	"tool_pages": {
 		"rotate_image": {

@@ -98,7 +98,7 @@
 			<p class="text-xs text-muted">{formatFileSize(files[0].size)}</p>
 		{:else}
 			<p class="text-sm">{m['tool_pages.video_to_gif.upload']()}</p>
-			<p class="text-xs text-muted">or click to browse</p>
+			<p class="text-xs text-muted">{m['upload.uploader.browse']()}</p>
 		{/if}
 	</button>
 

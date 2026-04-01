@@ -562,7 +562,9 @@
 		"loading_thumbs": "Ladowanie miniatur…",
 		"back_dev": "← Narzedzia deweloperskie",
 		"font": "Czcionka",
-		"color": "Kolor"
+		"color": "Kolor",
+		"before": "Przed",
+		"after": "Po"
 	},
 	"tool_pages": {
 		"rotate_image": {

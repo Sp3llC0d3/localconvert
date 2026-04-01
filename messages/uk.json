@@ -562,7 +562,9 @@
 		"loading_thumbs": "Завантаження мiнiатюр…",
 		"back_dev": "← Iнструменти розробника",
 		"font": "Шрифт",
-		"color": "Колір"
+		"color": "Колір",
+		"before": "До",
+		"after": "Після"
 	},
 	"tool_pages": {
 		"rotate_image": {
