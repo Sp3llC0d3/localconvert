@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Estompare regiune",
-			"desc": "Desenati un dreptunghi peste zona pe care doriti sa o estompati.",
+			"desc": "Desenați dreptunghiuri sau elipse peste zonele pe care doriți să le estompați.",
 			"radius": "Intensitatea estomparii",
-			"err_area": "Desenati o regiune de estompat.",
-			"help": "trageti pentru a desena, clic in interior pentru a muta",
+			"err_area": "Desenați cel puțin o zonă.",
+			"help": "trageți pentru a desena, clic pentru a selecta, mânere pentru redimensionare",
 			"btn": "Aplica estompare",
 			"save": "Salvati imaginea estompata",
-			"btn_busy": "Se estompeaza…"
+			"btn_busy": "Se estompeaza…",
+			"shape": "Formă",
+			"opacity": "Opacitate"
 		},
 		"pdf_to_text": {
 			"title": "PDF in text",

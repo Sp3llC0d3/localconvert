@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Bereich verwischen",
-			"desc": "Zeichnen Sie ein Rechteck über den zu verwischenden Bereich.",
+			"desc": "Zeichnen Sie Rechtecke oder Ellipsen über Bereiche, die Sie verwischen möchten.",
 			"radius": "Unschärfestärke",
-			"err_area": "Bereich zum Verwischen zeichnen.",
-			"help": "Ziehen zum Zeichnen, Klicken zum Verschieben",
+			"err_area": "Zeichnen Sie mindestens einen Bereich.",
+			"help": "ziehen zum Zeichnen, klicken zum Auswählen, Griffe zum Ändern",
 			"btn": "Unschärfe anwenden",
 			"btn_busy": "Verwischen…",
-			"save": "Unscharfes Bild speichern"
+			"save": "Unscharfes Bild speichern",
+			"shape": "Form",
+			"opacity": "Deckkraft"
 		},
 		"pdf_to_text": {
 			"title": "PDF to Text",

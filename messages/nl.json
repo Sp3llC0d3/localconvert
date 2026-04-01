@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Gebied vervagen",
-			"desc": "Teken een rechthoek over het gebied dat u wilt vervagen.",
+			"desc": "Teken rechthoeken of ellipsen over gebieden die je wilt vervagen.",
 			"radius": "Vervagingssterkte",
-			"err_area": "Teken een gebied om te vervagen.",
-			"help": "sleep om te tekenen, klik erin om te verplaatsen",
+			"err_area": "Teken minstens één gebied.",
+			"help": "sleep om te tekenen, klik om te selecteren, handvatten om grootte te wijzigen",
 			"btn": "Vervaging toepassen",
 			"save": "Vervaagde afbeelding opslaan",
-			"btn_busy": "Vervagen…"
+			"btn_busy": "Vervagen…",
+			"shape": "Vorm",
+			"opacity": "Dekking"
 		},
 		"pdf_to_text": {
 			"title": "PDF naar tekst",

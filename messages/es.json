@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Difuminar region",
-			"desc": "Dibuja un rectangulo sobre el area que deseas difuminar.",
+			"desc": "Dibuja rectángulos o elipses sobre las áreas que quieras difuminar.",
 			"radius": "Intensidad del difuminado",
-			"err_area": "Dibuja una region para difuminar.",
-			"help": "arrastra para dibujar, clic dentro para mover",
+			"err_area": "Dibuja al menos una región.",
+			"help": "arrastra para dibujar, clic para seleccionar, tiradores para redimensionar",
 			"btn": "Aplicar difuminado",
 			"btn_busy": "Difuminando…",
-			"save": "Guardar imagen difuminada"
+			"save": "Guardar imagen difuminada",
+			"shape": "Forma",
+			"opacity": "Opacidad"
 		},
 		"pdf_to_text": {
 			"title": "PDF a texto",

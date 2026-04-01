@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Sfoca area",
-			"desc": "Disegna un rettangolo sull'area che vuoi sfocare.",
+			"desc": "Disegna rettangoli o ellissi sulle aree da sfocare.",
 			"radius": "Intensita sfocatura",
-			"err_area": "Disegna un'area da sfocare.",
-			"help": "trascina per disegnare, clicca dentro per spostare",
+			"err_area": "Disegna almeno una regione.",
+			"help": "trascina per disegnare, clicca per selezionare, maniglie per ridimensionare",
 			"btn": "Applica sfocatura",
 			"btn_busy": "Sfocatura…",
-			"save": "Salva immagine sfocata"
+			"save": "Salva immagine sfocata",
+			"shape": "Forma",
+			"opacity": "Opacità"
 		},
 		"pdf_to_text": {
 			"title": "PDF in testo",

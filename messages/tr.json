@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Bolge Bulaniklastirma",
-			"desc": "Bulaniklastirmak istediginiz alanin uzerine bir dikdortgen cizin.",
+			"desc": "Bulanıklaştırmak istediğiniz alanlara dikdörtgen veya elips çizin.",
 			"radius": "Bulaniklastirma guclu",
-			"err_area": "Bulaniklastirilacak bir bolge cizin.",
-			"help": "cizmek icin surukleyin, tasimak icin icine tiklayin",
+			"err_area": "En az bir alan çizin.",
+			"help": "çizmek için sürükleyin, seçmek için tıklayın, tutamaçlarla boyutlandırın",
 			"btn": "Bulaniklik uygula",
 			"btn_busy": "Bulaniklastiriliyor…",
-			"save": "Bulaniklastirilmis gorseli kaydet"
+			"save": "Bulaniklastirilmis gorseli kaydet",
+			"shape": "Şekil",
+			"opacity": "Opaklık"
 		},
 		"pdf_to_text": {
 			"title": "PDF'den Metin Cikart",

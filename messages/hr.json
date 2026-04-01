@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Zamuti podrucje",
-			"desc": "Nacrtajte pravokutnik preko podrucja koje zelite zamutiti.",
+			"desc": "Nacrtajte pravokutnike ili elipse preko područja koja želite zamutiti.",
 			"radius": "Jacina zamucenja",
-			"err_area": "Nacrtajte podrucje za zamucenje.",
-			"help": "povucite za crtanje, kliknite unutra za pomicanje",
+			"err_area": "Nacrtajte barem jedno područje.",
+			"help": "povucite za crtanje, kliknite za odabir, ručke za promjenu",
 			"btn": "Primijeni zamucenje",
 			"btn_busy": "Zamucivanje…",
-			"save": "Spremi zamucenu sliku"
+			"save": "Spremi zamucenu sliku",
+			"shape": "Oblik",
+			"opacity": "Prozirnost"
 		},
 		"pdf_to_text": {
 			"title": "PDF u tekst",

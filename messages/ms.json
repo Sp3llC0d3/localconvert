@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Kabur Kawasan",
-			"desc": "Lukis segi empat tepat di atas kawasan yang ingin dikaburkan.",
+			"desc": "Lukis segi empat tepat atau elips di atas kawasan yang ingin dikaburkan.",
 			"radius": "Kekuatan kabur",
-			"err_area": "Lukis kawasan untuk dikaburkan.",
-			"help": "seret untuk melukis, klik di dalam untuk mengalih",
+			"err_area": "Lukis sekurang-kurangnya satu kawasan.",
+			"help": "seret untuk melukis, klik untuk memilih, pemegang untuk saiz",
 			"btn": "Guna kabur",
 			"save": "Simpan imej dikaburkan",
-			"btn_busy": "Mengaburkan…"
+			"btn_busy": "Mengaburkan…",
+			"shape": "Bentuk",
+			"opacity": "Kelegapan"
 		},
 		"pdf_to_text": {
 			"title": "PDF ke Teks",

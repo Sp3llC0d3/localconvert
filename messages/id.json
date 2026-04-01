@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Buramkan Area",
-			"desc": "Gambar persegi panjang di atas area yang ingin diburamkan.",
+			"desc": "Gambar persegi panjang atau elips di area yang ingin diburamkan.",
 			"radius": "Kekuatan blur",
-			"err_area": "Gambar area untuk diburamkan.",
-			"help": "seret untuk menggambar, klik di dalam untuk memindahkan",
+			"err_area": "Gambar setidaknya satu area.",
+			"help": "seret untuk menggambar, klik untuk memilih, pegangan untuk mengubah ukuran",
 			"btn": "Terapkan blur",
 			"btn_busy": "Memburamkan…",
-			"save": "Simpan gambar buram"
+			"save": "Simpan gambar buram",
+			"shape": "Bentuk",
+			"opacity": "Opasitas"
 		},
 		"pdf_to_text": {
 			"title": "PDF ke Teks",

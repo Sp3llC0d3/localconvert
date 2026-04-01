@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Rozmyj obszar",
-			"desc": "Narysuj prostokat nad obszarem, ktory chcesz rozmyc.",
+			"desc": "Narysuj prostokąty lub elipsy nad obszarami do rozmycia.",
 			"radius": "Sila rozmycia",
-			"err_area": "Zaznacz obszar do rozmycia.",
-			"help": "przeciagnij, aby narysowac, kliknij wewnatrz, aby przesunac",
+			"err_area": "Narysuj co najmniej jeden obszar.",
+			"help": "przeciągnij, kliknij, uchwyty do zmiany rozmiaru",
 			"btn": "Zastosuj rozmycie",
 			"save": "Zapisz rozmyty obraz",
-			"btn_busy": "Rozmywanie…"
+			"btn_busy": "Rozmywanie…",
+			"shape": "Kształt",
+			"opacity": "Przezroczystość"
 		},
 		"pdf_to_text": {
 			"title": "PDF na tekst",

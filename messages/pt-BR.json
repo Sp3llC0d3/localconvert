@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Desfocar Regiao",
-			"desc": "Desenhe um retangulo sobre a area que deseja desfocar.",
+			"desc": "Desenhe retângulos ou elipses sobre as áreas que deseja desfocar.",
 			"radius": "Intensidade do desfoque",
-			"err_area": "Desenhe uma regiao para desfocar.",
-			"help": "arraste para desenhar, clique dentro para mover",
+			"err_area": "Desenhe pelo menos uma região.",
+			"help": "arraste para desenhar, clique para selecionar, alças para redimensionar",
 			"btn": "Aplicar desfoque",
 			"btn_busy": "Desfocando…",
-			"save": "Salvar imagem desfocada"
+			"save": "Salvar imagem desfocada",
+			"shape": "Forma",
+			"opacity": "Opacidade"
 		},
 		"pdf_to_text": {
 			"title": "PDF para Texto",

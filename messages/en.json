@@ -836,10 +836,12 @@
 		},
 		"blur": {
 			"title": "Blur Region",
-			"desc": "Draw a rectangle over the area you want to blur.",
+			"desc": "Draw rectangles or ellipses over areas you want to blur.",
 			"radius": "Blur strength",
-			"err_area": "Draw a region to blur.",
-			"help": "drag to draw, click inside to move",
+			"shape": "Shape",
+			"opacity": "Opacity",
+			"err_area": "Draw at least one region to blur.",
+			"help": "drag to draw, click to select, handles to resize",
 			"btn": "Apply blur",
 			"save": "Save blurred image",
 			"btn_busy": "Blurring…"

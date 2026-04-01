@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Oskarp region",
-			"desc": "Rita en rektangel over omradet du vill gora oskarpt.",
+			"desc": "Rita rektanglar eller ellipser över områden du vill göra suddiga.",
 			"radius": "Oskarpestyrka",
-			"err_area": "Rita ett omrade att gora oskarpt.",
-			"help": "dra for att rita, klicka inuti for att flytta",
+			"err_area": "Rita minst ett område.",
+			"help": "dra för att rita, klicka för att välja, handtag för storlek",
 			"btn": "Tillampa oskarpa",
 			"save": "Spara oskarp bild",
-			"btn_busy": "Gor oskarpt…"
+			"btn_busy": "Gor oskarpt…",
+			"shape": "Form",
+			"opacity": "Opacitet"
 		},
 		"pdf_to_text": {
 			"title": "PDF till text",

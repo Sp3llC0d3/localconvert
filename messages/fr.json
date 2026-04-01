@@ -860,13 +860,15 @@
 		},
 		"blur": {
 			"title": "Flouter une zone",
-			"desc": "Dessinez un rectangle sur la zone a flouter.",
+			"desc": "Dessinez des rectangles ou des ellipses sur les zones à flouter.",
 			"radius": "Intensite du flou",
-			"err_area": "Dessinez une zone a flouter.",
-			"help": "glissez pour dessiner, cliquez a l'interieur pour deplacer",
+			"err_area": "Dessinez au moins une zone.",
+			"help": "glissez pour dessiner, cliquez pour sélectionner, poignées pour redimensionner",
 			"btn": "Appliquer le flou",
 			"btn_busy": "Application du flou…",
-			"save": "Enregistrer l'image floutee"
+			"save": "Enregistrer l'image floutee",
+			"shape": "Forme",
+			"opacity": "Opacité"
 		},
 		"pdf_to_text": {
 			"title": "PDF en texte",

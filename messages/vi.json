@@ -830,13 +830,15 @@
 		},
 		"blur": {
 			"title": "Lam mo vung",
-			"desc": "Ve hinh chu nhat tren vung ban muon lam mo.",
+			"desc": "Vẽ hình chữ nhật hoặc hình elip lên vùng bạn muốn làm mờ.",
 			"radius": "Do mo",
-			"err_area": "Ve vung can lam mo.",
-			"help": "keo de ve, nhan ben trong de di chuyen",
+			"err_area": "Vẽ ít nhất một vùng.",
+			"help": "kéo để vẽ, nhấp để chọn, tay nắm để thay đổi kích thước",
 			"btn": "Ap dung lam mo",
 			"save": "Luu hinh da lam mo",
-			"btn_busy": "Dang lam mo…"
+			"btn_busy": "Dang lam mo…",
+			"shape": "Hình dạng",
+			"opacity": "Độ mờ"
 		},
 		"pdf_to_text": {
 			"title": "PDF sang van ban",
