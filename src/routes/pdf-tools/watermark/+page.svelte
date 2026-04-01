@@ -44,7 +44,7 @@
 			fontFamily = `"${name}"`;
 			customFontName = file.name;
 		} catch {
-			error = 'Failed to load font. Please use a .ttf or .otf file.';
+			error = 'Failed to load font.';
 		}
 		input.value = '';
 	}
@@ -244,7 +244,7 @@
 			</div>
 
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.font']?.() ?? 'Font'}</span>
+				<span class="opt-label">{m['tools_common.font']()}</span>
 				<div class="font-controls">
 					<select class="font-select" bind:value={fontFamily}>
 						{#each builtinFonts as f}
@@ -262,7 +262,7 @@
 			</div>
 
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.color']?.() ?? 'Color'}</span>
+				<span class="opt-label">{m['tools_common.color']()}</span>
 				<input type="color" bind:value={color} class="color-input" aria-label="Watermark color" />
 				<span class="text-xs text-muted">{color}</span>
 			</div>

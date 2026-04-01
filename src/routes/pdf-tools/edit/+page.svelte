@@ -60,7 +60,7 @@
 			newFontFamily = `"${name}"`;
 			customFontName = file.name;
 		} catch {
-			error = 'Failed to load font. Please use a .ttf or .otf file.';
+			error = 'Failed to load font.';
 		}
 		input.value = '';
 	}

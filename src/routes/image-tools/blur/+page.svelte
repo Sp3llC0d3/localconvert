@@ -343,7 +343,7 @@
 		<!-- Controls -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.blur.shape']?.() ?? 'Shape'}</span>
+				<span class="opt-label">{m['tool_pages.blur.shape']()}</span>
 				<div class="shape-btns">
 					<button class="shape-btn" class:active={shapeMode === 'rect'} onclick={() => shapeMode = 'rect'}>
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="10" rx="1"/></svg>
