@@ -105,9 +105,9 @@ export async function convertPdfToDocx(
     }],
   });
 
-  const buffer = await Packer.toBuffer(doc);
+  const arrayBuffer = await Packer.toArrayBuffer(doc);
   onProgress?.(1);
-  return new Uint8Array(buffer);
+  return new Uint8Array(arrayBuffer);
 }
 
 // ─── Text grouping ────────────────────────────────────────────────────────────
