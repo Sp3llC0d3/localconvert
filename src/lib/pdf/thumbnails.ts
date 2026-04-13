@@ -1,5 +1,5 @@
 import { browser } from '$app/environment';
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 /**
  * Render a single PDF page to a data URL for use as a thumbnail.
@@ -11,7 +11,7 @@ export async function renderThumbnail(file: File, pageNum: number, scale = 0.3):
 	if (!browser) throw new Error('thumbnails must run in browser');
 	const pdfjs = await getPdfJs();
 	const bytes = await file.arrayBuffer();
-	const pdfDoc = await pdfjs.getDocument({ data: bytes }).promise;
+	const pdfDoc = await pdfjs.getDocument({ data: bytes, ...pdfDocumentOptions }).promise;
 	const page = await pdfDoc.getPage(pageNum);
 	const viewport = page.getViewport({ scale });
 	const canvas = document.createElement('canvas');
@@ -37,7 +37,7 @@ export async function renderAllThumbnails(
 	if (!browser) throw new Error('thumbnails must run in browser');
 	const pdfjs = await getPdfJs();
 	const bytes = await file.arrayBuffer();
-	const pdfDoc = await pdfjs.getDocument({ data: bytes }).promise;
+	const pdfDoc = await pdfjs.getDocument({ data: bytes, ...pdfDocumentOptions }).promise;
 	const total = pdfDoc.numPages;
 	const thumbs: string[] = [];
 	for (let i = 1; i <= total; i++) {

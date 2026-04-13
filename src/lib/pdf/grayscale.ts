@@ -1,5 +1,5 @@
 import { PDFDocument } from 'pdf-lib';
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 /**
  * Convert all PDF pages to grayscale by rendering through a canvas with grayscale filter.
@@ -13,7 +13,7 @@ export async function grayscalePdf(
 ): Promise<Uint8Array> {
 	const pdfjs = await getPdfJs();
 	const buf = await file.arrayBuffer();
-	const pdfDoc = await pdfjs.getDocument({ data: buf }).promise;
+	const pdfDoc = await pdfjs.getDocument({ data: buf, ...pdfDocumentOptions }).promise;
 	const newPdf = await PDFDocument.create();
 	const total = pdfDoc.numPages;
 

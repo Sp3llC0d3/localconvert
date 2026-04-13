@@ -1,5 +1,5 @@
 import { PDFDocument } from 'pdf-lib';
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 /**
  * Remove password protection from a PDF.
@@ -25,7 +25,7 @@ export async function unlockPdf(file: File, password = ''): Promise<Uint8Array> 
 	// Strategy 2: re-render via pdfjs-dist (works for all encryption types)
 	try {
 		const pdfjs = await getPdfJs();
-		const pdfDoc = await pdfjs.getDocument({ data: bytes, password }).promise;
+		const pdfDoc = await pdfjs.getDocument({ data: bytes, password, ...pdfDocumentOptions }).promise;
 		const newPdf = await PDFDocument.create();
 		const total = pdfDoc.numPages;
 

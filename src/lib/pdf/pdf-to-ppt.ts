@@ -1,4 +1,4 @@
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 export async function pdfToPpt(
 	file: File,
@@ -9,7 +9,7 @@ export async function pdfToPpt(
 	const pdfjs = await getPdfJs();
 
 	const buf = await file.arrayBuffer();
-	const doc = await pdfjs.getDocument({ data: buf }).promise;
+	const doc = await pdfjs.getDocument({ data: buf, ...pdfDocumentOptions }).promise;
 	const total = doc.numPages;
 
 	const pres = new PptxGenJS();

@@ -1,4 +1,4 @@
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 export interface PdfPageImage {
 	pageNum: number;
@@ -23,7 +23,7 @@ export async function pdfToImages(
 ): Promise<PdfPageImage[]> {
 	const pdfjs = await getPdfJs();
 	const arrayBuffer = await file.arrayBuffer();
-	const pdfDoc = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+	const pdfDoc = await pdfjs.getDocument({ data: arrayBuffer, ...pdfDocumentOptions }).promise;
 	const total = pdfDoc.numPages;
 	const ext = format === 'image/jpeg' ? 'jpg' : 'png';
 	const baseName = file.name.replace(/\.pdf$/i, '');

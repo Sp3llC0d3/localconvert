@@ -1,5 +1,5 @@
 import { PDFDocument } from 'pdf-lib';
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 /**
  * Compress a PDF by re-rendering each page as a JPEG.
@@ -15,7 +15,7 @@ export async function compressPdf(
 ): Promise<Uint8Array> {
 	const pdfjs = await getPdfJs();
 	const arrayBuffer = await file.arrayBuffer();
-	const pdfDoc = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+	const pdfDoc = await pdfjs.getDocument({ data: arrayBuffer, ...pdfDocumentOptions }).promise;
 	const newPdf = await PDFDocument.create();
 
 	const total = pdfDoc.numPages;

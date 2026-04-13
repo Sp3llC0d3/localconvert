@@ -1,4 +1,4 @@
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 export interface PdfDocProxy {
 	numPages: number;
@@ -12,7 +12,7 @@ export interface PdfDocProxy {
 export async function loadPdfDocument(file: File): Promise<PdfDocProxy> {
 	const pdfjs = await getPdfJs();
 	const buf = await file.arrayBuffer();
-	return await pdfjs.getDocument({ data: buf }).promise;
+	return await pdfjs.getDocument({ data: buf, ...pdfDocumentOptions }).promise;
 }
 
 /**
