@@ -313,7 +313,7 @@
 		{@const linkRect = linkRects.at(selectedLinkIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}
 			<div
-				class="absolute bg-panel-highlight rounded-xl"
+				class="absolute bg-panel-highlight rounded-xl pointer-events-none"
 				style="width: {linkRect.width}px; height: {linkRect.height}px; top: {linkRect.top -
 					(containerRect?.top || 0)}px; left: {linkRect.left -
 					(containerRect?.left || 0)}px; opacity: {isSecretPage
