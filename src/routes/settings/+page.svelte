@@ -140,6 +140,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		position: relative;
+		z-index: 0; /* contain stacking context so cards never escape above navbar */
 	}
 
 	.settings-card {
