@@ -146,13 +146,7 @@
 		background: var(--bg-panel);
 		border-radius: 1.25rem;
 		box-shadow: var(--shadow-panel);
-		position: relative;
 	}
-
-	/* Descending z-index so dropdowns in higher cards render above lower cards */
-	.settings-card:nth-child(1) { z-index: 3; }
-	.settings-card:nth-child(2) { z-index: 2; }
-	.settings-card:nth-child(3) { z-index: 1; }
 
 	/* ── Card header ── */
 	.settings-card-head {
