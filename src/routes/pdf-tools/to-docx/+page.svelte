@@ -52,16 +52,15 @@
   }
 </script>
 
-<ToolPageHeader
-  category="pdf"
-  icon={FileOutputIcon}
-  title={m['tool_pages.to_docx.title']()}
-  description={m['tool_pages.to_docx.desc']()}
-  backHref="/pdf-tools/"
-  backLabel={m['tools_common.back_pdf']()}
-/>
-
 <div class="tool-page-content">
+  <ToolPageHeader
+    category="pdf"
+    icon={FileOutputIcon}
+    title={m['tool_pages.to_docx.title']()}
+    description={m['tool_pages.to_docx.desc']()}
+    backHref="/pdf-tools/"
+    backLabel={m['tools_common.back_pdf']()}
+  />
 
   <!-- File input -->
   {#if status === 'idle' || status === 'error'}

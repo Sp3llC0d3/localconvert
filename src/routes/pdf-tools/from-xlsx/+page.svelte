@@ -77,16 +77,15 @@
   }
 </script>
 
-<ToolPageHeader
-  category="pdf"
-  icon={TableIcon}
-  title={m['tool_pages.from_xlsx.title']()}
-  description={m['tool_pages.from_xlsx.desc']()}
-  backHref="/pdf-tools/"
-  backLabel={m['tools_common.back_pdf']()}
-/>
-
 <div class="tool-page-content">
+  <ToolPageHeader
+    category="pdf"
+    icon={TableIcon}
+    title={m['tool_pages.from_xlsx.title']()}
+    description={m['tool_pages.from_xlsx.desc']()}
+    backHref="/pdf-tools/"
+    backLabel={m['tools_common.back_pdf']()}
+  />
 
   <!-- Drop zone -->
   {#if status === 'idle' || status === 'error'}
