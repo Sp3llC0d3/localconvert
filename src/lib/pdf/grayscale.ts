@@ -26,9 +26,12 @@ export async function grayscalePdf(
 		canvas.height = viewport.height;
 		const ctx = canvas.getContext('2d')!;
 
-		// Apply grayscale filter before rendering
-		ctx.filter = 'grayscale(1)';
+		// Render page normally first
 		await page.render({ canvasContext: ctx, viewport, canvas }).promise;
+
+		// Re-draw the canvas onto itself with grayscale filter applied
+		ctx.filter = 'grayscale(1)';
+		ctx.drawImage(canvas, 0, 0);
 
 		const jpegBlob = await new Promise<Blob>((resolve) =>
 			canvas.toBlob((b) => resolve(b!), 'image/jpeg', quality),
