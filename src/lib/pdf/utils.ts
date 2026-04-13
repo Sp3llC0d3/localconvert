@@ -75,3 +75,9 @@ export async function getPdfJs(): Promise<typeof import('pdfjs-dist')> {
 	_pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 	return _pdfjsLib;
 }
+
+/** Standard options for getDocument() — includes CMap support for non-Latin text */
+export const pdfDocumentOptions = {
+	cMapUrl: '/cmaps/',
+	cMapPacked: true,
+};

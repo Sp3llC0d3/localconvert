@@ -447,7 +447,13 @@
 			"pdf_to_text_name": "PDF เป็นข้อความ",
 			"pdf_to_text_desc": "แยกข้อความทั้งหมดจาก PDF",
 			"grayscale_name": "PDF เป็นโทนสีเทา",
-			"grayscale_desc": "แปลงหน้า PDF เป็นขาวดำ"
+			"grayscale_desc": "แปลงหน้า PDF เป็นขาวดำ",
+			"from_docx_name": "Word to PDF",
+			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
+			"from_xlsx_name": "Excel to PDF",
+			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
+			"to_docx_name": "PDF to Word",
+			"to_docx_desc": "Extract PDF text as an editable DOCX file"
 		}
 	},
 	"image_tools": {

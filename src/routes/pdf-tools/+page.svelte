@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, PaletteIcon, TypeIcon, ShieldCheckIcon } from 'lucide-svelte';
+	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, PaletteIcon, TypeIcon, ShieldCheckIcon, TableIcon, FileOutputIcon } from 'lucide-svelte';
 	import { m } from '$lib/paraglide/messages';
 
 	const categories = $derived([
@@ -22,6 +22,9 @@
 				{ href: '/pdf-tools/pdf-to-ppt/', icon: PresentationIcon, name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc']() },
 				{ href: '/pdf-tools/pdf-to-text/', icon: TypeIcon, name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc']() },
 				{ href: '/pdf-tools/grayscale/', icon: PaletteIcon, name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc']() },
+				{ href: '/pdf-tools/from-docx/', icon: FileTextIcon, name: m['pdf_tools.tools.from_docx_name'](), desc: m['pdf_tools.tools.from_docx_desc']() },
+				{ href: '/pdf-tools/from-xlsx/', icon: TableIcon, name: m['pdf_tools.tools.from_xlsx_name'](), desc: m['pdf_tools.tools.from_xlsx_desc']() },
+				{ href: '/pdf-tools/to-docx/', icon: FileOutputIcon, name: m['pdf_tools.tools.to_docx_name'](), desc: m['pdf_tools.tools.to_docx_desc']() },
 			],
 		},
 		{

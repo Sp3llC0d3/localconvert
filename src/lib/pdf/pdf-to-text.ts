@@ -1,4 +1,4 @@
-import { getPdfJs } from './utils';
+import { getPdfJs, pdfDocumentOptions } from './utils';
 
 /**
  * Extract all text from a PDF file using pdf.js getTextContent().
@@ -10,7 +10,7 @@ export async function pdfToText(
 ): Promise<string> {
 	const pdfjs = await getPdfJs();
 	const buf = await file.arrayBuffer();
-	const doc = await pdfjs.getDocument({ data: buf }).promise;
+	const doc = await pdfjs.getDocument({ data: buf, ...pdfDocumentOptions }).promise;
 	const total = doc.numPages;
 	const pages: string[] = [];
 
