@@ -8,9 +8,9 @@
 		href="/"
 	>
 		<div
-			class="h-12 md:h-9 bg-accent rounded-xl md:rounded-lg flex items-center justify-center"
+			class="h-16 md:h-12 bg-accent rounded-2xl md:rounded-xl flex items-center justify-center px-5 md:px-4 text-white dynadark:text-black"
 		>
-			<div class="w-24 md:w-20 h-4 md:h-3.5">
+			<div class="w-52 md:w-44 h-7 md:h-6">
 				<Logo />
 			</div>
 		</div>
