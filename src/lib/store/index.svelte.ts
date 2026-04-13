@@ -438,6 +438,13 @@ export function updateLocale(newLocale: string) {
 	setLocale(newLocale, { reload: false });
 	// @ts-expect-error shush
 	locale.set(newLocale);
+
+	// Load the correct body font for this locale's script
+	if (typeof window !== "undefined") {
+		import("$lib/util/fonts.js").then(({ loadFontForLocale }) =>
+			loadFontForLocale(newLocale),
+		);
+	}
 }
 
 export function link(

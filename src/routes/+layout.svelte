@@ -23,6 +23,7 @@
 	import { m } from "$lib/paraglide/messages.js";
 	import { log } from "$lib/util/logger.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
+	import { loadFontForLocale } from "$lib/util/fonts.js";
 
 	let { children, data } = $props();
 	let scrollPositions = new Map<string, number>();
@@ -107,6 +108,7 @@
 				if (availableKeys.includes(base)) { detected = base; break; }
 			}
 			if (detected !== "en") updateLocale(detected);
+			else loadFontForLocale("en");
 		}
 
 		Settings.instance.load();
