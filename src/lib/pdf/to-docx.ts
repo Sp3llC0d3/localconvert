@@ -107,10 +107,10 @@ export async function convertPdfToDocx(
 
   const base64 = await Packer.toBase64String(doc);
   const binary = atob(base64);
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const docxBytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) docxBytes[i] = binary.charCodeAt(i);
   onProgress?.(1);
-  return bytes;
+  return docxBytes;
 }
 
 // ─── Text grouping ────────────────────────────────────────────────────────────
