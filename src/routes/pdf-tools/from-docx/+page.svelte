@@ -3,6 +3,7 @@
   import { FileTextIcon } from 'lucide-svelte';
   import { convertDocxToPdf } from '$lib/pdf/from-docx';
   import { downloadBlob, validateFileSize } from '$lib/pdf/utils';
+  import { m } from '$lib/paraglide/messages';
 
   // ─── State ──────────────────────────────────────────────────────────────────
   let file       = $state<File | null>(null);
@@ -18,12 +19,12 @@
   // ─── File handling ───────────────────────────────────────────────────────────
   function acceptFile(f: File) {
     if (!f.name.match(/\.(docx|doc)$/i)) {
-      error = 'Please select a DOCX or DOC file.';
+      error = m['tool_pages.from_docx.invalid_file']();
       status = 'error';
       return;
     }
     const sizeCheck = validateFileSize(f);
-    if (!sizeCheck.ok) { error = sizeCheck.warning || 'File too large.'; status = 'error'; return; }
+    if (!sizeCheck.ok) { error = sizeCheck.warning || m['tools_common.failed'](); status = 'error'; return; }
 
     file   = f;
     status = 'idle';
@@ -64,7 +65,7 @@
       resultName = file.name.replace(/\.(docx|doc)$/i, '.pdf');
       status     = 'done';
     } catch (e) {
-      error  = e instanceof Error ? e.message : 'Conversion failed.';
+      error  = e instanceof Error ? e.message : m['tools_common.failed']();
       status = 'error';
     }
   }
@@ -82,10 +83,10 @@
 <ToolPageHeader
   category="pdf"
   icon={FileTextIcon}
-  title="Word to PDF"
-  description="Convert DOCX and DOC files to PDF — privately, in your browser."
+  title={m['tool_pages.from_docx.title']()}
+  description={m['tool_pages.from_docx.desc']()}
   backHref="/pdf-tools/"
-  backLabel="PDF Tools"
+  backLabel={m['tools_common.back_pdf']()}
 />
 
 <div class="tool-page-content">
@@ -95,7 +96,7 @@
     <div
       role="button"
       tabindex="0"
-      aria-label="Upload DOCX file"
+      aria-label={m['tool_pages.from_docx.aria_upload']()}
       class="drop-zone"
       class:drag-over={isDragging}
       class:has-file={!!file}
@@ -121,8 +122,8 @@
             <polyline points="17 8 12 3 7 8"/>
             <line x1="12" y1="3" x2="12" y2="15"/>
           </svg>
-          <p>Drop your DOCX file here</p>
-          <span>or click to browse</span>
+          <p>{m['tool_pages.from_docx.drop_hint']()}</p>
+          <span>{m['tool_pages.from_docx.or_click_browse']()}</span>
         </div>
       {/if}
     </div>
@@ -141,15 +142,14 @@
 
     {#if file}
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Clear</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.clear']()}</button>
         <button class="btn-primary" onclick={convert}>
-          Convert to PDF
+          {m['tools_common.convert_to_pdf']()}
         </button>
       </div>
 
       <p class="disclaimer">
-        ⓘ Layout fidelity depends on document complexity. Complex tables and advanced
-        formatting may be simplified.
+        ⓘ {m['tool_pages.from_docx.disclaimer']()}
       </p>
     {/if}
   {/if}
@@ -157,11 +157,11 @@
   <!-- Converting -->
   {#if status === 'converting'}
     <div class="progress-state">
-      <p class="progress-label">Converting… {progress}%</p>
+      <p class="progress-label">{m['tools_common.converting_progress']({ progress })}</p>
       <div class="progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
         <div class="progress-fill" style="width: {progress}%"></div>
       </div>
-      <p class="progress-hint">Processing your document locally — nothing is uploaded.</p>
+      <p class="progress-hint">{m['tool_pages.from_docx.progress_hint']()}</p>
     </div>
   {/if}
 
@@ -172,12 +172,12 @@
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
-      <p class="done-title">Conversion complete</p>
+      <p class="done-title">{m['tools_common.conversion_complete']()}</p>
       <p class="done-name">{resultName}</p>
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Convert another</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.convert_another']()}</button>
         <button class="btn-primary" onclick={download}>
-          Save PDF
+          {m['tools_common.save_pdf']()}
         </button>
       </div>
     </div>

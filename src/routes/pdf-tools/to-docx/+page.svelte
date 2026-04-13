@@ -4,6 +4,7 @@
   import { FileOutputIcon } from 'lucide-svelte';
   import { convertPdfToDocx } from '$lib/pdf/to-docx';
   import { downloadBlob } from '$lib/pdf/utils';
+  import { m } from '$lib/paraglide/messages';
 
   // ─── State ──────────────────────────────────────────────────────────────────
   let files      = $state<File[]>([]);
@@ -38,7 +39,7 @@
       resultName = file.name.replace(/\.pdf$/i, '.docx');
       status     = 'done';
     } catch (e) {
-      error  = e instanceof Error ? e.message : 'Conversion failed.';
+      error  = e instanceof Error ? e.message : m['tools_common.failed']();
       status = 'error';
     }
   }
@@ -54,10 +55,10 @@
 <ToolPageHeader
   category="pdf"
   icon={FileOutputIcon}
-  title="PDF to Word"
-  description="Extract text from PDF and save as an editable DOCX file — entirely in your browser."
+  title={m['tool_pages.to_docx.title']()}
+  description={m['tool_pages.to_docx.desc']()}
   backHref="/pdf-tools/"
-  backLabel="PDF Tools"
+  backLabel={m['tools_common.back_pdf']()}
 />
 
 <div class="tool-page-content">
@@ -72,19 +73,19 @@
 
     {#if file}
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Clear</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.clear']()}</button>
         <button class="btn-primary" onclick={convert}>
-          Convert to DOCX
+          {m['tool_pages.to_docx.btn']()}
         </button>
       </div>
 
       <div class="limitation-box">
-        <p class="limitation-title">ℹ️ What to expect</p>
+        <p class="limitation-title">ℹ️ {m['tool_pages.to_docx.expect_title']()}</p>
         <ul>
-          <li>Text content is fully preserved</li>
-          <li>Headings and paragraph structure are detected automatically</li>
-          <li>Tables, images, and complex layouts are simplified</li>
-          <li>Scanned (image-based) PDFs produce empty output — use OCR first</li>
+          <li>{m['tool_pages.to_docx.expect_text']()}</li>
+          <li>{m['tool_pages.to_docx.expect_headings']()}</li>
+          <li>{m['tool_pages.to_docx.expect_tables']()}</li>
+          <li>{m['tool_pages.to_docx.expect_scanned']()}</li>
         </ul>
       </div>
     {/if}
@@ -93,11 +94,11 @@
   <!-- Converting -->
   {#if status === 'converting'}
     <div class="progress-state">
-      <p class="progress-label">Extracting text… {progress}%</p>
+      <p class="progress-label">{m['tool_pages.to_docx.progress_label']({ progress })}</p>
       <div class="progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
         <div class="progress-fill" style="width: {progress}%"></div>
       </div>
-      <p class="progress-hint">Your file never leaves your device.</p>
+      <p class="progress-hint">{m['tool_pages.to_docx.progress_hint']()}</p>
     </div>
   {/if}
 
@@ -108,11 +109,11 @@
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
-      <p class="done-title">Conversion complete</p>
+      <p class="done-title">{m['tools_common.conversion_complete']()}</p>
       <p class="done-name">{resultName}</p>
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Convert another</button>
-        <button class="btn-primary" onclick={download}>Save DOCX</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.convert_another']()}</button>
+        <button class="btn-primary" onclick={download}>{m['tool_pages.to_docx.save']()}</button>
       </div>
     </div>
   {/if}

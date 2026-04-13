@@ -570,7 +570,12 @@
 		"font": "Шрифт",
 		"color": "Колір",
 		"before": "До",
-		"after": "Після"
+		"after": "Після",
+		"conversion_complete": "Conversion complete",
+		"convert_another": "Convert another",
+		"convert_to_pdf": "Convert to PDF",
+		"save_pdf": "Save PDF",
+		"converting_progress": "Converting… {progress}%"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -956,6 +961,42 @@
 			"output_label": "Мiнiфiкований вивiд",
 			"btn": "Мiнiфiкувати",
 			"saved": "Збережено {pct}%"
+		},
+		"from_docx": {
+			"title": "Word to PDF",
+			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
+			"invalid_file": "Please select a DOCX or DOC file.",
+			"aria_upload": "Upload DOCX file",
+			"drop_hint": "Drop your DOCX file here",
+			"or_click_browse": "or click to browse",
+			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
+			"progress_hint": "Processing your document locally — nothing is uploaded."
+		},
+		"from_xlsx": {
+			"title": "Excel to PDF",
+			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
+			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
+			"aria_upload": "Upload spreadsheet file",
+			"drop_hint": "Drop your spreadsheet here",
+			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
+			"page_orientation": "Page orientation",
+			"landscape": "Landscape",
+			"portrait": "Portrait",
+			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
+			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+		},
+		"to_docx": {
+			"title": "PDF to Word",
+			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
+			"btn": "Convert to DOCX",
+			"save": "Save DOCX",
+			"expect_title": "What to expect",
+			"expect_text": "Text content is fully preserved",
+			"expect_headings": "Headings and paragraph structure are detected automatically",
+			"expect_tables": "Tables, images, and complex layouts are simplified",
+			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
+			"progress_label": "Extracting text… {progress}%",
+			"progress_hint": "Your file never leaves your device."
 		}
 	},
 	"toast": {

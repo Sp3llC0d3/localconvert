@@ -3,6 +3,7 @@
   import { TableIcon } from 'lucide-svelte';
   import { convertXlsxToPdf } from '$lib/pdf/from-xlsx';
   import { downloadBlob, validateFileSize } from '$lib/pdf/utils';
+  import { m } from '$lib/paraglide/messages';
 
   // ─── State ──────────────────────────────────────────────────────────────────
   let file        = $state<File | null>(null);
@@ -19,12 +20,12 @@
   // ─── File handling ───────────────────────────────────────────────────────────
   function acceptFile(f: File) {
     if (!f.name.match(/\.(xlsx|xls|ods|csv)$/i)) {
-      error = 'Please select an Excel (XLSX/XLS), ODS, or CSV file.';
+      error = m['tool_pages.from_xlsx.invalid_file']();
       status = 'error';
       return;
     }
     const sizeCheck = validateFileSize(f);
-    if (!sizeCheck.ok) { error = sizeCheck.warning || 'File too large.'; status = 'error'; return; }
+    if (!sizeCheck.ok) { error = sizeCheck.warning || m['tools_common.failed'](); status = 'error'; return; }
 
     file   = f;
     status = 'idle';
@@ -63,7 +64,7 @@
       resultName = file.name.replace(/\.(xlsx|xls|ods|csv)$/i, '.pdf');
       status     = 'done';
     } catch (e) {
-      error  = e instanceof Error ? e.message : 'Conversion failed.';
+      error  = e instanceof Error ? e.message : m['tools_common.failed']();
       status = 'error';
     }
   }
@@ -79,10 +80,10 @@
 <ToolPageHeader
   category="pdf"
   icon={TableIcon}
-  title="Excel to PDF"
-  description="Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser."
+  title={m['tool_pages.from_xlsx.title']()}
+  description={m['tool_pages.from_xlsx.desc']()}
   backHref="/pdf-tools/"
-  backLabel="PDF Tools"
+  backLabel={m['tools_common.back_pdf']()}
 />
 
 <div class="tool-page-content">
@@ -92,7 +93,7 @@
     <div
       role="button"
       tabindex="0"
-      aria-label="Upload spreadsheet file"
+      aria-label={m['tool_pages.from_xlsx.aria_upload']()}
       class="drop-zone"
       class:drag-over={isDragging}
       class:has-file={!!file}
@@ -121,8 +122,8 @@
             <polyline points="17 8 12 3 7 8"/>
             <line x1="12" y1="3" x2="12" y2="15"/>
           </svg>
-          <p>Drop your spreadsheet here</p>
-          <span>XLSX · XLS · ODS · CSV — or click to browse</span>
+          <p>{m['tool_pages.from_xlsx.drop_hint']()}</p>
+          <span>{m['tool_pages.from_xlsx.drop_formats']()}</span>
         </div>
       {/if}
     </div>
@@ -142,35 +143,34 @@
     {#if file}
       <!-- Options -->
       <div class="options-row">
-        <label class="option-label">Page orientation</label>
+        <label class="option-label">{m['tool_pages.from_xlsx.page_orientation']()}</label>
         <div class="toggle-group">
           <button
             class="toggle-btn"
             class:active={orientation === 'landscape'}
             onclick={() => orientation = 'landscape'}
           >
-            Landscape
+            {m['tool_pages.from_xlsx.landscape']()}
           </button>
           <button
             class="toggle-btn"
             class:active={orientation === 'portrait'}
             onclick={() => orientation = 'portrait'}
           >
-            Portrait
+            {m['tool_pages.from_xlsx.portrait']()}
           </button>
         </div>
       </div>
 
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Clear</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.clear']()}</button>
         <button class="btn-primary" onclick={convert}>
-          Convert to PDF
+          {m['tools_common.convert_to_pdf']()}
         </button>
       </div>
 
       <p class="disclaimer">
-        ⓘ Column widths are auto-calculated. Wide sheets work best in landscape mode.
-        Text may be truncated if cells contain very long values.
+        ⓘ {m['tool_pages.from_xlsx.disclaimer']()}
       </p>
     {/if}
   {/if}
@@ -178,11 +178,11 @@
   <!-- Converting -->
   {#if status === 'converting'}
     <div class="progress-state">
-      <p class="progress-label">Converting… {progress}%</p>
+      <p class="progress-label">{m['tools_common.converting_progress']({ progress })}</p>
       <div class="progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
         <div class="progress-fill" style="width: {progress}%"></div>
       </div>
-      <p class="progress-hint">Processing spreadsheet locally — nothing is uploaded.</p>
+      <p class="progress-hint">{m['tool_pages.from_xlsx.progress_hint']()}</p>
     </div>
   {/if}
 
@@ -193,11 +193,11 @@
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
-      <p class="done-title">Conversion complete</p>
+      <p class="done-title">{m['tools_common.conversion_complete']()}</p>
       <p class="done-name">{resultName}</p>
       <div class="action-row">
-        <button class="btn-secondary" onclick={reset}>Convert another</button>
-        <button class="btn-primary" onclick={download}>Save PDF</button>
+        <button class="btn-secondary" onclick={reset}>{m['tools_common.convert_another']()}</button>
+        <button class="btn-primary" onclick={download}>{m['tools_common.save_pdf']()}</button>
       </div>
     </div>
   {/if}
