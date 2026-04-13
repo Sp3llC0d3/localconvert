@@ -30,3 +30,4 @@ vite.config.ts.timestamp-*
 
 # Claude Code config
 .claude/
+new-files/
