@@ -146,6 +146,10 @@
 		background: var(--bg-panel);
 		border-radius: 1.25rem;
 		box-shadow: var(--shadow-panel);
+		/* Override fill-mode from 'both' to 'backwards' so the animation's
+		   stacking context is released after completion — lets dropdown menus
+		   paint above sibling cards without needing explicit z-index */
+		animation-fill-mode: backwards;
 	}
 
 	/* ── Card header ── */
