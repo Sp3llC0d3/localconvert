@@ -50,8 +50,7 @@ export async function convertPdfToDocx(
   // 1 — Load PDF via pdfjs
   onProgress?.(0.05);
   const { loadPdfDocument } = await import('./preview');
-  const bytes  = new Uint8Array(await file.arrayBuffer());
-  const pdfDoc = await loadPdfDocument(bytes);
+  const pdfDoc = await loadPdfDocument(file);
   const numPages = pdfDoc.numPages;
 
   // 2 — Extract text page by page
