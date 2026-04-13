@@ -64,7 +64,7 @@
 
 	<!-- ═══ SECTIONS ═══ -->
 	<div class="settings-sections">
-		<section class="settings-card fade-in-up fade-delay-1" style="z-index: 3;">
+		<section class="settings-card fade-in-up fade-delay-1">
 			<div class="settings-card-head">
 				<span class="settings-card-num">01</span>
 				<div class="settings-card-icon settings-card-icon--conversion">
@@ -77,7 +77,7 @@
 			</div>
 		</section>
 
-		<section class="settings-card fade-in-up fade-delay-2" style="z-index: 2;">
+		<section class="settings-card fade-in-up fade-delay-2">
 			<div class="settings-card-head">
 				<span class="settings-card-num">02</span>
 				<div class="settings-card-icon settings-card-icon--appearance">
@@ -90,7 +90,7 @@
 			</div>
 		</section>
 
-		<section class="settings-card fade-in-up fade-delay-3" style="z-index: 1;">
+		<section class="settings-card fade-in-up fade-delay-3">
 			<div class="settings-card-head">
 				<span class="settings-card-num">03</span>
 				<div class="settings-card-icon settings-card-icon--privacy">
@@ -140,15 +140,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
-		position: relative;
-		z-index: 0; /* contain stacking context so cards never escape above navbar */
 	}
 
 	.settings-card {
 		background: var(--bg-panel);
 		border-radius: 1.25rem;
 		box-shadow: var(--shadow-panel);
-		position: relative;
 	}
 
 	/* ── Card header ── */
