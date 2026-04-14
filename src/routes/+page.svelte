@@ -3,7 +3,25 @@
 	import clsx from "clsx";
 	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench, ZapIcon } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
-	import FormatExplorer from "$lib/components/functional/FormatExplorer.svelte";
+	import { onMount } from "svelte";
+
+	let formatExplorerVisible = $state(false);
+	let formatSentinel = $state<HTMLDivElement>();
+
+	onMount(() => {
+		if (!formatSentinel) return;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					formatExplorerVisible = true;
+					observer.disconnect();
+				}
+			},
+			{ rootMargin: "200px" },
+		);
+		observer.observe(formatSentinel);
+		return () => observer.disconnect();
+	});
 
 	import privacyBadge from "$lib/assets/privacy-badge.webp";
 
@@ -160,7 +178,13 @@
 		<div class="section-label">{m["landing.formats.label"]()}</div>
 		<h2 class="section-headline">{m["landing.formats.title"]()}</h2>
 
-		<FormatExplorer />
+		<div bind:this={formatSentinel}>
+			{#if formatExplorerVisible}
+				{#await import("$lib/components/functional/FormatExplorer.svelte") then { default: FormatExplorer }}
+					<FormatExplorer />
+				{/await}
+			{/if}
+		</div>
 
 		<div class="flex justify-center mt-6">
 			<a href="/formats/" class="formats-link">
