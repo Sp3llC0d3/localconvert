@@ -8,6 +8,8 @@
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
 	import { m } from '$lib/paraglide/messages';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -327,6 +329,17 @@
 			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
 			<button class="btn" onclick={download}>{m['tool_pages.crop_pdf.save']()}</button>
 		</div>
+	{/if}
+
+	
+	{#if toolSeo['crop']}
+		<ToolSeoBlock
+			faqs={toolSeo['crop'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['crop'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['crop'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['crop'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['crop'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['crop'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>

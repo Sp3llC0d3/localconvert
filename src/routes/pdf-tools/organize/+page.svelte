@@ -8,6 +8,8 @@
 	import { LayoutGridIcon, Trash2Icon, ArrowUpIcon, ArrowDownIcon, GripVerticalIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { dndzone } from 'svelte-dnd-action';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let thumbs = $state<string[]>([]);
@@ -143,6 +145,17 @@
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
+	
+	{#if toolSeo['organize']}
+		<ToolSeoBlock
+			faqs={toolSeo['organize'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['organize'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['organize'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['organize'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['organize'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['organize'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
+
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
 </div>
 

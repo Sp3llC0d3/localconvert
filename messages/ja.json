@@ -605,7 +605,17 @@
 		"convert_another": "別のファイルを変換",
 		"convert_to_pdf": "PDFに変換",
 		"save_pdf": "PDFを保存",
-		"converting_progress": "変換中… {progress}%"
+		"converting_progress": "変換中… {progress}%",
+		"seo_how_title": "How it works",
+		"seo_step1": "Select your file from your device",
+		"seo_step2": "Adjust settings if needed",
+		"seo_step3": "Save the result — done!",
+		"seo_why_title": "Why LocalConvert?",
+		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
+		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
+		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
+		"seo_faq_title": "Frequently asked questions",
+		"seo_related_title": "Related tools"
 	},
 	"tool_pages": {
 		"merge": {
@@ -615,7 +625,11 @@
 			"btn_busy": "結合中…",
 			"err_min": "PDFファイルを2つ以上追加してください。",
 			"err_fail": "結合に失敗しました。",
-			"save": "結合したPDFを保存"
+			"save": "結合したPDFを保存",
+			"seo_faq1_q": "Is it safe to merge PDFs online?",
+			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
+			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
+			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
 		},
 		"split": {
 			"title": "PDF分割",
@@ -627,7 +641,11 @@
 			"err_select": "1ページ以上選択してください。",
 			"err_extract": "ページの抽出に失敗しました。",
 			"err_fail": "分割に失敗しました。",
-			"help": "click to toggle, ● to save single page"
+			"help": "click to toggle, ● to save single page",
+			"seo_faq1_q": "Can I extract specific pages from a PDF?",
+			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
+			"seo_faq2_q": "Will splitting a PDF reduce quality?",
+			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
 		},
 		"rotate_pdf": {
 			"title": "ページ回転",
@@ -649,7 +667,11 @@
 			"delete_page": "ページを削除",
 			"no_pages": "ページがありません。",
 			"btn": "整理したPDFを保存",
-			"btn_busy": "保存中…"
+			"btn_busy": "保存中…",
+			"seo_faq1_q": "Can I delete pages from a PDF?",
+			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
+			"seo_faq2_q": "Can I see thumbnails of each page?",
+			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
 		},
 		"images_to_pdf": {
 			"title": "画像 → PDF",
@@ -658,7 +680,11 @@
 			"err_fail": "変換に失敗しました。",
 			"btn": "PDFに変換",
 			"btn_busy": "変換中…",
-			"save": "PDFを保存"
+			"save": "PDFを保存",
+			"seo_faq1_q": "What image formats can I convert to PDF?",
+			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
+			"seo_faq2_q": "Can I arrange the image order?",
+			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
 		},
 		"pdf_to_images": {
 			"title": "PDF → 画像",
@@ -666,7 +692,11 @@
 			"resolution": "解像度",
 			"btn": "画像として書き出し",
 			"btn_busy": "ページ {progress} / {total} を変換中…",
-			"err_fail": "変換に失敗しました。"
+			"err_fail": "変換に失敗しました。",
+			"seo_faq1_q": "What image format will I get?",
+			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
+			"seo_faq2_q": "What about multi-page PDFs?",
+			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
 		},
 		"pdf_to_ppt": {
 			"title": "PDFからPowerPoint",
@@ -676,7 +706,11 @@
 			"standard": "4:3 標準",
 			"btn": "PPTXに変換",
 			"btn_busy": "ページ {progress} / {total} を変換中…",
-			"save": "PPTXを保存"
+			"save": "PPTXを保存",
+			"seo_faq1_q": "How does PDF to PowerPoint work?",
+			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
+			"seo_faq2_q": "Can I edit the slides after conversion?",
+			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
 		},
 		"compress": {
 			"title": "PDF圧縮",
@@ -697,7 +731,11 @@
 			"btn": "PDFを圧縮",
 			"btn_busy": "ページ {progress} / {total} を圧縮中…",
 			"err_fail": "圧縮に失敗しました。",
-			"save": "圧縮したPDFを保存"
+			"save": "圧縮したPDFを保存",
+			"seo_faq1_q": "How much can I reduce the PDF file size?",
+			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
+			"seo_faq2_q": "Does compression affect text quality?",
+			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
 		},
 		"watermark_pdf": {
 			"title": "透かしを追加",
@@ -721,7 +759,11 @@
 			"top_right": "右上",
 			"btn": "全ページに適用",
 			"btn_busy": "番号を追加中…",
-			"save": "ページ番号入りPDFを保存"
+			"save": "ページ番号入りPDFを保存",
+			"seo_faq1_q": "Where can I place the page numbers?",
+			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
+			"seo_faq2_q": "Can I customize the numbering format?",
+			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
 		},
 		"metadata": {
 			"title": "メタデータ編集",
@@ -741,7 +783,11 @@
 			"btn_busy": "保存中…",
 			"err_read": "メタデータの読み取りに失敗しました。",
 			"err_update": "メタデータの更新に失敗しました。",
-			"save": "更新したPDFを保存"
+			"save": "更新したPDFを保存",
+			"seo_faq1_q": "What PDF metadata can I edit?",
+			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
+			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
+			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
 		},
 		"crop_pdf": {
 			"title": "PDFトリミング",
@@ -766,7 +812,11 @@
 			"err_sig": "まず署名を作成してください。",
 			"err_place": "ページ上をクリックして署名を配置してください。",
 			"btn_busy": "署名中…",
-			"save": "署名済みPDFを保存"
+			"save": "署名済みPDFを保存",
+			"seo_faq1_q": "How can I create a signature?",
+			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
+			"seo_faq2_q": "Is my signature stored anywhere?",
+			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
 		},
 		"edit": {
 			"title": "PDF編集",
@@ -780,7 +830,11 @@
 			"err_pdf": "PDFを追加してください。",
 			"elements_placed": "{count}個の要素を配置済み",
 			"btn_busy": "適用中…",
-			"save": "編集したPDFを保存"
+			"save": "編集したPDFを保存",
+			"seo_faq1_q": "What kind of edits can I make?",
+			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
+			"seo_faq2_q": "Can I edit existing text in the PDF?",
+			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
 		},
 		"password": {
 			"title": "PDFパスワード保護",
@@ -803,7 +857,11 @@
 			"btn": "PDFを保護",
 			"btn_busy": "暗号化中…",
 			"result": "保護完了!",
-			"save": "保護したPDFを保存"
+			"save": "保護したPDFを保存",
+			"seo_faq1_q": "How secure is the encryption?",
+			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
+			"seo_faq2_q": "Can I set permissions like preventing printing?",
+			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
 		},
 		"unlock": {
 			"title": "PDFロック解除",
@@ -817,7 +875,11 @@
 			"save": "ロック解除したPDFを保存",
 			"password_label": "パスワード（必要な場合）",
 			"password_placeholder": "なければ空欄",
-			"password_hint": "開くのにパスワードが必要なPDFの場合のみ。"
+			"password_hint": "開くのにパスワードが必要なPDFの場合のみ。",
+			"seo_faq1_q": "Can I remove a password from a PDF?",
+			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
+			"seo_faq2_q": "Is my password safe?",
+			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
 		},
 		"rotate_image": {
 			"title": "画像回転",
@@ -894,7 +956,11 @@
 			"result": "{chars}文字を抽出しました",
 			"copy": "コピー",
 			"copied": "コピーしました!",
-			"download_txt": ".txtとして保存"
+			"download_txt": ".txtとして保存",
+			"seo_faq1_q": "Does it work with scanned PDFs?",
+			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
+			"seo_faq2_q": "Does it support non-English text?",
+			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
 		},
 		"grayscale": {
 			"title": "PDFグレースケール変換",
@@ -903,7 +969,11 @@
 			"btn": "グレースケールに変換",
 			"btn_busy": "ページ {progress} / {total} を変換中…",
 			"grayscale": "グレースケール",
-			"save": "グレースケールPDFを保存"
+			"save": "グレースケールPDFを保存",
+			"seo_faq1_q": "Will the text still be selectable after conversion?",
+			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
+			"seo_faq2_q": "Can I adjust the quality?",
+			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
 		},
 		"json_formatter": {
 			"title": "JSONフォーマッター",
@@ -1000,7 +1070,11 @@
 			"drop_hint": "DOCXファイルをここにドロップ",
 			"or_click_browse": "またはクリックして参照",
 			"disclaimer": "レイアウトの忠実度はドキュメントの複雑さに依存します。複雑なテーブルや高度な書式は簡略化される場合があります。",
-			"progress_hint": "ドキュメントをローカルで処理中 — アップロードは行われません。"
+			"progress_hint": "ドキュメントをローカルで処理中 — アップロードは行われません。",
+			"seo_faq1_q": "Will my Word document look the same as PDF?",
+			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
+			"seo_faq2_q": "Does it support .doc files (older Word format)?",
+			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
 		},
 		"from_xlsx": {
 			"title": "ExcelからPDF",
@@ -1013,7 +1087,11 @@
 			"landscape": "横向き",
 			"portrait": "縦向き",
 			"disclaimer": "列幅は自動計算されます。幅の広いシートは横向きモードで最適に動作します。",
-			"progress_hint": "スプレッドシートをローカルで処理中 — アップロードは行われません。"
+			"progress_hint": "スプレッドシートをローカルで処理中 — アップロードは行われません。",
+			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
+			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
+			"seo_faq2_q": "What spreadsheet formats are supported?",
+			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
 		},
 		"to_docx": {
 			"title": "PDFからWord",
@@ -1026,7 +1104,11 @@
 			"expect_tables": "テーブル、画像、複雑なレイアウトは簡略化されます",
 			"expect_scanned": "スキャンされた（画像ベースの）PDFは空の出力を生成します — 先にOCRを使用してください",
 			"progress_label": "テキストを抽出中… {progress}%",
-			"progress_hint": "ファイルはデバイスから離れることはありません。"
+			"progress_hint": "ファイルはデバイスから離れることはありません。",
+			"seo_faq1_q": "Will the formatting be preserved?",
+			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
+			"seo_faq2_q": "Does it work with scanned PDFs?",
+			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
 		}
 	},
 	"dev_tools": {

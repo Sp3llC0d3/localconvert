@@ -605,7 +605,17 @@
 		"convert_another": "Konversi lainnya",
 		"convert_to_pdf": "Konversi ke PDF",
 		"save_pdf": "Simpan PDF",
-		"converting_progress": "Mengonversi… {progress}%"
+		"converting_progress": "Mengonversi… {progress}%",
+		"seo_how_title": "How it works",
+		"seo_step1": "Select your file from your device",
+		"seo_step2": "Adjust settings if needed",
+		"seo_step3": "Save the result — done!",
+		"seo_why_title": "Why LocalConvert?",
+		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
+		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
+		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
+		"seo_faq_title": "Frequently asked questions",
+		"seo_related_title": "Related tools"
 	},
 	"tool_pages": {
 		"merge": {
@@ -615,7 +625,11 @@
 			"btn_busy": "Menggabungkan…",
 			"err_min": "Tambahkan setidaknya 2 file PDF.",
 			"err_fail": "Penggabungan gagal.",
-			"save": "Simpan PDF gabungan"
+			"save": "Simpan PDF gabungan",
+			"seo_faq1_q": "Is it safe to merge PDFs online?",
+			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
+			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
+			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
 		},
 		"split": {
 			"title": "Pisahkan PDF",
@@ -627,7 +641,11 @@
 			"err_select": "Pilih setidaknya satu halaman.",
 			"err_extract": "Gagal mengekstrak halaman.",
 			"err_fail": "Pemisahan gagal.",
-			"help": "klik untuk memilih, titik untuk satu halaman"
+			"help": "klik untuk memilih, titik untuk satu halaman",
+			"seo_faq1_q": "Can I extract specific pages from a PDF?",
+			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
+			"seo_faq2_q": "Will splitting a PDF reduce quality?",
+			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
 		},
 		"rotate_pdf": {
 			"title": "Putar Halaman",
@@ -649,7 +667,11 @@
 			"delete_page": "Hapus halaman",
 			"no_pages": "Tidak ada halaman tersisa.",
 			"btn": "Simpan PDF yang diatur",
-			"btn_busy": "Menyimpan…"
+			"btn_busy": "Menyimpan…",
+			"seo_faq1_q": "Can I delete pages from a PDF?",
+			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
+			"seo_faq2_q": "Can I see thumbnails of each page?",
+			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
 		},
 		"images_to_pdf": {
 			"title": "Gambar → PDF",
@@ -658,7 +680,11 @@
 			"err_fail": "Konversi gagal.",
 			"btn": "Konversi ke PDF",
 			"btn_busy": "Mengonversi…",
-			"save": "Simpan PDF"
+			"save": "Simpan PDF",
+			"seo_faq1_q": "What image formats can I convert to PDF?",
+			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
+			"seo_faq2_q": "Can I arrange the image order?",
+			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Gambar",
@@ -666,7 +692,11 @@
 			"resolution": "Resolusi",
 			"btn": "Ekspor sebagai gambar",
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
-			"err_fail": "Konversi gagal."
+			"err_fail": "Konversi gagal.",
+			"seo_faq1_q": "What image format will I get?",
+			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
+			"seo_faq2_q": "What about multi-page PDFs?",
+			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF ke PowerPoint",
@@ -676,7 +706,11 @@
 			"standard": "4:3 Standar",
 			"btn": "Konversi ke PPTX",
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
-			"save": "Simpan PPTX"
+			"save": "Simpan PPTX",
+			"seo_faq1_q": "How does PDF to PowerPoint work?",
+			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
+			"seo_faq2_q": "Can I edit the slides after conversion?",
+			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
 		},
 		"compress": {
 			"title": "Kompres PDF",
@@ -697,7 +731,11 @@
 			"btn": "Kompres PDF",
 			"btn_busy": "Mengompres halaman {progress} dari {total}…",
 			"err_fail": "Kompresi gagal.",
-			"save": "Simpan PDF terkompres"
+			"save": "Simpan PDF terkompres",
+			"seo_faq1_q": "How much can I reduce the PDF file size?",
+			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
+			"seo_faq2_q": "Does compression affect text quality?",
+			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
 		},
 		"watermark_pdf": {
 			"title": "Tambah Tanda Air",
@@ -721,7 +759,11 @@
 			"top_right": "Atas kanan",
 			"btn": "Terapkan ke semua halaman",
 			"btn_busy": "Menambahkan nomor…",
-			"save": "Simpan PDF bernomor"
+			"save": "Simpan PDF bernomor",
+			"seo_faq1_q": "Where can I place the page numbers?",
+			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
+			"seo_faq2_q": "Can I customize the numbering format?",
+			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
 		},
 		"metadata": {
 			"title": "Edit Metadata",
@@ -741,7 +783,11 @@
 			"btn_busy": "Menyimpan…",
 			"err_read": "Gagal membaca metadata.",
 			"err_update": "Gagal memperbarui metadata.",
-			"save": "Simpan PDF yang diperbarui"
+			"save": "Simpan PDF yang diperbarui",
+			"seo_faq1_q": "What PDF metadata can I edit?",
+			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
+			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
+			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
 		},
 		"crop_pdf": {
 			"title": "Potong PDF",
@@ -766,7 +812,11 @@
 			"err_sig": "Buat tanda tangan terlebih dahulu.",
 			"err_place": "Klik pada halaman untuk menempatkan tanda tangan Anda.",
 			"btn_busy": "Menandatangani…",
-			"save": "Simpan PDF bertanda tangan"
+			"save": "Simpan PDF bertanda tangan",
+			"seo_faq1_q": "How can I create a signature?",
+			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
+			"seo_faq2_q": "Is my signature stored anywhere?",
+			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
 		},
 		"edit": {
 			"title": "Edit PDF",
@@ -780,7 +830,11 @@
 			"err_pdf": "Tambahkan PDF.",
 			"elements_placed": "{count} elemen ditempatkan",
 			"btn_busy": "Menerapkan…",
-			"save": "Simpan PDF yang diedit"
+			"save": "Simpan PDF yang diedit",
+			"seo_faq1_q": "What kind of edits can I make?",
+			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
+			"seo_faq2_q": "Can I edit existing text in the PDF?",
+			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
 		},
 		"password": {
 			"title": "Proteksi PDF dengan Kata Sandi",
@@ -803,7 +857,11 @@
 			"btn": "Proteksi PDF",
 			"btn_busy": "Mengenkripsi…",
 			"result": "Terproteksi!",
-			"save": "Simpan PDF terproteksi"
+			"save": "Simpan PDF terproteksi",
+			"seo_faq1_q": "How secure is the encryption?",
+			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
+			"seo_faq2_q": "Can I set permissions like preventing printing?",
+			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
 		},
 		"unlock": {
 			"title": "Buka Kunci PDF",
@@ -817,7 +875,11 @@
 			"save": "Simpan PDF yang dibuka kuncinya",
 			"password_label": "Kata sandi (jika diperlukan)",
 			"password_placeholder": "Kosongkan jika tidak ada",
-			"password_hint": "Hanya diperlukan untuk PDF yang membutuhkan kata sandi."
+			"password_hint": "Hanya diperlukan untuk PDF yang membutuhkan kata sandi.",
+			"seo_faq1_q": "Can I remove a password from a PDF?",
+			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
+			"seo_faq2_q": "Is my password safe?",
+			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
 		},
 		"rotate_image": {
 			"title": "Putar Gambar",
@@ -894,7 +956,11 @@
 			"result": "{chars} karakter diekstrak",
 			"copy": "Salin",
 			"copied": "Tersalin!",
-			"download_txt": "Simpan sebagai .txt"
+			"download_txt": "Simpan sebagai .txt",
+			"seo_faq1_q": "Does it work with scanned PDFs?",
+			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
+			"seo_faq2_q": "Does it support non-English text?",
+			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
 		},
 		"grayscale": {
 			"title": "PDF ke Hitam Putih",
@@ -903,7 +969,11 @@
 			"btn": "Konversi ke hitam putih",
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
 			"grayscale": "Hitam putih",
-			"save": "Simpan PDF hitam putih"
+			"save": "Simpan PDF hitam putih",
+			"seo_faq1_q": "Will the text still be selectable after conversion?",
+			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
+			"seo_faq2_q": "Can I adjust the quality?",
+			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
 		},
 		"json_formatter": {
 			"title": "Pemformat JSON",
@@ -1000,7 +1070,11 @@
 			"drop_hint": "Letakkan file DOCX Anda di sini",
 			"or_click_browse": "atau klik untuk menjelajah",
 			"disclaimer": "Ketepatan tata letak bergantung pada kompleksitas dokumen. Tabel kompleks dan format lanjutan mungkin disederhanakan.",
-			"progress_hint": "Memproses dokumen Anda secara lokal — tidak ada yang diunggah."
+			"progress_hint": "Memproses dokumen Anda secara lokal — tidak ada yang diunggah.",
+			"seo_faq1_q": "Will my Word document look the same as PDF?",
+			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
+			"seo_faq2_q": "Does it support .doc files (older Word format)?",
+			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
 		},
 		"from_xlsx": {
 			"title": "Excel ke PDF",
@@ -1013,7 +1087,11 @@
 			"landscape": "Lanskap",
 			"portrait": "Potret",
 			"disclaimer": "Lebar kolom dihitung secara otomatis. Lembar yang lebar bekerja lebih baik dalam mode lanskap.",
-			"progress_hint": "Memproses spreadsheet secara lokal — tidak ada yang diunggah."
+			"progress_hint": "Memproses spreadsheet secara lokal — tidak ada yang diunggah.",
+			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
+			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
+			"seo_faq2_q": "What spreadsheet formats are supported?",
+			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
 		},
 		"to_docx": {
 			"title": "PDF ke Word",
@@ -1026,7 +1104,11 @@
 			"expect_tables": "Tabel, gambar, dan tata letak kompleks disederhanakan",
 			"expect_scanned": "PDF yang dipindai (berbasis gambar) menghasilkan output kosong — gunakan OCR terlebih dahulu",
 			"progress_label": "Mengekstrak teks… {progress}%",
-			"progress_hint": "File Anda tidak pernah meninggalkan perangkat Anda."
+			"progress_hint": "File Anda tidak pernah meninggalkan perangkat Anda.",
+			"seo_faq1_q": "Will the formatting be preserved?",
+			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
+			"seo_faq2_q": "Does it work with scanned PDFs?",
+			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
 		}
 	},
 	"dev_tools": {

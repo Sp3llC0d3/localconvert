@@ -6,6 +6,8 @@
 	import { downloadPdf, formatFileSize } from '$lib/pdf/utils';
 	import { TableIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -119,6 +121,17 @@
 			</p>
 			<button class="btn" onclick={download}>{m['tools_common.save_pdf']()}</button>
 		</div>
+	{/if}
+
+	
+	{#if toolSeo['from-xlsx']}
+		<ToolSeoBlock
+			faqs={toolSeo['from-xlsx'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['from-xlsx'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['from-xlsx'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['from-xlsx'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['from-xlsx'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['from-xlsx'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>

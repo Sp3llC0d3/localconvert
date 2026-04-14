@@ -605,7 +605,17 @@
 		"convert_another": "Convertir otro",
 		"convert_to_pdf": "Convertir a PDF",
 		"save_pdf": "Guardar PDF",
-		"converting_progress": "Convirtiendo… {progress}%"
+		"converting_progress": "Convirtiendo… {progress}%",
+		"seo_how_title": "How it works",
+		"seo_step1": "Select your file from your device",
+		"seo_step2": "Adjust settings if needed",
+		"seo_step3": "Save the result — done!",
+		"seo_why_title": "Why LocalConvert?",
+		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
+		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
+		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
+		"seo_faq_title": "Frequently asked questions",
+		"seo_related_title": "Related tools"
 	},
 	"tool_pages": {
 		"merge": {
@@ -615,7 +625,11 @@
 			"btn_busy": "Uniendo…",
 			"err_min": "Agrega al menos 2 archivos PDF.",
 			"err_fail": "Error al unir.",
-			"save": "Guardar PDF unido"
+			"save": "Guardar PDF unido",
+			"seo_faq1_q": "Is it safe to merge PDFs online?",
+			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
+			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
+			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
 		},
 		"split": {
 			"title": "Dividir PDF",
@@ -627,7 +641,11 @@
 			"err_select": "Selecciona al menos una pagina.",
 			"err_extract": "Error al extraer la pagina.",
 			"err_fail": "Error al dividir.",
-			"help": "click to toggle, ● to save single page"
+			"help": "click to toggle, ● to save single page",
+			"seo_faq1_q": "Can I extract specific pages from a PDF?",
+			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
+			"seo_faq2_q": "Will splitting a PDF reduce quality?",
+			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
 		},
 		"rotate_pdf": {
 			"title": "Rotar paginas",
@@ -649,7 +667,11 @@
 			"delete_page": "Eliminar pagina",
 			"no_pages": "No quedan paginas.",
 			"btn": "Guardar PDF organizado",
-			"btn_busy": "Guardando…"
+			"btn_busy": "Guardando…",
+			"seo_faq1_q": "Can I delete pages from a PDF?",
+			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
+			"seo_faq2_q": "Can I see thumbnails of each page?",
+			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
 		},
 		"images_to_pdf": {
 			"title": "Imagenes → PDF",
@@ -658,7 +680,11 @@
 			"err_fail": "Error en la conversion.",
 			"btn": "Convertir a PDF",
 			"btn_busy": "Convirtiendo…",
-			"save": "Guardar PDF"
+			"save": "Guardar PDF",
+			"seo_faq1_q": "What image formats can I convert to PDF?",
+			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
+			"seo_faq2_q": "Can I arrange the image order?",
+			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Imagenes",
@@ -666,7 +692,11 @@
 			"resolution": "Resolucion",
 			"btn": "Exportar como imagenes",
 			"btn_busy": "Convirtiendo pagina {progress} de {total}…",
-			"err_fail": "Error en la conversion."
+			"err_fail": "Error en la conversion.",
+			"seo_faq1_q": "What image format will I get?",
+			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
+			"seo_faq2_q": "What about multi-page PDFs?",
+			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF a PowerPoint",
@@ -676,7 +706,11 @@
 			"standard": "4:3 Estandar",
 			"btn": "Convertir a PPTX",
 			"btn_busy": "Convirtiendo pagina {progress} de {total}…",
-			"save": "Guardar PPTX"
+			"save": "Guardar PPTX",
+			"seo_faq1_q": "How does PDF to PowerPoint work?",
+			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
+			"seo_faq2_q": "Can I edit the slides after conversion?",
+			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
 		},
 		"compress": {
 			"title": "Comprimir PDF",
@@ -697,7 +731,11 @@
 			"btn": "Comprimir PDF",
 			"btn_busy": "Comprimiendo pagina {progress} de {total}…",
 			"err_fail": "Error en la compresion.",
-			"save": "Guardar PDF comprimido"
+			"save": "Guardar PDF comprimido",
+			"seo_faq1_q": "How much can I reduce the PDF file size?",
+			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
+			"seo_faq2_q": "Does compression affect text quality?",
+			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
 		},
 		"watermark_pdf": {
 			"title": "Agregar marca de agua",
@@ -721,7 +759,11 @@
 			"top_right": "Superior derecha",
 			"btn": "Aplicar a todas las paginas",
 			"btn_busy": "Agregando numeros…",
-			"save": "Guardar PDF numerado"
+			"save": "Guardar PDF numerado",
+			"seo_faq1_q": "Where can I place the page numbers?",
+			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
+			"seo_faq2_q": "Can I customize the numbering format?",
+			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
 		},
 		"metadata": {
 			"title": "Editar metadatos",
@@ -741,7 +783,11 @@
 			"btn_busy": "Guardando…",
 			"err_read": "Error al leer los metadatos.",
 			"err_update": "Error al actualizar los metadatos.",
-			"save": "Guardar PDF actualizado"
+			"save": "Guardar PDF actualizado",
+			"seo_faq1_q": "What PDF metadata can I edit?",
+			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
+			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
+			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
 		},
 		"crop_pdf": {
 			"title": "Recortar PDF",
@@ -766,7 +812,11 @@
 			"err_sig": "Crea una firma primero.",
 			"err_place": "Haz clic en la pagina para colocar tu firma.",
 			"btn_busy": "Firmando…",
-			"save": "Guardar PDF firmado"
+			"save": "Guardar PDF firmado",
+			"seo_faq1_q": "How can I create a signature?",
+			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
+			"seo_faq2_q": "Is my signature stored anywhere?",
+			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
 		},
 		"edit": {
 			"title": "Editar PDF",
@@ -780,7 +830,11 @@
 			"err_pdf": "Agrega un PDF.",
 			"elements_placed": "{count} elemento(s) colocado(s)",
 			"btn_busy": "Aplicando…",
-			"save": "Guardar PDF editado"
+			"save": "Guardar PDF editado",
+			"seo_faq1_q": "What kind of edits can I make?",
+			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
+			"seo_faq2_q": "Can I edit existing text in the PDF?",
+			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
 		},
 		"password": {
 			"title": "Proteger PDF con contrasena",
@@ -803,7 +857,11 @@
 			"btn": "Proteger PDF",
 			"btn_busy": "Cifrando…",
 			"result": "Protegido!",
-			"save": "Guardar PDF protegido"
+			"save": "Guardar PDF protegido",
+			"seo_faq1_q": "How secure is the encryption?",
+			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
+			"seo_faq2_q": "Can I set permissions like preventing printing?",
+			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
 		},
 		"unlock": {
 			"title": "Desbloquear PDF",
@@ -817,7 +875,11 @@
 			"save": "Guardar PDF desbloqueado",
 			"password_label": "Contraseña (si es necesaria)",
 			"password_placeholder": "Dejar vacío si no hay",
-			"password_hint": "Solo necesaria para PDFs que requieren contraseña para abrir."
+			"password_hint": "Solo necesaria para PDFs que requieren contraseña para abrir.",
+			"seo_faq1_q": "Can I remove a password from a PDF?",
+			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
+			"seo_faq2_q": "Is my password safe?",
+			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
 		},
 		"rotate_image": {
 			"title": "Rotar imagen",
@@ -894,7 +956,11 @@
 			"result": "{chars} caracteres extraidos",
 			"copy": "Copiar",
 			"copied": "Copiado!",
-			"download_txt": "Guardar como .txt"
+			"download_txt": "Guardar como .txt",
+			"seo_faq1_q": "Does it work with scanned PDFs?",
+			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
+			"seo_faq2_q": "Does it support non-English text?",
+			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
 		},
 		"grayscale": {
 			"title": "PDF a escala de grises",
@@ -903,7 +969,11 @@
 			"btn": "Convertir a escala de grises",
 			"btn_busy": "Convirtiendo pagina {progress} de {total}…",
 			"grayscale": "Escala de grises",
-			"save": "Guardar PDF en escala de grises"
+			"save": "Guardar PDF en escala de grises",
+			"seo_faq1_q": "Will the text still be selectable after conversion?",
+			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
+			"seo_faq2_q": "Can I adjust the quality?",
+			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
 		},
 		"json_formatter": {
 			"title": "Formateador JSON",
@@ -1000,7 +1070,11 @@
 			"drop_hint": "Arrastra tu archivo DOCX aquí",
 			"or_click_browse": "o haz clic para explorar",
 			"disclaimer": "La fidelidad del diseño depende de la complejidad del documento. Las tablas complejas y el formato avanzado pueden simplificarse.",
-			"progress_hint": "Procesando tu documento localmente — nada se sube."
+			"progress_hint": "Procesando tu documento localmente — nada se sube.",
+			"seo_faq1_q": "Will my Word document look the same as PDF?",
+			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
+			"seo_faq2_q": "Does it support .doc files (older Word format)?",
+			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
 		},
 		"from_xlsx": {
 			"title": "Excel a PDF",
@@ -1013,7 +1087,11 @@
 			"landscape": "Horizontal",
 			"portrait": "Vertical",
 			"disclaimer": "Los anchos de columna se calculan automáticamente. Las hojas anchas funcionan mejor en modo horizontal.",
-			"progress_hint": "Procesando hoja de cálculo localmente — nada se sube."
+			"progress_hint": "Procesando hoja de cálculo localmente — nada se sube.",
+			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
+			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
+			"seo_faq2_q": "What spreadsheet formats are supported?",
+			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
 		},
 		"to_docx": {
 			"title": "PDF a Word",
@@ -1026,7 +1104,11 @@
 			"expect_tables": "Las tablas, imágenes y diseños complejos se simplifican",
 			"expect_scanned": "Los PDFs escaneados (basados en imágenes) producen salida vacía — usa OCR primero",
 			"progress_label": "Extrayendo texto… {progress}%",
-			"progress_hint": "Tu archivo nunca sale de tu dispositivo."
+			"progress_hint": "Tu archivo nunca sale de tu dispositivo.",
+			"seo_faq1_q": "Will the formatting be preserved?",
+			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
+			"seo_faq2_q": "Does it work with scanned PDFs?",
+			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
 		}
 	},
 	"dev_tools": {

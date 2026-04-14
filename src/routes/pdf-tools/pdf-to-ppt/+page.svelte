@@ -5,6 +5,8 @@
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { PresentationIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let slideSize = $state<'16:9' | '4:3'>('16:9');
@@ -89,6 +91,17 @@
 			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBlob.size)}</b></p>
 			<button class="btn" onclick={download}>{m['tool_pages.pdf_to_ppt.save']()}</button>
 		</div>
+	{/if}
+
+	
+	{#if toolSeo['pdf-to-ppt']}
+		<ToolSeoBlock
+			faqs={toolSeo['pdf-to-ppt'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['pdf-to-ppt'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>

@@ -605,7 +605,17 @@
 		"convert_another": "转换其他文件",
 		"convert_to_pdf": "转换为PDF",
 		"save_pdf": "保存PDF",
-		"converting_progress": "正在转换… {progress}%"
+		"converting_progress": "正在转换… {progress}%",
+		"seo_how_title": "How it works",
+		"seo_step1": "Select your file from your device",
+		"seo_step2": "Adjust settings if needed",
+		"seo_step3": "Save the result — done!",
+		"seo_why_title": "Why LocalConvert?",
+		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
+		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
+		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
+		"seo_faq_title": "Frequently asked questions",
+		"seo_related_title": "Related tools"
 	},
 	"tool_pages": {
 		"merge": {
@@ -615,7 +625,11 @@
 			"btn_busy": "合并中…",
 			"err_min": "请至少添加 2 个 PDF 文件。",
 			"err_fail": "合并失败。",
-			"save": "保存合并后的 PDF"
+			"save": "保存合并后的 PDF",
+			"seo_faq1_q": "Is it safe to merge PDFs online?",
+			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
+			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
+			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
 		},
 		"split": {
 			"title": "拆分 PDF",
@@ -627,7 +641,11 @@
 			"err_select": "请至少选择一页。",
 			"err_extract": "页面提取失败。",
 			"err_fail": "拆分失败。",
-			"help": "点击切换，点击圆点选择单页"
+			"help": "点击切换，点击圆点选择单页",
+			"seo_faq1_q": "Can I extract specific pages from a PDF?",
+			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
+			"seo_faq2_q": "Will splitting a PDF reduce quality?",
+			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
 		},
 		"rotate_pdf": {
 			"title": "旋转页面",
@@ -649,7 +667,11 @@
 			"delete_page": "删除页面",
 			"no_pages": "没有剩余页面。",
 			"btn": "保存整理后的 PDF",
-			"btn_busy": "保存中…"
+			"btn_busy": "保存中…",
+			"seo_faq1_q": "Can I delete pages from a PDF?",
+			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
+			"seo_faq2_q": "Can I see thumbnails of each page?",
+			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
 		},
 		"images_to_pdf": {
 			"title": "图片 → PDF",
@@ -658,7 +680,11 @@
 			"err_fail": "转换失败。",
 			"btn": "转换为 PDF",
 			"btn_busy": "转换中…",
-			"save": "保存 PDF"
+			"save": "保存 PDF",
+			"seo_faq1_q": "What image formats can I convert to PDF?",
+			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
+			"seo_faq2_q": "Can I arrange the image order?",
+			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
 		},
 		"pdf_to_images": {
 			"title": "PDF → 图片",
@@ -666,7 +692,11 @@
 			"resolution": "分辨率",
 			"btn": "导出为图片",
 			"btn_busy": "正在转换第 {progress} / {total} 页…",
-			"err_fail": "转换失败。"
+			"err_fail": "转换失败。",
+			"seo_faq1_q": "What image format will I get?",
+			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
+			"seo_faq2_q": "What about multi-page PDFs?",
+			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF 转 PowerPoint",
@@ -676,7 +706,11 @@
 			"standard": "4:3 标准",
 			"btn": "转换为 PPTX",
 			"btn_busy": "正在转换第 {progress} / {total} 页…",
-			"save": "保存 PPTX"
+			"save": "保存 PPTX",
+			"seo_faq1_q": "How does PDF to PowerPoint work?",
+			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
+			"seo_faq2_q": "Can I edit the slides after conversion?",
+			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
 		},
 		"compress": {
 			"title": "压缩 PDF",
@@ -697,7 +731,11 @@
 			"btn": "压缩 PDF",
 			"btn_busy": "正在压缩第 {progress} / {total} 页…",
 			"err_fail": "压缩失败。",
-			"save": "保存压缩后的 PDF"
+			"save": "保存压缩后的 PDF",
+			"seo_faq1_q": "How much can I reduce the PDF file size?",
+			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
+			"seo_faq2_q": "Does compression affect text quality?",
+			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
 		},
 		"watermark_pdf": {
 			"title": "添加水印",
@@ -721,7 +759,11 @@
 			"top_right": "右上",
 			"btn": "应用到所有页面",
 			"btn_busy": "正在添加页码…",
-			"save": "保存带页码的 PDF"
+			"save": "保存带页码的 PDF",
+			"seo_faq1_q": "Where can I place the page numbers?",
+			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
+			"seo_faq2_q": "Can I customize the numbering format?",
+			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
 		},
 		"metadata": {
 			"title": "编辑元数据",
@@ -741,7 +783,11 @@
 			"btn_busy": "保存中…",
 			"err_read": "无法读取元数据。",
 			"err_update": "无法更新元数据。",
-			"save": "保存更新后的 PDF"
+			"save": "保存更新后的 PDF",
+			"seo_faq1_q": "What PDF metadata can I edit?",
+			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
+			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
+			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
 		},
 		"crop_pdf": {
 			"title": "裁剪 PDF",
@@ -766,7 +812,11 @@
 			"err_sig": "请先创建签名。",
 			"err_place": "请点击页面放置签名。",
 			"btn_busy": "签署中…",
-			"save": "保存已签署的 PDF"
+			"save": "保存已签署的 PDF",
+			"seo_faq1_q": "How can I create a signature?",
+			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
+			"seo_faq2_q": "Is my signature stored anywhere?",
+			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
 		},
 		"edit": {
 			"title": "编辑 PDF",
@@ -780,7 +830,11 @@
 			"err_pdf": "请添加 PDF。",
 			"elements_placed": "已放置 {count} 个元素",
 			"btn_busy": "应用中…",
-			"save": "保存编辑后的 PDF"
+			"save": "保存编辑后的 PDF",
+			"seo_faq1_q": "What kind of edits can I make?",
+			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
+			"seo_faq2_q": "Can I edit existing text in the PDF?",
+			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
 		},
 		"password": {
 			"title": "PDF 密码保护",
@@ -803,7 +857,11 @@
 			"btn": "保护 PDF",
 			"btn_busy": "加密中…",
 			"result": "保护完成！",
-			"save": "保存受保护的 PDF"
+			"save": "保存受保护的 PDF",
+			"seo_faq1_q": "How secure is the encryption?",
+			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
+			"seo_faq2_q": "Can I set permissions like preventing printing?",
+			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
 		},
 		"unlock": {
 			"title": "解锁 PDF",
@@ -817,7 +875,11 @@
 			"save": "保存已解锁的 PDF",
 			"password_label": "密码（如需要）",
 			"password_placeholder": "没有则留空",
-			"password_hint": "仅用于需要密码才能打开的PDF。"
+			"password_hint": "仅用于需要密码才能打开的PDF。",
+			"seo_faq1_q": "Can I remove a password from a PDF?",
+			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
+			"seo_faq2_q": "Is my password safe?",
+			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
 		},
 		"rotate_image": {
 			"title": "旋转图片",
@@ -894,7 +956,11 @@
 			"result": "已提取 {chars} 个字符",
 			"copy": "复制",
 			"copied": "已复制！",
-			"download_txt": "保存为 .txt"
+			"download_txt": "保存为 .txt",
+			"seo_faq1_q": "Does it work with scanned PDFs?",
+			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
+			"seo_faq2_q": "Does it support non-English text?",
+			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
 		},
 		"grayscale": {
 			"title": "PDF 转灰度",
@@ -903,7 +969,11 @@
 			"btn": "转换为灰度",
 			"btn_busy": "正在转换第 {progress} / {total} 页…",
 			"grayscale": "灰度",
-			"save": "保存灰度 PDF"
+			"save": "保存灰度 PDF",
+			"seo_faq1_q": "Will the text still be selectable after conversion?",
+			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
+			"seo_faq2_q": "Can I adjust the quality?",
+			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
 		},
 		"json_formatter": {
 			"title": "JSON 格式化",
@@ -1000,7 +1070,11 @@
 			"drop_hint": "将DOCX文件拖放到此处",
 			"or_click_browse": "或点击浏览",
 			"disclaimer": "布局保真度取决于文档复杂性。复杂表格和高级格式可能会被简化。",
-			"progress_hint": "正在本地处理您的文档 — 不会上传任何内容。"
+			"progress_hint": "正在本地处理您的文档 — 不会上传任何内容。",
+			"seo_faq1_q": "Will my Word document look the same as PDF?",
+			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
+			"seo_faq2_q": "Does it support .doc files (older Word format)?",
+			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
 		},
 		"from_xlsx": {
 			"title": "Excel转PDF",
@@ -1013,7 +1087,11 @@
 			"landscape": "横向",
 			"portrait": "纵向",
 			"disclaimer": "列宽自动计算。宽表格在横向模式下效果最佳。",
-			"progress_hint": "正在本地处理电子表格 — 不会上传任何内容。"
+			"progress_hint": "正在本地处理电子表格 — 不会上传任何内容。",
+			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
+			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
+			"seo_faq2_q": "What spreadsheet formats are supported?",
+			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
 		},
 		"to_docx": {
 			"title": "PDF转Word",
@@ -1026,7 +1104,11 @@
 			"expect_tables": "表格、图片和复杂布局会被简化",
 			"expect_scanned": "扫描的（基于图像的）PDF会产生空输出 — 请先使用OCR",
 			"progress_label": "正在提取文本… {progress}%",
-			"progress_hint": "您的文件永远不会离开您的设备。"
+			"progress_hint": "您的文件永远不会离开您的设备。",
+			"seo_faq1_q": "Will the formatting be preserved?",
+			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
+			"seo_faq2_q": "Does it work with scanned PDFs?",
+			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
 		}
 	},
 	"dev_tools": {

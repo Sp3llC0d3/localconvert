@@ -6,6 +6,8 @@
 	import { downloadBlob, formatFileSize } from '$lib/pdf/utils';
 	import { FileOutputIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -103,6 +105,17 @@
 			</p>
 			<button class="btn" onclick={download}>{m['tool_pages.to_docx.save']()}</button>
 		</div>
+	{/if}
+
+	
+	{#if toolSeo['to-docx']}
+		<ToolSeoBlock
+			faqs={toolSeo['to-docx'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['to-docx'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['to-docx'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['to-docx'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['to-docx'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['to-docx'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>

@@ -8,6 +8,8 @@
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
 	import { m } from '$lib/paraglide/messages';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let position = $state<NumberPosition>('bottom-center');
@@ -283,6 +285,17 @@
 			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
 			<button class="btn" onclick={download}>{m['tool_pages.page_numbers.save']()}</button>
 		</div>
+	{/if}
+
+	
+	{#if toolSeo['page-numbers']}
+		<ToolSeoBlock
+			faqs={toolSeo['page-numbers'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['page-numbers'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['page-numbers'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['page-numbers'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['page-numbers'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['page-numbers'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
