@@ -544,7 +544,7 @@
 		{#if files.files.length === 0}
 			<Uploader class="w-full col-span-2" />
 		{:else if files.files.length === 1}
-			<Uploader class="w-full col-span-2" />
+			<Uploader class="w-full col-span-2" compact />
 		{/if}
 	</div>
 </div>

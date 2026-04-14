@@ -117,9 +117,7 @@
 
 		<!-- Uploader -->
 		<div class="w-full max-w-2xl mt-10 mb-6 hero-animate delay-2">
-			<div class="uploader-shell">
-				<Uploader class="w-full" />
-			</div>
+			<Uploader class="w-full" />
 		</div>
 
 		<!-- Subtitle -->
@@ -337,38 +335,6 @@
 	max-width: 560px;
 	font-weight: 400;
 	line-height: 1.75;
-}
-
-/* Uploader shell with scan line */
-.uploader-shell {
-	position: relative;
-	border-radius: 1.25rem;
-	overflow: hidden;
-}
-
-.uploader-shell::after {
-	content: '';
-	position: absolute;
-	inset: -2px;
-	border-radius: 1.35rem;
-	background: radial-gradient(ellipse at center, hsla(162, 65%, 48%, 0.18) 0%, transparent 70%);
-	pointer-events: none;
-	z-index: 0;
-}
-
-:global(.light) .uploader-shell::after {
-	display: none;
-}
-
-@media (prefers-color-scheme: light) {
-	:global(:root:not(.dark)) .uploader-shell::after {
-		display: none;
-	}
-}
-
-.uploader-shell > :global(*) {
-	position: relative;
-	z-index: 1;
 }
 
 /* Pills */
