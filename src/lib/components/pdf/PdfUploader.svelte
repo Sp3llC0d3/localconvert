@@ -69,8 +69,13 @@
 	ondragleave={() => dragging = false}
 	ondrop={onDrop}
 >
-	<svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-		<path d="M12 16V8m0 0-3 3m3-3 3 3M20 16.5A3.5 3.5 0 0 0 16.5 13H15a5 5 0 1 0-9.9 1"/>
+	<svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M12 2C14 3 18 5 20 6v8c0 3-2.5 6-8 8-5.5-2-8-5-8-8V6c2-1 6-3 8-4Z" opacity="0.12" fill="currentColor" />
+		<path d="M12 2C14 3 18 5 20 6v8c0 3-2.5 6-8 8-5.5-2-8-5-8-8V6c2-1 6-3 8-4Z" />
+		<line x1="8" y1="10" x2="15" y2="10" />
+		<polyline points="13,8 15,10 13,12" />
+		<line x1="16" y1="14" x2="9" y2="14" />
+		<polyline points="11,12 9,14 11,16" />
 	</svg>
 	<p class="drop-label">{label}</p>
 	<p class="drop-sub">{m['upload.uploader.browse']()}</p>

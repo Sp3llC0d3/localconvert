@@ -4,6 +4,13 @@ node_modules
 CLAUDE_CODE_CONTEXT.md
 CLAUDE_CODE_PDF_TOOLS.md
 PRODUCT_HUNT.md
+MAINTENANCE_PLAN.md
+FIX_NEW_TOOL_PAGES.md
+
+# Preview/concept pages (local dev only)
+src/routes/logo-preview/
+src/routes/drop-zone-preview/
+src/lib/components/visual/svg/logo-concepts/
 
 # Output
 .output
