@@ -485,7 +485,7 @@
 		background: var(--bg-panel-highlight);
 		color: var(--fg-muted);
 		cursor: pointer;
-		transition: background 0.15s ease, color 0.15s ease;
+		transition: background 0.15s ease;
 		text-align: left;
 		white-space: nowrap;
 	}
