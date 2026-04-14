@@ -31,7 +31,8 @@
 			"to_convert": "変換するには",
 			"drop": "ドロップ",
 			"click_browse": "クリックして参照",
-			"add_more": "ドロップまたはクリックで追加"
+			"add_more": "ドロップまたはクリックで追加",
+			"or": "または"
 		},
 		"cards": {
 			"title": "LocalConvertが対応している形式",

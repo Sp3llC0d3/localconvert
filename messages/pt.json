@@ -31,7 +31,8 @@
 			"to_convert": "para converter",
 			"drop": "largue",
 			"click_browse": "clique para procurar",
-			"add_more": "largue ou clique para adicionar mais"
+			"add_more": "largue ou clique para adicionar mais",
+			"or": "ou"
 		},
 		"cards": {
 			"title": "O LocalConvert suporta...",

@@ -31,7 +31,8 @@
 			"to_convert": "để chuyển đổi",
 			"drop": "thả file",
 			"click_browse": "nhấp để duyệt",
-			"add_more": "thả hoặc nhấp để thêm"
+			"add_more": "thả hoặc nhấp để thêm",
+			"or": "hoặc"
 		},
 		"cards": {
 			"title": "LocalConvert hỗ trợ...",

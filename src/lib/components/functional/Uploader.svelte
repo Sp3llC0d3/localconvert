@@ -89,7 +89,7 @@
 		<p class="dz-text">
 			<span class="dz-action">{m["upload.uploader.to_convert"]()}</span>
 			<span class="dz-sep">&mdash;</span>
-			<span class="dz-method">{m["upload.uploader.drop"]()}</span> or <span class="dz-method">{m["upload.uploader.click_browse"]()}</span>
+			<span class="dz-method">{m["upload.uploader.drop"]()}</span> {m["upload.uploader.or"]()} <span class="dz-method">{m["upload.uploader.click_browse"]()}</span>
 		</p>
 	{:else}
 		<!-- Compact: horizontal single line -->

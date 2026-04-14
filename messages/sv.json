@@ -31,7 +31,8 @@
 			"to_convert": "för att konvertera",
 			"drop": "släpp",
 			"click_browse": "klicka för att bläddra",
-			"add_more": "släpp eller klicka för att lägga till"
+			"add_more": "släpp eller klicka för att lägga till",
+			"or": "eller"
 		},
 		"cards": {
 			"title": "LocalConvert stoder...",

@@ -31,7 +31,8 @@
 			"to_convert": "aby przekonwertować",
 			"drop": "upuść",
 			"click_browse": "kliknij, aby przeglądać",
-			"add_more": "upuść lub kliknij, aby dodać więcej"
+			"add_more": "upuść lub kliknij, aby dodać więcej",
+			"or": "lub"
 		},
 		"cards": {
 			"title": "LocalConvert obsługuje...",

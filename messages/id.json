@@ -31,7 +31,8 @@
 			"to_convert": "untuk mengonversi",
 			"drop": "letakkan",
 			"click_browse": "klik untuk menelusuri",
-			"add_more": "letakkan atau klik untuk menambah"
+			"add_more": "letakkan atau klik untuk menambah",
+			"or": "atau"
 		},
 		"cards": {
 			"title": "LocalConvert mendukung...",

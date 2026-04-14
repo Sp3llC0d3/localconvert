@@ -31,7 +31,8 @@
 			"to_convert": "za pretvaranje",
 			"drop": "ispustite",
 			"click_browse": "kliknite za pregledavanje",
-			"add_more": "ispustite ili kliknite za dodavanje"
+			"add_more": "ispustite ili kliknite za dodavanje",
+			"or": "ili"
 		},
 		"cards": {
 			"title": "LocalConvert podržava...",

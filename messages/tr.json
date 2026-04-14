@@ -31,7 +31,8 @@
 			"to_convert": "dönüştürmek için",
 			"drop": "bırakın",
 			"click_browse": "göz atmak için tıklayın",
-			"add_more": "daha fazla eklemek için bırakın veya tıklayın"
+			"add_more": "daha fazla eklemek için bırakın veya tıklayın",
+			"or": "veya"
 		},
 		"cards": {
 			"title": "LocalConvert şunları destekler...",

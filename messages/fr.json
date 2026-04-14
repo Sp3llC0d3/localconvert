@@ -31,7 +31,8 @@
 			"to_convert": "pour convertir",
 			"drop": "déposez",
 			"click_browse": "cliquez pour parcourir",
-			"add_more": "déposez ou cliquez pour ajouter"
+			"add_more": "déposez ou cliquez pour ajouter",
+			"or": "ou"
 		},
 		"cards": {
 			"title": "LocalConvert prend en charge...",

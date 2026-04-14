@@ -31,7 +31,8 @@
 			"to_convert": "om te converteren",
 			"drop": "sleep",
 			"click_browse": "klik om te bladeren",
-			"add_more": "sleep of klik om meer toe te voegen"
+			"add_more": "sleep of klik om meer toe te voegen",
+			"or": "of"
 		},
 		"cards": {
 			"title": "LocalConvert ondersteunt...",
