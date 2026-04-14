@@ -17,7 +17,7 @@
 		"discord_server": "Discord-server",
 		"privacy_policy": "Integritetspolicy",
 		"tagline": "Din privata verktygslåda",
-		"pdf_tools_count": "PDF-verktyg - 18",
+		"pdf_tools_count": "PDF-verktyg - 21",
 		"image_tools_count": "Bildverktyg - 10",
 		"dev_tools_count": "Dev-verktyg - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Inga serveruppladdningar",
-			"tools_count": "36+ verktyg",
+			"tools_count": "39+ verktyg",
 			"open_source": "Gratis och oppen kallkod",
 			"works_locally": "Fungerar lokalt"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Varje verktyg kors i din webblasare",
 			"pdf_title": "PDF-verktyg",
 			"pdf_desc": "Sammanfoga, dela, komprimera, vattenmarke, signera, redigera och 12 till",
-			"pdf_count": "18 verktyg",
+			"pdf_count": "21 verktyg",
 			"image_title": "Bildverktyg",
 			"image_desc": "Beskara, andra storlek, filter, oskarphet, vattenmarke, meme och mer",
 			"image_count": "10 verktyg",
@@ -1048,7 +1048,7 @@
 			"q2": "Ar mina filer privata?",
 			"a2": "Helt och hallet. All bearbetning sker i din webblasare med WebAssembly. Dina filer beror aldrig vara servrar -- inte ens for ett ogonblick.",
 			"q3": "Vad kan LocalConvert gora?",
-			"a3": "Konvertera 200+ filformat (bilder, ljud, video, dokument), 18 PDF-verktyg (sammanfoga, dela, komprimera, vattenmarke, signera, redigera och mer), 10 bildverktyg (beskara, andra storlek, filter, oskarphet, vattenmarke) och 8 utvecklarverktyg (JSON, hash, Base64, diff, markdown).",
+			"a3": "Konvertera 200+ filformat (bilder, ljud, video, dokument), 21 PDF-verktyg (sammanfoga, dela, komprimera, vattenmarke, signera, redigera och mer), 10 bildverktyg (beskara, andra storlek, filter, oskarphet, vattenmarke) och 8 utvecklarverktyg (JSON, hash, Base64, diff, markdown).",
 			"q4": "Finns det en filstorleksgrans?",
 			"a4": "Ingen fast grans -- det beror pa din enhets tillgangliga minne. For mycket stora videofiler hanterar Firefox eller Safari dem vanligtvis battre.",
 			"q5": "Behover jag installera nagot?",

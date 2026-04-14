@@ -41,6 +41,9 @@
 			{ name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc'](), href: '/pdf-tools/pdf-to-ppt/', category: 'pdf' },
 			{ name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc'](), href: '/pdf-tools/pdf-to-text/', category: 'pdf' },
 			{ name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc'](), href: '/pdf-tools/grayscale/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.from_docx_name'](), desc: m['pdf_tools.tools.from_docx_desc'](), href: '/pdf-tools/from-docx/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.from_xlsx_name'](), desc: m['pdf_tools.tools.from_xlsx_desc'](), href: '/pdf-tools/from-xlsx/', category: 'pdf' },
+			{ name: m['pdf_tools.tools.to_docx_name'](), desc: m['pdf_tools.tools.to_docx_desc'](), href: '/pdf-tools/to-docx/', category: 'pdf' },
 			// Image Tools
 			{ name: m['image_tools.tools.rotate_name'](), desc: m['image_tools.tools.rotate_desc'](), href: '/image-tools/rotate/', category: 'image' },
 			{ name: m['image_tools.tools.crop_name'](), desc: m['image_tools.tools.crop_desc'](), href: '/image-tools/crop/', category: 'image' },

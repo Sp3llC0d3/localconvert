@@ -17,7 +17,7 @@
 		"discord_server": "Discord 서버",
 		"privacy_policy": "개인정보 처리방침",
 		"tagline": "나만의 프라이벗 도구 모음",
-		"pdf_tools_count": "PDF 도구 - 18",
+		"pdf_tools_count": "PDF 도구 - 21",
 		"image_tools_count": "이미지 도구 - 10",
 		"dev_tools_count": "개발 도구 - 8"
 	},
@@ -463,7 +463,7 @@
 		"pills": {
 			"no_uploads": "서버 업로드 없음",
 			"open_source": "무료 및 오픈 소스",
-			"tools_count": "36개 이상 도구",
+			"tools_count": "39개 이상 도구",
 			"works_locally": "로컬 작동"
 		},
 		"formats": {
@@ -496,7 +496,7 @@
 			"title": "모든 도구가 브라우저에서 작동합니다",
 			"pdf_title": "PDF 도구",
 			"pdf_desc": "병합, 분할, 압축, 워터마크, 서명, 편집 외 12가지",
-			"pdf_count": "18가지 도구",
+			"pdf_count": "21가지 도구",
 			"image_title": "이미지 도구",
 			"image_desc": "자르기, 크기 조정, 필터, 흐림, 워터마크, 밈 등",
 			"image_count": "10가지 도구",

@@ -17,7 +17,7 @@
 		"discord_server": "Serveur Discord",
 		"privacy_policy": "Politique de confidentialité",
 		"tagline": "Votre boîte à outils privée",
-		"pdf_tools_count": "Outils PDF - 18",
+		"pdf_tools_count": "Outils PDF - 21",
 		"image_tools_count": "Outils image - 10",
 		"dev_tools_count": "Outils dev - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Aucun envoi au serveur",
 			"open_source": "Gratuit et open source",
-			"tools_count": "36+ Outils",
+			"tools_count": "39+ Outils",
 			"works_locally": "Fonctionne localement"
 		},
 		"formats": {
@@ -442,7 +442,7 @@
 			"title": "Chaque outil fonctionne dans votre navigateur",
 			"pdf_title": "Outils PDF",
 			"pdf_desc": "Fusionner, diviser, compresser, filigrane, signer, editer et 12 de plus",
-			"pdf_count": "18 outils",
+			"pdf_count": "21 outils",
 			"image_title": "Outils d'image",
 			"image_desc": "Rogner, redimensionner, filtres, flou, filigrane, memes et plus",
 			"image_count": "10 outils",

@@ -63,7 +63,7 @@
 		</div>
 		<div class="flex items-center gap-3">
 			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
-			<span class="tool-count tool-count--green">18</span>
+			<span class="tool-count tool-count--green">21</span>
 		</div>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
 			{m['pdf_tools.subtitle']()}

@@ -137,11 +137,11 @@ export class PandocConverter extends Converter {
 		new FormatInfo("rtf", true, false),   // input only — RTF output explicitly blocked in worker
 		new FormatInfo("csv", true, false),   // input only — Pandoc has no CSV writer
 		new FormatInfo("tsv", true, false),   // input only — Pandoc has no TSV writer
-		new FormatInfo("json", true, true),   // must be a pandoc-converted json
+		new FormatInfo("json", true, false),   // input only — outputs Pandoc internal AST, not human JSON
 		new FormatInfo("rst", true, true),
 		new FormatInfo("epub", true, true),
 		new FormatInfo("odt", true, true),
-		new FormatInfo("docbook", true, true),
+		new FormatInfo("docbook", true, false), // input only — too niche for output dropdown
 	];
 }
 

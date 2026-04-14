@@ -17,7 +17,7 @@
 		"discord_server": "Discord-Server",
 		"privacy_policy": "Datenschutzerklärung",
 		"tagline": "Dein privates Werkzeugset",
-		"pdf_tools_count": "PDF-Werkzeuge - 18",
+		"pdf_tools_count": "PDF-Werkzeuge - 21",
 		"image_tools_count": "Bildwerkzeuge - 10",
 		"dev_tools_count": "Entwickler-Tools - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Keine Server-Uploads",
 			"open_source": "Kostenlos & Open Source",
-			"tools_count": "36+ Werkzeuge",
+			"tools_count": "39+ Werkzeuge",
 			"works_locally": "Läuft lokal"
 		},
 		"formats": {
@@ -430,7 +430,7 @@
 			"q2": "Sind meine Dateien privat?",
 			"a2": "Vollständig. Alle Konvertierungen laufen in Ihrem Browser mithilfe von WebAssembly. Ihre Dateien berühren niemals unsere Server — nicht einmal für einen Moment.",
 			"q3": "Was kann LocalConvert?",
-			"a3": "Über 200 Dateiformate konvertieren (Bilder, Audio, Video, Dokumente), 18 PDF-Werkzeuge (zusammenführen, teilen, komprimieren, Wasserzeichen, signieren, bearbeiten und mehr), 10 Bildwerkzeuge (zuschneiden, skalieren, Filter, weichzeichnen, Wasserzeichen) und 8 Entwicklerwerkzeuge (JSON, Hash, Base64, Diff, Markdown).",
+			"a3": "Über 200 Dateiformate konvertieren (Bilder, Audio, Video, Dokumente), 21 PDF-Werkzeuge (zusammenführen, teilen, komprimieren, Wasserzeichen, signieren, bearbeiten und mehr), 10 Bildwerkzeuge (zuschneiden, skalieren, Filter, weichzeichnen, Wasserzeichen) und 8 Entwicklerwerkzeuge (JSON, Hash, Base64, Diff, Markdown).",
 			"q4": "Gibt es ein Dateigrößenlimit?",
 			"a4": "Kein festes Limit — es hängt vom verfügbaren Arbeitsspeicher Ihres Geräts ab. Bei sehr großen Videodateien bieten Firefox oder Safari in der Regel eine bessere Unterstützung.",
 			"q5": "Muss ich etwas installieren?",
@@ -442,7 +442,7 @@
 			"title": "Jedes Werkzeug läuft in Ihrem Browser",
 			"pdf_title": "PDF-Werkzeuge",
 			"pdf_desc": "Zusammenführen, teilen, komprimieren, Wasserzeichen, signieren, bearbeiten und 12 mehr",
-			"pdf_count": "18 Werkzeuge",
+			"pdf_count": "21 Werkzeuge",
 			"image_title": "Bildwerkzeuge",
 			"image_desc": "Zuschneiden, skalieren, Filter, weichzeichnen, Wasserzeichen, Meme und mehr",
 			"image_count": "10 Werkzeuge",

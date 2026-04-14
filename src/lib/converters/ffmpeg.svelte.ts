@@ -28,10 +28,11 @@ const videoFormats = [
 	"3g2",
 	"mxf",
 	"ogv",
-	"rm",
-	"rmvb",
 	"divx",
 ];
+
+// Input-only video formats — missing codecs in WASM FFmpeg
+const videoInputOnly = ["rm", "rmvb"];
 
 export class FFmpegConverter extends Converter {
 	private ffmpeg: FFmpeg = null!;
@@ -71,6 +72,7 @@ export class FFmpegConverter extends Converter {
 		new FormatInfo("voc", true, true),
 		new FormatInfo("weba", true, true),
 		...videoFormats.map((f) => new FormatInfo(f, true, true, false)),
+		...videoInputOnly.map((f) => new FormatInfo(f, true, false, false)),
 	];
 
 	public readonly reportsProgress = true;

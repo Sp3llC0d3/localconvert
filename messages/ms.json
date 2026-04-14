@@ -17,7 +17,7 @@
 		"discord_server": "Pelayan Discord",
 		"privacy_policy": "Dasar privasi",
 		"tagline": "Kit alat peribadi anda",
-		"pdf_tools_count": "Alat PDF - 18",
+		"pdf_tools_count": "Alat PDF - 21",
 		"image_tools_count": "Alat Imej - 10",
 		"dev_tools_count": "Alat Dev - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Tiada muat naik pelayan",
-			"tools_count": "36+ Alat",
+			"tools_count": "39+ Alat",
 			"open_source": "Percuma & Sumber Terbuka",
 			"works_locally": "Berfungsi Secara Tempatan"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Setiap alat berjalan dalam pelayar anda",
 			"pdf_title": "Alat PDF",
 			"pdf_desc": "Gabung, pisah, mampat, tera air, tandatangan, edit dan 12 lagi",
-			"pdf_count": "18 alat",
+			"pdf_count": "21 alat",
 			"image_title": "Alat Imej",
 			"image_desc": "Pangkas, ubah saiz, penapis, kabur, tera air, meme dan banyak lagi",
 			"image_count": "10 alat",

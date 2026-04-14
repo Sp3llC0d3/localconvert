@@ -17,7 +17,7 @@
 		"discord_server": "Сервер Discord",
 		"privacy_policy": "Политика конфиденциальности",
 		"tagline": "Vash lichnyy nabor instrumentov",
-		"pdf_tools_count": "Instrumenty PDF - 18",
+		"pdf_tools_count": "Instrumenty PDF - 21",
 		"image_tools_count": "Instrumenty dlya izobrazheniy - 10",
 		"dev_tools_count": "Instrumenty razrabotchika - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Без загрузок на сервер",
-			"tools_count": "36+ инструментов",
+			"tools_count": "39+ инструментов",
 			"open_source": "Бесплатно и с открытым кодом",
 			"works_locally": "Работает локально"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Каждый инструмент работает в вашем браузере",
 			"pdf_title": "Инструменты PDF",
 			"pdf_desc": "Объединение, разделение, сжатие, водяные знаки, подпись, редактирование и ещё 12 инструментов",
-			"pdf_count": "18 инструментов",
+			"pdf_count": "21 инструментов",
 			"image_title": "Инструменты для изображений",
 			"image_desc": "Обрезка, изменение размера, фильтры, размытие, водяные знаки, мемы и другое",
 			"image_count": "10 инструментов",

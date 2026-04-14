@@ -17,7 +17,7 @@
 		"discord_server": "Servidor Discord",
 		"privacy_policy": "Politica de privacidade",
 		"tagline": "O seu kit de ferramentas privado",
-		"pdf_tools_count": "Ferramentas PDF - 18",
+		"pdf_tools_count": "Ferramentas PDF - 21",
 		"image_tools_count": "Ferramentas de Imagem - 10",
 		"dev_tools_count": "Ferramentas Dev - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Sem transferencias para servidor",
-			"tools_count": "36+ Ferramentas",
+			"tools_count": "39+ Ferramentas",
 			"open_source": "Gratuito e Codigo Aberto",
 			"works_locally": "Funciona Localmente"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Todas as ferramentas funcionam no seu navegador",
 			"pdf_title": "Ferramentas PDF",
 			"pdf_desc": "Unir, dividir, comprimir, marca de agua, assinar, editar e mais 12",
-			"pdf_count": "18 ferramentas",
+			"pdf_count": "21 ferramentas",
 			"image_title": "Ferramentas de Imagem",
 			"image_desc": "Recortar, redimensionar, filtros, desfocar, marca de agua, meme e mais",
 			"image_count": "10 ferramentas",

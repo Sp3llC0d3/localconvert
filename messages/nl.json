@@ -17,13 +17,13 @@
 		"discord_server": "Discord-server",
 		"privacy_policy": "Privacybeleid",
 		"tagline": "Je persoonlijke toolkit",
-		"pdf_tools_count": "PDF-tools - 18",
+		"pdf_tools_count": "PDF-tools - 21",
 		"image_tools_count": "Afbeeldingstools - 10",
 		"dev_tools_count": "Devtools - 8"
 	},
 	"upload": {
 		"title": "Uw privétoolkit voor bestanden en code.",
-		"subtitle": "36 tools voor PDF's, afbeeldingen en ontwikkelaarswerkstromen — volledig in uw browser. Geen uploads, geen accounts, voor altijd gratis.",
+		"subtitle": "39 tools voor PDF's, afbeeldingen en ontwikkelaarswerkstromen — volledig in uw browser. Geen uploads, geen accounts, voor altijd gratis.",
 		"uploader": {
 			"text": "Sleep of klik om te {action}",
 			"convert": "converteren",
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Geen serveruploads",
-			"tools_count": "36+ tools",
+			"tools_count": "39+ tools",
 			"open_source": "Gratis en open source",
 			"works_locally": "Werkt lokaal"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Elke tool draait in uw browser",
 			"pdf_title": "PDF-tools",
 			"pdf_desc": "Samenvoegen, splitsen, comprimeren, watermerken, ondertekenen, bewerken en 12 meer",
-			"pdf_count": "18 hulpmiddelen",
+			"pdf_count": "21 hulpmiddelen",
 			"image_title": "Afbeeldingstools",
 			"image_desc": "Bijsnijden, formaat wijzigen, filters, vervagen, watermerken, memes en meer",
 			"image_count": "10 hulpmiddelen",
@@ -1037,7 +1037,7 @@
 		"privacy": {
 			"title": "100% privé door ontwerp",
 			"point1": "Uw bestanden verlaten nooit uw apparaat",
-			"point2": "Alle 36 tools draaien volledig in uw browser — nul serveruploads",
+			"point2": "Alle 39 tools draaien volledig in uw browser — nul serveruploads",
 			"point3": "Open source — controleer het zelf",
 			"label": "Privacy voorop"
 		},
@@ -1048,7 +1048,7 @@
 			"q2": "Zijn mijn bestanden privé?",
 			"a2": "Volledig. Alle verwerking vindt plaats in uw browser met behulp van WebAssembly. Uw bestanden komen nooit in de buurt van onze servers — zelfs niet voor een moment.",
 			"q3": "Wat kan LocalConvert?",
-			"a3": "Meer dan 200 bestandsformaten converteren (afbeeldingen, audio, video, documenten), 18 PDF-tools (samenvoegen, splitsen, comprimeren, watermerken, ondertekenen, bewerken en meer), 10 afbeeldingstools (bijsnijden, formaat wijzigen, filters, vervagen, watermerken) en 8 ontwikkelaarstools (JSON, hash, Base64, diff, markdown).",
+			"a3": "Meer dan 200 bestandsformaten converteren (afbeeldingen, audio, video, documenten), 21 PDF-tools (samenvoegen, splitsen, comprimeren, watermerken, ondertekenen, bewerken en meer), 10 afbeeldingstools (bijsnijden, formaat wijzigen, filters, vervagen, watermerken) en 8 ontwikkelaarstools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Is er een bestandsgroottelimiet?",
 			"a4": "Geen harde limiet — het hangt af van het beschikbare geheugen van uw apparaat. Voor zeer grote videobestanden kunnen Firefox of Safari deze doorgaans beter verwerken.",
 			"q5": "Moet ik iets installeren?",

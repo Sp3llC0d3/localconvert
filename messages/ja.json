@@ -17,7 +17,7 @@
 		"discord_server": "Discordサーバー",
 		"privacy_policy": "プライバシーポリシー",
 		"tagline": "あなただけのプライベートツールキット",
-		"pdf_tools_count": "PDFツール - 18",
+		"pdf_tools_count": "PDFツール - 21",
 		"image_tools_count": "画像ツール - 10",
 		"dev_tools_count": "開発ツール - 8"
 	},
@@ -463,7 +463,7 @@
 		"pills": {
 			"no_uploads": "サーバーへのアップロードなし",
 			"open_source": "無料・オープンソース",
-			"tools_count": "36以上のツール",
+			"tools_count": "39以上のツール",
 			"works_locally": "ローカル動作"
 		},
 		"formats": {
@@ -496,7 +496,7 @@
 			"title": "すべてのツールがブラウザで動作",
 			"pdf_title": "PDF ツール",
 			"pdf_desc": "結合、分割、圧縮、透かし、署名、編集など全18種",
-			"pdf_count": "18 ツール",
+			"pdf_count": "21 ツール",
 			"image_title": "画像ツール",
 			"image_desc": "切り抜き、リサイズ、フィルター、ぼかし、透かし、ミームなど",
 			"image_count": "10 ツール",

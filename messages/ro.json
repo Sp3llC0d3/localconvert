@@ -17,7 +17,7 @@
 		"discord_server": "Server Discord",
 		"privacy_policy": "Politica de confidentialitate",
 		"tagline": "Trusa ta privată de instrumente",
-		"pdf_tools_count": "Instrumente PDF - 18",
+		"pdf_tools_count": "Instrumente PDF - 21",
 		"image_tools_count": "Instrumente Imagine - 10",
 		"dev_tools_count": "Instrumente Dev - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Fara incarcari pe server",
-			"tools_count": "36+ instrumente",
+			"tools_count": "39+ instrumente",
 			"open_source": "Gratuit si cu sursa deschisa",
 			"works_locally": "Functioneaza local"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Fiecare instrument ruleaza in browserul dumneavoastra",
 			"pdf_title": "Instrumente PDF",
 			"pdf_desc": "Combinare, divizare, comprimare, filigran, semnare, editare si inca 12",
-			"pdf_count": "18 instrumente",
+			"pdf_count": "21 instrumente",
 			"image_title": "Instrumente imagine",
 			"image_desc": "Decupare, redimensionare, filtre, estompare, filigran, meme si altele",
 			"image_count": "10 instrumente",

@@ -17,7 +17,7 @@
 		"discord_server": "Discord sunucusu",
 		"privacy_policy": "Gizlilik politikası",
 		"tagline": "Ozel arac setiniz",
-		"pdf_tools_count": "PDF Araclari - 18",
+		"pdf_tools_count": "PDF Araclari - 21",
 		"image_tools_count": "Gorsel Araclari - 10",
 		"dev_tools_count": "Gelistirici Araclari - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Sunucu Yüklemesi Yok",
 			"open_source": "Ücretsiz ve Açık Kaynak",
-			"tools_count": "36+ Araç",
+			"tools_count": "39+ Araç",
 			"works_locally": "Yerel çalışır"
 		},
 		"formats": {
@@ -430,7 +430,7 @@
 			"q2": "Dosyalarım gizli mi?",
 			"a2": "Tamamen. Tüm dönüştürme işlemleri WebAssembly kullanılarak tarayıcınızda çalışır. Dosyalarınız sunucularımıza hiç ulaşmaz — bir an için bile.",
 			"q3": "LocalConvert ne yapabilir?",
-			"a3": "200'den fazla dosya formatı dönüştürme (görseller, ses, video, belgeler), 18 PDF aracı (birleştirme, bölme, sıkıştırma, filigran, imzalama, düzenleme ve daha fazlası), 10 görsel aracı (kırpma, yeniden boyutlandırma, filtreler, bulanıklaştırma, filigran) ve 8 geliştirici aracı (JSON, hash, Base64, fark, markdown).",
+			"a3": "200'den fazla dosya formatı dönüştürme (görseller, ses, video, belgeler), 21 PDF aracı (birleştirme, bölme, sıkıştırma, filigran, imzalama, düzenleme ve daha fazlası), 10 görsel aracı (kırpma, yeniden boyutlandırma, filtreler, bulanıklaştırma, filigran) ve 8 geliştirici aracı (JSON, hash, Base64, fark, markdown).",
 			"q4": "Dosya boyutu sınırı var mı?",
 			"a4": "Sabit bir sınır yok — cihazınızın kullanılabilir belleğine bağlıdır. Çok büyük video dosyaları için Firefox veya Safari genellikle daha iyi performans gösterir.",
 			"q5": "Bir şey yüklemem gerekiyor mu?",
@@ -442,7 +442,7 @@
 			"title": "Her araç tarayıcınızda çalışır",
 			"pdf_title": "PDF Araçları",
 			"pdf_desc": "Birleştir, böl, sıkıştır, filigran, imzala, düzenle ve 12 tane daha",
-			"pdf_count": "18 araç",
+			"pdf_count": "21 araç",
 			"image_title": "Görsel Araçları",
 			"image_desc": "Kırp, yeniden boyutlandır, filtreler, bulanıklaştır, filigran, meme ve daha fazlası",
 			"image_count": "10 araç",

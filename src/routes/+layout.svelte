@@ -140,7 +140,7 @@
 	/>
 	<meta
 		name="description"
-		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="og:url" content="https://localconvert.app" />
 	<meta property="og:type" content="website" />
@@ -150,7 +150,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="og:image" content={featuredImage} />
 	<meta name="twitter:card" content="summary_large_image" />
@@ -162,7 +162,7 @@
 	/>
 	<meta
 		property="twitter:description"
-		content="36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />

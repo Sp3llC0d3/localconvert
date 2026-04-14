@@ -17,7 +17,7 @@
 		"discord_server": "Discord server",
 		"privacy_policy": "Politika privatnosti",
 		"tagline": "Vas privatni alat",
-		"pdf_tools_count": "PDF Alati - 18",
+		"pdf_tools_count": "PDF Alati - 21",
 		"image_tools_count": "Alati za slike - 10",
 		"dev_tools_count": "Dev Alati - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Bez Otpremanja na Server",
 			"open_source": "Besplatno i Otvorenog Koda",
-			"tools_count": "36+ Alata",
+			"tools_count": "39+ Alata",
 			"works_locally": "Radi lokalno"
 		},
 		"formats": {
@@ -430,7 +430,7 @@
 			"q2": "Jesu li moje datoteke privatne?",
 			"a2": "U potpunosti. Sve konverzije se izvršavaju u vašem pregledniku putem WebAssembly tehnologije. Vaše datoteke nikada ne dotiču naše servere — ni na trenutak.",
 			"q3": "Šta LocalConvert može?",
-			"a3": "Konvertovanje preko 200 formata fajlova (slike, audio, video, dokumenti), 18 PDF alata (spajanje, dijeljenje, kompresija, vodeni žig, potpis, uređivanje i više), 10 alata za slike (izrezivanje, promjena veličine, filteri, zamućivanje, vodeni žig) i 8 razvojnih alata (JSON, hash, Base64, diff, markdown).",
+			"a3": "Konvertovanje preko 200 formata fajlova (slike, audio, video, dokumenti), 21 PDF alata (spajanje, dijeljenje, kompresija, vodeni žig, potpis, uređivanje i više), 10 alata za slike (izrezivanje, promjena veličine, filteri, zamućivanje, vodeni žig) i 8 razvojnih alata (JSON, hash, Base64, diff, markdown).",
 			"q4": "Postoji li ograničenje veličine datoteke?",
 			"a4": "Nema fiksnog ograničenja — ovisi o dostupnoj memoriji vašeg uređaja. Za vrlo velike video datoteke, Firefox ili Safari ih obično bolje obrađuju.",
 			"q5": "Trebam li nešto instalirati?",
@@ -442,7 +442,7 @@
 			"title": "Svaki alat radi u vašem pregledniku",
 			"pdf_title": "PDF Alati",
 			"pdf_desc": "Spoji, podijeli, kompresuj, vodeni žig, potpiši, uredi i još 12",
-			"pdf_count": "18 alata",
+			"pdf_count": "21 alata",
 			"image_title": "Alati za slike",
 			"image_desc": "Izreži, promijeni veličinu, filteri, zamuti, vodeni žig, mim i više",
 			"image_count": "10 alata",

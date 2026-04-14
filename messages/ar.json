@@ -17,7 +17,7 @@
 		"discord_server": "⁧خادم ⁦Discord⁩⁩",
 		"privacy_policy": "سياسة الخصوصية",
 		"tagline": "أدواتك الخاصة",
-		"pdf_tools_count": "⁧أدوات ⁦PDF - 18⁩⁩",
+		"pdf_tools_count": "⁧أدوات ⁦PDF - 21⁩⁩",
 		"image_tools_count": "أدوات الصور - 10",
 		"dev_tools_count": "أدوات المطورين - 8"
 	},
@@ -463,7 +463,7 @@
 		"pills": {
 			"no_uploads": "بدون رفع للخوادم",
 			"open_source": "مجاني ومفتوح المصدر",
-			"tools_count": "⁧⁦36+⁩ أداة⁩",
+			"tools_count": "⁧⁦39+⁩ أداة⁩",
 			"works_locally": "يعمل محلياً"
 		},
 		"formats": {
@@ -496,7 +496,7 @@
 			"title": "كل أداة تعمل في متصفحك",
 			"pdf_title": "⁧أدوات ⁦PDF⁩⁩",
 			"pdf_desc": "دمج وتقسيم وضغط وعلامة مائية وتوقيع وتحرير و12 أداة أخرى",
-			"pdf_count": "⁧⁦18⁩ أداة⁩",
+			"pdf_count": "⁧⁦21⁩ أداة⁩",
 			"image_title": "أدوات الصور",
 			"image_desc": "اقتصاص وتغيير الحجم ومرشحات وتمويه وعلامة مائية وميمات والمزيد",
 			"image_count": "⁧⁦10⁩ أدوات⁩",

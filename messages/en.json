@@ -17,13 +17,13 @@
 		"discord_server": "Discord server",
 		"privacy_policy": "Privacy policy",
 		"tagline": "Your private toolkit",
-		"pdf_tools_count": "PDF Tools · 18",
+		"pdf_tools_count": "PDF Tools · 21",
 		"image_tools_count": "Image Tools · 10",
 		"dev_tools_count": "Dev Tools · 8"
 	},
 	"upload": {
 		"title": "Your private toolkit for files & code.",
-		"subtitle": "36 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
+		"subtitle": "39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, free forever.",
 		"uploader": {
 			"text": "Drop or click to {action}",
 			"convert": "convert",
@@ -1011,7 +1011,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "No server uploads",
-			"tools_count": "36+ Tools",
+			"tools_count": "39+ Tools",
 			"open_source": "Free & Open Source",
 			"works_locally": "Works Locally"
 		},
@@ -1020,7 +1020,7 @@
 			"title": "Every tool runs in your browser",
 			"pdf_title": "PDF Tools",
 			"pdf_desc": "Merge, split, compress, watermark, sign, edit, and 12 more",
-			"pdf_count": "18 tools",
+			"pdf_count": "21 tools",
 			"image_title": "Image Tools",
 			"image_desc": "Crop, resize, filters, blur, watermark, meme, and more",
 			"image_count": "10 tools",
@@ -1043,7 +1043,7 @@
 		"privacy": {
 			"title": "100% Private by Design",
 			"point1": "Your files never leave your device",
-			"point2": "All 36 tools run entirely in your browser — zero server uploads",
+			"point2": "All 39 tools run entirely in your browser — zero server uploads",
 			"point3": "Open source — verify it yourself",
 			"label": "Privacy first"
 		},
@@ -1054,7 +1054,7 @@
 			"q2": "Are my files private?",
 			"a2": "Completely. All processing runs in your browser using WebAssembly. Your files never touch our servers — not even for a moment.",
 			"q3": "What can LocalConvert do?",
-			"a3": "Convert 200+ file formats (images, audio, video, documents), 18 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
+			"a3": "Convert 200+ file formats (images, audio, video, documents), 21 PDF tools (merge, split, compress, watermark, sign, edit, and more), 10 image tools (crop, resize, filters, blur, watermark), and 8 developer tools (JSON, hash, Base64, diff, markdown).",
 			"q4": "Is there a file size limit?",
 			"a4": "No hard limit — it depends on your device's available memory. For very large video files, Firefox or Safari typically handle them better.",
 			"q5": "Do I need to install anything?",

@@ -17,7 +17,7 @@
 		"discord_server": "Serwer Discord",
 		"privacy_policy": "Polityka prywatności",
 		"tagline": "Twoj prywatny zestaw narzedzi",
-		"pdf_tools_count": "Narzedzia PDF - 18",
+		"pdf_tools_count": "Narzedzia PDF - 21",
 		"image_tools_count": "Narzedzia graficzne - 10",
 		"dev_tools_count": "Narzedzia deweloperskie - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Bez przesyłania na serwer",
-			"tools_count": "36+ narzędzi",
+			"tools_count": "39+ narzędzi",
 			"open_source": "Darmowe i otwartoźródłowe",
 			"works_locally": "Działa lokalnie"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Każde narzędzie działa w przeglądarce",
 			"pdf_title": "Narzędzia PDF",
 			"pdf_desc": "Scalanie, dzielenie, kompresja, znaki wodne, podpisy, edycja i 12 więcej",
-			"pdf_count": "18 narzędzi",
+			"pdf_count": "21 narzędzi",
 			"image_title": "Narzędzia graficzne",
 			"image_desc": "Przycinanie, zmiana rozmiaru, filtry, rozmycie, znaki wodne, memy i więcej",
 			"image_count": "10 narzędzi",

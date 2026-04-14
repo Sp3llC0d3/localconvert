@@ -17,7 +17,7 @@
 		"discord_server": "Máy chủ Discord",
 		"privacy_policy": "Chính sách bảo mật",
 		"tagline": "Bo cong cu rieng tu cua ban",
-		"pdf_tools_count": "Cong cu PDF - 18",
+		"pdf_tools_count": "Cong cu PDF - 21",
 		"image_tools_count": "Cong cu Hinh anh - 10",
 		"dev_tools_count": "Cong cu Dev - 8"
 	},
@@ -1005,7 +1005,7 @@
 	"landing": {
 		"pills": {
 			"no_uploads": "Không tải lên máy chủ",
-			"tools_count": "Hơn 36 công cụ",
+			"tools_count": "Hơn 39 công cụ",
 			"open_source": "Miễn phí & Mã nguồn mở",
 			"works_locally": "Hoạt động cục bộ"
 		},
@@ -1014,7 +1014,7 @@
 			"title": "Mọi công cụ đều chạy trong trình duyệt của bạn",
 			"pdf_title": "Công cụ PDF",
 			"pdf_desc": "Hợp nhất, tách, nén, hình mờ, ký, chỉnh sửa và 12 công cụ khác",
-			"pdf_count": "18 công cụ",
+			"pdf_count": "21 công cụ",
 			"image_title": "Công cụ Hình ảnh",
 			"image_desc": "Cắt, thay đổi kích thước, bộ lọc, làm mờ, hình mờ, meme và nhiều hơn nữa",
 			"image_count": "10 công cụ",

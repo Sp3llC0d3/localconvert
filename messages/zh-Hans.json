@@ -17,7 +17,7 @@
 		"discord_server": "Discord 服务器",
 		"privacy_policy": "隐私政策",
 		"tagline": "你的私密工具箱",
-		"pdf_tools_count": "PDF 工具 - 18",
+		"pdf_tools_count": "PDF 工具 - 21",
 		"image_tools_count": "图片工具 - 10",
 		"dev_tools_count": "开发工具 - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "无服务器上传",
 			"open_source": "免费且开源",
-			"tools_count": "36+ 工具",
+			"tools_count": "39+ 工具",
 			"works_locally": "本地运行"
 		},
 		"formats": {
@@ -442,7 +442,7 @@
 			"title": "每个工具都在浏览器中运行",
 			"pdf_title": "PDF 工具",
 			"pdf_desc": "合并、拆分、压缩、水印、签名、编辑及另外 12 项",
-			"pdf_count": "18 款工具",
+			"pdf_count": "21 款工具",
 			"image_title": "图片工具",
 			"image_desc": "裁剪、调整大小、滤镜、模糊、水印、表情包等",
 			"image_count": "10 款工具",

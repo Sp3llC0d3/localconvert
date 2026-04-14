@@ -17,7 +17,7 @@
 		"discord_server": "Peladen Discord",
 		"privacy_policy": "Kebijakan privasi",
 		"tagline": "Perangkat pribadi Anda",
-		"pdf_tools_count": "Alat PDF - 18",
+		"pdf_tools_count": "Alat PDF - 21",
 		"image_tools_count": "Alat Gambar - 10",
 		"dev_tools_count": "Alat Dev - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Tanpa Unggahan ke Server",
 			"open_source": "Gratis & Sumber Terbuka",
-			"tools_count": "36+ Alat",
+			"tools_count": "39+ Alat",
 			"works_locally": "Berjalan lokal"
 		},
 		"formats": {
@@ -442,7 +442,7 @@
 			"title": "Setiap alat berjalan di browser Anda",
 			"pdf_title": "Alat PDF",
 			"pdf_desc": "Gabung, pisah, kompres, tanda air, tanda tangan, edit, dan 12 lainnya",
-			"pdf_count": "18 alat",
+			"pdf_count": "21 alat",
 			"image_title": "Alat Gambar",
 			"image_desc": "Potong, ubah ukuran, filter, blur, tanda air, meme, dan lainnya",
 			"image_count": "10 alat",

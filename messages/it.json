@@ -17,7 +17,7 @@
 		"discord_server": "Server Discord",
 		"privacy_policy": "Informativa sulla privacy",
 		"tagline": "Il tuo kit di strumenti privato",
-		"pdf_tools_count": "Strumenti PDF - 18",
+		"pdf_tools_count": "Strumenti PDF - 21",
 		"image_tools_count": "Strumenti immagine - 10",
 		"dev_tools_count": "Strumenti sviluppo - 8"
 	},
@@ -409,7 +409,7 @@
 		"pills": {
 			"no_uploads": "Nessun Upload su Server",
 			"open_source": "Gratuito e Open Source",
-			"tools_count": "36+ Strumenti",
+			"tools_count": "39+ Strumenti",
 			"works_locally": "Funziona localmente"
 		},
 		"formats": {
@@ -442,7 +442,7 @@
 			"title": "Ogni strumento funziona nel tuo browser",
 			"pdf_title": "Strumenti PDF",
 			"pdf_desc": "Unisci, dividi, comprimi, filigrana, firma, modifica e altri 12",
-			"pdf_count": "18 strumenti",
+			"pdf_count": "21 strumenti",
 			"image_title": "Strumenti immagine",
 			"image_desc": "Ritaglia, ridimensiona, filtri, sfocatura, filigrana, meme e altro",
 			"image_count": "10 strumenti",

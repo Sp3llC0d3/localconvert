@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>About — LocalConvert</title>
-	<meta name="description" content="LocalConvert is a privacy-first toolkit with 36 tools for files and code. Everything runs in your browser — no uploads, no server." />
+	<meta name="description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/about/" />
 </svelte:head>
 
@@ -25,7 +25,7 @@
 	<!-- ═══ NUMBERS ═══ -->
 	<section class="about-numbers">
 		<div class="about-stat">
-			<span class="about-stat-number">36</span>
+			<span class="about-stat-number">39</span>
 			<span class="about-stat-label">{m["about.stats.tools"]()}</span>
 		</div>
 		<div class="about-stat-sep"></div>
