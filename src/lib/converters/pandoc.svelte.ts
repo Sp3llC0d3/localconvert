@@ -131,13 +131,13 @@ export class PandocConverter extends Converter {
 
 	public supportedFormats = [
 		new FormatInfo("docx", true, true),
-		new FormatInfo("doc", true, true),
+		new FormatInfo("doc", true, false),   // input only — Pandoc outputs docx format, .doc extension is misleading
 		new FormatInfo("md", true, true),
 		new FormatInfo("html", true, true),
-		new FormatInfo("rtf", true, true),
-		new FormatInfo("csv", true, true),
-		new FormatInfo("tsv", true, true),
-		new FormatInfo("json", true, true), // must be a pandoc-converted json
+		new FormatInfo("rtf", true, false),   // input only — RTF output explicitly blocked in worker
+		new FormatInfo("csv", true, false),   // input only — Pandoc has no CSV writer
+		new FormatInfo("tsv", true, false),   // input only — Pandoc has no TSV writer
+		new FormatInfo("json", true, true),   // must be a pandoc-converted json
 		new FormatInfo("rst", true, true),
 		new FormatInfo("epub", true, true),
 		new FormatInfo("odt", true, true),
