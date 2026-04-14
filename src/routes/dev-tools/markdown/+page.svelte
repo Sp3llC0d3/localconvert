@@ -4,6 +4,8 @@
 	import { sanitize } from '$lib/store/index.svelte';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let input = $state('# Hello World\n\nThis is **bold** and *italic* text.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log("hi");\n```');
 	let html = $state('');
@@ -33,6 +35,7 @@
 	<meta property="og:title" content="Markdown Preview — LocalConvert" />
 	<meta property="og:description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/markdown/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Preview Markdown","step":[{"@type":"HowToStep","text":"Type or paste Markdown text in the editor"},{"@type":"HowToStep","text":"See the rendered HTML preview in real time"},{"@type":"HowToStep","text":"Copy or adjust your Markdown as needed"}]}</script>`}
 </svelte:head>
 
 <div class="md-page">
@@ -65,6 +68,16 @@
 	</div>
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-markdown']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-markdown'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-markdown'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-markdown'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-markdown'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-markdown'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-markdown'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

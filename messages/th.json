@@ -576,16 +576,16 @@
 		"convert_to_pdf": "แปลงเป็น PDF",
 		"save_pdf": "บันทึก PDF",
 		"converting_progress": "กำลังแปลง… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "วิธีการทำงาน",
+		"seo_step1": "เลือกไฟล์จากอุปกรณ์ของคุณ",
+		"seo_step2": "ปรับการตั้งค่าตามต้องการ",
+		"seo_step3": "บันทึกผลลัพธ์ — เสร็จแล้ว!",
+		"seo_why_title": "ทำไมต้อง LocalConvert?",
+		"seo_why_private": "เป็นส่วนตัว 100% — ไฟล์ของคุณไม่เคยออกจากอุปกรณ์ ไม่มีการอัปโหลดไปยังเซิร์ฟเวอร์ ไม่มีวันเลย",
+		"seo_why_free": "ฟรีตลอดไปไม่จำกัดขนาดไฟล์ ไม่ต้องสมัครสมาชิก ไม่ต้องสร้างบัญชี",
+		"seo_why_offline": "ทำงานแบบออฟไลน์เป็นแอปที่ติดตั้งแล้ว ไม่ต้องใช้อินเทอร์เน็ตหลังโหลดครั้งแรก",
+		"seo_faq_title": "คำถามที่พบบ่อย",
+		"seo_related_title": "เครื่องมือที่เกี่ยวข้อง"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "การรวมล้มเหลว",
 			"save": "บันทึก PDF ที่รวมแล้ว",
 			"btn_busy": "กำลังรวม…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "การรวมไฟล์ PDF ปลอดภัยหรือไม่?",
+			"seo_faq1_a": "ใช่ LocalConvert ทำงานทั้งหมดในเบราว์เซอร์ของคุณ — ไฟล์ของคุณไม่เคยถูกอัปโหลดไปยังเซิร์ฟเวอร์ใดๆ การรวมไฟล์เกิดขึ้นบนอุปกรณ์ของคุณ",
+			"seo_faq2_q": "มีจำกัดจำนวนไฟล์ PDF ที่รวมได้หรือไม่?",
+			"seo_faq2_a": "ไม่ คุณสามารถรวมไฟล์ PDF ได้มากเท่าที่หน่วยความจำเบราว์เซอร์อนุญาต ไม่มีข้อจำกัดขนาดหรือจำนวน"
 		},
 		"split": {
 			"title": "แยก PDF",
@@ -662,10 +662,10 @@
 			"err_fail": "การแยกล้มเหลว",
 			"btn_busy": "กำลังประมวลผล…",
 			"help": "คลิกเพื่อสลับ แตะจุดเพื่อเลือกหน้าเดียว",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "สามารถแยกหน้าเฉพาะจาก PDF ได้หรือไม่?",
+			"seo_faq1_a": "ได้ เลือกหน้าที่ต้องการแล้ว LocalConvert จะสร้าง PDF ใหม่ที่มีเฉพาะหน้าเหล่านั้น",
+			"seo_faq2_q": "การแยก PDF ทำให้คุณภาพลดลงหรือไม่?",
+			"seo_faq2_a": "ไม่ การแยกจะแยกหน้าโดยไม่เข้ารหัสใหม่ คุณภาพต้นฉบับจะถูกรักษาไว้"
 		},
 		"rotate_pdf": {
 			"title": "หมุนหน้า",
@@ -676,7 +676,11 @@
 			"selected_pages": "หน้าที่เลือก",
 			"err_fail": "การหมุนล้มเหลว",
 			"help": "คลิกเพื่อสลับ",
-			"btn_busy": "กำลังประมวลผล…"
+			"btn_busy": "กำลังประมวลผล…",
+			"seo_faq1_q": "สามารถหมุนหน้าแต่ละหน้าได้หรือไม่?",
+			"seo_faq1_a": "ได้ คุณสามารถหมุนหน้าที่เลือกหรือทั้ง PDF พร้อมกัน เลือก 90°, 180° หรือ 270°",
+			"seo_faq2_q": "การหมุนมีผลต่อคุณภาพหรือไม่?",
+			"seo_faq2_a": "ไม่ หน้าถูกหมุนโดยไม่เข้ารหัสใหม่ คุณภาพต้นฉบับถูกรักษาไว้อย่างสมบูรณ์"
 		},
 		"organize": {
 			"title": "จัดระเบียบหน้า",
@@ -688,10 +692,10 @@
 			"no_pages": "ไม่มีหน้าเหลือ",
 			"btn": "บันทึก PDF ที่จัดระเบียบแล้ว",
 			"btn_busy": "กำลังบันทึก…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "สามารถลบหน้าจาก PDF ได้หรือไม่?",
+			"seo_faq1_a": "ได้ ลากหน้าเพื่อจัดเรียงใหม่และคลิกลบเพื่อเอาหน้าที่ไม่ต้องการออก",
+			"seo_faq2_q": "สามารถดูตัวอย่างแต่ละหน้าได้หรือไม่?",
+			"seo_faq2_a": "ได้ แสดงภาพขนาดย่อของแต่ละหน้าเพื่อให้ระบุและจัดเรียงได้ง่าย"
 		},
 		"images_to_pdf": {
 			"title": "ภาพ → PDF",
@@ -701,10 +705,10 @@
 			"btn": "แปลงเป็น PDF",
 			"save": "บันทึก PDF",
 			"btn_busy": "กำลังแปลง…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "รูปแบบภาพใดที่แปลงเป็น PDF ได้?",
+			"seo_faq1_a": "รองรับภาพ JPG, PNG และ WEBP แต่ละภาพจะกลายเป็นหน้าหนึ่งใน PDF",
+			"seo_faq2_q": "สามารถจัดเรียงลำดับภาพได้หรือไม่?",
+			"seo_faq2_a": "ได้ เพิ่มภาพหลายภาพและจัดเรียงตามลำดับที่ต้องการก่อนแปลง"
 		},
 		"pdf_to_images": {
 			"title": "PDF → ภาพ",
@@ -713,10 +717,10 @@
 			"btn": "ส่งออกเป็นภาพ",
 			"err_fail": "การแปลงล้มเหลว",
 			"btn_busy": "กำลังแปลงหน้า {progress} จาก {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "จะได้ภาพในรูปแบบอะไร?",
+			"seo_faq1_a": "เลือกได้ระหว่าง JPG และ PNG แต่ละหน้า PDF จะกลายเป็นภาพแยก",
+			"seo_faq2_q": "PDF หลายหน้าเป็นอย่างไร?",
+			"seo_faq2_a": "แต่ละหน้าจะถูกส่งออกเป็นภาพแยก สำหรับ PDF หลายหน้า คุณจะได้ไฟล์ ZIP ที่มีภาพทั้งหมด"
 		},
 		"pdf_to_ppt": {
 			"title": "PDF เป็น PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "แปลงเป็น PPTX",
 			"save": "บันทึก PPTX",
 			"btn_busy": "กำลังแปลงหน้า {progress} จาก {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "การแปลง PDF เป็น PowerPoint ทำงานอย่างไร?",
+			"seo_faq1_a": "แต่ละหน้า PDF ถูกเรนเดอร์เป็นภาพและวางในสไลด์ PowerPoint ข้อความไม่สามารถแก้ไขได้",
+			"seo_faq2_q": "สามารถแก้ไขสไลด์หลังแปลงได้หรือไม่?",
+			"seo_faq2_a": "สไลด์ประกอบด้วยภาพหน้า คุณสามารถเพิ่มกล่องข้อความและคำอธิบายใน PowerPoint"
 		},
 		"compress": {
 			"title": "บีบอัด PDF",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% เล็กลง คุณภาพดี",
 			"preset_high_desc": "~70-90% เล็กลง คุณภาพลดลงเห็นได้ชัด",
 			"btn_busy": "กำลังบีบอัดหน้า {progress} จาก {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "สามารถลดขนาด PDF ได้เท่าไร?",
+			"seo_faq1_a": "โดยปกติลดได้ 50-80% ขึ้นอยู่กับเนื้อหา PDF ที่มีภาพมากจะประหยัดได้มากที่สุด",
+			"seo_faq2_q": "การบีบอัดมีผลต่อคุณภาพข้อความหรือไม่?",
+			"seo_faq2_a": "ข้อความจะถูกเรนเดอร์ใหม่เป็นภาพระหว่างการบีบอัด สำหรับเอกสารที่มีข้อความมาก ให้ใช้การตั้งค่าคุณภาพสูง"
 		},
 		"watermark_pdf": {
 			"title": "เพิ่มลายน้ำ",
@@ -763,7 +767,11 @@
 			"btn": "ใช้กับทุกหน้า",
 			"err_text": "กรอกข้อความลายน้ำ",
 			"save": "บันทึก PDF ที่มีลายน้ำ",
-			"btn_busy": "กำลังใช้งาน…"
+			"btn_busy": "กำลังใช้งาน…",
+			"seo_faq1_q": "สามารถใช้ภาพเป็นลายน้ำได้หรือไม่?",
+			"seo_faq1_a": "ปัจจุบันรองรับลายน้ำแบบข้อความ สามารถปรับแต่งข้อความ ขนาด ความทึบ และมุมการหมุนได้",
+			"seo_faq2_q": "ลายน้ำจะบดบังเนื้อหาหรือไม่?",
+			"seo_faq2_a": "ไม่ ลายน้ำจะถูกวางด้วยความทึบที่ปรับได้ เนื้อหาจะยังคงอ่านได้ใต้ลายน้ำ"
 		},
 		"page_numbers": {
 			"title": "เพิ่มเลขหน้า",
@@ -780,10 +788,10 @@
 			"btn": "ใช้กับทุกหน้า",
 			"save": "บันทึก PDF ที่ใส่เลขหน้าแล้ว",
 			"btn_busy": "กำลังเพิ่มเลขหน้า…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "สามารถวางเลขหน้าไว้ที่ไหน?",
+			"seo_faq1_a": "วางเลขได้ที่ด้านบนหรือด้านล่างของหน้า จัดชิดซ้าย กลาง หรือขวา",
+			"seo_faq2_q": "สามารถปรับรูปแบบการนับเลขได้หรือไม่?",
+			"seo_faq2_a": "ได้ สามารถตั้งเลขเริ่มต้น ขนาดตัวอักษร และตำแหน่ง"
 		},
 		"metadata": {
 			"title": "แก้ไขเมตาดาต้า",
@@ -804,10 +812,10 @@
 			"reading": "กำลังอ่านเมตาดาต้า…",
 			"none": "—",
 			"btn_busy": "กำลังบันทึก…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "สามารถแก้ไขข้อมูลเมตาของ PDF อะไรได้บ้าง?",
+			"seo_faq1_a": "สามารถแก้ไขชื่อเรื่อง ผู้เขียน หัวข้อ และคำสำคัญของไฟล์ PDF ใดก็ได้",
+			"seo_faq2_q": "การแก้ไขข้อมูลเมตาปลอดภัยต่อเนื้อหาหรือไม่?",
+			"seo_faq2_a": "ใช่ เปลี่ยนเฉพาะคุณสมบัติข้อมูลเมตา — เนื้อหา PDF ยังคงเดิม"
 		},
 		"crop_pdf": {
 			"title": "ครอป PDF",
@@ -816,7 +824,11 @@
 			"btn": "ครอป PDF",
 			"save": "บันทึก PDF ที่ครอปแล้ว",
 			"err_margins": "ระยะขอบใหญ่เกินไป — ไม่มีพื้นที่เหลือ",
-			"btn_busy": "กำลังครอป…"
+			"btn_busy": "กำลังครอป…",
+			"seo_faq1_q": "สามารถครอบหน้าต่างๆ ต่างกันได้หรือไม่?",
+			"seo_faq1_a": "ระยะขอบการครอบจะใช้เท่ากันกับทุกหน้า หากต้องการครอบแต่ละหน้าต่างกัน ให้แยก PDF ก่อน ครอบแต่ละส่วน แล้วรวมกลับ",
+			"seo_faq2_q": "การครอบช่วยลดขนาดไฟล์หรือไม่?",
+			"seo_faq2_a": "การครอบจะซ่อนเนื้อหานอกขอบ แต่อาจไม่ลดขนาดไฟล์อย่างมีนัยสำคัญ เพราะข้อมูลที่ซ่อนอาจยังคงอยู่ในไฟล์"
 		},
 		"sign": {
 			"title": "เซ็น PDF",
@@ -833,10 +845,10 @@
 			"err_place": "คลิกบนหน้าเพื่อวางลายเซ็น",
 			"save": "บันทึก PDF ที่เซ็นแล้ว",
 			"btn_busy": "กำลังเซ็น…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "สร้างลายเซ็นได้อย่างไร?",
+			"seo_faq1_a": "สามารถวาดลายเซ็นด้วยเมาส์หรือนิ้ว พิมพ์ชื่อ หรืออัปโหลดภาพลายเซ็น",
+			"seo_faq2_q": "ลายเซ็นของฉันถูกเก็บไว้ที่ไหนหรือไม่?",
+			"seo_faq2_a": "ไม่ ลายเซ็นของคุณไม่เคยออกจากอุปกรณ์ การประมวลผลเกิดขึ้นทั้งหมดในเบราว์เซอร์"
 		},
 		"edit": {
 			"title": "แก้ไข PDF",
@@ -851,10 +863,10 @@
 			"save": "บันทึก PDF ที่แก้ไขแล้ว",
 			"placeholder": "ข้อความที่จะวาง…",
 			"btn_busy": "กำลังใช้งาน…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "สามารถทำการแก้ไขอะไรได้บ้าง?",
+			"seo_faq1_a": "สามารถเพิ่มข้อความในหน้าใดก็ได้ของ PDF เลือกขนาดตัวอักษร สี และตำแหน่งโดยคลิกที่หน้า",
+			"seo_faq2_q": "สามารถแก้ไขข้อความที่มีอยู่ใน PDF ได้หรือไม่?",
+			"seo_faq2_a": "ปัจจุบันสามารถเพิ่มเลเยอร์ข้อความใหม่ได้ การแก้ไขข้อความที่มีอยู่ต้องใช้เอกสารต้นฉบับ"
 		},
 		"password": {
 			"title": "ป้องกัน PDF ด้วยรหัสผ่าน",
@@ -878,10 +890,10 @@
 			"password_placeholder": "กรอกรหัสผ่าน…",
 			"owner_placeholder": "รหัสผ่านเจ้าของ…",
 			"btn_busy": "กำลังเข้ารหัส…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "การเข้ารหัสปลอดภัยแค่ไหน?",
+			"seo_faq1_a": "PDF ถูกเข้ารหัสด้วยความปลอดภัย PDF มาตรฐาน รหัสผ่านไม่ถูกส่งไปที่ใด — การเข้ารหัสเกิดขึ้นในเบราว์เซอร์",
+			"seo_faq2_q": "สามารถตั้งสิทธิ์เช่นป้องกันการพิมพ์ได้หรือไม่?",
+			"seo_faq2_a": "ได้ สามารถตั้งสิทธิ์การพิมพ์ คัดลอก และแก้ไขเมื่อป้องกัน PDF"
 		},
 		"unlock": {
 			"title": "ปลดล็อก PDF",
@@ -896,10 +908,10 @@
 			"password_label": "รหัสผ่าน (ถ้าจำเป็น)",
 			"password_placeholder": "เว้นว่างไว้ถ้าไม่มี",
 			"password_hint": "จำเป็นเฉพาะ PDF ที่ต้องใช้รหัสผ่านเปิด",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "สามารถลบรหัสผ่านจาก PDF ได้หรือไม่?",
+			"seo_faq1_a": "ได้ หากคุณรู้รหัสผ่านปัจจุบัน กรอกรหัสผ่านแล้ว LocalConvert จะบันทึกสำเนาที่ไม่มีการป้องกัน",
+			"seo_faq2_q": "รหัสผ่านของฉันปลอดภัยหรือไม่?",
+			"seo_faq2_a": "ใช่ รหัสผ่านของคุณถูกใช้เฉพาะในเบราว์เซอร์เพื่อถอดรหัสไฟล์ ไม่เคยถูกส่งไปยังเซิร์ฟเวอร์ใดๆ"
 		},
 		"color_picker": {
 			"title": "ตัวเลือกสี",
@@ -927,10 +939,10 @@
 			"copied": "คัดลอกแล้ว!",
 			"download_txt": "บันทึกเป็น .txt",
 			"btn_busy": "กำลังดึงหน้า {progress} จาก {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "ใช้กับ PDF ที่สแกนได้หรือไม่?",
+			"seo_faq1_a": "ไม่ การแยกข้อความใช้กับ PDF ที่มีข้อความจริง เอกสารที่สแกน (แบบภาพ) ต้องใช้ OCR ก่อน",
+			"seo_faq2_q": "รองรับข้อความภาษาอื่นหรือไม่?",
+			"seo_faq2_a": "ใช่ การแยกข้อความรองรับทุกภาษา รวมถึงอาหรับ จีน ญี่ปุ่น เกาหลี และอักษรซีริลลิก"
 		},
 		"grayscale": {
 			"title": "PDF เป็นโทนสีเทา",
@@ -940,10 +952,10 @@
 			"grayscale": "โทนสีเทา",
 			"save": "บันทึก PDF โทนสีเทา",
 			"btn_busy": "กำลังแปลงหน้า {progress} จาก {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "ข้อความยังเลือกได้หลังแปลงหรือไม่?",
+			"seo_faq1_a": "ไม่ การแปลงเป็นโทนสีเทาจะเรนเดอร์แต่ละหน้าเป็นภาพ ข้อความจะไม่สามารถเลือกหรือค้นหาได้อีก",
+			"seo_faq2_q": "สามารถปรับคุณภาพได้หรือไม่?",
+			"seo_faq2_a": "ได้ ใช้ตัวเลื่อนคุณภาพเพื่อสมดุลระหว่างขนาดไฟล์และความคมชัดของภาพ"
 		},
 		"json_formatter": {
 			"title": "จัดรูปแบบ JSON",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "หรือคลิกเพื่อเรียกดู",
 			"disclaimer": "ความแม่นยำของเลย์เอาต์ขึ้นอยู่กับความซับซ้อนของเอกสาร ตารางที่ซับซ้อนและการจัดรูปแบบขั้นสูงอาจถูกทำให้ง่ายขึ้น",
 			"progress_hint": "กำลังประมวลผลเอกสารของคุณภายในเครื่อง — ไม่มีการอัปโหลด",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "เอกสาร Word จะมีหน้าตาเหมือน PDF หรือไม่?",
+			"seo_faq1_a": "ความถูกต้องของเลย์เอาต์ขึ้นอยู่กับความซับซ้อนของเอกสาร เอกสารง่ายๆ แปลงได้ดี ตารางและการจัดรูปแบบที่ซับซ้อนอาจถูกทำให้เรียบง่ายขึ้น",
+			"seo_faq2_q": "รองรับไฟล์ .doc (รูปแบบ Word เก่า) หรือไม่?",
+			"seo_faq2_a": "ใช่ รองรับทั้ง .docx (สมัยใหม่) และ .doc (รุ่นเก่า)"
 		},
 		"from_xlsx": {
 			"title": "Excel เป็น PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "แนวตั้ง",
 			"disclaimer": "ความกว้างของคอลัมน์คำนวณโดยอัตโนมัติ ชีตที่กว้างทำงานได้ดีที่สุดในโหมดแนวนอน",
 			"progress_hint": "กำลังประมวลผลสเปรดชีตภายในเครื่อง — ไม่มีการอัปโหลด",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "สามารถเลือกแนวนอนหรือแนวตั้งได้หรือไม่?",
+			"seo_faq1_a": "ได้ สามารถเลือกการวางแนวหน้าก่อนแปลง สเปรดชีทกว้างเหมาะกับโหมดแนวนอน",
+			"seo_faq2_q": "รองรับรูปแบบสเปรดชีทอะไรบ้าง?",
+			"seo_faq2_a": "รองรับ XLSX (Excel), XLS (Excel เก่า), ODS (LibreOffice) และไฟล์ CSV"
 		},
 		"to_docx": {
 			"title": "PDF เป็น Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "PDF ที่สแกน (แบบรูปภาพ) จะให้ผลลัพธ์ว่าง — ใช้ OCR ก่อน",
 			"progress_label": "กำลังแยกข้อความ… {progress}%",
 			"progress_hint": "ไฟล์ของคุณจะไม่ออกจากอุปกรณ์ของคุณ",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "การจัดรูปแบบถูกรักษาไว้หรือไม่?",
+			"seo_faq1_a": "เนื้อหาข้อความและโครงสร้างพื้นฐาน (หัวข้อ ย่อหน้า) ถูกรักษาไว้ เลย์เอาต์ที่ซับซ้อน ตาราง และภาพจะถูกทำให้เรียบง่ายขึ้น",
+			"seo_faq2_q": "ใช้กับ PDF ที่สแกนได้หรือไม่?",
+			"seo_faq2_a": "ไม่ PDF ที่สแกน (แบบภาพ) จะให้ผลลัพธ์ว่างเปล่า ใช้ซอฟต์แวร์ OCR ก่อนเพื่อทำให้ข้อความสามารถแยกได้"
+		},
+		"img_rotate": {
+			"seo_faq1_q": "มีมุมการหมุนอะไรบ้าง?",
+			"seo_faq1_a": "หมุนได้ 90°, 180° หรือ 270° ตามเข็มนาฬิกา การหมุนเป็นแบบทันทีและไม่สูญเสียคุณภาพ",
+			"seo_faq2_q": "การหมุนลดคุณภาพภาพหรือไม่?",
+			"seo_faq2_a": "ไม่ ภาพหมุนโดยไม่บีบอัดซ้ำ คุณภาพดั้งเดิมถูกรักษาไว้"
+		},
+		"img_crop": {
+			"seo_faq1_q": "กำหนดขนาดที่แน่นอนเป็นพิกเซลได้ไหม?",
+			"seo_faq1_a": "ได้ ลากสี่เหลี่ยมครอปหรือใส่ขนาดพิกเซลที่แน่นอน",
+			"seo_faq2_q": "ครอปรูปแบบไฟล์ภาพอะไรได้บ้าง?",
+			"seo_faq2_a": "รองรับ JPG, PNG, WEBP, GIF และรูปแบบภาพทั่วไปส่วนใหญ่"
+		},
+		"img_watermark": {
+			"seo_faq1_q": "ปรับความทึบของลายน้ำได้ไหม?",
+			"seo_faq1_a": "ได้ ควบคุมความทึบ ตำแหน่ง ขนาด และสีของลายน้ำข้อความได้",
+			"seo_faq2_q": "ลายน้ำถาวรหรือไม่?",
+			"seo_faq2_a": "ใช่ เมื่อบันทึกแล้ว ลายน้ำจะฝังอยู่ในภาพอย่างถาวร"
+		},
+		"img_meme": {
+			"seo_faq1_q": "ใช้ภาพของตัวเองได้ไหม?",
+			"seo_faq1_a": "ได้ เลือกภาพใดก็ได้แล้วเพิ่มข้อความด้านบนและด้านล่าง",
+			"seo_faq2_q": "ปรับแต่งฟอนต์และสีได้ไหม?",
+			"seo_faq2_a": "ได้ ขนาดฟอนต์ สี และเส้นขอบปรับได้"
+		},
+		"img_batch": {
+			"seo_faq1_q": "ประมวลผลกี่ภาพพร้อมกันได้?",
+			"seo_faq1_a": "ไม่มีขีดจำกัดตายตัว ประมวลผลได้มากเท่าที่หน่วยความจำอนุญาต",
+			"seo_faq2_q": "ใช้การดำเนินการแบบกลุ่มอะไรได้บ้าง?",
+			"seo_faq2_a": "แปลงฟอร์แมต ปรับขนาด หมุน และตั้งค่าคุณภาพสำหรับภาพที่เลือกทั้งหมด"
+		},
+		"img_qr": {
+			"seo_faq1_q": "เข้ารหัสอะไรใน QR โค้ดได้บ้าง?",
+			"seo_faq1_a": "URL ข้อความ อีเมล หมายเลขโทรศัพท์ หรือข้อความใดก็ได้จำนวนหลายพันตัวอักษร",
+			"seo_faq2_q": "ปรับแต่งรูปลักษณ์ QR โค้ดได้ไหม?",
+			"seo_faq2_a": "ปรับขนาดและระดับแก้ไขข้อผิดพลาดได้ QR โค้ดบันทึกเป็น PNG"
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "รองรับรูปแบบสีอะไรบ้าง?",
+			"seo_faq1_a": "HEX, RGB และ HSL คลิกพิกเซลใดก็ได้เพื่อคัดลอกค่าสีทันที",
+			"seo_faq2_q": "เลือกสีจากภาพประเภทใดก็ได้หรือไม่?",
+			"seo_faq2_a": "ใช่ รองรับ JPG, PNG, WEBP, GIF และรูปแบบอื่นส่วนใหญ่"
+		},
+		"img_blur": {
+			"seo_faq1_q": "เบลอหลายบริเวณได้ไหม?",
+			"seo_faq1_a": "ได้ วาดหลายบริเวณเบลอบนภาพเดียวกัน",
+			"seo_faq2_q": "ปรับความเข้มของการเบลอได้ไหม?",
+			"seo_faq2_a": "ได้ ใช้แถบเลื่อนความเข้มเพื่อควบคุมความแรงของเอฟเฟกต์"
+		},
+		"img_filters": {
+			"seo_faq1_q": "มีฟิลเตอร์อะไรบ้าง?",
+			"seo_faq1_a": "ความสว่าง คอนทราสต์ ความอิ่มตัว การหมุนสี โทนเทา ซีเปีย เบลอ และกลับสี",
+			"seo_faq2_q": "รวมหลายฟิลเตอร์ได้ไหม?",
+			"seo_faq2_a": "ได้ การปรับฟิลเตอร์ทั้งหมดรวมกันและใช้กับภาพแบบเรียลไทม์"
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "รองรับฟอร์แมตวิดีโออะไรบ้าง?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI และฟอร์แมตวิดีโอทั่วไปส่วนใหญ่",
+			"seo_faq2_q": "ตั้งระยะเวลาและเฟรมเรตของ GIF ได้ไหม?",
+			"seo_faq2_a": "ได้ ตั้งเวลาเริ่ม ระยะเวลา และเฟรมเรต"
+		},
+		"dev_json": {
+			"seo_faq1_q": "ตรวจสอบไวยากรณ์ JSON ไหม?",
+			"seo_faq1_a": "ใช่ JSON ที่ไม่ถูกต้องจะแสดงข้อผิดพลาดพร้อมบรรทัดและตัวอักษรที่แน่นอน",
+			"seo_faq2_q": "ย่อ JSON ได้ด้วยไหม?",
+			"seo_faq2_a": "ได้ จัดรูปแบบและย่อ JSON ด้วยคลิกเดียว"
+		},
+		"dev_hash": {
+			"seo_faq1_q": "รองรับอัลกอริทึมแฮชอะไรบ้าง?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 และ SHA-512",
+			"seo_faq2_q": "แฮชทำในเครื่องหรือไม่?",
+			"seo_faq2_a": "ใช่ แฮชทั้งหมดทำในเบราว์เซอร์ผ่าน Web Crypto API ข้อมูลไม่เคยออกจากอุปกรณ์"
+		},
+		"dev_base64": {
+			"seo_faq1_q": "เข้ารหัสไฟล์ได้ไหม?",
+			"seo_faq1_a": "เครื่องมือเข้ารหัสสตริงข้อความ สำหรับไฟล์ ให้แปลงเนื้อหาเป็นข้อความก่อน",
+			"seo_faq2_q": "รองรับข้อความ Unicode ไหม?",
+			"seo_faq2_a": "ใช่ ข้อความ UTF-8 รวมถึงอักขระที่ไม่ใช่ละตินรองรับเต็มที่"
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "รองรับ GitHub Markdown ไหม?",
+			"seo_faq1_a": "ใช่ ตาราง รายการงาน ขีดฆ่า และส่วนขยาย GitHub อื่นๆ แสดงผลถูกต้อง",
+			"seo_faq2_q": "ส่งออก HTML ที่แสดงผลได้ไหม?",
+			"seo_faq2_a": "ตัวอย่างแสดงผลลัพธ์แบบเรียลไทม์ คัดลอก HTML จากแผงตัวอย่าง"
+		},
+		"dev_diff": {
+			"seo_faq1_q": "แสดงความแตกต่างทีละบรรทัดหรือทีละคำ?",
+			"seo_faq1_a": "ความแตกต่างถูกเน้นทีละบรรทัดพร้อมสีแสดงการเพิ่มและลบ",
+			"seo_faq2_q": "มีจำกัดขนาดไหม?",
+			"seo_faq2_a": "ไม่มีขีดจำกัดตายตัว ข้อความขนาดใหญ่อาจช้ากว่าบนอุปกรณ์เก่า"
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "นับตัวชี้วัดอะไรบ้าง?",
+			"seo_faq1_a": "คำ ตัวอักษร (มีและไม่มีช่องว่าง) ประโยค ย่อหน้า และเวลาอ่านโดยประมาณ",
+			"seo_faq2_q": "ใช้กับข้อความที่ไม่ใช่ภาษาอังกฤษได้ไหม?",
+			"seo_faq2_a": "ได้ การนับคำใช้ได้กับทุกภาษาและชุดอักขระ"
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "อักขระใดถูกเข้ารหัส?",
+			"seo_faq1_a": "อักขระพิเศษเช่นช่องว่างและอักขระที่ไม่ใช่ ASCII ถูกเข้ารหัสเปอร์เซ็นต์ตาม RFC 3986",
+			"seo_faq2_q": "ถอดรหัส URL เต็มพร้อมพารามิเตอร์ได้ไหม?",
+			"seo_faq2_a": "ได้ วางสตริงที่เข้ารหัสแล้วจะถอดรหัสเป็นข้อความที่อ่านได้"
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "การย่อ CSS ลบอะไรบ้าง?",
+			"seo_faq1_a": "ความคิดเห็น ช่องว่างที่ไม่จำเป็น บรรทัดว่าง และเครื่องหมายอัฒภาคที่ซ้ำซ้อน",
+			"seo_faq2_q": "CSS จะเล็กลงเท่าไร?",
+			"seo_faq2_a": "โดยปกติ 20-40% เล็กลง ไฟล์ที่มีความคิดเห็นมากจะลดได้มากที่สุด"
 		}
 	},
 	"toast": {

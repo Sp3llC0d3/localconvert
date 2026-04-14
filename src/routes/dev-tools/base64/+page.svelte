@@ -3,6 +3,8 @@
 	import { Binary, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { formatFileSize } from '$lib/image/utils';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let mode = $state<'encode' | 'decode'>('encode');
 	let input = $state('');
@@ -71,6 +73,7 @@
 	<meta property="og:title" content="Base64 Encode / Decode — LocalConvert" />
 	<meta property="og:description" content="Encode and decode Base64 strings. Convert files to Base64. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/base64/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Encode or Decode Base64","step":[{"@type":"HowToStep","text":"Paste your text or data into the input field"},{"@type":"HowToStep","text":"Choose encode or decode mode"},{"@type":"HowToStep","text":"Copy the result from the output field"}]}</script>`}
 </svelte:head>
 
 <div class="b64-page">
@@ -123,6 +126,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-base64']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-base64'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-base64'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-base64'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-base64'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-base64'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-base64'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

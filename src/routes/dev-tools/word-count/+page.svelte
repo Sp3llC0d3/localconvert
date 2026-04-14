@@ -2,6 +2,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { TypeIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let text = $state('');
 
@@ -24,6 +26,7 @@
 	<meta property="og:title" content="Word Counter — LocalConvert" />
 	<meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/word-count/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Count Words Online","step":[{"@type":"HowToStep","text":"Paste or type your text into the editor"},{"@type":"HowToStep","text":"View word count, character count, and reading time instantly"},{"@type":"HowToStep","text":"Use the stats to check document requirements"}]}</script>`}
 </svelte:head>
 
 <div class="wc-page">
@@ -66,6 +69,16 @@
 	</div>
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-word-count']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-word-count'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-word-count'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-word-count'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-word-count'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-word-count'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-word-count'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

@@ -4,6 +4,8 @@
 	import { HashIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { formatFileSize } from '$lib/image/utils';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let mode = $state<'text' | 'file'>('text');
 	let textInput = $state('');
@@ -73,6 +75,7 @@
 	<meta property="og:title" content="Hash Generator — LocalConvert" />
 	<meta property="og:description" content="Generate SHA-256, SHA-1, SHA-512 hashes for text or files. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/hash/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate a Hash","step":[{"@type":"HowToStep","text":"Enter the text you want to hash"},{"@type":"HowToStep","text":"Select the hash algorithm (MD5, SHA-1, SHA-256, etc.)"},{"@type":"HowToStep","text":"Copy the generated hash value"}]}</script>`}
 </svelte:head>
 
 <div class="hash-page">
@@ -131,6 +134,16 @@
 	{#if computing}<p class="text-sm text-muted">{m['tool_pages.hash_generator.computing']()}</p>{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-hash']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-hash'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-hash'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-hash'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-hash'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-hash'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-hash'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

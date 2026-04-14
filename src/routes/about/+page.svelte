@@ -9,6 +9,9 @@
 	<title>About — LocalConvert</title>
 	<meta name="description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/about/" />
+	<meta property="og:title" content="About — LocalConvert" />
+	<meta property="og:description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
+	<meta property="og:url" content="https://localconvert.app/about/" />
 </svelte:head>
 
 <div class="about-page">

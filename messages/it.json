@@ -606,16 +606,16 @@
 		"convert_to_pdf": "Converti in PDF",
 		"save_pdf": "Salva PDF",
 		"converting_progress": "Conversione in corso… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Come funziona",
+		"seo_step1": "Seleziona il file dal tuo dispositivo",
+		"seo_step2": "Regola le impostazioni se necessario",
+		"seo_step3": "Salva il risultato — fatto!",
+		"seo_why_title": "Perché LocalConvert?",
+		"seo_why_private": "100% privato — i tuoi file non lasciano mai il tuo dispositivo. Nessun caricamento su server, mai.",
+		"seo_why_free": "Gratuito per sempre senza limiti di dimensione. Nessun account, nessun abbonamento.",
+		"seo_why_offline": "Funziona offline come app installata. Non serve internet dopo il primo caricamento.",
+		"seo_faq_title": "Domande frequenti",
+		"seo_related_title": "Strumenti correlati"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "Aggiungi almeno 2 file PDF.",
 			"err_fail": "Unione fallita.",
 			"save": "Salva PDF unito",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "È sicuro unire i PDF?",
+			"seo_faq1_a": "Sì. LocalConvert funziona interamente nel tuo browser — i tuoi file non vengono mai caricati su alcun server. L'unione avviene sul tuo dispositivo.",
+			"seo_faq2_q": "C'è un limite al numero di PDF unibili?",
+			"seo_faq2_a": "No. Puoi unire quanti PDF la memoria del tuo browser consente. Nessun limite di dimensione o numero."
 		},
 		"split": {
 			"title": "Dividi PDF",
@@ -642,10 +642,10 @@
 			"err_extract": "Estrazione pagina fallita.",
 			"err_fail": "Divisione fallita.",
 			"help": "click to toggle, ● to save single page",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Posso estrarre pagine specifiche da un PDF?",
+			"seo_faq1_a": "Sì. Seleziona le pagine desiderate e LocalConvert creerà un nuovo PDF solo con quelle pagine.",
+			"seo_faq2_q": "Dividere un PDF riduce la qualità?",
+			"seo_faq2_a": "No. La divisione estrae le pagine senza ricodifica, la qualità originale resta intatta."
 		},
 		"rotate_pdf": {
 			"title": "Ruota pagine",
@@ -656,7 +656,11 @@
 			"selected_pages": "Pagine selezionate",
 			"btn_busy": "Elaborazione…",
 			"err_fail": "Rotazione fallita.",
-			"help": "clicca per alternare"
+			"help": "clicca per alternare",
+			"seo_faq1_q": "Posso ruotare singole pagine?",
+			"seo_faq1_a": "Sì. Puoi ruotare pagine specifiche o l'intero PDF in una volta. Scegli 90°, 180° o 270°.",
+			"seo_faq2_q": "La rotazione influisce sulla qualità?",
+			"seo_faq2_a": "No. Le pagine vengono ruotate senza ricodifica, la qualità originale è completamente preservata."
 		},
 		"organize": {
 			"title": "Organizza pagine",
@@ -668,10 +672,10 @@
 			"no_pages": "Nessuna pagina rimasta.",
 			"btn": "Salva PDF organizzato",
 			"btn_busy": "Salvataggio…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Posso eliminare pagine da un PDF?",
+			"seo_faq1_a": "Sì. Trascina le pagine per riordinarle e clicca su elimina per rimuovere quelle indesiderate.",
+			"seo_faq2_q": "Posso vedere un'anteprima di ogni pagina?",
+			"seo_faq2_a": "Sì. Vengono mostrate miniature di ogni pagina per identificarle e organizzarle facilmente."
 		},
 		"images_to_pdf": {
 			"title": "Immagini → PDF",
@@ -681,10 +685,10 @@
 			"btn": "Converti in PDF",
 			"btn_busy": "Conversione…",
 			"save": "Salva PDF",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Quali formati immagine posso convertire in PDF?",
+			"seo_faq1_a": "Sono supportati JPG, PNG e WEBP. Ogni immagine diventa una pagina nel PDF.",
+			"seo_faq2_q": "Posso organizzare l'ordine delle immagini?",
+			"seo_faq2_a": "Sì. Aggiungi più immagini e disponile nell'ordine desiderato prima della conversione."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Immagini",
@@ -693,10 +697,10 @@
 			"btn": "Esporta come immagini",
 			"btn_busy": "Conversione pagina {progress} di {total}…",
 			"err_fail": "Conversione fallita.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "In quale formato otterrò le immagini?",
+			"seo_faq1_a": "Puoi scegliere tra JPG e PNG. Ogni pagina del PDF diventa un'immagine separata.",
+			"seo_faq2_q": "E per i PDF multipagina?",
+			"seo_faq2_a": "Ogni pagina viene esportata come immagine separata. Per PDF multipagina riceverai un file ZIP con tutte le immagini."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF a PowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "Converti in PPTX",
 			"btn_busy": "Conversione pagina {progress} di {total}…",
 			"save": "Salva PPTX",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Come funziona la conversione da PDF a PowerPoint?",
+			"seo_faq1_a": "Ogni pagina del PDF viene renderizzata come immagine e inserita in una diapositiva PowerPoint. Il testo non è modificabile.",
+			"seo_faq2_q": "Posso modificare le diapositive dopo la conversione?",
+			"seo_faq2_a": "Le diapositive contengono immagini delle pagine. Puoi aggiungere caselle di testo e annotazioni in PowerPoint."
 		},
 		"compress": {
 			"title": "Comprimi PDF",
@@ -732,10 +736,10 @@
 			"btn_busy": "Compressione pagina {progress} di {total}…",
 			"err_fail": "Compressione fallita.",
 			"save": "Salva PDF compresso",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Quanto posso ridurre la dimensione del PDF?",
+			"seo_faq1_a": "Tipicamente 50-80% di riduzione a seconda del contenuto. I PDF con molte immagini ottengono il risparmio maggiore.",
+			"seo_faq2_q": "La compressione influisce sulla qualità del testo?",
+			"seo_faq2_a": "Il testo viene ri-renderizzato come immagine durante la compressione. Per documenti con molto testo, usa un'impostazione di qualità più alta."
 		},
 		"watermark_pdf": {
 			"title": "Aggiungi filigrana",
@@ -743,7 +747,11 @@
 			"btn": "Applica a tutte le pagine",
 			"btn_busy": "Applicazione…",
 			"err_text": "Inserisci il testo della filigrana.",
-			"save": "Salva PDF con filigrana"
+			"save": "Salva PDF con filigrana",
+			"seo_faq1_q": "Posso usare un'immagine come filigrana?",
+			"seo_faq1_a": "Attualmente sono supportate filigrane testuali. Puoi personalizzare testo, dimensione, opacità e angolo di rotazione.",
+			"seo_faq2_q": "La filigrana coprirà il contenuto?",
+			"seo_faq2_a": "No. Le filigrane vengono posizionate con opacità regolabile, il contenuto resta leggibile al di sotto."
 		},
 		"page_numbers": {
 			"title": "Aggiungi numeri di pagina",
@@ -760,10 +768,10 @@
 			"btn": "Applica a tutte le pagine",
 			"btn_busy": "Aggiunta numeri…",
 			"save": "Salva PDF numerato",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Dove posso posizionare i numeri di pagina?",
+			"seo_faq1_a": "Puoi posizionare i numeri in alto o in basso, allineati a sinistra, al centro o a destra.",
+			"seo_faq2_q": "Posso personalizzare il formato della numerazione?",
+			"seo_faq2_a": "Sì. Puoi impostare il numero iniziale, la dimensione del carattere e la posizione."
 		},
 		"metadata": {
 			"title": "Modifica metadati",
@@ -784,10 +792,10 @@
 			"err_read": "Lettura metadati fallita.",
 			"err_update": "Aggiornamento metadati fallito.",
 			"save": "Salva PDF aggiornato",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Quali metadati PDF posso modificare?",
+			"seo_faq1_a": "Puoi modificare titolo, autore, oggetto e parole chiave di qualsiasi file PDF.",
+			"seo_faq2_q": "Modificare i metadati è sicuro per il contenuto del PDF?",
+			"seo_faq2_a": "Sì. Vengono modificate solo le proprietà dei metadati — il contenuto del PDF resta invariato."
 		},
 		"crop_pdf": {
 			"title": "Ritaglia PDF",
@@ -796,7 +804,11 @@
 			"err_margins": "Margins are too large — no area left.",
 			"btn": "Ritaglia PDF",
 			"btn_busy": "Ritaglio…",
-			"save": "Salva PDF ritagliato"
+			"save": "Salva PDF ritagliato",
+			"seo_faq1_q": "Posso ritagliare ogni pagina in modo diverso?",
+			"seo_faq1_a": "I margini di ritaglio vengono applicati uniformemente a tutte le pagine. Per ritagliare pagina per pagina, dividi prima il PDF, ritaglia ogni parte e poi unisci.",
+			"seo_faq2_q": "Il ritaglio riduce la dimensione del file?",
+			"seo_faq2_a": "Il ritaglio nasconde il contenuto fuori dai margini ma potrebbe non ridurre significativamente la dimensione, poiché i dati nascosti possono rimanere nel file."
 		},
 		"sign": {
 			"title": "Firma PDF",
@@ -813,10 +825,10 @@
 			"err_place": "Clicca sulla pagina per posizionare la firma.",
 			"btn_busy": "Firma in corso…",
 			"save": "Salva PDF firmato",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Come posso creare una firma?",
+			"seo_faq1_a": "Puoi disegnare una firma con il mouse o il dito, digitare il tuo nome o caricare un'immagine della firma.",
+			"seo_faq2_q": "La mia firma viene salvata da qualche parte?",
+			"seo_faq2_a": "No. La tua firma non lascia mai il tuo dispositivo. L'elaborazione avviene interamente nel browser."
 		},
 		"edit": {
 			"title": "Modifica PDF",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count} elemento/i posizionato/i",
 			"btn_busy": "Applicazione…",
 			"save": "Salva PDF modificato",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Che tipo di modifiche posso fare?",
+			"seo_faq1_a": "Puoi aggiungere testo su qualsiasi pagina del PDF. Scegli dimensione, colore e posizione cliccando sulla pagina.",
+			"seo_faq2_q": "Posso modificare il testo esistente nel PDF?",
+			"seo_faq2_a": "Attualmente puoi aggiungere nuovi livelli di testo. Modificare il testo esistente richiede il documento originale."
 		},
 		"password": {
 			"title": "Proteggi PDF con password",
@@ -858,10 +870,10 @@
 			"btn_busy": "Cifratura…",
 			"result": "Protetto!",
 			"save": "Salva PDF protetto",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Quanto è sicura la crittografia?",
+			"seo_faq1_a": "I PDF vengono crittografati con sicurezza PDF standard. La password non viene mai inviata da nessuna parte — la crittografia avviene nel browser.",
+			"seo_faq2_q": "Posso impostare permessi come impedire la stampa?",
+			"seo_faq2_a": "Sì. Puoi configurare i permessi di stampa, copia e modifica quando proteggi il PDF."
 		},
 		"unlock": {
 			"title": "Sblocca PDF",
@@ -876,10 +888,10 @@
 			"password_label": "Password (se richiesta)",
 			"password_placeholder": "Lasciare vuoto se assente",
 			"password_hint": "Necessaria solo per PDF protetti da password.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Posso rimuovere la password da un PDF?",
+			"seo_faq1_a": "Sì, se conosci la password attuale. Inseriscila e LocalConvert salverà una copia non protetta.",
+			"seo_faq2_q": "La mia password è al sicuro?",
+			"seo_faq2_a": "Sì. La password viene usata solo nel browser per decrittare il file. Non viene mai inviata a nessun server."
 		},
 		"rotate_image": {
 			"title": "Ruota immagine",
@@ -957,10 +969,10 @@
 			"copy": "Copia",
 			"copied": "Copiato!",
 			"download_txt": "Salva come .txt",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Funziona con i PDF scannerizzati?",
+			"seo_faq1_a": "No. L'estrazione del testo funziona con PDF che contengono testo reale. I documenti scannerizzati (basati su immagini) necessitano prima dell'OCR.",
+			"seo_faq2_q": "Supporta testo in lingue diverse dall'inglese?",
+			"seo_faq2_a": "Sì. L'estrazione del testo supporta tutte le lingue incluse arabo, cinese, giapponese, coreano e cirillico."
 		},
 		"grayscale": {
 			"title": "PDF in scala di grigi",
@@ -970,10 +982,10 @@
 			"btn_busy": "Conversione pagina {progress} di {total}…",
 			"grayscale": "Scala di grigi",
 			"save": "Salva PDF in scala di grigi",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Il testo resterà selezionabile dopo la conversione?",
+			"seo_faq1_a": "No. La conversione in scala di grigi renderizza ogni pagina come immagine. Il testo non sarà più selezionabile né ricercabile.",
+			"seo_faq2_q": "Posso regolare la qualità?",
+			"seo_faq2_a": "Sì. Usa il cursore di qualità per bilanciare dimensione del file e nitidezza dell'immagine."
 		},
 		"json_formatter": {
 			"title": "Formattatore JSON",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "o clicca per sfogliare",
 			"disclaimer": "La fedeltà del layout dipende dalla complessità del documento. Tabelle complesse e formattazione avanzata potrebbero essere semplificate.",
 			"progress_hint": "Elaborazione del documento in locale — nulla viene caricato.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Il mio documento Word apparirà uguale nel PDF?",
+			"seo_faq1_a": "La fedeltà dipende dalla complessità del documento. I documenti semplici si convertono bene; tabelle complesse e formattazioni avanzate possono essere semplificate.",
+			"seo_faq2_q": "Supporta file .doc (vecchio formato Word)?",
+			"seo_faq2_a": "Sì. Sono supportati sia .docx (moderno) che .doc (vecchio)."
 		},
 		"from_xlsx": {
 			"title": "Excel in PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "Verticale",
 			"disclaimer": "Le larghezze delle colonne vengono calcolate automaticamente. I fogli larghi funzionano meglio in modalità orizzontale.",
 			"progress_hint": "Elaborazione del foglio di calcolo in locale — nulla viene caricato.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Posso scegliere tra orientamento orizzontale e verticale?",
+			"seo_faq1_a": "Sì. Puoi selezionare l'orientamento prima della conversione. I fogli di calcolo larghi funzionano meglio in orizzontale.",
+			"seo_faq2_q": "Quali formati di foglio di calcolo sono supportati?",
+			"seo_faq2_a": "XLSX (Excel), XLS (vecchio Excel), ODS (LibreOffice) e file CSV sono supportati."
 		},
 		"to_docx": {
 			"title": "PDF in Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "I PDF scansionati (basati su immagini) producono output vuoto — usa prima l'OCR",
 			"progress_label": "Estrazione testo… {progress}%",
 			"progress_hint": "Il tuo file non lascia mai il tuo dispositivo.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "La formattazione viene conservata?",
+			"seo_faq1_a": "Il contenuto testuale e la struttura base (titoli, paragrafi) vengono conservati. Layout complessi, tabelle e immagini vengono semplificati.",
+			"seo_faq2_q": "Funziona con PDF scannerizzati?",
+			"seo_faq2_a": "No. I PDF scannerizzati (basati su immagini) producono un risultato vuoto. Usa prima un software OCR per rendere il testo estraibile."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Quali angoli di rotazione sono disponibili?",
+			"seo_faq1_a": "Puoi ruotare di 90°, 180° o 270° in senso orario. La rotazione è istantanea e senza perdita di qualità.",
+			"seo_faq2_q": "La rotazione riduce la qualità dell'immagine?",
+			"seo_faq2_a": "No. L'immagine viene ruotata senza ricompressione, preservando la qualità originale."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Posso impostare una dimensione esatta in pixel?",
+			"seo_faq1_a": "Sì. Trascina un rettangolo di ritaglio o inserisci dimensioni precise in pixel.",
+			"seo_faq2_q": "Quali formati di immagine posso ritagliare?",
+			"seo_faq2_a": "Sono supportati JPG, PNG, WEBP, GIF e la maggior parte dei formati comuni."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Posso regolare l'opacità della filigrana?",
+			"seo_faq1_a": "Sì. Puoi controllare opacità, posizione, dimensione e colore della filigrana testuale.",
+			"seo_faq2_q": "La filigrana è permanente?",
+			"seo_faq2_a": "Sì. Una volta salvata, la filigrana è incorporata permanentemente nell'immagine."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Posso usare le mie immagini?",
+			"seo_faq1_a": "Sì. Seleziona qualsiasi immagine e aggiungi testo sopra e sotto per creare il tuo meme.",
+			"seo_faq2_q": "Posso personalizzare font e colore?",
+			"seo_faq2_a": "Sì. Dimensione del carattere, colore e contorno sono personalizzabili."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Quante immagini posso elaborare contemporaneamente?",
+			"seo_faq1_a": "Nessun limite fisso. Puoi elaborare quante immagini la memoria del dispositivo consente.",
+			"seo_faq2_q": "Quali operazioni posso applicare in batch?",
+			"seo_faq2_a": "Conversione formato, ridimensionamento, rotazione e regolazione qualità per tutte le immagini selezionate."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Cosa posso codificare in un QR code?",
+			"seo_faq1_a": "URL, testo, indirizzi email, numeri di telefono o qualsiasi testo fino a migliaia di caratteri.",
+			"seo_faq2_q": "Posso personalizzare l'aspetto del QR code?",
+			"seo_faq2_a": "Puoi regolare dimensione e livello di correzione errori. Il QR code viene salvato come PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Quali formati colore sono supportati?",
+			"seo_faq1_a": "HEX, RGB e HSL. Clicca su qualsiasi pixel per copiare istantaneamente il valore del colore.",
+			"seo_faq2_q": "Posso scegliere colori da qualsiasi tipo di immagine?",
+			"seo_faq2_a": "Sì. JPG, PNG, WEBP, GIF e la maggior parte degli altri formati sono supportati."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Posso sfocare più regioni?",
+			"seo_faq1_a": "Sì. Disegna più aree di sfocatura sulla stessa immagine per nascondere più parti.",
+			"seo_faq2_q": "Posso regolare l'intensità della sfocatura?",
+			"seo_faq2_a": "Sì. Usa il cursore di intensità per controllare la forza dell'effetto."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Quali filtri sono disponibili?",
+			"seo_faq1_a": "Luminosità, contrasto, saturazione, rotazione tinta, scala di grigi, seppia, sfocatura e inversione.",
+			"seo_faq2_q": "Posso combinare più filtri?",
+			"seo_faq2_a": "Sì. Tutte le regolazioni si combinano e vengono applicate in tempo reale."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Quali formati video sono supportati?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI e la maggior parte dei formati video comuni.",
+			"seo_faq2_q": "Posso impostare durata e frame rate del GIF?",
+			"seo_faq2_a": "Sì. Imposta tempo di inizio, durata e frame rate per controllare il GIF."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Valida la sintassi JSON?",
+			"seo_faq1_a": "Sì. Il JSON non valido viene segnalato con un errore che mostra la riga e il carattere esatti.",
+			"seo_faq2_q": "Posso anche minificare il JSON?",
+			"seo_faq2_a": "Sì. Formatta (abbellisci) e minifica il JSON con un clic."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Quali algoritmi di hash sono supportati?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 e SHA-512 sono tutti disponibili.",
+			"seo_faq2_q": "L'hashing viene eseguito localmente?",
+			"seo_faq2_a": "Sì. Tutto l'hashing avviene nel browser tramite Web Crypto API. I dati non lasciano mai il dispositivo."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Posso codificare file, non solo testo?",
+			"seo_faq1_a": "Lo strumento codifica stringhe di testo. Per i file, converti prima il contenuto in testo.",
+			"seo_faq2_q": "Supporta testo Unicode?",
+			"seo_faq2_a": "Sì. Testo UTF-8 inclusi caratteri non latini è pienamente supportato."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Supporta il Markdown GitHub?",
+			"seo_faq1_a": "Sì. Tabelle, liste di attività, barrato e altre estensioni GitHub Markdown vengono renderizzate correttamente.",
+			"seo_faq2_q": "Posso esportare l'HTML renderizzato?",
+			"seo_faq2_a": "L'anteprima mostra l'output in tempo reale. Copia l'HTML dal pannello anteprima."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Mostra differenze riga per riga o parola per parola?",
+			"seo_faq1_a": "Le differenze sono evidenziate per riga con aggiunte e rimozioni colorate chiaramente.",
+			"seo_faq2_q": "C'è un limite di dimensione?",
+			"seo_faq2_a": "Nessun limite fisso. Testi grandi possono essere più lenti su dispositivi datati."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Quali metriche conta?",
+			"seo_faq1_a": "Parole, caratteri (con e senza spazi), frasi, paragrafi e tempo di lettura stimato.",
+			"seo_faq2_q": "Funziona con testo non inglese?",
+			"seo_faq2_a": "Sì. Il conteggio parole funziona con tutte le lingue e set di caratteri."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Quali caratteri vengono codificati?",
+			"seo_faq1_a": "Caratteri speciali come spazi e caratteri non ASCII vengono codificati in percentuale secondo RFC 3986.",
+			"seo_faq2_q": "Posso decodificare un URL completo con parametri?",
+			"seo_faq2_a": "Sì. Incolla qualsiasi stringa codificata e verrà decodificata in testo leggibile."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Cosa rimuove la minificazione CSS?",
+			"seo_faq1_a": "Commenti, spazi non necessari, righe vuote e punti e virgola ridondanti per ridurre la dimensione.",
+			"seo_faq2_q": "Di quanto si ridurrà il mio CSS?",
+			"seo_faq2_a": "Tipicamente 20-40% più piccolo. I file molto commentati ottengono la riduzione maggiore."
 		}
 	},
 	"dev_tools": {

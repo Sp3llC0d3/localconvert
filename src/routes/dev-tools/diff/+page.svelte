@@ -2,6 +2,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { GitCompareArrowsIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let textA = $state('Hello World\nThis is line 2\nLine three here\nFourth line');
 	let textB = $state('Hello World\nThis line was changed\nLine three here\nFourth line\nNew fifth line');
@@ -63,6 +65,7 @@
 	<meta property="og:title" content="Text Diff — LocalConvert" />
 	<meta property="og:description" content="Compare two texts and see the differences highlighted. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/diff/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Compare Text Online","step":[{"@type":"HowToStep","text":"Paste the original text on the left side"},{"@type":"HowToStep","text":"Paste the modified text on the right side"},{"@type":"HowToStep","text":"View highlighted differences between the two texts"}]}</script>`}
 </svelte:head>
 
 <div class="diff-page">
@@ -101,6 +104,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-diff']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-diff'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-diff'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-diff'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-diff'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-diff'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-diff'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

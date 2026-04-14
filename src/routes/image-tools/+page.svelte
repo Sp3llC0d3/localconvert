@@ -30,6 +30,9 @@
 	<title>Image Tools — LocalConvert</title>
 	<meta name="description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/" />
+	<meta property="og:title" content="Image Tools — LocalConvert" />
+	<meta property="og:description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",

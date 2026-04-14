@@ -576,16 +576,16 @@
 		"convert_to_pdf": "Chuyển đổi sang PDF",
 		"save_pdf": "Lưu PDF",
 		"converting_progress": "Đang chuyển đổi… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Cách hoạt động",
+		"seo_step1": "Chọn tệp từ thiết bị của bạn",
+		"seo_step2": "Điều chỉnh cài đặt nếu cần",
+		"seo_step3": "Lưu kết quả — xong!",
+		"seo_why_title": "Tại sao chọn LocalConvert?",
+		"seo_why_private": "Riêng tư 100% — tệp của bạn không bao giờ rời khỏi thiết bị. Không tải lên máy chủ, không bao giờ.",
+		"seo_why_free": "Miễn phí mãi mãi không giới hạn kích thước tệp. Không cần tài khoản, không cần đăng ký.",
+		"seo_why_offline": "Hoạt động ngoại tuyến như ứng dụng đã cài đặt. Không cần internet sau lần tải đầu tiên.",
+		"seo_faq_title": "Câu hỏi thường gặp",
+		"seo_related_title": "Công cụ liên quan"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "Ghep that bai.",
 			"save": "Luu PDF da ghep",
 			"btn_busy": "Dang ghep…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Gộp tệp PDF có an toàn không?",
+			"seo_faq1_a": "Có. LocalConvert chạy hoàn toàn trong trình duyệt — tệp không bao giờ được tải lên máy chủ nào. Việc gộp diễn ra trên thiết bị của bạn.",
+			"seo_faq2_q": "Có giới hạn số lượng PDF để gộp không?",
+			"seo_faq2_a": "Không. Bạn có thể gộp bao nhiêu PDF tùy bộ nhớ trình duyệt cho phép. Không giới hạn kích thước hay số lượng."
 		},
 		"split": {
 			"title": "Tach PDF",
@@ -662,10 +662,10 @@
 			"err_fail": "Tach that bai.",
 			"btn_busy": "Dang xu ly…",
 			"help": "Nhan de chuyen doi, cham vao diem de chon mot trang",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Tôi có thể trích xuất các trang cụ thể từ PDF không?",
+			"seo_faq1_a": "Có. Chọn các trang mong muốn và LocalConvert sẽ tạo PDF mới chỉ với những trang đó.",
+			"seo_faq2_q": "Tách PDF có làm giảm chất lượng không?",
+			"seo_faq2_a": "Không. Tách trích xuất trang mà không mã hóa lại, chất lượng gốc được giữ nguyên."
 		},
 		"rotate_pdf": {
 			"title": "Xoay trang",
@@ -676,7 +676,11 @@
 			"selected_pages": "Cac trang da chon",
 			"err_fail": "Xoay that bai.",
 			"help": "nhan de chuyen doi",
-			"btn_busy": "Dang xu ly…"
+			"btn_busy": "Dang xu ly…",
+			"seo_faq1_q": "Tôi có thể xoay từng trang riêng lẻ không?",
+			"seo_faq1_a": "Có. Bạn có thể xoay các trang cụ thể hoặc toàn bộ PDF cùng lúc. Chọn 90°, 180° hoặc 270°.",
+			"seo_faq2_q": "Xoay có ảnh hưởng đến chất lượng không?",
+			"seo_faq2_a": "Không. Trang được xoay mà không mã hóa lại, chất lượng gốc được bảo toàn hoàn toàn."
 		},
 		"organize": {
 			"title": "Sap xep trang",
@@ -688,10 +692,10 @@
 			"no_pages": "Khong con trang nao.",
 			"btn": "Luu PDF da sap xep",
 			"btn_busy": "Dang luu…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Tôi có thể xóa trang khỏi PDF không?",
+			"seo_faq1_a": "Có. Kéo trang để sắp xếp lại và nhấn xóa để loại bỏ trang không cần.",
+			"seo_faq2_q": "Tôi có thể xem trước từng trang không?",
+			"seo_faq2_a": "Có. Hình thu nhỏ của mỗi trang được hiển thị để dễ nhận dạng và sắp xếp."
 		},
 		"images_to_pdf": {
 			"title": "Hinh anh → PDF",
@@ -701,10 +705,10 @@
 			"btn": "Chuyen sang PDF",
 			"save": "Luu PDF",
 			"btn_busy": "Dang chuyen doi…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Những định dạng ảnh nào có thể chuyển sang PDF?",
+			"seo_faq1_a": "Hỗ trợ ảnh JPG, PNG và WEBP. Mỗi ảnh trở thành một trang trong PDF.",
+			"seo_faq2_q": "Tôi có thể sắp xếp thứ tự ảnh không?",
+			"seo_faq2_a": "Có. Thêm nhiều ảnh và sắp xếp theo thứ tự mong muốn trước khi chuyển đổi."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Hinh anh",
@@ -713,10 +717,10 @@
 			"btn": "Xuat thanh hinh anh",
 			"err_fail": "Chuyen doi that bai.",
 			"btn_busy": "Dang chuyen doi trang {progress} / {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "Tôi sẽ nhận ảnh ở định dạng nào?",
+			"seo_faq1_a": "Bạn có thể chọn JPG hoặc PNG. Mỗi trang PDF trở thành một ảnh riêng.",
+			"seo_faq2_q": "PDF nhiều trang thì sao?",
+			"seo_faq2_a": "Mỗi trang được xuất thành ảnh riêng. Với PDF nhiều trang, bạn sẽ nhận tệp ZIP chứa tất cả ảnh."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF sang PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "Chuyen sang PPTX",
 			"save": "Luu PPTX",
 			"btn_busy": "Dang chuyen doi trang {progress} / {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Chuyển PDF sang PowerPoint hoạt động thế nào?",
+			"seo_faq1_a": "Mỗi trang PDF được kết xuất thành ảnh và đặt vào slide PowerPoint. Văn bản không chỉnh sửa được.",
+			"seo_faq2_q": "Tôi có thể chỉnh sửa slide sau khi chuyển đổi không?",
+			"seo_faq2_a": "Slide chứa ảnh các trang. Bạn có thể thêm hộp văn bản và ghi chú trong PowerPoint."
 		},
 		"compress": {
 			"title": "Nen PDF",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% nho hon, chat luong tot",
 			"preset_high_desc": "~70-90% nho hon, giam chat luong ro ret",
 			"btn_busy": "Dang nen trang {progress} / {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Tôi có thể giảm bao nhiêu kích thước PDF?",
+			"seo_faq1_a": "Thường giảm 50-80% tùy nội dung. PDF có nhiều ảnh đạt mức tiết kiệm lớn nhất.",
+			"seo_faq2_q": "Nén có ảnh hưởng đến chất lượng văn bản không?",
+			"seo_faq2_a": "Văn bản được kết xuất lại thành ảnh khi nén. Với tài liệu nhiều chữ, hãy dùng cài đặt chất lượng cao hơn."
 		},
 		"watermark_pdf": {
 			"title": "Them watermark",
@@ -763,7 +767,11 @@
 			"btn": "Ap dung cho tat ca cac trang",
 			"err_text": "Nhap van ban watermark.",
 			"save": "Luu PDF co watermark",
-			"btn_busy": "Dang ap dung…"
+			"btn_busy": "Dang ap dung…",
+			"seo_faq1_q": "Có thể dùng ảnh làm watermark không?",
+			"seo_faq1_a": "Hiện tại hỗ trợ watermark dạng văn bản. Bạn có thể tùy chỉnh văn bản, kích thước, độ mờ và góc xoay.",
+			"seo_faq2_q": "Watermark có che nội dung không?",
+			"seo_faq2_a": "Không. Watermark được đặt với độ mờ có thể điều chỉnh, nội dung vẫn đọc được phía dưới."
 		},
 		"page_numbers": {
 			"title": "Them so trang",
@@ -780,10 +788,10 @@
 			"btn": "Ap dung cho tat ca cac trang",
 			"save": "Luu PDF da danh so",
 			"btn_busy": "Dang them so…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Tôi có thể đặt số trang ở đâu?",
+			"seo_faq1_a": "Có thể đặt số ở đầu hoặc cuối trang, căn trái, giữa hoặc phải.",
+			"seo_faq2_q": "Có thể tùy chỉnh định dạng đánh số không?",
+			"seo_faq2_a": "Có. Bạn có thể đặt số bắt đầu, cỡ chữ và vị trí."
 		},
 		"metadata": {
 			"title": "Chinh sua metadata",
@@ -804,10 +812,10 @@
 			"reading": "Dang doc metadata…",
 			"none": "—",
 			"btn_busy": "Dang luu…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Có thể chỉnh sửa siêu dữ liệu PDF nào?",
+			"seo_faq1_a": "Bạn có thể chỉnh sửa tiêu đề, tác giả, chủ đề và từ khóa của bất kỳ tệp PDF nào.",
+			"seo_faq2_q": "Chỉnh sửa siêu dữ liệu có an toàn cho nội dung không?",
+			"seo_faq2_a": "Có. Chỉ các thuộc tính siêu dữ liệu thay đổi — nội dung PDF không bị ảnh hưởng."
 		},
 		"crop_pdf": {
 			"title": "Cat PDF",
@@ -816,7 +824,11 @@
 			"btn": "Cat PDF",
 			"save": "Luu PDF da cat",
 			"err_margins": "Le qua lon — khong con vung nao.",
-			"btn_busy": "Dang cat…"
+			"btn_busy": "Dang cat…",
+			"seo_faq1_q": "Có thể cắt các trang khác nhau theo cách khác nhau không?",
+			"seo_faq1_a": "Lề cắt được áp dụng đồng đều cho tất cả trang. Để cắt từng trang, hãy tách PDF trước, cắt từng phần, rồi gộp lại.",
+			"seo_faq2_q": "Cắt có giảm kích thước tệp không?",
+			"seo_faq2_a": "Cắt ẩn nội dung ngoài lề nhưng có thể không giảm đáng kể kích thước vì dữ liệu ẩn có thể vẫn còn trong tệp."
 		},
 		"sign": {
 			"title": "Ky PDF",
@@ -833,10 +845,10 @@
 			"err_place": "Nhan vao trang de dat chu ky.",
 			"save": "Luu PDF da ky",
 			"btn_busy": "Dang ky…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Làm sao để tạo chữ ký?",
+			"seo_faq1_a": "Bạn có thể vẽ chữ ký bằng chuột hoặc ngón tay, gõ tên hoặc tải lên ảnh chữ ký.",
+			"seo_faq2_q": "Chữ ký của tôi có được lưu ở đâu không?",
+			"seo_faq2_a": "Không. Chữ ký không bao giờ rời khỏi thiết bị. Xử lý diễn ra hoàn toàn trong trình duyệt."
 		},
 		"edit": {
 			"title": "Chinh sua PDF",
@@ -851,10 +863,10 @@
 			"save": "Luu PDF da chinh sua",
 			"placeholder": "Van ban can dat…",
 			"btn_busy": "Dang ap dung…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Tôi có thể thực hiện những chỉnh sửa nào?",
+			"seo_faq1_a": "Bạn có thể thêm văn bản vào bất kỳ trang PDF nào. Chọn cỡ chữ, màu sắc và vị trí bằng cách nhấp vào trang.",
+			"seo_faq2_q": "Có thể chỉnh sửa văn bản hiện có trong PDF không?",
+			"seo_faq2_a": "Hiện tại bạn có thể thêm lớp văn bản mới. Chỉnh sửa văn bản hiện có cần tài liệu gốc."
 		},
 		"password": {
 			"title": "Bao ve PDF bang mat khau",
@@ -878,10 +890,10 @@
 			"password_placeholder": "Nhap mat khau…",
 			"owner_placeholder": "Mat khau chu so huu…",
 			"btn_busy": "Dang ma hoa…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Mã hóa an toàn đến mức nào?",
+			"seo_faq1_a": "PDF được mã hóa bằng bảo mật PDF tiêu chuẩn. Mật khẩu không được gửi đi đâu — mã hóa diễn ra trong trình duyệt.",
+			"seo_faq2_q": "Có thể đặt quyền như ngăn in không?",
+			"seo_faq2_a": "Có. Bạn có thể cài đặt quyền in, sao chép và chỉnh sửa khi bảo vệ PDF."
 		},
 		"unlock": {
 			"title": "Mo khoa PDF",
@@ -896,10 +908,10 @@
 			"password_label": "Mật khẩu (nếu cần)",
 			"password_placeholder": "Để trống nếu không có",
 			"password_hint": "Chỉ cần cho PDF yêu cầu mật khẩu để mở.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Tôi có thể xóa mật khẩu khỏi PDF không?",
+			"seo_faq1_a": "Có, nếu bạn biết mật khẩu hiện tại. Nhập mật khẩu và LocalConvert sẽ lưu bản sao không bảo vệ.",
+			"seo_faq2_q": "Mật khẩu của tôi có an toàn không?",
+			"seo_faq2_a": "Có. Mật khẩu chỉ được dùng trong trình duyệt để giải mã tệp. Không bao giờ được gửi đến máy chủ nào."
 		},
 		"color_picker": {
 			"title": "Chon mau",
@@ -927,10 +939,10 @@
 			"copied": "Da sao chep!",
 			"download_txt": "Luu thanh .txt",
 			"btn_busy": "Dang trich xuat trang {progress} / {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Có hoạt động với PDF scan không?",
+			"seo_faq1_a": "Không. Trích xuất văn bản hoạt động với PDF chứa văn bản thực. Tài liệu scan (dạng ảnh) cần OCR trước.",
+			"seo_faq2_q": "Có hỗ trợ văn bản tiếng khác không?",
+			"seo_faq2_a": "Có. Trích xuất văn bản hỗ trợ mọi ngôn ngữ bao gồm tiếng Ả Rập, Trung, Nhật, Hàn và chữ Cyrillic."
 		},
 		"grayscale": {
 			"title": "PDF sang xam",
@@ -940,10 +952,10 @@
 			"grayscale": "Xam",
 			"save": "Luu PDF xam",
 			"btn_busy": "Dang chuyen doi trang {progress} / {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Văn bản còn chọn được sau khi chuyển đổi không?",
+			"seo_faq1_a": "Không. Chuyển đổi sang thang xám kết xuất mỗi trang thành ảnh. Văn bản sẽ không còn chọn hoặc tìm kiếm được.",
+			"seo_faq2_q": "Có thể điều chỉnh chất lượng không?",
+			"seo_faq2_a": "Có. Dùng thanh trượt chất lượng để cân bằng giữa kích thước tệp và độ rõ nét."
 		},
 		"json_formatter": {
 			"title": "Dinh dang JSON",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "hoặc nhấp để duyệt",
 			"disclaimer": "Độ trung thực bố cục phụ thuộc vào độ phức tạp của tài liệu. Bảng phức tạp và định dạng nâng cao có thể được đơn giản hóa.",
 			"progress_hint": "Đang xử lý tài liệu cục bộ — không tải lên gì.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Tài liệu Word có giống PDF không?",
+			"seo_faq1_a": "Độ chính xác bố cục phụ thuộc vào độ phức tạp. Tài liệu đơn giản chuyển đổi tốt; bảng và định dạng phức tạp có thể được đơn giản hóa.",
+			"seo_faq2_q": "Có hỗ trợ tệp .doc (định dạng Word cũ) không?",
+			"seo_faq2_a": "Có. Cả .docx (hiện đại) và .doc (cũ) đều được hỗ trợ."
 		},
 		"from_xlsx": {
 			"title": "Excel sang PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "Dọc",
 			"disclaimer": "Chiều rộng cột được tính tự động. Bảng tính rộng hoạt động tốt nhất ở chế độ ngang.",
 			"progress_hint": "Đang xử lý bảng tính cục bộ — không tải lên gì.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Có thể chọn ngang hoặc dọc không?",
+			"seo_faq1_a": "Có. Bạn có thể chọn hướng trang trước khi chuyển đổi. Bảng tính rộng phù hợp nhất ở chế độ ngang.",
+			"seo_faq2_q": "Những định dạng bảng tính nào được hỗ trợ?",
+			"seo_faq2_a": "Hỗ trợ XLSX (Excel), XLS (Excel cũ), ODS (LibreOffice) và tệp CSV."
 		},
 		"to_docx": {
 			"title": "PDF sang Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "PDF quét (dựa trên hình ảnh) tạo ra đầu ra trống — sử dụng OCR trước",
 			"progress_label": "Đang trích xuất văn bản… {progress}%",
 			"progress_hint": "Tệp của bạn không bao giờ rời khỏi thiết bị.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Định dạng có được giữ không?",
+			"seo_faq1_a": "Nội dung văn bản và cấu trúc cơ bản (tiêu đề, đoạn văn) được giữ. Bố cục phức tạp, bảng và ảnh được đơn giản hóa.",
+			"seo_faq2_q": "Có hoạt động với PDF scan không?",
+			"seo_faq2_a": "Không. PDF scan (dạng ảnh) cho kết quả trống. Dùng phần mềm OCR trước để trích xuất văn bản."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Có những góc xoay nào?",
+			"seo_faq1_a": "Xoay 90°, 180° hoặc 270° theo chiều kim đồng hồ. Xoay tức thì và không mất chất lượng.",
+			"seo_faq2_q": "Xoay có làm giảm chất lượng ảnh không?",
+			"seo_faq2_a": "Không. Ảnh được xoay mà không nén lại, chất lượng gốc được giữ nguyên."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Có thể đặt kích thước chính xác bằng pixel không?",
+			"seo_faq1_a": "Có. Kéo hình chữ nhật cắt hoặc nhập kích thước pixel chính xác.",
+			"seo_faq2_q": "Cắt được những định dạng ảnh nào?",
+			"seo_faq2_a": "Hỗ trợ JPG, PNG, WEBP, GIF và hầu hết định dạng ảnh phổ biến."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Có thể điều chỉnh độ mờ watermark không?",
+			"seo_faq1_a": "Có. Độ mờ, vị trí, kích thước và màu của watermark text đều điều chỉnh được.",
+			"seo_faq2_q": "Watermark có vĩnh viễn không?",
+			"seo_faq2_a": "Có. Sau khi lưu, watermark được nhúng vĩnh viễn vào ảnh."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Có thể dùng ảnh của mình không?",
+			"seo_faq1_a": "Có. Chọn ảnh bất kỳ rồi thêm chữ phía trên và dưới.",
+			"seo_faq2_q": "Có thể tùy chỉnh font và màu không?",
+			"seo_faq2_a": "Có. Cỡ chữ, màu sắc và viền đều thay đổi được."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Xử lý được bao nhiêu ảnh cùng lúc?",
+			"seo_faq1_a": "Không có giới hạn cố định. Xử lý nhiều tùy bộ nhớ thiết bị cho phép.",
+			"seo_faq2_q": "Có thể áp dụng thao tác gì hàng loạt?",
+			"seo_faq2_a": "Chuyển đổi định dạng, thay đổi kích thước, xoay và cài đặt chất lượng cho tất cả ảnh đã chọn."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Có thể mã hóa gì trong QR code?",
+			"seo_faq1_a": "URL, văn bản, email, số điện thoại hoặc bất kỳ văn bản nào tới hàng nghìn ký tự.",
+			"seo_faq2_q": "Có thể tùy chỉnh giao diện QR code không?",
+			"seo_faq2_a": "Kích thước và mức sửa lỗi điều chỉnh được. QR code lưu dưới dạng PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Hỗ trợ định dạng màu nào?",
+			"seo_faq1_a": "HEX, RGB và HSL. Nhấp vào pixel bất kỳ để sao chép giá trị màu ngay.",
+			"seo_faq2_q": "Chọn màu từ bất kỳ loại ảnh nào được không?",
+			"seo_faq2_a": "Có. Hỗ trợ JPG, PNG, WEBP, GIF và hầu hết định dạng khác."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Có thể làm mờ nhiều vùng không?",
+			"seo_faq1_a": "Có. Vẽ nhiều vùng mờ trên cùng một ảnh.",
+			"seo_faq2_q": "Có thể điều chỉnh cường độ mờ không?",
+			"seo_faq2_a": "Có. Dùng thanh trượt cường độ để điều chỉnh độ mạnh hiệu ứng."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Có những bộ lọc nào?",
+			"seo_faq1_a": "Độ sáng, tương phản, bão hòa, xoay sắc độ, xám, sepia, mờ và đảo ngược.",
+			"seo_faq2_q": "Kết hợp nhiều bộ lọc được không?",
+			"seo_faq2_a": "Có. Tất cả điều chỉnh bộ lọc kết hợp và áp dụng theo thời gian thực."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Hỗ trợ định dạng video nào?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI và hầu hết định dạng video phổ biến.",
+			"seo_faq2_q": "Đặt thời lượng và tốc độ khung hình GIF được không?",
+			"seo_faq2_a": "Có. Đặt thời gian bắt đầu, thời lượng và tốc độ khung hình."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Có kiểm tra cú pháp JSON không?",
+			"seo_faq1_a": "Có. JSON không hợp lệ được đánh dấu lỗi với dòng và ký tự chính xác.",
+			"seo_faq2_q": "Rút gọn JSON được không?",
+			"seo_faq2_a": "Có. Định dạng và rút gọn JSON chỉ với một nhấp."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Hỗ trợ thuật toán hash nào?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 và SHA-512.",
+			"seo_faq2_q": "Hash được thực hiện cục bộ không?",
+			"seo_faq2_a": "Có. Tất cả hash chạy trong trình duyệt qua Web Crypto API. Dữ liệu không rời thiết bị."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Mã hóa file được không?",
+			"seo_faq1_a": "Công cụ mã hóa chuỗi văn bản. Đối với file, chuyển nội dung sang văn bản trước.",
+			"seo_faq2_q": "Hỗ trợ Unicode không?",
+			"seo_faq2_a": "Có. Văn bản UTF-8 bao gồm ký tự không phải Latin được hỗ trợ đầy đủ."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Hỗ trợ GitHub Markdown không?",
+			"seo_faq1_a": "Có. Bảng, danh sách tác vụ, gạch ngang và phần mở rộng GitHub khác hiển thị đúng.",
+			"seo_faq2_q": "Xuất HTML được không?",
+			"seo_faq2_a": "Xem trước hiển thị kết quả theo thời gian thực. Sao chép HTML từ bảng xem trước."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Hiển thị khác biệt theo dòng hay theo từ?",
+			"seo_faq1_a": "Khác biệt được đánh dấu theo dòng với màu sắc cho phần thêm và xóa.",
+			"seo_faq2_q": "Có giới hạn kích thước không?",
+			"seo_faq2_a": "Không có giới hạn cố định. Văn bản lớn có thể chậm hơn trên thiết bị cũ."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Đếm những chỉ số nào?",
+			"seo_faq1_a": "Từ, ký tự (có và không có khoảng trắng), câu, đoạn văn và thời gian đọc ước tính.",
+			"seo_faq2_q": "Hoạt động với văn bản không phải tiếng Anh không?",
+			"seo_faq2_a": "Có. Đếm từ hoạt động với mọi ngôn ngữ và bộ ký tự."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Những ký tự nào được mã hóa?",
+			"seo_faq1_a": "Ký tự đặc biệt như khoảng trắng và ký tự không phải ASCII được mã hóa phần trăm theo RFC 3986.",
+			"seo_faq2_q": "Giải mã URL đầy đủ với tham số được không?",
+			"seo_faq2_a": "Có. Dán chuỗi đã mã hóa và nó sẽ được giải mã thành văn bản đọc được."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Rút gọn CSS loại bỏ gì?",
+			"seo_faq1_a": "Bình luận, khoảng trắng không cần thiết, dòng trống và dấu chấm phẩy thừa.",
+			"seo_faq2_q": "CSS sẽ nhỏ đi bao nhiêu?",
+			"seo_faq2_a": "Thường 20-40% nhỏ hơn. File có nhiều bình luận giảm nhiều nhất."
 		}
 	},
 	"toast": {

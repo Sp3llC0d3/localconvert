@@ -7,6 +7,8 @@
 	import { SlidersHorizontalIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let error = $state('');
@@ -97,6 +99,7 @@
 	<meta property="og:title" content="Image Filters — LocalConvert" />
 	<meta property="og:description" content="Adjust brightness, contrast, saturation, sepia, and hue of any image. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/filters/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Apply Filters to an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Browse and apply visual filters like grayscale, sepia, or blur"},{"@type":"HowToStep","text":"Adjust intensity and save the filtered image"}]}</script>`}
 </svelte:head>
 
 <div class="filter-page">
@@ -143,6 +146,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-filters']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-filters'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-filters'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-filters'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-filters'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-filters'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-filters'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

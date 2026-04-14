@@ -606,16 +606,16 @@
 		"convert_to_pdf": "轉換為PDF",
 		"save_pdf": "儲存PDF",
 		"converting_progress": "正在轉換… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "使用方式",
+		"seo_step1": "從裝置中選擇檔案",
+		"seo_step2": "按需調整設定",
+		"seo_step3": "儲存結果——完成！",
+		"seo_why_title": "為什麼選擇 LocalConvert？",
+		"seo_why_private": "100% 隱私保護——檔案永遠不會離開您的裝置。不上傳到任何伺服器，永遠不會。",
+		"seo_why_free": "永久免費，無檔案大小限制。無需帳戶，無需訂閱。",
+		"seo_why_offline": "作為已安裝應用程式離線運作。首次載入後不需要網路。",
+		"seo_faq_title": "常見問題",
+		"seo_related_title": "相關工具"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "請至少加入 2 個 PDF 檔案。",
 			"err_fail": "合併失敗。",
 			"save": "儲存合併後的 PDF",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "合併 PDF 安全嗎？",
+			"seo_faq1_a": "是的。LocalConvert 完全在瀏覽器中執行——檔案不會上傳到任何伺服器。合併在您的裝置上進行。",
+			"seo_faq2_q": "合併 PDF 數量有限制嗎？",
+			"seo_faq2_a": "沒有。您可以合併瀏覽器記憶體允許的任意數量 PDF。沒有大小或數量限制。"
 		},
 		"split": {
 			"title": "分割 PDF",
@@ -642,10 +642,10 @@
 			"err_extract": "頁面擷取失敗。",
 			"err_fail": "分割失敗。",
 			"help": "點擊切換，點擊圓點選擇單頁",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "可以從 PDF 中擷取特定頁面嗎？",
+			"seo_faq1_a": "可以。選擇所需頁面，LocalConvert 將僅用這些頁面建立新 PDF。",
+			"seo_faq2_q": "分割 PDF 會降低品質嗎？",
+			"seo_faq2_a": "不會。分割在不重新編碼的情況下擷取頁面，原始品質得以保留。"
 		},
 		"rotate_pdf": {
 			"title": "旋轉頁面",
@@ -656,7 +656,11 @@
 			"selected_pages": "選取的頁面",
 			"btn_busy": "處理中…",
 			"err_fail": "旋轉失敗。",
-			"help": "點擊切換"
+			"help": "點擊切換",
+			"seo_faq1_q": "可以旋轉個別頁面嗎？",
+			"seo_faq1_a": "可以。您可以旋轉特定頁面或整個 PDF。選擇 90°、180° 或 270°。",
+			"seo_faq2_q": "旋轉會影響品質嗎？",
+			"seo_faq2_a": "不會。頁面在不重新編碼的情況下旋轉，原始品質完全保留。"
 		},
 		"organize": {
 			"title": "整理頁面",
@@ -668,10 +672,10 @@
 			"no_pages": "沒有剩餘頁面。",
 			"btn": "儲存整理後的 PDF",
 			"btn_busy": "儲存中…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "可以從 PDF 中刪除頁面嗎？",
+			"seo_faq1_a": "可以。拖曳頁面重新排序，點擊刪除按鈕移除不需要的頁面。",
+			"seo_faq2_q": "可以預覽每個頁面嗎？",
+			"seo_faq2_a": "可以。顯示每個頁面的縮圖，方便識別和整理。"
 		},
 		"images_to_pdf": {
 			"title": "圖片 → PDF",
@@ -681,10 +685,10 @@
 			"btn": "轉換為 PDF",
 			"btn_busy": "轉換中…",
 			"save": "儲存 PDF",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "哪些圖片格式可以轉換為 PDF？",
+			"seo_faq1_a": "支援 JPG、PNG 和 WEBP 圖片。每張圖片成為 PDF 中的一頁。",
+			"seo_faq2_q": "可以調整圖片順序嗎？",
+			"seo_faq2_a": "可以。添加多張圖片並在轉換前按需排列順序。"
 		},
 		"pdf_to_images": {
 			"title": "PDF → 圖片",
@@ -693,10 +697,10 @@
 			"btn": "匯出為圖片",
 			"btn_busy": "正在轉換第 {progress} / {total} 頁…",
 			"err_fail": "轉換失敗。",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "匯出的圖片是什麼格式？",
+			"seo_faq1_a": "可以選擇 JPG 或 PNG。每個 PDF 頁面成為單獨的圖片。",
+			"seo_faq2_q": "多頁 PDF 怎麼處理？",
+			"seo_faq2_a": "每頁匯出為單獨圖片。多頁 PDF 會產生包含所有圖片的 ZIP 檔案。"
 		},
 		"pdf_to_ppt": {
 			"title": "PDF 轉 PowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "轉換為 PPTX",
 			"btn_busy": "正在轉換第 {progress} / {total} 頁…",
 			"save": "儲存 PPTX",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "PDF 轉 PowerPoint 如何運作？",
+			"seo_faq1_a": "每個 PDF 頁面渲染為圖片並放入 PowerPoint 投影片。文字不可編輯。",
+			"seo_faq2_q": "轉換後可以編輯投影片嗎？",
+			"seo_faq2_a": "投影片包含頁面圖片。您可以在 PowerPoint 中添加文字方塊和註解。"
 		},
 		"compress": {
 			"title": "壓縮 PDF",
@@ -732,10 +736,10 @@
 			"btn_busy": "正在壓縮第 {progress} / {total} 頁…",
 			"err_fail": "壓縮失敗。",
 			"save": "儲存壓縮後的 PDF",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "PDF 檔案大小能減少多少？",
+			"seo_faq1_a": "通常可減少 50-80%，取決於內容。圖片較多的 PDF 節省最多。",
+			"seo_faq2_q": "壓縮會影響文字品質嗎？",
+			"seo_faq2_a": "壓縮時文字會重新渲染為圖片。對於文字較多的文件，建議使用較高品質設定。"
 		},
 		"watermark_pdf": {
 			"title": "加入浮水印",
@@ -743,7 +747,11 @@
 			"btn": "套用至所有頁面",
 			"btn_busy": "套用中…",
 			"err_text": "請輸入浮水印文字。",
-			"save": "儲存帶浮水印的 PDF"
+			"save": "儲存帶浮水印的 PDF",
+			"seo_faq1_q": "可以使用圖片作為浮水印嗎？",
+			"seo_faq1_a": "目前支援文字浮水印。可以自訂文字、大小、透明度和旋轉角度。",
+			"seo_faq2_q": "浮水印會遮擋內容嗎？",
+			"seo_faq2_a": "不會。浮水印以可調透明度放置，內容在其下方仍然可讀。"
 		},
 		"page_numbers": {
 			"title": "加入頁碼",
@@ -760,10 +768,10 @@
 			"btn": "套用至所有頁面",
 			"btn_busy": "正在加入頁碼…",
 			"save": "儲存帶頁碼的 PDF",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "可以在哪裡放置頁碼？",
+			"seo_faq1_a": "可以在頁面頂部或底部放置頁碼，靠左、置中或靠右對齊。",
+			"seo_faq2_q": "可以自訂頁碼格式嗎？",
+			"seo_faq2_a": "可以。可以設定起始編號、字型大小和位置。"
 		},
 		"metadata": {
 			"title": "編輯中繼資料",
@@ -784,10 +792,10 @@
 			"err_read": "無法讀取中繼資料。",
 			"err_update": "無法更新中繼資料。",
 			"save": "儲存更新後的 PDF",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "可以編輯哪些 PDF 中繼資料？",
+			"seo_faq1_a": "可以編輯任何 PDF 檔案的標題、作者、主題和關鍵字。",
+			"seo_faq2_q": "編輯中繼資料對內容安全嗎？",
+			"seo_faq2_a": "是的。只有中繼資料屬性會改變——PDF 內容保持不變。"
 		},
 		"crop_pdf": {
 			"title": "裁切 PDF",
@@ -796,7 +804,11 @@
 			"err_margins": "邊距過大，沒有剩餘區域。",
 			"btn": "裁切 PDF",
 			"btn_busy": "裁切中…",
-			"save": "儲存裁切後的 PDF"
+			"save": "儲存裁切後的 PDF",
+			"seo_faq1_q": "可以對不同頁面進行不同裁切嗎？",
+			"seo_faq1_a": "裁切邊距統一套用於所有頁面。如需逐頁裁切，請先分割 PDF，裁切每部分後再合併。",
+			"seo_faq2_q": "裁切會減小檔案大小嗎？",
+			"seo_faq2_a": "裁切會隱藏邊距外的內容，但可能不會顯著減小檔案大小，因為隱藏的資料可能仍保留在檔案中。"
 		},
 		"sign": {
 			"title": "簽署 PDF",
@@ -813,10 +825,10 @@
 			"err_place": "請點擊頁面放置簽名。",
 			"btn_busy": "簽署中…",
 			"save": "儲存已簽署的 PDF",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "如何建立簽名？",
+			"seo_faq1_a": "可以用滑鼠或手指繪製簽名、輸入姓名或上傳簽名圖片。",
+			"seo_faq2_q": "我的簽名會被儲存嗎？",
+			"seo_faq2_a": "不會。您的簽名永遠不會離開裝置。處理完全在瀏覽器中進行。"
 		},
 		"edit": {
 			"title": "編輯 PDF",
@@ -831,10 +843,10 @@
 			"elements_placed": "已放置 {count} 個元素",
 			"btn_busy": "套用中…",
 			"save": "儲存編輯後的 PDF",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "可以進行哪些編輯？",
+			"seo_faq1_a": "可以在 PDF 的任意頁面添加文字。點擊頁面選擇字型大小、顏色和位置。",
+			"seo_faq2_q": "可以編輯 PDF 中現有的文字嗎？",
+			"seo_faq2_a": "目前可以添加新文字層。編輯現有文字需要來源文件。"
 		},
 		"password": {
 			"title": "PDF 密碼保護",
@@ -858,10 +870,10 @@
 			"btn_busy": "加密中…",
 			"result": "保護完成！",
 			"save": "儲存受保護的 PDF",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "加密有多安全？",
+			"seo_faq1_a": "PDF 使用標準 PDF 安全加密。密碼不會傳送到任何地方——加密在瀏覽器中進行。",
+			"seo_faq2_q": "可以設定防止列印等權限嗎？",
+			"seo_faq2_a": "可以。保護 PDF 時可以設定列印、複製和編輯權限。"
 		},
 		"unlock": {
 			"title": "解鎖 PDF",
@@ -876,10 +888,10 @@
 			"password_label": "密碼（如需要）",
 			"password_placeholder": "沒有則留空",
 			"password_hint": "僅用於需要密碼才能開啟的PDF。",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "可以移除 PDF 的密碼嗎？",
+			"seo_faq1_a": "可以，如果您知道目前的密碼。輸入密碼後 LocalConvert 將儲存未加密的副本。",
+			"seo_faq2_q": "我的密碼安全嗎？",
+			"seo_faq2_a": "是的。密碼僅在瀏覽器中用於解密檔案。永遠不會傳送到任何伺服器。"
 		},
 		"rotate_image": {
 			"title": "旋轉圖片",
@@ -957,10 +969,10 @@
 			"copy": "複製",
 			"copied": "已複製！",
 			"download_txt": "儲存為 .txt",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "適用於掃描的 PDF 嗎？",
+			"seo_faq1_a": "不適用。文字擷取適用於包含實際文字的 PDF。掃描文件（基於圖片）需要先進行 OCR。",
+			"seo_faq2_q": "支援非英文文字嗎？",
+			"seo_faq2_a": "支援。文字擷取支援所有語言，包括阿拉伯語、中文、日語、韓語和西里爾文。"
 		},
 		"grayscale": {
 			"title": "PDF 轉灰階",
@@ -970,10 +982,10 @@
 			"btn_busy": "正在轉換第 {progress} / {total} 頁…",
 			"grayscale": "灰階",
 			"save": "儲存灰階 PDF",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "轉換後文字還能選取嗎？",
+			"seo_faq1_a": "不能。灰階轉換將每頁渲染為圖片。文字將無法選取或搜尋。",
+			"seo_faq2_q": "可以調整品質嗎？",
+			"seo_faq2_a": "可以。使用品質滑桿在檔案大小和圖片清晰度之間取得平衡。"
 		},
 		"json_formatter": {
 			"title": "JSON 格式化工具",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "或點擊瀏覽",
 			"disclaimer": "版面保真度取決於文件複雜性。複雜表格和進階格式可能會被簡化。",
 			"progress_hint": "正在本機處理您的文件 — 不會上傳任何內容。",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Word 文件轉 PDF 後外觀一樣嗎？",
+			"seo_faq1_a": "版面還原度取決於文件複雜程度。簡單文件轉換效果好；複雜表格和格式可能會簡化。",
+			"seo_faq2_q": "支援 .doc 檔案（舊版 Word 格式）嗎？",
+			"seo_faq2_a": "支援。.docx（現代）和 .doc（舊版）Word 格式均支援。"
 		},
 		"from_xlsx": {
 			"title": "Excel轉PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "縱向",
 			"disclaimer": "欄寬自動計算。寬表格在橫向模式下效果最佳。",
 			"progress_hint": "正在本機處理試算表 — 不會上傳任何內容。",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "可以選擇橫向或直向嗎？",
+			"seo_faq1_a": "可以。轉換前可以選擇頁面方向。較寬的試算表使用橫向模式效果最佳。",
+			"seo_faq2_q": "支援哪些試算表格式？",
+			"seo_faq2_a": "支援 XLSX（Excel）、XLS（舊版 Excel）、ODS（LibreOffice）和 CSV 檔案。"
 		},
 		"to_docx": {
 			"title": "PDF轉Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "掃描的（基於圖像的）PDF會產生空輸出 — 請先使用OCR",
 			"progress_label": "正在擷取文字… {progress}%",
 			"progress_hint": "您的檔案永遠不會離開您的裝置。",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "格式會保留嗎？",
+			"seo_faq1_a": "文字內容和基本結構（標題、段落）會保留。複雜版面、表格和圖片會簡化。",
+			"seo_faq2_q": "適用於掃描的 PDF 嗎？",
+			"seo_faq2_a": "不適用。掃描（基於圖片）的 PDF 會產生空白輸出。請先使用 OCR 軟體擷取文字。"
+		},
+		"img_rotate": {
+			"seo_faq1_q": "有哪些旋轉角度？",
+			"seo_faq1_a": "可以順時針旋轉 90°、180° 或 270°。旋轉即時生效且無品質損失。",
+			"seo_faq2_q": "旋轉會降低圖片品質嗎？",
+			"seo_faq2_a": "不會。圖片無需重新壓縮即可旋轉，原始品質完全保留。"
+		},
+		"img_crop": {
+			"seo_faq1_q": "可以設定精確的像素尺寸嗎？",
+			"seo_faq1_a": "可以。拖動裁切框或輸入精確的像素尺寸。",
+			"seo_faq2_q": "可以裁切哪些圖片格式？",
+			"seo_faq2_a": "支援 JPG、PNG、WEBP、GIF 及大多數常見圖片格式。"
+		},
+		"img_watermark": {
+			"seo_faq1_q": "可以調整浮水印透明度嗎？",
+			"seo_faq1_a": "可以。文字浮水印的透明度、位置、大小和顏色均可控制。",
+			"seo_faq2_q": "浮水印是永久的嗎？",
+			"seo_faq2_a": "是的。儲存後浮水印將永久嵌入圖片中。"
+		},
+		"img_meme": {
+			"seo_faq1_q": "可以使用自己的圖片嗎？",
+			"seo_faq1_a": "可以。選擇任意圖片，然後在上方和下方加入文字。",
+			"seo_faq2_q": "可以自訂字型和顏色嗎？",
+			"seo_faq2_a": "可以。字型大小、顏色和描邊都可以修改。"
+		},
+		"img_batch": {
+			"seo_faq1_q": "一次可以處理多少張圖片？",
+			"seo_faq1_a": "沒有固定限制。可以處理裝置記憶體允許的任意數量。",
+			"seo_faq2_q": "可以批次套用哪些操作？",
+			"seo_faq2_a": "格式轉換、調整大小、旋轉和品質設定，適用於所有選取的圖片。"
+		},
+		"img_qr": {
+			"seo_faq1_q": "QR 碼可以編碼什麼？",
+			"seo_faq1_a": "網址、文字、電子郵件、電話號碼或數千字元以內的任意文字。",
+			"seo_faq2_q": "可以自訂 QR 碼外觀嗎？",
+			"seo_faq2_a": "可以調整大小和糾錯等級。QR 碼儲存為 PNG 圖片。"
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "支援哪些顏色格式？",
+			"seo_faq1_a": "支援 HEX、RGB 和 HSL。點擊任意像素即可立即複製顏色值。",
+			"seo_faq2_q": "可以從任何類型的圖片中取色嗎？",
+			"seo_faq2_a": "可以。支援 JPG、PNG、WEBP、GIF 及大多數其他格式。"
+		},
+		"img_blur": {
+			"seo_faq1_q": "可以模糊多個區域嗎？",
+			"seo_faq1_a": "可以。在同一張圖片上繪製多個模糊區域。",
+			"seo_faq2_q": "可以調整模糊強度嗎？",
+			"seo_faq2_a": "可以。使用強度滑桿控制模糊效果的強度。"
+		},
+		"img_filters": {
+			"seo_faq1_q": "有哪些濾鏡？",
+			"seo_faq1_a": "亮度、對比度、飽和度、色調旋轉、灰階、復古、模糊和反轉。",
+			"seo_faq2_q": "可以組合多個濾鏡嗎？",
+			"seo_faq2_a": "可以。所有濾鏡調整疊加並即時套用到圖片上。"
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "支援哪些影片格式？",
+			"seo_faq1_a": "MP4、WEBM、MOV、AVI 及大多數常見影片格式。",
+			"seo_faq2_q": "可以設定 GIF 時長和幀率嗎？",
+			"seo_faq2_a": "可以。設定開始時間、時長和幀率來控制輸出 GIF。"
+		},
+		"dev_json": {
+			"seo_faq1_q": "會驗證 JSON 語法嗎？",
+			"seo_faq1_a": "會。無效 JSON 會顯示錯誤訊息，指出確切的行號和字元位置。",
+			"seo_faq2_q": "也可以壓縮 JSON 嗎？",
+			"seo_faq2_a": "可以。一鍵格式化（美化）和壓縮 JSON。"
+		},
+		"dev_hash": {
+			"seo_faq1_q": "支援哪些雜湊演算法？",
+			"seo_faq1_a": "MD5、SHA-1、SHA-256、SHA-384 和 SHA-512 均可用。",
+			"seo_faq2_q": "雜湊是在本機完成的嗎？",
+			"seo_faq2_a": "是的。所有雜湊透過 Web Crypto API 在瀏覽器中執行。資料不會離開您的裝置。"
+		},
+		"dev_base64": {
+			"seo_faq1_q": "可以編碼檔案嗎？",
+			"seo_faq1_a": "此工具編碼文字字串。如需編碼檔案，請先將內容轉換為文字。",
+			"seo_faq2_q": "支援 Unicode 文字嗎？",
+			"seo_faq2_a": "支援。包含非拉丁字元的 UTF-8 文字完全支援。"
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "支援 GitHub 風格 Markdown 嗎？",
+			"seo_faq1_a": "支援。表格、任務清單、刪除線等 GitHub Markdown 擴充均可正確呈現。",
+			"seo_faq2_q": "可以匯出渲染後的 HTML 嗎？",
+			"seo_faq2_a": "預覽即時顯示渲染結果。可以從預覽面板複製 HTML。"
+		},
+		"dev_diff": {
+			"seo_faq1_q": "是逐行還是逐詞顯示差異？",
+			"seo_faq1_a": "差異按行醒目顯示，新增和刪除用顏色清楚標記。",
+			"seo_faq2_q": "有大小限制嗎？",
+			"seo_faq2_a": "沒有固定限制。大文字在舊裝置上可能較慢。"
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "統計哪些指標？",
+			"seo_faq1_a": "字詞、字元（含空格和不含空格）、句子、段落和預估閱讀時間。",
+			"seo_faq2_q": "支援非英文文字嗎？",
+			"seo_faq2_a": "支援。字數統計適用於所有語言和字元集。"
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "哪些字元會被編碼？",
+			"seo_faq1_a": "空格和非 ASCII 字元等特殊字元按 RFC 3986 進行百分比編碼。",
+			"seo_faq2_q": "可以解碼帶參數的完整 URL 嗎？",
+			"seo_faq2_a": "可以。貼上編碼後的字串即可解碼為可讀文字。"
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "CSS 壓縮會刪除什麼？",
+			"seo_faq1_a": "註解、多餘空格、空行和冗餘分號，以減小檔案大小。",
+			"seo_faq2_q": "CSS 會縮小多少？",
+			"seo_faq2_a": "通常縮小 20-40%。註解較多的檔案效果最明顯。"
 		}
 	},
 	"dev_tools": {

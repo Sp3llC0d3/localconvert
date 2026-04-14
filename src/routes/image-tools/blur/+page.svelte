@@ -6,6 +6,8 @@
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
 	import { EyeOffIcon, Trash2Icon, XIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let processing = $state(false);
@@ -328,6 +330,7 @@
 	<meta property="og:title" content="Blur Region — LocalConvert" />
 	<meta property="og:description" content="Blur regions of any image for privacy. Rectangle or ellipse shapes, multiple regions, adjustable strength. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/blur/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Blur a Region in an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Draw blur regions on the areas you want to hide"},{"@type":"HowToStep","text":"Adjust blur intensity and save the result"}]}</script>`}
 </svelte:head>
 
 <div class="blur-page">
@@ -461,6 +464,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-blur']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-blur'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-blur'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-blur'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-blur'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-blur'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-blur'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

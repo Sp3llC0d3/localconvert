@@ -83,7 +83,11 @@
 
 <svelte:head>
 	<title>LocalConvert — Free, Private Toolkit for Files & Code</title>
+	<meta name="description" content="39 free tools for PDFs, images, and code — all running in your browser. No uploads, no server, no signup. Works offline." />
 	<link rel="canonical" href="https://localconvert.app/" />
+	<meta property="og:title" content="LocalConvert — Free, Private Toolkit for Files & Code" />
+	<meta property="og:description" content="39 free tools for PDFs, images, and code — all running in your browser. No uploads, no server, no signup." />
+	<meta property="og:url" content="https://localconvert.app/" />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}
 </svelte:head>

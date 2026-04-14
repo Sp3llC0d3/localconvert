@@ -28,6 +28,10 @@
 	<title>Developer Tools — LocalConvert</title>
 	<meta name="description" content="Free browser-based developer tools. JSON formatter, hash generator, Base64 encoder. No uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/" />
+	<meta property="og:title" content="Developer Tools — LocalConvert" />
+	<meta property="og:description" content="Free browser-based developer tools. JSON formatter, hash generator, Base64 encoder. No uploads, no server." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LocalConvert Developer Tools","url":"https://localconvert.app/dev-tools/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (browser-based)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based developer tools — JSON formatter, hash generator, Base64 encoder, and more. No uploads, no server."}</script>`}
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">

@@ -6,6 +6,8 @@
 	import { dropping } from '$lib/store/index.svelte';
 	import { FilmIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let fileInput = $state<HTMLInputElement>();
@@ -76,6 +78,7 @@
 	<meta property="og:title" content="Video to GIF — LocalConvert" />
 	<meta property="og:description" content="Convert any video to animated GIF. Adjust FPS, size, and duration. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/video-to-gif/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Video to GIF","step":[{"@type":"HowToStep","text":"Select a video file from your device"},{"@type":"HowToStep","text":"Set the start time, duration, and frame rate"},{"@type":"HowToStep","text":"Convert and save the GIF animation"}]}</script>`}
 </svelte:head>
 
 <div class="gif-page">
@@ -159,6 +162,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-video-to-gif']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-video-to-gif'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-video-to-gif'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-video-to-gif'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-video-to-gif'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-video-to-gif'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-video-to-gif'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

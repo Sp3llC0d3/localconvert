@@ -8,6 +8,8 @@
 	import { downloadBlob, formatFileSize, getOutputName, loadImage } from '$lib/image/utils';
 	import { LayersIcon, XIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let operation = $state<'rotate' | 'watermark' | 'crop' | 'meme'>('rotate');
@@ -110,6 +112,7 @@
 	<meta property="og:title" content="Batch Image Processing — LocalConvert" />
 	<meta property="og:description" content="Apply the same operation to multiple images at once. Rotate or watermark in bulk. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/batch/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Batch Process Images","step":[{"@type":"HowToStep","text":"Select multiple images from your device"},{"@type":"HowToStep","text":"Choose the output format and quality settings"},{"@type":"HowToStep","text":"Process all images at once and save the results"}]}</script>`}
 </svelte:head>
 
 <div class="batch-page">
@@ -233,6 +236,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-batch']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-batch'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-batch'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-batch'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-batch'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-batch'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-batch'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

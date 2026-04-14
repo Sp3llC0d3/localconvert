@@ -606,16 +606,16 @@
 		"convert_to_pdf": "PDF'ye dönüştür",
 		"save_pdf": "PDF'yi kaydet",
 		"converting_progress": "Dönüştürülüyor… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Nasıl çalışır",
+		"seo_step1": "Cihazınızdan dosyanızı seçin",
+		"seo_step2": "Gerekirse ayarları düzenleyin",
+		"seo_step3": "Sonucu kaydedin — tamam!",
+		"seo_why_title": "Neden LocalConvert?",
+		"seo_why_private": "Tamamen gizli — dosyalarınız cihazınızdan asla çıkmaz. Sunucuya yükleme yok, asla.",
+		"seo_why_free": "Sonsuza kadar ücretsiz, dosya boyutu sınırı yok. Hesap yok, abonelik yok.",
+		"seo_why_offline": "Yüklü uygulama olarak çevrimdışı çalışır. İlk yüklemeden sonra internet gerekmez.",
+		"seo_faq_title": "Sık sorulan sorular",
+		"seo_related_title": "İlgili araçlar"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "En az 2 PDF dosyasi ekleyin.",
 			"err_fail": "Birlestirme basarisiz.",
 			"save": "Birlestirilmis PDF'i kaydet",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "PDF birleştirmek güvenli mi?",
+			"seo_faq1_a": "Evet. LocalConvert tamamen tarayıcınızda çalışır — dosyalarınız hiçbir sunucuya yüklenmez. Birleştirme cihazınızda gerçekleşir.",
+			"seo_faq2_q": "Birleştirilebilecek PDF sayısında sınır var mı?",
+			"seo_faq2_a": "Hayır. Tarayıcınızın belleğinin izin verdiği kadar PDF birleştirebilirsiniz. Boyut veya sayı sınırı yoktur."
 		},
 		"split": {
 			"title": "PDF Bol",
@@ -642,10 +642,10 @@
 			"err_extract": "Sayfa cikartma basarisiz.",
 			"err_fail": "Bolme basarisiz.",
 			"help": "Degistirmek icin tiklayin, tek sayfa icin noktaya dokunun",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "PDF'den belirli sayfaları çıkarabilir miyim?",
+			"seo_faq1_a": "Evet. İstediğiniz sayfaları seçin, LocalConvert yalnızca o sayfalarla yeni bir PDF oluşturacaktır.",
+			"seo_faq2_q": "PDF'yi bölmek kaliteyi düşürür mü?",
+			"seo_faq2_a": "Hayır. Bölme, sayfaları yeniden kodlamadan çıkarır, orijinal kalite korunur."
 		},
 		"rotate_pdf": {
 			"title": "Sayfalari Dondur",
@@ -656,7 +656,11 @@
 			"selected_pages": "Secili sayfalar",
 			"btn_busy": "Isleniyor…",
 			"err_fail": "Dondurme basarisiz.",
-			"help": "degistirmek icin tiklayin"
+			"help": "degistirmek icin tiklayin",
+			"seo_faq1_q": "Tek tek sayfaları döndürebilir miyim?",
+			"seo_faq1_a": "Evet. Belirli sayfaları veya tüm PDF'yi bir seferde döndürebilirsiniz. 90°, 180° veya 270° seçin.",
+			"seo_faq2_q": "Döndürme kaliteyi etkiler mi?",
+			"seo_faq2_a": "Hayır. Sayfalar yeniden kodlamadan döndürülür, orijinal kalite tamamen korunur."
 		},
 		"organize": {
 			"title": "Sayfalari Duzenle",
@@ -668,10 +672,10 @@
 			"no_pages": "Kalan sayfa yok.",
 			"btn": "Duzenlenmis PDF'i kaydet",
 			"btn_busy": "Kaydediliyor…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "PDF'den sayfa silebilir miyim?",
+			"seo_faq1_a": "Evet. Sayfaları sürükleyerek yeniden sıralayın ve istemediğiniz sayfaları silmek için sil düğmesine tıklayın.",
+			"seo_faq2_q": "Her sayfanın önizlemesini görebilir miyim?",
+			"seo_faq2_a": "Evet. Her sayfanın görsel küçük resimleri kolay tanımlama ve düzenleme için gösterilir."
 		},
 		"images_to_pdf": {
 			"title": "Gorseller → PDF",
@@ -681,10 +685,10 @@
 			"btn": "PDF'e donustur",
 			"btn_busy": "Donusturuluyor…",
 			"save": "PDF'i kaydet",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Hangi görüntü biçimlerini PDF'ye dönüştürebilirim?",
+			"seo_faq1_a": "JPG, PNG ve WEBP görüntüleri desteklenir. Her görüntü PDF'de bir sayfa olur.",
+			"seo_faq2_q": "Görüntü sırasını ayarlayabilir miyim?",
+			"seo_faq2_a": "Evet. Birden fazla görüntü ekleyin ve dönüştürmeden önce istediğiniz sıraya dizin."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Gorseller",
@@ -693,10 +697,10 @@
 			"btn": "Gorsel olarak disari aktar",
 			"btn_busy": "{total} sayfanin {progress}. sayfasi donusturuluyor…",
 			"err_fail": "Donusturme basarisiz.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "Hangi biçimde görüntüler alacağım?",
+			"seo_faq1_a": "JPG ve PNG arasından seçebilirsiniz. Her PDF sayfası ayrı bir görüntü olur.",
+			"seo_faq2_q": "Çok sayfalı PDF'ler ne olur?",
+			"seo_faq2_a": "Her sayfa ayrı görüntü olarak dışa aktarılır. Çok sayfalı PDF'ler için tüm görüntüleri içeren bir ZIP dosyası alırsınız."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF'den PowerPoint'e",
@@ -707,10 +711,10 @@
 			"btn": "PPTX'e donustur",
 			"btn_busy": "{total} sayfanin {progress}. sayfasi donusturuluyor…",
 			"save": "PPTX'i kaydet",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "PDF'den PowerPoint'e dönüştürme nasıl çalışır?",
+			"seo_faq1_a": "Her PDF sayfası görüntü olarak işlenir ve bir PowerPoint slaytına yerleştirilir. Metin düzenlenemez.",
+			"seo_faq2_q": "Dönüştürmeden sonra slaytları düzenleyebilir miyim?",
+			"seo_faq2_a": "Slaytlar sayfa görüntüleri içerir. PowerPoint'te metin kutuları ve notlar ekleyebilirsiniz."
 		},
 		"compress": {
 			"title": "PDF Sikistir",
@@ -732,10 +736,10 @@
 			"btn_busy": "{total} sayfanin {progress}. sayfasi sikistiriliyor…",
 			"err_fail": "Sikistirma basarisiz.",
 			"save": "Sikistirilmis PDF'i kaydet",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "PDF dosya boyutunu ne kadar azaltabilirim?",
+			"seo_faq1_a": "İçeriğe bağlı olarak genellikle %50-80 azalma. Çok görüntülü PDF'ler en büyük tasarrufu sağlar.",
+			"seo_faq2_q": "Sıkıştırma metin kalitesini etkiler mi?",
+			"seo_faq2_a": "Metin, sıkıştırma sırasında görüntü olarak yeniden işlenir. Metin ağırlıklı belgeler için daha yüksek kalite ayarı kullanın."
 		},
 		"watermark_pdf": {
 			"title": "Filigran Ekle",
@@ -743,7 +747,11 @@
 			"btn": "Tum sayfalara uygula",
 			"btn_busy": "Uygulaniyor…",
 			"err_text": "Filigran metnini girin.",
-			"save": "Filigranli PDF'i kaydet"
+			"save": "Filigranli PDF'i kaydet",
+			"seo_faq1_q": "Görüntüyü filigran olarak kullanabilir miyim?",
+			"seo_faq1_a": "Şu anda metin filigranları desteklenmektedir. Metin, boyut, opaklık ve dönüş açısını özelleştirebilirsiniz.",
+			"seo_faq2_q": "Filigran içeriği kapatır mı?",
+			"seo_faq2_a": "Hayır. Filigranlar ayarlanabilir opaklıkla yerleştirilir, içerik altlarında okunabilir kalır."
 		},
 		"page_numbers": {
 			"title": "Sayfa Numarasi Ekle",
@@ -760,10 +768,10 @@
 			"btn": "Tum sayfalara uygula",
 			"btn_busy": "Numaralar ekleniyor…",
 			"save": "Numaralandirilmis PDF'i kaydet",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Sayfa numaralarını nereye koyabilirim?",
+			"seo_faq1_a": "Numaraları sayfanın üstüne veya altına, sola, ortaya veya sağa hizalı olarak yerleştirebilirsiniz.",
+			"seo_faq2_q": "Numaralandırma biçimini özelleştirebilir miyim?",
+			"seo_faq2_a": "Evet. Başlangıç numarasını, yazı tipi boyutunu ve konumu ayarlayabilirsiniz."
 		},
 		"metadata": {
 			"title": "Meta Verileri Duzenle",
@@ -784,10 +792,10 @@
 			"err_read": "Meta veriler okunamadi.",
 			"err_update": "Meta veriler guncellenemedi.",
 			"save": "Guncellenmis PDF'i kaydet",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Hangi PDF meta verilerini düzenleyebilirim?",
+			"seo_faq1_a": "Herhangi bir PDF dosyasının başlığını, yazarını, konusunu ve anahtar kelimelerini düzenleyebilirsiniz.",
+			"seo_faq2_q": "Meta veri düzenleme içerik için güvenli mi?",
+			"seo_faq2_a": "Evet. Yalnızca meta veri özellikleri değişir — PDF içeriği dokunulmaz kalır."
 		},
 		"crop_pdf": {
 			"title": "PDF Kirp",
@@ -796,7 +804,11 @@
 			"err_margins": "Kenarliklar cok buyuk — kalan alan yok.",
 			"btn": "PDF'i kirp",
 			"btn_busy": "Kirpiliyor…",
-			"save": "Kirpilmis PDF'i kaydet"
+			"save": "Kirpilmis PDF'i kaydet",
+			"seo_faq1_q": "Farklı sayfaları farklı şekilde kırpabilir miyim?",
+			"seo_faq1_a": "Kırpma kenar boşlukları tüm sayfalara eşit uygulanır. Sayfa bazlı kırpma için önce PDF'yi bölün, her parçayı kırpın, sonra birleştirin.",
+			"seo_faq2_q": "Kırpma dosya boyutunu azaltır mı?",
+			"seo_faq2_a": "Kırpma, kenar boşlukları dışındaki içeriği gizler ancak gizli veriler dosyada kalabileceğinden boyutu önemli ölçüde azaltmayabilir."
 		},
 		"sign": {
 			"title": "PDF Imzala",
@@ -813,10 +825,10 @@
 			"err_place": "Imzanizi yerlestirmek icin sayfaya tiklayin.",
 			"btn_busy": "Imzalaniyor…",
 			"save": "Imzali PDF'i kaydet",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "İmza nasıl oluştururum?",
+			"seo_faq1_a": "Fare veya parmakla imza çizebilir, adınızı yazabilir veya imza görüntüsü yükleyebilirsiniz.",
+			"seo_faq2_q": "İmzam bir yerde saklanıyor mu?",
+			"seo_faq2_a": "Hayır. İmzanız cihazınızdan asla çıkmaz. İşleme tamamen tarayıcıda gerçekleşir."
 		},
 		"edit": {
 			"title": "PDF Duzenle",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count} oge yerlestirildi",
 			"btn_busy": "Uygulaniyor…",
 			"save": "Duzenlenmis PDF'i kaydet",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Ne tür düzenlemeler yapabilirim?",
+			"seo_faq1_a": "PDF'in herhangi bir sayfasına metin ekleyebilirsiniz. Sayfaya tıklayarak yazı tipi boyutunu, rengini ve konumunu seçin.",
+			"seo_faq2_q": "PDF'deki mevcut metni düzenleyebilir miyim?",
+			"seo_faq2_a": "Şu anda yeni metin katmanları ekleyebilirsiniz. Mevcut metni düzenleme kaynak belgeyi gerektirir."
 		},
 		"password": {
 			"title": "PDF Sifre Korumasi",
@@ -858,10 +870,10 @@
 			"btn_busy": "Sifreleniyor…",
 			"result": "Koruma altinda!",
 			"save": "Korunan PDF'i kaydet",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Şifreleme ne kadar güvenli?",
+			"seo_faq1_a": "PDF'ler standart PDF güvenliğiyle şifrelenir. Şifre hiçbir yere gönderilmez — şifreleme tarayıcınızda gerçekleşir.",
+			"seo_faq2_q": "Yazdırmayı engelleme gibi izinler ayarlayabilir miyim?",
+			"seo_faq2_a": "Evet. PDF'yi korurken yazdırma, kopyalama ve düzenleme izinlerini ayarlayabilirsiniz."
 		},
 		"unlock": {
 			"title": "PDF Kilidini Ac",
@@ -876,10 +888,10 @@
 			"password_label": "Şifre (gerekiyorsa)",
 			"password_placeholder": "Yoksa boş bırakın",
 			"password_hint": "Yalnızca açmak için şifre gereken PDF'ler için gerekli.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "PDF'den şifreyi kaldırabilir miyim?",
+			"seo_faq1_a": "Evet, mevcut şifreyi biliyorsanız. Girin, LocalConvert korumasız bir kopya kaydedecektir.",
+			"seo_faq2_q": "Şifrem güvende mi?",
+			"seo_faq2_a": "Evet. Şifreniz yalnızca tarayıcıda dosyanın şifresini çözmek için kullanılır. Hiçbir sunucuya gönderilmez."
 		},
 		"rotate_image": {
 			"title": "Gorsel Dondur",
@@ -957,10 +969,10 @@
 			"copy": "Kopyala",
 			"copied": "Kopyalandi!",
 			"download_txt": ".txt olarak kaydet",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Taranan PDF'lerle çalışır mı?",
+			"seo_faq1_a": "Hayır. Metin çıkarma, gerçek metin içeren PDF'lerle çalışır. Taranan belgeler (görüntü tabanlı) önce OCR gerektirir.",
+			"seo_faq2_q": "İngilizce dışındaki metinleri destekler mi?",
+			"seo_faq2_a": "Evet. Metin çıkarma Arapça, Çince, Japonca, Korece ve Kiril alfabesi dahil tüm dilleri destekler."
 		},
 		"grayscale": {
 			"title": "PDF'i Gri Tonlamaya Cevir",
@@ -970,10 +982,10 @@
 			"btn_busy": "{total} sayfanin {progress}. sayfasi donusturuluyor…",
 			"grayscale": "Gri tonlama",
 			"save": "Gri tonlamali PDF'i kaydet",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Dönüştürmeden sonra metin seçilebilir kalır mı?",
+			"seo_faq1_a": "Hayır. Gri tonlama dönüşümü her sayfayı görüntü olarak işler. Metin artık seçilemez veya aranamaz.",
+			"seo_faq2_q": "Kaliteyi ayarlayabilir miyim?",
+			"seo_faq2_a": "Evet. Dosya boyutu ve görüntü netliği arasındaki dengeyi ayarlamak için kalite kaydırıcısını kullanın."
 		},
 		"json_formatter": {
 			"title": "JSON Bicimleyici",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "veya göz atmak için tıklayın",
 			"disclaimer": "Düzen doğruluğu belge karmaşıklığına bağlıdır. Karmaşık tablolar ve gelişmiş biçimlendirme basitleştirilebilir.",
 			"progress_hint": "Belgeniz yerel olarak işleniyor — hiçbir şey yüklenmez.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Word belgem PDF olarak aynı görünecek mi?",
+			"seo_faq1_a": "Düzen doğruluğu belgenin karmaşıklığına bağlıdır. Basit belgeler iyi dönüştürülür; karmaşık tablolar ve biçimlendirme basitleştirilebilir.",
+			"seo_faq2_q": ".doc dosyalarını (eski Word biçimi) destekler mi?",
+			"seo_faq2_a": "Evet. Hem .docx (modern) hem de .doc (eski) Word biçimleri desteklenir."
 		},
 		"from_xlsx": {
 			"title": "Excel'den PDF'ye",
@@ -1088,10 +1100,10 @@
 			"portrait": "Dikey",
 			"disclaimer": "Sütun genişlikleri otomatik hesaplanır. Geniş tablolar yatay modda en iyi çalışır.",
 			"progress_hint": "Tablo yerel olarak işleniyor — hiçbir şey yüklenmez.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Yatay veya dikey yönlendirme seçebilir miyim?",
+			"seo_faq1_a": "Evet. Dönüştürmeden önce sayfa yönlendirmesini seçebilirsiniz. Geniş tablolar yatay modda en iyi çalışır.",
+			"seo_faq2_q": "Hangi elektronik tablo biçimleri desteklenir?",
+			"seo_faq2_a": "XLSX (Excel), XLS (eski Excel), ODS (LibreOffice) ve CSV dosyaları desteklenir."
 		},
 		"to_docx": {
 			"title": "PDF'den Word'e",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "Taranmış (görüntü tabanlı) PDF'ler boş çıktı üretir — önce OCR kullanın",
 			"progress_label": "Metin çıkarılıyor… {progress}%",
 			"progress_hint": "Dosyanız cihazınızdan asla ayrılmaz.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Biçimlendirme korunur mu?",
+			"seo_faq1_a": "Metin içeriği ve temel yapı (başlıklar, paragraflar) korunur. Karmaşık düzenler, tablolar ve görüntüler basitleştirilir.",
+			"seo_faq2_q": "Taranan PDF'lerle çalışır mı?",
+			"seo_faq2_a": "Hayır. Taranan (görüntü tabanlı) PDF'ler boş çıktı üretir. Metni çıkarılabilir hale getirmek için önce OCR yazılımı kullanın."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Hangi döndürme açıları mevcut?",
+			"seo_faq1_a": "Saat yönünde 90°, 180° veya 270° döndürebilirsiniz. Döndürme anlık ve kayıpsızdır.",
+			"seo_faq2_q": "Döndürme görüntü kalitesini düşürür mü?",
+			"seo_faq2_a": "Hayır. Görüntü yeniden sıkıştırılmadan döndürülür, orijinal kalite korunur."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Piksel cinsinden tam boyut belirleyebilir miyim?",
+			"seo_faq1_a": "Evet. Kırpma dikdörtgeni çizin veya tam piksel boyutları girin.",
+			"seo_faq2_q": "Hangi görüntü formatlarını kırpabilirim?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF ve yaygın formatların çoğu desteklenir."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Filigran opaklığını ayarlayabilir miyim?",
+			"seo_faq1_a": "Evet. Metin filigranının opaklık, konum, boyut ve rengi ayarlanabilir.",
+			"seo_faq2_q": "Filigran kalıcı mı?",
+			"seo_faq2_a": "Evet. Kaydettikten sonra filigran görüntüye kalıcı olarak gömülür."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Kendi görsellerimi kullanabilir miyim?",
+			"seo_faq1_a": "Evet. Herhangi bir görsel seçin ve üst-alt metin ekleyin.",
+			"seo_faq2_q": "Yazı tipi ve rengi özelleştirebilir miyim?",
+			"seo_faq2_a": "Evet. Yazı tipi boyutu, renk ve çerçeve değiştirilebilir."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Aynı anda kaç görsel işleyebilirim?",
+			"seo_faq1_a": "Sabit sınır yok. Cihaz belleğinin izin verdiği kadar işleyebilirsiniz.",
+			"seo_faq2_q": "Toplu hangi işlemleri uygulayabilirim?",
+			"seo_faq2_a": "Format dönüştürme, boyutlandırma, döndürme ve kalite ayarlarını tüm seçili görsellere uygulayın."
+		},
+		"img_qr": {
+			"seo_faq1_q": "QR kodunda ne kodlayabilirim?",
+			"seo_faq1_a": "URL, metin, e-posta, telefon numarası veya binlerce karaktere kadar herhangi bir metin.",
+			"seo_faq2_q": "QR kodunun görünümünü özelleştirebilir miyim?",
+			"seo_faq2_a": "Boyut ve hata düzeltme seviyesi ayarlanabilir. QR kod PNG olarak kaydedilir."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Hangi renk formatları destekleniyor?",
+			"seo_faq1_a": "HEX, RGB ve HSL. Herhangi bir piksele tıklayarak renk değerini anında kopyalayın.",
+			"seo_faq2_q": "Her türlü görselden renk seçebilir miyim?",
+			"seo_faq2_a": "Evet. JPG, PNG, WEBP, GIF ve diğer formatların çoğu desteklenir."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Birden fazla bölgeyi bulanıklaştırabilir miyim?",
+			"seo_faq1_a": "Evet. Aynı görsel üzerinde birden fazla bulanıklık bölgesi çizin.",
+			"seo_faq2_q": "Bulanıklık yoğunluğunu ayarlayabilir miyim?",
+			"seo_faq2_a": "Evet. Yoğunluk kaydırıcısıyla efektin gücünü ayarlayın."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Hangi filtreler mevcut?",
+			"seo_faq1_a": "Parlaklık, kontrast, doygunluk, renk döndürme, gri tonlama, sepya, bulanıklık ve ters çevirme.",
+			"seo_faq2_q": "Birden fazla filtreyi birleştirebilir miyim?",
+			"seo_faq2_a": "Evet. Tüm filtre ayarları birleştirilir ve gerçek zamanlı uygulanır."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Hangi video formatları destekleniyor?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI ve yaygın video formatlarının çoğu.",
+			"seo_faq2_q": "GIF süresini ve kare hızını ayarlayabilir miyim?",
+			"seo_faq2_a": "Evet. Başlangıç zamanı, süre ve kare hızını ayarlayın."
+		},
+		"dev_json": {
+			"seo_faq1_q": "JSON sözdizimini doğruluyor mu?",
+			"seo_faq1_a": "Evet. Geçersiz JSON, tam satır ve karakteri gösteren hata mesajıyla işaretlenir.",
+			"seo_faq2_q": "JSON'u küçültebilir miyim?",
+			"seo_faq2_a": "Evet. Tek tıkla JSON biçimlendirme ve küçültme."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Hangi hash algoritmaları destekleniyor?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 ve SHA-512.",
+			"seo_faq2_q": "Hash yerel olarak mı yapılıyor?",
+			"seo_faq2_a": "Evet. Tüm hash işlemleri Web Crypto API ile tarayıcıda çalışır. Veriler cihazı asla terk etmez."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Dosyaları kodlayabilir miyim?",
+			"seo_faq1_a": "Araç metin dizelerini kodlar. Dosyalar için önce içeriği metne dönüştürün.",
+			"seo_faq2_q": "Unicode metni destekliyor mu?",
+			"seo_faq2_a": "Evet. Latin olmayan karakterler dahil UTF-8 metni tam desteklenir."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "GitHub Markdown destekliyor mu?",
+			"seo_faq1_a": "Evet. Tablolar, görev listeleri, üstü çizili ve diğer GitHub uzantıları doğru görüntülenir.",
+			"seo_faq2_q": "İşlenmiş HTML'yi dışa aktarabilir miyim?",
+			"seo_faq2_a": "Önizleme gerçek zamanlı çıktı gösterir. HTML'yi önizleme panelinden kopyalayın."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Farkları satır satır mı kelime kelime mi gösteriyor?",
+			"seo_faq1_a": "Farklar satır bazında renkli ekleme ve silmelerle vurgulanır.",
+			"seo_faq2_q": "Boyut sınırı var mı?",
+			"seo_faq2_a": "Sabit sınır yok. Büyük metinler eski cihazlarda daha yavaş olabilir."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Hangi ölçümleri sayıyor?",
+			"seo_faq1_a": "Kelimeler, karakterler (boşluklu ve boşluksuz), cümleler, paragraflar ve tahmini okuma süresi.",
+			"seo_faq2_q": "İngilizce olmayan metinlerle çalışıyor mu?",
+			"seo_faq2_a": "Evet. Kelime sayımı tüm diller ve karakter setleriyle çalışır."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Hangi karakterler kodlanıyor?",
+			"seo_faq1_a": "Boşluklar ve ASCII olmayan karakterler gibi özel karakterler RFC 3986'ya göre yüzde kodlanır.",
+			"seo_faq2_q": "Parametreli tam URL'yi çözebilir miyim?",
+			"seo_faq2_a": "Evet. Kodlanmış dizeyi yapıştırın, okunabilir metne çözülecektir."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "CSS küçültme neyi kaldırır?",
+			"seo_faq1_a": "Yorumları, gereksiz boşlukları, boş satırları ve fazla noktalı virgülleri.",
+			"seo_faq2_q": "CSS'im ne kadar küçülecek?",
+			"seo_faq2_a": "Genellikle %20-40 daha küçük. Çok yorumlu dosyalar en büyük azalmayı görür."
 		}
 	},
 	"dev_tools": {

@@ -2,6 +2,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { CodeIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let input = $state('body {\n  margin: 0;\n  padding: 0;\n  /* Reset styles */\n  font-family: sans-serif;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n}');
 	let output = $state('');
@@ -48,6 +50,7 @@
 	<meta property="og:title" content="CSS Minifier — LocalConvert" />
 	<meta property="og:description" content="Minify CSS by removing comments and whitespace. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/css-minify/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Minify CSS","step":[{"@type":"HowToStep","text":"Paste your CSS code into the editor"},{"@type":"HowToStep","text":"Click minify to remove whitespace and comments"},{"@type":"HowToStep","text":"Copy the minified CSS output"}]}</script>`}
 </svelte:head>
 
 <div class="css-page">
@@ -87,6 +90,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-css-minify']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-css-minify'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-css-minify'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-css-minify'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-css-minify'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-css-minify'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-css-minify'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

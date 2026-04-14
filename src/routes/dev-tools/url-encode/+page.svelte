@@ -2,6 +2,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { LinkIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let mode = $state<'encode' | 'decode'>('encode');
 	let input = $state('');
@@ -37,6 +39,7 @@
 	<meta property="og:title" content="URL Encode / Decode — LocalConvert" />
 	<meta property="og:description" content="Encode and decode URLs. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/url-encode/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to URL Encode or Decode Text","step":[{"@type":"HowToStep","text":"Paste your text or URL into the input field"},{"@type":"HowToStep","text":"Choose encode or decode mode"},{"@type":"HowToStep","text":"Copy the result from the output field"}]}</script>`}
 </svelte:head>
 
 <div class="url-page">
@@ -75,6 +78,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-url-encode']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-url-encode'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-url-encode'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-url-encode'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-url-encode'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-url-encode'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-url-encode'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

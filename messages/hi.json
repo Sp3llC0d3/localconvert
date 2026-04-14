@@ -576,16 +576,16 @@
 		"convert_to_pdf": "PDF में बदलें",
 		"save_pdf": "PDF सहेजें",
 		"converting_progress": "रूपांतरित हो रहा है… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "यह कैसे काम करता है",
+		"seo_step1": "अपने डिवाइस से अपनी फ़ाइल चुनें",
+		"seo_step2": "ज़रूरत के अनुसार सेटिंग्स बदलें",
+		"seo_step3": "नतीजा सेव करें — हो गया!",
+		"seo_why_title": "LocalConvert क्यों?",
+		"seo_why_private": "100% निजी — आपकी फ़ाइलें कभी आपके डिवाइस से बाहर नहीं जातीं। किसी सर्वर पर अपलोड नहीं, कभी नहीं।",
+		"seo_why_free": "हमेशा मुफ़्त, फ़ाइल साइज़ की कोई सीमा नहीं। कोई अकाउंट नहीं, कोई सब्सक्रिप्शन नहीं।",
+		"seo_why_offline": "इंस्टॉल किए गए ऐप की तरह ऑफ़लाइन काम करता है। पहली बार लोड होने के बाद इंटरनेट की ज़रूरत नहीं।",
+		"seo_faq_title": "अक्सर पूछे जाने वाले सवाल",
+		"seo_related_title": "संबंधित टूल"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "मर्ज विफल।",
 			"save": "मर्ज की गई PDF सेव करें",
 			"btn_busy": "मर्ज हो रहा है…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "क्या PDF मर्ज करना सुरक्षित है?",
+			"seo_faq1_a": "हाँ। LocalConvert पूरी तरह आपके ब्राउज़र में चलता है — आपकी फ़ाइलें किसी सर्वर पर अपलोड नहीं होतीं। मर्जिंग आपके डिवाइस पर होती है।",
+			"seo_faq2_q": "कितनी PDF फ़ाइलें मर्ज कर सकते हैं?",
+			"seo_faq2_a": "कोई सीमा नहीं। आपके ब्राउज़र की मेमोरी जितनी अनुमति दे, उतनी PDF मर्ज कर सकते हैं। साइज़ या संख्या की कोई सीमा नहीं।"
 		},
 		"split": {
 			"title": "PDF विभाजित करें",
@@ -662,10 +662,10 @@
 			"err_fail": "विभाजन विफल।",
 			"btn_busy": "प्रोसेस हो रहा है…",
 			"help": "टॉगल करने के लिए क्लिक करें, एकल पृष्ठ के लिए बिंदु पर टैप करें",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "क्या मैं PDF से विशिष्ट पेज निकाल सकता हूँ?",
+			"seo_faq1_a": "हाँ। चाहे जो पेज चुनें और LocalConvert सिर्फ़ उन पेजों की एक नई PDF बना देगा।",
+			"seo_faq2_q": "क्या PDF विभाजित करने से गुणवत्ता कम होती है?",
+			"seo_faq2_a": "नहीं। विभाजन बिना री-एन्कोडिंग के पेज निकालता है, इसलिए मूल गुणवत्ता बरकरार रहती है।"
 		},
 		"rotate_pdf": {
 			"title": "पृष्ठ घुमाएं",
@@ -676,7 +676,11 @@
 			"selected_pages": "चयनित पृष्ठ",
 			"err_fail": "घुमाव विफल।",
 			"help": "टॉगल करने के लिए क्लिक करें",
-			"btn_busy": "प्रोसेस हो रहा है…"
+			"btn_busy": "प्रोसेस हो रहा है…",
+			"seo_faq1_q": "क्या मैं अलग-अलग पेज घुमा सकता हूँ?",
+			"seo_faq1_a": "हाँ। आप विशिष्ट पेज या पूरी PDF एक साथ घुमा सकते हैं। 90°, 180° या 270° चुनें।",
+			"seo_faq2_q": "क्या घुमाने से गुणवत्ता प्रभावित होती है?",
+			"seo_faq2_a": "नहीं। पेज बिना री-एन्कोडिंग के घुमाए जाते हैं, मूल गुणवत्ता पूरी तरह बनी रहती है।"
 		},
 		"organize": {
 			"title": "पृष्ठ व्यवस्थित करें",
@@ -688,10 +692,10 @@
 			"no_pages": "कोई पृष्ठ शेष नहीं।",
 			"btn": "व्यवस्थित PDF सेव करें",
 			"btn_busy": "सेव हो रहा है…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "क्या मैं PDF से पेज हटा सकता हूँ?",
+			"seo_faq1_a": "हाँ। पेजों को खींचकर क्रम बदलें और अनचाहे पेज हटाने के लिए डिलीट बटन दबाएँ।",
+			"seo_faq2_q": "क्या मैं हर पेज का प्रीव्यू देख सकता हूँ?",
+			"seo_faq2_a": "हाँ। हर पेज की छोटी इमेज दिखाई जाती है ताकि आप उन्हें आसानी से पहचान सकें और व्यवस्थित कर सकें।"
 		},
 		"images_to_pdf": {
 			"title": "इमेज → PDF",
@@ -701,10 +705,10 @@
 			"btn": "PDF में बदलें",
 			"save": "PDF सेव करें",
 			"btn_busy": "बदला जा रहा है…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "कौन से इमेज फ़ॉर्मैट PDF में बदल सकते हैं?",
+			"seo_faq1_a": "JPG, PNG और WEBP इमेज सपोर्ट हैं। हर इमेज PDF में एक पेज बन जाती है।",
+			"seo_faq2_q": "क्या मैं इमेज का क्रम बदल सकता हूँ?",
+			"seo_faq2_a": "हाँ। कई इमेज जोड़ें और कन्वर्ट करने से पहले उन्हें मनचाहे क्रम में लगाएँ।"
 		},
 		"pdf_to_images": {
 			"title": "PDF → इमेज",
@@ -713,10 +717,10 @@
 			"btn": "इमेज के रूप में निर्यात करें",
 			"err_fail": "रूपांतरण विफल।",
 			"btn_busy": "पृष्ठ {progress} / {total} बदला जा रहा है…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "इमेज किस फ़ॉर्मैट में मिलेंगी?",
+			"seo_faq1_a": "JPG और PNG में से चुन सकते हैं। PDF का हर पेज अलग इमेज बन जाता है।",
+			"seo_faq2_q": "कई पेजों वाली PDF का क्या?",
+			"seo_faq2_a": "हर पेज अलग इमेज के रूप में एक्सपोर्ट होता है। कई पेज वाली PDF के लिए सभी इमेज की ZIP फ़ाइल मिलेगी।"
 		},
 		"pdf_to_ppt": {
 			"title": "PDF से PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "PPTX में बदलें",
 			"save": "PPTX सेव करें",
 			"btn_busy": "पृष्ठ {progress} / {total} बदला जा रहा है…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "PDF से PowerPoint कैसे काम करता है?",
+			"seo_faq1_a": "PDF का हर पेज इमेज के रूप में रेंडर होकर PowerPoint स्लाइड में रखा जाता है। टेक्स्ट एडिट नहीं किया जा सकता।",
+			"seo_faq2_q": "क्या कन्वर्शन के बाद स्लाइड एडिट कर सकते हैं?",
+			"seo_faq2_a": "स्लाइड में पेज की इमेज होती हैं। PowerPoint में टेक्स्ट बॉक्स और नोट्स जोड़ सकते हैं।"
 		},
 		"compress": {
 			"title": "PDF संपीड़ित करें",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% छोटा, अच्छी गुणवत्ता",
 			"preset_high_desc": "~70-90% छोटा, दृश्य गुणवत्ता हानि",
 			"btn_busy": "पृष्ठ {progress} / {total} संपीड़ित हो रहा है…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "PDF का साइज़ कितना कम हो सकता है?",
+			"seo_faq1_a": "आमतौर पर कंटेंट के अनुसार 50-80% कमी। ज़्यादा इमेज वाली PDF में सबसे ज़्यादा बचत होती है।",
+			"seo_faq2_q": "क्या कम्प्रेशन से टेक्स्ट की गुणवत्ता प्रभावित होती है?",
+			"seo_faq2_a": "कम्प्रेशन के दौरान टेक्स्ट इमेज के रूप में री-रेंडर होता है। टेक्स्ट-भारी डॉक्यूमेंट के लिए उच्च गुणवत्ता सेटिंग चुनें।"
 		},
 		"watermark_pdf": {
 			"title": "वॉटरमार्क जोड़ें",
@@ -763,7 +767,11 @@
 			"btn": "सभी पृष्ठों पर लागू करें",
 			"err_text": "वॉटरमार्क टेक्स्ट दर्ज करें।",
 			"save": "वॉटरमार्क PDF सेव करें",
-			"btn_busy": "लागू हो रहा है…"
+			"btn_busy": "लागू हो रहा है…",
+			"seo_faq1_q": "क्या इमेज को वॉटरमार्क के रूप में इस्तेमाल कर सकते हैं?",
+			"seo_faq1_a": "फ़िलहाल टेक्स्ट वॉटरमार्क सपोर्ट हैं। टेक्स्ट, साइज़, पारदर्शिता और रोटेशन एंगल कस्टमाइज़ कर सकते हैं।",
+			"seo_faq2_q": "क्या वॉटरमार्क कंटेंट को ढक देगा?",
+			"seo_faq2_a": "नहीं। वॉटरमार्क एडजस्टेबल पारदर्शिता के साथ लगाए जाते हैं, इसलिए कंटेंट उनके नीचे पढ़ने योग्य रहता है।"
 		},
 		"page_numbers": {
 			"title": "पृष्ठ संख्या जोड़ें",
@@ -780,10 +788,10 @@
 			"btn": "सभी पृष्ठों पर लागू करें",
 			"save": "क्रमांकित PDF सेव करें",
 			"btn_busy": "नंबर जोड़े जा रहे हैं…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "पेज नंबर कहाँ लगा सकते हैं?",
+			"seo_faq1_a": "पेज के ऊपर या नीचे, बाएँ, बीच में या दाएँ अलाइन करके नंबर लगा सकते हैं।",
+			"seo_faq2_q": "क्या नंबरिंग फ़ॉर्मैट कस्टमाइज़ कर सकते हैं?",
+			"seo_faq2_a": "हाँ। शुरुआती नंबर, फ़ॉन्ट साइज़ और पोज़ीशन सेट कर सकते हैं।"
 		},
 		"metadata": {
 			"title": "मेटाडेटा संपादित करें",
@@ -804,10 +812,10 @@
 			"reading": "मेटाडेटा पढ़ा जा रहा है…",
 			"none": "—",
 			"btn_busy": "सेव हो रहा है…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "कौन से PDF मेटाडेटा एडिट कर सकते हैं?",
+			"seo_faq1_a": "किसी भी PDF फ़ाइल का टाइटल, ऑथर, विषय और कीवर्ड एडिट कर सकते हैं।",
+			"seo_faq2_q": "क्या मेटाडेटा एडिट करना PDF कंटेंट के लिए सुरक्षित है?",
+			"seo_faq2_a": "हाँ। केवल मेटाडेटा प्रॉपर्टीज़ बदलती हैं — PDF कंटेंट वैसा का वैसा रहता है।"
 		},
 		"crop_pdf": {
 			"title": "PDF क्रॉप करें",
@@ -816,7 +824,11 @@
 			"btn": "PDF क्रॉप करें",
 			"save": "क्रॉप की गई PDF सेव करें",
 			"err_margins": "मार्जिन बहुत बड़ा — कोई क्षेत्र शेष नहीं।",
-			"btn_busy": "क्रॉप हो रहा है…"
+			"btn_busy": "क्रॉप हो रहा है…",
+			"seo_faq1_q": "क्या अलग-अलग पेज अलग तरीके से क्रॉप कर सकते हैं?",
+			"seo_faq1_a": "क्रॉप मार्जिन सभी पेजों पर समान रूप से लागू होते हैं। पेज-दर-पेज क्रॉपिंग के लिए पहले PDF विभाजित करें, हर हिस्सा क्रॉप करें, फिर मर्ज करें।",
+			"seo_faq2_q": "क्या क्रॉपिंग से फ़ाइल साइज़ कम होता है?",
+			"seo_faq2_a": "क्रॉपिंग मार्जिन के बाहर के कंटेंट को छुपाती है लेकिन फ़ाइल साइज़ में ज़्यादा कमी नहीं हो सकती, क्योंकि छुपा डेटा फ़ाइल में रह सकता है।"
 		},
 		"sign": {
 			"title": "PDF पर हस्ताक्षर करें",
@@ -833,10 +845,10 @@
 			"err_place": "हस्ताक्षर रखने के लिए पृष्ठ पर क्लिक करें।",
 			"save": "हस्ताक्षरित PDF सेव करें",
 			"btn_busy": "हस्ताक्षर हो रहा है…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "हस्ताक्षर कैसे बनाएँ?",
+			"seo_faq1_a": "माउस या उंगली से हस्ताक्षर बना सकते हैं, अपना नाम टाइप कर सकते हैं, या हस्ताक्षर की इमेज अपलोड कर सकते हैं।",
+			"seo_faq2_q": "क्या मेरा हस्ताक्षर कहीं सेव होता है?",
+			"seo_faq2_a": "नहीं। आपका हस्ताक्षर कभी आपके डिवाइस से बाहर नहीं जाता। प्रोसेसिंग पूरी तरह ब्राउज़र में होती है।"
 		},
 		"edit": {
 			"title": "PDF संपादित करें",
@@ -851,10 +863,10 @@
 			"save": "संपादित PDF सेव करें",
 			"placeholder": "रखने के लिए टेक्स्ट…",
 			"btn_busy": "लागू हो रहा है…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "कैसी एडिटिंग कर सकते हैं?",
+			"seo_faq1_a": "PDF के किसी भी पेज पर टेक्स्ट जोड़ सकते हैं। पेज पर क्लिक करके फ़ॉन्ट साइज़, कलर और पोज़ीशन चुनें।",
+			"seo_faq2_q": "क्या PDF में मौजूद टेक्स्ट एडिट कर सकते हैं?",
+			"seo_faq2_a": "फ़िलहाल नई टेक्स्ट लेयर जोड़ सकते हैं। मौजूद टेक्स्ट एडिट करने के लिए सोर्स डॉक्यूमेंट चाहिए।"
 		},
 		"password": {
 			"title": "PDF पासवर्ड सुरक्षा",
@@ -878,10 +890,10 @@
 			"password_placeholder": "पासवर्ड दर्ज करें…",
 			"owner_placeholder": "ओनर पासवर्ड…",
 			"btn_busy": "एन्क्रिप्ट हो रहा है…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "एन्क्रिप्शन कितना सुरक्षित है?",
+			"seo_faq1_a": "PDF स्टैंडर्ड PDF सिक्योरिटी से एन्क्रिप्ट होती हैं। पासवर्ड कहीं भी नहीं भेजा जाता — एन्क्रिप्शन आपके ब्राउज़र में होता है।",
+			"seo_faq2_q": "क्या प्रिंटिंग रोकने जैसी परमिशन सेट कर सकते हैं?",
+			"seo_faq2_a": "हाँ। PDF प्रोटेक्ट करते समय प्रिंटिंग, कॉपी और एडिटिंग की परमिशन सेट कर सकते हैं।"
 		},
 		"unlock": {
 			"title": "PDF अनलॉक करें",
@@ -896,10 +908,10 @@
 			"password_label": "पासवर्ड (यदि आवश्यक हो)",
 			"password_placeholder": "कोई नहीं तो खाली छोड़ें",
 			"password_hint": "केवल उन PDF के लिए जिन्हें खोलने के लिए पासवर्ड चाहिए।",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "क्या PDF से पासवर्ड हटा सकते हैं?",
+			"seo_faq1_a": "हाँ, अगर आप मौजूदा पासवर्ड जानते हैं। इसे दर्ज करें और LocalConvert एक अनप्रोटेक्टेड कॉपी सेव कर देगा।",
+			"seo_faq2_q": "क्या मेरा पासवर्ड सुरक्षित है?",
+			"seo_faq2_a": "हाँ। आपका पासवर्ड केवल ब्राउज़र में फ़ाइल डिक्रिप्ट करने के लिए इस्तेमाल होता है। कभी किसी सर्वर पर नहीं भेजा जाता।"
 		},
 		"color_picker": {
 			"title": "कलर पिकर",
@@ -927,10 +939,10 @@
 			"copied": "कॉपी हो गया!",
 			"download_txt": ".txt के रूप में सेव करें",
 			"btn_busy": "पृष्ठ {progress} / {total} निकाला जा रहा है…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "क्या स्कैन की गई PDF के साथ काम करता है?",
+			"seo_faq1_a": "नहीं। टेक्स्ट एक्सट्रैक्शन उन PDF के साथ काम करता है जिनमें असली टेक्स्ट हो। स्कैन किए गए डॉक्यूमेंट (इमेज-बेस्ड) को पहले OCR चाहिए।",
+			"seo_faq2_q": "क्या अंग्रेज़ी के अलावा अन्य भाषाओं को सपोर्ट करता है?",
+			"seo_faq2_a": "हाँ। टेक्स्ट एक्सट्रैक्शन अरबी, चीनी, जापानी, कोरियन और सिरिलिक सहित सभी भाषाओं को सपोर्ट करता है।"
 		},
 		"grayscale": {
 			"title": "PDF ग्रेस्केल",
@@ -940,10 +952,10 @@
 			"grayscale": "ग्रेस्केल",
 			"save": "ग्रेस्केल PDF सेव करें",
 			"btn_busy": "पृष्ठ {progress} / {total} बदला जा रहा है…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "क्या कन्वर्शन के बाद टेक्स्ट सिलेक्ट होगा?",
+			"seo_faq1_a": "नहीं। ग्रेस्केल कन्वर्शन हर पेज को इमेज के रूप में रेंडर करता है। टेक्स्ट अब सिलेक्ट या सर्च नहीं होगा।",
+			"seo_faq2_q": "क्या गुणवत्ता एडजस्ट कर सकते हैं?",
+			"seo_faq2_a": "हाँ। फ़ाइल साइज़ और इमेज क्लैरिटी के बीच बैलेंस के लिए गुणवत्ता स्लाइडर इस्तेमाल करें।"
 		},
 		"json_formatter": {
 			"title": "JSON फॉर्मेटर",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "या ब्राउज़ करने के लिए क्लिक करें",
 			"disclaimer": "लेआउट की विश्वसनीयता दस्तावेज़ की जटिलता पर निर्भर करती है। जटिल तालिकाएँ और उन्नत स्वरूपण सरलीकृत हो सकते हैं।",
 			"progress_hint": "आपका दस्तावेज़ स्थानीय रूप से संसाधित हो रहा है — कुछ भी अपलोड नहीं होता।",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "क्या मेरा Word डॉक्यूमेंट PDF जैसा दिखेगा?",
+			"seo_faq1_a": "लेआउट की सटीकता डॉक्यूमेंट की जटिलता पर निर्भर करती है। सादे डॉक्यूमेंट अच्छे से कन्वर्ट होते हैं; जटिल टेबल और फ़ॉर्मैटिंग सरल हो सकती है।",
+			"seo_faq2_q": "क्या .doc फ़ाइलें (पुराना Word फ़ॉर्मैट) सपोर्ट हैं?",
+			"seo_faq2_a": "हाँ। .docx (आधुनिक) और .doc (पुराना) दोनों Word फ़ॉर्मैट सपोर्ट हैं।"
 		},
 		"from_xlsx": {
 			"title": "Excel से PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "पोर्ट्रेट",
 			"disclaimer": "स्तंभ चौड़ाई स्वचालित रूप से गणना की जाती है। चौड़ी शीट लैंडस्केप मोड में सबसे अच्छी काम करती हैं।",
 			"progress_hint": "स्प्रेडशीट स्थानीय रूप से संसाधित हो रही है — कुछ भी अपलोड नहीं होता।",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "क्या लैंडस्केप या पोर्ट्रेट चुन सकते हैं?",
+			"seo_faq1_a": "हाँ। कन्वर्ट करने से पहले पेज ओरिएंटेशन चुन सकते हैं। चौड़ी स्प्रेडशीट लैंडस्केप में बेहतर दिखती हैं।",
+			"seo_faq2_q": "कौन से स्प्रेडशीट फ़ॉर्मैट सपोर्ट हैं?",
+			"seo_faq2_a": "XLSX (एक्सेल), XLS (पुराना एक्सेल), ODS (लिब्रेऑफ़िस) और CSV फ़ाइलें सपोर्ट हैं।"
 		},
 		"to_docx": {
 			"title": "PDF से Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "स्कैन किए गए (छवि-आधारित) PDF खाली आउटपुट देते हैं — पहले OCR का उपयोग करें",
 			"progress_label": "टेक्स्ट निकाला जा रहा है… {progress}%",
 			"progress_hint": "आपकी फाइल कभी भी आपके डिवाइस से बाहर नहीं जाती।",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "क्या फ़ॉर्मैटिंग बनी रहती है?",
+			"seo_faq1_a": "टेक्स्ट कंटेंट और बुनियादी संरचना (हेडिंग, पैराग्राफ) बनी रहती है। जटिल लेआउट, टेबल और इमेज सरल हो जाती हैं।",
+			"seo_faq2_q": "क्या स्कैन की गई PDF के साथ काम करता है?",
+			"seo_faq2_a": "नहीं। स्कैन की गई (इमेज-बेस्ड) PDF से खाली आउटपुट मिलता है। पहले OCR सॉफ़्टवेयर से टेक्स्ट एक्सट्रैक्ट करें।"
+		},
+		"img_rotate": {
+			"seo_faq1_q": "कौन से रोटेशन एंगल उपलब्ध हैं?",
+			"seo_faq1_a": "90°, 180° या 270° क्लॉकवाइज घुमा सकते हैं। रोटेशन तुरंत और बिना गुणवत्ता हानि के होता है।",
+			"seo_faq2_q": "क्या रोटेशन इमेज क्वालिटी कम करता है?",
+			"seo_faq2_a": "नहीं। इमेज बिना री-कम्प्रेशन के घुमाई जाती है, मूल गुणवत्ता बनी रहती है।"
+		},
+		"img_crop": {
+			"seo_faq1_q": "क्या मैं पिक्सल में सटीक साइज़ सेट कर सकता हूँ?",
+			"seo_faq1_a": "हाँ। क्रॉप रेक्टैंगल खींच सकते हैं या सटीक पिक्सल डाइमेंशन दर्ज कर सकते हैं।",
+			"seo_faq2_q": "कौन से इमेज फ़ॉर्मैट क्रॉप कर सकते हैं?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF और अधिकतर सामान्य इमेज फ़ॉर्मैट सपोर्ट हैं।"
+		},
+		"img_watermark": {
+			"seo_faq1_q": "क्या वॉटरमार्क की पारदर्शिता एडजस्ट कर सकते हैं?",
+			"seo_faq1_a": "हाँ। पारदर्शिता, पोज़ीशन, साइज़ और रंग कंट्रोल कर सकते हैं।",
+			"seo_faq2_q": "क्या वॉटरमार्क परमानेंट है?",
+			"seo_faq2_a": "हाँ। सेव करने के बाद, वॉटरमार्क इमेज में स्थायी रूप से एम्बेड हो जाता है।"
+		},
+		"img_meme": {
+			"seo_faq1_q": "क्या अपनी इमेज इस्तेमाल कर सकते हैं?",
+			"seo_faq1_a": "हाँ। कोई भी इमेज चुनें और मीम बनाने के लिए ऊपर-नीचे टेक्स्ट जोड़ें।",
+			"seo_faq2_q": "फ़ॉन्ट और कलर कस्टमाइज़ कर सकते हैं?",
+			"seo_faq2_a": "हाँ। फ़ॉन्ट साइज़, कलर और आउटलाइन बदल सकते हैं।"
+		},
+		"img_batch": {
+			"seo_faq1_q": "एक साथ कितनी इमेज प्रोसेस कर सकते हैं?",
+			"seo_faq1_a": "कोई सीमा नहीं। डिवाइस मेमोरी जितनी अनुमति दे उतनी इमेज प्रोसेस कर सकते हैं।",
+			"seo_faq2_q": "बैच में कौन सी ऑपरेशन अप्लाई कर सकते हैं?",
+			"seo_faq2_a": "फ़ॉर्मैट कन्वर्ट, रीसाइज़, रोटेट और क्वालिटी सेटिंग सभी सेलेक्ट की गई इमेज पर एक साथ।"
+		},
+		"img_qr": {
+			"seo_faq1_q": "QR कोड में क्या एन्कोड कर सकते हैं?",
+			"seo_faq1_a": "URL, टेक्स्ट, ईमेल, फ़ोन नंबर या कई हज़ार कैरेक्टर तक का कोई भी टेक्स्ट।",
+			"seo_faq2_q": "QR कोड का लुक कस्टमाइज़ कर सकते हैं?",
+			"seo_faq2_a": "साइज़ और एरर करेक्शन लेवल एडजस्ट कर सकते हैं। QR कोड PNG इमेज के रूप में सेव होता है।"
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "कौन से कलर फ़ॉर्मैट सपोर्ट हैं?",
+			"seo_faq1_a": "HEX, RGB और HSL उपलब्ध हैं। किसी भी पिक्सल पर क्लिक करके तुरंत कलर वैल्यू कॉपी करें।",
+			"seo_faq2_q": "किसी भी इमेज टाइप से कलर चुन सकते हैं?",
+			"seo_faq2_a": "हाँ। JPG, PNG, WEBP, GIF और अधिकतर फ़ॉर्मैट सपोर्ट हैं।"
+		},
+		"img_blur": {
+			"seo_faq1_q": "क्या कई एरिया ब्लर कर सकते हैं?",
+			"seo_faq1_a": "हाँ। एक ही इमेज पर कई ब्लर एरिया बना सकते हैं।",
+			"seo_faq2_q": "ब्लर की तीव्रता एडजस्ट कर सकते हैं?",
+			"seo_faq2_a": "हाँ। इंटेंसिटी स्लाइडर से ब्लर इफ़ेक्ट की ताकत कंट्रोल करें।"
+		},
+		"img_filters": {
+			"seo_faq1_q": "कौन से फ़िल्टर उपलब्ध हैं?",
+			"seo_faq1_a": "ब्राइटनेस, कॉन्ट्रास्ट, सैचुरेशन, ह्यू रोटेशन, ग्रेस्केल, सेपिया, ब्लर और इनवर्ट।",
+			"seo_faq2_q": "कई फ़िल्टर कंबाइन कर सकते हैं?",
+			"seo_faq2_a": "हाँ। सभी फ़िल्टर एडजस्टमेंट एक साथ मिलकर रियल टाइम में इमेज पर अप्लाई होते हैं।"
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "कौन से वीडियो फ़ॉर्मैट सपोर्ट हैं?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI और अधिकतर सामान्य वीडियो फ़ॉर्मैट।",
+			"seo_faq2_q": "GIF की अवधि और फ़्रेम रेट सेट कर सकते हैं?",
+			"seo_faq2_a": "हाँ। स्टार्ट टाइम, अवधि और फ़्रेम रेट सेट कर सकते हैं।"
+		},
+		"dev_json": {
+			"seo_faq1_q": "क्या JSON सिंटैक्स वैलिडेट करता है?",
+			"seo_faq1_a": "हाँ। अमान्य JSON को सटीक लाइन और कैरेक्टर दिखाने वाले एरर मैसेज से चिह्नित किया जाता है।",
+			"seo_faq2_q": "JSON मिनिफ़ाई भी कर सकते हैं?",
+			"seo_faq2_a": "हाँ। एक क्लिक में JSON फ़ॉर्मैट (सुंदर बनाना) और मिनिफ़ाई दोनों कर सकते हैं।"
+		},
+		"dev_hash": {
+			"seo_faq1_q": "कौन से हैश एल्गोरिदम सपोर्ट हैं?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 और SHA-512 सभी उपलब्ध हैं।",
+			"seo_faq2_q": "क्या हैशिंग लोकली होती है?",
+			"seo_faq2_a": "हाँ। सभी हैशिंग ब्राउज़र में Web Crypto API से होती है। डेटा कभी डिवाइस से बाहर नहीं जाता।"
+		},
+		"dev_base64": {
+			"seo_faq1_q": "फ़ाइलें एन्कोड कर सकते हैं, सिर्फ़ टेक्स्ट नहीं?",
+			"seo_faq1_a": "टूल टेक्स्ट स्ट्रिंग एन्कोड और डिकोड करता है। फ़ाइलों के लिए पहले कंटेंट को टेक्स्ट में बदलें।",
+			"seo_faq2_q": "Unicode टेक्स्ट सपोर्ट करता है?",
+			"seo_faq2_a": "हाँ। UTF-8 एन्कोडेड टेक्स्ट जिसमें नॉन-लैटिन कैरेक्टर शामिल हैं, पूरी तरह सपोर्ट है।"
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "GitHub-स्टाइल Markdown सपोर्ट करता है?",
+			"seo_faq1_a": "हाँ। टेबल, टास्क लिस्ट, स्ट्राइकथ्रू और अन्य GitHub Markdown एक्सटेंशन सही से रेंडर होते हैं।",
+			"seo_faq2_q": "रेंडर किया गया HTML एक्सपोर्ट कर सकते हैं?",
+			"seo_faq2_a": "प्रीव्यू रियल टाइम में रेंडर आउटपुट दिखाता है। प्रीव्यू पैनल से HTML कॉपी करें।"
+		},
+		"dev_diff": {
+			"seo_faq1_q": "डिफ़रेंस लाइन-बाय-लाइन दिखाता है या वर्ड-बाय-वर्ड?",
+			"seo_faq1_a": "डिफ़रेंस लाइन लेवल पर कलर कोडिंग के साथ हाइलाइट होते हैं।",
+			"seo_faq2_q": "साइज़ लिमिट है?",
+			"seo_faq2_a": "कोई फ़िक्स्ड लिमिट नहीं। बड़े टेक्स्ट पुराने डिवाइस पर धीमे हो सकते हैं।"
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "कौन से मेट्रिक्स काउंट होते हैं?",
+			"seo_faq1_a": "शब्द, कैरेक्टर (स्पेस सहित और बिना), वाक्य, पैराग्राफ़ और अनुमानित रीडिंग टाइम।",
+			"seo_faq2_q": "नॉन-इंग्लिश टेक्स्ट के साथ काम करता है?",
+			"seo_faq2_a": "हाँ। वर्ड काउंटिंग सभी भाषाओं और कैरेक्टर सेट के साथ काम करती है।"
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "कौन से कैरेक्टर एन्कोड होते हैं?",
+			"seo_faq1_a": "स्पेस, क्वेश्चन मार्क और नॉन-ASCII कैरेक्टर RFC 3986 के अनुसार परसेंट-एन्कोड होते हैं।",
+			"seo_faq2_q": "पैरामीटर के साथ पूरा URL डिकोड कर सकते हैं?",
+			"seo_faq2_a": "हाँ। कोई भी URL-एन्कोडेड स्ट्रिंग पेस्ट करें और वह पढ़ने योग्य टेक्स्ट में डिकोड हो जाएगी।"
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "CSS मिनिफ़िकेशन क्या हटाता है?",
+			"seo_faq1_a": "कमेंट, अनावश्यक स्पेस, खाली लाइन और अतिरिक्त सेमीकोलन फ़ाइल साइज़ कम करने के लिए।",
+			"seo_faq2_q": "CSS कितना छोटा होगा?",
+			"seo_faq2_a": "आमतौर पर 20-40% छोटा। ज़्यादा कमेंट वाली फ़ाइलें सबसे ज़्यादा कम होती हैं।"
 		}
 	},
 	"toast": {

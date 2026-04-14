@@ -576,16 +576,16 @@
 		"convert_to_pdf": "تبدیل به PDF",
 		"save_pdf": "ذخیره PDF",
 		"converting_progress": "در حال تبدیل… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "نحوه کار",
+		"seo_step1": "فایل خود را از دستگاهتان انتخاب کنید",
+		"seo_step2": "در صورت نیاز تنظیمات را تغییر دهید",
+		"seo_step3": "نتیجه را ذخیره کنید — تمام!",
+		"seo_why_title": "چرا LocalConvert؟",
+		"seo_why_private": "کاملاً خصوصی — فایل‌هایتان هرگز از دستگاه شما خارج نمی‌شوند. بدون آپلود روی سرور، هرگز.",
+		"seo_why_free": "برای همیشه رایگان بدون محدودیت حجم فایل. بدون حساب کاربری، بدون اشتراک.",
+		"seo_why_offline": "به‌صورت آفلاین به‌عنوان اپلیکیشن نصب‌شده کار می‌کند. پس از بارگذاری اول نیازی به اینترنت نیست.",
+		"seo_faq_title": "سؤالات متداول",
+		"seo_related_title": "ابزارهای مرتبط"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "ادغام ناموفق بود.",
 			"save": "ذخیره ⁦PDF⁩ ادغام‌شده",
 			"btn_busy": "در حال ادغام…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "آیا ادغام فایل‌های PDF امن است؟",
+			"seo_faq1_a": "بله. LocalConvert کاملاً در مرورگر شما اجرا می‌شود — فایل‌هایتان هرگز به سروری آپلود نمی‌شوند. ادغام روی دستگاه شما انجام می‌شود.",
+			"seo_faq2_q": "آیا محدودیتی برای تعداد PDF قابل ادغام وجود دارد؟",
+			"seo_faq2_a": "خیر. می‌توانید هر تعداد PDF که حافظه مرورگرتان اجازه دهد ادغام کنید. بدون محدودیت حجم یا تعداد."
 		},
 		"split": {
 			"title": "⁧تقسیم ⁦PDF⁩⁩",
@@ -662,10 +662,10 @@
 			"err_fail": "تقسیم ناموفق بود.",
 			"btn_busy": "در حال پردازش…",
 			"help": "برای انتخاب کلیک کنید، برای صفحه تکی روی نقطه بزنید",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "آیا می‌توانم صفحات خاصی را از PDF استخراج کنم؟",
+			"seo_faq1_a": "بله. صفحات مورد نظر را انتخاب کنید و LocalConvert یک PDF جدید فقط با آن صفحات ایجاد می‌کند.",
+			"seo_faq2_q": "آیا تقسیم PDF کیفیت را کاهش می‌دهد؟",
+			"seo_faq2_a": "خیر. تقسیم صفحات را بدون بازکدگذاری استخراج می‌کند و کیفیت اصلی حفظ می‌شود."
 		},
 		"rotate_pdf": {
 			"title": "چرخش صفحات",
@@ -676,7 +676,11 @@
 			"selected_pages": "صفحات انتخاب‌شده",
 			"err_fail": "چرخش ناموفق بود.",
 			"help": "برای انتخاب کلیک کنید",
-			"btn_busy": "در حال پردازش…"
+			"btn_busy": "در حال پردازش…",
+			"seo_faq1_q": "آیا می‌توانم صفحات مجزا را بچرخانم؟",
+			"seo_faq1_a": "بله. می‌توانید صفحات خاص یا کل PDF را یکجا بچرخانید. از بین 90°، 180° یا 270° انتخاب کنید.",
+			"seo_faq2_q": "آیا چرخش روی کیفیت تأثیر می‌گذارد؟",
+			"seo_faq2_a": "خیر. صفحات بدون بازکدگذاری چرخانده می‌شوند و کیفیت اصلی کاملاً حفظ می‌شود."
 		},
 		"organize": {
 			"title": "سازماندهی صفحات",
@@ -688,10 +692,10 @@
 			"no_pages": "صفحه‌ای باقی نمانده.",
 			"btn": "ذخیره ⁦PDF⁩ سازمان‌یافته",
 			"btn_busy": "در حال ذخیره…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "آیا می‌توانم صفحاتی را از PDF حذف کنم؟",
+			"seo_faq1_a": "بله. صفحات را برای مرتب‌سازی بکشید و دکمه حذف را بزنید تا صفحات ناخواسته حذف شوند.",
+			"seo_faq2_q": "آیا می‌توانم پیش‌نمایش هر صفحه را ببینم؟",
+			"seo_faq2_a": "بله. تصاویر کوچک هر صفحه نمایش داده می‌شود تا بتوانید آن‌ها را به‌راحتی شناسایی و مرتب کنید."
 		},
 		"images_to_pdf": {
 			"title": "⁧تصاویر → ⁦PDF⁩⁩",
@@ -701,10 +705,10 @@
 			"btn": "⁧تبدیل به ⁦PDF⁩⁩",
 			"save": "⁧ذخیره ⁦PDF⁩⁩",
 			"btn_busy": "در حال تبدیل…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "چه فرمت‌های تصویری را می‌توانم به PDF تبدیل کنم؟",
+			"seo_faq1_a": "تصاویر JPG، PNG و WEBP پشتیبانی می‌شوند. هر تصویر یک صفحه در PDF می‌شود.",
+			"seo_faq2_q": "آیا می‌توانم ترتیب تصاویر را مشخص کنم؟",
+			"seo_faq2_a": "بله. چند تصویر اضافه کنید و قبل از تبدیل آن‌ها را به ترتیب دلخواه مرتب کنید."
 		},
 		"pdf_to_images": {
 			"title": "⁧⁦PDF⁩ → تصاویر⁩",
@@ -713,10 +717,10 @@
 			"btn": "خروجی به تصویر",
 			"err_fail": "تبدیل ناموفق بود.",
 			"btn_busy": "در حال تبدیل صفحه {progress} از {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "تصاویر خروجی چه فرمتی دارند؟",
+			"seo_faq1_a": "می‌توانید بین JPG و PNG انتخاب کنید. هر صفحه PDF به یک تصویر جداگانه تبدیل می‌شود.",
+			"seo_faq2_q": "برای PDF‌های چند صفحه‌ای چطور؟",
+			"seo_faq2_a": "هر صفحه به‌عنوان تصویر جداگانه خروجی می‌گیرد. برای PDF‌های چند صفحه‌ای یک فایل ZIP با تمام تصاویر دریافت می‌کنید."
 		},
 		"pdf_to_ppt": {
 			"title": "⁧⁦PDF⁩ به ⁦PowerPoint⁩⁩",
@@ -727,10 +731,10 @@
 			"btn": "⁧تبدیل به ⁦PPTX⁩⁩",
 			"save": "⁧ذخیره ⁦PPTX⁩⁩",
 			"btn_busy": "در حال تبدیل صفحه {progress} از {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "تبدیل PDF به PowerPoint چگونه کار می‌کند؟",
+			"seo_faq1_a": "هر صفحه PDF به‌عنوان تصویر رندر شده و در یک اسلاید PowerPoint قرار می‌گیرد. متن قابل ویرایش نیست.",
+			"seo_faq2_q": "آیا می‌توانم اسلایدها را پس از تبدیل ویرایش کنم؟",
+			"seo_faq2_a": "اسلایدها شامل تصاویر صفحات هستند. می‌توانید کادرهای متنی و یادداشت‌ها را در PowerPoint اضافه کنید."
 		},
 		"compress": {
 			"title": "⁧فشرده‌سازی ⁦PDF⁩⁩",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~۵۰-۷۰% کوچکتر، کیفیت خوب",
 			"preset_high_desc": "~۷۰-۹۰% کوچکتر، افت کیفیت قابل مشاهده",
 			"btn_busy": "در حال فشرده‌سازی صفحه {progress} از {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "چقدر می‌توانم حجم فایل PDF را کاهش دهم؟",
+			"seo_faq1_a": "معمولاً 50 تا 80 درصد کاهش بسته به محتوا. PDF‌هایی با تصاویر زیاد بیشترین صرفه‌جویی را دارند.",
+			"seo_faq2_q": "آیا فشرده‌سازی روی کیفیت متن تأثیر می‌گذارد؟",
+			"seo_faq2_a": "متن در حین فشرده‌سازی به‌عنوان تصویر مجدداً رندر می‌شود. برای اسناد متنی از تنظیم کیفیت بالاتر استفاده کنید."
 		},
 		"watermark_pdf": {
 			"title": "افزودن واترمارک",
@@ -763,7 +767,11 @@
 			"btn": "اعمال روی همه صفحات",
 			"err_text": "متن واترمارک را وارد کنید.",
 			"save": "ذخیره ⁦PDF⁩ واترمارک‌شده",
-			"btn_busy": "در حال اعمال…"
+			"btn_busy": "در حال اعمال…",
+			"seo_faq1_q": "آیا می‌توانم از تصویر به‌عنوان واترمارک استفاده کنم؟",
+			"seo_faq1_a": "در حال حاضر واترمارک‌های متنی پشتیبانی می‌شوند. می‌توانید متن، اندازه، شفافیت و زاویه چرخش را تنظیم کنید.",
+			"seo_faq2_q": "آیا واترمارک محتوا را می‌پوشاند؟",
+			"seo_faq2_a": "خیر. واترمارک‌ها با شفافیت قابل تنظیم قرار می‌گیرند و محتوا زیر آن‌ها خوانا باقی می‌ماند."
 		},
 		"page_numbers": {
 			"title": "افزودن شماره صفحه",
@@ -780,10 +788,10 @@
 			"btn": "اعمال روی همه صفحات",
 			"save": "ذخیره ⁦PDF⁩ شماره‌گذاری‌شده",
 			"btn_busy": "در حال افزودن شماره…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "شماره صفحات را کجا می‌توانم قرار دهم؟",
+			"seo_faq1_a": "می‌توانید شماره‌ها را بالا یا پایین صفحه، چپ‌چین، وسط‌چین یا راست‌چین قرار دهید.",
+			"seo_faq2_q": "آیا می‌توانم قالب شماره‌گذاری را سفارشی کنم؟",
+			"seo_faq2_a": "بله. می‌توانید شماره شروع، اندازه فونت و موقعیت را تنظیم کنید."
 		},
 		"metadata": {
 			"title": "ویرایش فراداده",
@@ -804,10 +812,10 @@
 			"reading": "در حال خواندن فراداده…",
 			"none": "—",
 			"btn_busy": "در حال ذخیره…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "چه فراداده‌هایی از PDF را می‌توانم ویرایش کنم؟",
+			"seo_faq1_a": "می‌توانید عنوان، نویسنده، موضوع و کلمات کلیدی هر فایل PDF را ویرایش کنید.",
+			"seo_faq2_q": "آیا ویرایش فراداده برای محتوای PDF امن است؟",
+			"seo_faq2_a": "بله. فقط ویژگی‌های فراداده تغییر می‌کنند — محتوای PDF دست‌نخورده باقی می‌ماند."
 		},
 		"crop_pdf": {
 			"title": "⁧برش ⁦PDF⁩⁩",
@@ -816,7 +824,11 @@
 			"btn": "⁧برش ⁦PDF⁩⁩",
 			"save": "ذخیره ⁦PDF⁩ برش‌خورده",
 			"err_margins": "حاشیه‌ها بیش از حد بزرگ هستند — ناحیه‌ای باقی نمانده.",
-			"btn_busy": "در حال برش…"
+			"btn_busy": "در حال برش…",
+			"seo_faq1_q": "آیا می‌توانم صفحات مختلف را متفاوت برش بزنم؟",
+			"seo_faq1_a": "حاشیه‌های برش به‌طور یکنواخت روی همه صفحات اعمال می‌شوند. برای برش جداگانه، ابتدا PDF را تقسیم کنید، هر بخش را برش بزنید و سپس ادغام کنید.",
+			"seo_faq2_q": "آیا برش حجم فایل را کاهش می‌دهد؟",
+			"seo_faq2_a": "برش محتوای خارج از حاشیه‌ها را پنهان می‌کند اما ممکن است حجم فایل را به‌طور قابل توجهی کاهش ندهد، زیرا داده‌های پنهان ممکن است در فایل باقی بمانند."
 		},
 		"sign": {
 			"title": "⁧امضای ⁦PDF⁩⁩",
@@ -833,10 +845,10 @@
 			"err_place": "روی صفحه کلیک کنید تا امضا را قرار دهید.",
 			"save": "ذخیره ⁦PDF⁩ امضاشده",
 			"btn_busy": "در حال امضا…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "چگونه می‌توانم امضا ایجاد کنم؟",
+			"seo_faq1_a": "می‌توانید با ماوس یا انگشت امضا بکشید، نامتان را تایپ کنید یا تصویر امضا بارگذاری کنید.",
+			"seo_faq2_q": "آیا امضای من جایی ذخیره می‌شود؟",
+			"seo_faq2_a": "خیر. امضای شما هرگز از دستگاهتان خارج نمی‌شود. پردازش کاملاً در مرورگر شما انجام می‌شود."
 		},
 		"edit": {
 			"title": "⁧ویرایش ⁦PDF⁩⁩",
@@ -851,10 +863,10 @@
 			"save": "ذخیره ⁦PDF⁩ ویرایش‌شده",
 			"placeholder": "متن برای قرار دادن…",
 			"btn_busy": "در حال اعمال…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "چه ویرایش‌هایی می‌توانم انجام دهم؟",
+			"seo_faq1_a": "می‌توانید به هر صفحه PDF متن اضافه کنید. اندازه فونت، رنگ و موقعیت را با کلیک روی صفحه انتخاب کنید.",
+			"seo_faq2_q": "آیا می‌توانم متن موجود در PDF را ویرایش کنم؟",
+			"seo_faq2_a": "در حال حاضر می‌توانید لایه‌های متنی جدید اضافه کنید. ویرایش متن موجود نیاز به سند مبدأ دارد."
 		},
 		"password": {
 			"title": "محافظت ⁦PDF⁩ با رمز",
@@ -878,10 +890,10 @@
 			"password_placeholder": "رمز عبور را وارد کنید…",
 			"owner_placeholder": "رمز عبور مالک…",
 			"btn_busy": "در حال رمزگذاری…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "رمزگذاری چقدر امن است؟",
+			"seo_faq1_a": "PDF‌ها با امنیت استاندارد PDF رمزگذاری می‌شوند. رمز عبور به هیچ جایی ارسال نمی‌شود — رمزگذاری در مرورگر شما انجام می‌شود.",
+			"seo_faq2_q": "آیا می‌توانم مجوزهایی مثل جلوگیری از چاپ تنظیم کنم؟",
+			"seo_faq2_a": "بله. می‌توانید مجوزهای چاپ، کپی و ویرایش را هنگام محافظت از PDF تنظیم کنید."
 		},
 		"unlock": {
 			"title": "⁧باز کردن قفل ⁦PDF⁩⁩",
@@ -896,10 +908,10 @@
 			"password_label": "رمز عبور (در صورت نیاز)",
 			"password_placeholder": "در صورت نبودن خالی بگذارید",
 			"password_hint": "فقط برای فایل‌های PDF که رمز عبور برای باز شدن نیاز دارند.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "آیا می‌توانم رمز عبور PDF را حذف کنم؟",
+			"seo_faq1_a": "بله، اگر رمز عبور فعلی را بدانید. آن را وارد کنید و LocalConvert یک نسخه بدون محافظت ذخیره می‌کند.",
+			"seo_faq2_q": "آیا رمز عبور من امن است؟",
+			"seo_faq2_a": "بله. رمز عبور شما فقط در مرورگرتان برای رمزگشایی فایل استفاده می‌شود. هرگز به سروری ارسال نمی‌شود."
 		},
 		"color_picker": {
 			"title": "انتخابگر رنگ",
@@ -927,10 +939,10 @@
 			"copied": "کپی شد!",
 			"download_txt": "⁧ذخیره به عنوان .⁦txt⁩⁩",
 			"btn_busy": "در حال استخراج صفحه {progress} از {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "آیا با PDF‌های اسکن‌شده کار می‌کند؟",
+			"seo_faq1_a": "خیر. استخراج متن با PDF‌هایی که متن واقعی دارند کار می‌کند. اسناد اسکن‌شده (مبتنی بر تصویر) ابتدا به OCR نیاز دارند.",
+			"seo_faq2_q": "آیا متون غیر انگلیسی را پشتیبانی می‌کند؟",
+			"seo_faq2_a": "بله. استخراج متن از همه زبان‌ها از جمله عربی، چینی، ژاپنی، کره‌ای و خط سیریلیک پشتیبانی می‌کند."
 		},
 		"grayscale": {
 			"title": "⁧⁦PDF⁩ سیاه و سفید⁩",
@@ -940,10 +952,10 @@
 			"grayscale": "سیاه و سفید",
 			"save": "ذخیره ⁦PDF⁩ سیاه و سفید",
 			"btn_busy": "در حال تبدیل صفحه {progress} از {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "آیا متن پس از تبدیل قابل انتخاب باقی می‌ماند؟",
+			"seo_faq1_a": "خیر. تبدیل به خاکستری هر صفحه را به‌عنوان تصویر رندر می‌کند. متن دیگر قابل انتخاب یا جستجو نخواهد بود.",
+			"seo_faq2_q": "آیا می‌توانم کیفیت را تنظیم کنم؟",
+			"seo_faq2_a": "بله. از نوار لغزنده کیفیت برای تعادل بین حجم فایل و وضوح تصویر استفاده کنید."
 		},
 		"json_formatter": {
 			"title": "⁧قالب‌بندی ⁦JSON⁩⁩",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "یا برای مرور کلیک کنید",
 			"disclaimer": "دقت چیدمان به پیچیدگی سند بستگی دارد. جداول پیچیده و قالب‌بندی پیشرفته ممکن است ساده شوند.",
 			"progress_hint": "سند شما به صورت محلی پردازش می‌شود — چیزی بارگذاری نمی‌شود.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "آیا سند Word مثل PDF به نظر خواهد رسید؟",
+			"seo_faq1_a": "دقت طرح‌بندی به پیچیدگی سند بستگی دارد. اسناد ساده به‌خوبی تبدیل می‌شوند؛ جداول و قالب‌بندی پیچیده ممکن است ساده‌سازی شوند.",
+			"seo_faq2_q": "آیا فایل‌های .doc (فرمت قدیمی Word) را پشتیبانی می‌کند؟",
+			"seo_faq2_a": "بله. هر دو فرمت .docx (مدرن) و .doc (قدیمی) پشتیبانی می‌شوند."
 		},
 		"from_xlsx": {
 			"title": "Excel به PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "عمودی",
 			"disclaimer": "عرض ستون‌ها به صورت خودکار محاسبه می‌شود. صفحات عریض در حالت افقی بهتر کار می‌کنند.",
 			"progress_hint": "صفحه گسترده به صورت محلی پردازش می‌شود — چیزی بارگذاری نمی‌شود.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "آیا می‌توانم جهت افقی یا عمودی را انتخاب کنم؟",
+			"seo_faq1_a": "بله. می‌توانید جهت صفحه را قبل از تبدیل انتخاب کنید. صفحات گسترده عریض در حالت افقی بهتر کار می‌کنند.",
+			"seo_faq2_q": "چه فرمت‌های صفحه گسترده‌ای پشتیبانی می‌شوند؟",
+			"seo_faq2_a": "XLSX (اکسل)، XLS (اکسل قدیمی)، ODS (لیبره‌آفیس) و فایل‌های CSV پشتیبانی می‌شوند."
 		},
 		"to_docx": {
 			"title": "PDF به Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "فایل‌های PDF اسکن شده (تصویری) خروجی خالی تولید می‌کنند — ابتدا از OCR استفاده کنید",
 			"progress_label": "در حال استخراج متن… {progress}%",
 			"progress_hint": "فایل شما هرگز دستگاه شما را ترک نمی‌کند.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "آیا قالب‌بندی حفظ می‌شود؟",
+			"seo_faq1_a": "محتوای متنی و ساختار اصلی (عناوین، پاراگراف‌ها) حفظ می‌شوند. طرح‌بندی‌های پیچیده، جداول و تصاویر ساده‌سازی می‌شوند.",
+			"seo_faq2_q": "آیا با PDF‌های اسکن‌شده کار می‌کند؟",
+			"seo_faq2_a": "خیر. PDF‌های اسکن‌شده (مبتنی بر تصویر) خروجی خالی تولید می‌کنند. ابتدا از نرم‌افزار OCR برای استخراج متن استفاده کنید."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "چه زوایای چرخشی در دسترس است؟",
+			"seo_faq1_a": "می‌توانید 90°، 180° یا 270° ساعتگرد بچرخانید. چرخش فوری و بدون افت کیفیت است.",
+			"seo_faq2_q": "آیا چرخش کیفیت تصویر را کاهش می‌دهد؟",
+			"seo_faq2_a": "خیر. تصویر بدون فشرده‌سازی مجدد چرخانده می‌شود و کیفیت اصلی حفظ می‌شود."
+		},
+		"img_crop": {
+			"seo_faq1_q": "آیا می‌توانم اندازه دقیق برش را به پیکسل تعیین کنم؟",
+			"seo_faq1_a": "بله. می‌توانید مستطیل برش را بکشید یا ابعاد دقیق پیکسلی وارد کنید.",
+			"seo_faq2_q": "چه فرمت‌هایی را می‌توانم برش بزنم؟",
+			"seo_faq2_a": "JPG، PNG، WEBP، GIF و بیشتر فرمت‌های رایج تصویر پشتیبانی می‌شوند."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "آیا می‌توانم شفافیت واترمارک را تنظیم کنم؟",
+			"seo_faq1_a": "بله. شفافیت، موقعیت، اندازه و رنگ واترمارک متنی قابل تنظیم است.",
+			"seo_faq2_q": "آیا واترمارک دائمی است؟",
+			"seo_faq2_a": "بله. پس از ذخیره، واترمارک به‌طور دائم در تصویر جاسازی می‌شود."
+		},
+		"img_meme": {
+			"seo_faq1_q": "آیا می‌توانم از تصاویر خودم استفاده کنم؟",
+			"seo_faq1_a": "بله. هر تصویری را انتخاب کنید و متن بالا و پایین را برای ساخت میم اضافه کنید.",
+			"seo_faq2_q": "آیا می‌توانم فونت و رنگ را سفارشی کنم؟",
+			"seo_faq2_a": "بله. اندازه فونت، رنگ و حاشیه قابل تغییر است."
+		},
+		"img_batch": {
+			"seo_faq1_q": "چند تصویر را می‌توانم همزمان پردازش کنم؟",
+			"seo_faq1_a": "محدودیت ثابتی وجود ندارد. به‌اندازه حافظه دستگاهتان می‌توانید تصاویر پردازش کنید.",
+			"seo_faq2_q": "چه عملیاتی را می‌توانم دسته‌ای اعمال کنم؟",
+			"seo_faq2_a": "تبدیل فرمت، تغییر اندازه، چرخش و تنظیم کیفیت برای همه تصاویر انتخاب‌شده."
+		},
+		"img_qr": {
+			"seo_faq1_q": "چه چیزی را می‌توانم در QR کد کدگذاری کنم؟",
+			"seo_faq1_a": "آدرس‌های وب، متن ساده، ایمیل، شماره تلفن یا هر متنی تا چند هزار کاراکتر.",
+			"seo_faq2_q": "آیا می‌توانم ظاهر QR کد را سفارشی کنم؟",
+			"seo_faq2_a": "اندازه و سطح تصحیح خطا قابل تنظیم است. QR کد به‌صورت PNG ذخیره می‌شود."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "چه فرمت‌های رنگی پشتیبانی می‌شوند؟",
+			"seo_faq1_a": "HEX، RGB و HSL. روی هر پیکسل کلیک کنید تا مقدار رنگ فوراً کپی شود.",
+			"seo_faq2_q": "آیا می‌توانم از هر نوع تصویری رنگ انتخاب کنم؟",
+			"seo_faq2_a": "بله. JPG، PNG، WEBP، GIF و بیشتر فرمت‌ها پشتیبانی می‌شوند."
+		},
+		"img_blur": {
+			"seo_faq1_q": "آیا می‌توانم چند ناحیه را تار کنم؟",
+			"seo_faq1_a": "بله. چند ناحیه تار روی یک تصویر بکشید تا چند بخش را همزمان پنهان کنید.",
+			"seo_faq2_q": "آیا می‌توانم شدت تاری را تنظیم کنم؟",
+			"seo_faq2_a": "بله. از لغزنده شدت برای کنترل قدرت اثر تاری استفاده کنید."
+		},
+		"img_filters": {
+			"seo_faq1_q": "چه فیلترهایی در دسترس است؟",
+			"seo_faq1_a": "روشنایی، کنتراست، اشباع، چرخش رنگ، خاکستری، سپیا، تاری و معکوس.",
+			"seo_faq2_q": "آیا می‌توانم چند فیلتر را ترکیب کنم؟",
+			"seo_faq2_a": "بله. همه تنظیمات فیلتر روی هم انباشته شده و در لحظه روی تصویر اعمال می‌شوند."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "چه فرمت‌های ویدیویی پشتیبانی می‌شوند؟",
+			"seo_faq1_a": "MP4، WEBM، MOV، AVI و بیشتر فرمت‌های رایج ویدیو.",
+			"seo_faq2_q": "آیا می‌توانم مدت و نرخ فریم GIF را تنظیم کنم؟",
+			"seo_faq2_a": "بله. زمان شروع، مدت و نرخ فریم قابل تنظیم است."
+		},
+		"dev_json": {
+			"seo_faq1_q": "آیا صحت JSON را بررسی می‌کند؟",
+			"seo_faq1_a": "بله. JSON نامعتبر با پیام خطا شامل خط و کاراکتر دقیق مشخص می‌شود.",
+			"seo_faq2_q": "آیا می‌توانم JSON را هم فشرده کنم؟",
+			"seo_faq2_a": "بله. قالب‌بندی و فشرده‌سازی JSON با یک کلیک."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "کدام الگوریتم‌های هش پشتیبانی می‌شوند؟",
+			"seo_faq1_a": "MD5، SHA-1، SHA-256، SHA-384 و SHA-512 همه در دسترس هستند.",
+			"seo_faq2_q": "آیا هش به‌صورت محلی انجام می‌شود؟",
+			"seo_faq2_a": "بله. تمام هش‌ها در مرورگر با Web Crypto API اجرا می‌شوند. داده‌ها هرگز از دستگاه خارج نمی‌شوند."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "آیا می‌توانم فایل‌ها را کدگذاری کنم؟",
+			"seo_faq1_a": "ابزار رشته‌های متنی را کدگذاری و رمزگشایی می‌کند. برای فایل‌ها، محتوا را ابتدا به متن تبدیل کنید.",
+			"seo_faq2_q": "آیا متن Unicode را پشتیبانی می‌کند؟",
+			"seo_faq2_a": "بله. متن UTF-8 شامل کاراکترهای غیرلاتین به‌طور کامل پشتیبانی می‌شود."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "آیا Markdown سبک GitHub را پشتیبانی می‌کند؟",
+			"seo_faq1_a": "بله. جداول، لیست وظایف، خط‌خورده و سایر افزونه‌های GitHub Markdown به‌درستی نمایش داده می‌شوند.",
+			"seo_faq2_q": "آیا می‌توانم HTML را صادر کنم؟",
+			"seo_faq2_a": "پیش‌نمایش خروجی رندر شده را در لحظه نشان می‌دهد. HTML را از پنل پیش‌نمایش کپی کنید."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "تفاوت‌ها خط به خط نشان داده می‌شوند یا کلمه به کلمه؟",
+			"seo_faq1_a": "تفاوت‌ها در سطح خط با رنگ‌بندی واضح برای اضافات و حذفیات مشخص می‌شوند.",
+			"seo_faq2_q": "آیا محدودیت حجمی وجود دارد؟",
+			"seo_faq2_a": "محدودیت ثابتی نیست. متن‌های بزرگ ممکن است روی دستگاه‌های قدیمی کندتر باشند."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "چه معیارهایی شمارش می‌شوند؟",
+			"seo_faq1_a": "کلمات، کاراکترها (با و بدون فاصله)، جملات، پاراگراف‌ها و زمان تخمینی مطالعه.",
+			"seo_faq2_q": "آیا با متن غیرانگلیسی کار می‌کند؟",
+			"seo_faq2_a": "بله. شمارش کلمات با تمام زبان‌ها و مجموعه کاراکترها کار می‌کند."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "کدام کاراکترها کدگذاری می‌شوند؟",
+			"seo_faq1_a": "کاراکترهای خاص مانند فاصله‌ها و کاراکترهای غیر ASCII طبق RFC 3986 درصدی کدگذاری می‌شوند.",
+			"seo_faq2_q": "آیا می‌توانم یک URL کامل با پارامترها را رمزگشایی کنم؟",
+			"seo_faq2_a": "بله. هر رشته کدگذاری‌شده را بچسبانید و به متن خوانا تبدیل می‌شود."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "فشرده‌سازی CSS چه چیزی را حذف می‌کند؟",
+			"seo_faq1_a": "نظرات، فضاهای خالی غیرضروری، خطوط خالی و نقطه‌ویرگول‌های اضافی.",
+			"seo_faq2_q": "CSS من چقدر کوچک‌تر می‌شود؟",
+			"seo_faq2_a": "معمولاً 20-40% کوچک‌تر. فایل‌های با نظرات زیاد بیشترین کاهش را دارند."
 		}
 	},
 	"toast": {

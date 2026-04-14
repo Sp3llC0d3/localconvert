@@ -576,16 +576,16 @@
 		"convert_to_pdf": "Converteren naar PDF",
 		"save_pdf": "PDF opslaan",
 		"converting_progress": "Converteren… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Hoe het werkt",
+		"seo_step1": "Selecteer uw bestand van uw apparaat",
+		"seo_step2": "Pas de instellingen aan indien nodig",
+		"seo_step3": "Sla het resultaat op — klaar!",
+		"seo_why_title": "Waarom LocalConvert?",
+		"seo_why_private": "100% privé — uw bestanden verlaten nooit uw apparaat. Geen upload naar servers, nooit.",
+		"seo_why_free": "Voor altijd gratis zonder bestandslimiet. Geen account, geen abonnement.",
+		"seo_why_offline": "Werkt offline als geïnstalleerde app. Geen internet nodig na eerste keer laden.",
+		"seo_faq_title": "Veelgestelde vragen",
+		"seo_related_title": "Gerelateerde tools"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "Samenvoegen mislukt.",
 			"save": "Samengevoegde PDF opslaan",
 			"btn_busy": "Samenvoegen…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Is het veilig om PDF's samen te voegen?",
+			"seo_faq1_a": "Ja. LocalConvert draait volledig in uw browser — uw bestanden worden nooit naar een server geüpload. Het samenvoegen gebeurt op uw apparaat.",
+			"seo_faq2_q": "Is er een limiet aan het aantal PDF's?",
+			"seo_faq2_a": "Nee. U kunt zoveel PDF's samenvoegen als het geheugen van uw browser toelaat. Geen beperkingen qua grootte of aantal."
 		},
 		"split": {
 			"title": "PDF splitsen",
@@ -662,10 +662,10 @@
 			"err_fail": "Splitsen mislukt.",
 			"btn_busy": "Verwerken…",
 			"help": "Klik om te schakelen, tik op de punt voor een enkele pagina",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Kan ik specifieke pagina's uit een PDF halen?",
+			"seo_faq1_a": "Ja. Selecteer de gewenste pagina's en LocalConvert maakt een nieuwe PDF met alleen die pagina's.",
+			"seo_faq2_q": "Vermindert splitsen de kwaliteit?",
+			"seo_faq2_a": "Nee. Splitsen extraheert pagina's zonder hercodering, de originele kwaliteit blijft behouden."
 		},
 		"rotate_pdf": {
 			"title": "Pagina's roteren",
@@ -676,7 +676,11 @@
 			"selected_pages": "Geselecteerde pagina's",
 			"err_fail": "Roteren mislukt.",
 			"help": "klik om te schakelen",
-			"btn_busy": "Verwerken…"
+			"btn_busy": "Verwerken…",
+			"seo_faq1_q": "Kan ik individuele pagina's draaien?",
+			"seo_faq1_a": "Ja. U kunt specifieke pagina's of de hele PDF in één keer draaien. Kies 90°, 180° of 270°.",
+			"seo_faq2_q": "Beïnvloedt draaien de kwaliteit?",
+			"seo_faq2_a": "Nee. Pagina's worden zonder hercodering gedraaid, de originele kwaliteit blijft volledig behouden."
 		},
 		"organize": {
 			"title": "Pagina's ordenen",
@@ -688,10 +692,10 @@
 			"no_pages": "Geen pagina's meer.",
 			"btn": "Geordende PDF opslaan",
 			"btn_busy": "Opslaan…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Kan ik pagina's uit een PDF verwijderen?",
+			"seo_faq1_a": "Ja. Sleep pagina's om ze te herschikken en klik op verwijderen om ongewenste pagina's te verwijderen.",
+			"seo_faq2_q": "Kan ik een voorbeeld van elke pagina zien?",
+			"seo_faq2_a": "Ja. Visuele miniaturen van elke pagina worden getoond zodat u ze gemakkelijk kunt herkennen en ordenen."
 		},
 		"images_to_pdf": {
 			"title": "Afbeeldingen → PDF",
@@ -701,10 +705,10 @@
 			"btn": "Converteren naar PDF",
 			"save": "PDF opslaan",
 			"btn_busy": "Converteren…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Welke afbeeldingsformaten kan ik naar PDF converteren?",
+			"seo_faq1_a": "JPG, PNG en WEBP worden ondersteund. Elke afbeelding wordt een pagina in de PDF.",
+			"seo_faq2_q": "Kan ik de volgorde van de afbeeldingen bepalen?",
+			"seo_faq2_a": "Ja. Voeg meerdere afbeeldingen toe en rangschik ze in de gewenste volgorde voor het converteren."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Afbeeldingen",
@@ -713,10 +717,10 @@
 			"btn": "Exporteren als afbeeldingen",
 			"err_fail": "Conversie mislukt.",
 			"btn_busy": "Converteren van pagina {progress} van {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "In welk formaat krijg ik de afbeeldingen?",
+			"seo_faq1_a": "U kunt kiezen tussen JPG en PNG. Elke PDF-pagina wordt een aparte afbeelding.",
+			"seo_faq2_q": "Hoe zit het met PDF's met meerdere pagina's?",
+			"seo_faq2_a": "Elke pagina wordt als aparte afbeelding geëxporteerd. Bij PDF's met meerdere pagina's ontvangt u een ZIP-bestand met alle afbeeldingen."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF naar PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "Converteren naar PPTX",
 			"save": "PPTX opslaan",
 			"btn_busy": "Converteren van pagina {progress} van {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Hoe werkt de conversie van PDF naar PowerPoint?",
+			"seo_faq1_a": "Elke PDF-pagina wordt als afbeelding gerenderd en in een PowerPoint-dia geplaatst. De tekst is niet bewerkbaar.",
+			"seo_faq2_q": "Kan ik de dia's na conversie bewerken?",
+			"seo_faq2_a": "De dia's bevatten pagina-afbeeldingen. U kunt tekstvakken en aantekeningen toevoegen in PowerPoint."
 		},
 		"compress": {
 			"title": "PDF comprimeren",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% kleiner, goede kwaliteit",
 			"preset_high_desc": "~70-90% kleiner, zichtbaar kwaliteitsverlies",
 			"btn_busy": "Comprimeren van pagina {progress} van {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Hoeveel kan ik de PDF-bestandsgrootte verkleinen?",
+			"seo_faq1_a": "Meestal 50-80% verkleining afhankelijk van de inhoud. PDF's met veel afbeeldingen behalen de grootste besparing.",
+			"seo_faq2_q": "Beïnvloedt compressie de tekstkwaliteit?",
+			"seo_faq2_a": "Tekst wordt tijdens compressie opnieuw als afbeelding gerenderd. Voor tekstrijke documenten kiest u een hogere kwaliteitsinstelling."
 		},
 		"watermark_pdf": {
 			"title": "Watermerk toevoegen",
@@ -763,7 +767,11 @@
 			"btn": "Toepassen op alle pagina's",
 			"err_text": "Voer watermerktekst in.",
 			"save": "PDF met watermerk opslaan",
-			"btn_busy": "Toepassen…"
+			"btn_busy": "Toepassen…",
+			"seo_faq1_q": "Kan ik een afbeelding als watermerk gebruiken?",
+			"seo_faq1_a": "Momenteel worden tekst-watermerken ondersteund. U kunt tekst, grootte, dekking en rotatiehoek aanpassen.",
+			"seo_faq2_q": "Bedekt het watermerk de inhoud?",
+			"seo_faq2_a": "Nee. Watermerken worden met instelbare dekking geplaatst, zodat de inhoud eronder leesbaar blijft."
 		},
 		"page_numbers": {
 			"title": "Paginanummers toevoegen",
@@ -780,10 +788,10 @@
 			"btn": "Toepassen op alle pagina's",
 			"save": "Genummerde PDF opslaan",
 			"btn_busy": "Nummers toevoegen…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Waar kan ik paginanummers plaatsen?",
+			"seo_faq1_a": "U kunt nummers boven of onder plaatsen, links, gecentreerd of rechts uitgelijnd.",
+			"seo_faq2_q": "Kan ik het nummeringsformaat aanpassen?",
+			"seo_faq2_a": "Ja. U kunt het startnummer, lettergrootte en positie instellen."
 		},
 		"metadata": {
 			"title": "Metadata bewerken",
@@ -804,10 +812,10 @@
 			"reading": "Metadata lezen…",
 			"none": "—",
 			"btn_busy": "Opslaan…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Welke PDF-metadata kan ik bewerken?",
+			"seo_faq1_a": "U kunt de titel, auteur, onderwerp en trefwoorden van elk PDF-bestand bewerken.",
+			"seo_faq2_q": "Is het bewerken van metadata veilig voor de PDF-inhoud?",
+			"seo_faq2_a": "Ja. Alleen de metadata-eigenschappen worden gewijzigd — de PDF-inhoud blijft onaangetast."
 		},
 		"crop_pdf": {
 			"title": "PDF bijsnijden",
@@ -816,7 +824,11 @@
 			"btn": "PDF bijsnijden",
 			"save": "Bijgesneden PDF opslaan",
 			"err_margins": "Marges te groot — geen gebied over.",
-			"btn_busy": "Bijsnijden…"
+			"btn_busy": "Bijsnijden…",
+			"seo_faq1_q": "Kan ik verschillende pagina's anders bijsnijden?",
+			"seo_faq1_a": "Bijsnijdmarges worden uniform op alle pagina's toegepast. Voor bijsnijden per pagina splitst u eerst de PDF, snijdt elk deel bij en voegt ze weer samen.",
+			"seo_faq2_q": "Verkleint bijsnijden de bestandsgrootte?",
+			"seo_faq2_a": "Bijsnijden verbergt inhoud buiten de marges maar verkleint de bestandsgrootte mogelijk niet significant, omdat verborgen data in het bestand kan blijven."
 		},
 		"sign": {
 			"title": "PDF ondertekenen",
@@ -833,10 +845,10 @@
 			"err_place": "Klik op de pagina om uw handtekening te plaatsen.",
 			"save": "Ondertekende PDF opslaan",
 			"btn_busy": "Ondertekenen…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Hoe maak ik een handtekening?",
+			"seo_faq1_a": "U kunt een handtekening tekenen met muis of vinger, uw naam typen of een handtekeningafbeelding uploaden.",
+			"seo_faq2_q": "Wordt mijn handtekening ergens opgeslagen?",
+			"seo_faq2_a": "Nee. Uw handtekening verlaat nooit uw apparaat. De verwerking vindt volledig in de browser plaats."
 		},
 		"edit": {
 			"title": "PDF bewerken",
@@ -851,10 +863,10 @@
 			"save": "Bewerkte PDF opslaan",
 			"placeholder": "Te plaatsen tekst…",
 			"btn_busy": "Toepassen…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Welke bewerkingen kan ik maken?",
+			"seo_faq1_a": "U kunt tekst toevoegen op elke pagina van de PDF. Kies lettergrootte, kleur en positie door op de pagina te klikken.",
+			"seo_faq2_q": "Kan ik bestaande tekst in de PDF bewerken?",
+			"seo_faq2_a": "Momenteel kunt u nieuwe tekstlagen toevoegen. Bestaande tekst bewerken vereist het brondocument."
 		},
 		"password": {
 			"title": "PDF met wachtwoord beveiligen",
@@ -878,10 +890,10 @@
 			"password_placeholder": "Voer wachtwoord in…",
 			"owner_placeholder": "Eigenaarswachtwoord…",
 			"btn_busy": "Versleutelen…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Hoe veilig is de versleuteling?",
+			"seo_faq1_a": "PDF's worden versleuteld met standaard PDF-beveiliging. Het wachtwoord wordt nergens heen gestuurd — versleuteling vindt plaats in uw browser.",
+			"seo_faq2_q": "Kan ik rechten instellen zoals afdrukken voorkomen?",
+			"seo_faq2_a": "Ja. U kunt rechten voor afdrukken, kopiëren en bewerken instellen bij het beveiligen van de PDF."
 		},
 		"unlock": {
 			"title": "PDF ontgrendelen",
@@ -896,10 +908,10 @@
 			"password_label": "Wachtwoord (indien vereist)",
 			"password_placeholder": "Laat leeg als er geen is",
 			"password_hint": "Alleen nodig voor PDF's met een wachtwoord.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Kan ik een wachtwoord van een PDF verwijderen?",
+			"seo_faq1_a": "Ja, als u het huidige wachtwoord kent. Voer het in en LocalConvert slaat een onbeveiligde kopie op.",
+			"seo_faq2_q": "Is mijn wachtwoord veilig?",
+			"seo_faq2_a": "Ja. Uw wachtwoord wordt alleen in de browser gebruikt om het bestand te ontsleutelen. Het wordt nooit naar een server gestuurd."
 		},
 		"color_picker": {
 			"title": "Kleurkiezer",
@@ -927,10 +939,10 @@
 			"copied": "Gekopieerd!",
 			"download_txt": "Opslaan als .txt",
 			"btn_busy": "Extraheren van pagina {progress} van {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Werkt het met gescande PDF's?",
+			"seo_faq1_a": "Nee. Tekstextractie werkt met PDF's die echte tekst bevatten. Gescande documenten (op basis van afbeeldingen) hebben eerst OCR nodig.",
+			"seo_faq2_q": "Ondersteunt het ook andere talen dan Engels?",
+			"seo_faq2_a": "Ja. Tekstextractie ondersteunt alle talen inclusief Arabisch, Chinees, Japans, Koreaans en Cyrillisch schrift."
 		},
 		"grayscale": {
 			"title": "PDF naar grijstinten",
@@ -940,10 +952,10 @@
 			"grayscale": "Grijstinten",
 			"save": "Grijstinten-PDF opslaan",
 			"btn_busy": "Converteren van pagina {progress} van {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Blijft de tekst selecteerbaar na conversie?",
+			"seo_faq1_a": "Nee. Grijswaardenconversie rendert elke pagina als afbeelding. Tekst is niet meer selecteerbaar of doorzoekbaar.",
+			"seo_faq2_q": "Kan ik de kwaliteit aanpassen?",
+			"seo_faq2_a": "Ja. Gebruik de kwaliteitsschuifregelaar voor een balans tussen bestandsgrootte en beeldscherpte."
 		},
 		"json_formatter": {
 			"title": "JSON-formatter",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "of klik om te bladeren",
 			"disclaimer": "De layoutnauwkeurigheid hangt af van de documentcomplexiteit. Complexe tabellen en geavanceerde opmaak kunnen vereenvoudigd worden.",
 			"progress_hint": "Uw document wordt lokaal verwerkt — er wordt niets geüpload.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Ziet mijn Word-document er hetzelfde uit als PDF?",
+			"seo_faq1_a": "De layoutgetrouwheid hangt af van de complexiteit. Eenvoudige documenten worden goed geconverteerd; complexe tabellen en opmaak kunnen vereenvoudigd worden.",
+			"seo_faq2_q": "Worden .doc-bestanden (ouder Word-formaat) ondersteund?",
+			"seo_faq2_a": "Ja. Zowel .docx (modern) als .doc (ouder) Word-formaten worden ondersteund."
 		},
 		"from_xlsx": {
 			"title": "Excel naar PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "Staand",
 			"disclaimer": "Kolombreedtes worden automatisch berekend. Brede spreadsheets werken het best in liggende modus.",
 			"progress_hint": "Spreadsheet wordt lokaal verwerkt — er wordt niets geüpload.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Kan ik kiezen tussen liggend en staand?",
+			"seo_faq1_a": "Ja. U kunt de pagina-oriëntatie selecteren voor het converteren. Brede spreadsheets werken het best in liggend formaat.",
+			"seo_faq2_q": "Welke spreadsheetformaten worden ondersteund?",
+			"seo_faq2_a": "XLSX (Excel), XLS (ouder Excel), ODS (LibreOffice) en CSV-bestanden worden ondersteund."
 		},
 		"to_docx": {
 			"title": "PDF naar Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "Gescande (op afbeeldingen gebaseerde) PDF's produceren lege uitvoer — gebruik eerst OCR",
 			"progress_label": "Tekst extraheren… {progress}%",
 			"progress_hint": "Uw bestand verlaat nooit uw apparaat.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Blijft de opmaak behouden?",
+			"seo_faq1_a": "Tekstinhoud en basisstructuur (koppen, alinea's) blijven behouden. Complexe layouts, tabellen en afbeeldingen worden vereenvoudigd.",
+			"seo_faq2_q": "Werkt het met gescande PDF's?",
+			"seo_faq2_a": "Nee. Gescande (op afbeeldingen gebaseerde) PDF's produceren lege uitvoer. Gebruik eerst OCR-software om de tekst extraheerbaar te maken."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Welke draaihoeken zijn beschikbaar?",
+			"seo_faq1_a": "U kunt 90°, 180° of 270° met de klok mee draaien. De rotatie is direct en verliesvrij.",
+			"seo_faq2_q": "Vermindert draaien de beeldkwaliteit?",
+			"seo_faq2_a": "Nee. Het beeld wordt zonder hercompressie gedraaid, de originele kwaliteit blijft behouden."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Kan ik een exact formaat in pixels instellen?",
+			"seo_faq1_a": "Ja. Sleep een bijsnijdrechthoek of voer exacte pixelafmetingen in.",
+			"seo_faq2_q": "Welke afbeeldingsformaten kan ik bijsnijden?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF en de meeste gangbare formaten worden ondersteund."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Kan ik de dekking van het watermerk aanpassen?",
+			"seo_faq1_a": "Ja. Dekking, positie, grootte en kleur van het tekst-watermerk zijn instelbaar.",
+			"seo_faq2_q": "Is het watermerk permanent?",
+			"seo_faq2_a": "Ja. Na opslaan is het watermerk permanent in de afbeelding ingebed."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Kan ik eigen afbeeldingen gebruiken?",
+			"seo_faq1_a": "Ja. Kies een afbeelding en voeg boven- en ondertekst toe voor uw meme.",
+			"seo_faq2_q": "Kan ik lettertype en kleur aanpassen?",
+			"seo_faq2_a": "Ja. Lettergrootte, kleur en omlijning zijn aanpasbaar."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Hoeveel afbeeldingen kan ik tegelijk verwerken?",
+			"seo_faq1_a": "Geen vaste limiet. Verwerk zoveel afbeeldingen als het geheugen van uw apparaat toelaat.",
+			"seo_faq2_q": "Welke bewerkingen kan ik in batch toepassen?",
+			"seo_faq2_a": "Formaatconversie, formaat wijzigen, draaien en kwaliteit instellen voor alle geselecteerde afbeeldingen."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Wat kan ik in een QR-code coderen?",
+			"seo_faq1_a": "URL's, tekst, e-mailadressen, telefoonnummers of tekst tot duizenden tekens.",
+			"seo_faq2_q": "Kan ik het uiterlijk van de QR-code aanpassen?",
+			"seo_faq2_a": "Grootte en foutcorrectieniveau zijn instelbaar. De QR-code wordt als PNG opgeslagen."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Welke kleurformaten worden ondersteund?",
+			"seo_faq1_a": "HEX, RGB en HSL. Klik op een pixel om de kleurwaarde direct te kopiëren.",
+			"seo_faq2_q": "Kan ik kleuren uit elk type afbeelding kiezen?",
+			"seo_faq2_a": "Ja. JPG, PNG, WEBP, GIF en de meeste andere formaten worden ondersteund."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Kan ik meerdere gebieden vervagen?",
+			"seo_faq1_a": "Ja. Teken meerdere vervagingsgebieden op dezelfde afbeelding.",
+			"seo_faq2_q": "Kan ik de vervagingsintensiteit aanpassen?",
+			"seo_faq2_a": "Ja. Gebruik de intensiteitsschuifregelaar om de sterkte van het effect in te stellen."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Welke filters zijn beschikbaar?",
+			"seo_faq1_a": "Helderheid, contrast, verzadiging, tintrotatie, grijswaarden, sepia, vervaging en inversie.",
+			"seo_faq2_q": "Kan ik meerdere filters combineren?",
+			"seo_faq2_a": "Ja. Alle filteraanpassingen worden gecombineerd en in realtime toegepast."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Welke videoformaten worden ondersteund?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI en de meeste gangbare videoformaten.",
+			"seo_faq2_q": "Kan ik de duur en framerate van de GIF instellen?",
+			"seo_faq2_a": "Ja. Stel starttijd, duur en framerate in om de GIF te bepalen."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Controleert het de JSON-syntax?",
+			"seo_faq1_a": "Ja. Ongeldige JSON wordt gemarkeerd met een foutmelding op de exacte regel en positie.",
+			"seo_faq2_q": "Kan ik JSON ook minificeren?",
+			"seo_faq2_a": "Ja. JSON formatteren (verfraaien) en minificeren met één klik."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Welke hash-algoritmen worden ondersteund?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 en SHA-512 zijn allemaal beschikbaar.",
+			"seo_faq2_q": "Wordt hashing lokaal uitgevoerd?",
+			"seo_faq2_a": "Ja. Alle hashing draait in uw browser via Web Crypto API. Uw data verlaat nooit het apparaat."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Kan ik bestanden coderen, niet alleen tekst?",
+			"seo_faq1_a": "De tool codeert tekststrings. Voor bestanden converteert u eerst de inhoud naar tekst.",
+			"seo_faq2_q": "Ondersteunt het Unicode-tekst?",
+			"seo_faq2_a": "Ja. UTF-8-tekst inclusief niet-Latijnse tekens wordt volledig ondersteund."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Ondersteunt het GitHub-Markdown?",
+			"seo_faq1_a": "Ja. Tabellen, takenlijsten, doorhaling en andere GitHub-extensies worden correct weergegeven.",
+			"seo_faq2_q": "Kan ik de gerenderde HTML exporteren?",
+			"seo_faq2_a": "De preview toont de uitvoer in realtime. Kopieer HTML vanuit het previewpaneel."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Toont het verschillen per regel of per woord?",
+			"seo_faq1_a": "Verschillen worden per regel gemarkeerd met toevoegingen en verwijderingen duidelijk in kleur.",
+			"seo_faq2_q": "Is er een maximale grootte?",
+			"seo_faq2_a": "Geen vaste limiet. Grote teksten kunnen trager zijn op oudere apparaten."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Welke statistieken worden geteld?",
+			"seo_faq1_a": "Woorden, tekens (met en zonder spaties), zinnen, alinea's en geschatte leestijd.",
+			"seo_faq2_q": "Werkt het met niet-Engelse tekst?",
+			"seo_faq2_a": "Ja. Het tellen van woorden werkt met alle talen en tekensets."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Welke tekens worden gecodeerd?",
+			"seo_faq1_a": "Speciale tekens zoals spaties en niet-ASCII-tekens worden procentgecodeerd volgens RFC 3986.",
+			"seo_faq2_q": "Kan ik een volledige URL met parameters decoderen?",
+			"seo_faq2_a": "Ja. Plak een gecodeerde string en deze wordt gedecodeerd naar leesbare tekst."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Wat verwijdert CSS-minificatie?",
+			"seo_faq1_a": "Opmerkingen, onnodige spaties, lege regels en overbodige puntkomma's.",
+			"seo_faq2_q": "Hoeveel kleiner wordt mijn CSS?",
+			"seo_faq2_a": "Doorgaans 20-40% kleiner. Bestanden met veel opmerkingen zien de grootste reductie."
 		}
 	},
 	"toast": {

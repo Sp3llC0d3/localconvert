@@ -606,16 +606,16 @@
 		"convert_to_pdf": "Pretvori u PDF",
 		"save_pdf": "Spremi PDF",
 		"converting_progress": "Pretvaranje… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Kako funkcionira",
+		"seo_step1": "Odaberite datoteku sa svog uređaja",
+		"seo_step2": "Prilagodite postavke po potrebi",
+		"seo_step3": "Spremite rezultat — gotovo!",
+		"seo_why_title": "Zašto LocalConvert?",
+		"seo_why_private": "Potpuna privatnost — vaše datoteke nikad ne napuštaju vaš uređaj. Bez slanja na poslužitelj, nikada.",
+		"seo_why_free": "Zauvijek besplatno bez ograničenja veličine datoteka. Bez računa, bez pretplata.",
+		"seo_why_offline": "Radi izvan mreže kao instalirana aplikacija. Internet nije potreban nakon prvog učitavanja.",
+		"seo_faq_title": "Često postavljana pitanja",
+		"seo_related_title": "Povezani alati"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "Dodajte najmanje 2 PDF datoteke.",
 			"err_fail": "Spajanje nije uspjelo.",
 			"save": "Spremi spojeni PDF",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Je li spajanje PDF datoteka sigurno?",
+			"seo_faq1_a": "Da. LocalConvert radi u cijelosti u vašem pregledniku — vaše se datoteke nikad ne šalju na poslužitelj. Spajanje se odvija na vašem uređaju.",
+			"seo_faq2_q": "Postoji li ograničenje koliko PDF-ova mogu spojiti?",
+			"seo_faq2_a": "Ne. Možete spojiti koliko god PDF-ova memorija vašeg preglednika dopušta. Bez ograničenja veličine ili broja."
 		},
 		"split": {
 			"title": "Podijeli PDF",
@@ -642,10 +642,10 @@
 			"err_extract": "Izdvajanje stranice nije uspjelo.",
 			"err_fail": "Dijeljenje nije uspjelo.",
 			"help": "kliknite za odabir, tocka za jednu stranicu",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Mogu li izdvojiti određene stranice iz PDF-a?",
+			"seo_faq1_a": "Da. Odaberite željene stranice i LocalConvert će stvoriti novi PDF samo s tim stranicama.",
+			"seo_faq2_q": "Smanjuje li dijeljenje kvalitetu PDF-a?",
+			"seo_faq2_a": "Ne. Dijeljenje izdvaja stranice bez ponovnog kodiranja, izvorna kvaliteta ostaje očuvana."
 		},
 		"rotate_pdf": {
 			"title": "Rotiraj stranice",
@@ -656,7 +656,11 @@
 			"selected_pages": "Odabrane stranice",
 			"btn_busy": "Obrada…",
 			"err_fail": "Rotacija nije uspjela.",
-			"help": "kliknite za odabir"
+			"help": "kliknite za odabir",
+			"seo_faq1_q": "Mogu li rotirati pojedinačne stranice?",
+			"seo_faq1_a": "Da. Možete rotirati određene stranice ili cijeli PDF odjednom. Odaberite 90°, 180° ili 270°.",
+			"seo_faq2_q": "Utječe li rotacija na kvalitetu?",
+			"seo_faq2_a": "Ne. Stranice se rotiraju bez ponovnog kodiranja, izvorna kvaliteta ostaje u potpunosti očuvana."
 		},
 		"organize": {
 			"title": "Organiziraj stranice",
@@ -668,10 +672,10 @@
 			"no_pages": "Nema preostalih stranica.",
 			"btn": "Spremi organizirani PDF",
 			"btn_busy": "Spremanje…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Mogu li obrisati stranice iz PDF-a?",
+			"seo_faq1_a": "Da. Povucite stranice za preuređivanje i kliknite gumb za brisanje za uklanjanje nepotrebnih stranica.",
+			"seo_faq2_q": "Mogu li vidjeti pregled svake stranice?",
+			"seo_faq2_a": "Da. Prikazuju se vizualni pregledi svake stranice za lakšu identifikaciju i organizaciju."
 		},
 		"images_to_pdf": {
 			"title": "Slike → PDF",
@@ -681,10 +685,10 @@
 			"btn": "Pretvori u PDF",
 			"btn_busy": "Pretvaranje…",
 			"save": "Spremi PDF",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Koje formate slika mogu pretvoriti u PDF?",
+			"seo_faq1_a": "Podržane su JPG, PNG i WEBP slike. Svaka slika postaje stranica u PDF-u.",
+			"seo_faq2_q": "Mogu li poredati redoslijed slika?",
+			"seo_faq2_a": "Da. Dodajte više slika i poredajte ih željenim redoslijedom prije pretvaranja."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Slike",
@@ -693,10 +697,10 @@
 			"btn": "Izvezi kao slike",
 			"btn_busy": "Pretvaranje stranice {progress} od {total}…",
 			"err_fail": "Pretvorba nije uspjela.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "U kojem ću formatu dobiti slike?",
+			"seo_faq1_a": "Možete birati između JPG i PNG. Svaka PDF stranica postaje zasebna slika.",
+			"seo_faq2_q": "Što s višestraničnim PDF-ovima?",
+			"seo_faq2_a": "Svaka stranica izvozi se kao zasebna slika. Za višestranične PDF-ove dobit ćete ZIP datoteku sa svim slikama."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF u PowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "Pretvori u PPTX",
 			"btn_busy": "Pretvaranje stranice {progress} od {total}…",
 			"save": "Spremi PPTX",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Kako funkcionira pretvaranje PDF-a u PowerPoint?",
+			"seo_faq1_a": "Svaka PDF stranica prikazuje se kao slika i stavlja u PowerPoint slajd. Tekst nije moguće uređivati.",
+			"seo_faq2_q": "Mogu li uređivati slajdove nakon pretvaranja?",
+			"seo_faq2_a": "Slajdovi sadrže slike stranica. Možete dodavati tekstualne okvire i bilješke u PowerPointu."
 		},
 		"compress": {
 			"title": "Komprimiraj PDF",
@@ -732,10 +736,10 @@
 			"btn_busy": "Komprimiranje stranice {progress} od {total}…",
 			"err_fail": "Kompresija nije uspjela.",
 			"save": "Spremi komprimirani PDF",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Koliko mogu smanjiti veličinu PDF datoteke?",
+			"seo_faq1_a": "Obično 50-80% smanjenja ovisno o sadržaju. PDF-ovi s mnogo slika postižu najveću uštedu.",
+			"seo_faq2_q": "Utječe li kompresija na kvalitetu teksta?",
+			"seo_faq2_a": "Tekst se tijekom kompresije ponovno prikazuje kao slike. Za tekstualne dokumente koristite veću kvalitetu."
 		},
 		"watermark_pdf": {
 			"title": "Dodaj vodeni zig",
@@ -743,7 +747,11 @@
 			"btn": "Primijeni na sve stranice",
 			"btn_busy": "Primjenjivanje…",
 			"err_text": "Unesite tekst vodenog ziga.",
-			"save": "Spremi PDF s vodenim zigom"
+			"save": "Spremi PDF s vodenim zigom",
+			"seo_faq1_q": "Mogu li koristiti sliku kao vodeni žig?",
+			"seo_faq1_a": "Trenutno su podržani tekstualni vodeni žigovi. Možete prilagoditi tekst, veličinu, prozirnost i kut rotacije.",
+			"seo_faq2_q": "Hoće li vodeni žig prekriti sadržaj?",
+			"seo_faq2_a": "Ne. Vodeni žigovi postavljaju se s prilagodljivom prozirnošću pa sadržaj ostaje čitljiv ispod njih."
 		},
 		"page_numbers": {
 			"title": "Dodaj brojeve stranica",
@@ -760,10 +768,10 @@
 			"btn": "Primijeni na sve stranice",
 			"btn_busy": "Dodavanje brojeva…",
 			"save": "Spremi numerirani PDF",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Gdje mogu staviti brojeve stranica?",
+			"seo_faq1_a": "Možete staviti brojeve na vrh ili dno stranice, poravnane lijevo, u sredinu ili desno.",
+			"seo_faq2_q": "Mogu li prilagoditi format numeriranja?",
+			"seo_faq2_a": "Da. Možete postaviti početni broj, veličinu fonta i poziciju."
 		},
 		"metadata": {
 			"title": "Uredi metapodatke",
@@ -784,10 +792,10 @@
 			"err_read": "Citanje metapodataka nije uspjelo.",
 			"err_update": "Azuriranje metapodataka nije uspjelo.",
 			"save": "Spremi azurirani PDF",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Koje PDF metapodatke mogu uređivati?",
+			"seo_faq1_a": "Možete uređivati naslov, autora, predmet i ključne riječi bilo kojeg PDF-a.",
+			"seo_faq2_q": "Je li uređivanje metapodataka sigurno za PDF sadržaj?",
+			"seo_faq2_a": "Da. Mijenjaju se samo svojstva metapodataka — PDF sadržaj ostaje netaknut."
 		},
 		"crop_pdf": {
 			"title": "Izrezi PDF",
@@ -796,7 +804,11 @@
 			"err_margins": "Margine su prevelike — nema preostalog podrucja.",
 			"btn": "Izrezi PDF",
 			"btn_busy": "Izrezivanje…",
-			"save": "Spremi izrezani PDF"
+			"save": "Spremi izrezani PDF",
+			"seo_faq1_q": "Mogu li obrezati različite stranice različito?",
+			"seo_faq1_a": "Margine za obrezivanje primjenjuju se jednako na sve stranice. Za obrezivanje po stranici, prvo podijelite PDF, obrežite svaki dio pa spojite.",
+			"seo_faq2_q": "Smanjuje li obrezivanje veličinu datoteke?",
+			"seo_faq2_a": "Obrezivanje sakriva sadržaj izvan margina, ali možda neće značajno smanjiti veličinu jer skriveni podaci mogu ostati u datoteci."
 		},
 		"sign": {
 			"title": "Potpisi PDF",
@@ -813,10 +825,10 @@
 			"err_place": "Kliknite na stranicu da postavite potpis.",
 			"btn_busy": "Potpisivanje…",
 			"save": "Spremi potpisani PDF",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Kako mogu stvoriti potpis?",
+			"seo_faq1_a": "Možete nacrtati potpis mišem ili prstom, upisati ime ili učitati sliku potpisa.",
+			"seo_faq2_q": "Sprema li se moj potpis negdje?",
+			"seo_faq2_a": "Ne. Vaš potpis nikad ne napušta vaš uređaj. Obrada se vrši u cijelosti u pregledniku."
 		},
 		"edit": {
 			"title": "Uredi PDF",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count} elemenata postavljeno",
 			"btn_busy": "Primjenjivanje…",
 			"save": "Spremi uredeni PDF",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Kakve izmjene mogu napraviti?",
+			"seo_faq1_a": "Možete dodati tekst na bilo koju stranicu PDF-a. Odaberite veličinu fonta, boju i poziciju klikom na stranicu.",
+			"seo_faq2_q": "Mogu li uređivati postojeći tekst u PDF-u?",
+			"seo_faq2_a": "Trenutno možete dodavati nove tekstualne slojeve. Uređivanje postojećeg teksta zahtijeva izvorni dokument."
 		},
 		"password": {
 			"title": "Zastiti PDF lozinkom",
@@ -858,10 +870,10 @@
 			"btn_busy": "Sifriranje…",
 			"result": "Zasticeno!",
 			"save": "Spremi zasticeni PDF",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Koliko je sigurna enkripcija?",
+			"seo_faq1_a": "PDF-ovi se šifriraju standardnom PDF sigurnošću. Lozinka se nikad ne šalje nikamo — šifriranje se obavlja u pregledniku.",
+			"seo_faq2_q": "Mogu li postaviti dozvole poput zabrane ispisa?",
+			"seo_faq2_a": "Da. Možete postaviti dozvole za ispis, kopiranje i uređivanje prilikom zaštite PDF-a."
 		},
 		"unlock": {
 			"title": "Otkljucaj PDF",
@@ -876,10 +888,10 @@
 			"password_label": "Lozinka (ako je potrebna)",
 			"password_placeholder": "Ostavite prazno ako nema",
 			"password_hint": "Potrebna samo za PDF-ove koji zahtijevaju lozinku.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Mogu li ukloniti lozinku s PDF-a?",
+			"seo_faq1_a": "Da, ako znate trenutnu lozinku. Unesite je i LocalConvert će spremiti nezaštićenu kopiju.",
+			"seo_faq2_q": "Je li moja lozinka sigurna?",
+			"seo_faq2_a": "Da. Vaša se lozinka koristi samo u pregledniku za dešifriranje datoteke. Nikad se ne šalje na poslužitelj."
 		},
 		"rotate_image": {
 			"title": "Rotiraj sliku",
@@ -957,10 +969,10 @@
 			"copy": "Kopiraj",
 			"copied": "Kopirano!",
 			"download_txt": "Spremi kao .txt",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Radi li sa skeniranim PDF-ovima?",
+			"seo_faq1_a": "Ne. Izdvajanje teksta radi s PDF-ovima koji sadrže stvarni tekst. Skenirani dokumenti (temeljeni na slikama) zahtijevaju OCR.",
+			"seo_faq2_q": "Podržava li tekst na drugim jezicima osim engleskog?",
+			"seo_faq2_a": "Da. Izdvajanje teksta podržava sve jezike uključujući arapski, kineski, japanski, korejski i ćirilicu."
 		},
 		"grayscale": {
 			"title": "PDF u crno-bijelo",
@@ -970,10 +982,10 @@
 			"btn_busy": "Pretvaranje stranice {progress} od {total}…",
 			"grayscale": "Crno-bijelo",
 			"save": "Spremi crno-bijeli PDF",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Hoće li tekst ostati označiv nakon pretvaranja?",
+			"seo_faq1_a": "Ne. Pretvaranje u sive tonove prikazuje svaku stranicu kao sliku. Tekst više neće biti označiv ni pretraživ.",
+			"seo_faq2_q": "Mogu li podesiti kvalitetu?",
+			"seo_faq2_a": "Da. Koristite klizač kvalitete za ravnotežu između veličine datoteke i jasnoće slike."
 		},
 		"json_formatter": {
 			"title": "JSON Formater",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "ili kliknite za pregledavanje",
 			"disclaimer": "Vjernost rasporeda ovisi o složenosti dokumenta. Složene tablice i napredno oblikovanje mogu se pojednostaviti.",
 			"progress_hint": "Vaš dokument se obrađuje lokalno — ništa se ne prenosi.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Hoće li moj Word dokument izgledati isto kao PDF?",
+			"seo_faq1_a": "Vjernost izgleda ovisi o složenosti dokumenta. Jednostavni dokumenti se dobro pretvaraju; složene tablice i formatiranje mogu biti pojednostavljeni.",
+			"seo_faq2_q": "Podržava li .doc datoteke (stariji Word format)?",
+			"seo_faq2_a": "Da. Podržani su i .docx (moderni) i .doc (stariji) Word formati."
 		},
 		"from_xlsx": {
 			"title": "Excel u PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "Portret",
 			"disclaimer": "Širine stupaca se automatski izračunavaju. Široke tablice najbolje rade u pejzažnom načinu.",
 			"progress_hint": "Proračunska tablica se obrađuje lokalno — ništa se ne prenosi.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Mogu li odabrati pejzažnu ili portretnu orijentaciju?",
+			"seo_faq1_a": "Da. Možete odabrati orijentaciju stranice prije pretvaranja. Široke tablice najbolje izgledaju u pejzažnom modu.",
+			"seo_faq2_q": "Koji su formati tablica podržani?",
+			"seo_faq2_a": "Podržani su XLSX (Excel), XLS (stariji Excel), ODS (LibreOffice) i CSV datoteke."
 		},
 		"to_docx": {
 			"title": "PDF u Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "Skenirani (slikovni) PDF-ovi proizvode prazan izlaz — prvo koristite OCR",
 			"progress_label": "Izvlačenje teksta… {progress}%",
 			"progress_hint": "Vaša datoteka nikada ne napušta vaš uređaj.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Čuva li se formatiranje?",
+			"seo_faq1_a": "Tekstualni sadržaj i osnovna struktura (naslovi, odlomci) se čuvaju. Složeni rasporedi, tablice i slike se pojednostavljuju.",
+			"seo_faq2_q": "Radi li sa skeniranim PDF-ovima?",
+			"seo_faq2_a": "Ne. Skenirani PDF-ovi (temeljeni na slikama) daju prazan rezultat. Prvo koristite OCR softver za izdvajanje teksta."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Koji su kutovi rotacije dostupni?",
+			"seo_faq1_a": "Možete rotirati za 90°, 180° ili 270° u smjeru kazaljke. Rotacija je trenutna i bez gubitka kvalitete.",
+			"seo_faq2_q": "Smanjuje li rotacija kvalitetu slike?",
+			"seo_faq2_a": "Ne. Slika se rotira bez ponovne kompresije, čuvajući izvornu kvalitetu."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Mogu li postaviti točnu veličinu u pikselima?",
+			"seo_faq1_a": "Da. Možete povući pravokutnik za izrezivanje ili unijeti precizne dimenzije u pikselima.",
+			"seo_faq2_q": "Koje formate slika mogu izrezati?",
+			"seo_faq2_a": "Podržani su JPG, PNG, WEBP, GIF i većina drugih uobičajenih formata."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Mogu li podesiti prozirnost vodenog žiga?",
+			"seo_faq1_a": "Da. Možete kontrolirati prozirnost, položaj, veličinu i boju tekstualnog vodenog žiga.",
+			"seo_faq2_q": "Je li vodeni žig trajan?",
+			"seo_faq2_a": "Da. Nakon spremanja, vodeni žig je trajno ugrađen u sliku."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Mogu li koristiti vlastite slike?",
+			"seo_faq1_a": "Da. Odaberite bilo koju sliku s uređaja i dodajte gornji i donji tekst za izradu mema.",
+			"seo_faq2_q": "Mogu li prilagoditi font i boju?",
+			"seo_faq2_a": "Da. Veličina fonta, boja i obrub su prilagodljivi."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Koliko slika mogu obraditi odjednom?",
+			"seo_faq1_a": "Nema fiksnog ograničenja. Obradite onoliko slika koliko memorija uređaja dopušta.",
+			"seo_faq2_q": "Koje operacije mogu primijeniti grupno?",
+			"seo_faq2_a": "Pretvorba formata, promjena veličine, rotacija i podešavanje kvalitete za sve odabrane slike."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Što mogu kodirati u QR kod?",
+			"seo_faq1_a": "URL-ove, tekst, e-mail adrese, telefonske brojeve ili bilo koji tekst do nekoliko tisuća znakova.",
+			"seo_faq2_q": "Mogu li prilagoditi izgled QR koda?",
+			"seo_faq2_a": "Veličina i razina korekcije pogrešaka su prilagodljive. QR kod se sprema kao PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Koji formati boja su podržani?",
+			"seo_faq1_a": "HEX, RGB i HSL. Kliknite na bilo koji piksel za trenutno kopiranje vrijednosti boje.",
+			"seo_faq2_q": "Mogu li birati boje iz bilo koje vrste slike?",
+			"seo_faq2_a": "Da. JPG, PNG, WEBP, GIF i većina drugih formata su podržani."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Mogu li zamutiti više područja?",
+			"seo_faq1_a": "Da. Nacrtajte više područja zamućenja na istoj slici.",
+			"seo_faq2_q": "Mogu li podesiti intenzitet zamućenja?",
+			"seo_faq2_a": "Da. Koristite klizač intenziteta za kontrolu jačine efekta."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Koji su filteri dostupni?",
+			"seo_faq1_a": "Svjetlina, kontrast, zasićenost, rotacija boje, sivi tonovi, sepija, zamućenje i invertiranje.",
+			"seo_faq2_q": "Mogu li kombinirati više filtera?",
+			"seo_faq2_a": "Da. Sve postavke filtera se slažu i primjenjuju na sliku u stvarnom vremenu."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Koji video formati su podržani?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI i većina uobičajenih video formata.",
+			"seo_faq2_q": "Mogu li podesiti trajanje i brzinu GIF-a?",
+			"seo_faq2_a": "Da. Postavite vrijeme početka, trajanje i brzinu sličica."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Provjerava li ispravnost JSON sintakse?",
+			"seo_faq1_a": "Da. Neispravan JSON označen je porukom pogreške s točnim redom i znakom.",
+			"seo_faq2_q": "Mogu li i minificirati JSON?",
+			"seo_faq2_a": "Da. Formatiranje i minifikacija JSON-a jednim klikom."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Koji algoritmi raspršivanja su podržani?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 i SHA-512.",
+			"seo_faq2_q": "Vrši li se raspršivanje lokalno?",
+			"seo_faq2_a": "Da. Sve se izvršava u pregledniku putem Web Crypto API-ja. Podaci nikad ne napuštaju uređaj."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Mogu li kodirati datoteke?",
+			"seo_faq1_a": "Alat kodira tekstualne nizove. Za datoteke, prvo pretvorite sadržaj u tekst.",
+			"seo_faq2_q": "Podržava li Unicode?",
+			"seo_faq2_a": "Da. UTF-8 tekst uključujući ne-latinske znakove je potpuno podržan."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Podržava li GitHub Markdown?",
+			"seo_faq1_a": "Da. Tablice, popisi zadataka, precrtani tekst i druge GitHub ekstenzije se ispravno prikazuju.",
+			"seo_faq2_q": "Mogu li izvesti generirani HTML?",
+			"seo_faq2_a": "Pregled prikazuje rezultat u stvarnom vremenu. Kopirajte HTML iz panela pregleda."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Prikazuje li razlike red po red ili riječ po riječ?",
+			"seo_faq1_a": "Razlike su istaknute na razini reda s obojenim dodavanjima i brisanjima.",
+			"seo_faq2_q": "Postoji li ograničenje veličine?",
+			"seo_faq2_a": "Nema fiksnog ograničenja. Veliki tekstovi mogu biti sporiji na starijim uređajima."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Koje metrike broji?",
+			"seo_faq1_a": "Riječi, znakove (sa i bez razmaka), rečenice, odlomke i procijenjeno vrijeme čitanja.",
+			"seo_faq2_q": "Radi li s ne-engleskim tekstom?",
+			"seo_faq2_a": "Da. Brojanje riječi radi sa svim jezicima i skupovima znakova."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Koji se znakovi kodiraju?",
+			"seo_faq1_a": "Posebni znakovi poput razmaka i ne-ASCII znakova kodiraju se postotno prema RFC 3986.",
+			"seo_faq2_q": "Mogu li dekodirati puni URL s parametrima?",
+			"seo_faq2_a": "Da. Zalijepite kodirani niz i bit će dekodiran u čitljiv tekst."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Što uklanja CSS minifikacija?",
+			"seo_faq1_a": "Komentare, nepotrebne razmake, prazne redove i suvišne točke-zareze.",
+			"seo_faq2_q": "Koliko će moj CSS biti manji?",
+			"seo_faq2_a": "Obično 20-40% manji. Datoteke s mnogo komentara postižu najveće smanjenje."
 		}
 	},
 	"dev_tools": {

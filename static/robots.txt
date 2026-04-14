@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_app/
 
 Sitemap: https://localconvert.app/sitemap.xml

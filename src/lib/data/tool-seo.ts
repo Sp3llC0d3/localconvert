@@ -188,4 +188,152 @@ export const toolSeo: Record<string, ToolSeoData> = {
 		],
 		faqKeys: ['tool_pages.to_docx.seo_faq1_q', 'tool_pages.to_docx.seo_faq1_a', 'tool_pages.to_docx.seo_faq2_q', 'tool_pages.to_docx.seo_faq2_a'],
 	},
+
+	// ── Image Tools ──
+	'img-rotate': {
+		related: [
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+			{ href: '/image-tools/batch/', nameKey: 'image_tools.tools.batch_name', icon: LayersIcon },
+		],
+		faqKeys: ['tool_pages.img_rotate.seo_faq1_q', 'tool_pages.img_rotate.seo_faq1_a', 'tool_pages.img_rotate.seo_faq2_q', 'tool_pages.img_rotate.seo_faq2_a'],
+	},
+	'img-crop': {
+		related: [
+			{ href: '/image-tools/rotate/', nameKey: 'image_tools.tools.rotate_name', icon: RotateCwIcon },
+			{ href: '/image-tools/watermark/', nameKey: 'image_tools.tools.watermark_name', icon: DropletIcon },
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+		],
+		faqKeys: ['tool_pages.img_crop.seo_faq1_q', 'tool_pages.img_crop.seo_faq1_a', 'tool_pages.img_crop.seo_faq2_q', 'tool_pages.img_crop.seo_faq2_a'],
+	},
+	'img-watermark': {
+		related: [
+			{ href: '/image-tools/meme/', nameKey: 'image_tools.tools.meme_name', icon: SmileIcon },
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/image-tools/batch/', nameKey: 'image_tools.tools.batch_name', icon: LayersIcon },
+		],
+		faqKeys: ['tool_pages.img_watermark.seo_faq1_q', 'tool_pages.img_watermark.seo_faq1_a', 'tool_pages.img_watermark.seo_faq2_q', 'tool_pages.img_watermark.seo_faq2_a'],
+	},
+	'img-meme': {
+		related: [
+			{ href: '/image-tools/watermark/', nameKey: 'image_tools.tools.watermark_name', icon: DropletIcon },
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+		],
+		faqKeys: ['tool_pages.img_meme.seo_faq1_q', 'tool_pages.img_meme.seo_faq1_a', 'tool_pages.img_meme.seo_faq2_q', 'tool_pages.img_meme.seo_faq2_a'],
+	},
+	'img-batch': {
+		related: [
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+			{ href: '/image-tools/rotate/', nameKey: 'image_tools.tools.rotate_name', icon: RotateCwIcon },
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+		],
+		faqKeys: ['tool_pages.img_batch.seo_faq1_q', 'tool_pages.img_batch.seo_faq1_a', 'tool_pages.img_batch.seo_faq2_q', 'tool_pages.img_batch.seo_faq2_a'],
+	},
+	'img-qr': {
+		related: [
+			{ href: '/image-tools/color-picker/', nameKey: 'image_tools.tools.color_picker_name', icon: PipetteIcon },
+			{ href: '/image-tools/watermark/', nameKey: 'image_tools.tools.watermark_name', icon: DropletIcon },
+			{ href: '/dev-tools/base64/', nameKey: 'dev_tools.tools.base64_name', icon: BinaryIcon },
+		],
+		faqKeys: ['tool_pages.img_qr.seo_faq1_q', 'tool_pages.img_qr.seo_faq1_a', 'tool_pages.img_qr.seo_faq2_q', 'tool_pages.img_qr.seo_faq2_a'],
+	},
+	'img-color-picker': {
+		related: [
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/dev-tools/css-minify/', nameKey: 'dev_tools.tools.css_minify_name', icon: MinimizeIcon },
+		],
+		faqKeys: ['tool_pages.img_color_picker.seo_faq1_q', 'tool_pages.img_color_picker.seo_faq1_a', 'tool_pages.img_color_picker.seo_faq2_q', 'tool_pages.img_color_picker.seo_faq2_a'],
+	},
+	'img-blur': {
+		related: [
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/image-tools/watermark/', nameKey: 'image_tools.tools.watermark_name', icon: DropletIcon },
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+		],
+		faqKeys: ['tool_pages.img_blur.seo_faq1_q', 'tool_pages.img_blur.seo_faq1_a', 'tool_pages.img_blur.seo_faq2_q', 'tool_pages.img_blur.seo_faq2_a'],
+	},
+	'img-filters': {
+		related: [
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/image-tools/rotate/', nameKey: 'image_tools.tools.rotate_name', icon: RotateCwIcon },
+			{ href: '/image-tools/batch/', nameKey: 'image_tools.tools.batch_name', icon: LayersIcon },
+		],
+		faqKeys: ['tool_pages.img_filters.seo_faq1_q', 'tool_pages.img_filters.seo_faq1_a', 'tool_pages.img_filters.seo_faq2_q', 'tool_pages.img_filters.seo_faq2_a'],
+	},
+	'img-video-to-gif': {
+		related: [
+			{ href: '/image-tools/crop/', nameKey: 'image_tools.tools.crop_name', icon: CropIcon },
+			{ href: '/image-tools/filters/', nameKey: 'image_tools.tools.filters_name', icon: SlidersHorizontalIcon },
+			{ href: '/image-tools/batch/', nameKey: 'image_tools.tools.batch_name', icon: LayersIcon },
+		],
+		faqKeys: ['tool_pages.img_video_to_gif.seo_faq1_q', 'tool_pages.img_video_to_gif.seo_faq1_a', 'tool_pages.img_video_to_gif.seo_faq2_q', 'tool_pages.img_video_to_gif.seo_faq2_a'],
+	},
+
+	// ── Dev Tools ──
+	'dev-json': {
+		related: [
+			{ href: '/dev-tools/css-minify/', nameKey: 'dev_tools.tools.css_minify_name', icon: MinimizeIcon },
+			{ href: '/dev-tools/diff/', nameKey: 'dev_tools.tools.diff_name', icon: DiffIcon },
+			{ href: '/dev-tools/base64/', nameKey: 'dev_tools.tools.base64_name', icon: BinaryIcon },
+		],
+		faqKeys: ['tool_pages.dev_json.seo_faq1_q', 'tool_pages.dev_json.seo_faq1_a', 'tool_pages.dev_json.seo_faq2_q', 'tool_pages.dev_json.seo_faq2_a'],
+	},
+	'dev-hash': {
+		related: [
+			{ href: '/dev-tools/base64/', nameKey: 'dev_tools.tools.base64_name', icon: BinaryIcon },
+			{ href: '/dev-tools/diff/', nameKey: 'dev_tools.tools.diff_name', icon: DiffIcon },
+			{ href: '/dev-tools/url-encode/', nameKey: 'dev_tools.tools.url_encode_name', icon: LinkIcon },
+		],
+		faqKeys: ['tool_pages.dev_hash.seo_faq1_q', 'tool_pages.dev_hash.seo_faq1_a', 'tool_pages.dev_hash.seo_faq2_q', 'tool_pages.dev_hash.seo_faq2_a'],
+	},
+	'dev-base64': {
+		related: [
+			{ href: '/dev-tools/url-encode/', nameKey: 'dev_tools.tools.url_encode_name', icon: LinkIcon },
+			{ href: '/dev-tools/hash/', nameKey: 'dev_tools.tools.hash_name', icon: HashIcon },
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+		],
+		faqKeys: ['tool_pages.dev_base64.seo_faq1_q', 'tool_pages.dev_base64.seo_faq1_a', 'tool_pages.dev_base64.seo_faq2_q', 'tool_pages.dev_base64.seo_faq2_a'],
+	},
+	'dev-markdown': {
+		related: [
+			{ href: '/dev-tools/diff/', nameKey: 'dev_tools.tools.diff_name', icon: DiffIcon },
+			{ href: '/dev-tools/word-count/', nameKey: 'dev_tools.tools.word_count_name', icon: TypeIcon },
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+		],
+		faqKeys: ['tool_pages.dev_markdown.seo_faq1_q', 'tool_pages.dev_markdown.seo_faq1_a', 'tool_pages.dev_markdown.seo_faq2_q', 'tool_pages.dev_markdown.seo_faq2_a'],
+	},
+	'dev-diff': {
+		related: [
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+			{ href: '/dev-tools/word-count/', nameKey: 'dev_tools.tools.word_count_name', icon: TypeIcon },
+			{ href: '/dev-tools/markdown/', nameKey: 'dev_tools.tools.markdown_name', icon: FileTextIcon },
+		],
+		faqKeys: ['tool_pages.dev_diff.seo_faq1_q', 'tool_pages.dev_diff.seo_faq1_a', 'tool_pages.dev_diff.seo_faq2_q', 'tool_pages.dev_diff.seo_faq2_a'],
+	},
+	'dev-word-count': {
+		related: [
+			{ href: '/dev-tools/diff/', nameKey: 'dev_tools.tools.diff_name', icon: DiffIcon },
+			{ href: '/dev-tools/markdown/', nameKey: 'dev_tools.tools.markdown_name', icon: FileTextIcon },
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+		],
+		faqKeys: ['tool_pages.dev_word_count.seo_faq1_q', 'tool_pages.dev_word_count.seo_faq1_a', 'tool_pages.dev_word_count.seo_faq2_q', 'tool_pages.dev_word_count.seo_faq2_a'],
+	},
+	'dev-url-encode': {
+		related: [
+			{ href: '/dev-tools/base64/', nameKey: 'dev_tools.tools.base64_name', icon: BinaryIcon },
+			{ href: '/dev-tools/hash/', nameKey: 'dev_tools.tools.hash_name', icon: HashIcon },
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+		],
+		faqKeys: ['tool_pages.dev_url_encode.seo_faq1_q', 'tool_pages.dev_url_encode.seo_faq1_a', 'tool_pages.dev_url_encode.seo_faq2_q', 'tool_pages.dev_url_encode.seo_faq2_a'],
+	},
+	'dev-css-minify': {
+		related: [
+			{ href: '/dev-tools/json/', nameKey: 'dev_tools.tools.json_name', icon: BracesIcon },
+			{ href: '/dev-tools/diff/', nameKey: 'dev_tools.tools.diff_name', icon: DiffIcon },
+			{ href: '/dev-tools/word-count/', nameKey: 'dev_tools.tools.word_count_name', icon: TypeIcon },
+		],
+		faqKeys: ['tool_pages.dev_css_minify.seo_faq1_q', 'tool_pages.dev_css_minify.seo_faq1_a', 'tool_pages.dev_css_minify.seo_faq2_q', 'tool_pages.dev_css_minify.seo_faq2_a'],
+	},
 };

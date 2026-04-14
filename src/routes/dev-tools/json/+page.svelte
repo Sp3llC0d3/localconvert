@@ -2,6 +2,8 @@
 	import { m } from '$lib/paraglide/messages';
 	import { BracesIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let input = $state('{\n  "name": "LocalConvert",\n  "version": 1\n}');
 	let output = $state('');
@@ -60,6 +62,7 @@
 	<meta property="og:title" content="JSON Formatter — LocalConvert" />
 	<meta property="og:description" content="Format, minify, and validate JSON online. Free, private, runs in your browser." />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/json/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Format JSON Online","step":[{"@type":"HowToStep","text":"Paste your JSON data into the editor"},{"@type":"HowToStep","text":"Click format to beautify with proper indentation"},{"@type":"HowToStep","text":"Copy the formatted JSON or minify it"}]}</script>`}
 </svelte:head>
 
 <div class="json-page">
@@ -109,6 +112,16 @@
 	</div>
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['dev-json']}
+		<ToolSeoBlock
+			faqs={toolSeo['dev-json'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['dev-json'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-json'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['dev-json'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-json'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['dev-json'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

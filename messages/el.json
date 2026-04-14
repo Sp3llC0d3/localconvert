@@ -606,16 +606,16 @@
 		"convert_to_pdf": "Μετατροπή σε PDF",
 		"save_pdf": "Αποθήκευση PDF",
 		"converting_progress": "Μετατρέπεται… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Πώς λειτουργεί",
+		"seo_step1": "Επιλέξτε το αρχείο σας από τη συσκευή σας",
+		"seo_step2": "Προσαρμόστε τις ρυθμίσεις αν χρειάζεται",
+		"seo_step3": "Αποθηκεύστε το αποτέλεσμα — έτοιμο!",
+		"seo_why_title": "Γιατί LocalConvert;",
+		"seo_why_private": "100% ιδιωτικό — τα αρχεία σας δεν φεύγουν ποτέ από τη συσκευή σας. Κανένα ανέβασμα σε server, ποτέ.",
+		"seo_why_free": "Δωρεάν για πάντα χωρίς όριο μεγέθους αρχείων. Χωρίς λογαριασμούς, χωρίς συνδρομές.",
+		"seo_why_offline": "Λειτουργεί χωρίς σύνδεση ως εγκατεστημένη εφαρμογή. Δεν χρειάζεται internet μετά την πρώτη φόρτωση.",
+		"seo_faq_title": "Συχνές ερωτήσεις",
+		"seo_related_title": "Σχετικά εργαλεία"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "Προσθεστε τουλαχιστον 2 αρχεια PDF.",
 			"err_fail": "Η συγχωνευση απετυχε.",
 			"save": "Αποθηκευση συγχωνευμενου PDF",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Είναι ασφαλής η συγχώνευση PDF;",
+			"seo_faq1_a": "Ναι. Το LocalConvert τρέχει εξ ολοκλήρου στον browser σας — τα αρχεία σας δεν ανεβαίνουν ποτέ σε κανέναν server. Η συγχώνευση γίνεται στη συσκευή σας.",
+			"seo_faq2_q": "Υπάρχει όριο στον αριθμό PDF που μπορώ να συγχωνεύσω;",
+			"seo_faq2_a": "Όχι. Μπορείτε να συγχωνεύσετε όσα PDF αντέχει η μνήμη του browser σας. Χωρίς όρια μεγέθους ή αριθμού."
 		},
 		"split": {
 			"title": "Διαχωρισμος PDF",
@@ -642,10 +642,10 @@
 			"err_extract": "Αποτυχια εξαγωγης σελιδας.",
 			"err_fail": "Ο διαχωρισμος απετυχε.",
 			"help": "κλικ για εναλλαγη, τελεια για μεμονωμενη σελιδα",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Μπορώ να εξάγω συγκεκριμένες σελίδες από ένα PDF;",
+			"seo_faq1_a": "Ναι. Επιλέξτε τις σελίδες που θέλετε και το LocalConvert θα δημιουργήσει ένα νέο PDF μόνο με αυτές.",
+			"seo_faq2_q": "Μειώνεται η ποιότητα με τον διαχωρισμό;",
+			"seo_faq2_a": "Όχι. Ο διαχωρισμός εξάγει σελίδες χωρίς επανακωδικοποίηση, διατηρώντας πλήρως την αρχική ποιότητα."
 		},
 		"rotate_pdf": {
 			"title": "Περιστροφη σελιδων",
@@ -656,7 +656,11 @@
 			"selected_pages": "Επιλεγμενες σελιδες",
 			"btn_busy": "Επεξεργασια…",
 			"err_fail": "Η περιστροφη απετυχε.",
-			"help": "κλικ για εναλλαγη"
+			"help": "κλικ για εναλλαγη",
+			"seo_faq1_q": "Μπορώ να περιστρέψω μεμονωμένες σελίδες;",
+			"seo_faq1_a": "Ναι. Μπορείτε να περιστρέψετε συγκεκριμένες σελίδες ή ολόκληρο το PDF. Επιλέξτε 90°, 180° ή 270°.",
+			"seo_faq2_q": "Επηρεάζει η περιστροφή την ποιότητα;",
+			"seo_faq2_a": "Όχι. Οι σελίδες περιστρέφονται χωρίς επανακωδικοποίηση, διατηρώντας πλήρως την αρχική ποιότητα."
 		},
 		"organize": {
 			"title": "Οργανωση σελιδων",
@@ -668,10 +672,10 @@
 			"no_pages": "Δεν απομενουν σελιδες.",
 			"btn": "Αποθηκευση οργανωμενου PDF",
 			"btn_busy": "Αποθηκευση…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Μπορώ να διαγράψω σελίδες από ένα PDF;",
+			"seo_faq1_a": "Ναι. Σύρετε σελίδες για αναδιάταξη και πατήστε διαγραφή για να αφαιρέσετε ανεπιθύμητες σελίδες.",
+			"seo_faq2_q": "Μπορώ να δω προεπισκόπηση κάθε σελίδας;",
+			"seo_faq2_a": "Ναι. Εμφανίζονται μικρογραφίες κάθε σελίδας για εύκολη αναγνώριση και τακτοποίηση."
 		},
 		"images_to_pdf": {
 			"title": "Εικονες → PDF",
@@ -681,10 +685,10 @@
 			"btn": "Μετατροπη σε PDF",
 			"btn_busy": "Μετατροπη…",
 			"save": "Αποθηκευση PDF",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Ποιες μορφές εικόνας μπορώ να μετατρέψω σε PDF;",
+			"seo_faq1_a": "Υποστηρίζονται JPG, PNG και WEBP. Κάθε εικόνα γίνεται μια σελίδα στο PDF.",
+			"seo_faq2_q": "Μπορώ να ταξινομήσω τη σειρά των εικόνων;",
+			"seo_faq2_a": "Ναι. Προσθέστε πολλές εικόνες και τακτοποιήστε τις στην επιθυμητή σειρά πριν τη μετατροπή."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Εικονες",
@@ -693,10 +697,10 @@
 			"btn": "Εξαγωγη ως εικονες",
 			"btn_busy": "Μετατροπη σελιδας {progress} απο {total}…",
 			"err_fail": "Η μετατροπη απετυχε.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "Σε ποια μορφή θα πάρω τις εικόνες;",
+			"seo_faq1_a": "Μπορείτε να επιλέξετε ανάμεσα σε JPG και PNG. Κάθε σελίδα PDF γίνεται ξεχωριστή εικόνα.",
+			"seo_faq2_q": "Τι γίνεται με PDF πολλών σελίδων;",
+			"seo_faq2_a": "Κάθε σελίδα εξάγεται ως ξεχωριστή εικόνα. Για PDF πολλών σελίδων θα λάβετε ένα αρχείο ZIP με όλες τις εικόνες."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF σε PowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "Μετατροπη σε PPTX",
 			"btn_busy": "Μετατροπη σελιδας {progress} απο {total}…",
 			"save": "Αποθηκευση PPTX",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Πώς λειτουργεί η μετατροπή PDF σε PowerPoint;",
+			"seo_faq1_a": "Κάθε σελίδα PDF αποδίδεται ως εικόνα και τοποθετείται σε μια διαφάνεια PowerPoint. Το κείμενο δεν είναι επεξεργάσιμο.",
+			"seo_faq2_q": "Μπορώ να επεξεργαστώ τις διαφάνειες μετά τη μετατροπή;",
+			"seo_faq2_a": "Οι διαφάνειες περιέχουν εικόνες σελίδων. Μπορείτε να προσθέσετε πλαίσια κειμένου και σχολιασμούς στο PowerPoint."
 		},
 		"compress": {
 			"title": "Συμπιεση PDF",
@@ -732,10 +736,10 @@
 			"btn_busy": "Συμπιεση σελιδας {progress} απο {total}…",
 			"err_fail": "Η συμπιεση απετυχε.",
 			"save": "Αποθηκευση συμπιεσμενου PDF",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Πόσο μπορώ να μειώσω το μέγεθος του PDF;",
+			"seo_faq1_a": "Τυπικά 50-80% μείωση ανάλογα με το περιεχόμενο. PDF με πολλές εικόνες πετυχαίνουν τη μεγαλύτερη εξοικονόμηση.",
+			"seo_faq2_q": "Επηρεάζει η συμπίεση την ποιότητα κειμένου;",
+			"seo_faq2_a": "Το κείμενο αποδίδεται ξανά ως εικόνα κατά τη συμπίεση. Για έγγραφα με πολύ κείμενο χρησιμοποιήστε υψηλότερη ρύθμιση ποιότητας."
 		},
 		"watermark_pdf": {
 			"title": "Προσθηκη υδατογραφηματος",
@@ -743,7 +747,11 @@
 			"btn": "Εφαρμογη σε ολες τις σελιδες",
 			"btn_busy": "Εφαρμογη…",
 			"err_text": "Εισαγετε κειμενο υδατογραφηματος.",
-			"save": "Αποθηκευση PDF με υδατογραφημα"
+			"save": "Αποθηκευση PDF με υδατογραφημα",
+			"seo_faq1_q": "Μπορώ να χρησιμοποιήσω εικόνα ως υδατογράφημα;",
+			"seo_faq1_a": "Προς το παρόν υποστηρίζονται υδατογραφήματα κειμένου. Μπορείτε να προσαρμόσετε κείμενο, μέγεθος, αδιαφάνεια και γωνία περιστροφής.",
+			"seo_faq2_q": "Θα καλύψει το υδατογράφημα το περιεχόμενο;",
+			"seo_faq2_a": "Όχι. Τα υδατογραφήματα τοποθετούνται με ρυθμιζόμενη αδιαφάνεια, ώστε το περιεχόμενο να παραμένει αναγνώσιμο."
 		},
 		"page_numbers": {
 			"title": "Προσθηκη αριθμων σελιδων",
@@ -760,10 +768,10 @@
 			"btn": "Εφαρμογη σε ολες τις σελιδες",
 			"btn_busy": "Προσθηκη αριθμων…",
 			"save": "Αποθηκευση αριθμημενου PDF",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Πού μπορώ να τοποθετήσω τους αριθμούς σελίδων;",
+			"seo_faq1_a": "Μπορείτε να τοποθετήσετε αριθμούς πάνω ή κάτω, στοιχισμένους αριστερά, κέντρο ή δεξιά.",
+			"seo_faq2_q": "Μπορώ να προσαρμόσω τη μορφή αρίθμησης;",
+			"seo_faq2_a": "Ναι. Μπορείτε να ορίσετε τον αρχικό αριθμό, το μέγεθος γραμματοσειράς και τη θέση."
 		},
 		"metadata": {
 			"title": "Επεξεργασια μεταδεδομενων",
@@ -784,10 +792,10 @@
 			"err_read": "Αποτυχια αναγνωσης μεταδεδομενων.",
 			"err_update": "Αποτυχια ενημερωσης μεταδεδομενων.",
 			"save": "Αποθηκευση ενημερωμενου PDF",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Ποια μεταδεδομένα PDF μπορώ να επεξεργαστώ;",
+			"seo_faq1_a": "Μπορείτε να επεξεργαστείτε τίτλο, συγγραφέα, θέμα και λέξεις-κλειδιά οποιουδήποτε PDF.",
+			"seo_faq2_q": "Είναι ασφαλής η επεξεργασία μεταδεδομένων για το περιεχόμενο;",
+			"seo_faq2_a": "Ναι. Αλλάζουν μόνο τα μεταδεδομένα — το περιεχόμενο του PDF παραμένει ανέπαφο."
 		},
 		"crop_pdf": {
 			"title": "Περικοπη PDF",
@@ -796,7 +804,11 @@
 			"err_margins": "Τα περιθωρια ειναι πολυ μεγαλα — δεν απομενει περιοχη.",
 			"btn": "Περικοπη PDF",
 			"btn_busy": "Περικοπη…",
-			"save": "Αποθηκευση περικομμενου PDF"
+			"save": "Αποθηκευση περικομμενου PDF",
+			"seo_faq1_q": "Μπορώ να περικόψω διαφορετικά κάθε σελίδα;",
+			"seo_faq1_a": "Τα περιθώρια περικοπής εφαρμόζονται ομοιόμορφα σε όλες τις σελίδες. Για περικοπή ανά σελίδα, χωρίστε πρώτα το PDF, περικόψτε κάθε μέρος και μετά συγχωνεύστε.",
+			"seo_faq2_q": "Μειώνει η περικοπή το μέγεθος αρχείου;",
+			"seo_faq2_a": "Η περικοπή κρύβει περιεχόμενο εκτός περιθωρίων αλλά μπορεί να μη μειώσει σημαντικά το μέγεθος, καθώς τα κρυμμένα δεδομένα μπορεί να παραμείνουν."
 		},
 		"sign": {
 			"title": "Υπογραφη PDF",
@@ -813,10 +825,10 @@
 			"err_place": "Κλικαρετε στη σελιδα για τοποθετηση της υπογραφης.",
 			"btn_busy": "Υπογραφη…",
 			"save": "Αποθηκευση υπογεγραμμενου PDF",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Πώς μπορώ να δημιουργήσω υπογραφή;",
+			"seo_faq1_a": "Μπορείτε να σχεδιάσετε υπογραφή με ποντίκι ή δάχτυλο, να πληκτρολογήσετε το όνομά σας ή να ανεβάσετε εικόνα υπογραφής.",
+			"seo_faq2_q": "Αποθηκεύεται η υπογραφή μου κάπου;",
+			"seo_faq2_a": "Όχι. Η υπογραφή σας δεν φεύγει ποτέ από τη συσκευή σας. Η επεξεργασία γίνεται εξ ολοκλήρου στον browser."
 		},
 		"edit": {
 			"title": "Επεξεργασια PDF",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count} στοιχειο/α τοποθετημενα",
 			"btn_busy": "Εφαρμογη…",
 			"save": "Αποθηκευση επεξεργασμενου PDF",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Τι είδους επεξεργασίες μπορώ να κάνω;",
+			"seo_faq1_a": "Μπορείτε να προσθέσετε κείμενο σε οποιαδήποτε σελίδα. Επιλέξτε μέγεθος, χρώμα και θέση κάνοντας κλικ στη σελίδα.",
+			"seo_faq2_q": "Μπορώ να επεξεργαστώ υπάρχον κείμενο στο PDF;",
+			"seo_faq2_a": "Προς το παρόν μπορείτε να προσθέσετε νέα επίπεδα κειμένου. Η επεξεργασία υπάρχοντος κειμένου απαιτεί το αρχικό έγγραφο."
 		},
 		"password": {
 			"title": "Προστασια PDF με κωδικο",
@@ -858,10 +870,10 @@
 			"btn_busy": "Κρυπτογραφηση…",
 			"result": "Προστατευτηκε!",
 			"save": "Αποθηκευση προστατευμενου PDF",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Πόσο ασφαλής είναι η κρυπτογράφηση;",
+			"seo_faq1_a": "Τα PDF κρυπτογραφούνται με τυπική ασφάλεια PDF. Ο κωδικός δεν αποστέλλεται πουθενά — η κρυπτογράφηση γίνεται στον browser σας.",
+			"seo_faq2_q": "Μπορώ να ορίσω δικαιώματα όπως αποτροπή εκτύπωσης;",
+			"seo_faq2_a": "Ναι. Μπορείτε να ορίσετε δικαιώματα εκτύπωσης, αντιγραφής και επεξεργασίας κατά την προστασία του PDF."
 		},
 		"unlock": {
 			"title": "Ξεκλειδωμα PDF",
@@ -876,10 +888,10 @@
 			"password_label": "Κωδικός (αν απαιτείται)",
 			"password_placeholder": "Αφήστε κενό αν δεν υπάρχει",
 			"password_hint": "Απαιτείται μόνο για PDF που χρειάζονται κωδικό.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Μπορώ να αφαιρέσω κωδικό από ένα PDF;",
+			"seo_faq1_a": "Ναι, αν γνωρίζετε τον τρέχοντα κωδικό. Εισάγετέ τον και το LocalConvert θα αποθηκεύσει ένα μη προστατευμένο αντίγραφο.",
+			"seo_faq2_q": "Είναι ασφαλής ο κωδικός μου;",
+			"seo_faq2_a": "Ναι. Ο κωδικός χρησιμοποιείται μόνο στον browser σας για αποκρυπτογράφηση. Δεν αποστέλλεται ποτέ σε κανέναν server."
 		},
 		"rotate_image": {
 			"title": "Περιστροφη εικονας",
@@ -957,10 +969,10 @@
 			"copy": "Αντιγραφη",
 			"copied": "Αντιγραφηκε!",
 			"download_txt": "Αποθηκευση ως .txt",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Λειτουργεί με σαρωμένα PDF;",
+			"seo_faq1_a": "Όχι. Η εξαγωγή κειμένου λειτουργεί με PDF που περιέχουν πραγματικό κείμενο. Τα σαρωμένα έγγραφα χρειάζονται πρώτα OCR.",
+			"seo_faq2_q": "Υποστηρίζει κείμενο σε άλλες γλώσσες;",
+			"seo_faq2_a": "Ναι. Η εξαγωγή κειμένου υποστηρίζει όλες τις γλώσσες συμπεριλαμβανομένων Αραβικών, Κινεζικών, Ιαπωνικών, Κορεατικών και Κυριλλικών."
 		},
 		"grayscale": {
 			"title": "PDF σε ασπρομαυρο",
@@ -970,10 +982,10 @@
 			"btn_busy": "Μετατροπη σελιδας {progress} απο {total}…",
 			"grayscale": "Ασπρομαυρο",
 			"save": "Αποθηκευση ασπρομαυρου PDF",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Θα παραμείνει το κείμενο επιλέξιμο μετά τη μετατροπή;",
+			"seo_faq1_a": "Όχι. Η μετατροπή σε αποχρώσεις του γκρι αποδίδει κάθε σελίδα ως εικόνα. Το κείμενο δεν θα είναι πλέον επιλέξιμο ή αναζητήσιμο.",
+			"seo_faq2_q": "Μπορώ να ρυθμίσω την ποιότητα;",
+			"seo_faq2_a": "Ναι. Χρησιμοποιήστε τον ρυθμιστή ποιότητας για ισορροπία μεταξύ μεγέθους αρχείου και ευκρίνειας."
 		},
 		"json_formatter": {
 			"title": "Μορφοποιητης JSON",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "ή κάντε κλικ για περιήγηση",
 			"disclaimer": "Η πιστότητα διάταξης εξαρτάται από την πολυπλοκότητα του εγγράφου. Σύνθετοι πίνακες και προηγμένη μορφοποίηση μπορεί να απλοποιηθούν.",
 			"progress_hint": "Το έγγραφό σας επεξεργάζεται τοπικά — δεν μεταφορτώνεται τίποτα.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Θα μοιάζει το Word έγγραφο στο PDF;",
+			"seo_faq1_a": "Η πιστότητα εξαρτάται από την πολυπλοκότητα. Απλά έγγραφα μετατρέπονται καλά· σύνθετοι πίνακες και μορφοποίηση μπορεί να απλοποιηθούν.",
+			"seo_faq2_q": "Υποστηρίζει αρχεία .doc (παλαιότερη μορφή Word);",
+			"seo_faq2_a": "Ναι. Υποστηρίζονται τόσο .docx (σύγχρονη) όσο και .doc (παλαιότερη) μορφές Word."
 		},
 		"from_xlsx": {
 			"title": "Excel σε PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "Κατακόρυφος",
 			"disclaimer": "Τα πλάτη στηλών υπολογίζονται αυτόματα. Τα φαρδιά φύλλα λειτουργούν καλύτερα σε οριζόντια λειτουργία.",
 			"progress_hint": "Το υπολογιστικό φύλλο επεξεργάζεται τοπικά — δεν μεταφορτώνεται τίποτα.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Μπορώ να επιλέξω οριζόντιο ή κατακόρυφο προσανατολισμό;",
+			"seo_faq1_a": "Ναι. Επιλέξτε προσανατολισμό σελίδας πριν τη μετατροπή. Φαρδιά υπολογιστικά φύλλα λειτουργούν καλύτερα σε οριζόντιο.",
+			"seo_faq2_q": "Ποιες μορφές υπολογιστικών φύλλων υποστηρίζονται;",
+			"seo_faq2_a": "Υποστηρίζονται XLSX (Excel), XLS (παλαιότερο Excel), ODS (LibreOffice) και αρχεία CSV."
 		},
 		"to_docx": {
 			"title": "PDF σε Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "Τα σαρωμένα (βασισμένα σε εικόνα) PDF παράγουν κενή έξοδο — χρησιμοποιήστε πρώτα OCR",
 			"progress_label": "Εξαγωγή κειμένου… {progress}%",
 			"progress_hint": "Το αρχείο σας δεν εγκαταλείπει ποτέ τη συσκευή σας.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Διατηρείται η μορφοποίηση;",
+			"seo_faq1_a": "Το κείμενο και η βασική δομή (τίτλοι, παράγραφοι) διατηρούνται. Σύνθετες διατάξεις, πίνακες και εικόνες απλοποιούνται.",
+			"seo_faq2_q": "Λειτουργεί με σαρωμένα PDF;",
+			"seo_faq2_a": "Όχι. Τα σαρωμένα PDF παράγουν κενή έξοδο. Χρησιμοποιήστε πρώτα λογισμικό OCR για να γίνει εξαγώγιμο το κείμενο."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Ποιες γωνίες περιστροφής είναι διαθέσιμες;",
+			"seo_faq1_a": "Μπορείτε να περιστρέψετε κατά 90°, 180° ή 270° δεξιόστροφα. Η περιστροφή είναι άμεση και χωρίς απώλειες.",
+			"seo_faq2_q": "Η περιστροφή μειώνει την ποιότητα εικόνας;",
+			"seo_faq2_a": "Όχι. Η εικόνα περιστρέφεται χωρίς επανασυμπίεση, διατηρώντας την αρχική ποιότητα."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Μπορώ να ορίσω ακριβές μέγεθος σε pixel;",
+			"seo_faq1_a": "Ναι. Μπορείτε να σύρετε ένα ορθογώνιο περικοπής ή να εισάγετε ακριβείς διαστάσεις σε pixel.",
+			"seo_faq2_q": "Ποιες μορφές εικόνας μπορώ να περικόψω;",
+			"seo_faq2_a": "Υποστηρίζονται JPG, PNG, WEBP, GIF και οι περισσότερες κοινές μορφές εικόνας."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Μπορώ να ρυθμίσω τη διαφάνεια του υδατογραφήματος;",
+			"seo_faq1_a": "Ναι. Μπορείτε να ελέγξετε τη διαφάνεια, τη θέση, το μέγεθος και το χρώμα.",
+			"seo_faq2_q": "Είναι μόνιμο το υδατογράφημα;",
+			"seo_faq2_a": "Ναι. Μετά την αποθήκευση, το υδατογράφημα είναι μόνιμα ενσωματωμένο στην εικόνα."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Μπορώ να χρησιμοποιήσω τις δικές μου εικόνες;",
+			"seo_faq1_a": "Ναι. Επιλέξτε οποιαδήποτε εικόνα και προσθέστε κείμενο πάνω και κάτω για να φτιάξετε το meme σας.",
+			"seo_faq2_q": "Μπορώ να προσαρμόσω γραμματοσειρά και χρώμα;",
+			"seo_faq2_a": "Ναι. Μπορείτε να αλλάξετε μέγεθος γραμματοσειράς, χρώμα και περίγραμμα."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Πόσες εικόνες μπορώ να επεξεργαστώ ταυτόχρονα;",
+			"seo_faq1_a": "Δεν υπάρχει σταθερό όριο. Μπορείτε να επεξεργαστείτε όσες εικόνες αντέχει η μνήμη του συστήματος.",
+			"seo_faq2_q": "Ποιες λειτουργίες μπορώ να εφαρμόσω μαζικά;",
+			"seo_faq2_a": "Μπορείτε να μετατρέψετε μορφές, να αλλάξετε μέγεθος, να περιστρέψετε και να ρυθμίσετε την ποιότητα ταυτόχρονα."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Τι μπορώ να κωδικοποιήσω σε QR code;",
+			"seo_faq1_a": "URL, κείμενο, email, τηλέφωνα ή οτιδήποτε κείμενο μέχρι αρκετές χιλιάδες χαρακτήρες.",
+			"seo_faq2_q": "Μπορώ να προσαρμόσω την εμφάνιση του QR code;",
+			"seo_faq2_a": "Μπορείτε να ρυθμίσετε το μέγεθος και το επίπεδο διόρθωσης σφαλμάτων. Αποθηκεύεται ως PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Ποιες μορφές χρώματος υποστηρίζονται;",
+			"seo_faq1_a": "HEX, RGB και HSL. Κάντε κλικ σε οποιοδήποτε pixel για άμεση αντιγραφή της τιμής χρώματος.",
+			"seo_faq2_q": "Μπορώ να επιλέξω χρώματα από οποιονδήποτε τύπο εικόνας;",
+			"seo_faq2_a": "Ναι. Υποστηρίζονται JPG, PNG, WEBP, GIF και άλλες μορφές."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Μπορώ να θολώσω πολλές περιοχές;",
+			"seo_faq1_a": "Ναι. Σχεδιάστε πολλές περιοχές θόλωσης στην ίδια εικόνα.",
+			"seo_faq2_q": "Μπορώ να ρυθμίσω την ένταση θόλωσης;",
+			"seo_faq2_a": "Ναι. Χρησιμοποιήστε τον ρυθμιστή έντασης για να ελέγξετε τη δύναμη του εφέ."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Ποια φίλτρα είναι διαθέσιμα;",
+			"seo_faq1_a": "Φωτεινότητα, αντίθεση, κορεσμός, περιστροφή χρώματος, αποχρώσεις γκρι, σέπια, θόλωση και αντιστροφή.",
+			"seo_faq2_q": "Μπορώ να συνδυάσω πολλά φίλτρα;",
+			"seo_faq2_a": "Ναι. Όλες οι ρυθμίσεις φίλτρων συνδυάζονται και εφαρμόζονται σε πραγματικό χρόνο."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Ποιες μορφές βίντεο υποστηρίζονται;",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI και οι περισσότερες μορφές βίντεο.",
+			"seo_faq2_q": "Μπορώ να ρυθμίσω τη διάρκεια και τον ρυθμό καρέ;",
+			"seo_faq2_a": "Ναι. Ρυθμίστε ώρα έναρξης, διάρκεια και ρυθμό καρέ."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Ελέγχει τη σύνταξη JSON;",
+			"seo_faq1_a": "Ναι. Μη έγκυρο JSON επισημαίνεται με μήνυμα σφάλματος στη γραμμή και τον χαρακτήρα.",
+			"seo_faq2_q": "Μπορώ να ελαχιστοποιήσω JSON;",
+			"seo_faq2_a": "Ναι. Μορφοποίηση και ελαχιστοποίηση JSON με ένα κλικ."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Ποιοι αλγόριθμοι κατακερματισμού υποστηρίζονται;",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 και SHA-512.",
+			"seo_faq2_q": "Γίνεται τοπικά ο κατακερματισμός;",
+			"seo_faq2_a": "Ναι. Όλα τρέχουν στον browser μέσω Web Crypto API. Τα δεδομένα δεν φεύγουν από τη συσκευή."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Μπορώ να κωδικοποιήσω αρχεία;",
+			"seo_faq1_a": "Το εργαλείο κωδικοποιεί κείμενο. Για αρχεία, μετατρέψτε πρώτα το περιεχόμενο σε κείμενο.",
+			"seo_faq2_q": "Υποστηρίζει Unicode;",
+			"seo_faq2_a": "Ναι. Κείμενο UTF-8 συμπεριλαμβανομένων μη λατινικών χαρακτήρων υποστηρίζεται πλήρως."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Υποστηρίζει GitHub-flavored Markdown;",
+			"seo_faq1_a": "Ναι. Πίνακες, λίστες εργασιών, διαγραφή κειμένου και άλλα GitHub Markdown.",
+			"seo_faq2_q": "Μπορώ να εξάγω το HTML;",
+			"seo_faq2_a": "Η προεπισκόπηση δείχνει αποτελέσματα σε πραγματικό χρόνο. Αντιγράψτε HTML από εκεί."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Δείχνει διαφορές γραμμή-γραμμή ή λέξη-λέξη;",
+			"seo_faq1_a": "Οι διαφορές τονίζονται ανά γραμμή με χρωματική κωδικοποίηση.",
+			"seo_faq2_q": "Υπάρχει όριο μεγέθους;",
+			"seo_faq2_a": "Κανένα σταθερό όριο. Μεγάλα κείμενα μπορεί να είναι πιο αργά σε παλαιότερες συσκευές."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Τι μετράει;",
+			"seo_faq1_a": "Λέξεις, χαρακτήρες, προτάσεις, παραγράφους και εκτιμώμενο χρόνο ανάγνωσης.",
+			"seo_faq2_q": "Λειτουργεί με μη αγγλικό κείμενο;",
+			"seo_faq2_a": "Ναι. Η μέτρηση λέξεων λειτουργεί με όλες τις γλώσσες."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Ποιοι χαρακτήρες κωδικοποιούνται;",
+			"seo_faq1_a": "Ειδικοί χαρακτήρες όπως κενά και μη ASCII κωδικοποιούνται σύμφωνα με RFC 3986.",
+			"seo_faq2_q": "Μπορώ να αποκωδικοποιήσω πλήρες URL;",
+			"seo_faq2_a": "Ναι. Επικολλήστε κωδικοποιημένο URL και θα αποκωδικοποιηθεί σε αναγνώσιμο κείμενο."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Τι αφαιρεί η ελαχιστοποίηση CSS;",
+			"seo_faq1_a": "Σχόλια, περιττά κενά, κενές γραμμές και πλεονάζοντα ερωτηματικά.",
+			"seo_faq2_q": "Πόσο μικρότερο θα γίνει;",
+			"seo_faq2_a": "Συνήθως 20-40% μικρότερο. Αρχεία με πολλά σχόλια κερδίζουν περισσότερο."
 		}
 	},
 	"dev_tools": {

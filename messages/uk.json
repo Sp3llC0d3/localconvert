@@ -576,16 +576,16 @@
 		"convert_to_pdf": "Конвертувати в PDF",
 		"save_pdf": "Зберегти PDF",
 		"converting_progress": "Конвертація… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Як це працює",
+		"seo_step1": "Виберіть файл з вашого пристрою",
+		"seo_step2": "Налаштуйте параметри за потреби",
+		"seo_step3": "Збережіть результат — готово!",
+		"seo_why_title": "Чому LocalConvert?",
+		"seo_why_private": "100% конфіденційно — ваші файли ніколи не залишають пристрій. Жодних завантажень на сервер, ніколи.",
+		"seo_why_free": "Безкоштовно назавжди без обмежень розміру файлів. Без облікових записів, без підписок.",
+		"seo_why_offline": "Працює офлайн як встановлений додаток. Інтернет не потрібен після першого завантаження.",
+		"seo_faq_title": "Поширені запитання",
+		"seo_related_title": "Пов'язані інструменти"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "Об'єднання не вдалося.",
 			"save": "Зберегти об'єднаний PDF",
 			"btn_busy": "Об'єднання…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Чи безпечно об'єднувати PDF?",
+			"seo_faq1_a": "Так. LocalConvert працює повністю у вашому браузері — файли ніколи не надсилаються на сервер. Об'єднання відбувається на вашому пристрої.",
+			"seo_faq2_q": "Чи є обмеження на кількість PDF?",
+			"seo_faq2_a": "Ні. Ви можете об'єднати стільки PDF, скільки дозволяє пам'ять браузера. Без обмежень розміру чи кількості."
 		},
 		"split": {
 			"title": "Роздiлити PDF",
@@ -662,10 +662,10 @@
 			"err_fail": "Роздiлення не вдалося.",
 			"btn_busy": "Обробка…",
 			"help": "Натиснiть для перемикання, торкнiться крапки для окремої сторiнки",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Чи можу я витягти окремі сторінки з PDF?",
+			"seo_faq1_a": "Так. Виберіть потрібні сторінки, і LocalConvert створить новий PDF лише з ними.",
+			"seo_faq2_q": "Чи погіршується якість при розділенні?",
+			"seo_faq2_a": "Ні. Розділення витягує сторінки без перекодування, оригінальна якість зберігається."
 		},
 		"rotate_pdf": {
 			"title": "Повернути сторiнки",
@@ -676,7 +676,11 @@
 			"selected_pages": "Вибранi сторiнки",
 			"err_fail": "Поворот не вдався.",
 			"help": "натиснiть для перемикання",
-			"btn_busy": "Обробка…"
+			"btn_busy": "Обробка…",
+			"seo_faq1_q": "Чи можу я обертати окремі сторінки?",
+			"seo_faq1_a": "Так. Ви можете обертати конкретні сторінки або весь PDF одразу. Виберіть 90°, 180° або 270°.",
+			"seo_faq2_q": "Чи впливає обертання на якість?",
+			"seo_faq2_a": "Ні. Сторінки обертаються без перекодування, оригінальна якість повністю зберігається."
 		},
 		"organize": {
 			"title": "Органiзувати сторiнки",
@@ -688,10 +692,10 @@
 			"no_pages": "Сторiнок не залишилось.",
 			"btn": "Зберегти органiзований PDF",
 			"btn_busy": "Збереження…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Чи можу я видалити сторінки з PDF?",
+			"seo_faq1_a": "Так. Перетягуйте сторінки для зміни порядку та натискайте видалити для видалення непотрібних.",
+			"seo_faq2_q": "Чи можу я бачити попередній перегляд кожної сторінки?",
+			"seo_faq2_a": "Так. Відображаються мініатюри кожної сторінки для зручного розпізнавання та організації."
 		},
 		"images_to_pdf": {
 			"title": "Зображення → PDF",
@@ -701,10 +705,10 @@
 			"btn": "Конвертувати в PDF",
 			"save": "Зберегти PDF",
 			"btn_busy": "Конвертацiя…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Які формати зображень можна конвертувати в PDF?",
+			"seo_faq1_a": "Підтримуються JPG, PNG та WEBP. Кожне зображення стає сторінкою в PDF.",
+			"seo_faq2_q": "Чи можу я змінити порядок зображень?",
+			"seo_faq2_a": "Так. Додайте кілька зображень і розташуйте їх у потрібному порядку перед конвертацією."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Зображення",
@@ -713,10 +717,10 @@
 			"btn": "Експортувати як зображення",
 			"err_fail": "Конвертацiя не вдалася.",
 			"btn_busy": "Конвертацiя сторiнки {progress} з {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "В якому форматі будуть зображення?",
+			"seo_faq1_a": "Ви можете вибрати JPG або PNG. Кожна сторінка PDF стає окремим зображенням.",
+			"seo_faq2_q": "Що з багатосторінковими PDF?",
+			"seo_faq2_a": "Кожна сторінка експортується як окреме зображення. Для багатосторінкових PDF ви отримаєте ZIP-архів з усіма зображеннями."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF в PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "Конвертувати в PPTX",
 			"save": "Зберегти PPTX",
 			"btn_busy": "Конвертацiя сторiнки {progress} з {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Як працює конвертація PDF у PowerPoint?",
+			"seo_faq1_a": "Кожна сторінка PDF рендериться як зображення і розміщується на слайді PowerPoint. Текст не можна редагувати.",
+			"seo_faq2_q": "Чи можу я редагувати слайди після конвертації?",
+			"seo_faq2_a": "Слайди містять зображення сторінок. У PowerPoint можна додати текстові поля та анотації."
 		},
 		"compress": {
 			"title": "Стиснути PDF",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% менше, хороша якiсть",
 			"preset_high_desc": "~70-90% менше, помiтна втрата якостi",
 			"btn_busy": "Стиснення сторiнки {progress} з {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Наскільки можна зменшити розмір PDF?",
+			"seo_faq1_a": "Зазвичай 50-80% зменшення залежно від вмісту. PDF з великою кількістю зображень дають найбільшу економію.",
+			"seo_faq2_q": "Чи впливає стиснення на якість тексту?",
+			"seo_faq2_a": "Текст перемальовується як зображення при стисненні. Для текстових документів використовуйте вищу якість."
 		},
 		"watermark_pdf": {
 			"title": "Додати водяний знак",
@@ -763,7 +767,11 @@
 			"btn": "Застосувати до всiх сторiнок",
 			"err_text": "Введiть текст водяного знаку.",
 			"save": "Зберегти PDF з водяним знаком",
-			"btn_busy": "Застосування…"
+			"btn_busy": "Застосування…",
+			"seo_faq1_q": "Чи можу я використати зображення як водяний знак?",
+			"seo_faq1_a": "Наразі підтримуються текстові водяні знаки. Можна налаштувати текст, розмір, прозорість і кут повороту.",
+			"seo_faq2_q": "Чи закриє водяний знак вміст?",
+			"seo_faq2_a": "Ні. Водяні знаки розміщуються з регульованою прозорістю, вміст залишається читабельним під ними."
 		},
 		"page_numbers": {
 			"title": "Додати номери сторiнок",
@@ -780,10 +788,10 @@
 			"btn": "Застосувати до всiх сторiнок",
 			"save": "Зберегти пронумерований PDF",
 			"btn_busy": "Додавання номерiв…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Де можна розмістити номери сторінок?",
+			"seo_faq1_a": "Номери можна розмістити вгорі або внизу сторінки, з вирівнюванням ліворуч, по центру або праворуч.",
+			"seo_faq2_q": "Чи можна налаштувати формат нумерації?",
+			"seo_faq2_a": "Так. Можна задати початковий номер, розмір шрифту та позицію."
 		},
 		"metadata": {
 			"title": "Редагувати метаданi",
@@ -804,10 +812,10 @@
 			"reading": "Читання метаданих…",
 			"none": "—",
 			"btn_busy": "Збереження…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Які метадані PDF можна редагувати?",
+			"seo_faq1_a": "Можна редагувати назву, автора, тему та ключові слова будь-якого PDF-файлу.",
+			"seo_faq2_q": "Чи безпечне редагування метаданих для вмісту?",
+			"seo_faq2_a": "Так. Змінюються лише властивості метаданих — вміст PDF залишається недоторканим."
 		},
 		"crop_pdf": {
 			"title": "Обрiзати PDF",
@@ -816,7 +824,11 @@
 			"btn": "Обрiзати PDF",
 			"save": "Зберегти обрiзаний PDF",
 			"err_margins": "Полi занадто великi — не залишилось областi.",
-			"btn_busy": "Обрiзка…"
+			"btn_busy": "Обрiзка…",
+			"seo_faq1_q": "Чи можу я обрізати різні сторінки по-різному?",
+			"seo_faq1_a": "Поля обрізки застосовуються однаково до всіх сторінок. Для посторінкової обрізки спершу розділіть PDF, обріжте кожну частину, потім об'єднайте.",
+			"seo_faq2_q": "Чи зменшує обрізка розмір файлу?",
+			"seo_faq2_a": "Обрізка приховує вміст за полями, але може не суттєво зменшити розмір, оскільки приховані дані можуть залишитися у файлі."
 		},
 		"sign": {
 			"title": "Пiдписати PDF",
@@ -833,10 +845,10 @@
 			"err_place": "Натиснiть на сторiнку, щоб розмiстити пiдпис.",
 			"save": "Зберегти пiдписаний PDF",
 			"btn_busy": "Пiдписання…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Як створити підпис?",
+			"seo_faq1_a": "Можна намалювати підпис мишею або пальцем, набрати ім'я або завантажити зображення підпису.",
+			"seo_faq2_q": "Чи зберігається мій підпис десь?",
+			"seo_faq2_a": "Ні. Ваш підпис ніколи не залишає пристрій. Обробка відбувається повністю в браузері."
 		},
 		"edit": {
 			"title": "Редагувати PDF",
@@ -851,10 +863,10 @@
 			"save": "Зберегти вiдредагований PDF",
 			"placeholder": "Текст для розмiщення…",
 			"btn_busy": "Застосування…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Які редагування я можу зробити?",
+			"seo_faq1_a": "Можна додати текст на будь-яку сторінку PDF. Виберіть розмір шрифту, колір та позицію, натиснувши на сторінку.",
+			"seo_faq2_q": "Чи можу я редагувати наявний текст у PDF?",
+			"seo_faq2_a": "Наразі можна додавати нові текстові шари. Редагування наявного тексту потребує вихідний документ."
 		},
 		"password": {
 			"title": "Захистити PDF паролем",
@@ -878,10 +890,10 @@
 			"password_placeholder": "Введiть пароль…",
 			"owner_placeholder": "Пароль власника…",
 			"btn_busy": "Шифрування…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Наскільки безпечне шифрування?",
+			"seo_faq1_a": "PDF шифруються стандартним захистом PDF. Пароль нікуди не надсилається — шифрування відбувається в браузері.",
+			"seo_faq2_q": "Чи можу я встановити дозволи, наприклад заборону друку?",
+			"seo_faq2_a": "Так. Можна налаштувати дозволи друку, копіювання та редагування при захисті PDF."
 		},
 		"unlock": {
 			"title": "Розблокувати PDF",
@@ -896,10 +908,10 @@
 			"password_label": "Пароль (якщо потрібен)",
 			"password_placeholder": "Залиште порожнім, якщо немає",
 			"password_hint": "Потрібен лише для PDF із паролем на відкриття.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Чи можу я видалити пароль з PDF?",
+			"seo_faq1_a": "Так, якщо знаєте поточний пароль. Введіть його, і LocalConvert збереже незахищену копію.",
+			"seo_faq2_q": "Чи в безпеці мій пароль?",
+			"seo_faq2_a": "Так. Пароль використовується лише в браузері для розшифрування файлу. Він ніколи не надсилається на сервер."
 		},
 		"color_picker": {
 			"title": "Вибiр кольору",
@@ -927,10 +939,10 @@
 			"copied": "Скопiйовано!",
 			"download_txt": "Зберегти як .txt",
 			"btn_busy": "Витягування сторiнки {progress} з {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Чи працює зі сканованими PDF?",
+			"seo_faq1_a": "Ні. Витягування тексту працює з PDF, що містять справжній текст. Скановані документи (на основі зображень) потребують спершу OCR.",
+			"seo_faq2_q": "Чи підтримується текст іншими мовами?",
+			"seo_faq2_a": "Так. Витягування тексту підтримує всі мови, включаючи арабську, китайську, японську, корейську та кириличний шрифт."
 		},
 		"grayscale": {
 			"title": "PDF у вiдтiнках сiрого",
@@ -940,10 +952,10 @@
 			"grayscale": "Вiдтiнки сiрого",
 			"save": "Зберегти PDF у вiдтiнках сiрого",
 			"btn_busy": "Конвертацiя сторiнки {progress} з {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Чи залишиться текст виділяємим після конвертації?",
+			"seo_faq1_a": "Ні. Конвертація в відтінки сірого рендерить кожну сторінку як зображення. Текст більше не можна виділяти чи шукати.",
+			"seo_faq2_q": "Чи можу я налаштувати якість?",
+			"seo_faq2_a": "Так. Використовуйте повзунок якості для балансу між розміром файлу та чіткістю зображення."
 		},
 		"json_formatter": {
 			"title": "Форматування JSON",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "або натисніть для перегляду",
 			"disclaimer": "Точність макету залежить від складності документа. Складні таблиці та розширене форматування можуть бути спрощені.",
 			"progress_hint": "Документ обробляється локально — нічого не завантажується.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Чи буде мій документ Word виглядати так само у PDF?",
+			"seo_faq1_a": "Точність макету залежить від складності документа. Прості документи конвертуються добре; складні таблиці та форматування можуть бути спрощені.",
+			"seo_faq2_q": "Чи підтримуються файли .doc (старий формат Word)?",
+			"seo_faq2_a": "Так. Підтримуються обидва формати .docx (сучасний) і .doc (старий)."
 		},
 		"from_xlsx": {
 			"title": "Excel у PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "Книжкова",
 			"disclaimer": "Ширина стовпців розраховується автоматично. Широкі таблиці найкраще працюють в альбомному режимі.",
 			"progress_hint": "Таблиця обробляється локально — нічого не завантажується.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Чи можу я вибрати альбомну або книжкову орієнтацію?",
+			"seo_faq1_a": "Так. Можна вибрати орієнтацію сторінки перед конвертацією. Широкі таблиці краще виглядають у альбомному режимі.",
+			"seo_faq2_q": "Які формати таблиць підтримуються?",
+			"seo_faq2_a": "Підтримуються XLSX (Excel), XLS (старий Excel), ODS (LibreOffice) та CSV."
 		},
 		"to_docx": {
 			"title": "PDF у Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "Відскановані (на основі зображень) PDF створюють порожній вивід — спочатку використайте OCR",
 			"progress_label": "Витягування тексту… {progress}%",
 			"progress_hint": "Ваш файл ніколи не залишає ваш пристрій.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Чи зберігається форматування?",
+			"seo_faq1_a": "Текстовий вміст та базова структура (заголовки, абзаци) зберігаються. Складні макети, таблиці та зображення спрощуються.",
+			"seo_faq2_q": "Чи працює зі сканованими PDF?",
+			"seo_faq2_a": "Ні. Скановані PDF (на основі зображень) дають порожній результат. Спершу використайте OCR для витягування тексту."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Які кути повороту доступні?",
+			"seo_faq1_a": "Можна повертати на 90°, 180° або 270° за годинниковою стрілкою. Поворот миттєвий і без втрат.",
+			"seo_faq2_q": "Чи знижує поворот якість зображення?",
+			"seo_faq2_a": "Ні. Зображення повертається без повторного стиснення, зберігаючи оригінальну якість."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Чи можу я вказати точний розмір у пікселях?",
+			"seo_faq1_a": "Так. Перетягніть прямокутник обрізки або введіть точні розміри в пікселях.",
+			"seo_faq2_q": "Які формати зображень можна обрізати?",
+			"seo_faq2_a": "Підтримуються JPG, PNG, WEBP, GIF та більшість поширених форматів."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Чи можу я налаштувати прозорість водяного знака?",
+			"seo_faq1_a": "Так. Прозорість, положення, розмір і колір текстового водяного знака регулюються.",
+			"seo_faq2_q": "Чи є водяний знак постійним?",
+			"seo_faq2_a": "Так. Після збереження водяний знак назавжди вбудовується в зображення."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Чи можу я використовувати свої зображення?",
+			"seo_faq1_a": "Так. Виберіть будь-яке зображення та додайте текст зверху та знизу.",
+			"seo_faq2_q": "Чи можу я налаштувати шрифт і колір?",
+			"seo_faq2_a": "Так. Розмір шрифту, колір та обведення налаштовуються."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Скільки зображень можна обробити одночасно?",
+			"seo_faq1_a": "Фіксованого ліміту немає. Обробляйте стільки, скільки дозволяє пам'ять пристрою.",
+			"seo_faq2_q": "Які операції можна застосувати пакетно?",
+			"seo_faq2_a": "Конвертація формату, зміна розміру, поворот та налаштування якості для всіх вибраних зображень."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Що можна закодувати в QR-коді?",
+			"seo_faq1_a": "URL-адреси, текст, email, номери телефонів або будь-який текст до кількох тисяч символів.",
+			"seo_faq2_q": "Чи можу я налаштувати вигляд QR-коду?",
+			"seo_faq2_a": "Розмір та рівень корекції помилок налаштовуються. QR-код зберігається як PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Які формати кольорів підтримуються?",
+			"seo_faq1_a": "HEX, RGB та HSL. Натисніть на будь-який піксель, щоб миттєво скопіювати значення кольору.",
+			"seo_faq2_q": "Чи можу я обирати кольори з будь-якого типу зображень?",
+			"seo_faq2_a": "Так. Підтримуються JPG, PNG, WEBP, GIF та більшість інших форматів."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Чи можу я розмити кілька областей?",
+			"seo_faq1_a": "Так. Намалюйте кілька зон розмиття на одному зображенні.",
+			"seo_faq2_q": "Чи можу я налаштувати інтенсивність розмиття?",
+			"seo_faq2_a": "Так. Використовуйте повзунок інтенсивності для контролю сили ефекту."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Які фільтри доступні?",
+			"seo_faq1_a": "Яскравість, контраст, насиченість, обертання відтінку, відтінки сірого, сепія, розмиття та інверсія.",
+			"seo_faq2_q": "Чи можу я комбінувати кілька фільтрів?",
+			"seo_faq2_a": "Так. Усі налаштування фільтрів накладаються та застосовуються в реальному часі."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Які відеоформати підтримуються?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI та більшість поширених відеоформатів.",
+			"seo_faq2_q": "Чи можу я встановити тривалість та частоту кадрів GIF?",
+			"seo_faq2_a": "Так. Встановіть час початку, тривалість та частоту кадрів."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Чи перевіряє синтаксис JSON?",
+			"seo_faq1_a": "Так. Невалідний JSON позначається помилкою з точним рядком та символом.",
+			"seo_faq2_q": "Чи можу я також мініфікувати JSON?",
+			"seo_faq2_a": "Так. Форматування та мініфікація JSON одним кліком."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Які алгоритми хешування підтримуються?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 та SHA-512.",
+			"seo_faq2_q": "Чи виконується хешування локально?",
+			"seo_faq2_a": "Так. Все виконується в браузері через Web Crypto API. Дані ніколи не залишають пристрій."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Чи можу я кодувати файли?",
+			"seo_faq1_a": "Інструмент кодує текстові рядки. Для файлів спершу конвертуйте вміст у текст.",
+			"seo_faq2_q": "Чи підтримує Unicode?",
+			"seo_faq2_a": "Так. Текст UTF-8 з нелатинськими символами повністю підтримується."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Чи підтримує GitHub Markdown?",
+			"seo_faq1_a": "Так. Таблиці, списки завдань, закреслення та інші розширення GitHub відображаються правильно.",
+			"seo_faq2_q": "Чи можу я експортувати HTML?",
+			"seo_faq2_a": "Попередній перегляд показує результат у реальному часі. Скопіюйте HTML з панелі перегляду."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Показує відмінності порядково чи пословно?",
+			"seo_faq1_a": "Відмінності виділяються порядково з кольоровою позначкою додань та видалень.",
+			"seo_faq2_q": "Чи є обмеження розміру?",
+			"seo_faq2_a": "Фіксованого ліміту немає. Великі тексти можуть працювати повільніше на старих пристроях."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Які метрики підраховуються?",
+			"seo_faq1_a": "Слова, символи (з пробілами та без), речення, абзаци та орієнтовний час читання.",
+			"seo_faq2_q": "Чи працює з нелатинським текстом?",
+			"seo_faq2_a": "Так. Підрахунок слів працює з усіма мовами та наборами символів."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Які символи кодуються?",
+			"seo_faq1_a": "Спеціальні символи: пробіли та не-ASCII кодуються відсотками згідно RFC 3986.",
+			"seo_faq2_q": "Чи можу я декодувати URL з параметрами?",
+			"seo_faq2_a": "Так. Вставте закодований рядок і він буде декодований у читабельний текст."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Що видаляє мініфікація CSS?",
+			"seo_faq1_a": "Коментарі, зайві пробіли, порожні рядки та надлишкові крапки з комою.",
+			"seo_faq2_q": "Наскільки зменшиться CSS?",
+			"seo_faq2_a": "Зазвичай на 20-40%. Файли з багатьма коментарями отримують найбільше скорочення."
 		}
 	},
 	"toast": {

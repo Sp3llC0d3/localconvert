@@ -5,6 +5,8 @@
 	import { QrCodeIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let text = $state('https://localconvert.app');
 	let size = $state(300);
@@ -76,6 +78,7 @@
 	<meta property="og:title" content="QR Code Generator — LocalConvert" />
 	<meta property="og:description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/qr/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate a QR Code","step":[{"@type":"HowToStep","text":"Enter the text or URL you want to encode"},{"@type":"HowToStep","text":"Customize the size and error correction level"},{"@type":"HowToStep","text":"Save the QR code as an image"}]}</script>`}
 </svelte:head>
 
 <div class="qr-page">
@@ -134,6 +137,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+
+	{#if toolSeo['img-qr']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-qr'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-qr'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-qr'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-qr'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-qr'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-qr'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

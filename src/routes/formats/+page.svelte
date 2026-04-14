@@ -64,6 +64,9 @@
 	<title>Supported Formats — LocalConvert</title>
 	<meta name="description" content="Browse all {allFormats.length} file formats supported by LocalConvert. Images, audio, video, and documents — see what converts to what." />
 	<link rel="canonical" href="https://localconvert.app/formats/" />
+	<meta property="og:title" content="Supported Formats — LocalConvert" />
+	<meta property="og:description" content="Browse all file formats supported by LocalConvert. Images, audio, video, and documents — see what converts to what." />
+	<meta property="og:url" content="https://localconvert.app/formats/" />
 	{@html `<script type="application/ld+json">${schemaData}</script>`}
 </svelte:head>
 

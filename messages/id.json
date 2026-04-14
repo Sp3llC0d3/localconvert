@@ -606,16 +606,16 @@
 		"convert_to_pdf": "Konversi ke PDF",
 		"save_pdf": "Simpan PDF",
 		"converting_progress": "Mengonversi… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Cara kerjanya",
+		"seo_step1": "Pilih file dari perangkat Anda",
+		"seo_step2": "Sesuaikan pengaturan jika perlu",
+		"seo_step3": "Simpan hasilnya — selesai!",
+		"seo_why_title": "Mengapa LocalConvert?",
+		"seo_why_private": "100% privat — file Anda tidak pernah meninggalkan perangkat. Tanpa unggahan ke server, selamanya.",
+		"seo_why_free": "Gratis selamanya tanpa batas ukuran file. Tanpa akun, tanpa langganan.",
+		"seo_why_offline": "Berfungsi offline sebagai aplikasi terinstal. Tidak perlu internet setelah pemuatan pertama.",
+		"seo_faq_title": "Pertanyaan yang sering diajukan",
+		"seo_related_title": "Alat terkait"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "Tambahkan setidaknya 2 file PDF.",
 			"err_fail": "Penggabungan gagal.",
 			"save": "Simpan PDF gabungan",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Apakah aman menggabungkan PDF?",
+			"seo_faq1_a": "Ya. LocalConvert berjalan sepenuhnya di browser Anda — file tidak pernah diunggah ke server mana pun. Penggabungan terjadi di perangkat Anda.",
+			"seo_faq2_q": "Apakah ada batasan jumlah PDF yang bisa digabungkan?",
+			"seo_faq2_a": "Tidak. Anda bisa menggabungkan sebanyak mungkin PDF sesuai kapasitas memori browser. Tanpa batasan ukuran atau jumlah."
 		},
 		"split": {
 			"title": "Pisahkan PDF",
@@ -642,10 +642,10 @@
 			"err_extract": "Gagal mengekstrak halaman.",
 			"err_fail": "Pemisahan gagal.",
 			"help": "klik untuk memilih, titik untuk satu halaman",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Bisakah saya mengekstrak halaman tertentu dari PDF?",
+			"seo_faq1_a": "Ya. Pilih halaman yang diinginkan dan LocalConvert akan membuat PDF baru hanya dengan halaman tersebut.",
+			"seo_faq2_q": "Apakah memisahkan PDF menurunkan kualitas?",
+			"seo_faq2_a": "Tidak. Pemisahan mengekstrak halaman tanpa encoding ulang, sehingga kualitas asli tetap terjaga."
 		},
 		"rotate_pdf": {
 			"title": "Putar Halaman",
@@ -656,7 +656,11 @@
 			"selected_pages": "Halaman terpilih",
 			"btn_busy": "Memproses…",
 			"err_fail": "Rotasi gagal.",
-			"help": "klik untuk memilih"
+			"help": "klik untuk memilih",
+			"seo_faq1_q": "Bisakah saya memutar halaman tertentu saja?",
+			"seo_faq1_a": "Ya. Anda bisa memutar halaman tertentu atau seluruh PDF sekaligus. Pilih 90°, 180°, atau 270°.",
+			"seo_faq2_q": "Apakah rotasi memengaruhi kualitas?",
+			"seo_faq2_a": "Tidak. Halaman diputar tanpa encoding ulang, kualitas asli sepenuhnya terjaga."
 		},
 		"organize": {
 			"title": "Atur Halaman",
@@ -668,10 +672,10 @@
 			"no_pages": "Tidak ada halaman tersisa.",
 			"btn": "Simpan PDF yang diatur",
 			"btn_busy": "Menyimpan…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Bisakah saya menghapus halaman dari PDF?",
+			"seo_faq1_a": "Ya. Seret halaman untuk mengurutkan ulang dan klik hapus untuk menghilangkan halaman yang tidak diperlukan.",
+			"seo_faq2_q": "Bisakah saya melihat pratinjau setiap halaman?",
+			"seo_faq2_a": "Ya. Thumbnail visual setiap halaman ditampilkan agar mudah dikenali dan diatur."
 		},
 		"images_to_pdf": {
 			"title": "Gambar → PDF",
@@ -681,10 +685,10 @@
 			"btn": "Konversi ke PDF",
 			"btn_busy": "Mengonversi…",
 			"save": "Simpan PDF",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Format gambar apa saja yang bisa dikonversi ke PDF?",
+			"seo_faq1_a": "Gambar JPG, PNG, dan WEBP didukung. Setiap gambar menjadi satu halaman di PDF.",
+			"seo_faq2_q": "Bisakah saya mengatur urutan gambar?",
+			"seo_faq2_a": "Ya. Tambahkan beberapa gambar dan atur urutannya sesuai keinginan sebelum mengonversi."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Gambar",
@@ -693,10 +697,10 @@
 			"btn": "Ekspor sebagai gambar",
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
 			"err_fail": "Konversi gagal.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "Format gambar apa yang akan saya dapatkan?",
+			"seo_faq1_a": "Anda bisa memilih antara JPG dan PNG. Setiap halaman PDF menjadi gambar terpisah.",
+			"seo_faq2_q": "Bagaimana dengan PDF multi-halaman?",
+			"seo_faq2_a": "Setiap halaman diekspor sebagai gambar terpisah. Untuk PDF multi-halaman, Anda akan mendapat file ZIP berisi semua gambar."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF ke PowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "Konversi ke PPTX",
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
 			"save": "Simpan PPTX",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Bagaimana cara kerja konversi PDF ke PowerPoint?",
+			"seo_faq1_a": "Setiap halaman PDF dirender sebagai gambar dan ditempatkan di slide PowerPoint. Teks tidak bisa diedit.",
+			"seo_faq2_q": "Bisakah saya mengedit slide setelah konversi?",
+			"seo_faq2_a": "Slide berisi gambar halaman. Anda bisa menambahkan kotak teks dan anotasi di PowerPoint."
 		},
 		"compress": {
 			"title": "Kompres PDF",
@@ -732,10 +736,10 @@
 			"btn_busy": "Mengompres halaman {progress} dari {total}…",
 			"err_fail": "Kompresi gagal.",
 			"save": "Simpan PDF terkompres",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Seberapa banyak ukuran PDF bisa dikurangi?",
+			"seo_faq1_a": "Biasanya 50-80% pengurangan tergantung konten. PDF dengan banyak gambar mendapat penghematan terbesar.",
+			"seo_faq2_q": "Apakah kompresi memengaruhi kualitas teks?",
+			"seo_faq2_a": "Teks dirender ulang sebagai gambar saat kompresi. Untuk dokumen banyak teks, gunakan pengaturan kualitas lebih tinggi."
 		},
 		"watermark_pdf": {
 			"title": "Tambah Tanda Air",
@@ -743,7 +747,11 @@
 			"btn": "Terapkan ke semua halaman",
 			"btn_busy": "Menerapkan…",
 			"err_text": "Masukkan teks tanda air.",
-			"save": "Simpan PDF bertanda air"
+			"save": "Simpan PDF bertanda air",
+			"seo_faq1_q": "Bisakah menggunakan gambar sebagai watermark?",
+			"seo_faq1_a": "Saat ini yang didukung adalah watermark teks. Anda bisa menyesuaikan teks, ukuran, opasitas, dan sudut rotasi.",
+			"seo_faq2_q": "Apakah watermark akan menutupi konten?",
+			"seo_faq2_a": "Tidak. Watermark ditempatkan dengan opasitas yang bisa disesuaikan, sehingga konten tetap terbaca di bawahnya."
 		},
 		"page_numbers": {
 			"title": "Tambah Nomor Halaman",
@@ -760,10 +768,10 @@
 			"btn": "Terapkan ke semua halaman",
 			"btn_busy": "Menambahkan nomor…",
 			"save": "Simpan PDF bernomor",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Di mana saya bisa menempatkan nomor halaman?",
+			"seo_faq1_a": "Anda bisa menempatkan nomor di atas atau bawah halaman, rata kiri, tengah, atau kanan.",
+			"seo_faq2_q": "Bisakah saya menyesuaikan format penomoran?",
+			"seo_faq2_a": "Ya. Anda bisa mengatur nomor awal, ukuran font, dan posisi."
 		},
 		"metadata": {
 			"title": "Edit Metadata",
@@ -784,10 +792,10 @@
 			"err_read": "Gagal membaca metadata.",
 			"err_update": "Gagal memperbarui metadata.",
 			"save": "Simpan PDF yang diperbarui",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Metadata PDF apa saja yang bisa diedit?",
+			"seo_faq1_a": "Anda bisa mengedit judul, penulis, subjek, dan kata kunci file PDF apa pun.",
+			"seo_faq2_q": "Apakah aman mengedit metadata terhadap konten PDF?",
+			"seo_faq2_a": "Ya. Hanya properti metadata yang berubah — konten PDF tetap utuh."
 		},
 		"crop_pdf": {
 			"title": "Potong PDF",
@@ -796,7 +804,11 @@
 			"err_margins": "Margin terlalu besar — tidak ada area tersisa.",
 			"btn": "Potong PDF",
 			"btn_busy": "Memotong…",
-			"save": "Simpan PDF yang dipotong"
+			"save": "Simpan PDF yang dipotong",
+			"seo_faq1_q": "Bisakah saya memotong halaman berbeda dengan cara berbeda?",
+			"seo_faq1_a": "Margin pemotongan diterapkan seragam ke semua halaman. Untuk pemotongan per halaman, pisahkan PDF dulu, potong setiap bagian, lalu gabungkan.",
+			"seo_faq2_q": "Apakah pemotongan mengurangi ukuran file?",
+			"seo_faq2_a": "Pemotongan menyembunyikan konten di luar margin tetapi mungkin tidak mengurangi ukuran secara signifikan, karena data tersembunyi bisa tetap ada di file."
 		},
 		"sign": {
 			"title": "Tanda Tangani PDF",
@@ -813,10 +825,10 @@
 			"err_place": "Klik pada halaman untuk menempatkan tanda tangan Anda.",
 			"btn_busy": "Menandatangani…",
 			"save": "Simpan PDF bertanda tangan",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Bagaimana cara membuat tanda tangan?",
+			"seo_faq1_a": "Anda bisa menggambar tanda tangan dengan mouse atau jari, mengetik nama, atau mengunggah gambar tanda tangan.",
+			"seo_faq2_q": "Apakah tanda tangan saya disimpan di mana pun?",
+			"seo_faq2_a": "Tidak. Tanda tangan Anda tidak pernah meninggalkan perangkat. Pemrosesan sepenuhnya terjadi di browser."
 		},
 		"edit": {
 			"title": "Edit PDF",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count} elemen ditempatkan",
 			"btn_busy": "Menerapkan…",
 			"save": "Simpan PDF yang diedit",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Pengeditan apa saja yang bisa dilakukan?",
+			"seo_faq1_a": "Anda bisa menambahkan teks ke halaman PDF mana pun. Pilih ukuran font, warna, dan posisi dengan mengklik halaman.",
+			"seo_faq2_q": "Bisakah saya mengedit teks yang sudah ada di PDF?",
+			"seo_faq2_a": "Saat ini Anda bisa menambahkan lapisan teks baru. Mengedit teks yang sudah ada membutuhkan dokumen sumber."
 		},
 		"password": {
 			"title": "Proteksi PDF dengan Kata Sandi",
@@ -858,10 +870,10 @@
 			"btn_busy": "Mengenkripsi…",
 			"result": "Terproteksi!",
 			"save": "Simpan PDF terproteksi",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Seberapa aman enkripsinya?",
+			"seo_faq1_a": "PDF dienkripsi menggunakan keamanan standar PDF. Kata sandi tidak pernah dikirim ke mana pun — enkripsi terjadi di browser Anda.",
+			"seo_faq2_q": "Bisakah saya mengatur izin seperti mencegah pencetakan?",
+			"seo_faq2_a": "Ya. Anda bisa mengatur izin cetak, salin, dan edit saat melindungi PDF."
 		},
 		"unlock": {
 			"title": "Buka Kunci PDF",
@@ -876,10 +888,10 @@
 			"password_label": "Kata sandi (jika diperlukan)",
 			"password_placeholder": "Kosongkan jika tidak ada",
 			"password_hint": "Hanya diperlukan untuk PDF yang membutuhkan kata sandi.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Bisakah saya menghapus kata sandi dari PDF?",
+			"seo_faq1_a": "Ya, jika Anda tahu kata sandi saat ini. Masukkan dan LocalConvert akan menyimpan salinan tanpa proteksi.",
+			"seo_faq2_q": "Apakah kata sandi saya aman?",
+			"seo_faq2_a": "Ya. Kata sandi hanya digunakan di browser untuk mendekripsi file. Tidak pernah dikirim ke server mana pun."
 		},
 		"rotate_image": {
 			"title": "Putar Gambar",
@@ -957,10 +969,10 @@
 			"copy": "Salin",
 			"copied": "Tersalin!",
 			"download_txt": "Simpan sebagai .txt",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Apakah bisa digunakan untuk PDF hasil scan?",
+			"seo_faq1_a": "Tidak. Ekstraksi teks berfungsi dengan PDF yang berisi teks asli. Dokumen hasil scan (berbasis gambar) perlu OCR terlebih dahulu.",
+			"seo_faq2_q": "Apakah mendukung teks selain bahasa Inggris?",
+			"seo_faq2_a": "Ya. Ekstraksi teks mendukung semua bahasa termasuk Arab, Cina, Jepang, Korea, dan aksara Sirilik."
 		},
 		"grayscale": {
 			"title": "PDF ke Hitam Putih",
@@ -970,10 +982,10 @@
 			"btn_busy": "Mengonversi halaman {progress} dari {total}…",
 			"grayscale": "Hitam putih",
 			"save": "Simpan PDF hitam putih",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Apakah teks masih bisa dipilih setelah konversi?",
+			"seo_faq1_a": "Tidak. Konversi grayscale merender setiap halaman sebagai gambar. Teks tidak lagi bisa dipilih atau dicari.",
+			"seo_faq2_q": "Bisakah saya menyesuaikan kualitas?",
+			"seo_faq2_a": "Ya. Gunakan penggeser kualitas untuk menyeimbangkan antara ukuran file dan kejernihan gambar."
 		},
 		"json_formatter": {
 			"title": "Pemformat JSON",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "atau klik untuk menjelajah",
 			"disclaimer": "Ketepatan tata letak bergantung pada kompleksitas dokumen. Tabel kompleks dan format lanjutan mungkin disederhanakan.",
 			"progress_hint": "Memproses dokumen Anda secara lokal — tidak ada yang diunggah.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Apakah dokumen Word akan terlihat sama sebagai PDF?",
+			"seo_faq1_a": "Kesetiaan tata letak tergantung pada kompleksitas dokumen. Dokumen sederhana terkonversi dengan baik; tabel dan format kompleks mungkin disederhanakan.",
+			"seo_faq2_q": "Apakah mendukung file .doc (format Word lama)?",
+			"seo_faq2_a": "Ya. Format .docx (modern) dan .doc (lama) keduanya didukung."
 		},
 		"from_xlsx": {
 			"title": "Excel ke PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "Potret",
 			"disclaimer": "Lebar kolom dihitung secara otomatis. Lembar yang lebar bekerja lebih baik dalam mode lanskap.",
 			"progress_hint": "Memproses spreadsheet secara lokal — tidak ada yang diunggah.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Bisakah memilih orientasi lanskap atau potret?",
+			"seo_faq1_a": "Ya. Anda bisa memilih orientasi halaman sebelum mengonversi. Spreadsheet lebar lebih baik dalam mode lanskap.",
+			"seo_faq2_q": "Format spreadsheet apa saja yang didukung?",
+			"seo_faq2_a": "XLSX (Excel), XLS (Excel lama), ODS (LibreOffice), dan file CSV didukung."
 		},
 		"to_docx": {
 			"title": "PDF ke Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "PDF yang dipindai (berbasis gambar) menghasilkan output kosong — gunakan OCR terlebih dahulu",
 			"progress_label": "Mengekstrak teks… {progress}%",
 			"progress_hint": "File Anda tidak pernah meninggalkan perangkat Anda.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Apakah formatnya tetap terjaga?",
+			"seo_faq1_a": "Konten teks dan struktur dasar (judul, paragraf) tetap terjaga. Tata letak kompleks, tabel, dan gambar disederhanakan.",
+			"seo_faq2_q": "Apakah berfungsi dengan PDF hasil scan?",
+			"seo_faq2_a": "Tidak. PDF hasil scan (berbasis gambar) menghasilkan output kosong. Gunakan software OCR terlebih dahulu untuk mengekstrak teks."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Sudut rotasi apa saja yang tersedia?",
+			"seo_faq1_a": "Anda bisa memutar 90°, 180°, atau 270° searah jarum jam. Rotasi instan dan tanpa kehilangan kualitas.",
+			"seo_faq2_q": "Apakah rotasi mengurangi kualitas gambar?",
+			"seo_faq2_a": "Tidak. Gambar diputar tanpa kompresi ulang, kualitas asli tetap terjaga."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Bisakah saya mengatur ukuran persis dalam piksel?",
+			"seo_faq1_a": "Ya. Seret persegi panjang pemotong atau masukkan dimensi piksel yang tepat.",
+			"seo_faq2_q": "Format gambar apa yang bisa dipotong?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF, dan sebagian besar format gambar umum didukung."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Bisakah mengatur opasitas watermark?",
+			"seo_faq1_a": "Ya. Anda bisa mengontrol opasitas, posisi, ukuran, dan warna watermark teks.",
+			"seo_faq2_q": "Apakah watermark permanen?",
+			"seo_faq2_a": "Ya. Setelah disimpan, watermark tertanam permanen di gambar."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Bisakah menggunakan gambar sendiri?",
+			"seo_faq1_a": "Ya. Pilih gambar apa saja lalu tambahkan teks atas dan bawah untuk membuat meme.",
+			"seo_faq2_q": "Bisakah menyesuaikan font dan warna?",
+			"seo_faq2_a": "Ya. Ukuran font, warna, dan outline bisa diubah sesuai selera."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Berapa banyak gambar yang bisa diproses sekaligus?",
+			"seo_faq1_a": "Tidak ada batasan tetap. Proses sebanyak mungkin sesuai kapasitas memori perangkat.",
+			"seo_faq2_q": "Operasi apa yang bisa diterapkan secara massal?",
+			"seo_faq2_a": "Konversi format, ubah ukuran, putar, dan atur kualitas untuk semua gambar yang dipilih."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Apa yang bisa dikodekan dalam QR code?",
+			"seo_faq1_a": "URL, teks, alamat email, nomor telepon, atau teks apa pun hingga ribuan karakter.",
+			"seo_faq2_q": "Bisakah menyesuaikan tampilan QR code?",
+			"seo_faq2_a": "Ukuran dan tingkat koreksi error bisa disesuaikan. QR code disimpan sebagai gambar PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Format warna apa yang didukung?",
+			"seo_faq1_a": "HEX, RGB, dan HSL tersedia. Klik piksel mana saja untuk langsung menyalin nilai warnanya.",
+			"seo_faq2_q": "Bisakah memilih warna dari jenis gambar apa pun?",
+			"seo_faq2_a": "Ya. JPG, PNG, WEBP, GIF, dan sebagian besar format lainnya didukung."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Bisakah memburamkan beberapa area?",
+			"seo_faq1_a": "Ya. Gambar beberapa area blur di gambar yang sama untuk menyembunyikan beberapa bagian sekaligus.",
+			"seo_faq2_q": "Bisakah mengatur intensitas blur?",
+			"seo_faq2_a": "Ya. Gunakan penggeser intensitas untuk mengontrol kekuatan efek blur."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Filter apa saja yang tersedia?",
+			"seo_faq1_a": "Kecerahan, kontras, saturasi, rotasi warna, grayscale, sepia, blur, dan invert.",
+			"seo_faq2_q": "Bisakah menggabungkan beberapa filter?",
+			"seo_faq2_a": "Ya. Semua penyesuaian filter digabungkan dan diterapkan secara real-time."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Format video apa yang didukung?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI, dan sebagian besar format video umum.",
+			"seo_faq2_q": "Bisakah mengatur durasi dan frame rate GIF?",
+			"seo_faq2_a": "Ya. Atur waktu mulai, durasi, dan frame rate untuk mengontrol output GIF."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Apakah memvalidasi sintaks JSON?",
+			"seo_faq1_a": "Ya. JSON tidak valid ditandai dengan pesan error yang menunjukkan baris dan karakter tepat.",
+			"seo_faq2_q": "Bisakah juga meminifikasi JSON?",
+			"seo_faq2_a": "Ya. Format (percantik) dan minifikasi JSON dengan satu klik."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Algoritma hash apa yang didukung?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384, dan SHA-512 semuanya tersedia.",
+			"seo_faq2_q": "Apakah hashing dilakukan secara lokal?",
+			"seo_faq2_a": "Ya. Semua hashing berjalan di browser melalui Web Crypto API. Data tidak pernah meninggalkan perangkat."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Bisakah mengenkode file, bukan hanya teks?",
+			"seo_faq1_a": "Alat ini mengenkode string teks. Untuk file, konversi kontennya ke teks terlebih dahulu.",
+			"seo_faq2_q": "Apakah mendukung teks Unicode?",
+			"seo_faq2_a": "Ya. Teks UTF-8 termasuk karakter non-Latin didukung sepenuhnya."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Apakah mendukung GitHub-flavored Markdown?",
+			"seo_faq1_a": "Ya. Tabel, daftar tugas, coret, dan ekstensi GitHub Markdown lainnya dirender dengan benar.",
+			"seo_faq2_q": "Bisakah mengekspor HTML yang dirender?",
+			"seo_faq2_a": "Pratinjau menampilkan output yang dirender secara real-time. Salin HTML dari panel pratinjau."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Menampilkan perbedaan per baris atau per kata?",
+			"seo_faq1_a": "Perbedaan disorot per baris dengan penambahan dan penghapusan ditandai warna.",
+			"seo_faq2_q": "Ada batasan ukuran?",
+			"seo_faq2_a": "Tidak ada batasan tetap. Teks besar mungkin lebih lambat di perangkat lama."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Metrik apa yang dihitung?",
+			"seo_faq1_a": "Kata, karakter (dengan dan tanpa spasi), kalimat, paragraf, dan perkiraan waktu baca.",
+			"seo_faq2_q": "Apakah berfungsi dengan teks non-Inggris?",
+			"seo_faq2_a": "Ya. Penghitungan kata berfungsi dengan semua bahasa dan set karakter."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Karakter apa yang dikodekan?",
+			"seo_faq1_a": "Karakter khusus seperti spasi dan karakter non-ASCII dikodekan persen sesuai RFC 3986.",
+			"seo_faq2_q": "Bisakah mendekode URL lengkap dengan parameter?",
+			"seo_faq2_a": "Ya. Tempel string yang dikodekan dan akan didekode menjadi teks yang bisa dibaca."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Apa yang dihapus minifikasi CSS?",
+			"seo_faq1_a": "Komentar, spasi tidak perlu, baris kosong, dan titik koma berlebih untuk mengurangi ukuran file.",
+			"seo_faq2_q": "Seberapa kecil CSS saya akan menjadi?",
+			"seo_faq2_a": "Biasanya 20-40% lebih kecil. File dengan banyak komentar mendapat pengurangan terbesar."
 		}
 	},
 	"dev_tools": {

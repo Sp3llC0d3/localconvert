@@ -6,6 +6,8 @@
 	import { SmileIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let topText = $state('');
@@ -164,6 +166,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-meme']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-meme'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-meme'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-meme'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-meme'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-meme'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-meme'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

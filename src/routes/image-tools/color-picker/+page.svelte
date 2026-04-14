@@ -4,6 +4,8 @@
 	import { loadImage } from '$lib/image/utils';
 	import { PipetteIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
+	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
+	import { toolSeo } from '$lib/data/tool-seo';
 
 	let files = $state<File[]>([]);
 	let imgEl = $state<HTMLImageElement | null>(null);
@@ -112,6 +114,7 @@
 	<meta property="og:title" content="Color Picker — LocalConvert" />
 	<meta property="og:description" content="Pick colors from any image. Get hex, RGB, and HSL values. Free, private, no uploads." />
 	<meta property="og:url" content="https://localconvert.app/image-tools/color-picker/" />
+	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Pick Colors from an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Click anywhere on the image to pick a color"},{"@type":"HowToStep","text":"Copy the color code in HEX, RGB, or HSL format"}]}</script>`}
 </svelte:head>
 
 <div class="picker-page">
@@ -169,6 +172,16 @@
 	{/if}
 
 	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+
+	{#if toolSeo['img-color-picker']}
+		<ToolSeoBlock
+			faqs={toolSeo['img-color-picker'].faqKeys.length >= 4 ? [
+				{ q: (m as any)[toolSeo['img-color-picker'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-color-picker'].faqKeys[1]]?.() ?? '' },
+				{ q: (m as any)[toolSeo['img-color-picker'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-color-picker'].faqKeys[3]]?.() ?? '' },
+			] : []}
+			relatedTools={toolSeo['img-color-picker'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+		/>
+	{/if}
 </div>
 
 <style>

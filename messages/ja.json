@@ -606,16 +606,16 @@
 		"convert_to_pdf": "PDFに変換",
 		"save_pdf": "PDFを保存",
 		"converting_progress": "変換中… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "使い方",
+		"seo_step1": "デバイスからファイルを選択",
+		"seo_step2": "必要に応じて設定を調整",
+		"seo_step3": "結果を保存 — 完了！",
+		"seo_why_title": "なぜLocalConvert？",
+		"seo_why_private": "完全プライベート — ファイルがデバイスから出ることはありません。サーバーへのアップロードは一切なし。",
+		"seo_why_free": "ファイルサイズ制限なしで永久無料。アカウントもサブスクリプションも不要。",
+		"seo_why_offline": "インストール済みアプリとしてオフラインで動作。初回読み込み後はインターネット不要。",
+		"seo_faq_title": "よくある質問",
+		"seo_related_title": "関連ツール"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "PDFファイルを2つ以上追加してください。",
 			"err_fail": "結合に失敗しました。",
 			"save": "結合したPDFを保存",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "PDFの結合は安全ですか？",
+			"seo_faq1_a": "はい。LocalConvertはブラウザ内で完全に動作します。ファイルがサーバーにアップロードされることはありません。結合はお使いのデバイス上で行われます。",
+			"seo_faq2_q": "結合できるPDFの数に制限はありますか？",
+			"seo_faq2_a": "ありません。ブラウザのメモリが許す限り、いくつでもPDFを結合できます。サイズや数の制限はありません。"
 		},
 		"split": {
 			"title": "PDF分割",
@@ -642,10 +642,10 @@
 			"err_extract": "ページの抽出に失敗しました。",
 			"err_fail": "分割に失敗しました。",
 			"help": "click to toggle, ● to save single page",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "PDFから特定のページを抽出できますか？",
+			"seo_faq1_a": "はい。必要なページを選択すると、LocalConvertがそのページだけで新しいPDFを作成します。",
+			"seo_faq2_q": "PDFを分割すると品質は低下しますか？",
+			"seo_faq2_a": "いいえ。分割は再エンコードなしでページを抽出するため、元の品質が保たれます。"
 		},
 		"rotate_pdf": {
 			"title": "ページ回転",
@@ -656,7 +656,11 @@
 			"selected_pages": "選択したページ",
 			"btn_busy": "処理中…",
 			"err_fail": "回転に失敗しました。",
-			"help": "クリックで切り替え"
+			"help": "クリックで切り替え",
+			"seo_faq1_q": "個別のページを回転できますか？",
+			"seo_faq1_a": "はい。特定のページまたはPDF全体を一度に回転できます。90°、180°、270°から選択してください。",
+			"seo_faq2_q": "回転すると品質に影響しますか？",
+			"seo_faq2_a": "いいえ。ページは再エンコードなしで回転されるため、元の品質は完全に保持されます。"
 		},
 		"organize": {
 			"title": "ページ整理",
@@ -668,10 +672,10 @@
 			"no_pages": "ページがありません。",
 			"btn": "整理したPDFを保存",
 			"btn_busy": "保存中…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "PDFからページを削除できますか？",
+			"seo_faq1_a": "はい。ページをドラッグして並べ替え、不要なページは削除ボタンで除去できます。",
+			"seo_faq2_q": "各ページのプレビューを見られますか？",
+			"seo_faq2_a": "はい。各ページのサムネイルが表示され、簡単に確認・整理できます。"
 		},
 		"images_to_pdf": {
 			"title": "画像 → PDF",
@@ -681,10 +685,10 @@
 			"btn": "PDFに変換",
 			"btn_busy": "変換中…",
 			"save": "PDFを保存",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "どの画像形式をPDFに変換できますか？",
+			"seo_faq1_a": "JPG、PNG、WEBP画像に対応しています。各画像がPDFの1ページになります。",
+			"seo_faq2_q": "画像の順番を変えられますか？",
+			"seo_faq2_a": "はい。複数の画像を追加し、変換前にお好みの順番に並べ替えられます。"
 		},
 		"pdf_to_images": {
 			"title": "PDF → 画像",
@@ -693,10 +697,10 @@
 			"btn": "画像として書き出し",
 			"btn_busy": "ページ {progress} / {total} を変換中…",
 			"err_fail": "変換に失敗しました。",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "どの形式で画像が出力されますか？",
+			"seo_faq1_a": "JPGまたはPNGから選べます。PDFの各ページが個別の画像になります。",
+			"seo_faq2_q": "複数ページのPDFはどうなりますか？",
+			"seo_faq2_a": "各ページが個別の画像として出力されます。複数ページのPDFの場合、全画像を含むZIPファイルが生成されます。"
 		},
 		"pdf_to_ppt": {
 			"title": "PDFからPowerPoint",
@@ -707,10 +711,10 @@
 			"btn": "PPTXに変換",
 			"btn_busy": "ページ {progress} / {total} を変換中…",
 			"save": "PPTXを保存",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "PDFからPowerPointへの変換はどう動きますか？",
+			"seo_faq1_a": "PDFの各ページが画像としてレンダリングされ、PowerPointスライドに配置されます。テキストは編集できません。",
+			"seo_faq2_q": "変換後にスライドを編集できますか？",
+			"seo_faq2_a": "スライドにはページの画像が含まれています。PowerPointでテキストボックスや注釈を追加できます。"
 		},
 		"compress": {
 			"title": "PDF圧縮",
@@ -732,10 +736,10 @@
 			"btn_busy": "ページ {progress} / {total} を圧縮中…",
 			"err_fail": "圧縮に失敗しました。",
 			"save": "圧縮したPDFを保存",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "PDFのファイルサイズをどのくらい小さくできますか？",
+			"seo_faq1_a": "通常、内容に応じて50〜80%の削減が可能です。画像の多いPDFで最大の効果が得られます。",
+			"seo_faq2_q": "圧縮するとテキストの品質に影響しますか？",
+			"seo_faq2_a": "圧縮時にテキストは画像として再レンダリングされます。テキスト中心の文書には高い品質設定をお勧めします。"
 		},
 		"watermark_pdf": {
 			"title": "透かしを追加",
@@ -743,7 +747,11 @@
 			"btn": "全ページに適用",
 			"btn_busy": "適用中…",
 			"err_text": "透かしのテキストを入力してください。",
-			"save": "透かし入りPDFを保存"
+			"save": "透かし入りPDFを保存",
+			"seo_faq1_q": "画像を透かしとして使えますか？",
+			"seo_faq1_a": "現在はテキスト透かしに対応しています。テキスト、サイズ、不透明度、回転角度をカスタマイズできます。",
+			"seo_faq2_q": "透かしがコンテンツを隠しませんか？",
+			"seo_faq2_a": "いいえ。透かしは調整可能な不透明度で配置されるため、コンテンツはその下で読めます。"
 		},
 		"page_numbers": {
 			"title": "ページ番号を追加",
@@ -760,10 +768,10 @@
 			"btn": "全ページに適用",
 			"btn_busy": "番号を追加中…",
 			"save": "ページ番号入りPDFを保存",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "ページ番号はどこに配置できますか？",
+			"seo_faq1_a": "ページの上部または下部に、左寄せ・中央・右寄せで配置できます。",
+			"seo_faq2_q": "番号の書式をカスタマイズできますか？",
+			"seo_faq2_a": "はい。開始番号、フォントサイズ、位置を設定できます。"
 		},
 		"metadata": {
 			"title": "メタデータ編集",
@@ -784,10 +792,10 @@
 			"err_read": "メタデータの読み取りに失敗しました。",
 			"err_update": "メタデータの更新に失敗しました。",
 			"save": "更新したPDFを保存",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "どのPDFメタデータを編集できますか？",
+			"seo_faq1_a": "任意のPDFファイルのタイトル、著者、件名、キーワードを編集できます。",
+			"seo_faq2_q": "メタデータの編集はPDFの内容に影響しますか？",
+			"seo_faq2_a": "いいえ。メタデータのプロパティのみが変更されます。PDFの内容はそのまま保持されます。"
 		},
 		"crop_pdf": {
 			"title": "PDFトリミング",
@@ -796,7 +804,11 @@
 			"err_margins": "Margins are too large — no area left.",
 			"btn": "PDFをトリミング",
 			"btn_busy": "トリミング中…",
-			"save": "トリミングしたPDFを保存"
+			"save": "トリミングしたPDFを保存",
+			"seo_faq1_q": "ページごとに異なるトリミングはできますか？",
+			"seo_faq1_a": "トリミングのマージンは全ページに均一に適用されます。ページごとにトリミングするには、まずPDFを分割し、各部分をトリミングしてから結合してください。",
+			"seo_faq2_q": "トリミングするとファイルサイズは小さくなりますか？",
+			"seo_faq2_a": "トリミングはマージン外のコンテンツを非表示にしますが、隠されたデータがファイル内に残る場合があるため、大幅なサイズ削減にはならないことがあります。"
 		},
 		"sign": {
 			"title": "PDF署名",
@@ -813,10 +825,10 @@
 			"err_place": "ページ上をクリックして署名を配置してください。",
 			"btn_busy": "署名中…",
 			"save": "署名済みPDFを保存",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "署名はどうやって作成しますか？",
+			"seo_faq1_a": "マウスや指で署名を描く、名前を入力する、署名画像をアップロードする方法があります。",
+			"seo_faq2_q": "署名はどこかに保存されますか？",
+			"seo_faq2_a": "いいえ。署名がデバイスから出ることはありません。処理はすべてブラウザ内で行われます。"
 		},
 		"edit": {
 			"title": "PDF編集",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count}個の要素を配置済み",
 			"btn_busy": "適用中…",
 			"save": "編集したPDFを保存",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "どんな編集ができますか？",
+			"seo_faq1_a": "PDFの任意のページにテキストを追加できます。ページをクリックしてフォントサイズ、色、位置を選択します。",
+			"seo_faq2_q": "PDF内の既存テキストを編集できますか？",
+			"seo_faq2_a": "現在は新しいテキストレイヤーの追加が可能です。既存テキストの編集にはソースドキュメントが必要です。"
 		},
 		"password": {
 			"title": "PDFパスワード保護",
@@ -858,10 +870,10 @@
 			"btn_busy": "暗号化中…",
 			"result": "保護完了!",
 			"save": "保護したPDFを保存",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "暗号化はどの程度安全ですか？",
+			"seo_faq1_a": "PDFは標準的なPDFセキュリティで暗号化されます。パスワードは一切外部に送信されず、暗号化はブラウザ内で行われます。",
+			"seo_faq2_q": "印刷禁止などの権限を設定できますか？",
+			"seo_faq2_a": "はい。PDF保護時に印刷、コピー、編集の権限を設定できます。"
 		},
 		"unlock": {
 			"title": "PDFロック解除",
@@ -876,10 +888,10 @@
 			"password_label": "パスワード（必要な場合）",
 			"password_placeholder": "なければ空欄",
 			"password_hint": "開くのにパスワードが必要なPDFの場合のみ。",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "PDFからパスワードを削除できますか？",
+			"seo_faq1_a": "はい。現在のパスワードをご存知の場合、入力するとLocalConvertが保護なしのコピーを保存します。",
+			"seo_faq2_q": "パスワードは安全ですか？",
+			"seo_faq2_a": "はい。パスワードはファイルの復号のためにブラウザ内でのみ使用されます。サーバーに送信されることはありません。"
 		},
 		"rotate_image": {
 			"title": "画像回転",
@@ -957,10 +969,10 @@
 			"copy": "コピー",
 			"copied": "コピーしました!",
 			"download_txt": ".txtとして保存",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "スキャンしたPDFでも使えますか？",
+			"seo_faq1_a": "いいえ。テキスト抽出は実際のテキストを含むPDFで機能します。スキャン文書（画像ベース）はまずOCRが必要です。",
+			"seo_faq2_q": "英語以外のテキストに対応していますか？",
+			"seo_faq2_a": "はい。アラビア語、中国語、日本語、韓国語、キリル文字を含む全言語のテキスト抽出に対応しています。"
 		},
 		"grayscale": {
 			"title": "PDFグレースケール変換",
@@ -970,10 +982,10 @@
 			"btn_busy": "ページ {progress} / {total} を変換中…",
 			"grayscale": "グレースケール",
 			"save": "グレースケールPDFを保存",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "変換後もテキストは選択可能ですか？",
+			"seo_faq1_a": "いいえ。グレースケール変換は各ページを画像としてレンダリングします。テキストは選択や検索ができなくなります。",
+			"seo_faq2_q": "品質を調整できますか？",
+			"seo_faq2_a": "はい。品質スライダーでファイルサイズと画像の鮮明さのバランスを調整できます。"
 		},
 		"json_formatter": {
 			"title": "JSONフォーマッター",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "またはクリックして参照",
 			"disclaimer": "レイアウトの忠実度はドキュメントの複雑さに依存します。複雑なテーブルや高度な書式は簡略化される場合があります。",
 			"progress_hint": "ドキュメントをローカルで処理中 — アップロードは行われません。",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Word文書はPDFと同じに見えますか？",
+			"seo_faq1_a": "レイアウトの再現度は文書の複雑さによります。シンプルな文書はうまく変換されますが、複雑な表や書式は簡略化される場合があります。",
+			"seo_faq2_q": ".docファイル（旧Word形式）に対応していますか？",
+			"seo_faq2_a": "はい。.docx（現行）と.doc（旧形式）の両方のWord形式に対応しています。"
 		},
 		"from_xlsx": {
 			"title": "ExcelからPDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "縦向き",
 			"disclaimer": "列幅は自動計算されます。幅の広いシートは横向きモードで最適に動作します。",
 			"progress_hint": "スプレッドシートをローカルで処理中 — アップロードは行われません。",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "横向きと縦向きを選べますか？",
+			"seo_faq1_a": "はい。変換前にページの向きを選択できます。幅の広いスプレッドシートは横向きが最適です。",
+			"seo_faq2_q": "対応しているスプレッドシート形式は？",
+			"seo_faq2_a": "XLSX（Excel）、XLS（旧Excel）、ODS（LibreOffice）、CSVファイルに対応しています。"
 		},
 		"to_docx": {
 			"title": "PDFからWord",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "スキャンされた（画像ベースの）PDFは空の出力を生成します — 先にOCRを使用してください",
 			"progress_label": "テキストを抽出中… {progress}%",
 			"progress_hint": "ファイルはデバイスから離れることはありません。",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "書式は保持されますか？",
+			"seo_faq1_a": "テキスト内容と基本構造（見出し、段落）は保持されます。複雑なレイアウト、表、画像は簡略化されます。",
+			"seo_faq2_q": "スキャンしたPDFでも使えますか？",
+			"seo_faq2_a": "いいえ。スキャン（画像ベース）のPDFは空の出力になります。まずOCRソフトウェアでテキストを抽出可能にしてください。"
+		},
+		"img_rotate": {
+			"seo_faq1_q": "どの回転角度が利用できますか？",
+			"seo_faq1_a": "時計回りに90°、180°、270°で回転できます。回転は瞬時で品質劣化なしです。",
+			"seo_faq2_q": "回転すると画質は下がりますか？",
+			"seo_faq2_a": "いいえ。再圧縮なしで回転するため、元の画質が保たれます。"
+		},
+		"img_crop": {
+			"seo_faq1_q": "ピクセル単位で正確なサイズを指定できますか？",
+			"seo_faq1_a": "はい。切り抜き矩形をドラッグするか、正確なピクセル寸法を入力できます。",
+			"seo_faq2_q": "どの画像形式を切り抜けますか？",
+			"seo_faq2_a": "JPG、PNG、WEBP、GIFなど、ほとんどの一般的な画像形式に対応しています。"
+		},
+		"img_watermark": {
+			"seo_faq1_q": "透かしの不透明度を調整できますか？",
+			"seo_faq1_a": "はい。テキスト透かしの不透明度、位置、サイズ、色を制御できます。",
+			"seo_faq2_q": "透かしは永続的ですか？",
+			"seo_faq2_a": "はい。保存後、透かしは画像に永久に埋め込まれます。"
+		},
+		"img_meme": {
+			"seo_faq1_q": "自分の画像を使えますか？",
+			"seo_faq1_a": "はい。任意の画像を選択し、上下にテキストを追加してミームを作成できます。",
+			"seo_faq2_q": "フォントと色をカスタマイズできますか？",
+			"seo_faq2_a": "はい。フォントサイズ、色、アウトラインを変更できます。"
+		},
+		"img_batch": {
+			"seo_faq1_q": "一度に何枚の画像を処理できますか？",
+			"seo_faq1_a": "固定の上限はありません。デバイスのメモリが許す限り処理できます。",
+			"seo_faq2_q": "バッチでどんな操作を適用できますか？",
+			"seo_faq2_a": "フォーマット変換、リサイズ、回転、品質設定を全画像に一括適用できます。"
+		},
+		"img_qr": {
+			"seo_faq1_q": "QRコードに何をエンコードできますか？",
+			"seo_faq1_a": "URL、テキスト、メールアドレス、電話番号、数千文字までの任意のテキスト。",
+			"seo_faq2_q": "QRコードの外観をカスタマイズできますか？",
+			"seo_faq2_a": "サイズとエラー訂正レベルを調整できます。QRコードはPNG画像として保存されます。"
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "どのカラーフォーマットに対応していますか？",
+			"seo_faq1_a": "HEX、RGB、HSLに対応。任意のピクセルをクリックして色の値を即座にコピーできます。",
+			"seo_faq2_q": "どの画像タイプからでも色を選べますか？",
+			"seo_faq2_a": "はい。JPG、PNG、WEBP、GIFなどほとんどの形式に対応しています。"
+		},
+		"img_blur": {
+			"seo_faq1_q": "複数の領域をぼかせますか？",
+			"seo_faq1_a": "はい。同じ画像に複数のぼかし領域を描画して、複数箇所を一度に隠せます。",
+			"seo_faq2_q": "ぼかしの強さを調整できますか？",
+			"seo_faq2_a": "はい。強度スライダーでぼかし効果の強さを制御できます。"
+		},
+		"img_filters": {
+			"seo_faq1_q": "どんなフィルターが使えますか？",
+			"seo_faq1_a": "明るさ、コントラスト、彩度、色相回転、グレースケール、セピア、ぼかし、反転。",
+			"seo_faq2_q": "複数のフィルターを組み合わせられますか？",
+			"seo_faq2_a": "はい。すべてのフィルター調整は重ねて適用され、リアルタイムで反映されます。"
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "どのビデオ形式に対応していますか？",
+			"seo_faq1_a": "MP4、WEBM、MOV、AVIなど、ほとんどの一般的なビデオ形式。",
+			"seo_faq2_q": "GIFの長さとフレームレートを設定できますか？",
+			"seo_faq2_a": "はい。開始時間、長さ、フレームレートを設定して出力GIFを制御できます。"
+		},
+		"dev_json": {
+			"seo_faq1_q": "JSONの構文を検証しますか？",
+			"seo_faq1_a": "はい。無効なJSONは、解析に失敗した行と文字を示すエラーメッセージで表示されます。",
+			"seo_faq2_q": "JSONの圧縮もできますか？",
+			"seo_faq2_a": "はい。ワンクリックでJSONの整形（美化）と圧縮の両方ができます。"
+		},
+		"dev_hash": {
+			"seo_faq1_q": "どのハッシュアルゴリズムに対応していますか？",
+			"seo_faq1_a": "MD5、SHA-1、SHA-256、SHA-384、SHA-512すべて利用可能です。",
+			"seo_faq2_q": "ハッシュ化はローカルで行われますか？",
+			"seo_faq2_a": "はい。すべてのハッシュ化はWeb Crypto APIを使用してブラウザ内で実行されます。データがデバイスを離れることはありません。"
+		},
+		"dev_base64": {
+			"seo_faq1_q": "テキストだけでなくファイルもエンコードできますか？",
+			"seo_faq1_a": "このツールはテキスト文字列のエンコード・デコードを行います。ファイルの場合は先にテキストに変換してください。",
+			"seo_faq2_q": "Unicodeテキストに対応していますか？",
+			"seo_faq2_a": "はい。非ラテン文字を含むUTF-8エンコードテキストに完全対応しています。"
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "GitHub風Markdownに対応していますか？",
+			"seo_faq1_a": "はい。テーブル、タスクリスト、取り消し線などのGitHub Markdown拡張が正しくレンダリングされます。",
+			"seo_faq2_q": "レンダリングされたHTMLをエクスポートできますか？",
+			"seo_faq2_a": "プレビューはリアルタイムで出力を表示します。プレビューパネルからHTMLをコピーできます。"
+		},
+		"dev_diff": {
+			"seo_faq1_q": "行単位と語単位のどちらで差分を表示しますか？",
+			"seo_faq1_a": "差分は行単位でハイライトされ、追加と削除は色分けで明示されます。",
+			"seo_faq2_q": "サイズ制限はありますか？",
+			"seo_faq2_a": "固定の制限はありません。大きなテキストは古いデバイスでは遅くなる可能性があります。"
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "どのメトリクスを計測しますか？",
+			"seo_faq1_a": "単語数、文字数（スペース含む・含まない）、文数、段落数、推定読了時間。",
+			"seo_faq2_q": "英語以外のテキストでも動作しますか？",
+			"seo_faq2_a": "はい。すべての言語と文字セットで単語カウントが機能します。"
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "どの文字がエンコードされますか？",
+			"seo_faq1_a": "スペースや非ASCII文字などの特殊文字がRFC 3986に従ってパーセントエンコードされます。",
+			"seo_faq2_q": "パラメータ付きの完全なURLをデコードできますか？",
+			"seo_faq2_a": "はい。エンコードされた文字列を貼り付けると、読み取り可能なテキストにデコードされます。"
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "CSSの圧縮は何を削除しますか？",
+			"seo_faq1_a": "コメント、不要なスペース、空行、冗長なセミコロンを削除してファイルサイズを縮小します。",
+			"seo_faq2_q": "CSSはどのくらい小さくなりますか？",
+			"seo_faq2_a": "通常20-40%小さくなります。コメントの多いファイルで最大の効果があります。"
 		}
 	},
 	"dev_tools": {

@@ -682,7 +682,11 @@
 			"selected_pages": "Selected pages",
 			"err_fail": "Rotate failed.",
 			"help": "click to toggle",
-			"btn_busy": "Processing…"
+			"btn_busy": "Processing…",
+			"seo_faq1_q": "Can I rotate individual pages?",
+			"seo_faq1_a": "Yes. You can rotate specific pages or the entire PDF at once. Choose 90°, 180°, or 270° rotation.",
+			"seo_faq2_q": "Does rotation affect quality?",
+			"seo_faq2_a": "No. Pages are rotated without re-encoding, so the original quality is fully preserved."
 		},
 		"organize": {
 			"title": "Organize Pages",
@@ -769,7 +773,11 @@
 			"btn": "Apply to all pages",
 			"err_text": "Enter watermark text.",
 			"save": "Save watermarked PDF",
-			"btn_busy": "Applying…"
+			"btn_busy": "Applying…",
+			"seo_faq1_q": "Can I use an image as a watermark?",
+			"seo_faq1_a": "Currently, text-based watermarks are supported. You can customize the text, size, opacity, and rotation angle.",
+			"seo_faq2_q": "Will the watermark cover the content?",
+			"seo_faq2_a": "No. Watermarks are placed with adjustable opacity, so your content remains readable beneath them."
 		},
 		"page_numbers": {
 			"title": "Add Page Numbers",
@@ -822,7 +830,11 @@
 			"btn": "Crop PDF",
 			"save": "Save cropped PDF",
 			"err_margins": "Margins too large — no area remaining.",
-			"btn_busy": "Cropping…"
+			"btn_busy": "Cropping…",
+			"seo_faq1_q": "Can I crop different pages differently?",
+			"seo_faq1_a": "The crop margins are applied uniformly to all pages. For per-page cropping, split the PDF first, crop each part, then merge.",
+			"seo_faq2_q": "Does cropping reduce file size?",
+			"seo_faq2_a": "Cropping hides content outside the margins but may not significantly reduce file size, as the hidden data can remain in the file."
 		},
 		"sign": {
 			"title": "Sign PDF",
@@ -1085,6 +1097,114 @@
 			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
 			"seo_faq2_q": "Does it work with scanned PDFs?",
 			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "What rotation angles are available?",
+			"seo_faq1_a": "You can rotate by 90°, 180°, or 270° clockwise. The rotation is instant and lossless.",
+			"seo_faq2_q": "Does rotation reduce image quality?",
+			"seo_faq2_a": "No. The image is rotated without recompression, preserving the original quality."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Can I set an exact crop size in pixels?",
+			"seo_faq1_a": "Yes. You can drag a crop rectangle or enter precise pixel dimensions for exact control.",
+			"seo_faq2_q": "What image formats can I crop?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF, and most other common image formats are supported."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Can I adjust watermark opacity?",
+			"seo_faq1_a": "Yes. You can control the opacity, position, size, and color of the text watermark.",
+			"seo_faq2_q": "Is the watermark permanent?",
+			"seo_faq2_a": "Yes. Once saved, the watermark is permanently embedded in the image."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Can I use my own images?",
+			"seo_faq1_a": "Yes. Select any image from your device, then add top and bottom text to create your meme.",
+			"seo_faq2_q": "Can I customize the font and color?",
+			"seo_faq2_a": "Yes. You can change the font size, color, and outline to match your meme style."
+		},
+		"img_batch": {
+			"seo_faq1_q": "How many images can I process at once?",
+			"seo_faq1_a": "There is no fixed limit. You can process as many images as your device memory allows.",
+			"seo_faq2_q": "What operations can I apply in batch?",
+			"seo_faq2_a": "You can convert formats, resize, rotate, and apply quality settings to all selected images at once."
+		},
+		"img_qr": {
+			"seo_faq1_q": "What can I encode in a QR code?",
+			"seo_faq1_a": "URLs, plain text, email addresses, phone numbers, or any text up to several thousand characters.",
+			"seo_faq2_q": "Can I customize the QR code appearance?",
+			"seo_faq2_a": "You can adjust the size and error correction level. The QR code is saved as a PNG image."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "What color formats are supported?",
+			"seo_faq1_a": "HEX, RGB, and HSL formats are all available. Click any pixel to instantly copy its color value.",
+			"seo_faq2_q": "Can I pick colors from any image type?",
+			"seo_faq2_a": "Yes. JPG, PNG, WEBP, GIF, and most other image formats are supported."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Can I blur multiple regions?",
+			"seo_faq1_a": "Yes. Draw multiple blur regions on the same image to hide several areas at once.",
+			"seo_faq2_q": "Can I adjust the blur intensity?",
+			"seo_faq2_a": "Yes. Use the intensity slider to control how strong the blur effect is."
+		},
+		"img_filters": {
+			"seo_faq1_q": "What filters are available?",
+			"seo_faq1_a": "Brightness, contrast, saturation, hue rotation, grayscale, sepia, blur, and invert are all available.",
+			"seo_faq2_q": "Can I combine multiple filters?",
+			"seo_faq2_a": "Yes. All filter adjustments stack together and are applied to the image in real time."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "What video formats are supported?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI, and most common video formats are supported.",
+			"seo_faq2_q": "Can I set the GIF duration and frame rate?",
+			"seo_faq2_a": "Yes. You can set the start time, duration, and frame rate to control the output GIF."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Does it validate JSON syntax?",
+			"seo_faq1_a": "Yes. Invalid JSON is flagged with an error message showing the exact line and character where parsing failed.",
+			"seo_faq2_q": "Can I minify JSON too?",
+			"seo_faq2_a": "Yes. You can both format (beautify) and minify JSON with a single click."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Which hash algorithms are supported?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384, and SHA-512 are all available.",
+			"seo_faq2_q": "Is the hashing done locally?",
+			"seo_faq2_a": "Yes. All hashing runs in your browser using the Web Crypto API. Your data never leaves your device."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Can I encode files, not just text?",
+			"seo_faq1_a": "The tool encodes and decodes text strings. For file encoding, convert the file content to text first.",
+			"seo_faq2_q": "Does it handle Unicode text?",
+			"seo_faq2_a": "Yes. UTF-8 encoded text including non-Latin characters is fully supported."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Does it support GitHub-flavored Markdown?",
+			"seo_faq1_a": "Yes. Tables, task lists, strikethrough, and other GitHub Markdown extensions are rendered correctly.",
+			"seo_faq2_q": "Can I export the rendered HTML?",
+			"seo_faq2_a": "The preview shows rendered output in real time. You can copy the HTML from the preview panel."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Does it show line-by-line or word-by-word differences?",
+			"seo_faq1_a": "Differences are highlighted at the line level with additions and removals clearly marked in color.",
+			"seo_faq2_q": "Is there a size limit?",
+			"seo_faq2_a": "No hard limit. The tool runs in your browser, so large texts may be slower on older devices."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "What metrics does it count?",
+			"seo_faq1_a": "Words, characters (with and without spaces), sentences, paragraphs, and estimated reading time.",
+			"seo_faq2_q": "Does it work with non-English text?",
+			"seo_faq2_a": "Yes. Word counting works with all languages and character sets."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "What characters get encoded?",
+			"seo_faq1_a": "Special characters like spaces, ampersands, question marks, and non-ASCII characters are percent-encoded per RFC 3986.",
+			"seo_faq2_q": "Can I decode a full URL with parameters?",
+			"seo_faq2_a": "Yes. Paste any URL-encoded string and it will be decoded to readable text."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "What does CSS minification remove?",
+			"seo_faq1_a": "Comments, unnecessary whitespace, newlines, and redundant semicolons are removed to reduce file size.",
+			"seo_faq2_q": "How much smaller will my CSS be?",
+			"seo_faq2_a": "Typically 20-40% smaller depending on formatting. Heavily commented files see the biggest reduction."
 		}
 	},
 	"toast": {

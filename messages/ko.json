@@ -606,16 +606,16 @@
 		"convert_to_pdf": "PDF로 변환",
 		"save_pdf": "PDF 저장",
 		"converting_progress": "변환 중… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "사용 방법",
+		"seo_step1": "기기에서 파일을 선택하세요",
+		"seo_step2": "필요에 따라 설정을 조정하세요",
+		"seo_step3": "결과를 저장하세요 — 완료!",
+		"seo_why_title": "왜 LocalConvert인가요?",
+		"seo_why_private": "100% 개인정보 보호 — 파일이 기기를 떠나지 않습니다. 서버 업로드 없음, 절대로.",
+		"seo_why_free": "파일 크기 제한 없이 영원히 무료. 계정이나 구독 불필요.",
+		"seo_why_offline": "설치된 앱으로 오프라인 작동. 첫 로딩 후 인터넷 불필요.",
+		"seo_faq_title": "자주 묻는 질문",
+		"seo_related_title": "관련 도구"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "PDF 파일을 2개 이상 추가하세요.",
 			"err_fail": "병합에 실패했습니다.",
 			"save": "병합된 PDF 저장",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "PDF 병합은 안전한가요?",
+			"seo_faq1_a": "네. LocalConvert는 브라우저에서만 작동합니다. 파일이 서버에 업로드되지 않습니다. 병합은 기기에서 이루어집니다.",
+			"seo_faq2_q": "병합할 수 있는 PDF 수에 제한이 있나요?",
+			"seo_faq2_a": "없습니다. 브라우저 메모리가 허용하는 만큼 PDF를 병합할 수 있습니다. 크기나 수량 제한이 없습니다."
 		},
 		"split": {
 			"title": "PDF 분할",
@@ -642,10 +642,10 @@
 			"err_extract": "페이지 추출에 실패했습니다.",
 			"err_fail": "분할에 실패했습니다.",
 			"help": "클릭하여 전환, 점을 눌러 단일 페이지 선택",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "PDF에서 특정 페이지를 추출할 수 있나요?",
+			"seo_faq1_a": "네. 원하는 페이지를 선택하면 LocalConvert가 해당 페이지만으로 새 PDF를 만듭니다.",
+			"seo_faq2_q": "PDF를 분할하면 품질이 떨어지나요?",
+			"seo_faq2_a": "아니요. 분할은 재인코딩 없이 페이지를 추출하므로 원본 품질이 유지됩니다."
 		},
 		"rotate_pdf": {
 			"title": "페이지 회전",
@@ -656,7 +656,11 @@
 			"selected_pages": "선택한 페이지",
 			"btn_busy": "처리 중…",
 			"err_fail": "회전에 실패했습니다.",
-			"help": "클릭하여 전환"
+			"help": "클릭하여 전환",
+			"seo_faq1_q": "개별 페이지를 회전할 수 있나요?",
+			"seo_faq1_a": "네. 특정 페이지 또는 전체 PDF를 한 번에 회전할 수 있습니다. 90°, 180°, 270° 중 선택하세요.",
+			"seo_faq2_q": "회전하면 품질에 영향이 있나요?",
+			"seo_faq2_a": "아니요. 페이지는 재인코딩 없이 회전되므로 원본 품질이 완전히 유지됩니다."
 		},
 		"organize": {
 			"title": "페이지 정리",
@@ -668,10 +672,10 @@
 			"no_pages": "남은 페이지가 없습니다.",
 			"btn": "정리된 PDF 저장",
 			"btn_busy": "저장 중…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "PDF에서 페이지를 삭제할 수 있나요?",
+			"seo_faq1_a": "네. 페이지를 드래그하여 재정렬하고 삭제 버튼으로 불필요한 페이지를 제거할 수 있습니다.",
+			"seo_faq2_q": "각 페이지의 미리보기를 볼 수 있나요?",
+			"seo_faq2_a": "네. 각 페이지의 섬네일이 표시되어 쉽게 확인하고 정리할 수 있습니다."
 		},
 		"images_to_pdf": {
 			"title": "이미지 → PDF",
@@ -681,10 +685,10 @@
 			"btn": "PDF로 변환",
 			"btn_busy": "변환 중…",
 			"save": "PDF 저장",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "어떤 이미지 형식을 PDF로 변환할 수 있나요?",
+			"seo_faq1_a": "JPG, PNG, WEBP 이미지를 지원합니다. 각 이미지가 PDF의 한 페이지가 됩니다.",
+			"seo_faq2_q": "이미지 순서를 변경할 수 있나요?",
+			"seo_faq2_a": "네. 여러 이미지를 추가하고 변환 전에 원하는 순서로 배열할 수 있습니다."
 		},
 		"pdf_to_images": {
 			"title": "PDF → 이미지",
@@ -693,10 +697,10 @@
 			"btn": "이미지로 내보내기",
 			"btn_busy": "{total}페이지 중 {progress}페이지 변환 중…",
 			"err_fail": "변환에 실패했습니다.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "어떤 형식으로 이미지를 받나요?",
+			"seo_faq1_a": "JPG와 PNG 중 선택할 수 있습니다. PDF의 각 페이지가 개별 이미지가 됩니다.",
+			"seo_faq2_q": "여러 페이지 PDF는 어떻게 되나요?",
+			"seo_faq2_a": "각 페이지가 개별 이미지로 내보내집니다. 여러 페이지 PDF의 경우 모든 이미지가 포함된 ZIP 파일을 받습니다."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF를 PowerPoint로",
@@ -707,10 +711,10 @@
 			"btn": "PPTX로 변환",
 			"btn_busy": "{total}페이지 중 {progress}페이지 변환 중…",
 			"save": "PPTX 저장",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "PDF에서 PowerPoint로 변환은 어떻게 작동하나요?",
+			"seo_faq1_a": "PDF의 각 페이지가 이미지로 렌더링되어 PowerPoint 슬라이드에 배치됩니다. 텍스트는 편집할 수 없습니다.",
+			"seo_faq2_q": "변환 후 슬라이드를 편집할 수 있나요?",
+			"seo_faq2_a": "슬라이드에는 페이지 이미지가 포함됩니다. PowerPoint에서 텍스트 상자와 주석을 추가할 수 있습니다."
 		},
 		"compress": {
 			"title": "PDF 압축",
@@ -732,10 +736,10 @@
 			"btn_busy": "{total}페이지 중 {progress}페이지 압축 중…",
 			"err_fail": "압축에 실패했습니다.",
 			"save": "압축된 PDF 저장",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "PDF 파일 크기를 얼마나 줄일 수 있나요?",
+			"seo_faq1_a": "콘텐츠에 따라 보통 50-80% 감소됩니다. 이미지가 많은 PDF에서 가장 큰 절감 효과가 있습니다.",
+			"seo_faq2_q": "압축하면 텍스트 품질에 영향이 있나요?",
+			"seo_faq2_a": "압축 시 텍스트가 이미지로 다시 렌더링됩니다. 텍스트가 많은 문서는 높은 품질 설정을 사용하세요."
 		},
 		"watermark_pdf": {
 			"title": "워터마크 추가",
@@ -743,7 +747,11 @@
 			"btn": "모든 페이지에 적용",
 			"btn_busy": "적용 중…",
 			"err_text": "워터마크 텍스트를 입력하세요.",
-			"save": "워터마크된 PDF 저장"
+			"save": "워터마크된 PDF 저장",
+			"seo_faq1_q": "이미지를 워터마크로 사용할 수 있나요?",
+			"seo_faq1_a": "현재 텍스트 워터마크를 지원합니다. 텍스트, 크기, 불투명도, 회전 각도를 맞춤 설정할 수 있습니다.",
+			"seo_faq2_q": "워터마크가 내용을 가리나요?",
+			"seo_faq2_a": "아니요. 워터마크는 조절 가능한 불투명도로 배치되어 그 아래의 내용이 읽힙니다."
 		},
 		"page_numbers": {
 			"title": "페이지 번호 추가",
@@ -760,10 +768,10 @@
 			"btn": "모든 페이지에 적용",
 			"btn_busy": "번호 추가 중…",
 			"save": "번호가 매겨진 PDF 저장",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "페이지 번호는 어디에 넣을 수 있나요?",
+			"seo_faq1_a": "페이지 상단 또는 하단에 좌측, 중앙, 우측 정렬로 배치할 수 있습니다.",
+			"seo_faq2_q": "번호 매기기 형식을 사용자 지정할 수 있나요?",
+			"seo_faq2_a": "네. 시작 번호, 글꼴 크기, 위치를 설정할 수 있습니다."
 		},
 		"metadata": {
 			"title": "메타데이터 편집",
@@ -784,10 +792,10 @@
 			"err_read": "메타데이터를 읽지 못했습니다.",
 			"err_update": "메타데이터를 수정하지 못했습니다.",
 			"save": "수정된 PDF 저장",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "어떤 PDF 메타데이터를 편집할 수 있나요?",
+			"seo_faq1_a": "모든 PDF 파일의 제목, 저자, 주제, 키워드를 편집할 수 있습니다.",
+			"seo_faq2_q": "메타데이터 편집이 PDF 내용에 안전한가요?",
+			"seo_faq2_a": "네. 메타데이터 속성만 변경됩니다. PDF 내용은 그대로 유지됩니다."
 		},
 		"crop_pdf": {
 			"title": "PDF 자르기",
@@ -796,7 +804,11 @@
 			"err_margins": "여백이 너무 커서 남은 영역이 없습니다.",
 			"btn": "PDF 자르기",
 			"btn_busy": "자르는 중…",
-			"save": "잘린 PDF 저장"
+			"save": "잘린 PDF 저장",
+			"seo_faq1_q": "페이지마다 다르게 자를 수 있나요?",
+			"seo_faq1_a": "자르기 여백은 모든 페이지에 동일하게 적용됩니다. 페이지별 자르기는 먼저 PDF를 분할하고, 각 부분을 자른 후 병합하세요.",
+			"seo_faq2_q": "자르기가 파일 크기를 줄이나요?",
+			"seo_faq2_a": "자르기는 여백 밖의 내용을 숨기지만 숨겨진 데이터가 파일에 남을 수 있어 크기가 크게 줄지 않을 수 있습니다."
 		},
 		"sign": {
 			"title": "PDF 서명",
@@ -813,10 +825,10 @@
 			"err_place": "페이지를 클릭하여 서명을 배치하세요.",
 			"btn_busy": "서명 중…",
 			"save": "서명된 PDF 저장",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "서명은 어떻게 만드나요?",
+			"seo_faq1_a": "마우스나 손가락으로 서명을 그리거나, 이름을 입력하거나, 서명 이미지를 업로드할 수 있습니다.",
+			"seo_faq2_q": "서명이 어딘가에 저장되나요?",
+			"seo_faq2_a": "아니요. 서명은 기기를 떠나지 않습니다. 처리는 전적으로 브라우저에서 이루어집니다."
 		},
 		"edit": {
 			"title": "PDF 편집",
@@ -831,10 +843,10 @@
 			"elements_placed": "{count}개 요소 배치됨",
 			"btn_busy": "적용 중…",
 			"save": "편집된 PDF 저장",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "어떤 편집이 가능한가요?",
+			"seo_faq1_a": "PDF의 모든 페이지에 텍스트를 추가할 수 있습니다. 페이지를 클릭하여 글꼴 크기, 색상, 위치를 선택하세요.",
+			"seo_faq2_q": "PDF의 기존 텍스트를 편집할 수 있나요?",
+			"seo_faq2_a": "현재 새 텍스트 레이어를 추가할 수 있습니다. 기존 텍스트 편집에는 원본 문서가 필요합니다."
 		},
 		"password": {
 			"title": "PDF 비밀번호 보호",
@@ -858,10 +870,10 @@
 			"btn_busy": "암호화 중…",
 			"result": "보호 완료!",
 			"save": "보호된 PDF 저장",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "암호화는 얼마나 안전한가요?",
+			"seo_faq1_a": "PDF는 표준 PDF 보안으로 암호화됩니다. 비밀번호는 어디에도 전송되지 않으며 암호화는 브라우저에서 이루어집니다.",
+			"seo_faq2_q": "인쇄 방지와 같은 권한을 설정할 수 있나요?",
+			"seo_faq2_a": "네. PDF 보호 시 인쇄, 복사, 편집 권한을 설정할 수 있습니다."
 		},
 		"unlock": {
 			"title": "PDF 잠금 해제",
@@ -876,10 +888,10 @@
 			"password_label": "비밀번호 (필요한 경우)",
 			"password_placeholder": "없으면 비워두세요",
 			"password_hint": "열기에 비밀번호가 필요한 PDF에만 필요합니다.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "PDF에서 비밀번호를 제거할 수 있나요?",
+			"seo_faq1_a": "네, 현재 비밀번호를 알고 있다면 가능합니다. 입력하면 LocalConvert가 보호되지 않은 사본을 저장합니다.",
+			"seo_faq2_q": "비밀번호는 안전한가요?",
+			"seo_faq2_a": "네. 비밀번호는 파일 복호화를 위해 브라우저에서만 사용됩니다. 서버에 전송되지 않습니다."
 		},
 		"rotate_image": {
 			"title": "이미지 회전",
@@ -957,10 +969,10 @@
 			"copy": "복사",
 			"copied": "복사됨!",
 			"download_txt": ".txt로 저장",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "스캔한 PDF에서도 작동하나요?",
+			"seo_faq1_a": "아니요. 텍스트 추출은 실제 텍스트가 포함된 PDF에서 작동합니다. 스캔 문서(이미지 기반)는 먼저 OCR이 필요합니다.",
+			"seo_faq2_q": "영어 외의 텍스트도 지원하나요?",
+			"seo_faq2_a": "네. 아랍어, 중국어, 일본어, 한국어, 키릴 문자를 포함한 모든 언어를 지원합니다."
 		},
 		"grayscale": {
 			"title": "PDF 흑백 변환",
@@ -970,10 +982,10 @@
 			"btn_busy": "{total}페이지 중 {progress}페이지 변환 중…",
 			"grayscale": "흑백",
 			"save": "흑백 PDF 저장",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "변환 후에도 텍스트를 선택할 수 있나요?",
+			"seo_faq1_a": "아니요. 그레이스케일 변환은 각 페이지를 이미지로 렌더링합니다. 텍스트는 더 이상 선택하거나 검색할 수 없습니다.",
+			"seo_faq2_q": "품질을 조정할 수 있나요?",
+			"seo_faq2_a": "네. 품질 슬라이더로 파일 크기와 이미지 선명도 사이의 균형을 조절할 수 있습니다."
 		},
 		"json_formatter": {
 			"title": "JSON 포매터",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "또는 클릭하여 찾아보기",
 			"disclaimer": "레이아웃 충실도는 문서 복잡성에 따라 다릅니다. 복잡한 표와 고급 서식은 단순화될 수 있습니다.",
 			"progress_hint": "문서를 로컬에서 처리 중 — 업로드되지 않습니다.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Word 문서가 PDF와 동일하게 보이나요?",
+			"seo_faq1_a": "레이아웃 충실도는 문서 복잡도에 따라 다릅니다. 간단한 문서는 잘 변환되지만, 복잡한 표와 서식은 단순화될 수 있습니다.",
+			"seo_faq2_q": ".doc 파일(이전 Word 형식)을 지원하나요?",
+			"seo_faq2_a": "네. .docx(최신)와 .doc(이전) Word 형식 모두 지원합니다."
 		},
 		"from_xlsx": {
 			"title": "Excel을 PDF로",
@@ -1088,10 +1100,10 @@
 			"portrait": "세로",
 			"disclaimer": "열 너비가 자동 계산됩니다. 넓은 시트는 가로 모드에서 가장 잘 작동합니다.",
 			"progress_hint": "스프레드시트를 로컬에서 처리 중 — 업로드되지 않습니다.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "가로 또는 세로 방향을 선택할 수 있나요?",
+			"seo_faq1_a": "네. 변환 전에 페이지 방향을 선택할 수 있습니다. 넓은 스프레드시트는 가로 모드가 가장 좋습니다.",
+			"seo_faq2_q": "어떤 스프레드시트 형식을 지원하나요?",
+			"seo_faq2_a": "XLSX(Excel), XLS(이전 Excel), ODS(LibreOffice), CSV 파일을 지원합니다."
 		},
 		"to_docx": {
 			"title": "PDF를 Word로",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "스캔된(이미지 기반) PDF는 빈 출력을 생성합니다 — 먼저 OCR을 사용하세요",
 			"progress_label": "텍스트 추출 중… {progress}%",
 			"progress_hint": "파일은 기기를 절대 떠나지 않습니다.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "서식이 유지되나요?",
+			"seo_faq1_a": "텍스트 내용과 기본 구조(제목, 단락)는 유지됩니다. 복잡한 레이아웃, 표, 이미지는 단순화됩니다.",
+			"seo_faq2_q": "스캔한 PDF에서도 작동하나요?",
+			"seo_faq2_a": "아니요. 스캔(이미지 기반) PDF는 빈 결과물을 생성합니다. 먼저 OCR 소프트웨어로 텍스트를 추출 가능하게 만드세요."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "어떤 회전 각도를 사용할 수 있나요?",
+			"seo_faq1_a": "시계 방향으로 90°, 180°, 270° 회전할 수 있습니다. 회전은 즉각적이며 품질 손실이 없습니다.",
+			"seo_faq2_q": "회전하면 이미지 품질이 떨어지나요?",
+			"seo_faq2_a": "아니요. 재압축 없이 회전하므로 원본 품질이 유지됩니다."
+		},
+		"img_crop": {
+			"seo_faq1_q": "정확한 픽셀 크기를 설정할 수 있나요?",
+			"seo_faq1_a": "네. 자르기 사각형을 드래그하거나 정확한 픽셀 치수를 입력할 수 있습니다.",
+			"seo_faq2_q": "어떤 이미지 형식을 자를 수 있나요?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF 및 대부분의 일반 이미지 형식을 지원합니다."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "워터마크 불투명도를 조절할 수 있나요?",
+			"seo_faq1_a": "네. 텍스트 워터마크의 불투명도, 위치, 크기, 색상을 제어할 수 있습니다.",
+			"seo_faq2_q": "워터마크는 영구적인가요?",
+			"seo_faq2_a": "네. 저장 후 워터마크는 이미지에 영구적으로 삽입됩니다."
+		},
+		"img_meme": {
+			"seo_faq1_q": "내 이미지를 사용할 수 있나요?",
+			"seo_faq1_a": "네. 원하는 이미지를 선택하고 상단과 하단에 텍스트를 추가하세요.",
+			"seo_faq2_q": "글꼴과 색상을 맞춤 설정할 수 있나요?",
+			"seo_faq2_a": "네. 글꼴 크기, 색상, 외곽선을 변경할 수 있습니다."
+		},
+		"img_batch": {
+			"seo_faq1_q": "한 번에 몇 장의 이미지를 처리할 수 있나요?",
+			"seo_faq1_a": "고정된 제한 없음. 기기 메모리가 허용하는 만큼 처리할 수 있습니다.",
+			"seo_faq2_q": "일괄적으로 어떤 작업을 적용할 수 있나요?",
+			"seo_faq2_a": "형식 변환, 크기 조정, 회전, 품질 설정을 선택한 모든 이미지에 적용할 수 있습니다."
+		},
+		"img_qr": {
+			"seo_faq1_q": "QR 코드에 무엇을 인코딩할 수 있나요?",
+			"seo_faq1_a": "URL, 텍스트, 이메일, 전화번호 또는 수천 자까지의 텍스트.",
+			"seo_faq2_q": "QR 코드 외관을 맞춤 설정할 수 있나요?",
+			"seo_faq2_a": "크기와 오류 수정 수준을 조절할 수 있습니다. QR 코드는 PNG 이미지로 저장됩니다."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "어떤 색상 형식을 지원하나요?",
+			"seo_faq1_a": "HEX, RGB, HSL을 지원합니다. 픽셀을 클릭하면 색상값이 즉시 복사됩니다.",
+			"seo_faq2_q": "어떤 이미지 유형에서든 색상을 선택할 수 있나요?",
+			"seo_faq2_a": "네. JPG, PNG, WEBP, GIF 등 대부분의 형식을 지원합니다."
+		},
+		"img_blur": {
+			"seo_faq1_q": "여러 영역을 흐리게 할 수 있나요?",
+			"seo_faq1_a": "네. 같은 이미지에 여러 블러 영역을 그려 여러 부분을 한 번에 숨길 수 있습니다.",
+			"seo_faq2_q": "블러 강도를 조절할 수 있나요?",
+			"seo_faq2_a": "네. 강도 슬라이더로 블러 효과의 세기를 조절하세요."
+		},
+		"img_filters": {
+			"seo_faq1_q": "어떤 필터를 사용할 수 있나요?",
+			"seo_faq1_a": "밝기, 대비, 채도, 색조 회전, 그레이스케일, 세피아, 블러, 반전.",
+			"seo_faq2_q": "여러 필터를 조합할 수 있나요?",
+			"seo_faq2_a": "네. 모든 필터 조정이 합쳐져 실시간으로 이미지에 적용됩니다."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "어떤 비디오 형식을 지원하나요?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI 및 대부분의 일반 비디오 형식.",
+			"seo_faq2_q": "GIF 길이와 프레임 속도를 설정할 수 있나요?",
+			"seo_faq2_a": "네. 시작 시간, 길이, 프레임 속도를 설정하여 출력 GIF를 제어하세요."
+		},
+		"dev_json": {
+			"seo_faq1_q": "JSON 구문을 검증하나요?",
+			"seo_faq1_a": "네. 유효하지 않은 JSON은 정확한 줄과 문자를 보여주는 오류 메시지로 표시됩니다.",
+			"seo_faq2_q": "JSON 압축도 가능한가요?",
+			"seo_faq2_a": "네. 한 번의 클릭으로 JSON 포맷팅(미화)과 압축 모두 가능합니다."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "어떤 해시 알고리즘을 지원하나요?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384, SHA-512 모두 사용 가능합니다.",
+			"seo_faq2_q": "해싱이 로컬에서 수행되나요?",
+			"seo_faq2_a": "네. 모든 해싱은 Web Crypto API를 통해 브라우저에서 실행됩니다. 데이터가 기기를 떠나지 않습니다."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "텍스트뿐만 아니라 파일도 인코딩할 수 있나요?",
+			"seo_faq1_a": "이 도구는 텍스트 문자열을 인코딩/디코딩합니다. 파일은 먼저 텍스트로 변환하세요.",
+			"seo_faq2_q": "유니코드 텍스트를 지원하나요?",
+			"seo_faq2_a": "네. 비라틴 문자를 포함한 UTF-8 인코딩 텍스트를 완전히 지원합니다."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "GitHub 스타일 Markdown을 지원하나요?",
+			"seo_faq1_a": "네. 테이블, 작업 목록, 취소선 등 GitHub Markdown 확장이 올바르게 렌더링됩니다.",
+			"seo_faq2_q": "렌더링된 HTML을 내보낼 수 있나요?",
+			"seo_faq2_a": "미리보기에서 실시간 출력을 확인하고 HTML을 복사할 수 있습니다."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "줄 단위로 차이를 보여주나요, 단어 단위로 보여주나요?",
+			"seo_faq1_a": "차이는 줄 단위로 강조되며 추가와 삭제가 색상으로 명확히 표시됩니다.",
+			"seo_faq2_q": "크기 제한이 있나요?",
+			"seo_faq2_a": "고정된 제한 없음. 큰 텍스트는 오래된 기기에서 느려질 수 있습니다."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "어떤 지표를 측정하나요?",
+			"seo_faq1_a": "단어, 문자(공백 포함/미포함), 문장, 단락, 예상 읽기 시간.",
+			"seo_faq2_q": "영어 외의 텍스트에서도 작동하나요?",
+			"seo_faq2_a": "네. 모든 언어와 문자 세트에서 단어 카운팅이 작동합니다."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "어떤 문자가 인코딩되나요?",
+			"seo_faq1_a": "공백, 비ASCII 문자 등 특수 문자가 RFC 3986에 따라 퍼센트 인코딩됩니다.",
+			"seo_faq2_q": "파라미터가 있는 전체 URL을 디코딩할 수 있나요?",
+			"seo_faq2_a": "네. 인코딩된 문자열을 붙여넣으면 읽을 수 있는 텍스트로 디코딩됩니다."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "CSS 압축은 무엇을 제거하나요?",
+			"seo_faq1_a": "주석, 불필요한 공백, 빈 줄, 중복 세미콜론을 제거하여 파일 크기를 줄입니다.",
+			"seo_faq2_q": "CSS가 얼마나 작아지나요?",
+			"seo_faq2_a": "보통 20-40% 작아집니다. 주석이 많은 파일이 가장 큰 효과를 봅니다."
 		}
 	},
 	"dev_tools": {

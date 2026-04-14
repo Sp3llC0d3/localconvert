@@ -606,16 +606,16 @@
 		"convert_to_pdf": "تحويل إلى PDF",
 		"save_pdf": "حفظ PDF",
 		"converting_progress": "جارٍ التحويل… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "كيف يعمل",
+		"seo_step1": "اختر ملفك من جهازك",
+		"seo_step2": "عدّل الإعدادات حسب حاجتك",
+		"seo_step3": "احفظ النتيجة — انتهى!",
+		"seo_why_title": "لماذا LocalConvert؟",
+		"seo_why_private": "خصوصية تامة — ملفاتك لا تغادر جهازك أبداً. لا رفع على أي خادم.",
+		"seo_why_free": "مجاني بالكامل بدون حدود لحجم الملفات. لا حسابات ولا اشتراكات.",
+		"seo_why_offline": "يعمل بدون إنترنت كتطبيق مثبّت. لا حاجة للاتصال بعد التحميل الأول.",
+		"seo_faq_title": "الأسئلة الشائعة",
+		"seo_related_title": "أدوات ذات صلة"
 	},
 	"tool_pages": {
 		"merge": {
@@ -626,10 +626,10 @@
 			"err_min": "أضف ملفي ⁦PDF⁩ على الأقل.",
 			"err_fail": "فشل الدمج.",
 			"save": "حفظ ملف ⁦PDF⁩ المدمج",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "هل دمج ملفات PDF آمن؟",
+			"seo_faq1_a": "نعم. يعمل LocalConvert بالكامل في متصفحك — ملفاتك لا تُرفع إلى أي خادم. الدمج يتم على جهازك.",
+			"seo_faq2_q": "هل هناك حد لعدد ملفات PDF التي يمكنني دمجها؟",
+			"seo_faq2_a": "لا. يمكنك دمج أي عدد من الملفات حسب ذاكرة المتصفح. لا حدود لحجم أو عدد الملفات."
 		},
 		"split": {
 			"title": "⁧تقسيم ⁦PDF⁩⁩",
@@ -642,10 +642,10 @@
 			"err_extract": "فشل استخراج الصفحة.",
 			"err_fail": "فشل التقسيم.",
 			"help": "انقر للتحديد، ● لحفظ صفحة مفردة",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "هل يمكنني استخراج صفحات محددة من PDF؟",
+			"seo_faq1_a": "نعم. اختر الصفحات التي تريدها وسينشئ LocalConvert ملف PDF جديداً بتلك الصفحات فقط.",
+			"seo_faq2_q": "هل تقسيم PDF يقلل الجودة؟",
+			"seo_faq2_a": "لا. التقسيم يستخرج الصفحات دون إعادة ترميز، فتبقى الجودة الأصلية كما هي."
 		},
 		"rotate_pdf": {
 			"title": "تدوير الصفحات",
@@ -656,7 +656,11 @@
 			"selected_pages": "الصفحات المحددة",
 			"btn_busy": "جارٍ المعالجة…",
 			"err_fail": "فشل التدوير.",
-			"help": "انقر للتبديل"
+			"help": "انقر للتبديل",
+			"seo_faq1_q": "هل يمكنني تدوير صفحات معينة فقط؟",
+			"seo_faq1_a": "نعم. يمكنك تدوير صفحات محددة أو كامل الملف دفعة واحدة. اختر 90° أو 180° أو 270°.",
+			"seo_faq2_q": "هل التدوير يؤثر على الجودة؟",
+			"seo_faq2_a": "لا. يتم تدوير الصفحات دون إعادة ترميز، فتبقى الجودة الأصلية محفوظة."
 		},
 		"organize": {
 			"title": "ترتيب الصفحات",
@@ -668,10 +672,10 @@
 			"no_pages": "لم تتبقَّ صفحات.",
 			"btn": "حفظ ⁦PDF⁩ المرتّب",
 			"btn_busy": "جارٍ الحفظ…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "هل يمكنني حذف صفحات من PDF؟",
+			"seo_faq1_a": "نعم. اسحب الصفحات لإعادة ترتيبها واضغط زر الحذف لإزالة الصفحات غير المطلوبة.",
+			"seo_faq2_q": "هل يمكنني رؤية معاينة لكل صفحة؟",
+			"seo_faq2_a": "نعم. تظهر صور مصغرة لكل صفحة لتسهيل التعرف عليها وترتيبها."
 		},
 		"images_to_pdf": {
 			"title": "⁧صور → ⁦PDF⁩⁩",
@@ -681,10 +685,10 @@
 			"btn": "⁧تحويل إلى ⁦PDF⁩⁩",
 			"btn_busy": "جارٍ التحويل…",
 			"save": "⁧حفظ ⁦PDF⁩⁩",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "ما صيغ الصور التي يمكنني تحويلها إلى PDF؟",
+			"seo_faq1_a": "يدعم صور JPG وPNG وWEBP. كل صورة تصبح صفحة في ملف PDF.",
+			"seo_faq2_q": "هل يمكنني ترتيب الصور؟",
+			"seo_faq2_a": "نعم. أضف عدة صور ورتبها بالترتيب المطلوب قبل التحويل."
 		},
 		"pdf_to_images": {
 			"title": "⁧⁦PDF⁩ → صور⁩",
@@ -693,10 +697,10 @@
 			"btn": "تصدير كصور",
 			"btn_busy": "جارٍ تحويل الصفحة {progress} من {total}…",
 			"err_fail": "فشل التحويل.",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "ما صيغة الصور الناتجة؟",
+			"seo_faq1_a": "يمكنك الاختيار بين JPG وPNG. كل صفحة PDF تصبح صورة منفصلة.",
+			"seo_faq2_q": "ماذا عن ملفات PDF متعددة الصفحات؟",
+			"seo_faq2_a": "كل صفحة تُصدَّر كصورة منفصلة. للملفات متعددة الصفحات ستحصل على ملف ZIP يحتوي جميع الصور."
 		},
 		"pdf_to_ppt": {
 			"title": "⁧⁦PDF⁩ إلى ⁦PowerPoint⁩⁩",
@@ -707,10 +711,10 @@
 			"btn": "⁧تحويل إلى ⁦PPTX⁩⁩",
 			"btn_busy": "جارٍ تحويل الصفحة {progress} من {total}…",
 			"save": "⁧حفظ ⁦PPTX⁩⁩",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "كيف يعمل تحويل PDF إلى PowerPoint؟",
+			"seo_faq1_a": "كل صفحة PDF تُعرض كصورة وتوضع في شريحة PowerPoint. النص لا يكون قابلاً للتعديل.",
+			"seo_faq2_q": "هل يمكنني تعديل الشرائح بعد التحويل؟",
+			"seo_faq2_a": "الشرائح تحتوي صور الصفحات. يمكنك إضافة مربعات نصية وملاحظات في PowerPoint."
 		},
 		"compress": {
 			"title": "⁧ضغط ⁦PDF⁩⁩",
@@ -732,10 +736,10 @@
 			"btn_busy": "جارٍ ضغط الصفحة {progress} من {total}…",
 			"err_fail": "فشل الضغط.",
 			"save": "حفظ ⁦PDF⁩ المضغوط",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "كم يمكنني تقليل حجم ملف PDF؟",
+			"seo_faq1_a": "عادةً يتم تقليل الحجم بنسبة 50-80% حسب المحتوى. الملفات التي تحتوي صوراً كثيرة تحقق أكبر توفير.",
+			"seo_faq2_q": "هل الضغط يؤثر على جودة النص؟",
+			"seo_faq2_a": "يُعاد عرض النص كصور أثناء الضغط. للمستندات النصية، استخدم إعداد جودة أعلى."
 		},
 		"watermark_pdf": {
 			"title": "إضافة علامة مائية",
@@ -743,7 +747,11 @@
 			"btn": "تطبيق على جميع الصفحات",
 			"btn_busy": "جارٍ التطبيق…",
 			"err_text": "أدخل نص العلامة المائية.",
-			"save": "حفظ ⁦PDF⁩ بالعلامة المائية"
+			"save": "حفظ ⁦PDF⁩ بالعلامة المائية",
+			"seo_faq1_q": "هل يمكنني استخدام صورة كعلامة مائية؟",
+			"seo_faq1_a": "حالياً، العلامات المائية النصية مدعومة. يمكنك تخصيص النص والحجم والشفافية وزاوية الدوران.",
+			"seo_faq2_q": "هل ستغطي العلامة المائية المحتوى؟",
+			"seo_faq2_a": "لا. توضع العلامات المائية بشفافية قابلة للتعديل، فيبقى المحتوى مقروءاً تحتها."
 		},
 		"page_numbers": {
 			"title": "إضافة أرقام الصفحات",
@@ -760,10 +768,10 @@
 			"btn": "تطبيق على جميع الصفحات",
 			"btn_busy": "جارٍ إضافة الأرقام…",
 			"save": "حفظ ⁦PDF⁩ المرقّم",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "أين يمكنني وضع أرقام الصفحات؟",
+			"seo_faq1_a": "يمكنك وضع الأرقام أعلى أو أسفل الصفحة، محاذاة لليسار أو الوسط أو اليمين.",
+			"seo_faq2_q": "هل يمكنني تخصيص تنسيق الترقيم؟",
+			"seo_faq2_a": "نعم. يمكنك تحديد رقم البداية وحجم الخط والموضع."
 		},
 		"metadata": {
 			"title": "تعديل البيانات الوصفية",
@@ -784,10 +792,10 @@
 			"err_read": "فشلت قراءة البيانات الوصفية.",
 			"err_update": "فشل تحديث البيانات الوصفية.",
 			"save": "حفظ ⁦PDF⁩ المحدّث",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "ما بيانات PDF الوصفية التي يمكنني تعديلها؟",
+			"seo_faq1_a": "يمكنك تعديل العنوان والمؤلف والموضوع والكلمات المفتاحية لأي ملف PDF.",
+			"seo_faq2_q": "هل تعديل البيانات الوصفية آمن على محتوى PDF؟",
+			"seo_faq2_a": "نعم. تتغير خصائص البيانات الوصفية فقط — محتوى PDF يبقى كما هو."
 		},
 		"crop_pdf": {
 			"title": "⁧اقتصاص ⁦PDF⁩⁩",
@@ -796,7 +804,11 @@
 			"err_margins": "الهوامش كبيرة جداً — لم تتبقَّ مساحة.",
 			"btn": "⁧اقتصاص ⁦PDF⁩⁩",
 			"btn_busy": "جارٍ الاقتصاص…",
-			"save": "حفظ ⁦PDF⁩ المقتص"
+			"save": "حفظ ⁦PDF⁩ المقتص",
+			"seo_faq1_q": "هل يمكنني قص صفحات مختلفة بشكل مختلف؟",
+			"seo_faq1_a": "هوامش القص تُطبق بشكل موحد على جميع الصفحات. للقص لكل صفحة على حدة، قسّم الملف أولاً ثم قص كل جزء ثم ادمجها.",
+			"seo_faq2_q": "هل القص يقلل حجم الملف؟",
+			"seo_faq2_a": "القص يخفي المحتوى خارج الهوامش لكنه قد لا يقلل حجم الملف بشكل كبير، لأن البيانات المخفية قد تبقى في الملف."
 		},
 		"sign": {
 			"title": "⁧توقيع ⁦PDF⁩⁩",
@@ -813,10 +825,10 @@
 			"err_place": "انقر على الصفحة لوضع توقيعك.",
 			"btn_busy": "جارٍ التوقيع…",
 			"save": "حفظ ⁦PDF⁩ الموقّع",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "كيف يمكنني إنشاء توقيع؟",
+			"seo_faq1_a": "يمكنك رسم توقيع بالماوس أو الإصبع، أو كتابة اسمك، أو رفع صورة توقيع.",
+			"seo_faq2_q": "هل يُحفظ توقيعي في أي مكان؟",
+			"seo_faq2_a": "لا. توقيعك لا يغادر جهازك أبداً. تتم المعالجة بالكامل في متصفحك."
 		},
 		"edit": {
 			"title": "⁧تحرير ⁦PDF⁩⁩",
@@ -831,10 +843,10 @@
 			"elements_placed": "تم وضع {count} عنصر (عناصر)",
 			"btn_busy": "جارٍ التطبيق…",
 			"save": "حفظ ⁦PDF⁩ المحرّر",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "ما التعديلات التي يمكنني إجراؤها؟",
+			"seo_faq1_a": "يمكنك إضافة نص إلى أي صفحة في PDF. اختر حجم الخط واللون والموضع بالنقر على الصفحة.",
+			"seo_faq2_q": "هل يمكنني تعديل النص الموجود في PDF؟",
+			"seo_faq2_a": "حالياً يمكنك إضافة طبقات نصية جديدة. تعديل النص الموجود في PDF يتطلب المستند المصدر."
 		},
 		"password": {
 			"title": "حماية ⁦PDF⁩ بكلمة مرور",
@@ -858,10 +870,10 @@
 			"btn_busy": "جارٍ التشفير…",
 			"result": "تمت الحماية!",
 			"save": "حفظ ⁦PDF⁩ المحمي",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "ما مدى أمان التشفير؟",
+			"seo_faq1_a": "يتم تشفير ملفات PDF باستخدام معيار أمان PDF. كلمة المرور لا تُرسل إلى أي مكان — التشفير يتم في متصفحك.",
+			"seo_faq2_q": "هل يمكنني تعيين صلاحيات مثل منع الطباعة؟",
+			"seo_faq2_a": "نعم. يمكنك تحديد صلاحيات الطباعة والنسخ والتعديل عند حماية ملف PDF."
 		},
 		"unlock": {
 			"title": "⁧فتح قفل ⁦PDF⁩⁩",
@@ -876,10 +888,10 @@
 			"password_label": "كلمة المرور (إن وُجدت)",
 			"password_placeholder": "اتركه فارغاً إن لم يكن هناك",
 			"password_hint": "مطلوبة فقط لملفات PDF التي تحتاج كلمة مرور للفتح.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "هل يمكنني إزالة كلمة المرور من PDF؟",
+			"seo_faq1_a": "نعم، إذا كنت تعرف كلمة المرور الحالية. أدخلها وسيحفظ LocalConvert نسخة غير محمية.",
+			"seo_faq2_q": "هل كلمة المرور آمنة؟",
+			"seo_faq2_a": "نعم. تُستخدم كلمة المرور فقط في متصفحك لفك تشفير الملف. لا تُرسل إلى أي خادم."
 		},
 		"rotate_image": {
 			"title": "تدوير الصورة",
@@ -957,10 +969,10 @@
 			"copy": "نسخ",
 			"copied": "تم النسخ!",
 			"download_txt": "⁧حفظ كملف .⁦txt⁩⁩",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "هل يعمل مع ملفات PDF الممسوحة ضوئياً؟",
+			"seo_faq1_a": "لا. استخراج النص يعمل مع ملفات PDF التي تحتوي نصاً فعلياً. المستندات الممسوحة (القائمة على الصور) تحتاج OCR أولاً.",
+			"seo_faq2_q": "هل يدعم النصوص غير الإنجليزية؟",
+			"seo_faq2_a": "نعم. يدعم استخراج النص جميع اللغات بما فيها العربية والصينية واليابانية والكورية والكتابة السيريلية."
 		},
 		"grayscale": {
 			"title": "⁧⁦PDF⁩ إلى تدرج رمادي⁩",
@@ -970,10 +982,10 @@
 			"btn_busy": "جارٍ تحويل الصفحة {progress} من {total}…",
 			"grayscale": "تدرج رمادي",
 			"save": "حفظ ⁦PDF⁩ بالتدرج الرمادي",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "هل يبقى النص قابلاً للتحديد بعد التحويل؟",
+			"seo_faq1_a": "لا. تحويل التدرج الرمادي يعرض كل صفحة كصورة. النص لن يكون قابلاً للتحديد أو البحث.",
+			"seo_faq2_q": "هل يمكنني ضبط الجودة؟",
+			"seo_faq2_a": "نعم. استخدم شريط الجودة للموازنة بين حجم الملف ووضوح الصورة."
 		},
 		"json_formatter": {
 			"title": "⁧منسّق ⁦JSON⁩⁩",
@@ -1071,10 +1083,10 @@
 			"or_click_browse": "أو انقر للتصفح",
 			"disclaimer": "دقة التنسيق تعتمد على تعقيد المستند. الجداول المعقدة والتنسيقات المتقدمة قد تُبسَّط.",
 			"progress_hint": "جارٍ معالجة مستندك محلياً — لا يتم رفع أي شيء.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "هل سيبدو مستند Word مثل PDF؟",
+			"seo_faq1_a": "دقة التنسيق تعتمد على تعقيد المستند. المستندات البسيطة تُحوّل بشكل جيد؛ الجداول والتنسيقات المعقدة قد تُبسّط.",
+			"seo_faq2_q": "هل يدعم ملفات .doc (تنسيق Word القديم)؟",
+			"seo_faq2_a": "نعم. كلا التنسيقين .docx (الحديث) و.doc (القديم) مدعومان."
 		},
 		"from_xlsx": {
 			"title": "Excel إلى PDF",
@@ -1088,10 +1100,10 @@
 			"portrait": "عمودي",
 			"disclaimer": "يتم حساب عرض الأعمدة تلقائياً. الجداول العريضة تعمل بشكل أفضل في الوضع الأفقي.",
 			"progress_hint": "جارٍ معالجة جدول البيانات محلياً — لا يتم رفع أي شيء.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "هل يمكنني اختيار أفقي أو عمودي للصفحة؟",
+			"seo_faq1_a": "نعم. يمكنك اختيار اتجاه الصفحة قبل التحويل. الجداول العريضة تعمل أفضل بالوضع الأفقي.",
+			"seo_faq2_q": "ما صيغ جداول البيانات المدعومة؟",
+			"seo_faq2_a": "يدعم XLSX (إكسل) وXLS (إكسل القديم) وODS (ليبرأوفيس) وملفات CSV."
 		},
 		"to_docx": {
 			"title": "PDF إلى Word",
@@ -1105,10 +1117,118 @@
 			"expect_scanned": "ملفات PDF الممسوحة ضوئياً تنتج مخرجات فارغة — استخدم OCR أولاً",
 			"progress_label": "جارٍ استخراج النص… {progress}%",
 			"progress_hint": "ملفك لا يغادر جهازك أبداً.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "هل يتم الحفاظ على التنسيق؟",
+			"seo_faq1_a": "يتم الحفاظ على المحتوى النصي والبنية الأساسية (العناوين والفقرات). التنسيقات المعقدة والجداول والصور تُبسّط.",
+			"seo_faq2_q": "هل يعمل مع ملفات PDF الممسوحة ضوئياً؟",
+			"seo_faq2_a": "لا. ملفات PDF الممسوحة (القائمة على الصور) تنتج ملفاً فارغاً. استخدم برنامج OCR أولاً لاستخراج النص."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "ما زوايا التدوير المتاحة؟",
+			"seo_faq1_a": "يمكنك التدوير بزاوية 90° أو 180° أو 270° باتجاه عقارب الساعة. التدوير فوري وبدون فقدان جودة.",
+			"seo_faq2_q": "هل التدوير يقلل جودة الصورة؟",
+			"seo_faq2_a": "لا. يتم تدوير الصورة دون إعادة ضغط، مما يحافظ على الجودة الأصلية."
+		},
+		"img_crop": {
+			"seo_faq1_q": "هل يمكنني تحديد حجم قص دقيق بالبكسل؟",
+			"seo_faq1_a": "نعم. يمكنك سحب مستطيل القص أو إدخال أبعاد دقيقة بالبكسل للتحكم الكامل.",
+			"seo_faq2_q": "ما صيغ الصور التي يمكنني قصها؟",
+			"seo_faq2_a": "يدعم JPG وPNG وWEBP وGIF ومعظم صيغ الصور الشائعة."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "هل يمكنني ضبط شفافية العلامة المائية؟",
+			"seo_faq1_a": "نعم. يمكنك التحكم في الشفافية والموضع والحجم واللون للعلامة المائية النصية.",
+			"seo_faq2_q": "هل العلامة المائية دائمة؟",
+			"seo_faq2_a": "نعم. بمجرد الحفظ، تصبح العلامة المائية مدمجة بشكل دائم في الصورة."
+		},
+		"img_meme": {
+			"seo_faq1_q": "هل يمكنني استخدام صوري الخاصة؟",
+			"seo_faq1_a": "نعم. اختر أي صورة من جهازك، ثم أضف نصاً علوياً وسفلياً لإنشاء الميم.",
+			"seo_faq2_q": "هل يمكنني تخصيص الخط واللون؟",
+			"seo_faq2_a": "نعم. يمكنك تغيير حجم الخط واللون والحدود لتناسب أسلوب الميم الخاص بك."
+		},
+		"img_batch": {
+			"seo_faq1_q": "كم عدد الصور التي يمكنني معالجتها دفعة واحدة؟",
+			"seo_faq1_a": "لا يوجد حد ثابت. يمكنك معالجة أي عدد من الصور حسب ذاكرة جهازك.",
+			"seo_faq2_q": "ما العمليات التي يمكنني تطبيقها دفعة واحدة؟",
+			"seo_faq2_a": "يمكنك تحويل الصيغ وتغيير الحجم والتدوير وضبط إعدادات الجودة لجميع الصور المحددة."
+		},
+		"img_qr": {
+			"seo_faq1_q": "ماذا يمكنني تشفيره في رمز QR؟",
+			"seo_faq1_a": "روابط URL أو نصوص أو عناوين بريد إلكتروني أو أرقام هواتف أو أي نص يصل إلى عدة آلاف حرف.",
+			"seo_faq2_q": "هل يمكنني تخصيص مظهر رمز QR؟",
+			"seo_faq2_a": "يمكنك ضبط الحجم ومستوى تصحيح الأخطاء. يتم حفظ رمز QR كصورة PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "ما صيغ الألوان المدعومة؟",
+			"seo_faq1_a": "صيغ HEX وRGB وHSL متاحة جميعها. انقر على أي بكسل لنسخ قيمة لونه فوراً.",
+			"seo_faq2_q": "هل يمكنني اختيار ألوان من أي نوع صورة؟",
+			"seo_faq2_a": "نعم. يدعم JPG وPNG وWEBP وGIF ومعظم صيغ الصور الأخرى."
+		},
+		"img_blur": {
+			"seo_faq1_q": "هل يمكنني تمويه عدة مناطق؟",
+			"seo_faq1_a": "نعم. ارسم عدة مناطق تمويه على نفس الصورة لإخفاء عدة أجزاء دفعة واحدة.",
+			"seo_faq2_q": "هل يمكنني ضبط شدة التمويه؟",
+			"seo_faq2_a": "نعم. استخدم شريط التمرير للتحكم في قوة تأثير التمويه."
+		},
+		"img_filters": {
+			"seo_faq1_q": "ما الفلاتر المتاحة؟",
+			"seo_faq1_a": "السطوع والتباين والتشبع وتدوير الألوان والتدرج الرمادي والبني الداكن والتمويه والعكس.",
+			"seo_faq2_q": "هل يمكنني دمج عدة فلاتر؟",
+			"seo_faq2_a": "نعم. جميع ضبط الفلاتر تتراكم معاً وتُطبق على الصورة في الوقت الفعلي."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "ما صيغ الفيديو المدعومة؟",
+			"seo_faq1_a": "يدعم MP4 وWEBM وMOV وAVI ومعظم صيغ الفيديو الشائعة.",
+			"seo_faq2_q": "هل يمكنني تحديد مدة وسرعة إطارات GIF؟",
+			"seo_faq2_a": "نعم. يمكنك تحديد وقت البدء والمدة ومعدل الإطارات للتحكم في ملف GIF الناتج."
+		},
+		"dev_json": {
+			"seo_faq1_q": "هل يتحقق من صحة JSON؟",
+			"seo_faq1_a": "نعم. يتم تحديد JSON غير الصالح برسالة خطأ توضح السطر والحرف الذي فشل فيه التحليل.",
+			"seo_faq2_q": "هل يمكنني تصغير JSON أيضاً؟",
+			"seo_faq2_a": "نعم. يمكنك تنسيق (تجميل) وتصغير JSON بنقرة واحدة."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "ما خوارزميات التجزئة المدعومة؟",
+			"seo_faq1_a": "MD5 وSHA-1 وSHA-256 وSHA-384 وSHA-512 جميعها متاحة.",
+			"seo_faq2_q": "هل يتم التجزئة محلياً؟",
+			"seo_faq2_a": "نعم. تتم جميع عمليات التجزئة في متصفحك باستخدام Web Crypto API. بياناتك لا تغادر جهازك أبداً."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "هل يمكنني ترميز ملفات وليس نصوص فقط؟",
+			"seo_faq1_a": "الأداة ترمز وتفك ترميز السلاسل النصية. لترميز الملفات، حوّل محتوى الملف إلى نص أولاً.",
+			"seo_faq2_q": "هل يدعم نصوص Unicode؟",
+			"seo_faq2_a": "نعم. النصوص المشفرة بـ UTF-8 بما في ذلك الأحرف غير اللاتينية مدعومة بالكامل."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "هل يدعم Markdown بأسلوب GitHub؟",
+			"seo_faq1_a": "نعم. الجداول وقوائم المهام والنص المشطوب وامتدادات GitHub Markdown الأخرى تُعرض بشكل صحيح.",
+			"seo_faq2_q": "هل يمكنني تصدير HTML المُعاد عرضه؟",
+			"seo_faq2_a": "يعرض المعاين المخرجات المُعاد عرضها في الوقت الفعلي. يمكنك نسخ HTML من لوحة المعاينة."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "هل يعرض الفروقات سطراً بسطر أم كلمة بكلمة؟",
+			"seo_faq1_a": "يتم تمييز الفروقات على مستوى السطر مع تحديد الإضافات والحذف بوضوح بالألوان.",
+			"seo_faq2_q": "هل هناك حد للحجم؟",
+			"seo_faq2_a": "لا يوجد حد ثابت. الأداة تعمل في المتصفح، لذا النصوص الكبيرة قد تكون أبطأ على الأجهزة القديمة."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "ما المقاييس التي يحسبها؟",
+			"seo_faq1_a": "الكلمات والأحرف (مع وبدون مسافات) والجمل والفقرات ووقت القراءة المقدر.",
+			"seo_faq2_q": "هل يعمل مع النصوص غير الإنجليزية؟",
+			"seo_faq2_a": "نعم. عدّ الكلمات يعمل مع جميع اللغات ومجموعات الأحرف."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "ما الأحرف التي يتم ترميزها؟",
+			"seo_faq1_a": "الأحرف الخاصة مثل المسافات وعلامات الاستفهام والأحرف غير ASCII يتم ترميزها بالنسبة المئوية وفق RFC 3986.",
+			"seo_faq2_q": "هل يمكنني فك ترميز رابط كامل مع المعاملات؟",
+			"seo_faq2_a": "نعم. الصق أي سلسلة مُرمّزة وسيتم فك ترميزها إلى نص مقروء."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "ماذا يزيل تصغير CSS؟",
+			"seo_faq1_a": "التعليقات والمسافات غير الضرورية وأسطر الفارغة والفواصل المنقوطة الزائدة لتقليل حجم الملف.",
+			"seo_faq2_q": "كم سيصغر حجم CSS الخاص بي؟",
+			"seo_faq2_a": "عادة 20-40% أصغر حسب التنسيق. الملفات ذات التعليقات الكثيرة تحقق أكبر تقليل."
 		}
 	},
 	"dev_tools": {

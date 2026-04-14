@@ -576,16 +576,16 @@
 		"convert_to_pdf": "Convertește în PDF",
 		"save_pdf": "Salvează PDF",
 		"converting_progress": "Se convertește… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Cum funcționează",
+		"seo_step1": "Selectați fișierul de pe dispozitiv",
+		"seo_step2": "Ajustați setările dacă este necesar",
+		"seo_step3": "Salvați rezultatul — gata!",
+		"seo_why_title": "De ce LocalConvert?",
+		"seo_why_private": "100% privat — fișierele nu părăsesc niciodată dispozitivul. Fără încărcare pe server, niciodată.",
+		"seo_why_free": "Gratuit pentru totdeauna fără limite de dimensiune. Fără cont, fără abonament.",
+		"seo_why_offline": "Funcționează offline ca aplicație instalată. Nu e nevoie de internet după prima încărcare.",
+		"seo_faq_title": "Întrebări frecvente",
+		"seo_related_title": "Instrumente conexe"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "Unirea a esuat.",
 			"save": "Salvati PDF-ul unit",
 			"btn_busy": "Se uneste…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Este sigură combinarea PDF-urilor?",
+			"seo_faq1_a": "Da. LocalConvert rulează integral în browser — fișierele nu sunt niciodată încărcate pe server. Combinarea are loc pe dispozitivul dvs.",
+			"seo_faq2_q": "Există o limită pentru numărul de PDF-uri?",
+			"seo_faq2_a": "Nu. Puteți combina oricâte PDF-uri permite memoria browserului. Fără limite de dimensiune sau număr."
 		},
 		"split": {
 			"title": "Imparte PDF",
@@ -662,10 +662,10 @@
 			"err_fail": "Impartirea a esuat.",
 			"btn_busy": "Se proceseaza…",
 			"help": "Clic pentru a comuta, atingeti punctul pentru pagina singulara",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Pot extrage pagini specifice dintr-un PDF?",
+			"seo_faq1_a": "Da. Selectați paginile dorite și LocalConvert va crea un PDF nou doar cu acele pagini.",
+			"seo_faq2_q": "Împărțirea reduce calitatea PDF-ului?",
+			"seo_faq2_a": "Nu. Împărțirea extrage paginile fără recodificare, calitatea originală rămâne intactă."
 		},
 		"rotate_pdf": {
 			"title": "Roteste paginile",
@@ -676,7 +676,11 @@
 			"selected_pages": "Paginile selectate",
 			"err_fail": "Rotatia a esuat.",
 			"help": "clic pentru a comuta",
-			"btn_busy": "Se proceseaza…"
+			"btn_busy": "Se proceseaza…",
+			"seo_faq1_q": "Pot roti pagini individuale?",
+			"seo_faq1_a": "Da. Puteți roti pagini specifice sau întregul PDF deodată. Alegeți 90°, 180° sau 270°.",
+			"seo_faq2_q": "Rotirea afectează calitatea?",
+			"seo_faq2_a": "Nu. Paginile sunt rotite fără recodificare, calitatea originală este pe deplin păstrată."
 		},
 		"organize": {
 			"title": "Organizeaza paginile",
@@ -688,10 +692,10 @@
 			"no_pages": "Nu au mai ramas pagini.",
 			"btn": "Salvati PDF-ul organizat",
 			"btn_busy": "Se salveaza…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Pot șterge pagini dintr-un PDF?",
+			"seo_faq1_a": "Da. Trageți paginile pentru a le reordona și apăsați ștergere pentru a elimina cele nedorite.",
+			"seo_faq2_q": "Pot vedea previzualizarea fiecărei pagini?",
+			"seo_faq2_a": "Da. Sunt afișate miniaturi vizuale ale fiecărei pagini pentru identificare și organizare ușoară."
 		},
 		"images_to_pdf": {
 			"title": "Imagini → PDF",
@@ -701,10 +705,10 @@
 			"btn": "Converteste in PDF",
 			"save": "Salvati PDF",
 			"btn_busy": "Se converteste…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Ce formate de imagine pot converti în PDF?",
+			"seo_faq1_a": "Sunt acceptate imagini JPG, PNG și WEBP. Fiecare imagine devine o pagină în PDF.",
+			"seo_faq2_q": "Pot aranja ordinea imaginilor?",
+			"seo_faq2_a": "Da. Adăugați mai multe imagini și aranjați-le în ordinea dorită înainte de conversie."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Imagini",
@@ -713,10 +717,10 @@
 			"btn": "Exporta ca imagini",
 			"err_fail": "Conversia a esuat.",
 			"btn_busy": "Se converteste pagina {progress} din {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "În ce format voi primi imaginile?",
+			"seo_faq1_a": "Puteți alege între JPG și PNG. Fiecare pagină PDF devine o imagine separată.",
+			"seo_faq2_q": "Ce se întâmplă cu PDF-urile cu mai multe pagini?",
+			"seo_faq2_a": "Fiecare pagină este exportată ca imagine separată. Pentru PDF-uri cu mai multe pagini veți primi un fișier ZIP cu toate imaginile."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF in PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "Converteste in PPTX",
 			"save": "Salvati PPTX",
 			"btn_busy": "Se converteste pagina {progress} din {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Cum funcționează conversia PDF în PowerPoint?",
+			"seo_faq1_a": "Fiecare pagină PDF este randată ca imagine și plasată într-un diapozitiv PowerPoint. Textul nu este editabil.",
+			"seo_faq2_q": "Pot edita diapozitivele după conversie?",
+			"seo_faq2_a": "Diapozitivele conțin imagini ale paginilor. Puteți adăuga casete de text și adnotări în PowerPoint."
 		},
 		"compress": {
 			"title": "Comprima PDF",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% mai mic, calitate buna",
 			"preset_high_desc": "~70-90% mai mic, pierdere vizibila a calitatii",
 			"btn_busy": "Se comprima pagina {progress} din {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Cât de mult pot reduce dimensiunea PDF-ului?",
+			"seo_faq1_a": "De obicei 50-80% reducere în funcție de conținut. PDF-urile cu multe imagini obțin cea mai mare economie.",
+			"seo_faq2_q": "Compresia afectează calitatea textului?",
+			"seo_faq2_a": "Textul este randat din nou ca imagine în timpul compresiei. Pentru documente cu mult text, folosiți o setare de calitate mai mare."
 		},
 		"watermark_pdf": {
 			"title": "Adauga filigran",
@@ -763,7 +767,11 @@
 			"btn": "Aplica la toate paginile",
 			"err_text": "Introduceti textul filigranului.",
 			"save": "Salvati PDF-ul cu filigran",
-			"btn_busy": "Se aplica…"
+			"btn_busy": "Se aplica…",
+			"seo_faq1_q": "Pot folosi o imagine ca filigran?",
+			"seo_faq1_a": "Momentan sunt acceptate filigrane text. Puteți personaliza textul, dimensiunea, opacitatea și unghiul de rotație.",
+			"seo_faq2_q": "Filigranul va acoperi conținutul?",
+			"seo_faq2_a": "Nu. Filigranele sunt plasate cu opacitate reglabilă, astfel conținutul rămâne lizibil dedesubt."
 		},
 		"page_numbers": {
 			"title": "Adauga numere de pagina",
@@ -780,10 +788,10 @@
 			"btn": "Aplica la toate paginile",
 			"save": "Salvati PDF-ul numerotat",
 			"btn_busy": "Se adauga numere…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Unde pot plasa numerele de pagină?",
+			"seo_faq1_a": "Puteți plasa numerele sus sau jos, aliniate la stânga, centru sau dreapta.",
+			"seo_faq2_q": "Pot personaliza formatul numerotării?",
+			"seo_faq2_a": "Da. Puteți seta numărul de start, dimensiunea fontului și poziția."
 		},
 		"metadata": {
 			"title": "Editare metadate",
@@ -804,10 +812,10 @@
 			"reading": "Se citesc metadatele…",
 			"none": "—",
 			"btn_busy": "Se salveaza…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Ce metadate PDF pot edita?",
+			"seo_faq1_a": "Puteți edita titlul, autorul, subiectul și cuvintele cheie ale oricărui fișier PDF.",
+			"seo_faq2_q": "Este sigură editarea metadatelor pentru conținut?",
+			"seo_faq2_a": "Da. Doar proprietățile metadatelor se schimbă — conținutul PDF-ului rămâne neatins."
 		},
 		"crop_pdf": {
 			"title": "Decupare PDF",
@@ -816,7 +824,11 @@
 			"btn": "Decupeaza PDF",
 			"save": "Salvati PDF-ul decupat",
 			"err_margins": "Marjele sunt prea mari — nu a ramas nicio suprafata.",
-			"btn_busy": "Se decupeaza…"
+			"btn_busy": "Se decupeaza…",
+			"seo_faq1_q": "Pot decupa diferit fiecare pagină?",
+			"seo_faq1_a": "Marginile de decupare se aplică uniform tuturor paginilor. Pentru decupare per pagină, împărțiți PDF-ul, decupați fiecare parte, apoi combinați.",
+			"seo_faq2_q": "Decuparea reduce dimensiunea fișierului?",
+			"seo_faq2_a": "Decuparea ascunde conținutul din afara marginilor dar poate să nu reducă semnificativ dimensiunea, deoarece datele ascunse pot rămâne în fișier."
 		},
 		"sign": {
 			"title": "Semneaza PDF",
@@ -833,10 +845,10 @@
 			"err_place": "Faceti clic pe pagina pentru a plasa semnatura.",
 			"save": "Salvati PDF-ul semnat",
 			"btn_busy": "Se semneaza…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Cum pot crea o semnătură?",
+			"seo_faq1_a": "Puteți desena o semnătură cu mouse-ul sau degetul, tasta numele sau încărca o imagine cu semnătura.",
+			"seo_faq2_q": "Semnătura mea este stocată undeva?",
+			"seo_faq2_a": "Nu. Semnătura dvs. nu părăsește niciodată dispozitivul. Procesarea are loc integral în browser."
 		},
 		"edit": {
 			"title": "Editare PDF",
@@ -851,10 +863,10 @@
 			"save": "Salvati PDF-ul editat",
 			"placeholder": "Text de plasat…",
 			"btn_busy": "Se aplica…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Ce modificări pot face?",
+			"seo_faq1_a": "Puteți adăuga text pe orice pagină a PDF-ului. Alegeți dimensiunea fontului, culoarea și poziția făcând clic pe pagină.",
+			"seo_faq2_q": "Pot edita textul existent din PDF?",
+			"seo_faq2_a": "Momentan puteți adăuga straturi noi de text. Editarea textului existent necesită documentul sursă."
 		},
 		"password": {
 			"title": "Protejare PDF cu parola",
@@ -878,10 +890,10 @@
 			"password_placeholder": "Introduceti parola…",
 			"owner_placeholder": "Parola proprietar…",
 			"btn_busy": "Se cripteaza…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Cât de sigură este criptarea?",
+			"seo_faq1_a": "PDF-urile sunt criptate cu securitate standard PDF. Parola nu este trimisă nicăieri — criptarea are loc în browser.",
+			"seo_faq2_q": "Pot seta permisiuni precum prevenirea tipăririi?",
+			"seo_faq2_a": "Da. Puteți configura permisiuni de tipărire, copiere și editare la protejarea PDF-ului."
 		},
 		"unlock": {
 			"title": "Deblocheaza PDF",
@@ -896,10 +908,10 @@
 			"password_label": "Parolă (dacă este necesară)",
 			"password_placeholder": "Lăsați gol dacă nu este",
 			"password_hint": "Necesară doar pentru PDF-uri protejate cu parolă.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Pot elimina parola dintr-un PDF?",
+			"seo_faq1_a": "Da, dacă știți parola curentă. Introduceți-o și LocalConvert va salva o copie neprotejată.",
+			"seo_faq2_q": "Parola mea este în siguranță?",
+			"seo_faq2_a": "Da. Parola este folosită doar în browser pentru decriptarea fișierului. Nu este trimisă niciodată la vreun server."
 		},
 		"color_picker": {
 			"title": "Selector de culori",
@@ -927,10 +939,10 @@
 			"copied": "Copiat!",
 			"download_txt": "Salvati ca .txt",
 			"btn_busy": "Se extrage pagina {progress} din {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Funcționează cu PDF-uri scanate?",
+			"seo_faq1_a": "Nu. Extracția de text funcționează cu PDF-uri care conțin text real. Documentele scanate (bazate pe imagini) necesită OCR mai întâi.",
+			"seo_faq2_q": "Suportă text în alte limbi?",
+			"seo_faq2_a": "Da. Extracția de text suportă toate limbile inclusiv arabă, chineză, japoneză, coreeană și chirilică."
 		},
 		"grayscale": {
 			"title": "PDF in tonuri de gri",
@@ -940,10 +952,10 @@
 			"grayscale": "Tonuri de gri",
 			"save": "Salvati PDF-ul in tonuri de gri",
 			"btn_busy": "Se converteste pagina {progress} din {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Textul va rămâne selectabil după conversie?",
+			"seo_faq1_a": "Nu. Conversia în tonuri de gri randează fiecare pagină ca imagine. Textul nu va mai fi selectabil sau căutabil.",
+			"seo_faq2_q": "Pot ajusta calitatea?",
+			"seo_faq2_a": "Da. Folosiți cursorul de calitate pentru a echilibra între dimensiunea fișierului și claritatea imaginii."
 		},
 		"json_formatter": {
 			"title": "Formatare JSON",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "sau apasă pentru a răsfoi",
 			"disclaimer": "Fidelitatea layout-ului depinde de complexitatea documentului. Tabelele complexe și formatarea avansată pot fi simplificate.",
 			"progress_hint": "Documentul tău este procesat local — nimic nu este încărcat.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Documentul meu Word va arăta la fel ca PDF?",
+			"seo_faq1_a": "Fidelitatea layout-ului depinde de complexitate. Documentele simple se convertesc bine; tabelele și formatarea complexe pot fi simplificate.",
+			"seo_faq2_q": "Suportă fișiere .doc (format Word vechi)?",
+			"seo_faq2_a": "Da. Ambele formate .docx (modern) și .doc (vechi) sunt suportate."
 		},
 		"from_xlsx": {
 			"title": "Excel în PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "Portret",
 			"disclaimer": "Lățimile coloanelor sunt calculate automat. Foile largi funcționează cel mai bine în modul peisaj.",
 			"progress_hint": "Foaia de calcul este procesată local — nimic nu este încărcat.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Pot alege orientarea peisaj sau portret?",
+			"seo_faq1_a": "Da. Puteți selecta orientarea paginii înainte de conversie. Foile de calcul late funcționează cel mai bine în peisaj.",
+			"seo_faq2_q": "Ce formate de foi de calcul sunt suportate?",
+			"seo_faq2_a": "XLSX (Excel), XLS (Excel vechi), ODS (LibreOffice) și fișiere CSV sunt suportate."
 		},
 		"to_docx": {
 			"title": "PDF în Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "PDF-urile scanate (bazate pe imagini) produc ieșire goală — folosește mai întâi OCR",
 			"progress_label": "Se extrage textul… {progress}%",
 			"progress_hint": "Fișierul tău nu părăsește niciodată dispozitivul tău.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Formatarea este păstrată?",
+			"seo_faq1_a": "Conținutul text și structura de bază (titluri, paragrafe) sunt păstrate. Layout-urile complexe, tabelele și imaginile sunt simplificate.",
+			"seo_faq2_q": "Funcționează cu PDF-uri scanate?",
+			"seo_faq2_a": "Nu. PDF-urile scanate (bazate pe imagini) produc rezultat gol. Folosiți mai întâi software OCR pentru a face textul extractibil."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Ce unghiuri de rotație sunt disponibile?",
+			"seo_faq1_a": "Puteți roti cu 90°, 180° sau 270° în sensul acelor de ceasornic. Rotația este instantanee și fără pierderi.",
+			"seo_faq2_q": "Rotația reduce calitatea imaginii?",
+			"seo_faq2_a": "Nu. Imaginea este rotită fără recompresie, calitatea originală este păstrată."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Pot seta o dimensiune exactă în pixeli?",
+			"seo_faq1_a": "Da. Trageți un dreptunghi de decupare sau introduceți dimensiuni exacte în pixeli.",
+			"seo_faq2_q": "Ce formate de imagine pot decupa?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF și majoritatea formatelor comune sunt suportate."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Pot ajusta opacitatea filigranului?",
+			"seo_faq1_a": "Da. Opacitatea, poziția, dimensiunea și culoarea filigranului text sunt reglabile.",
+			"seo_faq2_q": "Filigranul este permanent?",
+			"seo_faq2_a": "Da. După salvare, filigranul este încorporat permanent în imagine."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Pot folosi propriile imagini?",
+			"seo_faq1_a": "Da. Alegeți orice imagine și adăugați text sus și jos pentru a crea un meme.",
+			"seo_faq2_q": "Pot personaliza fontul și culoarea?",
+			"seo_faq2_a": "Da. Dimensiunea fontului, culoarea și conturul sunt personalizabile."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Câte imagini pot procesa simultan?",
+			"seo_faq1_a": "Fără limită fixă. Procesați câte imagini permite memoria dispozitivului.",
+			"seo_faq2_q": "Ce operații pot aplica în lot?",
+			"seo_faq2_a": "Conversie format, redimensionare, rotație și setări de calitate pentru toate imaginile selectate."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Ce pot codifica într-un cod QR?",
+			"seo_faq1_a": "URL-uri, text, adrese email, numere de telefon sau orice text până la mii de caractere.",
+			"seo_faq2_q": "Pot personaliza aspectul codului QR?",
+			"seo_faq2_a": "Dimensiunea și nivelul de corecție a erorilor sunt reglabile. Codul QR se salvează ca PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Ce formate de culoare sunt suportate?",
+			"seo_faq1_a": "HEX, RGB și HSL. Faceți clic pe orice pixel pentru a copia instantaneu valoarea culorii.",
+			"seo_faq2_q": "Pot alege culori din orice tip de imagine?",
+			"seo_faq2_a": "Da. JPG, PNG, WEBP, GIF și majoritatea formatelor sunt suportate."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Pot estompa mai multe regiuni?",
+			"seo_faq1_a": "Da. Desenați mai multe zone de estompare pe aceeași imagine.",
+			"seo_faq2_q": "Pot ajusta intensitatea estompării?",
+			"seo_faq2_a": "Da. Folosiți cursorul de intensitate pentru a controla puterea efectului."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Ce filtre sunt disponibile?",
+			"seo_faq1_a": "Luminozitate, contrast, saturație, rotație de culoare, tonuri de gri, sepia, estompare și inversare.",
+			"seo_faq2_q": "Pot combina mai multe filtre?",
+			"seo_faq2_a": "Da. Toate ajustările se cumulează și se aplică în timp real."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Ce formate video sunt suportate?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI și majoritatea formatelor video comune.",
+			"seo_faq2_q": "Pot seta durata și rata de cadre a GIF-ului?",
+			"seo_faq2_a": "Da. Setați timpul de start, durata și rata de cadre."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Validează sintaxa JSON?",
+			"seo_faq1_a": "Da. JSON-ul invalid este marcat cu un mesaj de eroare care indică linia și caracterul exact.",
+			"seo_faq2_q": "Pot minifica JSON?",
+			"seo_faq2_a": "Da. Formatare și minificare JSON cu un singur clic."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Ce algoritmi de hash sunt suportați?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 și SHA-512.",
+			"seo_faq2_q": "Hash-ul se face local?",
+			"seo_faq2_a": "Da. Totul rulează în browser prin Web Crypto API. Datele nu părăsesc niciodată dispozitivul."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Pot codifica fișiere?",
+			"seo_faq1_a": "Instrumentul codifică șiruri de text. Pentru fișiere, convertiți mai întâi conținutul în text.",
+			"seo_faq2_q": "Suportă text Unicode?",
+			"seo_faq2_a": "Da. Text UTF-8 inclusiv caractere non-latine este complet suportat."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Suportă GitHub Markdown?",
+			"seo_faq1_a": "Da. Tabele, liste de sarcini, text tăiat și alte extensii GitHub sunt redate corect.",
+			"seo_faq2_q": "Pot exporta HTML-ul redat?",
+			"seo_faq2_a": "Previzualizarea arată rezultatul în timp real. Copiați HTML-ul din panoul de previzualizare."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Arată diferențele rând cu rând sau cuvânt cu cuvânt?",
+			"seo_faq1_a": "Diferențele sunt evidențiate pe rânduri cu adăugiri și ștergeri colorate clar.",
+			"seo_faq2_q": "Există limită de dimensiune?",
+			"seo_faq2_a": "Fără limită fixă. Textele mari pot fi mai lente pe dispozitive vechi."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Ce metrici numără?",
+			"seo_faq1_a": "Cuvinte, caractere (cu și fără spații), propoziții, paragrafe și timp estimat de citire.",
+			"seo_faq2_q": "Funcționează cu text non-englez?",
+			"seo_faq2_a": "Da. Numărarea funcționează cu toate limbile și seturile de caractere."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Ce caractere sunt codificate?",
+			"seo_faq1_a": "Caractere speciale precum spațiile și non-ASCII sunt codificate procentual conform RFC 3986.",
+			"seo_faq2_q": "Pot decodifica un URL complet cu parametri?",
+			"seo_faq2_a": "Da. Lipiți orice șir codificat și va fi decodificat în text lizibil."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Ce elimină minificarea CSS?",
+			"seo_faq1_a": "Comentarii, spații inutile, rânduri goale și punct și virgule redundante.",
+			"seo_faq2_q": "Cu cât va fi mai mic CSS-ul meu?",
+			"seo_faq2_a": "De obicei 20-40% mai mic. Fișierele cu multe comentarii obțin cea mai mare reducere."
 		}
 	},
 	"toast": {

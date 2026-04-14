@@ -53,6 +53,7 @@
 
 <svelte:head>
 	<title>{m["settings.title"]()} — LocalConvert</title>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <div class="settings-page">

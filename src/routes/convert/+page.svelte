@@ -177,6 +177,15 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Convert Files — LocalConvert</title>
+	<meta name="description" content="Convert images, audio, video, and documents directly in your browser. 200+ format conversions — free, private, no uploads." />
+	<link rel="canonical" href="https://localconvert.app/convert/" />
+	<meta property="og:title" content="Convert Files — LocalConvert" />
+	<meta property="og:description" content="Convert images, audio, video, and documents directly in your browser. 200+ format conversions — free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/convert/" />
+</svelte:head>
+
 {#snippet fileItem(file: VertFile, index: number)}
 	{@const currentConverter = file.findConverter()}
 	{@const isImage = currentConverter?.name === "imagemagick"}

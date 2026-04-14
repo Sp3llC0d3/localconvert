@@ -576,16 +576,16 @@
 		"convert_to_pdf": "Konvertera till PDF",
 		"save_pdf": "Spara PDF",
 		"converting_progress": "Konverterar… {progress}%",
-		"seo_how_title": "How it works",
-		"seo_step1": "Select your file from your device",
-		"seo_step2": "Adjust settings if needed",
-		"seo_step3": "Save the result — done!",
-		"seo_why_title": "Why LocalConvert?",
-		"seo_why_private": "100% private — your files never leave your device. No server uploads, ever.",
-		"seo_why_free": "Free forever with no file size limits. No accounts, no subscriptions.",
-		"seo_why_offline": "Works offline as an installed app. No internet required after first load.",
-		"seo_faq_title": "Frequently asked questions",
-		"seo_related_title": "Related tools"
+		"seo_how_title": "Så fungerar det",
+		"seo_step1": "Välj din fil från din enhet",
+		"seo_step2": "Justera inställningarna vid behov",
+		"seo_step3": "Spara resultatet — klart!",
+		"seo_why_title": "Varför LocalConvert?",
+		"seo_why_private": "100% privat — dina filer lämnar aldrig din enhet. Ingen uppladdning till servrar, aldrig.",
+		"seo_why_free": "Gratis för alltid utan filstorleksgränser. Inga konton, inga prenumerationer.",
+		"seo_why_offline": "Fungerar offline som installerad app. Inget internet behövs efter första laddningen.",
+		"seo_faq_title": "Vanliga frågor",
+		"seo_related_title": "Relaterade verktyg"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -646,10 +646,10 @@
 			"err_fail": "Sammanfogningen misslyckades.",
 			"save": "Spara sammanfogad PDF",
 			"btn_busy": "Sammanfogar…",
-			"seo_faq1_q": "Is it safe to merge PDFs online?",
-			"seo_faq1_a": "Yes. LocalConvert runs entirely in your browser — your files are never uploaded to any server. The merging happens on your device.",
-			"seo_faq2_q": "Is there a limit on how many PDFs I can merge?",
-			"seo_faq2_a": "No. You can merge as many PDFs as your browser's memory allows. There are no file size or count limits."
+			"seo_faq1_q": "Är det säkert att sammanfoga PDF:er?",
+			"seo_faq1_a": "Ja. LocalConvert körs helt i din webbläsare — dina filer laddas aldrig upp till någon server. Sammanfogningen sker på din enhet.",
+			"seo_faq2_q": "Finns det en gräns för antal PDF:er?",
+			"seo_faq2_a": "Nej. Du kan sammanfoga så många PDF:er som din webbläsares minne tillåter. Inga storleks- eller antalsbegränsningar."
 		},
 		"split": {
 			"title": "Dela PDF",
@@ -662,10 +662,10 @@
 			"err_fail": "Uppdelningen misslyckades.",
 			"btn_busy": "Bearbetar…",
 			"help": "Klicka for att valja, tryck pa punkten for enskild sida",
-			"seo_faq1_q": "Can I extract specific pages from a PDF?",
-			"seo_faq1_a": "Yes. Select the pages you want to extract, and LocalConvert will create a new PDF with just those pages.",
-			"seo_faq2_q": "Will splitting a PDF reduce quality?",
-			"seo_faq2_a": "No. Splitting extracts pages without re-encoding, so the original quality is preserved."
+			"seo_faq1_q": "Kan jag extrahera specifika sidor från en PDF?",
+			"seo_faq1_a": "Ja. Välj sidorna du vill ha så skapar LocalConvert en ny PDF med bara de sidorna.",
+			"seo_faq2_q": "Försämras kvaliteten vid delning?",
+			"seo_faq2_a": "Nej. Delning extraherar sidor utan omkodning, originalkvaliteten bevaras."
 		},
 		"rotate_pdf": {
 			"title": "Rotera sidor",
@@ -676,7 +676,11 @@
 			"selected_pages": "Valda sidor",
 			"err_fail": "Rotationen misslyckades.",
 			"help": "klicka for att valja",
-			"btn_busy": "Bearbetar…"
+			"btn_busy": "Bearbetar…",
+			"seo_faq1_q": "Kan jag rotera enskilda sidor?",
+			"seo_faq1_a": "Ja. Du kan rotera specifika sidor eller hela PDF:en på en gång. Välj 90°, 180° eller 270°.",
+			"seo_faq2_q": "Påverkar rotation kvaliteten?",
+			"seo_faq2_a": "Nej. Sidor roteras utan omkodning, originalkvaliteten bevaras helt."
 		},
 		"organize": {
 			"title": "Organisera sidor",
@@ -688,10 +692,10 @@
 			"no_pages": "Inga sidor kvar.",
 			"btn": "Spara organiserad PDF",
 			"btn_busy": "Sparar…",
-			"seo_faq1_q": "Can I delete pages from a PDF?",
-			"seo_faq1_a": "Yes. Drag pages to reorder them and click the delete button to remove unwanted pages.",
-			"seo_faq2_q": "Can I see thumbnails of each page?",
-			"seo_faq2_a": "Yes. Visual thumbnails of each page are shown so you can easily identify and arrange them."
+			"seo_faq1_q": "Kan jag ta bort sidor från en PDF?",
+			"seo_faq1_a": "Ja. Dra sidor för att omordna och klicka ta bort för att radera oönskade sidor.",
+			"seo_faq2_q": "Kan jag se förhandsgranskning av varje sida?",
+			"seo_faq2_a": "Ja. Visuella miniatyrer av varje sida visas för enkel identifiering och organisering."
 		},
 		"images_to_pdf": {
 			"title": "Bilder → PDF",
@@ -701,10 +705,10 @@
 			"btn": "Konvertera till PDF",
 			"save": "Spara PDF",
 			"btn_busy": "Konverterar…",
-			"seo_faq1_q": "What image formats can I convert to PDF?",
-			"seo_faq1_a": "JPG, PNG, and WEBP images are supported. Each image becomes a page in the PDF.",
-			"seo_faq2_q": "Can I arrange the image order?",
-			"seo_faq2_a": "Yes. Add multiple images and arrange them in the desired order before converting."
+			"seo_faq1_q": "Vilka bildformat kan jag konvertera till PDF?",
+			"seo_faq1_a": "JPG, PNG och WEBP stöds. Varje bild blir en sida i PDF:en.",
+			"seo_faq2_q": "Kan jag ordna bildernas ordning?",
+			"seo_faq2_a": "Ja. Lägg till flera bilder och ordna dem i önskad ordning innan konvertering."
 		},
 		"pdf_to_images": {
 			"title": "PDF → Bilder",
@@ -713,10 +717,10 @@
 			"btn": "Exportera som bilder",
 			"err_fail": "Konverteringen misslyckades.",
 			"btn_busy": "Konverterar sida {progress} av {total}…",
-			"seo_faq1_q": "What image format will I get?",
-			"seo_faq1_a": "You can choose between JPG and PNG output. Each PDF page becomes a separate image.",
-			"seo_faq2_q": "What about multi-page PDFs?",
-			"seo_faq2_a": "Each page is exported as a separate image. For multi-page PDFs, you'll get a ZIP file with all images."
+			"seo_faq1_q": "Vilket format får jag bilderna i?",
+			"seo_faq1_a": "Du kan välja mellan JPG och PNG. Varje PDF-sida blir en separat bild.",
+			"seo_faq2_q": "Vad händer med flersidiga PDF:er?",
+			"seo_faq2_a": "Varje sida exporteras som separat bild. För flersidiga PDF:er får du en ZIP-fil med alla bilder."
 		},
 		"pdf_to_ppt": {
 			"title": "PDF till PowerPoint",
@@ -727,10 +731,10 @@
 			"btn": "Konvertera till PPTX",
 			"save": "Spara PPTX",
 			"btn_busy": "Konverterar sida {progress} av {total}…",
-			"seo_faq1_q": "How does PDF to PowerPoint work?",
-			"seo_faq1_a": "Each PDF page is rendered as an image and placed into a PowerPoint slide. Text is not editable.",
-			"seo_faq2_q": "Can I edit the slides after conversion?",
-			"seo_faq2_a": "The slides contain page images. You can add text boxes and annotations in PowerPoint."
+			"seo_faq1_q": "Hur fungerar konvertering från PDF till PowerPoint?",
+			"seo_faq1_a": "Varje PDF-sida renderas som bild och placeras i en PowerPoint-bild. Texten är inte redigerbar.",
+			"seo_faq2_q": "Kan jag redigera bilderna efter konvertering?",
+			"seo_faq2_a": "Bilderna innehåller sidbilder. Du kan lägga till textrutor och kommentarer i PowerPoint."
 		},
 		"compress": {
 			"title": "Komprimera PDF",
@@ -752,10 +756,10 @@
 			"preset_med_desc": "~50-70% mindre, bra kvalitet",
 			"preset_high_desc": "~70-90% mindre, synlig kvalitetsforlust",
 			"btn_busy": "Komprimerar sida {progress} av {total}…",
-			"seo_faq1_q": "How much can I reduce the PDF file size?",
-			"seo_faq1_a": "Typically 50-80% reduction depending on the content. PDFs with many images see the biggest savings.",
-			"seo_faq2_q": "Does compression affect text quality?",
-			"seo_faq2_a": "Text is re-rendered as images during compression. For text-heavy documents, use a higher quality setting."
+			"seo_faq1_q": "Hur mycket kan jag minska PDF-filstorleken?",
+			"seo_faq1_a": "Vanligtvis 50-80% minskning beroende på innehåll. PDF:er med många bilder ger störst besparing.",
+			"seo_faq2_q": "Påverkar komprimering textkvaliteten?",
+			"seo_faq2_a": "Text renderas om som bild vid komprimering. För texttunga dokument, använd högre kvalitetsinställning."
 		},
 		"watermark_pdf": {
 			"title": "Lagg till vattenstampel",
@@ -763,7 +767,11 @@
 			"btn": "Tillampa pa alla sidor",
 			"err_text": "Ange text for vattenstampeln.",
 			"save": "Spara PDF med vattenstampel",
-			"btn_busy": "Tillampar…"
+			"btn_busy": "Tillampar…",
+			"seo_faq1_q": "Kan jag använda en bild som vattenstämpel?",
+			"seo_faq1_a": "För närvarande stöds textvattenstämplar. Du kan anpassa text, storlek, opacitet och rotationsvinkel.",
+			"seo_faq2_q": "Kommer vattenstämpeln att täcka innehållet?",
+			"seo_faq2_a": "Nej. Vattenstämplar placeras med justerbar opacitet så att innehållet förblir läsbart under dem."
 		},
 		"page_numbers": {
 			"title": "Lagg till sidnummer",
@@ -780,10 +788,10 @@
 			"btn": "Tillampa pa alla sidor",
 			"save": "Spara numrerad PDF",
 			"btn_busy": "Lagger till nummer…",
-			"seo_faq1_q": "Where can I place the page numbers?",
-			"seo_faq1_a": "You can place numbers at the top or bottom of the page, aligned left, center, or right.",
-			"seo_faq2_q": "Can I customize the numbering format?",
-			"seo_faq2_a": "Yes. You can set the starting number, font size, and position."
+			"seo_faq1_q": "Var kan jag placera sidnumren?",
+			"seo_faq1_a": "Du kan placera nummer överst eller nederst, vänsterjusterade, centrerade eller högerjusterade.",
+			"seo_faq2_q": "Kan jag anpassa numreringsformatet?",
+			"seo_faq2_a": "Ja. Du kan ställa in startnummer, teckenstorlek och position."
 		},
 		"metadata": {
 			"title": "Redigera metadata",
@@ -804,10 +812,10 @@
 			"reading": "Laser metadata…",
 			"none": "—",
 			"btn_busy": "Sparar…",
-			"seo_faq1_q": "What PDF metadata can I edit?",
-			"seo_faq1_a": "You can edit the title, author, subject, and keywords of any PDF file.",
-			"seo_faq2_q": "Is editing metadata safe for the PDF content?",
-			"seo_faq2_a": "Yes. Only the metadata properties are changed — the PDF content remains untouched."
+			"seo_faq1_q": "Vilka PDF-metadata kan jag redigera?",
+			"seo_faq1_a": "Du kan redigera titel, författare, ämne och nyckelord för vilken PDF-fil som helst.",
+			"seo_faq2_q": "Är det säkert att redigera metadata?",
+			"seo_faq2_a": "Ja. Bara metadataegenskaperna ändras — PDF-innehållet förblir oförändrat."
 		},
 		"crop_pdf": {
 			"title": "Beskara PDF",
@@ -816,7 +824,11 @@
 			"btn": "Beskara PDF",
 			"save": "Spara beskuren PDF",
 			"err_margins": "Marginalerna ar for stora — inget omrade kvar.",
-			"btn_busy": "Beskarar…"
+			"btn_busy": "Beskarar…",
+			"seo_faq1_q": "Kan jag beskära olika sidor olika?",
+			"seo_faq1_a": "Beskärningsmarginalerna tillämpas enhetligt på alla sidor. För sidvis beskärning, dela PDF:en först, beskär varje del och sammanfoga sedan.",
+			"seo_faq2_q": "Minskar beskärning filstorleken?",
+			"seo_faq2_a": "Beskärning döljer innehåll utanför marginalerna men minskar kanske inte storleken avsevärt, eftersom dolda data kan finnas kvar i filen."
 		},
 		"sign": {
 			"title": "Signera PDF",
@@ -833,10 +845,10 @@
 			"err_place": "Klicka pa sidan for att placera din signatur.",
 			"save": "Spara signerad PDF",
 			"btn_busy": "Signerar…",
-			"seo_faq1_q": "How can I create a signature?",
-			"seo_faq1_a": "You can draw a signature with your mouse or finger, type your name, or upload a signature image.",
-			"seo_faq2_q": "Is my signature stored anywhere?",
-			"seo_faq2_a": "No. Your signature never leaves your device. It's processed entirely in your browser."
+			"seo_faq1_q": "Hur skapar jag en signatur?",
+			"seo_faq1_a": "Du kan rita en signatur med mus eller finger, skriva ditt namn eller ladda upp en signaturbild.",
+			"seo_faq2_q": "Lagras min signatur någonstans?",
+			"seo_faq2_a": "Nej. Din signatur lämnar aldrig din enhet. Bearbetningen sker helt i webbläsaren."
 		},
 		"edit": {
 			"title": "Redigera PDF",
@@ -851,10 +863,10 @@
 			"save": "Spara redigerad PDF",
 			"placeholder": "Text att placera…",
 			"btn_busy": "Tillampar…",
-			"seo_faq1_q": "What kind of edits can I make?",
-			"seo_faq1_a": "You can add text to any page of a PDF. Choose the font size, color, and position by clicking on the page.",
-			"seo_faq2_q": "Can I edit existing text in the PDF?",
-			"seo_faq2_a": "Currently you can add new text overlays. Editing existing text in PDFs requires the source document."
+			"seo_faq1_q": "Vilka redigeringar kan jag göra?",
+			"seo_faq1_a": "Du kan lägga till text på vilken sida som helst i PDF:en. Välj teckenstorlek, färg och position genom att klicka på sidan.",
+			"seo_faq2_q": "Kan jag redigera befintlig text i PDF:en?",
+			"seo_faq2_a": "För närvarande kan du lägga till nya textlager. Redigering av befintlig text kräver källdokumentet."
 		},
 		"password": {
 			"title": "Losenordsskydda PDF",
@@ -878,10 +890,10 @@
 			"password_placeholder": "Ange losenord…",
 			"owner_placeholder": "Agarlosenord…",
 			"btn_busy": "Krypterar…",
-			"seo_faq1_q": "How secure is the encryption?",
-			"seo_faq1_a": "PDFs are encrypted using standard PDF security. The password is never sent anywhere — encryption happens in your browser.",
-			"seo_faq2_q": "Can I set permissions like preventing printing?",
-			"seo_faq2_a": "Yes. You can set permissions for printing, copying, and editing when protecting the PDF."
+			"seo_faq1_q": "Hur säker är krypteringen?",
+			"seo_faq1_a": "PDF:er krypteras med standard PDF-säkerhet. Lösenordet skickas aldrig någonstans — krypteringen sker i din webbläsare.",
+			"seo_faq2_q": "Kan jag ställa in behörigheter som att förhindra utskrift?",
+			"seo_faq2_a": "Ja. Du kan ställa in behörigheter för utskrift, kopiering och redigering vid skydd av PDF:en."
 		},
 		"unlock": {
 			"title": "Las upp PDF",
@@ -896,10 +908,10 @@
 			"password_label": "Lösenord (om det krävs)",
 			"password_placeholder": "Lämna tomt om inget",
 			"password_hint": "Behövs bara för PDF som kräver lösenord.",
-			"seo_faq1_q": "Can I remove a password from a PDF?",
-			"seo_faq1_a": "Yes, if you know the current password. Enter it and LocalConvert will save an unprotected copy.",
-			"seo_faq2_q": "Is my password safe?",
-			"seo_faq2_a": "Yes. Your password is only used in your browser to decrypt the file. It is never sent to any server."
+			"seo_faq1_q": "Kan jag ta bort lösenordet från en PDF?",
+			"seo_faq1_a": "Ja, om du vet det aktuella lösenordet. Ange det och LocalConvert sparar en oskyddad kopia.",
+			"seo_faq2_q": "Är mitt lösenord säkert?",
+			"seo_faq2_a": "Ja. Ditt lösenord används bara i webbläsaren för att dekryptera filen. Det skickas aldrig till någon server."
 		},
 		"color_picker": {
 			"title": "Fargvaljare",
@@ -927,10 +939,10 @@
 			"copied": "Kopierat!",
 			"download_txt": "Spara som .txt",
 			"btn_busy": "Extraherar sida {progress} av {total}…",
-			"seo_faq1_q": "Does it work with scanned PDFs?",
-			"seo_faq1_a": "No. Text extraction works with PDFs that contain actual text. Scanned documents (image-based) need OCR first.",
-			"seo_faq2_q": "Does it support non-English text?",
-			"seo_faq2_a": "Yes. Text extraction supports all languages including Arabic, Chinese, Japanese, Korean, and Cyrillic scripts."
+			"seo_faq1_q": "Fungerar det med skannade PDF:er?",
+			"seo_faq1_a": "Nej. Textextraktion fungerar med PDF:er som innehåller riktig text. Skannade dokument (bildbaserade) behöver OCR först.",
+			"seo_faq2_q": "Stöds text på andra språk?",
+			"seo_faq2_a": "Ja. Textextraktion stöder alla språk inklusive arabiska, kinesiska, japanska, koreanska och kyrillisk skrift."
 		},
 		"grayscale": {
 			"title": "PDF till graskalig",
@@ -940,10 +952,10 @@
 			"grayscale": "Graskalig",
 			"save": "Spara graskalig PDF",
 			"btn_busy": "Konverterar sida {progress} av {total}…",
-			"seo_faq1_q": "Will the text still be selectable after conversion?",
-			"seo_faq1_a": "No. Grayscale conversion renders each page as an image. Text will no longer be selectable or searchable.",
-			"seo_faq2_q": "Can I adjust the quality?",
-			"seo_faq2_a": "Yes. Use the quality slider to balance between file size and image clarity."
+			"seo_faq1_q": "Förblir texten markerbar efter konvertering?",
+			"seo_faq1_a": "Nej. Gråskalekonvertering renderar varje sida som bild. Texten kommer inte längre vara markerbar eller sökbar.",
+			"seo_faq2_q": "Kan jag justera kvaliteten?",
+			"seo_faq2_a": "Ja. Använd kvalitetsreglaget för att balansera filstorlek och bildskärpa."
 		},
 		"json_formatter": {
 			"title": "JSON-formaterare",
@@ -1041,10 +1053,10 @@
 			"or_click_browse": "eller klicka för att bläddra",
 			"disclaimer": "Layoutnoggrannheten beror på dokumentets komplexitet. Komplexa tabeller och avancerad formatering kan förenklas.",
 			"progress_hint": "Ditt dokument bearbetas lokalt — inget laddas upp.",
-			"seo_faq1_q": "Will my Word document look the same as PDF?",
-			"seo_faq1_a": "Layout fidelity depends on document complexity. Simple documents convert well; complex tables and advanced formatting may be simplified.",
-			"seo_faq2_q": "Does it support .doc files (older Word format)?",
-			"seo_faq2_a": "Yes. Both .docx (modern) and .doc (legacy) Word formats are supported."
+			"seo_faq1_q": "Kommer mitt Word-dokument se likadant ut som PDF?",
+			"seo_faq1_a": "Layouttrohet beror på dokumentets komplexitet. Enkla dokument konverteras bra; komplexa tabeller och formatering kan förenklas.",
+			"seo_faq2_q": "Stöds .doc-filer (äldre Word-format)?",
+			"seo_faq2_a": "Ja. Både .docx (modernt) och .doc (äldre) stöds."
 		},
 		"from_xlsx": {
 			"title": "Excel till PDF",
@@ -1058,10 +1070,10 @@
 			"portrait": "Stående",
 			"disclaimer": "Kolumnbredder beräknas automatiskt. Breda kalkylblad fungerar bäst i liggande läge.",
 			"progress_hint": "Kalkylblad bearbetas lokalt — inget laddas upp.",
-			"seo_faq1_q": "Can I choose landscape or portrait for the PDF?",
-			"seo_faq1_a": "Yes. You can select page orientation before converting. Wide spreadsheets work best in landscape mode.",
-			"seo_faq2_q": "What spreadsheet formats are supported?",
-			"seo_faq2_a": "XLSX (Excel), XLS (legacy Excel), ODS (LibreOffice), and CSV files are all supported."
+			"seo_faq1_q": "Kan jag välja liggande eller stående format?",
+			"seo_faq1_a": "Ja. Du kan välja sidorientering innan konvertering. Breda kalkylblad fungerar bäst i liggande.",
+			"seo_faq2_q": "Vilka kalkylbladsformat stöds?",
+			"seo_faq2_a": "XLSX (Excel), XLS (äldre Excel), ODS (LibreOffice) och CSV-filer stöds."
 		},
 		"to_docx": {
 			"title": "PDF till Word",
@@ -1075,10 +1087,118 @@
 			"expect_scanned": "Skannade (bildbaserade) PDF-filer ger tom utdata — använd OCR först",
 			"progress_label": "Extraherar text… {progress}%",
 			"progress_hint": "Din fil lämnar aldrig din enhet.",
-			"seo_faq1_q": "Will the formatting be preserved?",
-			"seo_faq1_a": "Text content and basic structure (headings, paragraphs) are preserved. Complex layouts, tables, and images are simplified.",
-			"seo_faq2_q": "Does it work with scanned PDFs?",
-			"seo_faq2_a": "No. Scanned (image-based) PDFs produce empty output. Use OCR software first to make the text extractable."
+			"seo_faq1_q": "Bevaras formateringen?",
+			"seo_faq1_a": "Textinnehåll och grundstruktur (rubriker, stycken) bevaras. Komplexa layouter, tabeller och bilder förenklas.",
+			"seo_faq2_q": "Fungerar det med skannade PDF:er?",
+			"seo_faq2_a": "Nej. Skannade (bildbaserade) PDF:er ger tomt resultat. Använd OCR-programvara först för att göra texten extraherbar."
+		},
+		"img_rotate": {
+			"seo_faq1_q": "Vilka rotationsvinklar finns?",
+			"seo_faq1_a": "Du kan rotera 90°, 180° eller 270° medurs. Rotationen är omedelbar och förlustfri.",
+			"seo_faq2_q": "Försämrar rotation bildkvaliteten?",
+			"seo_faq2_a": "Nej. Bilden roteras utan omkomprimering, originalkvaliteten bevaras."
+		},
+		"img_crop": {
+			"seo_faq1_q": "Kan jag ange exakt storlek i pixlar?",
+			"seo_faq1_a": "Ja. Dra en beskärningsrektangel eller ange exakta pixelmått.",
+			"seo_faq2_q": "Vilka bildformat kan jag beskära?",
+			"seo_faq2_a": "JPG, PNG, WEBP, GIF och de flesta vanliga bildformat stöds."
+		},
+		"img_watermark": {
+			"seo_faq1_q": "Kan jag justera vattenstämpelns opacitet?",
+			"seo_faq1_a": "Ja. Opacitet, position, storlek och färg på textvattenstämpeln kan styras.",
+			"seo_faq2_q": "Är vattenstämpeln permanent?",
+			"seo_faq2_a": "Ja. Efter sparande är vattenstämpeln permanent inbäddad i bilden."
+		},
+		"img_meme": {
+			"seo_faq1_q": "Kan jag använda egna bilder?",
+			"seo_faq1_a": "Ja. Välj valfri bild och lägg till text överst och nederst.",
+			"seo_faq2_q": "Kan jag anpassa typsnitt och färg?",
+			"seo_faq2_a": "Ja. Teckenstorlek, färg och kontur kan ändras."
+		},
+		"img_batch": {
+			"seo_faq1_q": "Hur många bilder kan jag bearbeta samtidigt?",
+			"seo_faq1_a": "Ingen fast gräns. Bearbeta så många bilder som enhetens minne tillåter.",
+			"seo_faq2_q": "Vilka operationer kan jag tillämpa i batch?",
+			"seo_faq2_a": "Formatkonvertering, storleksändring, rotation och kvalitetsinställningar för alla valda bilder."
+		},
+		"img_qr": {
+			"seo_faq1_q": "Vad kan jag koda i en QR-kod?",
+			"seo_faq1_a": "URL:er, text, e-postadresser, telefonnummer eller text upp till tusentals tecken.",
+			"seo_faq2_q": "Kan jag anpassa QR-kodens utseende?",
+			"seo_faq2_a": "Storlek och felkorrigeringsnivå kan justeras. QR-koden sparas som PNG."
+		},
+		"img_color_picker": {
+			"seo_faq1_q": "Vilka färgformat stöds?",
+			"seo_faq1_a": "HEX, RGB och HSL. Klicka på valfri pixel för att kopiera färgvärdet direkt.",
+			"seo_faq2_q": "Kan jag välja färger från vilken bildtyp som helst?",
+			"seo_faq2_a": "Ja. JPG, PNG, WEBP, GIF och de flesta andra format stöds."
+		},
+		"img_blur": {
+			"seo_faq1_q": "Kan jag sudda ut flera områden?",
+			"seo_faq1_a": "Ja. Rita flera suddområden på samma bild.",
+			"seo_faq2_q": "Kan jag justera suddighetsintensiteten?",
+			"seo_faq2_a": "Ja. Använd intensitetsreglaget för att styra effektens styrka."
+		},
+		"img_filters": {
+			"seo_faq1_q": "Vilka filter finns?",
+			"seo_faq1_a": "Ljusstyrka, kontrast, mättnad, nyansvridning, gråskala, sepia, oskärpa och inversion.",
+			"seo_faq2_q": "Kan jag kombinera flera filter?",
+			"seo_faq2_a": "Ja. Alla filterinställningar läggs samman och tillämpas i realtid."
+		},
+		"img_video_to_gif": {
+			"seo_faq1_q": "Vilka videoformat stöds?",
+			"seo_faq1_a": "MP4, WEBM, MOV, AVI och de flesta vanliga videoformat.",
+			"seo_faq2_q": "Kan jag ställa in GIF-längd och bildfrekvens?",
+			"seo_faq2_a": "Ja. Ange starttid, längd och bildfrekvens."
+		},
+		"dev_json": {
+			"seo_faq1_q": "Validerar det JSON-syntax?",
+			"seo_faq1_a": "Ja. Ogiltig JSON markeras med ett felmeddelande som visar exakt rad och tecken.",
+			"seo_faq2_q": "Kan jag minifiera JSON också?",
+			"seo_faq2_a": "Ja. Formatera och minifiera JSON med ett klick."
+		},
+		"dev_hash": {
+			"seo_faq1_q": "Vilka hashalgoritmer stöds?",
+			"seo_faq1_a": "MD5, SHA-1, SHA-256, SHA-384 och SHA-512.",
+			"seo_faq2_q": "Sker hashningen lokalt?",
+			"seo_faq2_a": "Ja. All hashning körs i webbläsaren via Web Crypto API. Data lämnar aldrig enheten."
+		},
+		"dev_base64": {
+			"seo_faq1_q": "Kan jag koda filer?",
+			"seo_faq1_a": "Verktyget kodar textsträngar. För filer, konvertera innehållet till text först.",
+			"seo_faq2_q": "Stöds Unicode-text?",
+			"seo_faq2_a": "Ja. UTF-8-text inklusive icke-latinska tecken stöds fullt ut."
+		},
+		"dev_markdown": {
+			"seo_faq1_q": "Stöds GitHub Markdown?",
+			"seo_faq1_a": "Ja. Tabeller, uppgiftslistor, genomstrykning och andra GitHub-tillägg renderas korrekt.",
+			"seo_faq2_q": "Kan jag exportera den renderade HTML:en?",
+			"seo_faq2_a": "Förhandsgranskningen visar utdata i realtid. Kopiera HTML från förhandsgranskningspanelen."
+		},
+		"dev_diff": {
+			"seo_faq1_q": "Visar det skillnader radvis eller ordvis?",
+			"seo_faq1_a": "Skillnader markeras radvis med tillägg och borttagningar tydligt färgkodade.",
+			"seo_faq2_q": "Finns det en storleksgräns?",
+			"seo_faq2_a": "Ingen fast gräns. Stora texter kan vara långsammare på äldre enheter."
+		},
+		"dev_word_count": {
+			"seo_faq1_q": "Vilka mått räknas?",
+			"seo_faq1_a": "Ord, tecken (med och utan mellanslag), meningar, stycken och beräknad lästid.",
+			"seo_faq2_q": "Fungerar det med icke-engelsk text?",
+			"seo_faq2_a": "Ja. Ordräkning fungerar med alla språk och teckenuppsättningar."
+		},
+		"dev_url_encode": {
+			"seo_faq1_q": "Vilka tecken kodas?",
+			"seo_faq1_a": "Specialtecken som mellanslag och icke-ASCII-tecken procentkodas enligt RFC 3986.",
+			"seo_faq2_q": "Kan jag avkoda en hel URL med parametrar?",
+			"seo_faq2_a": "Ja. Klistra in en kodad sträng så avkodas den till läsbar text."
+		},
+		"dev_css_minify": {
+			"seo_faq1_q": "Vad tar CSS-minifiering bort?",
+			"seo_faq1_a": "Kommentarer, onödiga mellanslag, tomma rader och överflödiga semikolon.",
+			"seo_faq2_q": "Hur mycket mindre blir min CSS?",
+			"seo_faq2_a": "Vanligtvis 20-40% mindre. Filer med många kommentarer får störst minskning."
 		}
 	},
 	"toast": {
