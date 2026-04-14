@@ -505,12 +505,12 @@
 			"pdf_to_text_desc": "Extraer todo el texto de un PDF",
 			"grayscale_name": "PDF en escala de grises",
 			"grayscale_desc": "Convertir páginas PDF a blanco y negro",
-			"from_docx_name": "Word to PDF",
-			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
-			"from_xlsx_name": "Excel to PDF",
-			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
-			"to_docx_name": "PDF to Word",
-			"to_docx_desc": "Extract PDF text as an editable DOCX file"
+			"from_docx_name": "Word a PDF",
+			"from_docx_desc": "Convierte archivos DOCX a PDF — de forma privada en tu navegador",
+			"from_xlsx_name": "Excel a PDF",
+			"from_xlsx_desc": "Convierte hojas de cálculo a PDF — localmente, sin subir",
+			"to_docx_name": "PDF a Word",
+			"to_docx_desc": "Extrae texto de PDF como archivo DOCX editable"
 		}
 	},
 	"image_tools": {
@@ -601,11 +601,11 @@
 		"color": "Color",
 		"before": "Antes",
 		"after": "Después",
-		"conversion_complete": "Conversion complete",
-		"convert_another": "Convert another",
-		"convert_to_pdf": "Convert to PDF",
-		"save_pdf": "Save PDF",
-		"converting_progress": "Converting… {progress}%"
+		"conversion_complete": "Conversión completada",
+		"convert_another": "Convertir otro",
+		"convert_to_pdf": "Convertir a PDF",
+		"save_pdf": "Guardar PDF",
+		"converting_progress": "Convirtiendo… {progress}%"
 	},
 	"tool_pages": {
 		"merge": {
@@ -993,40 +993,40 @@
 			"saved": "Ahorrado {pct}%"
 		},
 		"from_docx": {
-			"title": "Word to PDF",
-			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
-			"invalid_file": "Please select a DOCX or DOC file.",
-			"aria_upload": "Upload DOCX file",
-			"drop_hint": "Drop your DOCX file here",
-			"or_click_browse": "or click to browse",
-			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
-			"progress_hint": "Processing your document locally — nothing is uploaded."
+			"title": "Word a PDF",
+			"desc": "Convierte archivos DOCX y DOC a PDF — de forma privada en tu navegador.",
+			"invalid_file": "Por favor selecciona un archivo DOCX o DOC.",
+			"aria_upload": "Subir archivo DOCX",
+			"drop_hint": "Arrastra tu archivo DOCX aquí",
+			"or_click_browse": "o haz clic para explorar",
+			"disclaimer": "La fidelidad del diseño depende de la complejidad del documento. Las tablas complejas y el formato avanzado pueden simplificarse.",
+			"progress_hint": "Procesando tu documento localmente — nada se sube."
 		},
 		"from_xlsx": {
-			"title": "Excel to PDF",
-			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
-			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
-			"aria_upload": "Upload spreadsheet file",
-			"drop_hint": "Drop your spreadsheet here",
-			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
-			"page_orientation": "Page orientation",
-			"landscape": "Landscape",
-			"portrait": "Portrait",
-			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
-			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+			"title": "Excel a PDF",
+			"desc": "Convierte hojas de cálculo XLSX, XLS, ODS y CSV a PDF — localmente en tu navegador.",
+			"invalid_file": "Por favor selecciona un archivo Excel (XLSX/XLS), ODS o CSV.",
+			"aria_upload": "Subir archivo de hoja de cálculo",
+			"drop_hint": "Arrastra tu hoja de cálculo aquí",
+			"drop_formats": "XLSX · XLS · ODS · CSV — o haz clic para explorar",
+			"page_orientation": "Orientación de página",
+			"landscape": "Horizontal",
+			"portrait": "Vertical",
+			"disclaimer": "Los anchos de columna se calculan automáticamente. Las hojas anchas funcionan mejor en modo horizontal.",
+			"progress_hint": "Procesando hoja de cálculo localmente — nada se sube."
 		},
 		"to_docx": {
-			"title": "PDF to Word",
-			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
-			"btn": "Convert to DOCX",
-			"save": "Save DOCX",
-			"expect_title": "What to expect",
-			"expect_text": "Text content is fully preserved",
-			"expect_headings": "Headings and paragraph structure are detected automatically",
-			"expect_tables": "Tables, images, and complex layouts are simplified",
-			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
-			"progress_label": "Extracting text… {progress}%",
-			"progress_hint": "Your file never leaves your device."
+			"title": "PDF a Word",
+			"desc": "Extrae texto de PDF y guárdalo como archivo DOCX editable — completamente en tu navegador.",
+			"btn": "Convertir a DOCX",
+			"save": "Guardar DOCX",
+			"expect_title": "Qué esperar",
+			"expect_text": "El contenido de texto se preserva completamente",
+			"expect_headings": "Los encabezados y la estructura de párrafos se detectan automáticamente",
+			"expect_tables": "Las tablas, imágenes y diseños complejos se simplifican",
+			"expect_scanned": "Los PDFs escaneados (basados en imágenes) producen salida vacía — usa OCR primero",
+			"progress_label": "Extrayendo texto… {progress}%",
+			"progress_hint": "Tu archivo nunca sale de tu dispositivo."
 		}
 	},
 	"dev_tools": {

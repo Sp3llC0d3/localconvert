@@ -451,12 +451,12 @@
 			"pdf_to_text_desc": "PDF에서 텍스트 추출",
 			"grayscale_name": "PDF 그레이스케일",
 			"grayscale_desc": "PDF 페이지를 흑백으로 변환",
-			"from_docx_name": "Word to PDF",
-			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
-			"from_xlsx_name": "Excel to PDF",
-			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
-			"to_docx_name": "PDF to Word",
-			"to_docx_desc": "Extract PDF text as an editable DOCX file"
+			"from_docx_name": "Word를 PDF로",
+			"from_docx_desc": "DOCX 파일을 PDF로 변환 — 브라우저에서 비공개로",
+			"from_xlsx_name": "Excel을 PDF로",
+			"from_xlsx_desc": "스프레드시트를 PDF로 변환 — 로컬, 업로드 없음",
+			"to_docx_name": "PDF를 Word로",
+			"to_docx_desc": "PDF 텍스트를 편집 가능한 DOCX 파일로 추출"
 		}
 	},
 	"landing": {
@@ -601,11 +601,11 @@
 		"color": "색상",
 		"before": "이전",
 		"after": "이후",
-		"conversion_complete": "Conversion complete",
-		"convert_another": "Convert another",
-		"convert_to_pdf": "Convert to PDF",
-		"save_pdf": "Save PDF",
-		"converting_progress": "Converting… {progress}%"
+		"conversion_complete": "변환 완료",
+		"convert_another": "다른 파일 변환",
+		"convert_to_pdf": "PDF로 변환",
+		"save_pdf": "PDF 저장",
+		"converting_progress": "변환 중… {progress}%"
 	},
 	"tool_pages": {
 		"merge": {
@@ -993,40 +993,40 @@
 			"saved": "{pct}% 절약"
 		},
 		"from_docx": {
-			"title": "Word to PDF",
-			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
-			"invalid_file": "Please select a DOCX or DOC file.",
-			"aria_upload": "Upload DOCX file",
-			"drop_hint": "Drop your DOCX file here",
-			"or_click_browse": "or click to browse",
-			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
-			"progress_hint": "Processing your document locally — nothing is uploaded."
+			"title": "Word를 PDF로",
+			"desc": "DOCX 및 DOC 파일을 PDF로 변환 — 브라우저에서 비공개로.",
+			"invalid_file": "DOCX 또는 DOC 파일을 선택해주세요.",
+			"aria_upload": "DOCX 파일 업로드",
+			"drop_hint": "DOCX 파일을 여기에 놓으세요",
+			"or_click_browse": "또는 클릭하여 찾아보기",
+			"disclaimer": "레이아웃 충실도는 문서 복잡성에 따라 다릅니다. 복잡한 표와 고급 서식은 단순화될 수 있습니다.",
+			"progress_hint": "문서를 로컬에서 처리 중 — 업로드되지 않습니다."
 		},
 		"from_xlsx": {
-			"title": "Excel to PDF",
-			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
-			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
-			"aria_upload": "Upload spreadsheet file",
-			"drop_hint": "Drop your spreadsheet here",
-			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
-			"page_orientation": "Page orientation",
-			"landscape": "Landscape",
-			"portrait": "Portrait",
-			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
-			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+			"title": "Excel을 PDF로",
+			"desc": "XLSX, XLS, ODS, CSV 스프레드시트를 PDF로 변환 — 브라우저에서 로컬로.",
+			"invalid_file": "Excel (XLSX/XLS), ODS 또는 CSV 파일을 선택해주세요.",
+			"aria_upload": "스프레드시트 파일 업로드",
+			"drop_hint": "스프레드시트를 여기에 놓으세요",
+			"drop_formats": "XLSX · XLS · ODS · CSV — 또는 클릭하여 찾아보기",
+			"page_orientation": "페이지 방향",
+			"landscape": "가로",
+			"portrait": "세로",
+			"disclaimer": "열 너비가 자동 계산됩니다. 넓은 시트는 가로 모드에서 가장 잘 작동합니다.",
+			"progress_hint": "스프레드시트를 로컬에서 처리 중 — 업로드되지 않습니다."
 		},
 		"to_docx": {
-			"title": "PDF to Word",
-			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
-			"btn": "Convert to DOCX",
-			"save": "Save DOCX",
-			"expect_title": "What to expect",
-			"expect_text": "Text content is fully preserved",
-			"expect_headings": "Headings and paragraph structure are detected automatically",
-			"expect_tables": "Tables, images, and complex layouts are simplified",
-			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
-			"progress_label": "Extracting text… {progress}%",
-			"progress_hint": "Your file never leaves your device."
+			"title": "PDF를 Word로",
+			"desc": "PDF에서 텍스트를 추출하여 편집 가능한 DOCX 파일로 저장 — 브라우저에서 완전히.",
+			"btn": "DOCX로 변환",
+			"save": "DOCX 저장",
+			"expect_title": "기대할 수 있는 것",
+			"expect_text": "텍스트 콘텐츠가 완전히 보존됩니다",
+			"expect_headings": "제목과 단락 구조가 자동으로 감지됩니다",
+			"expect_tables": "표, 이미지, 복잡한 레이아웃이 단순화됩니다",
+			"expect_scanned": "스캔된(이미지 기반) PDF는 빈 출력을 생성합니다 — 먼저 OCR을 사용하세요",
+			"progress_label": "텍스트 추출 중… {progress}%",
+			"progress_hint": "파일은 기기를 절대 떠나지 않습니다."
 		}
 	},
 	"dev_tools": {

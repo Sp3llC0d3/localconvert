@@ -451,12 +451,12 @@
 			"pdf_to_text_desc": "PDFからテキストを抽出",
 			"grayscale_name": "PDFをグレースケールに",
 			"grayscale_desc": "PDFページを白黒に変換",
-			"from_docx_name": "Word to PDF",
-			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
-			"from_xlsx_name": "Excel to PDF",
-			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
-			"to_docx_name": "PDF to Word",
-			"to_docx_desc": "Extract PDF text as an editable DOCX file"
+			"from_docx_name": "WordからPDF",
+			"from_docx_desc": "DOCXファイルをPDFに変換 — ブラウザ内でプライベートに",
+			"from_xlsx_name": "ExcelからPDF",
+			"from_xlsx_desc": "スプレッドシートをPDFに変換 — ローカル処理",
+			"to_docx_name": "PDFからWord",
+			"to_docx_desc": "PDFテキストを編集可能なDOCXファイルとして抽出"
 		}
 	},
 	"landing": {
@@ -601,11 +601,11 @@
 		"color": "色",
 		"before": "前",
 		"after": "後",
-		"conversion_complete": "Conversion complete",
-		"convert_another": "Convert another",
-		"convert_to_pdf": "Convert to PDF",
-		"save_pdf": "Save PDF",
-		"converting_progress": "Converting… {progress}%"
+		"conversion_complete": "変換完了",
+		"convert_another": "別のファイルを変換",
+		"convert_to_pdf": "PDFに変換",
+		"save_pdf": "PDFを保存",
+		"converting_progress": "変換中… {progress}%"
 	},
 	"tool_pages": {
 		"merge": {
@@ -993,40 +993,40 @@
 			"saved": "{pct}%削減"
 		},
 		"from_docx": {
-			"title": "Word to PDF",
-			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
-			"invalid_file": "Please select a DOCX or DOC file.",
-			"aria_upload": "Upload DOCX file",
-			"drop_hint": "Drop your DOCX file here",
-			"or_click_browse": "or click to browse",
-			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
-			"progress_hint": "Processing your document locally — nothing is uploaded."
+			"title": "WordからPDF",
+			"desc": "DOCXおよびDOCファイルをPDFに変換 — ブラウザ内でプライベートに。",
+			"invalid_file": "DOCXまたはDOCファイルを選択してください。",
+			"aria_upload": "DOCXファイルをアップロード",
+			"drop_hint": "DOCXファイルをここにドロップ",
+			"or_click_browse": "またはクリックして参照",
+			"disclaimer": "レイアウトの忠実度はドキュメントの複雑さに依存します。複雑なテーブルや高度な書式は簡略化される場合があります。",
+			"progress_hint": "ドキュメントをローカルで処理中 — アップロードは行われません。"
 		},
 		"from_xlsx": {
-			"title": "Excel to PDF",
-			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
-			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
-			"aria_upload": "Upload spreadsheet file",
-			"drop_hint": "Drop your spreadsheet here",
-			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
-			"page_orientation": "Page orientation",
-			"landscape": "Landscape",
-			"portrait": "Portrait",
-			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
-			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+			"title": "ExcelからPDF",
+			"desc": "XLSX、XLS、ODS、CSVスプレッドシートをPDFに変換 — ブラウザ内でローカルに。",
+			"invalid_file": "Excel（XLSX/XLS）、ODS、またはCSVファイルを選択してください。",
+			"aria_upload": "スプレッドシートをアップロード",
+			"drop_hint": "スプレッドシートをここにドロップ",
+			"drop_formats": "XLSX · XLS · ODS · CSV — またはクリックして参照",
+			"page_orientation": "ページの向き",
+			"landscape": "横向き",
+			"portrait": "縦向き",
+			"disclaimer": "列幅は自動計算されます。幅の広いシートは横向きモードで最適に動作します。",
+			"progress_hint": "スプレッドシートをローカルで処理中 — アップロードは行われません。"
 		},
 		"to_docx": {
-			"title": "PDF to Word",
-			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
-			"btn": "Convert to DOCX",
-			"save": "Save DOCX",
-			"expect_title": "What to expect",
-			"expect_text": "Text content is fully preserved",
-			"expect_headings": "Headings and paragraph structure are detected automatically",
-			"expect_tables": "Tables, images, and complex layouts are simplified",
-			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
-			"progress_label": "Extracting text… {progress}%",
-			"progress_hint": "Your file never leaves your device."
+			"title": "PDFからWord",
+			"desc": "PDFからテキストを抽出し、編集可能なDOCXファイルとして保存 — すべてブラウザ内で。",
+			"btn": "DOCXに変換",
+			"save": "DOCXを保存",
+			"expect_title": "期待できること",
+			"expect_text": "テキストコンテンツは完全に保持されます",
+			"expect_headings": "見出しと段落構造が自動的に検出されます",
+			"expect_tables": "テーブル、画像、複雑なレイアウトは簡略化されます",
+			"expect_scanned": "スキャンされた（画像ベースの）PDFは空の出力を生成します — 先にOCRを使用してください",
+			"progress_label": "テキストを抽出中… {progress}%",
+			"progress_hint": "ファイルはデバイスから離れることはありません。"
 		}
 	},
 	"dev_tools": {

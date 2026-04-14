@@ -448,12 +448,12 @@
 			"pdf_to_text_desc": "Extrageti tot textul dintr-un PDF",
 			"grayscale_name": "PDF in tonuri de gri",
 			"grayscale_desc": "Convertiti paginile PDF in alb-negru",
-			"from_docx_name": "Word to PDF",
-			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
-			"from_xlsx_name": "Excel to PDF",
-			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
-			"to_docx_name": "PDF to Word",
-			"to_docx_desc": "Extract PDF text as an editable DOCX file"
+			"from_docx_name": "Word în PDF",
+			"from_docx_desc": "Convertește fișiere DOCX în PDF — privat în browserul tău",
+			"from_xlsx_name": "Excel în PDF",
+			"from_xlsx_desc": "Convertește foi de calcul în PDF — local, fără încărcare",
+			"to_docx_name": "PDF în Word",
+			"to_docx_desc": "Extrage text PDF ca fișier DOCX editabil"
 		}
 	},
 	"image_tools": {
@@ -571,11 +571,11 @@
 		"color": "Culoare",
 		"before": "Înainte",
 		"after": "După",
-		"conversion_complete": "Conversion complete",
-		"convert_another": "Convert another",
-		"convert_to_pdf": "Convert to PDF",
-		"save_pdf": "Save PDF",
-		"converting_progress": "Converting… {progress}%"
+		"conversion_complete": "Conversie finalizată",
+		"convert_another": "Convertește altul",
+		"convert_to_pdf": "Convertește în PDF",
+		"save_pdf": "Salvează PDF",
+		"converting_progress": "Se convertește… {progress}%"
 	},
 	"tool_pages": {
 		"rotate_image": {
@@ -963,40 +963,40 @@
 			"saved": "Economisit {pct}%"
 		},
 		"from_docx": {
-			"title": "Word to PDF",
-			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
-			"invalid_file": "Please select a DOCX or DOC file.",
-			"aria_upload": "Upload DOCX file",
-			"drop_hint": "Drop your DOCX file here",
-			"or_click_browse": "or click to browse",
-			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
-			"progress_hint": "Processing your document locally — nothing is uploaded."
+			"title": "Word în PDF",
+			"desc": "Convertește fișiere DOCX și DOC în PDF — privat în browserul tău.",
+			"invalid_file": "Te rugăm să selectezi un fișier DOCX sau DOC.",
+			"aria_upload": "Încarcă fișier DOCX",
+			"drop_hint": "Trage fișierul DOCX aici",
+			"or_click_browse": "sau apasă pentru a răsfoi",
+			"disclaimer": "Fidelitatea layout-ului depinde de complexitatea documentului. Tabelele complexe și formatarea avansată pot fi simplificate.",
+			"progress_hint": "Documentul tău este procesat local — nimic nu este încărcat."
 		},
 		"from_xlsx": {
-			"title": "Excel to PDF",
-			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
-			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
-			"aria_upload": "Upload spreadsheet file",
-			"drop_hint": "Drop your spreadsheet here",
-			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
-			"page_orientation": "Page orientation",
-			"landscape": "Landscape",
-			"portrait": "Portrait",
-			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
-			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+			"title": "Excel în PDF",
+			"desc": "Convertește foi de calcul XLSX, XLS, ODS și CSV în PDF — local în browserul tău.",
+			"invalid_file": "Te rugăm să selectezi un fișier Excel (XLSX/XLS), ODS sau CSV.",
+			"aria_upload": "Încarcă fișier foaie de calcul",
+			"drop_hint": "Trage foaia de calcul aici",
+			"drop_formats": "XLSX · XLS · ODS · CSV — sau apasă pentru a răsfoi",
+			"page_orientation": "Orientarea paginii",
+			"landscape": "Peisaj",
+			"portrait": "Portret",
+			"disclaimer": "Lățimile coloanelor sunt calculate automat. Foile largi funcționează cel mai bine în modul peisaj.",
+			"progress_hint": "Foaia de calcul este procesată local — nimic nu este încărcat."
 		},
 		"to_docx": {
-			"title": "PDF to Word",
-			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
-			"btn": "Convert to DOCX",
-			"save": "Save DOCX",
-			"expect_title": "What to expect",
-			"expect_text": "Text content is fully preserved",
-			"expect_headings": "Headings and paragraph structure are detected automatically",
-			"expect_tables": "Tables, images, and complex layouts are simplified",
-			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
-			"progress_label": "Extracting text… {progress}%",
-			"progress_hint": "Your file never leaves your device."
+			"title": "PDF în Word",
+			"desc": "Extrage text din PDF și salvează ca fișier DOCX editabil — complet în browserul tău.",
+			"btn": "Convertește în DOCX",
+			"save": "Salvează DOCX",
+			"expect_title": "La ce să te aștepți",
+			"expect_text": "Conținutul text este complet păstrat",
+			"expect_headings": "Titlurile și structura paragrafelor sunt detectate automat",
+			"expect_tables": "Tabelele, imaginile și layout-urile complexe sunt simplificate",
+			"expect_scanned": "PDF-urile scanate (bazate pe imagini) produc ieșire goală — folosește mai întâi OCR",
+			"progress_label": "Se extrage textul… {progress}%",
+			"progress_hint": "Fișierul tău nu părăsește niciodată dispozitivul tău."
 		}
 	},
 	"toast": {

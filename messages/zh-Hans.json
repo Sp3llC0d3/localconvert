@@ -505,12 +505,12 @@
 			"pdf_to_text_desc": "从PDF提取全部文字",
 			"grayscale_name": "PDF转灰度",
 			"grayscale_desc": "将PDF页面转换为黑白",
-			"from_docx_name": "Word to PDF",
-			"from_docx_desc": "Convert DOCX files to PDF — privately in your browser",
-			"from_xlsx_name": "Excel to PDF",
-			"from_xlsx_desc": "Convert spreadsheets to PDF — locally, no upload",
-			"to_docx_name": "PDF to Word",
-			"to_docx_desc": "Extract PDF text as an editable DOCX file"
+			"from_docx_name": "Word转PDF",
+			"from_docx_desc": "将DOCX文件转换为PDF — 在浏览器中私密处理",
+			"from_xlsx_name": "Excel转PDF",
+			"from_xlsx_desc": "将电子表格转换为PDF — 本地处理，无需上传",
+			"to_docx_name": "PDF转Word",
+			"to_docx_desc": "将PDF文本提取为可编辑的DOCX文件"
 		}
 	},
 	"image_tools": {
@@ -601,11 +601,11 @@
 		"color": "颜色",
 		"before": "之前",
 		"after": "之后",
-		"conversion_complete": "Conversion complete",
-		"convert_another": "Convert another",
-		"convert_to_pdf": "Convert to PDF",
-		"save_pdf": "Save PDF",
-		"converting_progress": "Converting… {progress}%"
+		"conversion_complete": "转换完成",
+		"convert_another": "转换其他文件",
+		"convert_to_pdf": "转换为PDF",
+		"save_pdf": "保存PDF",
+		"converting_progress": "正在转换… {progress}%"
 	},
 	"tool_pages": {
 		"merge": {
@@ -993,40 +993,40 @@
 			"saved": "节省了 {pct}%"
 		},
 		"from_docx": {
-			"title": "Word to PDF",
-			"desc": "Convert DOCX and DOC files to PDF — privately, in your browser.",
-			"invalid_file": "Please select a DOCX or DOC file.",
-			"aria_upload": "Upload DOCX file",
-			"drop_hint": "Drop your DOCX file here",
-			"or_click_browse": "or click to browse",
-			"disclaimer": "Layout fidelity depends on document complexity. Complex tables and advanced formatting may be simplified.",
-			"progress_hint": "Processing your document locally — nothing is uploaded."
+			"title": "Word转PDF",
+			"desc": "将DOCX和DOC文件转换为PDF — 在浏览器中私密处理。",
+			"invalid_file": "请选择DOCX或DOC文件。",
+			"aria_upload": "上传DOCX文件",
+			"drop_hint": "将DOCX文件拖放到此处",
+			"or_click_browse": "或点击浏览",
+			"disclaimer": "布局保真度取决于文档复杂性。复杂表格和高级格式可能会被简化。",
+			"progress_hint": "正在本地处理您的文档 — 不会上传任何内容。"
 		},
 		"from_xlsx": {
-			"title": "Excel to PDF",
-			"desc": "Convert XLSX, XLS, ODS, and CSV spreadsheets to PDF — locally in your browser.",
-			"invalid_file": "Please select an Excel (XLSX/XLS), ODS, or CSV file.",
-			"aria_upload": "Upload spreadsheet file",
-			"drop_hint": "Drop your spreadsheet here",
-			"drop_formats": "XLSX · XLS · ODS · CSV — or click to browse",
-			"page_orientation": "Page orientation",
-			"landscape": "Landscape",
-			"portrait": "Portrait",
-			"disclaimer": "Column widths are auto-calculated. Wide sheets work best in landscape mode. Text may be truncated if cells contain very long values.",
-			"progress_hint": "Processing spreadsheet locally — nothing is uploaded."
+			"title": "Excel转PDF",
+			"desc": "将XLSX、XLS、ODS和CSV电子表格转换为PDF — 在浏览器中本地处理。",
+			"invalid_file": "请选择Excel（XLSX/XLS）、ODS或CSV文件。",
+			"aria_upload": "上传电子表格文件",
+			"drop_hint": "将电子表格拖放到此处",
+			"drop_formats": "XLSX · XLS · ODS · CSV — 或点击浏览",
+			"page_orientation": "页面方向",
+			"landscape": "横向",
+			"portrait": "纵向",
+			"disclaimer": "列宽自动计算。宽表格在横向模式下效果最佳。",
+			"progress_hint": "正在本地处理电子表格 — 不会上传任何内容。"
 		},
 		"to_docx": {
-			"title": "PDF to Word",
-			"desc": "Extract text from PDF and save as an editable DOCX file — entirely in your browser.",
-			"btn": "Convert to DOCX",
-			"save": "Save DOCX",
-			"expect_title": "What to expect",
-			"expect_text": "Text content is fully preserved",
-			"expect_headings": "Headings and paragraph structure are detected automatically",
-			"expect_tables": "Tables, images, and complex layouts are simplified",
-			"expect_scanned": "Scanned (image-based) PDFs produce empty output — use OCR first",
-			"progress_label": "Extracting text… {progress}%",
-			"progress_hint": "Your file never leaves your device."
+			"title": "PDF转Word",
+			"desc": "从PDF中提取文本并保存为可编辑的DOCX文件 — 完全在浏览器中完成。",
+			"btn": "转换为DOCX",
+			"save": "保存DOCX",
+			"expect_title": "预期效果",
+			"expect_text": "文本内容完全保留",
+			"expect_headings": "标题和段落结构自动检测",
+			"expect_tables": "表格、图片和复杂布局会被简化",
+			"expect_scanned": "扫描的（基于图像的）PDF会产生空输出 — 请先使用OCR",
+			"progress_label": "正在提取文本… {progress}%",
+			"progress_hint": "您的文件永远不会离开您的设备。"
 		}
 	},
 	"dev_tools": {
