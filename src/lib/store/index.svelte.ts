@@ -1,5 +1,5 @@
 import { browser } from "$app/environment";
-import { byNative, converters } from "$lib/converters";
+import { byNative, loadConverters, isAudioFormat, isVideoFormat } from "$lib/converters";
 import { error, log } from "$lib/util/logger";
 import { VertFile } from "$lib/types";
 import { parseBlob, selectCover } from "music-metadata";
@@ -35,16 +35,8 @@ class Files {
 
 	private _addThumbnail = async (file: VertFile) => {
 		this.thumbnailQueue.add(async () => {
-			const isAudio = converters
-				.find((c) => c.name === "ffmpeg")
-				?.supportedFormats.filter((f) => f.isNative)
-				.map((f) => f.name)
-				?.includes(file.from.toLowerCase());
-			const isVideo = converters
-				.find((c) => c.name === "ffmpeg")
-				?.supportedFormats.filter((f) => !f.isNative)
-				.map((f) => f.name)
-				?.includes(file.from.toLowerCase());
+			const isAudio = isAudioFormat(file.from);
+			const isVideo = isVideoFormat(file.from);
 
 			try {
 				if (isAudio) {
@@ -166,7 +158,8 @@ class Files {
 					continue;
 				}
 
-				const converter = converters
+				const convs = await loadConverters();
+				const converter = [...convs]
 					.sort(byNative(format))
 					.find((c) => c.formatStrings().includes(format));
 
@@ -182,10 +175,11 @@ class Files {
 				`extracted ${entries.length} files from zip (converters: ${converterCount}, compatible: ${canConvertAsOne})`,
 			);
 
+			const convs = await loadConverters();
 			if (canConvertAsOne) {
 				// all files use same converter - add zip as a single VertFile file
 				const vf = new VertFile(file, ".zip");
-				vf.converters = converters.filter(
+				vf.converters = convs.filter(
 					(c) => c.name === Array.from(convertersUsed)[0],
 				);
 
@@ -268,7 +262,8 @@ class Files {
 				log(["files"], `no extension found for ${file.name}`);
 				return;
 			}
-			const converter = [...converters]
+			const convs = await loadConverters();
+			const converter = [...convs]
 				.sort(byNative(format))
 				.find((converter) => converter.formatStrings().includes(format));
 			if (!converter) {
@@ -281,7 +276,10 @@ class Files {
 				log(["files"], `no output format found for ${file.name}`);
 				return;
 			}
-			const vf = new VertFile(file, to);
+			const matchingConverters = convs.filter((c) =>
+				c.supportedFormats.some((f) => f.name === format && f.fromSupported),
+			);
+			const vf = new VertFile(file, to, undefined, matchingConverters);
 			this.files.push(vf);
 			this._addThumbnail(vf);
 

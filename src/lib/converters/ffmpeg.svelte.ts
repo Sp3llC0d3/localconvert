@@ -997,27 +997,6 @@ const getCodecs = (
 	}
 };
 
-export const CONVERSION_BITRATES = [
-	"auto",
-	320,
-	256,
-	192,
-	128,
-	96,
-	64,
-	32,
-] as const;
-export type ConversionBitrate = (typeof CONVERSION_BITRATES)[number];
-
-export const SAMPLE_RATES = [
-	"auto",
-	"custom",
-	"48000",
-	"44100",
-	"32000",
-	"22050",
-	"16000",
-	"11025",
-	"8000",
-] as const;
-export type SampleRate = (typeof SAMPLE_RATES)[number];
+// Re-export from standalone module to avoid pulling ffmpeg.svelte into pages that only need constants
+export { CONVERSION_BITRATES, SAMPLE_RATES } from "./audio-constants";
+export type { ConversionBitrate, SampleRate } from "./audio-constants";

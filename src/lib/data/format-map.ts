@@ -1,4 +1,4 @@
-import { converters } from '$lib/converters';
+import { formatRegistry, type FormatDef } from '$lib/converters/format-metadata';
 
 // Video formats that support GPU acceleration via WebCodecs
 const GPU_INPUT_FORMATS = new Set(['.mp4', '.webm', '.mkv', '.ogg', '.ogv', '.m4v', '.mov', '.avi', '.flv', '.3gp', '.ts', '.wmv']);
@@ -34,13 +34,20 @@ function getCategory(converterName: string, isNative: boolean): 'image' | 'audio
 function buildFormatMap() {
 	const map = new Map<string, FormatEntry>();
 
-	for (const converter of converters) {
-		const inputFormats = converter.supportedFormats.filter(f => f.fromSupported);
-		const outputFormats = converter.supportedFormats.filter(f => f.toSupported);
+	// Group format defs by converter name
+	const byConverter = new Map<string, FormatDef[]>();
+	for (const def of formatRegistry) {
+		const list = byConverter.get(def.converter) || [];
+		list.push(def);
+		byConverter.set(def.converter, list);
+	}
 
-		for (const fmt of converter.supportedFormats) {
+	for (const [converterName, defs] of byConverter) {
+		const outputFormats = defs.filter(f => f.toSupported);
+
+		for (const fmt of defs) {
 			const key = fmt.name;
-			const category = getCategory(converter.name, fmt.isNative);
+			const category = getCategory(converterName, fmt.isNative);
 
 			if (!map.has(key)) {
 				map.set(key, {

@@ -9,6 +9,8 @@ FIX_NEW_TOOL_PAGES.md
 CONVERTER_CLEANUP.md
 SEO_PLAN.md
 LocalConvert_SEO_Audit_Plan_v2.md
+PAGESPEED_RESULTS.md
+LAZY_LOAD_PLAN.md
 
 # Preview/concept pages (local dev only)
 src/routes/logo-preview/

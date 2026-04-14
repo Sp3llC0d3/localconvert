@@ -1,4 +1,4 @@
-import { byNative, converters } from "$lib/converters";
+import { byNative } from "$lib/converters/format-metadata";
 import type { Converter } from "$lib/converters/converter.svelte";
 import { m } from "$lib/paraglide/messages";
 import { ToastManager } from "$lib/util/toast.svelte";
@@ -87,7 +87,7 @@ export class VertFile {
 		return false;
 	}
 
-	constructor(file: File, to: string, blobUrl?: string) {
+	constructor(file: File, to: string, blobUrl?: string, converters?: Converter[]) {
 		const ext = file.name.split(".").pop();
 		const newFile = new File(
 			[file.slice(0, file.size, file.type)],
@@ -95,9 +95,7 @@ export class VertFile {
 		);
 		this.file = newFile;
 		this.to = to.startsWith(".") ? to : `.${to}`;
-		this.converters = converters.filter((c) =>
-			c.supportedFormats.some((f) => f.name === this.from && f.fromSupported),
-		);
+		this.converters = converters ?? [];
 		this.convert = this.convert.bind(this);
 		this.download = this.download.bind(this);
 		this.blobUrl = blobUrl;

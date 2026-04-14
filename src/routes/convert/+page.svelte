@@ -5,7 +5,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import ProgressBar from "$lib/components/visual/ProgressBar.svelte";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
-	import { categories, converters } from "$lib/converters";
+	import { categories, loadConverters, isVideoFormat as isVideoFmt } from "$lib/converters";
 	import {
 		effects,
 		files,
@@ -36,15 +36,13 @@
 	import { log } from "$lib/util/logger";
 	import errorConversion from "$lib/assets/errors/error-conversion.png";
 	import { page } from "$app/state";
-	import { CONVERSION_BITRATES } from "$lib/converters/ffmpeg.svelte";
+	import { CONVERSION_BITRATES } from "$lib/converters/audio-constants";
+	import { onMount } from "svelte";
 
-	// LocalConvert: video formats are non-native ffmpeg formats
-	const videoFormatNames = converters
-		.find((c) => c.name === "ffmpeg")
-		?.supportedFormats.filter((f) => !f.isNative)
-		.map((f) => f.name) || [];
+	// Trigger lazy converter loading when the convert page mounts
+	onMount(() => { loadConverters(); });
 
-	const isVideoFormat = (format: string) => videoFormatNames.includes(format);
+	const isVideoFormat = (format: string) => isVideoFmt(format);
 
 	let processedFileIds = $state(new Set<string>());
 
@@ -194,7 +192,7 @@
 	{@const isDocument = currentConverter?.name === "pandoc"}
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
-			{#if !converters.length}
+			{#if !file.converters.length}
 				<Tooltip
 					text={m["convert.tooltips.unknown_file"]()}
 					position="bottom"

@@ -1,4 +1,4 @@
-import type { ConversionBitrate } from "$lib/converters/ffmpeg.svelte";
+import type { ConversionBitrate } from "$lib/converters/audio-constants";
 
 export { default as Appearance } from "./Appearance.svelte";
 export { default as Conversion } from "./Conversion.svelte";
