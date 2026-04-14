@@ -105,6 +105,12 @@
 	});
 
 	const shouldInclude = (format: string, category: string): boolean => {
+		// Don't show the input format as an output option
+		if (from && format === from) return false;
+
+		// Hide .jpeg output — .jpg is the standard alias
+		if (format === ".jpeg") return false;
+
 		// if converting from audio to video, dont show gifs
 		if (
 			categories["audio"]?.formats.includes(from ?? "") &&
