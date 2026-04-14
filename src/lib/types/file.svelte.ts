@@ -72,7 +72,7 @@ export class VertFile {
 				(f) => f.name === this.to,
 			);
 			if (!theirFrom || !theirTo) return false;
-			// LocalConvert: all formats are handled locally, no native check needed
+			if (!theirFrom.fromSupported || !theirTo.toSupported) return false;
 			return true;
 		});
 		return converter;
@@ -96,7 +96,7 @@ export class VertFile {
 		this.file = newFile;
 		this.to = to.startsWith(".") ? to : `.${to}`;
 		this.converters = converters.filter((c) =>
-			c.formatStrings().includes(this.from),
+			c.supportedFormats.some((f) => f.name === this.from && f.fromSupported),
 		);
 		this.convert = this.convert.bind(this);
 		this.download = this.download.bind(this);

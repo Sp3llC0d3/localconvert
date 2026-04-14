@@ -4,7 +4,7 @@ import { FFmpegConverter } from "./ffmpeg.svelte";
 import { PandocConverter } from "./pandoc.svelte";
 import { MagickConverter } from "./magick.svelte";
 import { PdfConverter } from "./pdf.svelte";
-import { DocPdfConverter } from "./doc-pdf.svelte";
+import { DocToPdfConverter, PdfToDocConverter } from "./doc-pdf.svelte";
 
 const getConverters = (): Converter[] => {
 	const converters: Converter[] = [
@@ -12,7 +12,8 @@ const getConverters = (): Converter[] => {
 		new FFmpegConverter(),
 		new PandocConverter(),
 		new PdfConverter(),
-		new DocPdfConverter(),
+		new DocToPdfConverter(),
+		new PdfToDocConverter(),
 	];
 
 	return converters;
@@ -46,28 +47,19 @@ categories.video.formats =
 		.find((c) => c.name === "ffmpeg")
 		?.supportedFormats.filter((f) => f.toSupported && !f.isNative)
 		.map((f) => f.name) || [];
-categories.image.formats =
-	converters
-		.find((c) => c.name === "imagemagick")
-		?.formatStrings((f) => f.toSupported) || [];
-// Add PDF as an image output format (Image → PDF via pdf converter)
-if (!categories.image.formats.includes(".pdf")) {
-	categories.image.formats.push(".pdf");
-}
+// Image: curated common formats only (ImageMagick supports 147+ but most are obscure)
+categories.image.formats = [
+	".jpg", ".png", ".webp", ".avif", ".gif", ".svg", ".jxl",
+	".ico", ".bmp", ".tiff", ".psd", ".eps", ".pdf",
+];
 categories.doc.formats =
 	converters
 		.find((c) => c.name === "pandoc")
 		?.supportedFormats.filter((f) => f.toSupported && f.isNative)
 		.map((f) => f.name) || [];
-// Add PDF as a document output format (Word/Excel → PDF via doc-pdf converter)
+// Add PDF as a document output format (Word/Excel → PDF via doc-to-pdf converter)
 if (!categories.doc.formats.includes(".pdf")) {
 	categories.doc.formats.push(".pdf");
-}
-// Add spreadsheet formats to doc category (Excel → PDF via doc-pdf converter)
-for (const fmt of [".xlsx", ".xls", ".ods"]) {
-	if (!categories.doc.formats.includes(fmt)) {
-		categories.doc.formats.push(fmt);
-	}
 }
 
 export const byNative = (format: string) => {

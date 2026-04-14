@@ -276,7 +276,7 @@ class Files {
 				this.files.push(new VertFile(file, format));
 				return;
 			}
-			const to = converter.formatStrings().find((f) => f !== format);
+			const to = converter.formatStrings((f) => f.toSupported && f.name !== format).at(0);
 			if (!to) {
 				log(["files"], `no output format found for ${file.name}`);
 				return;
