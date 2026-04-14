@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Lepas atau klik untuk {action}",
 			"convert": "menukar",
-			"browse": "atau klik untuk melayari"
+			"browse": "atau klik untuk melayari",
+			"to_convert": "untuk menukar",
+			"drop": "lepaskan",
+			"click_browse": "klik untuk melayari",
+			"add_more": "lepaskan atau klik untuk menambah"
 		},
 		"cards": {
 			"title": "LocalConvert menyokong...",

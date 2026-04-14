@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Jatuhkan atau klik untuk {action}",
 			"convert": "konversi",
-			"browse": "atau klik untuk menelusuri"
+			"browse": "atau klik untuk menelusuri",
+			"to_convert": "untuk mengonversi",
+			"drop": "letakkan",
+			"click_browse": "klik untuk menelusuri",
+			"add_more": "letakkan atau klik untuk menambah"
 		},
 		"cards": {
 			"title": "LocalConvert mendukung...",

@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Arraste ou clique para {action}",
 			"convert": "converter",
-			"browse": "ou clique para procurar"
+			"browse": "ou clique para procurar",
+			"to_convert": "para converter",
+			"drop": "largue",
+			"click_browse": "clique para procurar",
+			"add_more": "largue ou clique para adicionar mais"
 		},
 		"cards": {
 			"title": "O LocalConvert suporta...",

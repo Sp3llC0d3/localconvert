@@ -3,6 +3,7 @@
 	import { onMount } from "svelte";
 	import { effects, files } from "$lib/store/index.svelte";
 	import { goto } from "$app/navigation";
+	import { m } from "$lib/paraglide/messages";
 
 	type Props = {
 		class?: string;
@@ -86,9 +87,9 @@
 		</div>
 
 		<p class="dz-text">
-			<span class="dz-action">to convert</span>
+			<span class="dz-action">{m["upload.uploader.to_convert"]()}</span>
 			<span class="dz-sep">&mdash;</span>
-			<span class="dz-method">drop</span> or <span class="dz-method">click to browse</span>
+			<span class="dz-method">{m["upload.uploader.drop"]()}</span> or <span class="dz-method">{m["upload.uploader.click_browse"]()}</span>
 		</p>
 	{:else}
 		<!-- Compact: horizontal single line -->
@@ -100,7 +101,7 @@
 			<line x1="16" y1="14" x2="9" y2="14" />
 			<polyline points="11,12 9,14 11,16" />
 		</svg>
-		<span class="dz-text-compact">drop or click to add more</span>
+		<span class="dz-text-compact">{m["upload.uploader.add_more"]()}</span>
 	{/if}
 </button>
 

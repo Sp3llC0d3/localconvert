@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Dateien hier ablegen oder klicken zum {action}",
 			"convert": "Konvertieren",
-			"browse": "oder klicken zum Durchsuchen"
+			"browse": "oder klicken zum Durchsuchen",
+			"to_convert": "zum Konvertieren",
+			"drop": "ablegen",
+			"click_browse": "klicken zum Durchsuchen",
+			"add_more": "ablegen oder klicken für mehr"
 		},
 		"cards": {
 			"title": "LocalConvert unterstützt...",

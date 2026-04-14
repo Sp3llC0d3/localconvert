@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Trascini o clicchi per {action}",
 			"convert": "convertire",
-			"browse": "o clicca per sfogliare"
+			"browse": "o clicca per sfogliare",
+			"to_convert": "per convertire",
+			"drop": "trascina",
+			"click_browse": "clicca per sfogliare",
+			"add_more": "trascina o clicca per aggiungere"
 		},
 		"cards": {
 			"title": "LocalConvert supporta...",

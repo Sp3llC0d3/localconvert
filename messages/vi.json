@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Kéo thả hoặc nhấp để {action}",
 			"convert": "chuyển đổi",
-			"browse": "hoặc nhấp để duyệt"
+			"browse": "hoặc nhấp để duyệt",
+			"to_convert": "để chuyển đổi",
+			"drop": "thả file",
+			"click_browse": "nhấp để duyệt",
+			"add_more": "thả hoặc nhấp để thêm"
 		},
 		"cards": {
 			"title": "LocalConvert hỗ trợ...",

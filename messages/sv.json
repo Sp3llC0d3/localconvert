@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Slapp eller klicka for att {action}",
 			"convert": "konvertera",
-			"browse": "eller klicka för att bläddra"
+			"browse": "eller klicka för att bläddra",
+			"to_convert": "för att konvertera",
+			"drop": "släpp",
+			"click_browse": "klicka för att bläddra",
+			"add_more": "släpp eller klicka för att lägga till"
 		},
 		"cards": {
 			"title": "LocalConvert stoder...",

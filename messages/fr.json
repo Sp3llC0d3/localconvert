@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Déposer ou cliquer pour {action}",
 			"convert": "convertir",
-			"browse": "ou cliquez pour parcourir"
+			"browse": "ou cliquez pour parcourir",
+			"to_convert": "pour convertir",
+			"drop": "déposez",
+			"click_browse": "cliquez pour parcourir",
+			"add_more": "déposez ou cliquez pour ajouter"
 		},
 		"cards": {
 			"title": "LocalConvert prend en charge...",

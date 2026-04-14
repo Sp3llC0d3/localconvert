@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Drop or click to {action}",
 			"convert": "convert",
-			"browse": "or click to browse"
+			"browse": "or click to browse",
+			"to_convert": "to convert",
+			"drop": "drop",
+			"click_browse": "click to browse",
+			"add_more": "drop or click to add more"
 		},
 		"cards": {
 			"title": "LocalConvert supports...",

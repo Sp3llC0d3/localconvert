@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "拖放或點擊以{action}",
 			"convert": "轉換",
-			"browse": "或點擊瀏覽"
+			"browse": "或點擊瀏覽",
+			"to_convert": "轉換檔案",
+			"drop": "拖放",
+			"click_browse": "點擊瀏覽",
+			"add_more": "拖放或點擊新增更多"
 		},
 		"cards": {
 			"title": "LocalConvert 支援...",

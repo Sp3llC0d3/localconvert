@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "ドロップまたはクリックして{action}",
 			"convert": "変換",
-			"browse": "またはクリックして参照"
+			"browse": "またはクリックして参照",
+			"to_convert": "変換するには",
+			"drop": "ドロップ",
+			"click_browse": "クリックして参照",
+			"add_more": "ドロップまたはクリックで追加"
 		},
 		"cards": {
 			"title": "LocalConvertが対応している形式",

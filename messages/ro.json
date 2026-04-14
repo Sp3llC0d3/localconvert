@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Trageti sau faceti clic pentru a {action}",
 			"convert": "converti",
-			"browse": "sau faceți clic pentru a răsfoi"
+			"browse": "sau faceți clic pentru a răsfoi",
+			"to_convert": "pentru a converti",
+			"drop": "plasați",
+			"click_browse": "clic pentru a răsfoi",
+			"add_more": "plasați sau clic pentru a adăuga"
 		},
 		"cards": {
 			"title": "LocalConvert accepta...",

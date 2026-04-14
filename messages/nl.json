@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Sleep of klik om te {action}",
 			"convert": "converteren",
-			"browse": "of klik om te bladeren"
+			"browse": "of klik om te bladeren",
+			"to_convert": "om te converteren",
+			"drop": "sleep",
+			"click_browse": "klik om te bladeren",
+			"add_more": "sleep of klik om meer toe te voegen"
 		},
 		"cards": {
 			"title": "LocalConvert ondersteunt...",

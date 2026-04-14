@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "{action} için sürükleyip bırakın veya dosya seçin",
 			"convert": "dönüştürmek",
-			"browse": "veya göz atmak için tıklayın"
+			"browse": "veya göz atmak için tıklayın",
+			"to_convert": "dönüştürmek için",
+			"drop": "bırakın",
+			"click_browse": "göz atmak için tıklayın",
+			"add_more": "daha fazla eklemek için bırakın veya tıklayın"
 		},
 		"cards": {
 			"title": "LocalConvert şunları destekler...",

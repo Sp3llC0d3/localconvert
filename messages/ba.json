@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Prevucite ili kliknite da {action}",
 			"convert": "konvertujete",
-			"browse": "ili kliknite za pregledanje"
+			"browse": "ili kliknite za pregledanje",
+			"to_convert": "za pretvaranje",
+			"drop": "prevucite",
+			"click_browse": "kliknite za pregled",
+			"add_more": "prevucite ili kliknite za dodavanje"
 		},
 		"cards": {
 			"title": "LocalConvert podržava...",

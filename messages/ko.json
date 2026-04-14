@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "드래그하거나 클릭해서 {action}",
 			"convert": "변환하기",
-			"browse": "또는 클릭하여 찾아보기"
+			"browse": "또는 클릭하여 찾아보기",
+			"to_convert": "변환하려면",
+			"drop": "드롭",
+			"click_browse": "클릭하여 찾아보기",
+			"add_more": "드롭 또는 클릭하여 추가"
 		},
 		"cards": {
 			"title": "LocalConvert가 지원하는 포맷",

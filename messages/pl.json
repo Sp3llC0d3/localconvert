@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "Upuść lub kliknij, aby {action}",
 			"convert": "konwertować",
-			"browse": "lub kliknij, aby przeglądać"
+			"browse": "lub kliknij, aby przeglądać",
+			"to_convert": "aby przekonwertować",
+			"drop": "upuść",
+			"click_browse": "kliknij, aby przeglądać",
+			"add_more": "upuść lub kliknij, aby dodać więcej"
 		},
 		"cards": {
 			"title": "LocalConvert obsługuje...",

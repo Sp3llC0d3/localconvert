@@ -27,7 +27,11 @@
 		"uploader": {
 			"text": "اسحب أو انقر للـ{action}",
 			"convert": "تحويل",
-			"browse": "أو انقر للتصفح"
+			"browse": "أو انقر للتصفح",
+			"to_convert": "للتحويل",
+			"drop": "اسحب",
+			"click_browse": "انقر للاستعراض",
+			"add_more": "اسحب أو انقر لإضافة المزيد"
 		},
 		"cards": {
 			"title": "⁧يدعم ⁦LocalConvert⁩…⁩",
