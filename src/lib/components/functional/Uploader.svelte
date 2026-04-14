@@ -70,7 +70,7 @@
 	bind:this={uploaderButton}
 	class={clsx(
 		`hover:scale-105 active:scale-100 ${$effects ? "" : "!scale-100"} duration-200 ${classList}`,
-		"bg-panel shadow-panel border rounded-2.5xl p-4 flex items-center justify-center overflow-hidden transition-colors",
+		"uploader-btn bg-panel shadow-panel border rounded-2.5xl flex items-center justify-center overflow-hidden transition-colors",
 		isDragOver ? "border-accent scale-105 bg-panel-highlight" : "border-separator",
 	)}
 	aria-label={m["upload.uploader.text"]({ action: m["upload.uploader.convert"]() })}
@@ -78,11 +78,27 @@
 	<img
 		src={dropzoneLight}
 		alt=""
-		class="w-full h-full object-contain pointer-events-none dynadark:hidden"
+		width="398"
+		height="249"
+		class="uploader-img pointer-events-none dynadark:hidden"
 	/>
 	<img
 		src={dropzoneDark}
 		alt=""
-		class="w-full h-full object-contain pointer-events-none hidden dynadark:block"
+		width="398"
+		height="249"
+		class="uploader-img pointer-events-none hidden dynadark:block"
 	/>
 </button>
+
+<style>
+	.uploader-btn {
+		padding: 0.75rem;
+	}
+	.uploader-img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: contain;
+	}
+</style>
