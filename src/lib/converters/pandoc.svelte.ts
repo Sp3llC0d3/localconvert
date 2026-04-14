@@ -13,39 +13,28 @@ export class PandocConverter extends Converter {
 
 	private activeConversions = new Map<string, Worker>();
 
-	private wasmLoaded = false;
-
 	constructor() {
 		super();
 		log(["converters", this.name], `created converter`);
-	}
-
-	private async ensureWasm(): Promise<void> {
-		if (this.wasmLoaded) return;
 		if (!browser) return;
-		try {
-			this.status = "downloading";
-			this.wasm = await fetch("https://pub-a63702e42341425494caded68a9378bd.r2.dev/pandoc.wasm").then((r) =>
-				r.arrayBuffer(),
-			);
-			this.wasmLoaded = true;
-			this.status = "ready";
-		} catch (err) {
-			this.status = "error";
-			error(
-				["converters", this.name],
-				`Failed to load Pandoc worker: ${err}`,
-			);
-			ToastManager.add({
-				type: "error",
-				message: m["workers.errors.pandoc"](),
-			});
-			throw err;
-		}
+		(async () => {
+			try {
+				this.status = "downloading";
+				this.wasm = await fetch("https://pub-a63702e42341425494caded68a9378bd.r2.dev/pandoc.wasm").then((r) =>
+					r.arrayBuffer(),
+				);
+				this.status = "ready";
+			} catch (err) {
+				this.status = "error";
+				error(
+					["converters", this.name],
+					`Failed to load Pandoc worker: ${err}`,
+				);
+			}
+		})();
 	}
 
 	public async convert(file: VertFile, to: string): Promise<VertFile> {
-		await this.ensureWasm();
 		const worker = new Worker(PandocWorker, {
 			type: "module",
 		});
