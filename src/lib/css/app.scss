@@ -61,7 +61,7 @@
 
 	/* ── Foregrounds ── */
 	--fg: hsl(220, 18%, 8%);
-	--fg-muted: hsla(220, 10%, 15%, 0.55);
+	--fg-muted: hsla(220, 10%, 15%, 0.65);
 	--fg-on-accent: hsl(0, 0%, 100%);
 	--fg-on-badge: hsl(162, 72%, 18%);
 	--fg-accent: var(--accent-base-muted);
@@ -154,7 +154,7 @@
 
 	/* ── Foregrounds ── */
 	--fg: hsl(32, 12%, 94%);
-	--fg-muted: hsla(32, 8%, 90%, 0.50);
+	--fg-muted: hsla(32, 8%, 90%, 0.62);
 	--fg-on-accent: hsl(220, 28%, 7%);
 	--fg-on-badge: hsl(162, 30%, 88%);
 	--fg-accent: var(--accent);

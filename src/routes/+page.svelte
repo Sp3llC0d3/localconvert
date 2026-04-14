@@ -411,7 +411,6 @@
 	text-transform: uppercase;
 	color: var(--fg-accent, var(--accent));
 	margin-bottom: 0.75rem;
-	opacity: 0.85;
 }
 
 .section-headline {
