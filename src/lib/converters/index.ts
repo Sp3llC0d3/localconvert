@@ -4,6 +4,7 @@ import { FFmpegConverter } from "./ffmpeg.svelte";
 import { PandocConverter } from "./pandoc.svelte";
 import { MagickConverter } from "./magick.svelte";
 import { PdfConverter } from "./pdf.svelte";
+import { DocPdfConverter } from "./doc-pdf.svelte";
 
 const getConverters = (): Converter[] => {
 	const converters: Converter[] = [
@@ -11,6 +12,7 @@ const getConverters = (): Converter[] => {
 		new FFmpegConverter(),
 		new PandocConverter(),
 		new PdfConverter(),
+		new DocPdfConverter(),
 	];
 
 	return converters;
@@ -57,6 +59,16 @@ categories.doc.formats =
 		.find((c) => c.name === "pandoc")
 		?.supportedFormats.filter((f) => f.toSupported && f.isNative)
 		.map((f) => f.name) || [];
+// Add PDF as a document output format (Word/Excel → PDF via doc-pdf converter)
+if (!categories.doc.formats.includes(".pdf")) {
+	categories.doc.formats.push(".pdf");
+}
+// Add spreadsheet formats to doc category (Excel → PDF via doc-pdf converter)
+for (const fmt of [".xlsx", ".xls", ".ods"]) {
+	if (!categories.doc.formats.includes(fmt)) {
+		categories.doc.formats.push(fmt);
+	}
+}
 
 export const byNative = (format: string) => {
 	return (a: Converter, b: Converter) => {
