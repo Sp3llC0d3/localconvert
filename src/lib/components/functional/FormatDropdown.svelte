@@ -430,8 +430,7 @@
 				},
 			)}
 		>
-			<!-- search box -->
-			<div class="p-3 w-full">
+			{#snippet searchBox()}
 				<div class="relative">
 					<input
 						type="text"
@@ -461,45 +460,68 @@
 						</span>
 					{/if}
 				</div>
-			</div>
-			<!-- available categories -->
-			<div class="flex items-center justify-between">
-				{#each filteredData.categories as category}
-					<button
-						class="flex-grow text-lg hover:text-muted/20 border-b-[1px] pb-2 capitalize
-                        {currentCategory === category
-							? 'text-accent border-b-accent'
-							: 'border-b-separator text-muted'}"
-						onclick={() => selectCategory(category)}
-					>
-						{(m as any)[`convert.dropdown.${category}`]?.()}
-					</button>
-				{/each}
-			</div>
-			<!-- available formats -->
-			<div class="max-h-80 overflow-y-auto grid grid-cols-3 gap-2 p-2">
-				{#if filteredData.formats.length > 0}
-					{#each filteredData.formats as format}
+			{/snippet}
+
+			{#snippet categoryTabs()}
+				<div class="flex items-center justify-between">
+					{#each filteredData.categories as category}
 						<button
-							class="w-full p-2 text-center rounded-xl
-							{format === selected
-								? 'bg-accent text-black'
-								: format === from
-									? 'bg-separator'
-									: 'hover:bg-panel'}"
-							onclick={() => selectOption(format)}
+							class="flex-grow text-lg hover:text-muted/20 border-b-[1px] pb-2 capitalize
+							{currentCategory === category
+								? 'text-accent border-b-accent'
+								: 'border-b-separator text-muted'}"
+							onclick={() => selectCategory(category)}
 						>
-							{format}
+							{(m as any)[`convert.dropdown.${category}`]?.()}
 						</button>
 					{/each}
-				{:else}
-					<div class="col-span-3 text-center p-4 text-muted">
-						{searchQuery
-							? m["convert.dropdown.no_results"]()
-							: m["convert.dropdown.no_formats"]()}
-					</div>
-				{/if}
-			</div>
+				</div>
+			{/snippet}
+
+			{#snippet formatGrid()}
+				<div class="{$isMobile ? 'max-h-[10rem]' : 'max-h-80'} overflow-y-auto grid grid-cols-3 gap-2 p-2">
+					{#if filteredData.formats.length > 0}
+						{#each filteredData.formats as format}
+							<button
+								class="w-full p-2 text-center rounded-xl
+								{format === selected
+									? 'bg-accent text-black'
+									: format === from
+										? 'bg-separator'
+										: 'hover:bg-panel'}"
+								onclick={() => selectOption(format)}
+							>
+								{format}
+							</button>
+						{/each}
+					{:else}
+						<div class="col-span-3 text-center p-4 text-muted">
+							{searchQuery
+								? m["convert.dropdown.no_results"]()
+								: m["convert.dropdown.no_formats"]()}
+						</div>
+					{/if}
+				</div>
+			{/snippet}
+
+			{#if $isMobile}
+				<!-- Mobile: drag handle → categories → formats (3 rows) → search -->
+				<div class="flex justify-center pt-2.5 pb-1">
+					<div class="w-8 h-1 rounded-full" style="background: var(--bg-separator);"></div>
+				</div>
+				{@render categoryTabs()}
+				{@render formatGrid()}
+				<div class="p-3 w-full border-t" style="border-color: var(--bg-separator);">
+					{@render searchBox()}
+				</div>
+			{:else}
+				<!-- Desktop: search → categories → formats -->
+				<div class="p-3 w-full">
+					{@render searchBox()}
+				</div>
+				{@render categoryTabs()}
+				{@render formatGrid()}
+			{/if}
 			<!-- format options -->
 			<!-- TODO: extract zip, image sequence & fps -->
 			{#if file?.name.toLowerCase().endsWith(".zip")}
