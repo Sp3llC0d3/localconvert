@@ -120,6 +120,9 @@
 			{"@type": "HowToStep", "text": "Save the watermarked image"}
 		]
 	})}</script>`}
+	<meta property="og:title" content="Watermark Image — LocalConvert" />
+	<meta property="og:description" content="Add text watermarks to images. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/watermark/" />
 </svelte:head>
 
 <div class="tool-page">

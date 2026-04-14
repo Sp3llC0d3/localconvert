@@ -53,6 +53,10 @@
 	<title>PDF to Text — LocalConvert</title>
 	<meta name="description" content="Extract text from any PDF file. Copy or download as .txt. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-text/" />
+	<meta property="og:title" content="PDF to Text — LocalConvert" />
+	<meta property="og:description" content="Extract text from any PDF file. Copy or download as .txt. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-text/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Extract Text from a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Click extract to pull all text content"},{"@type":"HowToStep","text":"Copy the text or save as .txt file"},{"@type":"HowToStep","text":"Use the extracted text anywhere"}]})}</script>`}
 </svelte:head>
 
 <div class="text-page">

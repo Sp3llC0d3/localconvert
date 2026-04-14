@@ -53,6 +53,10 @@
 	<title>Merge PDF — LocalConvert</title>
 	<meta name="description" content="Combine multiple PDF files into one. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/merge/" />
+	<meta property="og:title" content="Merge PDF — LocalConvert" />
+	<meta property="og:description" content="Combine multiple PDF files into one. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/merge/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Merge PDF Files","step":[{"@type":"HowToStep","text":"Select multiple PDF files"},{"@type":"HowToStep","text":"Arrange them in the desired order"},{"@type":"HowToStep","text":"Click merge to combine into one PDF"},{"@type":"HowToStep","text":"Save the merged PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

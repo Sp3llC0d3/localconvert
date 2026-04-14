@@ -1,7 +1,7 @@
 {
 	"name": "LocalConvert",
 	"short_name": "LocalConvert",
-	"description": "36 tools for PDFs, images, and code — all private, all in your browser.",
+	"description": "39 tools for PDFs, images, and code — all private, all in your browser.",
 	"start_url": "/",
 	"id": "/",
 	"display": "standalone",

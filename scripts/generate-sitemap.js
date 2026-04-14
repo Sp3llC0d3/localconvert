@@ -77,9 +77,12 @@ const imageToolPaths = [
 // ── Static pages ──────────────────────────────────────────────────────────
 const staticPages = ['/', '/convert/', '/settings/', '/about/', '/privacy/', '/formats/'];
 
+const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+
 function urlEntry(path, priority, changefreq) {
 	return `  <url>
     <loc>${BASE}${path}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;

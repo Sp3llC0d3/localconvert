@@ -73,6 +73,9 @@
 	<title>QR Code Generator — LocalConvert</title>
 	<meta name="description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/qr/" />
+	<meta property="og:title" content="QR Code Generator — LocalConvert" />
+	<meta property="og:description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/qr/" />
 </svelte:head>
 
 <div class="qr-page">

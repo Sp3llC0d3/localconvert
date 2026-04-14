@@ -59,6 +59,10 @@
 	<title>Password Protect PDF — LocalConvert</title>
 	<meta name="description" content="Add password protection to any PDF. Set permissions for printing, copying, and editing. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/password/" />
+	<meta property="og:title" content="Password Protect PDF — LocalConvert" />
+	<meta property="og:description" content="Add password protection to any PDF. Set permissions for printing, copying, and editing. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/password/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Password Protect a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Enter a password for encryption"},{"@type":"HowToStep","text":"Choose permission settings"},{"@type":"HowToStep","text":"Save the protected PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pw-page">

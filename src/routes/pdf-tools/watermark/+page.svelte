@@ -205,6 +205,10 @@
 	<title>Add Watermark to PDF — LocalConvert</title>
 	<meta name="description" content="Stamp custom text on every page of a PDF. Supports all languages. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/watermark/" />
+	<meta property="og:title" content="Add Watermark to PDF — LocalConvert" />
+	<meta property="og:description" content="Stamp custom text on every page of a PDF. Supports all languages. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/watermark/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Add a Watermark to a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Enter watermark text and adjust settings"},{"@type":"HowToStep","text":"Preview the watermark placement"},{"@type":"HowToStep","text":"Save the watermarked PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="wm-page">

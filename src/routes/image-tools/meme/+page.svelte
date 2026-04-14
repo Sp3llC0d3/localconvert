@@ -111,6 +111,9 @@
 			{"@type": "HowToStep", "text": "Preview the meme live and save it"}
 		]
 	})}</script>`}
+	<meta property="og:title" content="Meme Generator — LocalConvert" />
+	<meta property="og:description" content="Create memes with custom top and bottom text. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/meme/" />
 </svelte:head>
 
 <div class="tool-page">

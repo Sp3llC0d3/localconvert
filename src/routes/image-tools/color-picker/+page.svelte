@@ -109,6 +109,9 @@
 	<title>Color Picker — LocalConvert</title>
 	<meta name="description" content="Pick colors from any image. Get hex, RGB, and HSL values. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/color-picker/" />
+	<meta property="og:title" content="Color Picker — LocalConvert" />
+	<meta property="og:description" content="Pick colors from any image. Get hex, RGB, and HSL values. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/color-picker/" />
 </svelte:head>
 
 <div class="picker-page">

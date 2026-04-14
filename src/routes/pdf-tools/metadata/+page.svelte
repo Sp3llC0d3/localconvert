@@ -77,6 +77,10 @@
 	<title>Edit PDF Metadata — LocalConvert</title>
 	<meta name="description" content="View and edit PDF metadata — title, author, subject, keywords. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/metadata/" />
+	<meta property="og:title" content="Edit PDF Metadata — LocalConvert" />
+	<meta property="og:description" content="View and edit PDF metadata — title, author, subject, keywords. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/metadata/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Edit PDF Metadata","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Edit the title, author, and other properties"},{"@type":"HowToStep","text":"Review the changes"},{"@type":"HowToStep","text":"Save the updated PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

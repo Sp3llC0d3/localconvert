@@ -73,6 +73,9 @@
 	<title>Video to GIF — LocalConvert</title>
 	<meta name="description" content="Convert any video to animated GIF. Adjust FPS, size, and duration. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/video-to-gif/" />
+	<meta property="og:title" content="Video to GIF — LocalConvert" />
+	<meta property="og:description" content="Convert any video to animated GIF. Adjust FPS, size, and duration. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/video-to-gif/" />
 </svelte:head>
 
 <div class="gif-page">

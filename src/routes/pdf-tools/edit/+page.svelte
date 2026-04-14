@@ -254,6 +254,10 @@
 	<title>Edit PDF — LocalConvert</title>
 	<meta name="description" content="Click anywhere on a PDF page to add text. Drag to reposition. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/edit/" />
+	<meta property="og:title" content="Edit PDF — LocalConvert" />
+	<meta property="og:description" content="Click anywhere on a PDF page to add text. Drag to reposition. Free, private, no uploads." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/edit/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Edit a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Click on the page to add text"},{"@type":"HowToStep","text":"Adjust font size, color, and position"},{"@type":"HowToStep","text":"Save the edited PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="edit-page">

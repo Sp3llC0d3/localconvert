@@ -84,6 +84,10 @@
 	<title>Split PDF — LocalConvert</title>
 	<meta name="description" content="Split a PDF into individual pages or extract a page range. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/split/" />
+	<meta property="og:title" content="Split PDF — LocalConvert" />
+	<meta property="og:description" content="Split a PDF into individual pages or extract a page range. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/split/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Split a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose which pages to extract"},{"@type":"HowToStep","text":"Click split to separate pages"},{"@type":"HowToStep","text":"Save the split PDFs"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

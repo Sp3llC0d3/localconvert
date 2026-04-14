@@ -41,6 +41,10 @@
 	<title>Unlock PDF — LocalConvert</title>
 	<meta name="description" content="Remove password protection from PDF files. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/unlock/" />
+	<meta property="og:title" content="Unlock PDF — LocalConvert" />
+	<meta property="og:description" content="Remove password protection from PDF files. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/unlock/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Unlock a PDF","step":[{"@type":"HowToStep","text":"Select a password-protected PDF"},{"@type":"HowToStep","text":"Enter the current password"},{"@type":"HowToStep","text":"Click unlock to remove protection"},{"@type":"HowToStep","text":"Save the unlocked PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="unlock-page">

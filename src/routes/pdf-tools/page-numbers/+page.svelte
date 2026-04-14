@@ -201,6 +201,10 @@
 	<title>Add Page Numbers to PDF — LocalConvert</title>
 	<meta name="description" content="Add page numbers to any PDF file. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/page-numbers/" />
+	<meta property="og:title" content="Add Page Numbers to PDF — LocalConvert" />
+	<meta property="og:description" content="Add page numbers to any PDF file. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/page-numbers/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Add Page Numbers to a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose numbering position and format"},{"@type":"HowToStep","text":"Preview the page numbers"},{"@type":"HowToStep","text":"Save the numbered PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pn-page">

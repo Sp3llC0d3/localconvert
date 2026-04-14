@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<title>Privacy Policy — LocalConvert</title>
+	<meta name="description" content="LocalConvert is 100% private. Your files never leave your device — all processing happens in your browser. No uploads, no tracking, no accounts." />
 	<link rel="canonical" href="https://localconvert.app/privacy/" />
 </svelte:head>
 

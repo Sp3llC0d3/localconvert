@@ -21,6 +21,9 @@
 	<title>Word Counter — LocalConvert</title>
 	<meta name="description" content="Count words, characters, sentences, and estimate reading time. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/word-count/" />
+	<meta property="og:title" content="Word Counter — LocalConvert" />
+	<meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/word-count/" />
 </svelte:head>
 
 <div class="wc-page">

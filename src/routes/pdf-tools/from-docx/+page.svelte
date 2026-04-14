@@ -51,6 +51,10 @@
 	<title>Word to PDF — LocalConvert</title>
 	<meta name="description" content="Convert Word documents (DOCX, DOC) to PDF. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-docx/" />
+	<meta property="og:title" content="Word to PDF — LocalConvert" />
+	<meta property="og:description" content="Convert Word documents (DOCX, DOC) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/from-docx/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Word to PDF","step":[{"@type":"HowToStep","text":"Select a DOCX or DOC file"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Review the conversion result"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
 </svelte:head>
 
 <div class="docx-page">

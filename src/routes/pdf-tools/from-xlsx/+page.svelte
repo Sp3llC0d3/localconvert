@@ -53,6 +53,10 @@
 	<title>Excel to PDF — LocalConvert</title>
 	<meta name="description" content="Convert Excel spreadsheets (XLSX, XLS, ODS, CSV) to PDF. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-xlsx/" />
+	<meta property="og:title" content="Excel to PDF — LocalConvert" />
+	<meta property="og:description" content="Convert Excel spreadsheets (XLSX, XLS, ODS, CSV) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/from-xlsx/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Excel to PDF","step":[{"@type":"HowToStep","text":"Select an XLSX, XLS, ODS, or CSV file"},{"@type":"HowToStep","text":"Choose page orientation (landscape or portrait)"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
 </svelte:head>
 
 <div class="xlsx-page">

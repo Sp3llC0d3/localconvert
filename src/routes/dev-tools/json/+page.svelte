@@ -57,6 +57,9 @@
 	<title>JSON Formatter — LocalConvert</title>
 	<meta name="description" content="Format, minify, and validate JSON online. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/json/" />
+	<meta property="og:title" content="JSON Formatter — LocalConvert" />
+	<meta property="og:description" content="Format, minify, and validate JSON online. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/json/" />
 </svelte:head>
 
 <div class="json-page">

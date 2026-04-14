@@ -81,6 +81,10 @@
 	<title>Organize PDF Pages — LocalConvert</title>
 	<meta name="description" content="Drag and drop to reorder PDF pages. Delete unwanted pages. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/organize/" />
+	<meta property="og:title" content="Organize PDF Pages — LocalConvert" />
+	<meta property="og:description" content="Drag and drop to reorder PDF pages. Delete unwanted pages. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/organize/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Organize PDF Pages","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Drag and drop pages to reorder them"},{"@type":"HowToStep","text":"Delete any unwanted pages"},{"@type":"HowToStep","text":"Save the organized PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

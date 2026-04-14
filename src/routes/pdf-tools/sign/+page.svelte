@@ -288,6 +288,10 @@
 	<title>Sign PDF — LocalConvert</title>
 	<meta name="description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/sign/" />
+	<meta property="og:title" content="Sign PDF — LocalConvert" />
+	<meta property="og:description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/sign/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Sign a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Draw, type, or upload your signature"},{"@type":"HowToStep","text":"Place the signature on the desired page"},{"@type":"HowToStep","text":"Save the signed PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="sign-page">

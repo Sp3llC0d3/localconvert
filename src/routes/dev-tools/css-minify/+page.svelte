@@ -45,6 +45,9 @@
 	<title>CSS Minifier — LocalConvert</title>
 	<meta name="description" content="Minify CSS by removing comments and whitespace. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/css-minify/" />
+	<meta property="og:title" content="CSS Minifier — LocalConvert" />
+	<meta property="og:description" content="Minify CSS by removing comments and whitespace. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/css-minify/" />
 </svelte:head>
 
 <div class="css-page">

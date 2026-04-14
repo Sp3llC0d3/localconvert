@@ -62,6 +62,10 @@
 	<title>Images to PDF — LocalConvert</title>
 	<meta name="description" content="Convert JPG, PNG, or WEBP images into a single PDF file. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/images-to-pdf/" />
+	<meta property="og:title" content="Images to PDF — LocalConvert" />
+	<meta property="og:description" content="Convert JPG, PNG, or WEBP images into a single PDF file. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/images-to-pdf/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Images to PDF","step":[{"@type":"HowToStep","text":"Select one or more image files (JPG, PNG, WEBP)"},{"@type":"HowToStep","text":"Arrange images in the desired order"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

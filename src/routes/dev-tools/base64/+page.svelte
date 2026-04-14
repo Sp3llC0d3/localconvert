@@ -68,6 +68,9 @@
 	<title>Base64 Encode / Decode — LocalConvert</title>
 	<meta name="description" content="Encode and decode Base64 strings. Convert files to Base64. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/base64/" />
+	<meta property="og:title" content="Base64 Encode / Decode — LocalConvert" />
+	<meta property="og:description" content="Encode and decode Base64 strings. Convert files to Base64. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/base64/" />
 </svelte:head>
 
 <div class="b64-page">

@@ -87,6 +87,10 @@
 	<title>Compress PDF — LocalConvert</title>
 	<meta name="description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/compress/" />
+	<meta property="og:title" content="Compress PDF — LocalConvert" />
+	<meta property="og:description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/compress/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Compress a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the compression quality level"},{"@type":"HowToStep","text":"Click compress to reduce file size"},{"@type":"HowToStep","text":"Save the compressed PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

@@ -42,6 +42,10 @@
 	<title>PDF to PowerPoint — LocalConvert</title>
 	<meta name="description" content="Convert PDF to PowerPoint presentation. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-ppt/" />
+	<meta property="og:title" content="PDF to PowerPoint — LocalConvert" />
+	<meta property="og:description" content="Convert PDF to PowerPoint presentation. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-ppt/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to PowerPoint","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Each page becomes a presentation slide"},{"@type":"HowToStep","text":"Click convert to create the PPTX"},{"@type":"HowToStep","text":"Save the PowerPoint file"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

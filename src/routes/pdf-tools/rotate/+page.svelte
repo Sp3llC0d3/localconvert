@@ -54,6 +54,10 @@
 	<title>Rotate PDF Pages — LocalConvert</title>
 	<meta name="description" content="Rotate individual or all pages in a PDF by 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/rotate/" />
+	<meta property="og:title" content="Rotate PDF Pages — LocalConvert" />
+	<meta property="og:description" content="Rotate individual or all pages in a PDF by 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/rotate/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Rotate PDF Pages","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the rotation angle (90°, 180°, 270°)"},{"@type":"HowToStep","text":"Apply rotation to selected or all pages"},{"@type":"HowToStep","text":"Save the rotated PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

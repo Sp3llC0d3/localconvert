@@ -82,6 +82,10 @@
 	<title>PDF to Grayscale — LocalConvert</title>
 	<meta name="description" content="Convert PDF pages to black and white. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/grayscale/" />
+	<meta property="og:title" content="PDF to Grayscale — LocalConvert" />
+	<meta property="og:description" content="Convert PDF pages to black and white. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/grayscale/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to Grayscale","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Adjust the quality setting"},{"@type":"HowToStep","text":"Click convert to make it black and white"},{"@type":"HowToStep","text":"Save the grayscale PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="gray-page">

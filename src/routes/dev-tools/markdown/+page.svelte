@@ -30,6 +30,9 @@
 	<title>Markdown Preview — LocalConvert</title>
 	<meta name="description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/markdown/" />
+	<meta property="og:title" content="Markdown Preview — LocalConvert" />
+	<meta property="og:description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/markdown/" />
 </svelte:head>
 
 <div class="md-page">

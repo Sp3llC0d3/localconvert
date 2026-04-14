@@ -70,6 +70,9 @@
 	<title>Hash Generator — LocalConvert</title>
 	<meta name="description" content="Generate SHA-256, SHA-1, SHA-512 hashes for text or files. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/hash/" />
+	<meta property="og:title" content="Hash Generator — LocalConvert" />
+	<meta property="og:description" content="Generate SHA-256, SHA-1, SHA-512 hashes for text or files. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/hash/" />
 </svelte:head>
 
 <div class="hash-page">

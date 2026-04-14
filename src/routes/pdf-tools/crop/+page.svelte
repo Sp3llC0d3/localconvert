@@ -243,6 +243,10 @@
 	<title>Crop PDF — LocalConvert</title>
 	<meta name="description" content="Crop PDF margins with draggable handles. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/crop/" />
+	<meta property="og:title" content="Crop PDF — LocalConvert" />
+	<meta property="og:description" content="Crop PDF margins with draggable handles. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/crop/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Crop a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Draw the crop area on the page preview"},{"@type":"HowToStep","text":"Apply the crop to selected or all pages"},{"@type":"HowToStep","text":"Save the cropped PDF"}]})}</script>`}
 </svelte:head>
 
 <div class="crop-page">

@@ -272,6 +272,9 @@
 			{"@type": "HowToStep", "text": "Save the cropped image"}
 		]
 	})}</script>`}
+	<meta property="og:title" content="Crop Image — LocalConvert" />
+	<meta property="og:description" content="Crop images with interactive handles. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/crop/" />
 </svelte:head>
 
 <div class="tool-page">

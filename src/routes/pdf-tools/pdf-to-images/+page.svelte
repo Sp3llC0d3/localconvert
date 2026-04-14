@@ -54,6 +54,10 @@
 	<title>PDF to Images — LocalConvert</title>
 	<meta name="description" content="Export each PDF page as a JPG or PNG image. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-images/" />
+	<meta property="og:title" content="PDF to Images — LocalConvert" />
+	<meta property="og:description" content="Export each PDF page as a JPG or PNG image. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-images/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to Images","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the output format (JPG or PNG)"},{"@type":"HowToStep","text":"Set the image quality"},{"@type":"HowToStep","text":"Save the extracted images"}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

@@ -34,6 +34,9 @@
 	<title>URL Encode / Decode — LocalConvert</title>
 	<meta name="description" content="Encode and decode URLs. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/url-encode/" />
+	<meta property="og:title" content="URL Encode / Decode — LocalConvert" />
+	<meta property="og:description" content="Encode and decode URLs. Free, private, runs in your browser." />
+	<meta property="og:url" content="https://localconvert.app/dev-tools/url-encode/" />
 </svelte:head>
 
 <div class="url-page">

@@ -89,6 +89,9 @@
 			{"@type": "HowToStep", "text": "Save the rotated image"}
 		]
 	})}</script>`}
+	<meta property="og:title" content="Rotate Image — LocalConvert" />
+	<meta property="og:description" content="Rotate images 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:url" content="https://localconvert.app/image-tools/rotate/" />
 </svelte:head>
 
 <div class="tool-page">
