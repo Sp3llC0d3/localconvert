@@ -2,13 +2,10 @@ import { browser } from "$app/environment";
 import { byNative, loadConverters, isAudioFormat, isVideoFormat } from "$lib/converters";
 import { error, log } from "$lib/util/logger";
 import { VertFile } from "$lib/types";
-import { parseBlob, selectCover } from "music-metadata";
 import { writable } from "svelte/store";
 import { addDialog } from "./DialogProvider";
-import PQueue from "p-queue";
 import { getLocale, setLocale } from "$lib/paraglide/runtime";
 import { m } from "$lib/paraglide/messages";
-import sanitizeHtml from "sanitize-html";
 import { ToastManager } from "$lib/util/toast.svelte";
 import { GB } from "$lib/util/consts";
 
@@ -29,18 +26,28 @@ class Files {
 		this.files.length === 0 ? false : this.files.every((f) => f.result),
 	);
 
-	private thumbnailQueue = new PQueue({
-		concurrency: browser ? navigator.hardwareConcurrency || 4 : 4,
-	});
+	private thumbnailQueue: { add: (fn: () => Promise<void>) => void } | null = null;
+
+	private async _ensureThumbnailQueue() {
+		if (!this.thumbnailQueue) {
+			const { default: PQueue } = await import("p-queue");
+			this.thumbnailQueue = new PQueue({
+				concurrency: browser ? navigator.hardwareConcurrency || 4 : 4,
+			});
+		}
+		return this.thumbnailQueue;
+	}
 
 	private _addThumbnail = async (file: VertFile) => {
-		this.thumbnailQueue.add(async () => {
+		const queue = await this._ensureThumbnailQueue();
+		queue.add(async () => {
 			const isAudio = isAudioFormat(file.from);
 			const isVideo = isVideoFormat(file.from);
 
 			try {
 				if (isAudio) {
 					// try to get the thumbnail from the audio via music-metadata
+					const { parseBlob, selectCover } = await import("music-metadata");
 					const { common } = await parseBlob(file.file, {
 						skipPostHeaders: true,
 					});
@@ -317,6 +324,7 @@ class Files {
 	}
 
 	public async convertAll() {
+		const { default: PQueue } = await import("p-queue");
 		const promiseFns = this.files.map((f) => () => f.convert());
 		const coreCount = navigator.hardwareConcurrency || 4;
 		const queue = new PQueue({ concurrency: coreCount });
@@ -478,19 +486,7 @@ export function link(
 	return result;
 }
 
-export function sanitize(
-	html: string,
-	allowedTags: string[] = ["a", "b", "code", "br"],
-): string {
-	return sanitizeHtml(html, {
-		allowedTags: allowedTags,
-		allowedAttributes: {
-			a: ["href", "target", "rel", "class"],
-			"*": ["class"],
-		},
-		allowedSchemes: ["http", "https", "mailto", "blob"],
-	});
-}
+// sanitize() moved to $lib/util/sanitize.ts for lazy loading
 
 /**
  * Binary search for a max value without knowing the exact value, only that it

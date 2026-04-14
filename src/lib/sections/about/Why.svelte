@@ -2,7 +2,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { MessageCircleQuestionIcon } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { sanitize } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/util/sanitize";
 </script>
 
 <Panel class="flex flex-col gap-3 p-6">

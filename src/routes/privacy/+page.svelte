@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages";
-	import { link, sanitize } from "$lib/store/index.svelte";
+	import { link } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/util/sanitize";
 	import { ShieldCheckIcon } from "lucide-svelte";
 </script>
 

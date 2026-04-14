@@ -8,7 +8,7 @@
 	import type { ISettings } from "./index.svelte";
 	import { effects } from "$lib/store/index.svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { sanitize } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/util/sanitize";
 	import { swManager, type CacheInfo } from "$lib/util/sw";
 	import { onMount } from "svelte";
 	import { error } from "$lib/util/logger";

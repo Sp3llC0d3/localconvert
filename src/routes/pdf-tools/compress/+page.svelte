@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
-	import { sanitize } from '$lib/store/index.svelte';
+	import { sanitize } from '$lib/util/sanitize';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { compressPdf } from '$lib/pdf/compress';
 	import { renderPageToCanvas } from '$lib/pdf/preview';

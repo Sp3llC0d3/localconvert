@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
 	import { browser } from '$app/environment';
-	import { sanitize } from '$lib/store/index.svelte';
+	import { sanitize } from '$lib/util/sanitize';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';

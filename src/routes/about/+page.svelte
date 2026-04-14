@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { GITHUB_URL, GITHUB_URL_VERT, CONTACT_EMAIL } from "$lib/util/consts";
 	import { m } from "$lib/paraglide/messages";
-	import { sanitize } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/util/sanitize";
 	import { GithubIcon, MailIcon, ShieldIcon, ExternalLinkIcon, ZapIcon, FileTextIcon, ImageIcon, CodeIcon, ArrowRight } from "lucide-svelte";
 </script>
 

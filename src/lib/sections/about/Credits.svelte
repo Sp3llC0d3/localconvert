@@ -2,7 +2,7 @@
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { HeartIcon } from "lucide-svelte";
 	import { m } from "$lib/paraglide/messages";
-	import { sanitize } from "$lib/store/index.svelte";
+	import { sanitize } from "$lib/util/sanitize";
 	import { GITHUB_URL_VERT } from "$lib/util/consts";
 </script>
 
