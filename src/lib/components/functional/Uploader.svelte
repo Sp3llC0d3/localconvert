@@ -78,25 +78,26 @@
 	<img
 		src={dropzoneLight}
 		alt=""
-		width="398"
-		height="249"
+		width="388"
+		height="239"
 		class="uploader-img pointer-events-none dynadark:hidden"
 	/>
 	<img
 		src={dropzoneDark}
 		alt=""
-		width="398"
-		height="249"
+		width="388"
+		height="239"
 		class="uploader-img pointer-events-none hidden dynadark:block"
 	/>
 </button>
 
 <style>
 	.uploader-btn {
-		padding: 1rem;
+		height: 271px;
 	}
 	.uploader-img {
-		max-width: 398px;
+		max-width: 388px;
+		max-height: 239px;
 		width: 100%;
 		height: auto;
 		display: block;

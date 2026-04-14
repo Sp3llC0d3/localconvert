@@ -542,9 +542,9 @@
 			</div>
 		{/each}
 		{#if files.files.length === 0}
-			<Uploader class="w-full min-h-[240px] col-span-2" />
+			<Uploader class="w-full col-span-2" />
 		{:else if files.files.length === 1}
-			<Uploader class="w-full col-span-2 min-h-[80px]" />
+			<Uploader class="w-full col-span-2" />
 		{/if}
 	</div>
 </div>
