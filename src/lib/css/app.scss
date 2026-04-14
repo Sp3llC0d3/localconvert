@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(@fontsource/azeret-mono/700.css);
-@import url(@fontsource/lexend/400.css);
-@import url(@fontsource/lexend/600.css);
+@import "@fontsource/azeret-mono/700.css";
+@import "@fontsource/lexend/400.css";
+@import "@fontsource/lexend/600.css";
 
 :root {
 	--font-body: "Lexend", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;

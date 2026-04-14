@@ -485,7 +485,7 @@
 		background: var(--bg-panel-highlight);
 		color: var(--fg-muted);
 		cursor: pointer;
-		transition: all 0.15s ease;
+		transition: background 0.15s ease, color 0.15s ease;
 		text-align: left;
 		white-space: nowrap;
 	}
@@ -498,8 +498,6 @@
 	.explorer-chip--active {
 		background: var(--chip-color);
 		color: var(--fg-on-accent);
-		border-color: var(--chip-color);
-		box-shadow: 0 2px 8px color-mix(in srgb, var(--chip-color) 30%, transparent);
 	}
 
 

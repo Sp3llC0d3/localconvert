@@ -5,7 +5,7 @@
 	import { m } from "$lib/paraglide/messages";
 	import FormatExplorer from "$lib/components/functional/FormatExplorer.svelte";
 
-	import privacyBadge from "$lib/assets/privacy-badge.png";
+	import privacyBadge from "$lib/assets/privacy-badge.webp";
 
 	const pills = [
 		{ icon: Ban, label: m["landing.pills.no_uploads"]() },

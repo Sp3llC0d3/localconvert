@@ -6,8 +6,8 @@
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 	import { m } from "$lib/paraglide/messages";
-	import dropzoneDark from "$lib/assets/dropzone-dark.png";
-	import dropzoneLight from "$lib/assets/dropzone-light.png";
+	import dropzoneDark from "$lib/assets/dropzone-dark.webp";
+	import dropzoneLight from "$lib/assets/dropzone-light.webp";
 
 	type Props = {
 		class?: string;
