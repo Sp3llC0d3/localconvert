@@ -75,7 +75,7 @@ const imageToolPaths = [
 ];
 
 // ── Static pages ──────────────────────────────────────────────────────────
-const staticPages = ['/', '/convert/', '/settings/', '/about/', '/privacy/', '/formats/'];
+const staticPages = ['/', '/convert/', '/about/', '/privacy/', '/formats/'];
 
 const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
