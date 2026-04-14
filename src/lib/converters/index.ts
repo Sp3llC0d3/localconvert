@@ -30,7 +30,7 @@ export function getConverterByFormat(format: string) {
 }
 
 export const categories: Categories = {
-	image: { formats: [""], canConvertTo: [] },
+	image: { formats: [""], canConvertTo: ["doc"] },
 	video: { formats: [""], canConvertTo: ["audio"] },
 	audio: { formats: [""], canConvertTo: ["video"] },
 	doc: { formats: [""], canConvertTo: [] },
