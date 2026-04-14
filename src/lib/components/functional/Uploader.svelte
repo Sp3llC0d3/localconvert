@@ -93,12 +93,12 @@
 
 <style>
 	.uploader-btn {
-		padding: 0.75rem;
+		padding: 1rem;
 	}
 	.uploader-img {
+		max-width: 398px;
 		width: 100%;
 		height: auto;
 		display: block;
-		object-fit: contain;
 	}
 </style>

@@ -118,7 +118,7 @@
 		<!-- Uploader -->
 		<div class="w-full max-w-2xl mt-10 mb-6 hero-animate delay-2">
 			<div class="uploader-shell">
-				<Uploader class="w-full" />
+				<Uploader class="w-full h-44 md:h-56" />
 			</div>
 		</div>
 
