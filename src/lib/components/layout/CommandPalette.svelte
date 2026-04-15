@@ -75,7 +75,7 @@
 
 	const filtered = $derived(
 		query.trim() === ''
-			? allTools
+			? []
 			: allTools.filter(t =>
 				t.name.toLowerCase().includes(query.toLowerCase()) ||
 				t.desc.toLowerCase().includes(query.toLowerCase())
@@ -145,7 +145,7 @@
 					</div>
 				</button>
 			{/each}
-			{#if filtered.length === 0}
+			{#if filtered.length === 0 && query.trim() !== ''}
 				<div class="palette-empty">{command_palette_no_results()}</div>
 			{/if}
 		</div>
@@ -172,6 +172,31 @@
 		border-radius: 1rem;
 		box-shadow: 0 24px 80px hsla(0, 0%, 0%, 0.35), 0 0 0 1px var(--bg-separator);
 		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (max-width: 767px) {
+		.palette {
+			top: auto;
+			bottom: 0;
+			left: 0;
+			transform: none;
+			width: 100vw;
+			border-radius: 1rem 1rem 0 0;
+			flex-direction: column-reverse;
+			overflow: visible;
+		}
+
+		.palette-input-wrap {
+			border-bottom: none;
+			border-top: 1px solid var(--bg-separator);
+			padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+		}
+
+		.palette-results {
+			max-height: 50vh;
+		}
 	}
 
 	.palette-input-wrap {
