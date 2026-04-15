@@ -8,7 +8,7 @@
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { tool_pages_page_numbers_bottom_left, tool_pages_page_numbers_bottom_center, tool_pages_page_numbers_bottom_right, tool_pages_page_numbers_top_left, tool_pages_page_numbers_top_center, tool_pages_page_numbers_top_right, tools_common_failed_read_pdf, tools_common_failed, tool_pages_page_numbers_title, tool_pages_page_numbers_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_page_of, tool_pages_page_numbers_position, tools_common_format, tools_common_font_size, tool_pages_page_numbers_start_from, tool_pages_page_numbers_skip_first, tool_pages_page_numbers_btn_busy, tool_pages_page_numbers_btn, tools_common_ready, tool_pages_page_numbers_save, tools_common_privacy_note, tool_pages_page_numbers_seo_faq1_q, tool_pages_page_numbers_seo_faq1_a, tool_pages_page_numbers_seo_faq2_q, tool_pages_page_numbers_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_organize_name, pdf_tools_tools_rotate_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_page_numbers_bottom_left, tool_pages_page_numbers_bottom_center, tool_pages_page_numbers_bottom_right, tool_pages_page_numbers_top_left, tool_pages_page_numbers_top_center, tool_pages_page_numbers_top_right, tools_common_failed_read_pdf, tools_common_failed, tool_pages_page_numbers_title, tool_pages_page_numbers_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_page_of, tool_pages_page_numbers_position, tools_common_format, tools_common_font_size, tool_pages_page_numbers_start_from, tool_pages_page_numbers_skip_first, tool_pages_page_numbers_btn_busy, tool_pages_page_numbers_btn, tools_common_ready, tool_pages_page_numbers_save, tools_common_privacy_note, tool_pages_page_numbers_seo_faq1_q, tool_pages_page_numbers_seo_faq1_a, tool_pages_page_numbers_seo_faq2_q, tool_pages_page_numbers_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_organize_name, pdf_tools_tools_rotate_name, aria_previous_page, aria_next_page, aria_font_size, aria_starting_page_number } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -228,11 +228,11 @@
 			<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
 			{#if pageCount > 1}
 				<div class="page-nav">
-					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
+					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label={aria_previous_page()}>
 						<ChevronLeftIcon size={16} />
 					</button>
 					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
-					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
+					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label={aria_next_page()}>
 						<ChevronRightIcon size={16} />
 					</button>
 				</div>
@@ -259,12 +259,12 @@
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_font_size()}</span>
-				<input type="range" min={8} max={24} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
+				<input type="range" min={8} max={24} bind:value={fontSize} class="slider flex-1" aria-label={aria_font_size()} />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tool_pages_page_numbers_start_from()}</span>
-				<input type="number" min={1} max={9999} bind:value={startFrom} class="num-input" aria-label="Starting page number" />
+				<input type="number" min={1} max={9999} bind:value={startFrom} class="num-input" aria-label={aria_starting_page_number()} />
 			</div>
 			<div class="opt-row">
 				<label class="flex items-center gap-2 cursor-pointer text-sm">

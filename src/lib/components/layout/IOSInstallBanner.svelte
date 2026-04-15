@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
 	import { XIcon, ShareIcon } from "lucide-svelte";
+	import { aria_dismiss } from "$lib/paraglide/messages/_barrel.js";
 
 	let show = $state(false);
 	let dismissed = $state(false);
@@ -48,7 +49,7 @@
 			<button
 				onclick={dismiss}
 				class="shrink-0 p-1 rounded-full hover:bg-panel-highlight transition-colors"
-				aria-label="Dismiss"
+				aria-label={aria_dismiss()}
 			>
 				<XIcon size={18} />
 			</button>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_titles_formats } from '$lib/paraglide/messages/_barrel.js';
+	import { page_titles_formats, aria_search_formats, aria_gpu_full, aria_gpu_partial } from '$lib/paraglide/messages/_barrel.js';
 	import { allFormats, categoryMeta, formatMap, type FormatEntry } from '$lib/data/format-map';
 	import { Image, AudioLines, Film, BookText, SearchIcon, ChevronDown, ArrowRight, ZapIcon } from 'lucide-svelte';
 
@@ -87,7 +87,7 @@
 			<input
 				bind:value={searchQuery}
 				type="text"
-				placeholder="Search formats..."
+				placeholder={aria_search_formats()}
 				class="fmt-search"
 				autocomplete="off"
 				spellcheck="false"
@@ -141,12 +141,12 @@
 						<button class="fmt-card-header" onclick={() => toggleExpand(fmt.name)}>
 							<span class="fmt-card-name">{fmt.displayName}</span>
 							{#if fmt.gpuInput && fmt.gpuOutput}
-								<span class="fmt-card-gpu" title="Full GPU acceleration — input and output">
+								<span class="fmt-card-gpu" title={aria_gpu_full()}>
 									<ZapIcon size={10} />
 									GPU
 								</span>
 							{:else if fmt.gpuInput}
-								<span class="fmt-card-gpu fmt-card-gpu--input" title="GPU accelerated when converting to MP4, WebM, MOV, M4V, or 3GP">
+								<span class="fmt-card-gpu fmt-card-gpu--input" title={aria_gpu_partial()}>
 									<ZapIcon size={10} />
 									GPU In
 								</span>

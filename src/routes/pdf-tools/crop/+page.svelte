@@ -8,7 +8,7 @@
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { tools_common_failed_read_pdf, tool_pages_crop_pdf_err_margins, tools_common_failed, tool_pages_crop_pdf_title, tool_pages_crop_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_crop_pdf_aria_drag, tools_common_left, tools_common_right, tools_common_top, tools_common_bottom, tools_common_apply_all_pages, tool_pages_crop_pdf_btn_busy, tool_pages_crop_pdf_btn, tools_common_ready, tool_pages_crop_pdf_save, tools_common_privacy_note, tool_pages_crop_seo_faq1_q, tool_pages_crop_seo_faq1_a, tool_pages_crop_seo_faq2_q, tool_pages_crop_seo_faq2_a, pdf_tools_tools_rotate_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed_read_pdf, tool_pages_crop_pdf_err_margins, tools_common_failed, tool_pages_crop_pdf_title, tool_pages_crop_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_crop_pdf_aria_drag, tools_common_left, tools_common_right, tools_common_top, tools_common_bottom, tools_common_apply_all_pages, tool_pages_crop_pdf_btn_busy, tool_pages_crop_pdf_btn, tools_common_ready, tool_pages_crop_pdf_save, tools_common_privacy_note, tool_pages_crop_seo_faq1_q, tool_pages_crop_seo_faq1_a, tool_pages_crop_seo_faq2_q, tool_pages_crop_seo_faq2_a, pdf_tools_tools_rotate_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name, aria_left_margin, aria_right_margin, aria_top_margin, aria_bottom_margin } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -300,15 +300,15 @@
 		<div class="opt-section">
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_left()}</span>
-				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input" aria-label="Left margin" />
+				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input" aria-label={aria_left_margin()} />
 				<span class="opt-label">{tools_common_right()}</span>
-				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input" aria-label="Right margin" />
+				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input" aria-label={aria_right_margin()} />
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_top()}</span>
-				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input" aria-label="Top margin" />
+				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input" aria-label={aria_top_margin()} />
 				<span class="opt-label">{tools_common_bottom()}</span>
-				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input" aria-label="Bottom margin" />
+				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input" aria-label={aria_bottom_margin()} />
 			</div>
 			{#if pageCount > 1}
 				<label class="flex items-center gap-2 cursor-pointer text-sm">

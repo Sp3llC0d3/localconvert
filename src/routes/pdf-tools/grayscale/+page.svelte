@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name};
-	import { tools_common_failed, tool_pages_grayscale_title, tool_pages_grayscale_desc, tools_common_back_pdf, tool_pages_grayscale_warning, tools_common_upload_pdf, tools_common_quality, tools_common_input, tool_pages_grayscale_btn_busy, tool_pages_grayscale_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_grayscale_grayscale, tool_pages_grayscale_save, tools_common_privacy_note, tool_pages_grayscale_seo_faq1_q, tool_pages_grayscale_seo_faq1_a, tool_pages_grayscale_seo_faq2_q, tool_pages_grayscale_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_crop_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_grayscale_title, tool_pages_grayscale_desc, tools_common_back_pdf, tool_pages_grayscale_warning, tools_common_upload_pdf, tools_common_quality, tools_common_input, tool_pages_grayscale_btn_busy, tool_pages_grayscale_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_grayscale_grayscale, tool_pages_grayscale_save, tools_common_privacy_note, tool_pages_grayscale_seo_faq1_q, tool_pages_grayscale_seo_faq1_a, tool_pages_grayscale_seo_faq2_q, tool_pages_grayscale_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_crop_name, aria_quality } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { grayscalePdf } from '$lib/pdf/grayscale';
@@ -112,7 +112,7 @@
 		<div class="opt-section">
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_quality()}</span>
-				<input type="range" min={30} max={95} bind:value={quality} class="slider flex-1" aria-label="Quality" />
+				<input type="range" min={30} max={95} bind:value={quality} class="slider flex-1" aria-label={aria_quality()} />
 				<span class="val">{quality}%</span>
 			</div>
 			<p class="text-xs text-muted">{tools_common_input()}: <b>{formatFileSize(files[0].size)}</b></p>

@@ -32,7 +32,7 @@
 	import Panel from "../../visual/Panel.svelte";
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
-	import { navbar_home, navbar_convert, navbar_pdf_tools, navbar_image_tools, navbar_dev_tools, navbar_settings, navbar_about, navbar_tools, navbar_toggle_theme, about_install } from "$lib/paraglide/messages/_barrel.js";
+	import { navbar_home, navbar_convert, navbar_pdf_tools, navbar_image_tools, navbar_dev_tools, navbar_settings, navbar_about, navbar_tools, navbar_toggle_theme, about_install, aria_tools_menu, aria_search_tools, aria_select_language } from "$lib/paraglide/messages/_barrel.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { getLocale } from "$lib/paraglide/runtime";
 	import { onMount, onDestroy } from "svelte";
@@ -337,7 +337,7 @@
 			<button
 				bind:this={links[items.length]}
 				onclick={() => { showToolsMenu = !showToolsMenu; showLangPicker = false; }}
-				aria-label="Tools"
+				aria-label={aria_tools_menu()}
 				class={clsx("nav-link nav-tools-btn", {
 					"bg-panel-highlight": isToolsActive && !browser,
 				})}
@@ -382,7 +382,7 @@
 			<button
 				onclick={() => commandPalette.toggle()}
 				class="nav-action hidden md:flex"
-				aria-label="Search tools"
+				aria-label={aria_search_tools()}
 			>
 				<SearchIcon size={18} />
 			</button>
@@ -410,7 +410,7 @@
 				onclick={() => { showLangPicker = !showLangPicker; showToolsMenu = false; }}
 				class="nav-action"
 				class:text-accent={showLangPicker}
-				aria-label="Select language"
+				aria-label={aria_select_language()}
 			>
 				<GlobeIcon size={18} />
 			</button>

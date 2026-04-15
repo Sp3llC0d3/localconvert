@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_video_to_gif_title, tool_pages_video_to_gif_desc, tools_common_back_image, tool_pages_video_to_gif_upload, upload_uploader_browse, tool_pages_video_to_gif_width, tool_pages_video_to_gif_start, tool_pages_video_to_gif_duration, tool_pages_video_to_gif_btn_busy, tool_pages_video_to_gif_btn, tools_common_ready, tool_pages_video_to_gif_save, tools_common_privacy_note, tool_pages_img_video_to_gif_seo_faq1_q, tool_pages_img_video_to_gif_seo_faq1_a, tool_pages_img_video_to_gif_seo_faq2_q, tool_pages_img_video_to_gif_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_video_to_gif_title, tool_pages_video_to_gif_desc, tools_common_back_image, tool_pages_video_to_gif_upload, upload_uploader_browse, tool_pages_video_to_gif_width, tool_pages_video_to_gif_start, tool_pages_video_to_gif_duration, tool_pages_video_to_gif_btn_busy, tool_pages_video_to_gif_btn, tools_common_ready, tool_pages_video_to_gif_save, tools_common_privacy_note, tool_pages_img_video_to_gif_seo_faq1_q, tool_pages_img_video_to_gif_seo_faq1_a, tool_pages_img_video_to_gif_seo_faq2_q, tool_pages_img_video_to_gif_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name, aria_start_time, aria_duration } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { videoToGif } from '$lib/converters/video-to-gif';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -129,12 +129,12 @@
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tool_pages_video_to_gif_start()}</span>
-				<input type="number" min={0} step={0.5} bind:value={startTime} class="num-input" aria-label="Start time" />
+				<input type="number" min={0} step={0.5} bind:value={startTime} class="num-input" aria-label={aria_start_time()} />
 				<span class="text-xs text-muted">sec</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tool_pages_video_to_gif_duration()}</span>
-				<input type="number" min={0} step={0.5} bind:value={duration} class="num-input" aria-label="Duration" />
+				<input type="number" min={0} step={0.5} bind:value={duration} class="num-input" aria-label={aria_duration()} />
 				<span class="text-xs text-muted">sec (0 = full)</span>
 			</div>
 		</div>

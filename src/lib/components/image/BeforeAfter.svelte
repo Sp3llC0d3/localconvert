@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { tools_common_before, tools_common_after } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_before, tools_common_after, aria_before_after } from "$lib/paraglide/messages/_barrel.js";
 
 	type Props = {
 		beforeSrc: string;
@@ -49,7 +49,7 @@
 	ontouchend={onUp}
 	ontouchcancel={onUp}
 	role="slider"
-	aria-label="Before and after comparison"
+	aria-label={aria_before_after()}
 	aria-valuenow={Math.round(sliderPos)}
 	aria-valuemin={0}
 	aria-valuemax={100}

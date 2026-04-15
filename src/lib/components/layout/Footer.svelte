@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { GITHUB_URL } from "$lib/util/consts";
-	import { footer_tagline, footer_pdf_tools_count, footer_image_tools_count, footer_dev_tools_count, footer_source_code, footer_privacy_policy, footer_copyright } from "$lib/paraglide/messages/_barrel.js";
+	import { footer_tagline, footer_pdf_tools_count, footer_image_tools_count, footer_dev_tools_count, footer_source_code, footer_privacy_policy, footer_copyright, aria_tool_categories } from "$lib/paraglide/messages/_barrel.js";
 
 	const year = new Date().getFullYear();
 </script>
@@ -14,7 +14,7 @@
 		</div>
 
 		<!-- Tool categories -->
-		<nav class="footer-tools" aria-label="Tool categories">
+		<nav class="footer-tools" aria-label={aria_tool_categories()}>
 			<a href="/pdf-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--pdf"></span>
 				{footer_pdf_tools_count()}

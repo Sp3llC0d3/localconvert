@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name};
-	import { tool_pages_batch_err_images, tool_pages_batch_err_text, tool_pages_batch_err_watermark, tools_common_failed, tool_pages_batch_title, tool_pages_batch_desc, tools_common_back_image, tools_common_upload_images, tools_common_images_selected, tools_common_operation, tools_common_rotate, tools_common_watermark, tools_common_crop, tools_common_meme, tools_common_angle, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_position, tools_common_center, tools_common_tile, tool_pages_batch_trim, tool_pages_batch_trim_help, tool_pages_meme_top_text, tool_pages_meme_bottom_text, tool_pages_batch_btn_busy, tool_pages_batch_btn, tools_common_results_ready, tools_common_save_all, tools_common_save, tools_common_privacy_note, tool_pages_img_batch_seo_faq1_q, tool_pages_img_batch_seo_faq1_a, tool_pages_img_batch_seo_faq2_q, tool_pages_img_batch_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_rotate_name, image_tools_tools_crop_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_batch_err_images, tool_pages_batch_err_text, tool_pages_batch_err_watermark, tools_common_failed, tool_pages_batch_title, tool_pages_batch_desc, tools_common_back_image, tools_common_upload_images, tools_common_images_selected, tools_common_operation, tools_common_rotate, tools_common_watermark, tools_common_crop, tools_common_meme, tools_common_angle, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_position, tools_common_center, tools_common_tile, tool_pages_batch_trim, tool_pages_batch_trim_help, tool_pages_meme_top_text, tool_pages_meme_bottom_text, tool_pages_batch_btn_busy, tool_pages_batch_btn, tools_common_results_ready, tools_common_save_all, tools_common_save, tools_common_privacy_note, tool_pages_img_batch_seo_faq1_q, tool_pages_img_batch_seo_faq1_a, tool_pages_img_batch_seo_faq2_q, tool_pages_img_batch_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_rotate_name, image_tools_tools_crop_name, aria_remove_file, aria_opacity, aria_font_size, aria_crop_percentage, aria_meme_top_text, aria_meme_bottom_text } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { rotateImage, type RotationAngle } from '$lib/image/rotate';
 	import { watermarkImage } from '$lib/image/watermark';
@@ -135,7 +135,7 @@
 				<div class="file-row">
 					<span class="text-sm truncate flex-1">{file.name}</span>
 					<span class="text-xs text-muted">{formatFileSize(file.size)}</span>
-					<button class="remove-btn" onclick={() => removeFile(i)} aria-label="Remove file">
+					<button class="remove-btn" onclick={() => removeFile(i)} aria-label={aria_remove_file()}>
 						<XIcon size={14} />
 					</button>
 				</div>
@@ -171,12 +171,12 @@
 				</div>
 				<div class="opt-row">
 					<span class="opt-label">{tools_common_opacity()}</span>
-					<input type="range" min={5} max={80} bind:value={wmOpacity} class="slider flex-1" aria-label="Opacity" />
+					<input type="range" min={5} max={80} bind:value={wmOpacity} class="slider flex-1" aria-label={aria_opacity()} />
 					<span class="val">{wmOpacity}%</span>
 				</div>
 				<div class="opt-row">
 					<span class="opt-label">{tools_common_font_size()}</span>
-					<input type="range" min={16} max={120} bind:value={wmFontSize} class="slider flex-1" aria-label="Font size" />
+					<input type="range" min={16} max={120} bind:value={wmFontSize} class="slider flex-1" aria-label={aria_font_size()} />
 					<span class="val">{wmFontSize}px</span>
 				</div>
 				<div class="opt-row">
@@ -189,18 +189,18 @@
 			{:else if operation === 'crop'}
 				<div class="opt-row">
 					<span class="opt-label">{tool_pages_batch_trim()}</span>
-					<input type="range" min={1} max={40} bind:value={cropPercent} class="slider flex-1" aria-label="Crop percentage" />
+					<input type="range" min={1} max={40} bind:value={cropPercent} class="slider flex-1" aria-label={aria_crop_percentage()} />
 					<span class="val">{cropPercent}%</span>
 				</div>
 				<p class="text-xs text-muted">{tool_pages_batch_trim_help({ percent: cropPercent })}</p>
 			{:else if operation === 'meme'}
 				<div class="opt-row">
 					<label class="opt-label" for="batch-meme-top">{tool_pages_meme_top_text()}</label>
-					<input id="batch-meme-top" type="text" bind:value={memeTop} placeholder="TOP TEXT" class="opt-input" maxlength={100} />
+					<input id="batch-meme-top" type="text" bind:value={memeTop} placeholder={aria_meme_top_text()} class="opt-input" maxlength={100} />
 				</div>
 				<div class="opt-row">
 					<label class="opt-label" for="batch-meme-btm">{tool_pages_meme_bottom_text()}</label>
-					<input id="batch-meme-btm" type="text" bind:value={memeBottom} placeholder="BOTTOM TEXT" class="opt-input" maxlength={100} />
+					<input id="batch-meme-btm" type="text" bind:value={memeBottom} placeholder={aria_meme_bottom_text()} class="opt-input" maxlength={100} />
 				</div>
 			{/if}
 		</div>

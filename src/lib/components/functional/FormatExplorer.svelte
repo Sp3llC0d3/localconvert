@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { formatsByCategory, categoryMeta, formatMap, allInputFormats, type FormatEntry } from '$lib/data/format-map';
+	import { aria_search_formats, aria_gpu_acceleration } from '$lib/paraglide/messages/_barrel.js';
 	import { Image, AudioLines, Film, BookText, ArrowRight, SearchIcon, ZapIcon } from 'lucide-svelte';
 
 	const icons = { image: Image, audio: AudioLines, video: Film, doc: BookText };
@@ -112,7 +113,7 @@
 		<input
 			bind:value={searchQuery}
 			type="text"
-			placeholder="Search formats..."
+			placeholder={aria_search_formats()}
 			class="explorer-search"
 			autocomplete="off"
 			spellcheck="false"
@@ -200,7 +201,7 @@
 										>
 											{fmt.displayName}
 											{#if outputMode === 'to' && selectedIsGpuInput && fmt.gpuOutput}
-												<span title="This conversion uses GPU acceleration"><ZapIcon size={8} /></span>
+												<span title={aria_gpu_acceleration()}><ZapIcon size={8} /></span>
 											{/if}
 										</span>
 									{/each}

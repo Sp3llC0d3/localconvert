@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name};
-	import { tool_pages_blur_err_area, tools_common_failed, tool_pages_blur_title, tool_pages_blur_desc, tools_common_back_image, tools_common_upload_image, tool_pages_blur_shape, tool_pages_blur_radius, tool_pages_blur_help, tool_pages_blur_btn_busy, tool_pages_blur_btn, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_blur_seo_faq1_q, tool_pages_img_blur_seo_faq1_a, tool_pages_img_blur_seo_faq2_q, tool_pages_img_blur_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_watermark_name, image_tools_tools_filters_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_blur_err_area, tools_common_failed, tool_pages_blur_title, tool_pages_blur_desc, tools_common_back_image, tools_common_upload_image, tool_pages_blur_shape, tool_pages_blur_radius, tool_pages_blur_help, tool_pages_blur_btn_busy, tool_pages_blur_btn, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_blur_seo_faq1_q, tool_pages_img_blur_seo_faq1_a, tool_pages_img_blur_seo_faq2_q, tool_pages_img_blur_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_watermark_name, image_tools_tools_filters_name, aria_blur_radius, aria_draw_blur_regions } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { blurRegions, type BlurRegion } from '$lib/image/blur';
@@ -364,7 +364,7 @@
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tool_pages_blur_radius()}</span>
-				<input type="range" min={1} max={40} bind:value={radius} class="slider flex-1" aria-label="Blur radius" />
+				<input type="range" min={1} max={40} bind:value={radius} class="slider flex-1" aria-label={aria_blur_radius()} />
 				<span class="val">{radius}px</span>
 			</div>
 		</div>
@@ -384,7 +384,7 @@
 				ontouchend={onPointerUp}
 				ontouchcancel={onPointerUp}
 				role="application"
-				aria-label="Draw regions to blur"
+				aria-label={aria_draw_blur_regions()}
 			>
 				<img src={previewUrl} alt="Source" class="preview-img" draggable="false" />
 

@@ -8,7 +8,7 @@
 	import { PenLineIcon, ChevronLeftIcon, ChevronRightIcon, UploadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { tools_common_failed_read_pdf, tools_common_upload_pdf, tool_pages_watermark_pdf_err_text, tools_common_failed, tool_pages_watermark_pdf_title, tool_pages_watermark_pdf_desc, tools_common_back_pdf, tools_common_page_of, tools_common_text, tools_common_font, tools_common_color, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_pdf_btn_busy, tool_pages_watermark_pdf_btn, tools_common_ready, tool_pages_watermark_pdf_save, tools_common_privacy_note, tool_pages_watermark_seo_faq1_q, tool_pages_watermark_seo_faq1_a, tool_pages_watermark_seo_faq2_q, tool_pages_watermark_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_page_numbers_name, pdf_tools_tools_edit_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed_read_pdf, tools_common_upload_pdf, tool_pages_watermark_pdf_err_text, tools_common_failed, tool_pages_watermark_pdf_title, tool_pages_watermark_pdf_desc, tools_common_back_pdf, tools_common_page_of, tools_common_text, tools_common_font, tools_common_color, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_pdf_btn_busy, tool_pages_watermark_pdf_btn, tools_common_ready, tool_pages_watermark_pdf_save, tools_common_privacy_note, tool_pages_watermark_seo_faq1_q, tool_pages_watermark_seo_faq1_a, tool_pages_watermark_seo_faq2_q, tool_pages_watermark_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_page_numbers_name, pdf_tools_tools_edit_name, aria_watermark_placeholder, aria_upload_custom_font, aria_previous_page, aria_next_page, aria_watermark_color, aria_opacity, aria_font_size, aria_rotation } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -232,11 +232,11 @@
 			<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
 			{#if pageCount > 1}
 				<div class="page-nav">
-					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
+					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label={aria_previous_page()}>
 						<ChevronLeftIcon size={16} />
 					</button>
 					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
-					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
+					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label={aria_next_page()}>
 						<ChevronRightIcon size={16} />
 					</button>
 				</div>
@@ -247,7 +247,7 @@
 		<div class="opt-section">
 			<div class="opt-row">
 				<label class="opt-label" for="wm-text">{tools_common_text()}</label>
-				<input id="wm-text" type="text" bind:value={text} placeholder="CONFIDENTIAL" class="opt-input" maxlength={80} />
+				<input id="wm-text" type="text" bind:value={text} placeholder={aria_watermark_placeholder()} class="opt-input" maxlength={80} />
 			</div>
 
 			<div class="opt-row">
@@ -262,7 +262,7 @@
 						{/if}
 					</select>
 					<input bind:this={fontInput} type="file" accept=".ttf,.otf,.woff,.woff2" class="hidden" onchange={uploadFont} />
-					<button class="upload-font-btn" onclick={() => fontInput?.click()} title="Upload custom font">
+					<button class="upload-font-btn" onclick={() => fontInput?.click()} title={aria_upload_custom_font()}>
 						<UploadIcon size={14} />
 					</button>
 				</div>
@@ -270,23 +270,23 @@
 
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_color()}</span>
-				<input type="color" bind:value={color} class="color-input" aria-label="Watermark color" />
+				<input type="color" bind:value={color} class="color-input" aria-label={aria_watermark_color()} />
 				<span class="text-xs text-muted">{color}</span>
 			</div>
 
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_opacity()}</span>
-				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label="Opacity" />
+				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label={aria_opacity()} />
 				<span class="val">{opacity}%</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_font_size()}</span>
-				<input type="range" min={20} max={120} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
+				<input type="range" min={20} max={120} bind:value={fontSize} class="slider flex-1" aria-label={aria_font_size()} />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_rotation()}</span>
-				<input type="range" min={0} max={90} bind:value={rotation} class="slider flex-1" aria-label="Rotation" />
+				<input type="range" min={0} max={90} bind:value={rotation} class="slider flex-1" aria-label={aria_rotation()} />
 				<span class="val">{rotation}°</span>
 			</div>
 			<div class="opt-row">

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.color_picker_name': image_tools_tools_color_picker_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'dev_tools.tools.base64_name': dev_tools_tools_base64_name};
-	import { tools_common_failed, tool_pages_qr_low, tool_pages_qr_medium, tool_pages_qr_quartile, tool_pages_qr_high, tool_pages_qr_title, tool_pages_qr_desc, tools_common_back_image, tool_pages_qr_text_url, tools_common_size, tools_common_foreground, tools_common_background, tool_pages_qr_error_correction, tool_pages_qr_save, tools_common_ready, tool_pages_qr_save_file, tools_common_privacy_note_browser, tool_pages_img_qr_seo_faq1_q, tool_pages_img_qr_seo_faq1_a, tool_pages_img_qr_seo_faq2_q, tool_pages_img_qr_seo_faq2_a, image_tools_tools_color_picker_name, image_tools_tools_watermark_name, dev_tools_tools_base64_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_qr_low, tool_pages_qr_medium, tool_pages_qr_quartile, tool_pages_qr_high, tool_pages_qr_title, tool_pages_qr_desc, tools_common_back_image, tool_pages_qr_text_url, tools_common_size, tools_common_foreground, tools_common_background, tool_pages_qr_error_correction, tool_pages_qr_save, tools_common_ready, tool_pages_qr_save_file, tools_common_privacy_note_browser, tool_pages_img_qr_seo_faq1_q, tool_pages_img_qr_seo_faq1_a, tool_pages_img_qr_seo_faq2_q, tool_pages_img_qr_seo_faq2_a, image_tools_tools_color_picker_name, image_tools_tools_watermark_name, dev_tools_tools_base64_name, aria_qr_code_size, aria_foreground_color, aria_background_color } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { canvasToBlob, downloadBlob, getOutputName } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
@@ -105,14 +105,14 @@
 		</div>
 		<div class="opt-row">
 			<span class="opt-label">{tools_common_size()}</span>
-			<input type="range" min={100} max={800} step={50} bind:value={size} class="slider flex-1" aria-label="QR code size" />
+			<input type="range" min={100} max={800} step={50} bind:value={size} class="slider flex-1" aria-label={aria_qr_code_size()} />
 			<span class="val">{size}px</span>
 		</div>
 		<div class="opt-row">
 			<span class="opt-label">{tools_common_foreground()}</span>
-			<input type="color" bind:value={fgColor} class="color-input" aria-label="Foreground color" />
+			<input type="color" bind:value={fgColor} class="color-input" aria-label={aria_foreground_color()} />
 			<span class="opt-label">{tools_common_background()}</span>
-			<input type="color" bind:value={bgColor} class="color-input" aria-label="Background color" />
+			<input type="color" bind:value={bgColor} class="color-input" aria-label={aria_background_color()} />
 		</div>
 		<div class="opt-row">
 			<span class="opt-label">{tool_pages_qr_error_correction()}</span>

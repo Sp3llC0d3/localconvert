@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_titles_convert } from '$lib/paraglide/messages/_barrel.js';
+	import { page_titles_convert, aria_remove_file, aria_image_quality, aria_width_pixels, aria_height_pixels, aria_audio_bitrate, aria_trim_start, aria_trim_end } from '$lib/paraglide/messages/_barrel.js';
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import FormatDropdown from "$lib/components/functional/FormatDropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
@@ -249,7 +249,7 @@
 			</div>
 			<button
 				class="flex-shrink-0 w-8 rounded-full hover:bg-panel-alt h-full flex items-center justify-center"
-				aria-label="Remove file"
+				aria-label={aria_remove_file()}
 				onclick={async () => {
 					await file.cancel();
 					files.files = files.files.filter((_, i) => i !== index);
@@ -456,7 +456,7 @@
 										value={effectiveQuality}
 										oninput={(e) => { file.optQuality = Number((e.target as HTMLInputElement).value); }}
 										class="quality-slider"
-										aria-label="Image quality"
+										aria-label={aria_image_quality()}
 									/>
 									<span class="opt-value">{effectiveQuality}%</span>
 								</div>
@@ -468,14 +468,14 @@
 										type="number" min={1} placeholder="W"
 										bind:value={file.optWidth}
 										class="dim-input"
-										aria-label="Width in pixels"
+										aria-label={aria_width_pixels()}
 									/>
 									<span class="opt-value">×</span>
 									<input
 										type="number" min={1} placeholder="H"
 										bind:value={file.optHeight}
 										class="dim-input"
-										aria-label="Height in pixels"
+										aria-label={aria_height_pixels()}
 									/>
 									<span class="opt-value">px</span>
 								</div>
@@ -489,7 +489,7 @@
 										class="opt-select"
 										value={file.optBitrate ?? Settings.instance.settings.ffmpegQuality.toString()}
 										onchange={(e) => { file.optBitrate = (e.target as HTMLSelectElement).value; }}
-										aria-label="Audio bitrate"
+										aria-label={aria_audio_bitrate()}
 									>
 										{#each CONVERSION_BITRATES as br}
 											<option value={br.toString()}>
@@ -508,14 +508,14 @@
 										type="number" min={0} step={1} placeholder="0"
 										bind:value={file.optTrimStart}
 										class="time-input"
-										aria-label="Trim start in seconds"
+										aria-label={aria_trim_start()}
 									/>
 									<span class="opt-value">s →</span>
 									<input
 										type="number" min={0} step={1} placeholder="end"
 										bind:value={file.optTrimEnd}
 										class="time-input"
-										aria-label="Trim end in seconds"
+										aria-label={aria_trim_end()}
 									/>
 									<span class="opt-value">s</span>
 								</div>

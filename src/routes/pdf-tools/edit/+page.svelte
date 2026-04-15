@@ -7,7 +7,7 @@
 	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { EditIcon, Trash2Icon, UploadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { tools_common_failed_read_pdf, tool_pages_edit_err_text, tool_pages_edit_err_pdf, tools_common_failed, tool_pages_edit_title, tool_pages_edit_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_edit_placeholder, tool_pages_edit_aria_editor, tool_pages_edit_remove_text, tool_pages_edit_elements_placed, tool_pages_edit_btn_busy, tool_pages_edit_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_edit_seo_faq1_q, tool_pages_edit_seo_faq1_a, tool_pages_edit_seo_faq2_q, tool_pages_edit_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_watermark_name, pdf_tools_tools_page_numbers_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed_read_pdf, tool_pages_edit_err_text, tool_pages_edit_err_pdf, tools_common_failed, tool_pages_edit_title, tool_pages_edit_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_edit_placeholder, tool_pages_edit_aria_editor, tool_pages_edit_remove_text, tool_pages_edit_elements_placed, tool_pages_edit_btn_busy, tool_pages_edit_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_edit_seo_faq1_q, tool_pages_edit_seo_faq1_a, tool_pages_edit_seo_faq2_q, tool_pages_edit_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_watermark_name, pdf_tools_tools_page_numbers_name, aria_upload_custom_font, aria_font_size, aria_text_color } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -284,9 +284,9 @@
 				placeholder={tool_pages_edit_placeholder()}
 				class="text-input"
 			/>
-			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
+			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label={aria_font_size()} />
 			<span class="text-xs text-muted">pt</span>
-			<input type="color" bind:value={newColor} class="color-input" aria-label="Text color" />
+			<input type="color" bind:value={newColor} class="color-input" aria-label={aria_text_color()} />
 			<div class="font-controls">
 				<select class="font-select" bind:value={newFontFamily}>
 					{#each builtinFonts as f}
@@ -297,7 +297,7 @@
 					{/if}
 				</select>
 				<input bind:this={fontInput} type="file" accept=".ttf,.otf,.woff,.woff2" class="hidden" onchange={uploadFont} />
-				<button class="upload-font-btn" onclick={() => fontInput?.click()} title="Upload custom font">
+				<button class="upload-font-btn" onclick={() => fontInput?.click()} title={aria_upload_custom_font()}>
 					<UploadIcon size={14} />
 				</button>
 			</div>

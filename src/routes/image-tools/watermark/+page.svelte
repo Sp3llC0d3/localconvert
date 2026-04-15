@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.meme_name': image_tools_tools_meme_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_watermark_image_title, tool_pages_watermark_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_watermark_seo_faq1_q, tool_pages_img_watermark_seo_faq1_a, tool_pages_img_watermark_seo_faq2_q, tool_pages_img_watermark_seo_faq2_a, image_tools_tools_meme_name, image_tools_tools_crop_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_watermark_image_title, tool_pages_watermark_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_watermark_seo_faq1_q, tool_pages_img_watermark_seo_faq1_a, tool_pages_img_watermark_seo_faq2_q, tool_pages_img_watermark_seo_faq2_a, image_tools_tools_meme_name, image_tools_tools_crop_name, image_tools_tools_batch_name, aria_watermark_placeholder, aria_opacity, aria_font_size, aria_rotation } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -146,21 +146,21 @@
 		<div class="opt-section">
 			<div class="opt-row">
 				<label class="opt-label" for="wm-text">{tools_common_text()}</label>
-				<input id="wm-text" type="text" bind:value={text} placeholder="CONFIDENTIAL" class="opt-input flex-1" maxlength={80} />
+				<input id="wm-text" type="text" bind:value={text} placeholder={aria_watermark_placeholder()} class="opt-input flex-1" maxlength={80} />
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_opacity()}</span>
-				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label="Opacity" />
+				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label={aria_opacity()} />
 				<span class="val">{opacity}%</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_font_size()}</span>
-				<input type="range" min={16} max={120} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
+				<input type="range" min={16} max={120} bind:value={fontSize} class="slider flex-1" aria-label={aria_font_size()} />
 				<span class="val">{fontSize}px</span>
 			</div>
 			<div class="opt-row">
 				<span class="opt-label">{tools_common_rotation()}</span>
-				<input type="range" min={-90} max={90} bind:value={rotation} class="slider flex-1" aria-label="Rotation" />
+				<input type="range" min={-90} max={90} bind:value={rotation} class="slider flex-1" aria-label={aria_rotation()} />
 				<span class="val">{rotation}°</span>
 			</div>
 			<div class="opt-row">
