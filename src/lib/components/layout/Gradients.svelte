@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
+	import { deLocalizeHref } from "$lib/paraglide/runtime";
 	import { duration, transition } from "$lib/util/animation";
 	import { onMount } from "svelte";
 
@@ -18,6 +19,8 @@
 	import { quintOut } from "svelte/easing";
 	import { fade } from "$lib/util/animation";
 	import { Tween } from "svelte/motion";
+
+	const pathname = $derived(deLocalizeHref(page.url.pathname));
 
 	const colors: {
 		matcher: (path: string) => boolean;
@@ -52,7 +55,7 @@
 	]);
 
 	const color = $derived(
-		Object.values(colors).find((p) => p.matcher(page.url.pathname)) || {
+		Object.values(colors).find((p) => p.matcher(pathname)) || {
 			matcher: () => false,
 			color: "transparent",
 			at: 0,
@@ -74,7 +77,7 @@
 	);
 </script>
 
-{#if mounted && VertVBig && page.url.pathname === "/"}
+{#if mounted && VertVBig && pathname === "/"}
 	<div
 		class="fixed -z-30 top-0 left-0 w-screen h-screen flex items-center justify-center overflow-hidden"
 		transition:fade={{
@@ -96,7 +99,7 @@
 	transition: background-color {duration}ms {transition};"
 ></div>
 
-{#if page.url.pathname === "/convert/" && files.files.length === 1}
+{#if pathname === "/convert/" && files.files.length === 1}
 	{@const bgMask =
 		"linear-gradient(to top, transparent 5%, rgba(0, 0, 0, 0.5) 100%)"}
 	<div

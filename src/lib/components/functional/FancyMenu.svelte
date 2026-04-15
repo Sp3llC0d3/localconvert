@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
+	import { deLocalizeHref, localizeHref } from "$lib/paraglide/runtime";
 	import { duration, fly } from "$lib/util/animation";
 	import clsx from "clsx";
 	import { onMount, tick } from "svelte";
@@ -23,7 +24,7 @@
 	let navWidth = $state(1);
 	let linkCount = $derived(links.length);
 	let activeLinkIndex = $derived(
-		links.findIndex((i) => i.activeMatch($page.url.pathname)),
+		links.findIndex((i) => i.activeMatch(deLocalizeHref(page.url.pathname))),
 	);
 
 	onMount(async () => {
@@ -52,14 +53,14 @@
 			class={clsx(
 				"w-1/2 px-2 ms-1 h-[calc(100%-8px)] me-1 flex items-center justify-center rounded-xl relative overflow-hidden font-medium",
 				{
-					"bg-foreground": $page.url.pathname === url && !browser,
+					"bg-foreground": deLocalizeHref(page.url.pathname) === url && !browser,
 				},
 			)}
-			href={url}
+			href={localizeHref(url)}
 			onclick={() => {
 				if (shouldGoBack) {
 					const currentIndex = links.findIndex((i) =>
-						i.activeMatch($page.url.pathname),
+						i.activeMatch(deLocalizeHref(page.url.pathname)),
 					);
 					const nextIndex = links.findIndex((i) =>
 						i.activeMatch(url),

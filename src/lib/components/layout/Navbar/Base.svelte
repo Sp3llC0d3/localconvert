@@ -91,6 +91,9 @@
 		}
 	}
 
+	// Delocalized pathname for active link matching (strips /fr/, /ar/ etc.)
+	const currentPathname = $derived(deLocalizeHref(page.url.pathname));
+
 	// Primary nav items (always visible)
 	const items = $derived<
 		{
@@ -140,7 +143,7 @@
 	]);
 
 	const isToolsActive = $derived(
-		toolItems.some((t) => t.activeMatch(page.url.pathname)),
+		toolItems.some((t) => t.activeMatch(currentPathname)),
 	);
 
 	// Secondary nav items
@@ -191,7 +194,7 @@
 	});
 
 	const selectedIndex = $derived(
-		allItems.findIndex((i) => i.activeMatch(page.url.pathname)),
+		allItems.findIndex((i) => i.activeMatch(currentPathname)),
 	);
 
 	// Map allItems index to links array index
@@ -219,10 +222,10 @@
 
 	beforeNavigate((e) => {
 		const oldIndex = allItems.findIndex((i) =>
-			i.activeMatch(e.from?.url.pathname || ""),
+			i.activeMatch(deLocalizeHref(e.from?.url.pathname || "")),
 		);
 		const newIndex = allItems.findIndex((i) =>
-			i.activeMatch(e.to?.url.pathname || ""),
+			i.activeMatch(deLocalizeHref(e.to?.url.pathname || "")),
 		);
 		if (newIndex < oldIndex) {
 			goingLeft.set(true);
@@ -268,7 +271,7 @@
 			"nav-link",
 			{
 				"bg-panel-highlight":
-					item.activeMatch(page.url.pathname) && !browser,
+					item.activeMatch(currentPathname) && !browser,
 			},
 		)}
 		draggable={false}
@@ -357,7 +360,7 @@
 						<a
 							href={localizeHref(tool.url)}
 							class="tools-item"
-							class:tools-active={tool.activeMatch(page.url.pathname)}
+							class:tools-active={tool.activeMatch(currentPathname)}
 							onclick={() => showToolsMenu = false}
 						>
 							<ToolIcon size={18} />
