@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, FilmIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
 		{
@@ -72,7 +73,7 @@
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 				{#each cat.tools as tool}
 					{@const Icon = tool.icon}
-					<a href={tool.href} class="tool-card">
+					<a href={localizeHref(tool.href)} class="tool-card">
 						<div class="tool-icon">
 							<Icon size={20} />
 						</div>

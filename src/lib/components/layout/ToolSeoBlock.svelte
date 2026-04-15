@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tools_common_seo_how_title, tools_common_seo_step1, tools_common_seo_step2, tools_common_seo_step3, tools_common_seo_why_title, tools_common_seo_why_private, tools_common_seo_why_free, tools_common_seo_why_offline, tools_common_seo_faq_title, tools_common_seo_related_title } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 	import type { Component } from 'svelte';
 
 	type RelatedTool = {
@@ -64,7 +65,7 @@
 			<div class="seo-related">
 				{#each relatedTools as tool}
 					{@const Icon = tool.icon}
-					<a href={tool.href} class="seo-related-card">
+					<a href={localizeHref(tool.href)} class="seo-related-card">
 						<Icon size={18} />
 						<span>{tool.name}</span>
 					</a>

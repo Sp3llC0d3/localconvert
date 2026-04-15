@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Uploader from "$lib/components/functional/Uploader.svelte";
+	import { localizeHref } from "$lib/paraglide/runtime";
 	import { ShieldCheck, Zap, Ban, Code } from "lucide-svelte";
 
 	let { data } = $props();
@@ -122,7 +123,7 @@
 	<div class="flex flex-wrap justify-center gap-2">
 		{#each info.inputFormats as fmt}
 			{#if validFormats.has(fmt)}
-				<a href="/{fmt}-converter/" class="format-chip">.{fmt.toUpperCase()}</a>
+				<a href={localizeHref(`/${fmt}-converter/`)} class="format-chip">.{fmt.toUpperCase()}</a>
 			{:else}
 				<span class="format-chip">.{fmt.toUpperCase()}</span>
 			{/if}

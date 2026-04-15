@@ -9,6 +9,7 @@
 		ShieldIcon,
 	} from "lucide-svelte";
 	import { about_resources_title, about_resources_source, about_resources_email, footer_privacy_policy } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 </script>
 
 <Panel class="flex flex-col gap-4 p-6">
@@ -44,7 +45,7 @@
 			{about_resources_email()}
 		</a>
 		<a
-			href="/privacy/"
+			href={localizeHref("/privacy/")}
 			class="btn {$effects
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"

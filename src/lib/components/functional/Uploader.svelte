@@ -3,6 +3,7 @@
 	import { onMount } from "svelte";
 	import { effects, files } from "$lib/store/index.svelte";
 	import { goto } from "$app/navigation";
+	import { localizeHref } from "$lib/paraglide/runtime";
 	import { upload_uploader_to_convert, upload_uploader_drop, upload_uploader_or, upload_uploader_click_browse, upload_uploader_add_more } from "$lib/paraglide/messages/_barrel.js";
 
 	type Props = {
@@ -26,7 +27,7 @@
 		if (!fileInput) return;
 		const oldLength = files.files.length;
 		await files.add(fileInput.files);
-		if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
+		if (oldLength !== files.files.length) goto(localizeHref(`/convert${redirectSuffix || "/"}`));
 	};
 
 	onMount(() => {
@@ -37,7 +38,7 @@
 			isDragOver = false;
 			const oldLength = files.files.length;
 			await files.add(e.dataTransfer?.files ?? null);
-			if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
+			if (oldLength !== files.files.length) goto(localizeHref(`/convert${redirectSuffix || "/"}`));
 		};
 
 		uploaderButton?.addEventListener("dragover",  onEnter);

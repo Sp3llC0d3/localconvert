@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { GITHUB_URL } from "$lib/util/consts";
 	import { footer_tagline, footer_pdf_tools_count, footer_image_tools_count, footer_dev_tools_count, footer_source_code, footer_privacy_policy, footer_copyright, aria_tool_categories } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const year = new Date().getFullYear();
 </script>
@@ -15,15 +16,15 @@
 
 		<!-- Tool categories -->
 		<nav class="footer-tools" aria-label={aria_tool_categories()}>
-			<a href="/pdf-tools/" class="footer-tool-link">
+			<a href={localizeHref("/pdf-tools/")} class="footer-tool-link">
 				<span class="category-dot category-dot--pdf"></span>
 				{footer_pdf_tools_count()}
 			</a>
-			<a href="/image-tools/" class="footer-tool-link">
+			<a href={localizeHref("/image-tools/")} class="footer-tool-link">
 				<span class="category-dot category-dot--image"></span>
 				{footer_image_tools_count()}
 			</a>
-			<a href="/dev-tools/" class="footer-tool-link">
+			<a href={localizeHref("/dev-tools/")} class="footer-tool-link">
 				<span class="category-dot category-dot--dev"></span>
 				{footer_dev_tools_count()}
 			</a>
@@ -35,7 +36,7 @@
 				{footer_source_code()}
 			</a>
 			<span class="footer-sep">&bull;</span>
-			<a class="footer-link" href="/privacy/">
+			<a class="footer-link" href={localizeHref("/privacy/")}>
 				{footer_privacy_policy()}
 			</a>
 		</div>

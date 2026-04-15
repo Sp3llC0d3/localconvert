@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { SearchIcon } from 'lucide-svelte';
 	import { fade } from '$lib/util/animation';
 	import { commandPalette } from '$lib/store/commandPalette.svelte';
@@ -90,7 +91,7 @@
 	function navigate(href: string) {
 		commandPalette.close();
 		query = '';
-		goto(href);
+		goto(localizeHref(href));
 	}
 
 	function onKeydown(e: KeyboardEvent) {

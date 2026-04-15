@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { CodeIcon, BracesIcon, HashIcon, Binary, FileTextIcon, GitCompareArrowsIcon, TypeIcon, LinkIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import { dev_tools_categories_format, dev_tools_tools_json_name, dev_tools_tools_json_desc, dev_tools_tools_base64_name, dev_tools_tools_base64_desc, dev_tools_tools_url_encode_name, dev_tools_tools_url_encode_desc, dev_tools_tools_css_minify_name, dev_tools_tools_css_minify_desc, dev_tools_categories_analyze, dev_tools_tools_hash_name, dev_tools_tools_hash_desc, dev_tools_tools_diff_name, dev_tools_tools_diff_desc, dev_tools_tools_word_count_name, dev_tools_tools_word_count_desc, dev_tools_tools_markdown_name, dev_tools_tools_markdown_desc, dev_tools_title, dev_tools_subtitle, dev_tools_badge } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
 		{
@@ -59,7 +60,7 @@
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 				{#each cat.tools as tool}
 					{@const Icon = tool.icon}
-					<a href={tool.href} class="tool-card">
+					<a href={localizeHref(tool.href)} class="tool-card">
 						<div class="tool-icon">
 							<Icon size={20} />
 						</div>

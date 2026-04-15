@@ -15,7 +15,6 @@
 		theme,
 		dropping,
 		locale,
-		updateLocale,
 	} from "$lib/store/index.svelte";
 	import "$lib/css/app.scss";
 	import { initStores as initAnimStores } from "$lib/util/animation.js";
@@ -24,6 +23,8 @@
 	import { log } from "$lib/util/logger.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { loadFontForLocale } from "$lib/util/fonts.js";
+	import { localizeHref, deLocalizeHref, getLocale, locales } from "$lib/paraglide/runtime";
+	import { page } from "$app/state";
 
 	let { children, data } = $props();
 	let scrollPositions = new Map<string, number>();
@@ -46,7 +47,7 @@
 		dropping.set(false);
 		const oldLength = files.files.length;
 		await files.add(e.dataTransfer?.files);
-		if (oldLength !== files.files.length) goto("/convert");
+		if (oldLength !== files.files.length) goto(localizeHref("/convert/"));
 	};
 
 	const handleDrag = (e: DragEvent, drag: boolean) => {
@@ -60,7 +61,7 @@
 		e.preventDefault();
 		const oldLength = files.files.length;
 		files.add(clipboardData.files);
-		if (oldLength !== files.files.length) goto("/convert");
+		if (oldLength !== files.files.length) goto(localizeHref("/convert/"));
 	};
 
 	onMount(() => {
@@ -86,30 +87,9 @@
 		theme.set(
 			(localStorage.getItem("theme") as "light" | "dark") || "light",
 		);
-		const storedLocale = localStorage.getItem("locale");
-		if (storedLocale) {
-			updateLocale(storedLocale);
-		} else {
-			// No stored preference — detect from browser language
-			const availableKeys = ["en","ar","es","fa","fr","de","hi","it","ba","hr","id","ms","nl","pl","pt","ro","tr","ru","sv","th","uk","vi","ja","ko","el","zh-Hans","zh-Hant","pt-BR"];
-			const browserLangs = navigator.languages?.length ? navigator.languages : [navigator.language];
-			let detected = "en";
-			for (const lang of browserLangs) {
-				// Exact match first (e.g. "pt-BR")
-				if (availableKeys.includes(lang)) { detected = lang; break; }
-				// Base language match (e.g. "zh-TW" → "zh-Hant", "zh-CN" → "zh-Hans", "pt-*" → "pt-BR")
-				const base = lang.split("-")[0];
-				const sub = lang.split("-")[1]?.toLowerCase();
-				if (base === "zh") {
-					if (sub === "tw" || sub === "hk" || sub === "mo") { detected = "zh-Hant"; break; }
-					detected = "zh-Hans"; break;
-				}
-				if (base === "pt") { detected = "pt-BR"; break; }
-				if (availableKeys.includes(base)) { detected = base; break; }
-			}
-			if (detected !== "en") updateLocale(detected);
-			else loadFontForLocale("en");
-		}
+		// Locale is determined by URL (via Paraglide URL strategy).
+		// Just load the correct font for the current locale.
+		loadFontForLocale(getLocale());
 
 		Settings.instance.load();
 
@@ -165,6 +145,10 @@
 		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
 	/>
 	<meta property="twitter:image" content={featuredImage} />
+	{#each locales as loc}
+		<link rel="alternate" hreflang={loc} href="https://localconvert.app{localizeHref(deLocalizeHref(page.url.pathname), { locale: loc })}" />
+	{/each}
+	<link rel="alternate" hreflang="x-default" href="https://localconvert.app{deLocalizeHref(page.url.pathname)}" />
 	<link rel="manifest" href="/manifest.json" />
 	<link rel="search" type="application/opensearchdescription+xml" title="LocalConvert" href="/opensearch.xml" />
 	{#if data.isAprilFools}

@@ -7,7 +7,7 @@ const paraglideHandle: Handle = ({ event, resolve }) =>
 		event.request,
 		({ request: localizedRequest, locale }) => {
 			event.request = localizedRequest;
-			const rtlLocales = ["ar"];
+			const rtlLocales = ["ar", "fa"];
 			const dir = rtlLocales.includes(locale) ? "rtl" : "ltr";
 			return resolve(event, {
 				transformPageChunk: ({ html }) => {

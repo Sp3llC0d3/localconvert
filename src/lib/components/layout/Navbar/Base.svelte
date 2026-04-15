@@ -7,7 +7,6 @@
 		files,
 		goingLeft,
 		setTheme,
-		updateLocale,
 		availableLocales,
 	} from "$lib/store/index.svelte";
 	import clsx from "clsx";
@@ -30,11 +29,11 @@
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
 	import Panel from "../../visual/Panel.svelte";
-	import { beforeNavigate } from "$app/navigation";
+	import { beforeNavigate, goto } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { navbar_home, navbar_convert, navbar_pdf_tools, navbar_image_tools, navbar_dev_tools, navbar_settings, navbar_about, navbar_tools, navbar_toggle_theme, about_install, aria_tools_menu, aria_search_tools, aria_select_language } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref, deLocalizeHref, getLocale } from "$lib/paraglide/runtime";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
-	import { getLocale } from "$lib/paraglide/runtime";
 	import { onMount, onDestroy } from "svelte";
 
 	let installPrompt: any = $state((browser && (window as any).__installPrompt) || null);
@@ -46,12 +45,12 @@
 	let toolsMenuContainer = $state<HTMLDivElement>();
 
 	onMount(() => {
-		currentLocale = localStorage.getItem("locale") || getLocale();
+		currentLocale = getLocale();
 	});
 
-	function selectLocale(locale: string) {
-		currentLocale = locale;
-		updateLocale(locale);
+	function selectLocale(newLocale: string) {
+		const currentPath = deLocalizeHref(page.url.pathname);
+		goto(localizeHref(currentPath, { locale: newLocale as any }));
 		showLangPicker = false;
 	}
 
@@ -263,7 +262,7 @@
 	{@const Icon = item.icon}
 	<a
 		bind:this={links[index]}
-		href={item.url}
+		href={localizeHref(item.url)}
 		aria-label={item.name}
 		class={clsx(
 			"nav-link",
@@ -356,7 +355,7 @@
 					{#each toolItems as tool}
 						{@const ToolIcon = tool.icon}
 						<a
-							href={tool.url}
+							href={localizeHref(tool.url)}
 							class="tools-item"
 							class:tools-active={tool.activeMatch(page.url.pathname)}
 							onclick={() => showToolsMenu = false}

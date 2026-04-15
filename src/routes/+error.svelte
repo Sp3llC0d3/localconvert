@@ -3,6 +3,7 @@
 	import error404 from "$lib/assets/errors/error-404.png";
 	import errorConversion from "$lib/assets/errors/error-conversion.png";
 	import { page_titles_not_found, page_titles_error, error_page_heading_404, error_page_heading_generic, error_page_body_404, error_page_body_generic, error_page_go_home } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 </script>
 
 <svelte:head>
@@ -26,6 +27,6 @@
 				{page.error?.message || error_page_body_generic()}
 			{/if}
 		</p>
-		<a href="/" class="btn mt-4 px-8 py-3 text-base">{error_page_go_home()}</a>
+		<a href={localizeHref("/")} class="btn mt-4 px-8 py-3 text-base">{error_page_go_home()}</a>
 	</div>
 </div>

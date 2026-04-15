@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, PaletteIcon, TypeIcon, ShieldCheckIcon, TableIcon, FileOutputIcon } from 'lucide-svelte';
 	import { pdf_tools_categories_organize, pdf_tools_tools_merge_name, pdf_tools_tools_merge_desc, pdf_tools_tools_split_name, pdf_tools_tools_split_desc, pdf_tools_tools_rotate_name, pdf_tools_tools_rotate_desc, pdf_tools_tools_organize_name, pdf_tools_tools_organize_desc, pdf_tools_categories_convert, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_images_to_pdf_desc, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_pdf_to_images_desc, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_pdf_to_ppt_desc, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_text_desc, pdf_tools_tools_grayscale_name, pdf_tools_tools_grayscale_desc, pdf_tools_tools_from_docx_name, pdf_tools_tools_from_docx_desc, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_from_xlsx_desc, pdf_tools_tools_to_docx_name, pdf_tools_tools_to_docx_desc, pdf_tools_categories_optimize, pdf_tools_tools_compress_name, pdf_tools_tools_compress_desc, pdf_tools_tools_watermark_name, pdf_tools_tools_watermark_desc, pdf_tools_tools_page_numbers_name, pdf_tools_tools_page_numbers_desc, pdf_tools_tools_metadata_name, pdf_tools_tools_metadata_desc, pdf_tools_tools_crop_name, pdf_tools_tools_crop_desc, pdf_tools_tools_sign_name, pdf_tools_tools_sign_desc, pdf_tools_tools_edit_name, pdf_tools_tools_edit_desc, pdf_tools_tools_password_name, pdf_tools_tools_password_desc, pdf_tools_tools_unlock_name, pdf_tools_tools_unlock_desc, pdf_tools_title, pdf_tools_subtitle, pdf_tools_badge } from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
 		{
@@ -85,7 +86,7 @@
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 				{#each cat.tools as tool}
 					{@const Icon = tool.icon}
-					<a href={tool.href} class="tool-card">
+					<a href={localizeHref(tool.href)} class="tool-card">
 						<div class="tool-icon" style="background: var(--accent-{cat.color}); color: var(--fg-on-accent)">
 							<Icon size={20} />
 						</div>

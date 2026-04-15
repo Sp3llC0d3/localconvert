@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page_titles_home } from '$lib/paraglide/messages/_barrel.js';
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
 	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench, ZapIcon } from "lucide-svelte";
@@ -155,7 +156,7 @@
 		<div class="toolkit-grid">
 			{#each toolkitCategories as cat, i}
 				{@const Icon = cat.icon}
-				<a href={cat.href} class={clsx("toolkit-card", `toolkit-card--${cat.color}`, "fade-in-up", i === 0 && "fade-delay-1", i === 1 && "fade-delay-2", i === 2 && "fade-delay-3")}>
+				<a href={localizeHref(cat.href)} class={clsx("toolkit-card", `toolkit-card--${cat.color}`, "fade-in-up", i === 0 && "fade-delay-1", i === 1 && "fade-delay-2", i === 2 && "fade-delay-3")}>
 					<div class="toolkit-card-header">
 						<div class={clsx("toolkit-icon", `toolkit-icon--${cat.color}`)}>
 							<Icon size="20" />
@@ -188,7 +189,7 @@
 		</div>
 
 		<div class="flex justify-center mt-6">
-			<a href="/formats/" class="formats-link">
+			<a href={localizeHref("/formats/")} class="formats-link">
 				See all formats &rarr;
 			</a>
 		</div>
