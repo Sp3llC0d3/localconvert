@@ -6,6 +6,7 @@
 	type Props = {
 		files: File[];
 		multiple?: boolean;
+		accept?: string;
 		label?: string;
 		class?: string;
 	};
@@ -13,6 +14,7 @@
 	let {
 		files = $bindable([]),
 		multiple = false,
+		accept = 'image/*',
 		label = 'Drop an image here or click to select',
 		class: classList = '',
 	}: Props = $props();
@@ -55,7 +57,7 @@
 <input
 	bind:this={input}
 	type="file"
-	accept="image/*"
+	{accept}
 	{multiple}
 	class="hidden"
 	onchange={(e) => processFiles((e.target as HTMLInputElement).files)}
@@ -63,60 +65,118 @@
 
 <button
 	type="button"
-	class="img-drop-zone {classList} {dragging ? 'dragging' : ''}"
+	class="idz {classList}"
+	class:idz--active={dragging}
 	onclick={() => input?.click()}
 	ondragover={(e) => { e.preventDefault(); dragging = true; }}
 	ondragleave={() => dragging = false}
 	ondrop={onDrop}
 >
-	<svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-		<path d="M12 16V8m0 0-3 3m3-3 3 3M20 16.5A3.5 3.5 0 0 0 16.5 13H15a5 5 0 1 0-9.9 1"/>
-	</svg>
-	<p class="drop-label">{label}</p>
-	<p class="drop-sub">{upload_uploader_browse()}</p>
+	<div class="idz-icon-ring">
+		<svg class="idz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M12 2C14 3 18 5 20 6v8c0 3-2.5 6-8 8-5.5-2-8-5-8-8V6c2-1 6-3 8-4Z" opacity="0.1" fill="currentColor" />
+			<path d="M12 2C14 3 18 5 20 6v8c0 3-2.5 6-8 8-5.5-2-8-5-8-8V6c2-1 6-3 8-4Z" />
+			<line x1="8" y1="10" x2="15" y2="10" />
+			<polyline points="13,8 15,10 13,12" />
+			<line x1="16" y1="14" x2="9" y2="14" />
+			<polyline points="11,12 9,14 11,16" />
+		</svg>
+	</div>
+	<p class="idz-label">{label}</p>
+	<p class="idz-sub">{upload_uploader_browse()}</p>
 </button>
 
 {#if warnings.length > 0}
-	<div class="warn-list">
+	<div class="idz-warnings">
 		{#each warnings as w}
-			<p class="warn-text">{w}</p>
+			<p class="idz-warn">{w}</p>
 		{/each}
 	</div>
 {/if}
 
 <style lang="postcss">
-	.img-drop-zone {
-		@apply w-full flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed py-10 px-6 cursor-pointer transition-colors;
-		border-color: var(--bg-separator);
+	/* ── Base ── */
+	.idz {
+		@apply w-full flex flex-col items-center justify-center cursor-pointer;
+		border: 2px dashed var(--bg-separator);
+		border-radius: 1.25rem;
 		background: var(--bg-panel);
+		box-shadow: var(--shadow-panel);
+		padding: 2.5rem 2rem;
+		gap: 1.25rem;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 	}
 
-	.img-drop-zone:hover,
-	.img-drop-zone.dragging {
+	/* ── Hover ── */
+	.idz:hover {
 		border-color: var(--accent);
-		background: var(--bg-panel-alt, var(--bg-panel));
+		box-shadow: var(--shadow-panel), 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
 	}
 
-	.drop-icon {
-		@apply w-10 h-10;
+	.idz:hover .idz-icon-ring {
+		border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+		background: color-mix(in srgb, var(--accent) 6%, transparent);
+	}
+
+	.idz:hover .idz-icon {
+		color: var(--accent);
+	}
+
+	/* ── Active drag ── */
+	.idz--active {
+		border-color: var(--accent);
+		background: color-mix(in srgb, var(--accent) 4%, var(--bg-panel));
+		box-shadow: var(--shadow-panel), 0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
+	}
+
+	.idz--active .idz-icon-ring {
+		border-color: var(--accent);
+		background: color-mix(in srgb, var(--accent) 12%, transparent);
+	}
+
+	.idz--active .idz-icon {
+		color: var(--accent);
+	}
+
+	/* ── Icon ring ── */
+	.idz-icon-ring {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 1rem;
+		border: 1.5px solid var(--bg-separator);
+		background: transparent;
+		transition: border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.idz-icon {
+		width: 1.75rem;
+		height: 1.75rem;
 		color: var(--fg-muted);
+		transition: color 0.2s ease;
+		flex-shrink: 0;
 	}
 
-	.drop-label {
+	/* ── Text ── */
+	.idz-label {
 		@apply text-sm font-medium;
+		color: var(--fg);
 	}
 
-	.drop-sub {
+	.idz-sub {
 		@apply text-xs;
 		color: var(--fg-muted);
 	}
 
-	.warn-list {
+	/* ── Warnings ── */
+	.idz-warnings {
 		@apply mt-2 flex flex-col gap-1;
 	}
 
-	.warn-text {
+	.idz-warn {
 		@apply text-xs;
-		color: hsl(35, 90%, 45%);
+		color: hsl(35, 85%, 50%);
 	}
 </style>
