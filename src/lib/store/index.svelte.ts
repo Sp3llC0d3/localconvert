@@ -305,21 +305,21 @@ class Files {
 		}
 	}
 
-	public add(file: VertFile | null | undefined): void;
-	public add(file: File | null | undefined): void;
-	public add(file: File[] | null | undefined): void;
-	public add(file: VertFile[] | null | undefined): void;
-	public add(file: FileList | null | undefined): void;
-	public add(
+	public add(file: VertFile | null | undefined): Promise<void>;
+	public add(file: File | null | undefined): Promise<void>;
+	public add(file: File[] | null | undefined): Promise<void>;
+	public add(file: VertFile[] | null | undefined): Promise<void>;
+	public add(file: FileList | null | undefined): Promise<void>;
+	public async add(
 		file: VertFile | File | VertFile[] | File[] | FileList | null | undefined,
 	) {
 		if (!file) return;
 		if (Array.isArray(file) || file instanceof FileList) {
 			for (const f of file) {
-				this._add(f);
+				await this._add(f);
 			}
 		} else {
-			this._add(file);
+			await this._add(file);
 		}
 	}
 

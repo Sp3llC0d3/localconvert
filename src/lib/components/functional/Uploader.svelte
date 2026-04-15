@@ -22,21 +22,21 @@
 		fileInput.click();
 	};
 
-	const handleFileChange = (e: Event) => {
+	const handleFileChange = async (e: Event) => {
 		if (!fileInput) return;
 		const oldLength = files.files.length;
-		files.add(fileInput.files);
+		await files.add(fileInput.files);
 		if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
 	};
 
 	onMount(() => {
 		const onEnter = (e: Event) => { e.preventDefault(); isDragOver = true; };
 		const onLeave = (e: Event) => { e.preventDefault(); isDragOver = false; };
-		const onDrop  = (e: DragEvent) => {
+		const onDrop  = async (e: DragEvent) => {
 			e.preventDefault();
 			isDragOver = false;
 			const oldLength = files.files.length;
-			files.add(e.dataTransfer?.files ?? null);
+			await files.add(e.dataTransfer?.files ?? null);
 			if (oldLength !== files.files.length) goto(`/convert${redirectSuffix}`);
 		};
 

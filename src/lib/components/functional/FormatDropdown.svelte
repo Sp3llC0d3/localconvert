@@ -340,7 +340,7 @@
 		// Revoke blobUrl before removing file to prevent memory leak
 		if (file.blobUrl) URL.revokeObjectURL(file.blobUrl);
 		files.files = files.files.filter((f) => f !== file);
-		newFiles.forEach((f) => files.add(f));
+		for (const f of newFiles) await files.add(f);
 	};
 
 	onMount(() => {

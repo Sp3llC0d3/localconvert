@@ -41,11 +41,11 @@
 		window.scrollTo(0, scrollY);
 	});
 
-	const dropFiles = (e: DragEvent) => {
+	const dropFiles = async (e: DragEvent) => {
 		e.preventDefault();
 		dropping.set(false);
 		const oldLength = files.files.length;
-		files.add(e.dataTransfer?.files);
+		await files.add(e.dataTransfer?.files);
 		if (oldLength !== files.files.length) goto("/convert");
 	};
 

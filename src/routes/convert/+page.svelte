@@ -406,17 +406,20 @@
 									position="bottom"
 								>
 									<button
-										class="btn {$effects ? '' : '!scale-100'} p-0 w-14 h-14 text-black {isAudio
-											? 'bg-accent-purple'
+										class="act-btn act-btn--convert {$effects ? '' : 'act-btn--no-fx'}"
+										style="--cat-color: var({isAudio
+											? '--accent-purple'
 											: isVideo
-												? 'bg-accent-red'
+												? '--accent-red'
 												: isDocument
-													? 'bg-accent-green'
-													: 'bg-accent-blue'}"
+													? '--accent-green'
+													: '--accent-blue'})"
 										disabled={!files.ready}
 										onclick={() => file.convert()}
 									>
-										<RotateCwIcon size="24" />
+										<span class="act-btn__icon" class:act-btn__spin={file.processing}>
+											<RotateCwIcon size="22" />
+										</span>
 									</button>
 								</Tooltip>
 								<Tooltip
@@ -424,11 +427,14 @@
 									position="bottom"
 								>
 									<button
-										class="btn {$effects ? '' : '!scale-100'} p-0 w-14 h-14"
+										class="act-btn act-btn--download {$effects ? '' : 'act-btn--no-fx'}"
+										class:act-btn--ready={!!file.result}
 										onclick={file.download}
 										disabled={!file.result}
 									>
-										<DownloadIcon size="24" />
+										<span class="act-btn__icon">
+											<DownloadIcon size="22" />
+										</span>
 									</button>
 								</Tooltip>
 							</div>
@@ -548,6 +554,101 @@
 </div>
 
 <style lang="postcss">
+	/* ── Action buttons (Convert / Download) ── */
+	.act-btn {
+		width: 3.25rem;
+		height: 3.25rem;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border: 2px solid transparent;
+		background: transparent;
+		position: relative;
+		transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+	}
+
+	.act-btn:not(.act-btn--no-fx):hover { transform: scale(1.08); }
+	.act-btn:not(.act-btn--no-fx):active { transform: scale(0.95); }
+	.act-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+	.act-btn__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.2s ease, color 0.2s ease;
+	}
+
+	/* ── Convert button ── */
+	.act-btn--convert {
+		border-color: var(--cat-color);
+		color: var(--cat-color);
+	}
+
+	.act-btn--convert:hover:not(:disabled) {
+		background: var(--cat-color);
+		color: white;
+		box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat-color) 15%, transparent);
+	}
+
+	.act-btn--convert:disabled {
+		border-color: var(--bg-separator);
+		color: var(--fg-muted);
+		opacity: 0.45;
+		cursor: not-allowed;
+		transform: none !important;
+	}
+
+	/* Spinning icon during conversion */
+	.act-btn__spin {
+		animation: act-spin 0.8s linear infinite;
+	}
+
+	@keyframes act-spin {
+		to { transform: rotate(360deg); }
+	}
+
+	/* Pulsing border during processing */
+	.act-btn--convert:has(.act-btn__spin) {
+		animation: act-pulse 1.2s ease-in-out infinite;
+	}
+
+	@keyframes act-pulse {
+		0%, 100% { border-color: var(--cat-color); }
+		50% { border-color: color-mix(in srgb, var(--cat-color) 35%, transparent); }
+	}
+
+	/* ── Download button ── */
+	.act-btn--download {
+		border: 2px dashed var(--bg-separator);
+		color: var(--fg-muted);
+		opacity: 0.3;
+		cursor: not-allowed;
+		transform: none !important;
+	}
+
+	.act-btn--download.act-btn--ready {
+		border: 2px solid var(--accent);
+		background: var(--accent);
+		color: white;
+		opacity: 1;
+		cursor: pointer;
+		box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent),
+		            0 2px 12px color-mix(in srgb, var(--accent) 25%, transparent);
+		animation: act-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	}
+
+	.act-btn--download.act-btn--ready:hover {
+		box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent),
+		            0 4px 20px color-mix(in srgb, var(--accent) 30%, transparent);
+	}
+
+	@keyframes act-pop {
+		0% { transform: scale(0.8); opacity: 0.5; }
+		100% { transform: scale(1); opacity: 1; }
+	}
+
 	/* ── Per-file options strip ── */
 	.file-options {
 		@apply flex flex-col gap-2.5 pt-3 border-t border-separator;
