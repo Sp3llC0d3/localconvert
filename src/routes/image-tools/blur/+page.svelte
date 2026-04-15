@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name};
+	import { tool_pages_blur_err_area, tools_common_failed, tool_pages_blur_title, tool_pages_blur_desc, tools_common_back_image, tools_common_upload_image, tool_pages_blur_shape, tool_pages_blur_radius, tool_pages_blur_help, tool_pages_blur_btn_busy, tool_pages_blur_btn, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_blur_seo_faq1_q, tool_pages_img_blur_seo_faq1_a, tool_pages_img_blur_seo_faq2_q, tool_pages_img_blur_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_watermark_name, image_tools_tools_filters_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { blurRegions, type BlurRegion } from '$lib/image/blur';
@@ -299,7 +300,7 @@
 
 	async function apply() {
 		if (!files[0] || regions.length === 0) {
-			error = m['tool_pages.blur.err_area']();
+			error = tool_pages_blur_err_area();
 			return;
 		}
 		error = '';
@@ -312,7 +313,7 @@
 			beforeUrl = URL.createObjectURL(files[0]);
 			afterUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -336,20 +337,20 @@
 <div class="blur-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.blur.title']()}
-		description={m['tool_pages.blur.desc']()}
+		title={tool_pages_blur_title()}
+		description={tool_pages_blur_desc()}
 		icon={EyeOffIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
 		<!-- Controls -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.blur.shape']()}</span>
+				<span class="opt-label">{tool_pages_blur_shape()}</span>
 				<div class="shape-btns">
 					<button class="shape-btn" class:active={shapeMode === 'rect'} onclick={() => shapeMode = 'rect'}>
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="10" rx="1"/></svg>
@@ -362,7 +363,7 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.blur.radius']()}</span>
+				<span class="opt-label">{tool_pages_blur_radius()}</span>
 				<input type="range" min={1} max={40} bind:value={radius} class="slider flex-1" aria-label="Blur radius" />
 				<span class="val">{radius}px</span>
 			</div>
@@ -436,7 +437,7 @@
 			</div>
 
 			<div class="preview-info">
-				<p class="text-xs text-muted">{regions.length} {regions.length === 1 ? 'region' : 'regions'} — {m['tool_pages.blur.help']()}</p>
+				<p class="text-xs text-muted">{regions.length} {regions.length === 1 ? 'region' : 'regions'} — {tool_pages_blur_help()}</p>
 				{#if regions.length > 0}
 					<button class="clear-btn" onclick={clearAll}>
 						<Trash2Icon size={12} />
@@ -447,7 +448,7 @@
 		</div>
 
 		<button class="btn highlight" disabled={processing || regions.length === 0} onclick={apply}>
-			{processing ? m['tool_pages.blur.btn_busy']() : m['tool_pages.blur.btn']()}
+			{processing ? tool_pages_blur_btn_busy() : tool_pages_blur_btn()}
 		</button>
 	{/if}
 
@@ -458,20 +459,20 @@
 			<BeforeAfter beforeSrc={beforeUrl} afterSrc={afterUrl} />
 		{/if}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-blur']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-blur'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-blur'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-blur'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-blur'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-blur'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_blur_seo_faq1_q?.() ?? '', a: tool_pages_img_blur_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_blur_seo_faq2_q?.() ?? '', a: tool_pages_img_blur_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-blur'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-blur'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

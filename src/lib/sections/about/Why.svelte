@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { MessageCircleQuestionIcon } from "lucide-svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { about_why_title, about_why_description } from "$lib/paraglide/messages/_barrel.js";
 	import { sanitize } from "$lib/util/sanitize";
 </script>
 
@@ -12,9 +12,9 @@
 		>
 			<MessageCircleQuestionIcon />
 		</div>
-		{m["about.why.title"]()}
+		{about_why_title()}
 	</h2>
 	<p class="text-lg font-normal">
-		{@html sanitize(m["about.why.description"]())}
+		{@html sanitize(about_why_description())}
 	</p>
 </Panel>

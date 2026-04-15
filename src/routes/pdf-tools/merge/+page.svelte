@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.split_name': pdf_tools_tools_split_name, 'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
+	import { tool_pages_merge_err_min, tool_pages_merge_err_fail, tool_pages_merge_title, tool_pages_merge_desc, tools_common_back_pdf, tools_common_upload_pdfs, tool_pages_merge_btn_busy, tool_pages_merge_btn, tools_common_ready, tools_common_output, tool_pages_merge_save, tools_common_privacy_note, tool_pages_merge_seo_faq1_q, tool_pages_merge_seo_faq1_a, tool_pages_merge_seo_faq2_q, tool_pages_merge_seo_faq2_a, pdf_tools_tools_split_name, pdf_tools_tools_organize_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { mergePdfs } from '$lib/pdf/merge';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -33,14 +34,14 @@
 	function onDragEnd() { dragIndex = null; }
 
 	async function merge() {
-		if (files.length < 2) { error = m['tool_pages.merge.err_min'](); return; }
+		if (files.length < 2) { error = tool_pages_merge_err_min(); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await mergePdfs(files);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.merge.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_merge_err_fail();
 		}
 		processing = false;
 	}
@@ -64,14 +65,14 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.merge.title']()}
-		description={m['tool_pages.merge.desc']()}
+		title={tool_pages_merge_title()}
+		description={tool_pages_merge_desc()}
 		icon={GitMergeIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files label={m['tools_common.upload_pdfs']()} />
+	<PdfUploader bind:files label={tools_common_upload_pdfs()} />
 
 	{#if files.length > 0}
 		<ul class="file-list">
@@ -92,7 +93,7 @@
 		</ul>
 
 		<button class="btn highlight" disabled={processing} onclick={merge}>
-			{processing ? m['tool_pages.merge.btn_busy']() : m['tool_pages.merge.btn']()}
+			{processing ? tool_pages_merge_btn_busy() : tool_pages_merge_btn()}
 		</button>
 	{/if}
 
@@ -100,8 +101,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.merge.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} {tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_merge_save()}</button>
 		</div>
 	{/if}
 
@@ -109,14 +110,14 @@
 	{#if toolSeo['merge']}
 		<ToolSeoBlock
 			faqs={toolSeo['merge'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['merge'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['merge'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['merge'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['merge'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_merge_seo_faq1_q?.() ?? '', a: tool_pages_merge_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_merge_seo_faq2_q?.() ?? '', a: tool_pages_merge_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['merge'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['merge'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

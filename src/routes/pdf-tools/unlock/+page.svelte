@@ -1,10 +1,11 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.password_name': pdf_tools_tools_password_name, 'pdf_tools.tools.metadata_name': pdf_tools_tools_metadata_name, 'pdf_tools.tools.edit_name': pdf_tools_tools_edit_name};
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { unlockPdf } from '$lib/pdf/unlock';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockOpenIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tool_pages_unlock_err_pdf, tool_pages_unlock_err_fail, tool_pages_unlock_title, tool_pages_unlock_desc, tools_common_back_pdf, tools_common_upload_pdf_protected, tool_pages_unlock_info, tool_pages_unlock_password_label, tool_pages_unlock_password_placeholder, tool_pages_unlock_password_hint, tool_pages_unlock_btn_busy, tool_pages_unlock_btn, tool_pages_unlock_result, tool_pages_unlock_save, tools_common_privacy_note, tool_pages_unlock_seo_faq1_q, tool_pages_unlock_seo_faq1_a, tool_pages_unlock_seo_faq2_q, tool_pages_unlock_seo_faq2_a, pdf_tools_tools_password_name, pdf_tools_tools_metadata_name, pdf_tools_tools_edit_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -21,14 +22,14 @@
 	});
 
 	async function apply() {
-		if (files.length === 0) { error = m['tool_pages.unlock.err_pdf'](); return; }
+		if (files.length === 0) { error = tool_pages_unlock_err_pdf(); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await unlockPdf(files[0], password);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.unlock.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_unlock_err_fail();
 		}
 		processing = false;
 	}
@@ -52,33 +53,33 @@
 <div class="unlock-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.unlock.title']()}
-		description={m['tool_pages.unlock.desc']()}
+		title={tool_pages_unlock_title()}
+		description={tool_pages_unlock_desc()}
 		icon={LockOpenIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf_protected']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf_protected()} />
 
 	{#if files.length > 0}
 		<div class="info-box">
-			<p class="text-sm">{m['tool_pages.unlock.info']()}</p>
+			<p class="text-sm">{tool_pages_unlock_info()}</p>
 		</div>
 
 		<div class="opt-section">
-			<label class="text-sm font-medium">{m['tool_pages.unlock.password_label']()}</label>
+			<label class="text-sm font-medium">{tool_pages_unlock_password_label()}</label>
 			<input
 				type="password"
 				bind:value={password}
-				placeholder={m['tool_pages.unlock.password_placeholder']()}
+				placeholder={tool_pages_unlock_password_placeholder()}
 				class="pwd-input"
 			/>
-			<p class="text-xs text-muted">{m['tool_pages.unlock.password_hint']()}</p>
+			<p class="text-xs text-muted">{tool_pages_unlock_password_hint()}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? m['tool_pages.unlock.btn_busy']() : m['tool_pages.unlock.btn']()}
+			{processing ? tool_pages_unlock_btn_busy() : tool_pages_unlock_btn()}
 		</button>
 	{/if}
 
@@ -86,8 +87,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tool_pages.unlock.result']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.unlock.save']()}</button>
+			<p class="text-sm font-medium">{tool_pages_unlock_result()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_unlock_save()}</button>
 		</div>
 	{/if}
 
@@ -95,14 +96,14 @@
 	{#if toolSeo['unlock']}
 		<ToolSeoBlock
 			faqs={toolSeo['unlock'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['unlock'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['unlock'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['unlock'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['unlock'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_unlock_seo_faq1_q?.() ?? '', a: tool_pages_unlock_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_unlock_seo_faq2_q?.() ?? '', a: tool_pages_unlock_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['unlock'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['unlock'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

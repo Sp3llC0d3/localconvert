@@ -1,6 +1,6 @@
 import { byNative } from "$lib/converters/format-metadata";
 import type { Converter } from "$lib/converters/converter.svelte";
-import { m } from "$lib/paraglide/messages";
+import { workers_errors_general } from "$lib/paraglide/messages/_barrel.js";
 import { ToastManager } from "$lib/util/toast.svelte";
 import type { Component } from "svelte";
 import { MAX_ARRAY_BUFFER_SIZE } from "$lib/store/index.svelte";
@@ -253,7 +253,7 @@ export class VertFile {
 		// 	type: "error",
 		// 	message:
 		// 		typeof toastMsg === "string"
-		// 			? m["workers.errors.general"]({
+		// 			? workers_errors_general({
 		// 					file: this.file.name,
 		// 					message: toastMsg,
 		// 				})
@@ -263,7 +263,7 @@ export class VertFile {
 		if (typeof toastMsg === "string") {
 			ToastManager.add({
 				type: "error",
-				message: m["workers.errors.general"]({
+				message: workers_errors_general({
 					file: this.file.name,
 					message: toastMsg,
 				}),

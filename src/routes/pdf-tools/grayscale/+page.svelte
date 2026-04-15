@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name};
+	import { tools_common_failed, tool_pages_grayscale_title, tool_pages_grayscale_desc, tools_common_back_pdf, tool_pages_grayscale_warning, tools_common_upload_pdf, tools_common_quality, tools_common_input, tool_pages_grayscale_btn_busy, tool_pages_grayscale_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_grayscale_grayscale, tool_pages_grayscale_save, tools_common_privacy_note, tool_pages_grayscale_seo_faq1_q, tool_pages_grayscale_seo_faq1_a, tool_pages_grayscale_seo_faq2_q, tool_pages_grayscale_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_crop_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { grayscalePdf } from '$lib/pdf/grayscale';
@@ -44,7 +45,7 @@
 				(p, t) => { progress = p; total = t; },
 			);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 
@@ -93,33 +94,33 @@
 <div class="gray-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.grayscale.title']()}
-		description={m['tool_pages.grayscale.desc']()}
+		title={tool_pages_grayscale_title()}
+		description={tool_pages_grayscale_desc()}
 		icon={PaletteIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
 	<div class="warn-box">
 		<AlertTriangleIcon size={16} class="flex-shrink-0 mt-0.5" />
-		<p class="text-sm">{m['tool_pages.grayscale.warning']()}</p>
+		<p class="text-sm">{tool_pages_grayscale_warning()}</p>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.quality']()}</span>
+				<span class="opt-label">{tools_common_quality()}</span>
 				<input type="range" min={30} max={95} bind:value={quality} class="slider flex-1" aria-label="Quality" />
 				<span class="val">{quality}%</span>
 			</div>
-			<p class="text-xs text-muted">{m['tools_common.input']()}: <b>{formatFileSize(files[0].size)}</b></p>
+			<p class="text-xs text-muted">{tools_common_input()}: <b>{formatFileSize(files[0].size)}</b></p>
 		</div>
 
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">{m['tool_pages.grayscale.btn_busy']({ progress, total })}</p>
+				<p class="text-sm text-muted">{tool_pages_grayscale_btn_busy({ progress, total })}</p>
 				<div class="h-1.5 rounded-full overflow-hidden" style="background: var(--bg-separator)">
 					<div class="h-full rounded-full transition-all" style="background: var(--accent); width: {total > 0 ? (progress / total * 100) : 0}%"></div>
 				</div>
@@ -127,7 +128,7 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? m['tool_pages.grayscale.btn_busy']({ progress, total }) : m['tool_pages.grayscale.btn']()}
+			{processing ? tool_pages_grayscale_btn_busy({ progress, total }) : tool_pages_grayscale_btn()}
 		</button>
 	{/if}
 
@@ -136,16 +137,16 @@
 	{#if resultBytes}
 		<div class="result-box">
 			<p class="text-sm font-medium">
-				{m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b>
+				{tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b>
 				{#if savings && savings.saved > 0}
-					— {m['tool_pages.compress.saved']()} <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
+					— {tool_pages_compress_saved()} <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
 				{/if}
 			</p>
 
 			<div class="compare-section">
 				<div class="compare-toggle">
-					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>{m['tool_pages.compress.original']()}</button>
-					<button class="comp-btn {compareView === 'grayscale' ? 'active' : ''}" onclick={() => compareView = 'grayscale'}>{m['tool_pages.grayscale.grayscale']()}</button>
+					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>{tool_pages_compress_original()}</button>
+					<button class="comp-btn {compareView === 'grayscale' ? 'active' : ''}" onclick={() => compareView = 'grayscale'}>{tool_pages_grayscale_grayscale()}</button>
 				</div>
 				<div class="compare-canvas-wrap">
 					<canvas bind:this={origCanvas} class="compare-canvas" class:comp-hidden={compareView !== 'original'}></canvas>
@@ -153,7 +154,7 @@
 				</div>
 			</div>
 
-			<button class="btn" onclick={download}>{m['tool_pages.grayscale.save']()}</button>
+			<button class="btn" onclick={download}>{tool_pages_grayscale_save()}</button>
 		</div>
 	{/if}
 
@@ -161,14 +162,14 @@
 	{#if toolSeo['grayscale']}
 		<ToolSeoBlock
 			faqs={toolSeo['grayscale'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['grayscale'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['grayscale'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['grayscale'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['grayscale'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_grayscale_seo_faq1_q?.() ?? '', a: tool_pages_grayscale_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_grayscale_seo_faq2_q?.() ?? '', a: tool_pages_grayscale_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['grayscale'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['grayscale'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

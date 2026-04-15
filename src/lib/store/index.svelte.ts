@@ -5,7 +5,7 @@ import { VertFile } from "$lib/types";
 import { writable } from "svelte/store";
 import { addDialog } from "./DialogProvider";
 import { getLocale, setLocale } from "$lib/paraglide/runtime";
-import { m } from "$lib/paraglide/messages";
+import { convert_archive_file_extracting, convert_archive_file_detected, convert_archive_file_extracted, convert_archive_file_extract_error, convert_large_file_warning, convert_archive_file_image, convert_archive_file_audio, convert_archive_file_doc, convert_archive_file_video } from "$lib/paraglide/messages/_barrel.js";
 import { ToastManager } from "$lib/util/toast.svelte";
 import { GB } from "$lib/util/consts";
 
@@ -143,7 +143,7 @@ class Files {
 			log(["files"], `extracting zip file: ${file.name}`);
 			ToastManager.add({
 				type: "info",
-				message: m["convert.archive_file.extracting"]({
+				message: convert_archive_file_extracting({
 					filename: file.name,
 				}),
 			});
@@ -205,8 +205,8 @@ class Files {
 
 				ToastManager.add({
 					type: "success",
-					message: m["convert.archive_file.detected"]({
-						type: m[`convert.archive_file.${type}`](),
+					message: convert_archive_file_detected({
+						type: ({image: convert_archive_file_image, audio: convert_archive_file_audio, doc: convert_archive_file_doc, video: convert_archive_file_video})[type](),
 						filename: file.name,
 					}),
 				});
@@ -222,7 +222,7 @@ class Files {
 
 				ToastManager.add({
 					type: "success",
-					message: m["convert.archive_file.extracted"]({
+					message: convert_archive_file_extracted({
 						filename: file.name,
 						extract_count: entries.length,
 						ignore_count: 0,
@@ -254,7 +254,7 @@ class Files {
 					error(["files"], `error extracting zip file: ${err}`);
 					ToastManager.add({
 						type: "error",
-						message: m["convert.archive_file.extract_error"]({
+						message: convert_archive_file_extract_error({
 							filename: file.name,
 							error: String(err),
 						}),
@@ -294,7 +294,7 @@ class Files {
 			if (file.size > MAX_ARRAY_BUFFER_SIZE) {
 				ToastManager.add({
 					type: "warning",
-					message: m["convert.large_file_warning"]({
+					message: convert_large_file_warning({
 						limit: (MAX_ARRAY_BUFFER_SIZE / GB).toFixed(2),
 					}),
 					durations: {

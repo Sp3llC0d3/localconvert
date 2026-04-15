@@ -32,7 +32,7 @@
 	import Panel from "../../visual/Panel.svelte";
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { navbar_home, navbar_convert, navbar_pdf_tools, navbar_image_tools, navbar_dev_tools, navbar_settings, navbar_about, navbar_tools, navbar_toggle_theme, about_install } from "$lib/paraglide/messages/_barrel.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { getLocale } from "$lib/paraglide/runtime";
 	import { onMount, onDestroy } from "svelte";
@@ -103,13 +103,13 @@
 		}[]
 	>([
 		{
-			name: m["navbar.home"](),
+			name: navbar_home(),
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
 			icon: ShieldIcon,
 		},
 		{
-			name: m["navbar.convert"](),
+			name: navbar_convert(),
 			url: "/convert/",
 			activeMatch: (pathname) =>
 				pathname === "/convert/" || pathname === "/convert",
@@ -121,19 +121,19 @@
 	// Tools submenu items
 	const toolItems = $derived([
 		{
-			name: m["navbar.pdf_tools"](),
+			name: navbar_pdf_tools(),
 			url: "/pdf-tools/",
 			activeMatch: (pathname: string) => pathname.startsWith("/pdf-tools"),
 			icon: FileTextIcon,
 		},
 		{
-			name: m["navbar.image_tools"](),
+			name: navbar_image_tools(),
 			url: "/image-tools/",
 			activeMatch: (pathname: string) => pathname.startsWith("/image-tools"),
 			icon: ImageIcon,
 		},
 		{
-			name: m["navbar.dev_tools"](),
+			name: navbar_dev_tools(),
 			url: "/dev-tools/",
 			activeMatch: (pathname: string) => pathname.startsWith("/dev-tools"),
 			icon: CodeIcon,
@@ -154,13 +154,13 @@
 		}[]
 	>([
 		{
-			name: m["navbar.settings"](),
+			name: navbar_settings(),
 			url: "/settings/",
 			activeMatch: (pathname) => pathname.startsWith("/settings"),
 			icon: SettingsIcon,
 		},
 		{
-			name: m["navbar.about"](),
+			name: navbar_about(),
 			url: "/about/",
 			activeMatch: (pathname) => pathname.startsWith("/about"),
 			icon: InfoIcon,
@@ -344,7 +344,7 @@
 			>
 				<div class="flex items-center justify-center gap-2">
 					<WrenchIcon size={20} />
-					<span class="nav-label">{m["navbar.tools"]()}</span>
+					<span class="nav-label">{navbar_tools()}</span>
 					<ChevronDownIcon size={14} class="hidden md:block transition-transform {showToolsMenu ? 'rotate-180' : ''}" />
 				</div>
 			</button>
@@ -389,14 +389,14 @@
 		</Tooltip>
 
 		<!-- Theme toggle -->
-		<Tooltip text={m["navbar.toggle_theme"]()} position="right">
+		<Tooltip text={navbar_toggle_theme()} position="right">
 			<button
 				onclick={() => {
 					const isDark = document.documentElement.classList.contains("dark");
 					setTheme(isDark ? "light" : "dark");
 				}}
 				class="nav-action hidden md:flex"
-				aria-label={m["navbar.toggle_theme"]()}
+				aria-label={navbar_toggle_theme()}
 			>
 				<SunIcon size={18} class="dynadark:hidden block" />
 				<MoonIcon size={18} class="dynadark:block hidden" />
@@ -439,10 +439,10 @@
 			<button
 				onclick={handleInstall}
 				class="nav-install"
-				aria-label={m["about.install"]()}
+				aria-label={about_install()}
 			>
 				<DownloadIcon size={16} />
-				<span class="hidden md:inline">{m["about.install"]()}</span>
+				<span class="hidden md:inline">{about_install()}</span>
 			</button>
 		{/if}
 	</Panel>

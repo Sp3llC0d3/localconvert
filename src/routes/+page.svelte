@@ -2,7 +2,7 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
 	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench, ZapIcon } from "lucide-svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { landing_pills_no_uploads, landing_pills_tools_count, landing_pills_open_source, landing_pills_works_locally, landing_toolkit_pdf_title, landing_toolkit_pdf_desc, landing_toolkit_pdf_count, landing_toolkit_image_title, landing_toolkit_image_desc, landing_toolkit_image_count, landing_toolkit_dev_title, landing_toolkit_dev_desc, landing_toolkit_dev_count, landing_faq_q1, landing_faq_a1, landing_faq_q2, landing_faq_a2, landing_faq_q3, landing_faq_a3, landing_faq_q4, landing_faq_a4, landing_faq_q5, landing_faq_a5, upload_title, upload_subtitle, landing_toolkit_label, landing_toolkit_title, landing_toolkit_explore, landing_formats_label, landing_formats_title, landing_gpu_badge, landing_gpu_title, landing_gpu_desc, landing_gpu_full_label, landing_gpu_input_label, landing_privacy_label, landing_privacy_title, landing_privacy_point1, landing_privacy_point2, landing_privacy_point3, landing_faq_label, landing_faq_title } from "$lib/paraglide/messages/_barrel.js";
 	import { onMount } from "svelte";
 
 	let formatExplorerVisible = $state(false);
@@ -26,33 +26,33 @@
 	import privacyBadge from "$lib/assets/privacy-badge.webp";
 
 	const pills = [
-		{ icon: Ban, label: m["landing.pills.no_uploads"]() },
-		{ icon: Wrench, label: m["landing.pills.tools_count"]() },
-		{ icon: Code, label: m["landing.pills.open_source"]() },
-		{ icon: ShieldCheck, label: m["landing.pills.works_locally"]() },
+		{ icon: Ban, label: landing_pills_no_uploads() },
+		{ icon: Wrench, label: landing_pills_tools_count() },
+		{ icon: Code, label: landing_pills_open_source() },
+		{ icon: ShieldCheck, label: landing_pills_works_locally() },
 	];
 
 	const toolkitCategories = [
 		{
-			title: m["landing.toolkit.pdf_title"](),
-			desc: m["landing.toolkit.pdf_desc"](),
-			count: m["landing.toolkit.pdf_count"](),
+			title: landing_toolkit_pdf_title(),
+			desc: landing_toolkit_pdf_desc(),
+			count: landing_toolkit_pdf_count(),
 			href: "/pdf-tools/",
 			color: "green" as const,
 			icon: FileText,
 		},
 		{
-			title: m["landing.toolkit.image_title"](),
-			desc: m["landing.toolkit.image_desc"](),
-			count: m["landing.toolkit.image_count"](),
+			title: landing_toolkit_image_title(),
+			desc: landing_toolkit_image_desc(),
+			count: landing_toolkit_image_count(),
 			href: "/image-tools/",
 			color: "blue" as const,
 			icon: Palette,
 		},
 		{
-			title: m["landing.toolkit.dev_title"](),
-			desc: m["landing.toolkit.dev_desc"](),
-			count: m["landing.toolkit.dev_count"](),
+			title: landing_toolkit_dev_title(),
+			desc: landing_toolkit_dev_desc(),
+			count: landing_toolkit_dev_count(),
 			href: "/dev-tools/",
 			color: "purple" as const,
 			icon: Code,
@@ -60,11 +60,11 @@
 	];
 
 	const faqs = [
-		{ q: m["landing.faq.q1"](), a: m["landing.faq.a1"]() },
-		{ q: m["landing.faq.q2"](), a: m["landing.faq.a2"]() },
-		{ q: m["landing.faq.q3"](), a: m["landing.faq.a3"]() },
-		{ q: m["landing.faq.q4"](), a: m["landing.faq.a4"]() },
-		{ q: m["landing.faq.q5"](), a: m["landing.faq.a5"]() },
+		{ q: landing_faq_q1(), a: landing_faq_a1() },
+		{ q: landing_faq_q2(), a: landing_faq_a2() },
+		{ q: landing_faq_q3(), a: landing_faq_a3() },
+		{ q: landing_faq_q4(), a: landing_faq_a4() },
+		{ q: landing_faq_q5(), a: landing_faq_a5() },
 	];
 
 	const softwareSchema = JSON.stringify({
@@ -130,7 +130,7 @@
 
 		<!-- Headline -->
 		<h1 class="hero-headline hero-animate delay-1">
-			{m["upload.title"]()}
+			{upload_title()}
 		</h1>
 
 		<!-- Uploader -->
@@ -140,7 +140,7 @@
 
 		<!-- Subtitle -->
 		<p class="hero-subhead hero-animate delay-3">
-			{m["upload.subtitle"]()}
+			{upload_subtitle()}
 		</p>
 	</div>
 </section>
@@ -148,8 +148,8 @@
 <!-- ═══ TOOLKIT ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">{m["landing.toolkit.label"]()}</div>
-		<h2 class="section-headline">{m["landing.toolkit.title"]()}</h2>
+		<div class="section-label">{landing_toolkit_label()}</div>
+		<h2 class="section-headline">{landing_toolkit_title()}</h2>
 
 		<div class="toolkit-grid">
 			{#each toolkitCategories as cat, i}
@@ -164,7 +164,7 @@
 					<h3 class="toolkit-title">{cat.title}</h3>
 					<p class="toolkit-desc">{cat.desc}</p>
 					<span class="toolkit-explore">
-						{m["landing.toolkit.explore"]()}
+						{landing_toolkit_explore()}
 					</span>
 				</a>
 			{/each}
@@ -175,8 +175,8 @@
 <!-- ═══ FORMATS ═══ -->
 <section class="section-wrapper section-alt">
 	<div class="section-inner">
-		<div class="section-label">{m["landing.formats.label"]()}</div>
-		<h2 class="section-headline">{m["landing.formats.title"]()}</h2>
+		<div class="section-label">{landing_formats_label()}</div>
+		<h2 class="section-headline">{landing_formats_title()}</h2>
 
 		<div bind:this={formatSentinel}>
 			{#if formatExplorerVisible}
@@ -203,10 +203,10 @@
 					<ZapIcon size={20} />
 				</div>
 				<div class="gpu-callout-text">
-					<span class="gpu-callout-badge">{m["landing.gpu.badge"]()}</span>
-					<h3 class="gpu-callout-title">{m["landing.gpu.title"]()}</h3>
+					<span class="gpu-callout-badge">{landing_gpu_badge()}</span>
+					<h3 class="gpu-callout-title">{landing_gpu_title()}</h3>
 					<p class="gpu-callout-desc">
-						{m["landing.gpu.desc"]()}
+						{landing_gpu_desc()}
 					</p>
 				</div>
 			</div>
@@ -217,7 +217,7 @@
 				<div class="gpu-group">
 					<span class="gpu-group-label">
 						<ZapIcon size={9} />
-						{m["landing.gpu.full_label"]()}
+						{landing_gpu_full_label()}
 					</span>
 					<div class="gpu-format-ring">
 						{#each ['MP4', 'WebM', 'MOV', 'M4V', '3GP'] as fmt, i}
@@ -231,7 +231,7 @@
 				<div class="gpu-group">
 					<span class="gpu-group-label gpu-group-label--muted">
 						<ZapIcon size={9} />
-						{m["landing.gpu.input_label"]()}
+						{landing_gpu_input_label()}
 					</span>
 					<div class="gpu-format-ring">
 						{#each ['MKV', 'AVI', 'FLV', 'TS', 'WMV', 'OGG', 'OGV'] as fmt}
@@ -251,10 +251,10 @@
 			<img src={privacyBadge} alt="Privacy badge" class="privacy-badge" />
 		</div>
 		<div class="privacy-content">
-			<div class="section-label privacy-label">{m["landing.privacy.label"]()}</div>
-			<h2 class="privacy-headline">{m["landing.privacy.title"]()}</h2>
+			<div class="section-label privacy-label">{landing_privacy_label()}</div>
+			<h2 class="privacy-headline">{landing_privacy_title()}</h2>
 			<ul class="privacy-list">
-				{#each [m["landing.privacy.point1"](), m["landing.privacy.point2"](), m["landing.privacy.point3"]()] as point}
+				{#each [landing_privacy_point1(), landing_privacy_point2(), landing_privacy_point3()] as point}
 					<li class="privacy-item">
 						<span class="privacy-check">
 							<Check size="14" strokeWidth={3} />
@@ -270,8 +270,8 @@
 <!-- ═══ FAQ ═══ -->
 <section class="section-wrapper">
 	<div class="section-inner">
-		<div class="section-label">{m["landing.faq.label"]()}</div>
-		<h2 class="section-headline">{m["landing.faq.title"]()}</h2>
+		<div class="section-label">{landing_faq_label()}</div>
+		<h2 class="section-headline">{landing_faq_title()}</h2>
 
 		<div class="faq-list">
 			{#each faqs as faq}

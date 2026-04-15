@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name, 'dev_tools.tools.css_minify_name': dev_tools_tools_css_minify_name};
+	import { tool_pages_color_picker_title, tool_pages_color_picker_desc, tools_common_back_image, tools_common_upload_image, tools_common_privacy_note, tool_pages_img_color_picker_seo_faq1_q, tool_pages_img_color_picker_seo_faq1_a, tool_pages_img_color_picker_seo_faq2_q, tool_pages_img_color_picker_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_crop_name, dev_tools_tools_css_minify_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage } from '$lib/image/utils';
 	import { PipetteIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
@@ -120,14 +121,14 @@
 <div class="picker-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.color_picker.title']()}
-		description={m['tool_pages.color_picker.desc']()}
+		title={tool_pages_color_picker_title()}
+		description={tool_pages_color_picker_desc()}
 		icon={PipetteIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
 		<div class="canvas-wrap">
@@ -171,15 +172,15 @@
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-color-picker']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-color-picker'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-color-picker'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-color-picker'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-color-picker'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-color-picker'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_color_picker_seo_faq1_q?.() ?? '', a: tool_pages_img_color_picker_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_color_picker_seo_faq2_q?.() ?? '', a: tool_pages_img_color_picker_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-color-picker'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-color-picker'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

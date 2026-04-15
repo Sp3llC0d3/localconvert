@@ -27,7 +27,7 @@
 		RotateCwIcon,
 		XIcon,
 	} from "lucide-svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { convert_tooltips_unknown_file, convert_tooltips_audio_file, convert_tooltips_video_file, convert_tooltips_document_file, convert_tooltips_image_file, convert_errors_cant_convert, convert_errors_unsupported_format, convert_errors_format_output_only, workers_errors_file_too_large, convert_errors_worker_downloading, convert_errors_audio, convert_errors_doc, convert_errors_image, convert_errors_worker_error, convert_errors_worker_timeout, convert_tooltips_convert_file, convert_tooltips_download_file, convert_options_quality, convert_options_resize, convert_options_bitrate, convert_options_trim } from "$lib/paraglide/messages/_barrel.js";
 	import { ToastManager } from "$lib/util/toast.svelte";
 	import PdfRedirectToast from "$lib/components/visual/PdfRedirectToast.svelte";
 	import { Settings } from "$lib/sections/settings/index.svelte";
@@ -194,35 +194,35 @@
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !file.converters.length}
 				<Tooltip
-					text={m["convert.tooltips.unknown_file"]()}
+					text={convert_tooltips_unknown_file()}
 					position="bottom"
 				>
 					<FileQuestionIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isAudio}
 				<Tooltip
-					text={m["convert.tooltips.audio_file"]()}
+					text={convert_tooltips_audio_file()}
 					position="bottom"
 				>
 					<AudioLines size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isVideo}
 				<Tooltip
-					text={m["convert.tooltips.video_file"]()}
+					text={convert_tooltips_video_file()}
 					position="bottom"
 				>
 					<FilmIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isDocument}
 				<Tooltip
-					text={m["convert.tooltips.document_file"]()}
+					text={convert_tooltips_document_file()}
 					position="bottom"
 				>
 					<BookText size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else}
 				<Tooltip
-					text={m["convert.tooltips.image_file"]()}
+					text={convert_tooltips_image_file()}
 					position="bottom"
 				>
 					<ImageIcon size="24" class="flex-shrink-0" />
@@ -259,8 +259,8 @@
 		</div>
 		{#if !currentConverter}
 			<div class="h-full flex flex-col text-center justify-center text-failure" role="alert">
-				<p class="font-body font-bold">{m["convert.errors.cant_convert"]()}</p>
-				<p class="font-normal">{m["convert.errors.unsupported_format"]()}</p>
+				<p class="font-body font-bold">{convert_errors_cant_convert()}</p>
+				<p class="font-normal">{convert_errors_unsupported_format()}</p>
 			</div>
 		{:else}
 			{@const formatInfo = currentConverter.supportedFormats.find(
@@ -273,10 +273,10 @@
 					role="alert"
 				>
 					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
+						{convert_errors_cant_convert()}
 					</p>
 					<p class="font-normal">
-						{m["convert.errors.format_output_only"]()}
+						{convert_errors_format_output_only()}
 					</p>
 				</div>
 			{:else if isLarge && !file.supportsStreaming()}
@@ -285,10 +285,10 @@
 					role="alert"
 				>
 					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
+						{convert_errors_cant_convert()}
 					</p>
 					<p class="font-normal">
-						{m["workers.errors.file_too_large"]({
+						{workers_errors_file_too_large({
 							limit: (MAX_ARRAY_BUFFER_SIZE / GB).toFixed(2),
 						})}
 					</p>
@@ -298,17 +298,17 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
+						{convert_errors_cant_convert()}
 					</p>
 					<p class="font-normal">
-						{m["convert.errors.worker_downloading"]({
+						{convert_errors_worker_downloading({
 							type: isAudio || isVideo
 								? isVideo
 									? "Video"
-									: m["convert.errors.audio"]()
+									: convert_errors_audio()
 								: isDocument
-									? m["convert.errors.doc"]()
-									: m["convert.errors.image"](),
+									? convert_errors_doc()
+									: convert_errors_image(),
 						})}
 					</p>
 				</div>
@@ -317,17 +317,17 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
+						{convert_errors_cant_convert()}
 					</p>
 					<p class="font-normal">
-						{m["convert.errors.worker_error"]({
+						{convert_errors_worker_error({
 							type: isAudio || isVideo
 								? isVideo
 									? "Video"
-									: m["convert.errors.audio"]()
+									: convert_errors_audio()
 								: isDocument
-									? m["convert.errors.doc"]()
-									: m["convert.errors.image"](),
+									? convert_errors_doc()
+									: convert_errors_image(),
 						})}
 					</p>
 				</div>
@@ -336,24 +336,24 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						{m["convert.errors.cant_convert"]()}
+						{convert_errors_cant_convert()}
 					</p>
 					<p class="font-normal">
-						{m["convert.errors.worker_timeout"]({
+						{convert_errors_worker_timeout({
 							type: isAudio || isVideo
 								? isVideo
 									? "Video"
-									: m["convert.errors.audio"]()
+									: convert_errors_audio()
 								: isDocument
-									? m["convert.errors.doc"]()
-									: m["convert.errors.image"](),
+									? convert_errors_doc()
+									: convert_errors_image(),
 						})}
 					</p>
 				</div>
 			{:else if file.conversionError}
 				<div class="flex flex-col items-center justify-center gap-3 py-2">
 					<img src={errorConversion} alt="Conversion error" class="w-20 h-20 object-contain" />
-					<p class="text-sm text-failure font-medium">{m["convert.errors.cant_convert"]()}</p>
+					<p class="text-sm text-failure font-medium">{convert_errors_cant_convert()}</p>
 					<button class="btn text-sm px-4 py-2" onclick={() => file.convert()}>Try again</button>
 				</div>
 			{:else}
@@ -402,7 +402,7 @@
 							/>
 							<div class="w-full flex items-center justify-between">
 								<Tooltip
-									text={m["convert.tooltips.convert_file"]()}
+									text={convert_tooltips_convert_file()}
 									position="bottom"
 								>
 									<button
@@ -420,7 +420,7 @@
 									</button>
 								</Tooltip>
 								<Tooltip
-									text={m["convert.tooltips.download_file"]()}
+									text={convert_tooltips_download_file()}
 									position="bottom"
 								>
 									<button
@@ -442,7 +442,7 @@
 						{#if isImage}
 							{@const effectiveQuality = file.optQuality ?? Settings.instance.settings.magickQuality}
 							<div class="opt-group">
-								<span class="opt-label">{m["convert.options.quality"]()}</span>
+								<span class="opt-label">{convert_options_quality()}</span>
 								<div class="opt-control">
 									<input
 										type="range" min={1} max={100}
@@ -455,7 +455,7 @@
 								</div>
 							</div>
 							<div class="opt-group">
-								<span class="opt-label">{m["convert.options.resize"]()}</span>
+								<span class="opt-label">{convert_options_resize()}</span>
 								<div class="opt-control gap-1">
 									<input
 										type="number" min={1} placeholder="W"
@@ -476,7 +476,7 @@
 						{/if}
 						{#if isAudio}
 							<div class="opt-group">
-								<span class="opt-label">{m["convert.options.bitrate"]()}</span>
+								<span class="opt-label">{convert_options_bitrate()}</span>
 								<div class="opt-control">
 									<select
 										class="opt-select"
@@ -495,7 +495,7 @@
 						{/if}
 						{#if isAudio || isVideo}
 							<div class="opt-group">
-								<span class="opt-label">{m["convert.options.trim"]()}</span>
+								<span class="opt-label">{convert_options_trim()}</span>
 								<div class="opt-control gap-1">
 									<input
 										type="number" min={0} step={1} placeholder="0"

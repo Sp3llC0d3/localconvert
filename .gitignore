@@ -11,6 +11,7 @@ SEO_PLAN.md
 LocalConvert_SEO_Audit_Plan_v2.md
 PAGESPEED_RESULTS.md
 LAZY_LOAD_PLAN.md
+I18N_TREESHAKE_PLAN.md
 
 # Preview/concept pages (local dev only)
 src/routes/logo-preview/

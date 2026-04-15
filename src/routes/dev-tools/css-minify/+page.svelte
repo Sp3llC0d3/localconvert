@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.json_name': dev_tools_tools_json_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.word_count_name': dev_tools_tools_word_count_name};
+	import { tool_pages_css_minify_title, tool_pages_css_minify_desc, tools_common_back_dev, tool_pages_css_minify_input_label, tool_pages_css_minify_btn, tool_pages_css_minify_output_label, tool_pages_json_formatter_btn_copy, tool_pages_css_minify_saved, tools_common_privacy_note_browser, tool_pages_dev_css_minify_seo_faq1_q, tool_pages_dev_css_minify_seo_faq1_a, tool_pages_dev_css_minify_seo_faq2_q, tool_pages_dev_css_minify_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_diff_name, dev_tools_tools_word_count_name } from "$lib/paraglide/messages/_barrel.js";
 	import { CodeIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -56,48 +57,48 @@
 <div class="css-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.css_minify.title']()}
-		description={m['tool_pages.css_minify.desc']()}
+		title={tool_pages_css_minify_title()}
+		description={tool_pages_css_minify_desc()}
 		icon={CodeIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
 	<div class="panel">
-		<label class="panel-label">{m['tool_pages.css_minify.input_label']()}</label>
+		<label class="panel-label">{tool_pages_css_minify_input_label()}</label>
 		<textarea bind:value={input} class="code-area" spellcheck="false"></textarea>
 		<p class="text-xs text-muted">{input.length.toLocaleString()} characters</p>
 	</div>
 
-	<button class="btn highlight" onclick={minify} disabled={!input.trim()}>{m['tool_pages.css_minify.btn']()}</button>
+	<button class="btn highlight" onclick={minify} disabled={!input.trim()}>{tool_pages_css_minify_btn()}</button>
 
 	{#if output}
 		<div class="panel">
 			<div class="flex items-center justify-between">
-				<label class="panel-label">{m['tool_pages.css_minify.output_label']()}</label>
+				<label class="panel-label">{tool_pages_css_minify_output_label()}</label>
 				<button class="copy-btn" onclick={copyOutput}>
 					{#if copied}<CheckIcon size={14} />{:else}<CopyIcon size={14} />{/if}
-					{m['tool_pages.json_formatter.btn_copy']()}
+					{tool_pages_json_formatter_btn_copy()}
 				</button>
 			</div>
 			<textarea readonly value={output} class="code-area out" spellcheck="false"></textarea>
 			{#if savings}
 				<p class="text-xs text-muted">
-					{output.length.toLocaleString()} characters — {m['tool_pages.css_minify.saved']({ pct: savings.pct })}
+					{output.length.toLocaleString()} characters — {tool_pages_css_minify_saved({ pct: savings.pct })}
 				</p>
 			{/if}
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-css-minify']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-css-minify'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-css-minify'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-css-minify'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-css-minify'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-css-minify'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_css_minify_seo_faq1_q?.() ?? '', a: tool_pages_dev_css_minify_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_css_minify_seo_faq2_q?.() ?? '', a: tool_pages_dev_css_minify_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-css-minify'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-css-minify'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

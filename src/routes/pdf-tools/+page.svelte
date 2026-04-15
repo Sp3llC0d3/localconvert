@@ -1,45 +1,45 @@
 <script lang="ts">
 	import { FileTextIcon, GitMergeIcon, ScissorsIcon, RotateCwIcon, LayoutGridIcon, ImageIcon, FileDownIcon, ZapIcon, PenLineIcon, ListOrderedIcon, InfoIcon, CropIcon, PresentationIcon, PenToolIcon, EditIcon, LockIcon, UnlockIcon, PaletteIcon, TypeIcon, ShieldCheckIcon, TableIcon, FileOutputIcon } from 'lucide-svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { pdf_tools_categories_organize, pdf_tools_tools_merge_name, pdf_tools_tools_merge_desc, pdf_tools_tools_split_name, pdf_tools_tools_split_desc, pdf_tools_tools_rotate_name, pdf_tools_tools_rotate_desc, pdf_tools_tools_organize_name, pdf_tools_tools_organize_desc, pdf_tools_categories_convert, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_images_to_pdf_desc, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_pdf_to_images_desc, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_pdf_to_ppt_desc, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_text_desc, pdf_tools_tools_grayscale_name, pdf_tools_tools_grayscale_desc, pdf_tools_tools_from_docx_name, pdf_tools_tools_from_docx_desc, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_from_xlsx_desc, pdf_tools_tools_to_docx_name, pdf_tools_tools_to_docx_desc, pdf_tools_categories_optimize, pdf_tools_tools_compress_name, pdf_tools_tools_compress_desc, pdf_tools_tools_watermark_name, pdf_tools_tools_watermark_desc, pdf_tools_tools_page_numbers_name, pdf_tools_tools_page_numbers_desc, pdf_tools_tools_metadata_name, pdf_tools_tools_metadata_desc, pdf_tools_tools_crop_name, pdf_tools_tools_crop_desc, pdf_tools_tools_sign_name, pdf_tools_tools_sign_desc, pdf_tools_tools_edit_name, pdf_tools_tools_edit_desc, pdf_tools_tools_password_name, pdf_tools_tools_password_desc, pdf_tools_tools_unlock_name, pdf_tools_tools_unlock_desc, pdf_tools_title, pdf_tools_subtitle, pdf_tools_badge } from "$lib/paraglide/messages/_barrel.js";
 
 	const categories = $derived([
 		{
-			label: m['pdf_tools.categories.organize'](),
+			label: pdf_tools_categories_organize(),
 			color: 'green',
 			tools: [
-				{ href: '/pdf-tools/merge/', icon: GitMergeIcon, name: m['pdf_tools.tools.merge_name'](), desc: m['pdf_tools.tools.merge_desc']() },
-				{ href: '/pdf-tools/split/', icon: ScissorsIcon, name: m['pdf_tools.tools.split_name'](), desc: m['pdf_tools.tools.split_desc']() },
-				{ href: '/pdf-tools/rotate/', icon: RotateCwIcon, name: m['pdf_tools.tools.rotate_name'](), desc: m['pdf_tools.tools.rotate_desc']() },
-				{ href: '/pdf-tools/organize/', icon: LayoutGridIcon, name: m['pdf_tools.tools.organize_name'](), desc: m['pdf_tools.tools.organize_desc']() },
+				{ href: '/pdf-tools/merge/', icon: GitMergeIcon, name: pdf_tools_tools_merge_name(), desc: pdf_tools_tools_merge_desc() },
+				{ href: '/pdf-tools/split/', icon: ScissorsIcon, name: pdf_tools_tools_split_name(), desc: pdf_tools_tools_split_desc() },
+				{ href: '/pdf-tools/rotate/', icon: RotateCwIcon, name: pdf_tools_tools_rotate_name(), desc: pdf_tools_tools_rotate_desc() },
+				{ href: '/pdf-tools/organize/', icon: LayoutGridIcon, name: pdf_tools_tools_organize_name(), desc: pdf_tools_tools_organize_desc() },
 			],
 		},
 		{
-			label: m['pdf_tools.categories.convert'](),
+			label: pdf_tools_categories_convert(),
 			color: 'blue',
 			tools: [
-				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc']() },
-				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc']() },
-				{ href: '/pdf-tools/pdf-to-ppt/', icon: PresentationIcon, name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc']() },
-				{ href: '/pdf-tools/pdf-to-text/', icon: TypeIcon, name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc']() },
-				{ href: '/pdf-tools/grayscale/', icon: PaletteIcon, name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc']() },
-				{ href: '/pdf-tools/from-docx/', icon: FileTextIcon, name: m['pdf_tools.tools.from_docx_name'](), desc: m['pdf_tools.tools.from_docx_desc']() },
-				{ href: '/pdf-tools/from-xlsx/', icon: TableIcon, name: m['pdf_tools.tools.from_xlsx_name'](), desc: m['pdf_tools.tools.from_xlsx_desc']() },
-				{ href: '/pdf-tools/to-docx/', icon: FileOutputIcon, name: m['pdf_tools.tools.to_docx_name'](), desc: m['pdf_tools.tools.to_docx_desc']() },
+				{ href: '/pdf-tools/images-to-pdf/', icon: ImageIcon, name: pdf_tools_tools_images_to_pdf_name(), desc: pdf_tools_tools_images_to_pdf_desc() },
+				{ href: '/pdf-tools/pdf-to-images/', icon: FileDownIcon, name: pdf_tools_tools_pdf_to_images_name(), desc: pdf_tools_tools_pdf_to_images_desc() },
+				{ href: '/pdf-tools/pdf-to-ppt/', icon: PresentationIcon, name: pdf_tools_tools_pdf_to_ppt_name(), desc: pdf_tools_tools_pdf_to_ppt_desc() },
+				{ href: '/pdf-tools/pdf-to-text/', icon: TypeIcon, name: pdf_tools_tools_pdf_to_text_name(), desc: pdf_tools_tools_pdf_to_text_desc() },
+				{ href: '/pdf-tools/grayscale/', icon: PaletteIcon, name: pdf_tools_tools_grayscale_name(), desc: pdf_tools_tools_grayscale_desc() },
+				{ href: '/pdf-tools/from-docx/', icon: FileTextIcon, name: pdf_tools_tools_from_docx_name(), desc: pdf_tools_tools_from_docx_desc() },
+				{ href: '/pdf-tools/from-xlsx/', icon: TableIcon, name: pdf_tools_tools_from_xlsx_name(), desc: pdf_tools_tools_from_xlsx_desc() },
+				{ href: '/pdf-tools/to-docx/', icon: FileOutputIcon, name: pdf_tools_tools_to_docx_name(), desc: pdf_tools_tools_to_docx_desc() },
 			],
 		},
 		{
-			label: m['pdf_tools.categories.optimize'](),
+			label: pdf_tools_categories_optimize(),
 			color: 'red',
 			tools: [
-				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc']() },
-				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc']() },
-				{ href: '/pdf-tools/page-numbers/', icon: ListOrderedIcon, name: m['pdf_tools.tools.page_numbers_name'](), desc: m['pdf_tools.tools.page_numbers_desc']() },
-				{ href: '/pdf-tools/metadata/', icon: InfoIcon, name: m['pdf_tools.tools.metadata_name'](), desc: m['pdf_tools.tools.metadata_desc']() },
-				{ href: '/pdf-tools/crop/', icon: CropIcon, name: m['pdf_tools.tools.crop_name'](), desc: m['pdf_tools.tools.crop_desc']() },
-				{ href: '/pdf-tools/sign/', icon: PenToolIcon, name: m['pdf_tools.tools.sign_name'](), desc: m['pdf_tools.tools.sign_desc']() },
-				{ href: '/pdf-tools/edit/', icon: EditIcon, name: m['pdf_tools.tools.edit_name'](), desc: m['pdf_tools.tools.edit_desc']() },
-				{ href: '/pdf-tools/password/', icon: LockIcon, name: m['pdf_tools.tools.password_name'](), desc: m['pdf_tools.tools.password_desc']() },
-				{ href: '/pdf-tools/unlock/', icon: UnlockIcon, name: m['pdf_tools.tools.unlock_name'](), desc: m['pdf_tools.tools.unlock_desc']() },
+				{ href: '/pdf-tools/compress/', icon: ZapIcon, name: pdf_tools_tools_compress_name(), desc: pdf_tools_tools_compress_desc() },
+				{ href: '/pdf-tools/watermark/', icon: PenLineIcon, name: pdf_tools_tools_watermark_name(), desc: pdf_tools_tools_watermark_desc() },
+				{ href: '/pdf-tools/page-numbers/', icon: ListOrderedIcon, name: pdf_tools_tools_page_numbers_name(), desc: pdf_tools_tools_page_numbers_desc() },
+				{ href: '/pdf-tools/metadata/', icon: InfoIcon, name: pdf_tools_tools_metadata_name(), desc: pdf_tools_tools_metadata_desc() },
+				{ href: '/pdf-tools/crop/', icon: CropIcon, name: pdf_tools_tools_crop_name(), desc: pdf_tools_tools_crop_desc() },
+				{ href: '/pdf-tools/sign/', icon: PenToolIcon, name: pdf_tools_tools_sign_name(), desc: pdf_tools_tools_sign_desc() },
+				{ href: '/pdf-tools/edit/', icon: EditIcon, name: pdf_tools_tools_edit_name(), desc: pdf_tools_tools_edit_desc() },
+				{ href: '/pdf-tools/password/', icon: LockIcon, name: pdf_tools_tools_password_name(), desc: pdf_tools_tools_password_desc() },
+				{ href: '/pdf-tools/unlock/', icon: UnlockIcon, name: pdf_tools_tools_unlock_name(), desc: pdf_tools_tools_unlock_desc() },
 			],
 		},
 	]);
@@ -66,15 +66,15 @@
 			<FileTextIcon size={28} />
 		</div>
 		<div class="flex items-center gap-3">
-			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['pdf_tools.title']()}</h1>
+			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{pdf_tools_title()}</h1>
 			<span class="tool-count tool-count--green">21</span>
 		</div>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
-			{m['pdf_tools.subtitle']()}
+			{pdf_tools_subtitle()}
 		</p>
 		<div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style="background: var(--bg-badge); color: var(--fg-on-badge)">
 			<ShieldCheckIcon size={14} />
-			{m['pdf_tools.badge']()}
+			{pdf_tools_badge()}
 		</div>
 	</div>
 

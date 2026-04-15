@@ -1,4 +1,5 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.sign_name': pdf_tools_tools_sign_name, 'pdf_tools.tools.page_numbers_name': pdf_tools_tools_page_numbers_name, 'pdf_tools.tools.edit_name': pdf_tools_tools_edit_name};
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { addWatermark } from '$lib/pdf/watermark';
@@ -7,7 +8,7 @@
 	import { PenLineIcon, ChevronLeftIcon, ChevronRightIcon, UploadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_failed_read_pdf, tools_common_upload_pdf, tool_pages_watermark_pdf_err_text, tools_common_failed, tool_pages_watermark_pdf_title, tool_pages_watermark_pdf_desc, tools_common_back_pdf, tools_common_page_of, tools_common_text, tools_common_font, tools_common_color, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_pdf_btn_busy, tool_pages_watermark_pdf_btn, tools_common_ready, tool_pages_watermark_pdf_save, tools_common_privacy_note, tool_pages_watermark_seo_faq1_q, tool_pages_watermark_seo_faq1_a, tool_pages_watermark_seo_faq2_q, tool_pages_watermark_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_page_numbers_name, pdf_tools_tools_edit_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -90,7 +91,7 @@
 			await renderCurrentPage();
 		} catch {
 			if (lastFileRef !== file) return;
-			error = m['tools_common.failed_read_pdf']();
+			error = tools_common_failed_read_pdf();
 		}
 	}
 
@@ -176,8 +177,8 @@
 	}
 
 	async function apply() {
-		if (files.length === 0) { error = m['tools_common.upload_pdf'](); return; }
-		if (!text.trim()) { error = m['tool_pages.watermark_pdf.err_text'](); return; }
+		if (files.length === 0) { error = tools_common_upload_pdf(); return; }
+		if (!text.trim()) { error = tool_pages_watermark_pdf_err_text(); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
@@ -192,7 +193,7 @@
 				fontFamily,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -216,14 +217,14 @@
 <div class="wm-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.watermark_pdf.title']()}
-		description={m['tool_pages.watermark_pdf.desc']()}
+		title={tool_pages_watermark_pdf_title()}
+		description={tool_pages_watermark_pdf_desc()}
 		icon={PenLineIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<!-- Live preview -->
@@ -234,7 +235,7 @@
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
 						<ChevronLeftIcon size={16} />
 					</button>
-					<span class="text-xs text-muted">{m['tools_common.page_of']({ currentPage, pageCount })}</span>
+					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
 						<ChevronRightIcon size={16} />
 					</button>
@@ -245,12 +246,12 @@
 		<!-- Options -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<label class="opt-label" for="wm-text">{m['tools_common.text']()}</label>
+				<label class="opt-label" for="wm-text">{tools_common_text()}</label>
 				<input id="wm-text" type="text" bind:value={text} placeholder="CONFIDENTIAL" class="opt-input" maxlength={80} />
 			</div>
 
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.font']()}</span>
+				<span class="opt-label">{tools_common_font()}</span>
 				<div class="font-controls">
 					<select class="font-select" bind:value={fontFamily}>
 						{#each builtinFonts as f}
@@ -268,37 +269,37 @@
 			</div>
 
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.color']()}</span>
+				<span class="opt-label">{tools_common_color()}</span>
 				<input type="color" bind:value={color} class="color-input" aria-label="Watermark color" />
 				<span class="text-xs text-muted">{color}</span>
 			</div>
 
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.opacity']()}</span>
+				<span class="opt-label">{tools_common_opacity()}</span>
 				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label="Opacity" />
 				<span class="val">{opacity}%</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.font_size']()}</span>
+				<span class="opt-label">{tools_common_font_size()}</span>
 				<input type="range" min={20} max={120} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.rotation']()}</span>
+				<span class="opt-label">{tools_common_rotation()}</span>
 				<input type="range" min={0} max={90} bind:value={rotation} class="slider flex-1" aria-label="Rotation" />
 				<span class="val">{rotation}°</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.position']()}</span>
+				<span class="opt-label">{tools_common_position()}</span>
 				<div class="flex gap-2">
-					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>{m['tools_common.center']()}</button>
-					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>{m['tools_common.tile']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>{tools_common_center()}</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>{tools_common_tile()}</button>
 				</div>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={processing || !text.trim()} onclick={apply}>
-			{processing ? m['tool_pages.watermark_pdf.btn_busy']() : m['tool_pages.watermark_pdf.btn']()}
+			{processing ? tool_pages_watermark_pdf_btn_busy() : tool_pages_watermark_pdf_btn()}
 		</button>
 	{/if}
 
@@ -306,8 +307,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.watermark_pdf.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_watermark_pdf_save()}</button>
 		</div>
 	{/if}
 
@@ -315,14 +316,14 @@
 	{#if toolSeo['watermark']}
 		<ToolSeoBlock
 			faqs={toolSeo['watermark'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['watermark'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['watermark'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['watermark'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['watermark'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_watermark_seo_faq1_q?.() ?? '', a: tool_pages_watermark_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_watermark_seo_faq2_q?.() ?? '', a: tool_pages_watermark_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['watermark'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['watermark'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

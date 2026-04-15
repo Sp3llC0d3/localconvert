@@ -1,4 +1,5 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.sign_name': pdf_tools_tools_sign_name, 'pdf_tools.tools.watermark_name': pdf_tools_tools_watermark_name, 'pdf_tools.tools.page_numbers_name': pdf_tools_tools_page_numbers_name};
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { editPdf, type PdfEdit, type TextEdit } from '$lib/pdf/edit';
@@ -6,7 +7,7 @@
 	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { EditIcon, Trash2Icon, UploadIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_failed_read_pdf, tool_pages_edit_err_text, tool_pages_edit_err_pdf, tools_common_failed, tool_pages_edit_title, tool_pages_edit_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_edit_placeholder, tool_pages_edit_aria_editor, tool_pages_edit_remove_text, tool_pages_edit_elements_placed, tool_pages_edit_btn_busy, tool_pages_edit_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_edit_seo_faq1_q, tool_pages_edit_seo_faq1_a, tool_pages_edit_seo_faq2_q, tool_pages_edit_seo_faq2_a, pdf_tools_tools_sign_name, pdf_tools_tools_watermark_name, pdf_tools_tools_page_numbers_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -103,7 +104,7 @@
 			thumbs = await renderAllThumbnails(files[0], 0.7);
 			calcDisplaySize();
 		} catch {
-			error = m['tools_common.failed_read_pdf']();
+			error = tools_common_failed_read_pdf();
 		}
 	}
 
@@ -223,7 +224,7 @@
 
 	async function apply() {
 		if (files.length === 0 || elements.length === 0) {
-			error = elements.length === 0 ? m['tool_pages.edit.err_text']() : m['tool_pages.edit.err_pdf']();
+			error = elements.length === 0 ? tool_pages_edit_err_text() : tool_pages_edit_err_pdf();
 			return;
 		}
 		error = '';
@@ -241,7 +242,7 @@
 			}));
 			resultBytes = await editPdf(files[0], currentPage, pdfEdits);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -265,14 +266,14 @@
 <div class="edit-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.edit.title']()}
-		description={m['tool_pages.edit.desc']()}
+		title={tool_pages_edit_title()}
+		description={tool_pages_edit_desc()}
 		icon={EditIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if thumbs.length > 0 && displayW > 0}
 		<!-- Text input bar -->
@@ -280,7 +281,7 @@
 			<input
 				type="text"
 				bind:value={newText}
-				placeholder={m['tool_pages.edit.placeholder']()}
+				placeholder={tool_pages_edit_placeholder()}
 				class="text-input"
 			/>
 			<input type="number" min={6} max={72} bind:value={newFontSize} class="size-input" aria-label="Font size" />
@@ -324,7 +325,7 @@
 				onmouseup={onPageMouseUp}
 				onclick={onPageClick}
 				role="application"
-				aria-label={m['tool_pages.edit.aria_editor']()}
+				aria-label={tool_pages_edit_aria_editor()}
 			>
 				<!-- Rendered page -->
 				<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
@@ -356,7 +357,7 @@
 								class="delete-btn"
 								onmousedown={(e) => { e.stopPropagation(); suppressNextClick = true; }}
 								onclick={(e) => { e.stopPropagation(); removeElement(el.id); }}
-								aria-label={m['tool_pages.edit.remove_text']()}
+								aria-label={tool_pages_edit_remove_text()}
 							>
 								<Trash2Icon size={12} />
 							</button>
@@ -364,11 +365,11 @@
 					</div>
 				{/each}
 			</div>
-			<p class="text-xs text-muted mt-2">{m['tool_pages.edit.elements_placed']({ count: elements.length })}</p>
+			<p class="text-xs text-muted mt-2">{tool_pages_edit_elements_placed({ count: elements.length })}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing || elements.length === 0} onclick={apply}>
-			{processing ? m['tool_pages.edit.btn_busy']() : m['tool_pages.edit.save']()}
+			{processing ? tool_pages_edit_btn_busy() : tool_pages_edit_save()}
 		</button>
 	{/if}
 
@@ -376,8 +377,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
@@ -385,14 +386,14 @@
 	{#if toolSeo['edit']}
 		<ToolSeoBlock
 			faqs={toolSeo['edit'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['edit'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['edit'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['edit'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['edit'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_edit_seo_faq1_q?.() ?? '', a: tool_pages_edit_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_edit_seo_faq2_q?.() ?? '', a: tool_pages_edit_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['edit'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['edit'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

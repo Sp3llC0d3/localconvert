@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.grayscale_name': pdf_tools_tools_grayscale_name, 'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name, 'pdf_tools.tools.from_docx_name': pdf_tools_tools_from_docx_name};
+	import { tool_pages_compress_preset_low, tool_pages_compress_preset_low_desc, tool_pages_compress_preset_med, tool_pages_compress_preset_med_desc, tool_pages_compress_preset_high, tool_pages_compress_preset_high_desc, tool_pages_compress_err_fail, tool_pages_compress_title, tool_pages_compress_desc, tools_common_back_pdf, tool_pages_compress_note, tool_pages_compress_warning, tools_common_upload_pdf, tool_pages_compress_jpeg_quality, tool_pages_compress_input, tool_pages_compress_btn_busy, tool_pages_compress_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_compress_compressed, tool_pages_compress_save, tools_common_privacy_note, tool_pages_compress_seo_faq1_q, tool_pages_compress_seo_faq1_a, tool_pages_compress_seo_faq2_q, tool_pages_compress_seo_faq2_a, pdf_tools_tools_grayscale_name, pdf_tools_tools_merge_name, pdf_tools_tools_from_docx_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { sanitize } from '$lib/util/sanitize';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
@@ -26,9 +27,9 @@
 	let compareView = $state<'original' | 'compressed'>('compressed');
 
 	const presets = $derived([
-		{ label: m['tool_pages.compress.preset_low'](), value: 90, desc: m['tool_pages.compress.preset_low_desc']() },
-		{ label: m['tool_pages.compress.preset_med'](), value: 60, desc: m['tool_pages.compress.preset_med_desc']() },
-		{ label: m['tool_pages.compress.preset_high'](), value: 30, desc: m['tool_pages.compress.preset_high_desc']() },
+		{ label: tool_pages_compress_preset_low(), value: 90, desc: tool_pages_compress_preset_low_desc() },
+		{ label: tool_pages_compress_preset_med(), value: 60, desc: tool_pages_compress_preset_med_desc() },
+		{ label: tool_pages_compress_preset_high(), value: 30, desc: tool_pages_compress_preset_high_desc() },
 	]);
 
 	async function compress() {
@@ -46,7 +47,7 @@
 				(p, t) => { progress = p; total = t; }
 			);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.compress.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_compress_err_fail();
 		}
 		processing = false;
 
@@ -98,22 +99,22 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.compress.title']()}
-		description={m['tool_pages.compress.desc']()}
+		title={tool_pages_compress_title()}
+		description={tool_pages_compress_desc()}
 		icon={ZapIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
 	<!-- Warning banner -->
 	<div class="warn-box">
 		<AlertTriangleIcon size={16} class="flex-shrink-0 mt-0.5" />
 		<p class="text-sm">
-			<b>{m['tool_pages.compress.note']()}</b> {@html sanitize(m['tool_pages.compress.warning']())}
+			<b>{tool_pages_compress_note()}</b> {@html sanitize(tool_pages_compress_warning())}
 		</p>
 	</div>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
@@ -129,16 +130,16 @@
 				{/each}
 			</div>
 			<div class="flex items-center gap-3 mt-2">
-				<span class="text-sm text-muted w-20">{m['tool_pages.compress.jpeg_quality']()}</span>
+				<span class="text-sm text-muted w-20">{tool_pages_compress_jpeg_quality()}</span>
 				<input type="range" min={10} max={95} bind:value={quality} class="quality-slider flex-1" />
 				<span class="text-sm text-muted w-8">{quality}%</span>
 			</div>
-			<p class="text-xs text-muted">{m['tool_pages.compress.input']()} <b>{formatFileSize(files[0].size)}</b></p>
+			<p class="text-xs text-muted">{tool_pages_compress_input()} <b>{formatFileSize(files[0].size)}</b></p>
 		</div>
 
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">{m['tool_pages.compress.btn_busy']({ progress, total })}</p>
+				<p class="text-sm text-muted">{tool_pages_compress_btn_busy({ progress, total })}</p>
 				<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 					<div class="h-full bg-accent transition-all" style="width: {total > 0 ? (progress/total*100) : 0}%"></div>
 				</div>
@@ -146,7 +147,7 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={compress}>
-			{processing ? m['tool_pages.compress.btn_busy']({ progress, total }) : m['tool_pages.compress.btn']()}
+			{processing ? tool_pages_compress_btn_busy({ progress, total }) : tool_pages_compress_btn()}
 		</button>
 	{/if}
 
@@ -155,17 +156,17 @@
 	{#if resultBytes}
 		<div class="result-box">
 			<p class="text-sm font-medium">
-				{m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b>
+				{tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b>
 				{#if savings && savings.saved > 0}
-					— {m['tool_pages.compress.saved']()} <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
+					— {tool_pages_compress_saved()} <b>{formatFileSize(savings.saved)}</b> ({savings.pct}%)
 				{/if}
 			</p>
 
 			<!-- Before/after comparison -->
 			<div class="compare-section">
 				<div class="compare-toggle">
-					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>{m['tool_pages.compress.original']()}</button>
-					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>{m['tool_pages.compress.compressed']()}</button>
+					<button class="comp-btn {compareView === 'original' ? 'active' : ''}" onclick={() => compareView = 'original'}>{tool_pages_compress_original()}</button>
+					<button class="comp-btn {compareView === 'compressed' ? 'active' : ''}" onclick={() => compareView = 'compressed'}>{tool_pages_compress_compressed()}</button>
 				</div>
 				<div class="compare-canvas-wrap">
 					<canvas bind:this={origCanvas} class="compare-canvas" class:compare-hidden={compareView !== 'original'}></canvas>
@@ -173,7 +174,7 @@
 				</div>
 			</div>
 
-			<button class="btn" onclick={download}>{m['tool_pages.compress.save']()}</button>
+			<button class="btn" onclick={download}>{tool_pages_compress_save()}</button>
 		</div>
 	{/if}
 
@@ -181,14 +182,14 @@
 	{#if toolSeo['compress']}
 		<ToolSeoBlock
 			faqs={toolSeo['compress'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['compress'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['compress'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['compress'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['compress'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_compress_seo_faq1_q?.() ?? '', a: tool_pages_compress_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_compress_seo_faq2_q?.() ?? '', a: tool_pages_compress_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['compress'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['compress'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

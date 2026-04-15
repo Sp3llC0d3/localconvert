@@ -4,7 +4,7 @@
 	import * as Settings from "$lib/sections/settings/index.svelte";
 	import { SlidersHorizontalIcon, PaletteIcon, ShieldIcon } from "lucide-svelte";
 	import { onMount } from "svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { settings_errors_save_failed, settings_title, settings_subtitle, settings_conversion_title, settings_appearance_title, settings_privacy_title } from "$lib/paraglide/messages/_barrel.js";
 	import { ToastManager } from "$lib/util/toast.svelte";
 
 	let settings = $state(Settings.Settings.instance.settings);
@@ -33,7 +33,7 @@
 			log(["settings", "error"], `failed to save settings: ${error}`);
 			ToastManager.add({
 				type: "error",
-				message: m["settings.errors.save_failed"](),
+				message: settings_errors_save_failed(),
 			});
 		}
 	});
@@ -52,15 +52,15 @@
 </script>
 
 <svelte:head>
-	<title>{m["settings.title"]()} — LocalConvert</title>
+	<title>{settings_title()} — LocalConvert</title>
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <div class="settings-page">
 	<!-- ═══ HERO ═══ -->
 	<header class="settings-hero fade-in-up">
-		<span class="settings-label">{m["settings.title"]()}</span>
-		<p class="settings-subtitle">{m["settings.subtitle"]()}</p>
+		<span class="settings-label">{settings_title()}</span>
+		<p class="settings-subtitle">{settings_subtitle()}</p>
 	</header>
 
 	<!-- ═══ SECTIONS ═══ -->
@@ -71,7 +71,7 @@
 				<div class="settings-card-icon settings-card-icon--conversion">
 					<SlidersHorizontalIcon size="18" strokeWidth={2.2} />
 				</div>
-				<h2>{m["settings.conversion.title"]()}</h2>
+				<h2>{settings_conversion_title()}</h2>
 			</div>
 			<div class="settings-card-body">
 				<Settings.Conversion bind:settings />
@@ -84,7 +84,7 @@
 				<div class="settings-card-icon settings-card-icon--appearance">
 					<PaletteIcon size="18" strokeWidth={2.2} />
 				</div>
-				<h2>{m["settings.appearance.title"]()}</h2>
+				<h2>{settings_appearance_title()}</h2>
 			</div>
 			<div class="settings-card-body">
 				<Settings.Appearance />
@@ -97,7 +97,7 @@
 				<div class="settings-card-icon settings-card-icon--privacy">
 					<ShieldIcon size="18" strokeWidth={2.2} />
 				</div>
-				<h2>{m["settings.privacy.title"]()}</h2>
+				<h2>{settings_privacy_title()}</h2>
 			</div>
 			<div class="settings-card-body">
 				<Settings.Privacy bind:settings />

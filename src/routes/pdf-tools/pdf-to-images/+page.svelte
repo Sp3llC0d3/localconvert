@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.images_to_pdf_name': pdf_tools_tools_images_to_pdf_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
+	import { tool_pages_pdf_to_images_err_fail, tool_pages_pdf_to_images_title, tool_pages_pdf_to_images_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_format, tools_common_quality, tool_pages_pdf_to_images_resolution, tool_pages_pdf_to_images_btn_busy, tool_pages_pdf_to_images_btn, tools_common_ready, tools_common_privacy_note, tool_pages_pdf_to_images_seo_faq1_q, tool_pages_pdf_to_images_seo_faq1_a, tool_pages_pdf_to_images_seo_faq2_q, tool_pages_pdf_to_images_seo_faq2_a, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_crop_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToImages } from '$lib/pdf/pdf-to-images';
@@ -46,7 +47,7 @@
 			}
 			done = true;
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.pdf_to_images.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_pdf_to_images_err_fail();
 		}
 		processing = false;
 	}
@@ -65,19 +66,19 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.pdf_to_images.title']()}
-		description={m['tool_pages.pdf_to_images.desc']()}
+		title={tool_pages_pdf_to_images_title()}
+		description={tool_pages_pdf_to_images_desc()}
 		icon={FileDownIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.format']()}</span>
+				<span class="opt-label">{tools_common_format()}</span>
 				<div class="flex gap-2">
 					<button class="btn text-sm px-3 py-1.5 {format === 'image/jpeg' ? 'highlight' : ''}" onclick={() => format = 'image/jpeg'}>JPG</button>
 					<button class="btn text-sm px-3 py-1.5 {format === 'image/png' ? 'highlight' : ''}" onclick={() => format = 'image/png'}>PNG</button>
@@ -85,13 +86,13 @@
 			</div>
 			{#if format === 'image/jpeg'}
 				<div class="opt-row">
-					<span class="opt-label">{m['tools_common.quality']()}</span>
+					<span class="opt-label">{tools_common_quality()}</span>
 					<input type="range" min={10} max={100} bind:value={quality} class="quality-slider flex-1" />
 					<span class="text-sm text-muted w-10">{quality}%</span>
 				</div>
 			{/if}
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.pdf_to_images.resolution']()}</span>
+				<span class="opt-label">{tool_pages_pdf_to_images_resolution()}</span>
 				<div class="flex gap-2">
 					{#each [[1, '1×'], [1.5, '1.5×'], [2, '2×'], [3, '3×']] as [val, label]}
 						<button class="btn text-sm px-3 py-1.5 {scale === val ? 'highlight' : ''}" onclick={() => scale = val as number}>{label}</button>
@@ -102,7 +103,7 @@
 
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">{m['tool_pages.pdf_to_images.btn_busy']({ progress, total })}</p>
+				<p class="text-sm text-muted">{tool_pages_pdf_to_images_btn_busy({ progress, total })}</p>
 				<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 					<div class="h-full bg-accent transition-all" style="width: {total > 0 ? (progress/total*100) : 0}%"></div>
 				</div>
@@ -110,11 +111,11 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? m['tool_pages.pdf_to_images.btn_busy']({ progress, total }) : m['tool_pages.pdf_to_images.btn']()}
+			{processing ? tool_pages_pdf_to_images_btn_busy({ progress, total }) : tool_pages_pdf_to_images_btn()}
 		</button>
 
 		{#if done}
-			<p class="text-sm font-medium text-accent">✓ {m['tools_common.ready']()}</p>
+			<p class="text-sm font-medium text-accent">✓ {tools_common_ready()}</p>
 		{/if}
 	{/if}
 
@@ -123,14 +124,14 @@
 	{#if toolSeo['pdf-to-images']}
 		<ToolSeoBlock
 			faqs={toolSeo['pdf-to-images'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['pdf-to-images'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-images'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['pdf-to-images'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-images'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_pdf_to_images_seo_faq1_q?.() ?? '', a: tool_pages_pdf_to_images_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_pdf_to_images_seo_faq2_q?.() ?? '', a: tool_pages_pdf_to_images_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['pdf-to-images'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['pdf-to-images'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

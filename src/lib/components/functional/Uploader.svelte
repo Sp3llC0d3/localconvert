@@ -3,7 +3,7 @@
 	import { onMount } from "svelte";
 	import { effects, files } from "$lib/store/index.svelte";
 	import { goto } from "$app/navigation";
-	import { m } from "$lib/paraglide/messages";
+	import { upload_uploader_to_convert, upload_uploader_drop, upload_uploader_or, upload_uploader_click_browse, upload_uploader_add_more } from "$lib/paraglide/messages/_barrel.js";
 
 	type Props = {
 		class?: string;
@@ -87,9 +87,9 @@
 		</div>
 
 		<p class="dz-text">
-			<span class="dz-action">{m["upload.uploader.to_convert"]()}</span>
+			<span class="dz-action">{upload_uploader_to_convert()}</span>
 			<span class="dz-sep">&mdash;</span>
-			<span class="dz-method">{m["upload.uploader.drop"]()}</span> {m["upload.uploader.or"]()} <span class="dz-method">{m["upload.uploader.click_browse"]()}</span>
+			<span class="dz-method">{upload_uploader_drop()}</span> {upload_uploader_or()} <span class="dz-method">{upload_uploader_click_browse()}</span>
 		</p>
 	{:else}
 		<!-- Compact: horizontal single line -->
@@ -101,7 +101,7 @@
 			<line x1="16" y1="14" x2="9" y2="14" />
 			<polyline points="11,12 9,14 11,16" />
 		</svg>
-		<span class="dz-text-compact">{m["upload.uploader.add_more"]()}</span>
+		<span class="dz-text-compact">{upload_uploader_add_more()}</span>
 	{/if}
 </button>
 

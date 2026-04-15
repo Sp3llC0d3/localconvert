@@ -1,4 +1,5 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.rotate_name': pdf_tools_tools_rotate_name, 'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name};
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { cropPdf, type PdfCropBox } from '$lib/pdf/crop';
@@ -7,7 +8,7 @@
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_failed_read_pdf, tool_pages_crop_pdf_err_margins, tools_common_failed, tool_pages_crop_pdf_title, tool_pages_crop_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_crop_pdf_aria_drag, tools_common_left, tools_common_right, tools_common_top, tools_common_bottom, tools_common_apply_all_pages, tool_pages_crop_pdf_btn_busy, tool_pages_crop_pdf_btn, tools_common_ready, tool_pages_crop_pdf_save, tools_common_privacy_note, tool_pages_crop_seo_faq1_q, tool_pages_crop_seo_faq1_a, tool_pages_crop_seo_faq2_q, tool_pages_crop_seo_faq2_a, pdf_tools_tools_rotate_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -72,7 +73,7 @@
 			await renderPage();
 		} catch {
 			if (lastFileRef !== file) return;
-			error = m['tools_common.failed_read_pdf']();
+			error = tools_common_failed_read_pdf();
 		}
 	}
 
@@ -221,7 +222,7 @@
 		if (files.length === 0) return;
 		const box = getCropBox();
 		if (box.right <= box.left || box.top <= box.bottom) {
-			error = m['tool_pages.crop_pdf.err_margins']();
+			error = tool_pages_crop_pdf_err_margins();
 			return;
 		}
 		error = '';
@@ -230,7 +231,7 @@
 		try {
 			resultBytes = await cropPdf(files[0], box, applyToAll ? undefined : [0]);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -254,14 +255,14 @@
 <div class="crop-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.crop_pdf.title']()}
-		description={m['tool_pages.crop_pdf.desc']()}
+		title={tool_pages_crop_pdf_title()}
+		description={tool_pages_crop_pdf_desc()}
 		icon={CropIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<!-- Interactive preview -->
@@ -279,7 +280,7 @@
 				ontouchend={onPointerUp}
 				ontouchcancel={onPointerUp}
 				role="application"
-				aria-label={m['tool_pages.crop_pdf.aria_drag']()}
+				aria-label={tool_pages_crop_pdf_aria_drag()}
 			>
 				<canvas bind:this={previewCanvas} class="preview-canvas"></canvas>
 
@@ -298,27 +299,27 @@
 		<!-- Margin inputs (synced with handles) -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.left']()}</span>
+				<span class="opt-label">{tools_common_left()}</span>
 				<input type="number" min={0} max={pageWidth / 2} bind:value={marginLeft} class="opt-input" aria-label="Left margin" />
-				<span class="opt-label">{m['tools_common.right']()}</span>
+				<span class="opt-label">{tools_common_right()}</span>
 				<input type="number" min={0} max={pageWidth / 2} bind:value={marginRight} class="opt-input" aria-label="Right margin" />
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.top']()}</span>
+				<span class="opt-label">{tools_common_top()}</span>
 				<input type="number" min={0} max={pageHeight / 2} bind:value={marginTop} class="opt-input" aria-label="Top margin" />
-				<span class="opt-label">{m['tools_common.bottom']()}</span>
+				<span class="opt-label">{tools_common_bottom()}</span>
 				<input type="number" min={0} max={pageHeight / 2} bind:value={marginBottom} class="opt-input" aria-label="Bottom margin" />
 			</div>
 			{#if pageCount > 1}
 				<label class="flex items-center gap-2 cursor-pointer text-sm">
 					<input type="checkbox" bind:checked={applyToAll} />
-					{m['tools_common.apply_all_pages']()}
+					{tools_common_apply_all_pages()}
 				</label>
 			{/if}
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? m['tool_pages.crop_pdf.btn_busy']() : m['tool_pages.crop_pdf.btn']()}
+			{processing ? tool_pages_crop_pdf_btn_busy() : tool_pages_crop_pdf_btn()}
 		</button>
 	{/if}
 
@@ -326,8 +327,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.crop_pdf.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_crop_pdf_save()}</button>
 		</div>
 	{/if}
 
@@ -335,14 +336,14 @@
 	{#if toolSeo['crop']}
 		<ToolSeoBlock
 			faqs={toolSeo['crop'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['crop'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['crop'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['crop'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['crop'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_crop_seo_faq1_q?.() ?? '', a: tool_pages_crop_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_crop_seo_faq2_q?.() ?? '', a: tool_pages_crop_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['crop'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['crop'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

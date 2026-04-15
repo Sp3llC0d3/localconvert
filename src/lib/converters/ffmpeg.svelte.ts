@@ -3,7 +3,7 @@ import { Converter, FormatInfo } from "./converter.svelte";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { browser } from "$app/environment";
 import { error, log } from "$lib/util/logger";
-import { m } from "$lib/paraglide/messages";
+import { workers_errors_ffmpeg, workers_errors_invalid_rate, workers_errors_no_audio } from "$lib/paraglide/messages/_barrel.js";
 import { Settings } from "$lib/sections/settings/index.svelte";
 import { ToastManager } from "$lib/util/toast.svelte";
 
@@ -102,7 +102,7 @@ export class FFmpegConverter extends Converter {
 			this.status = "error";
 			ToastManager.add({
 				type: "error",
-				message: m["workers.errors.ffmpeg"](),
+				message: workers_errors_ffmpeg(),
 			});
 		}
 	}
@@ -144,11 +144,11 @@ export class FFmpegConverter extends Converter {
 				msg.includes("is not supported")
 			) {
 				const rate = Settings.instance.settings.ffmpegCustomSampleRate;
-				conversionError = m["workers.errors.invalid_rate"]({
+				conversionError = workers_errors_invalid_rate({
 					rate,
 				});
 			} else if (msg.includes("Stream map '0:a:0' matches no streams.")) {
-				conversionError = m["workers.errors.no_audio"]();
+				conversionError = workers_errors_no_audio();
 			} else if (
 				msg.includes("Error initializing output stream") ||
 				msg.includes("Error while opening encoder") ||

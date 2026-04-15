@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.css_minify_name': dev_tools_tools_css_minify_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.base64_name': dev_tools_tools_base64_name};
+	import { tool_pages_json_formatter_title, tool_pages_json_formatter_desc, tools_common_back_dev, tool_pages_json_formatter_input_label, tool_pages_json_formatter_output_label, tool_pages_json_formatter_btn_format, tool_pages_json_formatter_btn_minify, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_json_formatter_indent, tools_common_privacy_note_browser, tool_pages_dev_json_seo_faq1_q, tool_pages_dev_json_seo_faq1_a, tool_pages_dev_json_seo_faq2_q, tool_pages_dev_json_seo_faq2_a, dev_tools_tools_css_minify_name, dev_tools_tools_diff_name, dev_tools_tools_base64_name } from "$lib/paraglide/messages/_barrel.js";
 	import { BracesIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -68,21 +69,21 @@
 <div class="json-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.json_formatter.title']()}
-		description={m['tool_pages.json_formatter.desc']()}
+		title={tool_pages_json_formatter_title()}
+		description={tool_pages_json_formatter_desc()}
 		icon={BracesIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
 	<div class="panels">
 		<div class="panel">
-			<label class="panel-label" for="json-input">{m['tool_pages.json_formatter.input_label']()}</label>
+			<label class="panel-label" for="json-input">{tool_pages_json_formatter_input_label()}</label>
 			<textarea id="json-input" bind:value={input} class="code-area" spellcheck="false" autocomplete="off"></textarea>
 		</div>
 		{#if output}
 			<div class="panel">
-				<label class="panel-label">{m['tool_pages.json_formatter.output_label']()}</label>
+				<label class="panel-label">{tool_pages_json_formatter_output_label()}</label>
 				<textarea readonly value={output} class="code-area" spellcheck="false"></textarea>
 			</div>
 		{/if}
@@ -95,31 +96,31 @@
 	{/if}
 
 	<div class="btn-row">
-		<button class="btn highlight" onclick={format}>{m['tool_pages.json_formatter.btn_format']()}</button>
-		<button class="btn" onclick={minify}>{m['tool_pages.json_formatter.btn_minify']()}</button>
+		<button class="btn highlight" onclick={format}>{tool_pages_json_formatter_btn_format()}</button>
+		<button class="btn" onclick={minify}>{tool_pages_json_formatter_btn_minify()}</button>
 		{#if output}
 			<button class="btn" onclick={copyOutput}>
 				{#if copied}<CheckIcon size={14} />{:else}<CopyIcon size={14} />{/if}
-				{copied ? m['tool_pages.pdf_to_text.copied']() : m['tool_pages.json_formatter.btn_copy']()}
+				{copied ? tool_pages_pdf_to_text_copied() : tool_pages_json_formatter_btn_copy()}
 			</button>
 		{/if}
 		<div class="flex items-center gap-2 ml-auto">
-			<span class="text-xs text-muted">{m['tool_pages.json_formatter.indent']()}</span>
+			<span class="text-xs text-muted">{tool_pages_json_formatter_indent()}</span>
 			{#each [2, 4] as n}
 				<button class="btn text-xs px-2 py-1 {indent === n ? 'highlight' : ''}" onclick={() => indent = n}>{n}</button>
 			{/each}
 		</div>
 	</div>
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-json']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-json'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-json'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-json'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-json'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-json'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_json_seo_faq1_q?.() ?? '', a: tool_pages_dev_json_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_json_seo_faq2_q?.() ?? '', a: tool_pages_dev_json_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-json'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-json'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

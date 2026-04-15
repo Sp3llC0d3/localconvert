@@ -3,7 +3,7 @@
 	import { PiggyBankIcon, CopyIcon, CheckIcon } from "lucide-svelte";
 	import HotMilk from "$lib/assets/hotmilk.svg?component";
 	import { error } from "$lib/util/logger";
-	import { m } from "$lib/paraglide/messages";
+	import { about_sponsors_email_copied, about_sponsors_title, about_sponsors_description } from "$lib/paraglide/messages/_barrel.js";
 	import { link } from "$lib/store/index.svelte";
 	import { sanitize } from "$lib/util/sanitize";
 	import { ToastManager } from "$lib/util/toast.svelte";
@@ -17,7 +17,7 @@
 			copied = true;
 			ToastManager.add({
 				type: "success",
-				message: m["about.sponsors.email_copied"](),
+				message: about_sponsors_email_copied(),
 			});
 
 			if (timeoutId) clearTimeout(timeoutId);
@@ -35,7 +35,7 @@
 		>
 			<PiggyBankIcon />
 		</div>
-		{m["about.sponsors.title"]()}
+		{about_sponsors_title()}
 	</h2>
 	<div class="mt-2 [&>*]:font-normal h-full flex justify-between flex-col">
 		<div class="flex gap-3 justify-center text-lg">
@@ -48,7 +48,7 @@
 			</a>
 		</div>
 		<p class="text-muted">
-			{m["about.sponsors.description"]()}
+			{about_sponsors_description()}
 			<span class="inline-block mx-[2px] relative top-[2px]">
 				<button
 					id="email"

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name, 'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name};
+	import { tool_pages_images_to_pdf_err_min, tool_pages_images_to_pdf_err_fail, tool_pages_images_to_pdf_title, tool_pages_images_to_pdf_desc, tools_common_back_pdf, tools_common_upload_images_pdf, tool_pages_images_to_pdf_btn_busy, tool_pages_images_to_pdf_btn, tools_common_ready, tools_common_output, tool_pages_images_to_pdf_save, tools_common_privacy_note, tool_pages_images_to_pdf_seo_faq1_q, tool_pages_images_to_pdf_seo_faq1_a, tool_pages_images_to_pdf_seo_faq2_q, tool_pages_images_to_pdf_seo_faq2_a, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_compress_name, pdf_tools_tools_merge_name } from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -42,14 +43,14 @@
 	function onDragEnd() { dragIndex = null; }
 
 	async function convert() {
-		if (files.length === 0) { error = m['tool_pages.images_to_pdf.err_min'](); return; }
+		if (files.length === 0) { error = tool_pages_images_to_pdf_err_min(); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
 		try {
 			resultBytes = await imagesToPdf(files);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.images_to_pdf.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_images_to_pdf_err_fail();
 		}
 		processing = false;
 	}
@@ -73,17 +74,17 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.images_to_pdf.title']()}
-		description={m['tool_pages.images_to_pdf.desc']()}
+		title={tool_pages_images_to_pdf_title()}
+		description={tool_pages_images_to_pdf_desc()}
 		icon={ImageIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
 	<PdfUploader
 		bind:files
 		accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
-		label={m['tools_common.upload_images_pdf']()}
+		label={tools_common_upload_images_pdf()}
 	/>
 
 	{#if files.length > 0}
@@ -108,7 +109,7 @@
 		</ul>
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? m['tool_pages.images_to_pdf.btn_busy']() : m['tool_pages.images_to_pdf.btn']()}
+			{processing ? tool_pages_images_to_pdf_btn_busy() : tool_pages_images_to_pdf_btn()}
 		</button>
 	{/if}
 
@@ -116,8 +117,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.images_to_pdf.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} {tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_images_to_pdf_save()}</button>
 		</div>
 	{/if}
 
@@ -125,14 +126,14 @@
 	{#if toolSeo['images-to-pdf']}
 		<ToolSeoBlock
 			faqs={toolSeo['images-to-pdf'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['images-to-pdf'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['images-to-pdf'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['images-to-pdf'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['images-to-pdf'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_images_to_pdf_seo_faq1_q?.() ?? '', a: tool_pages_images_to_pdf_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_images_to_pdf_seo_faq2_q?.() ?? '', a: tool_pages_images_to_pdf_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['images-to-pdf'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['images-to-pdf'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

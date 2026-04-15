@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.from_xlsx_name': pdf_tools_tools_from_xlsx_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
+	import { tool_pages_from_docx_invalid_file, tools_common_failed, tool_pages_from_docx_title, tool_pages_from_docx_desc, tools_common_back_pdf, tool_pages_from_docx_drop_hint, tools_common_converting_progress, tools_common_convert_to_pdf, tool_pages_from_docx_disclaimer, tools_common_output, tools_common_save_pdf, tools_common_privacy_note, tool_pages_from_docx_seo_faq1_q, tool_pages_from_docx_seo_faq1_a, tool_pages_from_docx_seo_faq2_q, tool_pages_from_docx_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { convertDocxToPdf } from '$lib/pdf/from-docx';
@@ -26,7 +27,7 @@
 	async function convert() {
 		if (!browser || !file) return;
 		if (!file.name.match(/\.(docx|doc)$/i)) {
-			error = m['tool_pages.from_docx.invalid_file']();
+			error = tool_pages_from_docx_invalid_file();
 			return;
 		}
 		error = '';
@@ -38,7 +39,7 @@
 				onProgress: (p) => { progress = Math.round(p * 100); },
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -63,18 +64,18 @@
 	<ToolPageHeader
 		category="pdf"
 		icon={FileTextIcon}
-		title={m['tool_pages.from_docx.title']()}
-		description={m['tool_pages.from_docx.desc']()}
+		title={tool_pages_from_docx_title()}
+		description={tool_pages_from_docx_desc()}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} accept=".docx,.doc" label={m['tool_pages.from_docx.drop_hint']()} />
+	<PdfUploader bind:files multiple={false} accept=".docx,.doc" label={tool_pages_from_docx_drop_hint()} />
 
 	{#if file}
 		{#if processing}
 			<div class="flex flex-col gap-2">
-				<p class="text-sm text-muted">{m['tools_common.converting_progress']({ progress })}</p>
+				<p class="text-sm text-muted">{tools_common_converting_progress({ progress })}</p>
 				<div class="h-1.5 rounded-full overflow-hidden" style="background: var(--bg-separator)">
 					<div class="h-full rounded-full transition-all" style="background: var(--accent); width: {progress}%"></div>
 				</div>
@@ -82,10 +83,10 @@
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? m['tools_common.converting_progress']({ progress }) : m['tools_common.convert_to_pdf']()}
+			{processing ? tools_common_converting_progress({ progress }) : tools_common_convert_to_pdf()}
 		</button>
 
-		<p class="disclaimer">ⓘ {m['tool_pages.from_docx.disclaimer']()}</p>
+		<p class="disclaimer">ⓘ {tool_pages_from_docx_disclaimer()}</p>
 	{/if}
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
@@ -93,9 +94,9 @@
 	{#if resultBytes}
 		<div class="result-box">
 			<p class="text-sm font-medium">
-				{m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b>
+				{tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b>
 			</p>
-			<button class="btn" onclick={download}>{m['tools_common.save_pdf']()}</button>
+			<button class="btn" onclick={download}>{tools_common_save_pdf()}</button>
 		</div>
 	{/if}
 
@@ -103,14 +104,14 @@
 	{#if toolSeo['from-docx']}
 		<ToolSeoBlock
 			faqs={toolSeo['from-docx'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['from-docx'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['from-docx'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['from-docx'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['from-docx'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_from_docx_seo_faq1_q?.() ?? '', a: tool_pages_from_docx_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_from_docx_seo_faq2_q?.() ?? '', a: tool_pages_from_docx_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['from-docx'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['from-docx'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

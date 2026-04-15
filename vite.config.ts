@@ -22,11 +22,15 @@ if (commitHash === "unknown") {
 export default defineConfig(({ command }) => {
 	const plugins: PluginOption[] = [
 		sveltekit(),
-		paraglideVitePlugin({
-			project: "./project.inlang",
-			outdir: "./src/lib/paraglide",
-			strategy: ["localStorage", "preferredLanguage", "baseLocale"],
-		}),
+		// In production, paraglide-js compile runs as a pre-build CLI step + patch-paraglide.cjs.
+		// The Vite plugin is only needed for dev mode (watch/HMR on message changes).
+		...(command === "serve"
+			? [paraglideVitePlugin({
+					project: "./project.inlang",
+					outdir: "./src/lib/paraglide",
+					strategy: ["localStorage", "preferredLanguage", "baseLocale"],
+				})]
+			: []),
 		svg({
 			includePaths: ["./src/lib/assets"],
 			svgoOptions: {

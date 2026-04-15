@@ -7,7 +7,7 @@
 	} from "lucide-svelte";
 	import type { ISettings } from "./index.svelte";
 	import { effects } from "$lib/store/index.svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { settings_privacy_cache_cleared, settings_privacy_cache_clear_error, settings_privacy_clear_all_data_confirm_title, settings_privacy_clear_all_data_confirm, settings_privacy_clear_all_data_cancel, settings_privacy_clear_all_data, settings_privacy_all_data_cleared, settings_privacy_all_data_clear_error, settings_privacy_cache_title, settings_privacy_cache_description, settings_privacy_total_size, settings_privacy_loading_cache, settings_privacy_files_cached_label, settings_privacy_refresh_cache, settings_privacy_clear_cache, settings_privacy_site_data_title, settings_privacy_site_data_description } from "$lib/paraglide/messages/_barrel.js";
 	import { sanitize } from "$lib/util/sanitize";
 	import { swManager, type CacheInfo } from "$lib/util/sw";
 	import { onMount } from "svelte";
@@ -51,13 +51,13 @@
 			await loadCacheInfo();
 			ToastManager.add({
 				type: "success",
-				message: m["settings.privacy.cache_cleared"](),
+				message: settings_privacy_cache_cleared(),
 			});
 		} catch (err) {
 			error(["privacy", "cache"], "Failed to clear cache:", err);
 			ToastManager.add({
 				type: "error",
-				message: m["settings.privacy.cache_clear_error"](),
+				message: settings_privacy_cache_clear_error(),
 			});
 		} finally {
 			isLoadingCache = false;
@@ -68,15 +68,15 @@
 		if (isLoadingCache) return;
 
 		addDialog(
-			m["settings.privacy.clear_all_data_confirm_title"](),
-			m["settings.privacy.clear_all_data_confirm"](),
+			settings_privacy_clear_all_data_confirm_title(),
+			settings_privacy_clear_all_data_confirm(),
 			[
 				{
-					text: m["settings.privacy.clear_all_data_cancel"](),
+					text: settings_privacy_clear_all_data_cancel(),
 					action: () => {},
 				},
 				{
-					text: m["settings.privacy.clear_all_data"](),
+					text: settings_privacy_clear_all_data(),
 					action: async () => {
 						isLoadingCache = true;
 						try {
@@ -87,7 +87,7 @@
 							ToastManager.add({
 								type: "success",
 								message:
-									m["settings.privacy.all_data_cleared"](),
+									settings_privacy_all_data_cleared(),
 							});
 
 							setTimeout(() => {
@@ -101,9 +101,7 @@
 							ToastManager.add({
 								type: "error",
 								message:
-									m[
-										"settings.privacy.all_data_clear_error"
-									](),
+									settings_privacy_all_data_clear_error(),
 							});
 						} finally {
 							isLoadingCache = false;
@@ -125,22 +123,22 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.privacy.cache_title"]()}
+				{settings_privacy_cache_title()}
 			</p>
 			<p class="text-sm text-muted font-normal">
-				{m["settings.privacy.cache_description"]()}
+				{settings_privacy_cache_description()}
 			</p>
 		</div>
 
 		<div class="grid grid-cols-2 gap-4">
 			<div class="bg-button p-4 rounded-lg">
 				<div class="text-sm text-muted">
-					{m["settings.privacy.total_size"]()}
+					{settings_privacy_total_size()}
 				</div>
 				<div class="text-lg font-bold flex items-center gap-2">
 					{#if isLoadingCache}
 						<RefreshCwIcon size="16" class="animate-spin" />
-						{m["settings.privacy.loading_cache"]()}
+						{settings_privacy_loading_cache()}
 					{:else}
 						{cacheInfo
 							? swManager.formatSize(cacheInfo.totalSize)
@@ -150,12 +148,12 @@
 			</div>
 			<div class="bg-button p-4 rounded-lg">
 				<div class="text-sm text-muted">
-					{m["settings.privacy.files_cached_label"]()}
+					{settings_privacy_files_cached_label()}
 				</div>
 				<div class="text-lg font-bold flex items-center gap-2">
 					{#if isLoadingCache}
 						<RefreshCwIcon size="16" class="animate-spin" />
-						{m["settings.privacy.loading_cache"]()}
+						{settings_privacy_loading_cache()}
 					{:else}
 						{cacheInfo?.fileCount ?? 0}
 					{/if}
@@ -172,7 +170,7 @@
 				disabled={isLoadingCache}
 			>
 				<RefreshCwIcon size="24" class="inline-block mr-2" />
-				{m["settings.privacy.refresh_cache"]()}
+				{settings_privacy_refresh_cache()}
 			</button>
 			<button
 				onclick={clearCache}
@@ -182,7 +180,7 @@
 				disabled={isLoadingCache}
 			>
 				<Trash2Icon size="24" class="inline-block mr-2" />
-				{m["settings.privacy.clear_cache"]()}
+				{settings_privacy_clear_cache()}
 			</button>
 		</div>
 	</div>
@@ -191,10 +189,10 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.privacy.site_data_title"]()}
+				{settings_privacy_site_data_title()}
 			</p>
 			<p class="text-sm text-muted font-normal">
-				{m["settings.privacy.site_data_description"]()}
+				{settings_privacy_site_data_description()}
 			</p>
 		</div>
 
@@ -206,7 +204,7 @@
 			disabled={isLoadingCache}
 		>
 			<Trash2Icon size="24" class="inline-block mr-2" />
-			{m["settings.privacy.clear_all_data"]()}
+			{settings_privacy_clear_all_data()}
 		</button>
 	</div>
 </div>

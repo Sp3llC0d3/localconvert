@@ -1,10 +1,11 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name, 'pdf_tools.tools.password_name': pdf_tools_tools_password_name, 'pdf_tools.tools.unlock_name': pdf_tools_tools_unlock_name};
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { getMetadata, updateMetadata, type PdfMetadata } from '$lib/pdf/metadata';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { FileTextIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tool_pages_metadata_err_read, tool_pages_metadata_err_update, tool_pages_metadata_title, tool_pages_metadata_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_metadata_reading, tool_pages_metadata_field_title, tool_pages_metadata_field_author, tool_pages_metadata_field_subject, tool_pages_metadata_field_keywords, tool_pages_metadata_keywords_placeholder, tool_pages_metadata_field_creator, tool_pages_metadata_producer, tool_pages_metadata_none, tool_pages_metadata_created, tool_pages_metadata_modified, tool_pages_metadata_btn_busy, tool_pages_metadata_btn, tools_common_ready, tools_common_output, tool_pages_metadata_save, tools_common_privacy_note, tool_pages_metadata_seo_faq1_q, tool_pages_metadata_seo_faq1_a, tool_pages_metadata_seo_faq2_q, tool_pages_metadata_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_password_name, pdf_tools_tools_unlock_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -45,7 +46,7 @@
 			keywords = result.keywords;
 			creator = result.creator;
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.metadata.err_read']();
+			error = e instanceof Error ? e.message : tool_pages_metadata_err_read();
 		}
 		loading = false;
 	}
@@ -64,7 +65,7 @@
 				creator,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.metadata.err_update']();
+			error = e instanceof Error ? e.message : tool_pages_metadata_err_update();
 		}
 		saving = false;
 	}
@@ -88,52 +89,52 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.metadata.title']()}
-		description={m['tool_pages.metadata.desc']()}
+		title={tool_pages_metadata_title()}
+		description={tool_pages_metadata_desc()}
 		icon={FileTextIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if loading}
-		<p class="text-sm text-muted">{m['tool_pages.metadata.reading']()}</p>
+		<p class="text-sm text-muted">{tool_pages_metadata_reading()}</p>
 	{/if}
 
 	{#if meta}
 		<div class="opt-section">
 			<div class="field">
-				<label for="meta-title" class="field-label">{m['tool_pages.metadata.field_title']()}</label>
+				<label for="meta-title" class="field-label">{tool_pages_metadata_field_title()}</label>
 				<input id="meta-title" type="text" bind:value={title} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-author" class="field-label">{m['tool_pages.metadata.field_author']()}</label>
+				<label for="meta-author" class="field-label">{tool_pages_metadata_field_author()}</label>
 				<input id="meta-author" type="text" bind:value={author} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-subject" class="field-label">{m['tool_pages.metadata.field_subject']()}</label>
+				<label for="meta-subject" class="field-label">{tool_pages_metadata_field_subject()}</label>
 				<input id="meta-subject" type="text" bind:value={subject} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-keywords" class="field-label">{m['tool_pages.metadata.field_keywords']()}</label>
-				<input id="meta-keywords" type="text" bind:value={keywords} placeholder={m['tool_pages.metadata.keywords_placeholder']()} class="field-input" />
+				<label for="meta-keywords" class="field-label">{tool_pages_metadata_field_keywords()}</label>
+				<input id="meta-keywords" type="text" bind:value={keywords} placeholder={tool_pages_metadata_keywords_placeholder()} class="field-input" />
 			</div>
 			<div class="field">
-				<label for="meta-creator" class="field-label">{m['tool_pages.metadata.field_creator']()}</label>
+				<label for="meta-creator" class="field-label">{tool_pages_metadata_field_creator()}</label>
 				<input id="meta-creator" type="text" bind:value={creator} class="field-input" />
 			</div>
 
 			<!-- Read-only fields -->
 			<div class="flex flex-col gap-1 pt-2 border-t" style="border-color: var(--bg-separator)">
-				<p class="text-xs text-muted">{m['tool_pages.metadata.producer']()} {meta.producer || m['tool_pages.metadata.none']()}</p>
-				<p class="text-xs text-muted">{m['tool_pages.metadata.created']()} {meta.creationDate || m['tool_pages.metadata.none']()}</p>
-				<p class="text-xs text-muted">{m['tool_pages.metadata.modified']()} {meta.modificationDate || m['tool_pages.metadata.none']()}</p>
+				<p class="text-xs text-muted">{tool_pages_metadata_producer()} {meta.producer || tool_pages_metadata_none()}</p>
+				<p class="text-xs text-muted">{tool_pages_metadata_created()} {meta.creationDate || tool_pages_metadata_none()}</p>
+				<p class="text-xs text-muted">{tool_pages_metadata_modified()} {meta.modificationDate || tool_pages_metadata_none()}</p>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={saving} onclick={save}>
-			{saving ? m['tool_pages.metadata.btn_busy']() : m['tool_pages.metadata.btn']()}
+			{saving ? tool_pages_metadata_btn_busy() : tool_pages_metadata_btn()}
 		</button>
 	{/if}
 
@@ -141,8 +142,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.metadata.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} {tools_common_output()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_metadata_save()}</button>
 		</div>
 	{/if}
 
@@ -150,14 +151,14 @@
 	{#if toolSeo['metadata']}
 		<ToolSeoBlock
 			faqs={toolSeo['metadata'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['metadata'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['metadata'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['metadata'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['metadata'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_metadata_seo_faq1_q?.() ?? '', a: tool_pages_metadata_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_metadata_seo_faq2_q?.() ?? '', a: tool_pages_metadata_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['metadata'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['metadata'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

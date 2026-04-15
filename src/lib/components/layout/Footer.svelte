@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { GITHUB_URL } from "$lib/util/consts";
-	import { m } from "$lib/paraglide/messages";
+	import { footer_tagline, footer_pdf_tools_count, footer_image_tools_count, footer_dev_tools_count, footer_source_code, footer_privacy_policy, footer_copyright } from "$lib/paraglide/messages/_barrel.js";
 
 	const year = new Date().getFullYear();
 </script>
@@ -10,40 +10,40 @@
 		<!-- Brand -->
 		<div class="footer-brand">
 			<span class="footer-name">LocalConvert</span>
-			<span class="footer-tagline">{m["footer.tagline"]()}</span>
+			<span class="footer-tagline">{footer_tagline()}</span>
 		</div>
 
 		<!-- Tool categories -->
 		<nav class="footer-tools" aria-label="Tool categories">
 			<a href="/pdf-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--pdf"></span>
-				{m["footer.pdf_tools_count"]()}
+				{footer_pdf_tools_count()}
 			</a>
 			<a href="/image-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--image"></span>
-				{m["footer.image_tools_count"]()}
+				{footer_image_tools_count()}
 			</a>
 			<a href="/dev-tools/" class="footer-tool-link">
 				<span class="category-dot category-dot--dev"></span>
-				{m["footer.dev_tools_count"]()}
+				{footer_dev_tools_count()}
 			</a>
 		</nav>
 
 		<!-- Links -->
 		<div class="footer-links">
 			<a class="footer-link" href={GITHUB_URL} target="_blank">
-				{m["footer.source_code"]()}
+				{footer_source_code()}
 			</a>
 			<span class="footer-sep">&bull;</span>
 			<a class="footer-link" href="/privacy/">
-				{m["footer.privacy_policy"]()}
+				{footer_privacy_policy()}
 			</a>
 		</div>
 	</div>
 
 	<!-- Copyright -->
 	<div class="footer-copyright">
-		{m["footer.copyright"]({ year })}
+		{footer_copyright({ year })}
 	</div>
 
 	<div

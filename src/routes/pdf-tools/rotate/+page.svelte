@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name, 'pdf_tools.tools.page_numbers_name': pdf_tools_tools_page_numbers_name};
+	import { tool_pages_rotate_pdf_err_fail, tool_pages_rotate_pdf_title, tool_pages_rotate_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_rotate_pdf_rotation, tool_pages_rotate_pdf_apply_to, tool_pages_rotate_pdf_all_pages, tool_pages_rotate_pdf_selected_pages, tools_common_loading_thumbs, tools_common_pages_selected, tool_pages_rotate_pdf_help, tool_pages_rotate_pdf_btn_busy, tools_common_rotate, tools_common_privacy_note, tool_pages_rotate_seo_faq1_q, tool_pages_rotate_seo_faq1_a, tool_pages_rotate_seo_faq2_q, tool_pages_rotate_seo_faq2_a, pdf_tools_tools_organize_name, pdf_tools_tools_crop_name, pdf_tools_tools_page_numbers_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
@@ -46,7 +47,7 @@
 			const bytes = await rotatePdf(files[0], rotation, indices);
 			downloadPdf(bytes, getOutputName(files[0].name, `rotated${rotation}`, 'pdf'));
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.rotate_pdf.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_rotate_pdf_err_fail();
 		}
 		processing = false;
 	}
@@ -65,20 +66,20 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.rotate_pdf.title']()}
-		description={m['tool_pages.rotate_pdf.desc']()}
+		title={tool_pages_rotate_pdf_title()}
+		description={tool_pages_rotate_pdf_desc()}
 		icon={RotateCwIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<!-- Options -->
 		<div class="flex flex-wrap items-center gap-4">
 			<div class="flex flex-col gap-1">
-				<span class="text-xs font-semibold text-muted">{m['tool_pages.rotate_pdf.rotation']()}</span>
+				<span class="text-xs font-semibold text-muted">{tool_pages_rotate_pdf_rotation()}</span>
 				<div class="flex gap-2">
 					{#each [90, 180, 270] as deg}
 						<button
@@ -89,22 +90,22 @@
 				</div>
 			</div>
 			<div class="flex flex-col gap-1">
-				<span class="text-xs font-semibold text-muted">{m['tool_pages.rotate_pdf.apply_to']()}</span>
+				<span class="text-xs font-semibold text-muted">{tool_pages_rotate_pdf_apply_to()}</span>
 				<div class="flex gap-2">
 					<button
 						class="btn text-sm px-3 py-1.5 {applyTo === 'all' ? 'highlight' : ''}"
 						onclick={() => applyTo = 'all'}
-					>{m['tool_pages.rotate_pdf.all_pages']()}</button>
+					>{tool_pages_rotate_pdf_all_pages()}</button>
 					<button
 						class="btn text-sm px-3 py-1.5 {applyTo === 'selected' ? 'highlight' : ''}"
 						onclick={() => applyTo = 'selected'}
-					>{m['tool_pages.rotate_pdf.selected_pages']()}</button>
+					>{tool_pages_rotate_pdf_selected_pages()}</button>
 				</div>
 			</div>
 		</div>
 
 		{#if loadingThumbs}
-			<p class="text-sm text-muted">{m['tools_common.loading_thumbs']()}</p>
+			<p class="text-sm text-muted">{tools_common_loading_thumbs()}</p>
 		{:else if thumbs.length > 0}
 			<div class="thumb-grid">
 				{#each thumbs as thumb, i}
@@ -126,12 +127,12 @@
 				{/each}
 			</div>
 			{#if applyTo === 'selected'}
-				<p class="text-xs text-muted">{m['tools_common.pages_selected']({ count: selectedPages.size })} — {m['tool_pages.rotate_pdf.help']()}</p>
+				<p class="text-xs text-muted">{tools_common_pages_selected({ count: selectedPages.size })} — {tool_pages_rotate_pdf_help()}</p>
 			{/if}
 		{/if}
 
 		<button class="btn highlight" disabled={processing} onclick={rotate}>
-			{processing ? m['tool_pages.rotate_pdf.btn_busy']() : `${m['tools_common.rotate']()} ${applyTo === 'all' ? m['tool_pages.rotate_pdf.all_pages']() : m['tool_pages.rotate_pdf.selected_pages']()} ${rotation}°`}
+			{processing ? tool_pages_rotate_pdf_btn_busy() : `${tools_common_rotate()} ${applyTo === 'all' ? tool_pages_rotate_pdf_all_pages() : tool_pages_rotate_pdf_selected_pages()} ${rotation}°`}
 		</button>
 	{/if}
 
@@ -140,14 +141,14 @@
 	{#if toolSeo['rotate']}
 		<ToolSeoBlock
 			faqs={toolSeo['rotate'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['rotate'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['rotate'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['rotate'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['rotate'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_rotate_seo_faq1_q?.() ?? '', a: tool_pages_rotate_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_rotate_seo_faq2_q?.() ?? '', a: tool_pages_rotate_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['rotate'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['rotate'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

@@ -20,7 +20,7 @@
 	import "$lib/css/app.scss";
 	import { initStores as initAnimStores } from "$lib/util/animation.js";
 	import { ToastManager } from "$lib/util/toast.svelte.js";
-	import { m } from "$lib/paraglide/messages.js";
+	import { toast_insecure_context } from "$lib/paraglide/messages/_barrel.js";
 	import { log } from "$lib/util/logger.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { loadFontForLocale } from "$lib/util/fonts.js";
@@ -117,7 +117,7 @@
 			log(["layout"], "Insecure context (HTTP) detected, some features may not work as expected.");
 			ToastManager.add({
 				type: "warning",
-				message: m["toast.insecure_context"](),
+				message: toast_insecure_context(),
 				disappearing: false,
 			});
 		}

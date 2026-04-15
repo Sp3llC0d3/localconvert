@@ -8,7 +8,7 @@
 		MailIcon,
 		ShieldIcon,
 	} from "lucide-svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { about_resources_title, about_resources_source, about_resources_email, footer_privacy_policy } from "$lib/paraglide/messages/_barrel.js";
 </script>
 
 <Panel class="flex flex-col gap-4 p-6">
@@ -18,7 +18,7 @@
 		>
 			<LinkIcon />
 		</div>
-		{m["about.resources.title"]()}
+		{about_resources_title()}
 	</h2>
 	<div class="flex flex-wrap gap-3">
 		<a
@@ -30,7 +30,7 @@
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<GithubIcon size="20" class="inline-block mr-2" />
-			{m["about.resources.source"]()}
+			{about_resources_source()}
 		</a>
 		<a
 			href="mailto:{CONTACT_EMAIL}"
@@ -41,7 +41,7 @@
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<MailIcon size="20" class="inline-block mr-2" />
-			{m["about.resources.email"]()}
+			{about_resources_email()}
 		</a>
 		<a
 			href="/privacy/"
@@ -50,7 +50,7 @@
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<ShieldIcon size="20" class="inline-block mr-2" />
-			{m["footer.privacy_policy"]()}
+			{footer_privacy_policy()}
 		</a>
 	</div>
 </Panel>

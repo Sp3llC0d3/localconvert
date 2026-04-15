@@ -1,4 +1,5 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.watermark_name': pdf_tools_tools_watermark_name, 'pdf_tools.tools.edit_name': pdf_tools_tools_edit_name, 'pdf_tools.tools.password_name': pdf_tools_tools_password_name};
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { signPdf } from '$lib/pdf/sign';
@@ -6,7 +7,7 @@
 	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { PenToolIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_failed_read_pdf, tool_pages_sign_err_pdf, tool_pages_sign_err_sig, tool_pages_sign_err_place, tools_common_failed, tool_pages_sign_title, tool_pages_sign_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_sign_step1, tool_pages_sign_draw, tool_pages_sign_type, tool_pages_sign_upload, tools_common_clear, tool_pages_sign_your_name, tool_pages_sign_step2, tool_pages_sign_click_place, tool_pages_sign_btn_busy, tool_pages_sign_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_sign_seo_faq1_q, tool_pages_sign_seo_faq1_a, tool_pages_sign_seo_faq2_q, tool_pages_sign_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_edit_name, pdf_tools_tools_password_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -78,7 +79,7 @@
 			calcDisplaySize();
 		} catch {
 			if (lastFileRef !== file) return;
-			error = m['tools_common.failed_read_pdf']();
+			error = tools_common_failed_read_pdf();
 		}
 	}
 
@@ -239,9 +240,9 @@
 	}
 
 	async function apply() {
-		if (!files.length) { error = m['tool_pages.sign.err_pdf'](); return; }
-		if (!hasSignature) { error = m['tool_pages.sign.err_sig'](); return; }
-		if (!placed) { error = m['tool_pages.sign.err_place'](); return; }
+		if (!files.length) { error = tool_pages_sign_err_pdf(); return; }
+		if (!hasSignature) { error = tool_pages_sign_err_sig(); return; }
+		if (!placed) { error = tool_pages_sign_err_place(); return; }
 
 		error = '';
 		processing = true;
@@ -263,7 +264,7 @@
 				height: Math.round(pdfH),
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -299,23 +300,23 @@
 <div class="sign-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.sign.title']()}
-		description={m['tool_pages.sign.desc']()}
+		title={tool_pages_sign_title()}
+		description={tool_pages_sign_desc()}
 		icon={PenToolIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if thumbs.length > 0 && displayW > 0}
 		<!-- Step 1: Create signature -->
 		<div class="step-section">
-			<p class="step-label">{m['tool_pages.sign.step1']()}</p>
+			<p class="step-label">{tool_pages_sign_step1()}</p>
 			<div class="flex gap-2 mb-2">
-				<button class="btn text-sm px-3 py-1.5 {mode === 'draw' ? 'highlight' : ''}" onclick={() => { mode = 'draw'; clearSignature(); }}>{m['tool_pages.sign.draw']()}</button>
-				<button class="btn text-sm px-3 py-1.5 {mode === 'type' ? 'highlight' : ''}" onclick={() => { mode = 'type'; clearSignature(); }}>{m['tool_pages.sign.type']()}</button>
-				<button class="btn text-sm px-3 py-1.5 {mode === 'upload' ? 'highlight' : ''}" onclick={() => { mode = 'upload'; clearSignature(); }}>{m['tool_pages.sign.upload']()}</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'draw' ? 'highlight' : ''}" onclick={() => { mode = 'draw'; clearSignature(); }}>{tool_pages_sign_draw()}</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'type' ? 'highlight' : ''}" onclick={() => { mode = 'type'; clearSignature(); }}>{tool_pages_sign_type()}</button>
+				<button class="btn text-sm px-3 py-1.5 {mode === 'upload' ? 'highlight' : ''}" onclick={() => { mode = 'upload'; clearSignature(); }}>{tool_pages_sign_upload()}</button>
 			</div>
 
 			{#if mode === 'draw'}
@@ -331,10 +332,10 @@
 					ontouchmove={doDraw}
 					ontouchend={endDraw}
 				></canvas>
-				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>{m['tools_common.clear']()}</button>
+				<button class="text-xs text-muted hover:underline self-end" onclick={clearSignature}>{tools_common_clear()}</button>
 			{:else if mode === 'type'}
 				<input
-					type="text" bind:value={typedName} placeholder={m['tool_pages.sign.your_name']()}
+					type="text" bind:value={typedName} placeholder={tool_pages_sign_your_name()}
 					class="sig-text-input"
 				/>
 				<canvas bind:this={sigCanvas} width={400} height={120} class="hidden"></canvas>
@@ -346,7 +347,7 @@
 
 		<!-- Step 2: Place on page (always visible, disabled until signature exists) -->
 		<div class="step-section" class:step-disabled={!hasSignature}>
-			<p class="step-label">{m['tool_pages.sign.step2']()}</p>
+			<p class="step-label">{tool_pages_sign_step2()}</p>
 
 			{#if thumbs.length > 1}
 				<div class="flex gap-2 flex-wrap mb-2">
@@ -368,7 +369,7 @@
 					onmouseup={onPageMouseUp}
 					onclick={onPageClick}
 					role="application"
-					aria-label={m['tool_pages.sign.click_place']()}
+					aria-label={tool_pages_sign_click_place()}
 				>
 					<img src={thumbs[currentPage]} alt="Page {currentPage + 1}" class="page-img" draggable="false" />
 
@@ -400,7 +401,7 @@
 
 		{#if placed && hasSignature}
 			<button class="btn highlight" disabled={processing} onclick={apply}>
-				{processing ? m['tool_pages.sign.btn_busy']() : m['tool_pages.sign.save']()}
+				{processing ? tool_pages_sign_btn_busy() : tool_pages_sign_save()}
 			</button>
 		{/if}
 	{/if}
@@ -409,8 +410,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
@@ -418,14 +419,14 @@
 	{#if toolSeo['sign']}
 		<ToolSeoBlock
 			faqs={toolSeo['sign'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['sign'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['sign'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['sign'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['sign'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_sign_seo_faq1_q?.() ?? '', a: tool_pages_sign_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_sign_seo_faq2_q?.() ?? '', a: tool_pages_sign_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['sign'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['sign'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

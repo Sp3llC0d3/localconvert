@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.pdf_to_ppt_name': pdf_tools_tools_pdf_to_ppt_name, 'pdf_tools.tools.edit_name': pdf_tools_tools_edit_name};
+	import { tool_pages_pdf_to_text_no_text, tools_common_failed, tool_pages_pdf_to_text_title, tool_pages_pdf_to_text_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_text_btn_busy, tool_pages_pdf_to_text_btn, tool_pages_pdf_to_text_result, tool_pages_pdf_to_text_copied, tool_pages_pdf_to_text_copy, tool_pages_pdf_to_text_download_txt, tools_common_privacy_note, tool_pages_pdf_to_text_seo_faq1_q, tool_pages_pdf_to_text_seo_faq1_a, tool_pages_pdf_to_text_seo_faq2_q, tool_pages_pdf_to_text_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_edit_name } from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToText } from '$lib/pdf/pdf-to-text';
 	import { downloadBlob, getOutputName } from '$lib/pdf/utils';
@@ -30,9 +31,9 @@
 		text = '';
 		try {
 			text = await pdfToText(files[0], (d, t) => { progress = d; total = t; });
-			if (!text.trim()) error = m['tool_pages.pdf_to_text.no_text']();
+			if (!text.trim()) error = tool_pages_pdf_to_text_no_text();
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -64,18 +65,18 @@
 <div class="text-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.pdf_to_text.title']()}
-		description={m['tool_pages.pdf_to_text.desc']()}
+		title={tool_pages_pdf_to_text_title()}
+		description={tool_pages_pdf_to_text_desc()}
 		icon={FileTextIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0 && !text}
 		<button class="btn highlight" disabled={processing} onclick={extract}>
-			{processing ? m['tool_pages.pdf_to_text.btn_busy']({ progress, total }) : m['tool_pages.pdf_to_text.btn']()}
+			{processing ? tool_pages_pdf_to_text_btn_busy({ progress, total }) : tool_pages_pdf_to_text_btn()}
 		</button>
 
 		{#if processing}
@@ -90,14 +91,14 @@
 	{#if text}
 		<div class="result-section">
 			<div class="flex items-center justify-between gap-2 flex-wrap">
-				<p class="text-sm font-semibold">{m['tool_pages.pdf_to_text.result']({ chars: text.length })}</p>
+				<p class="text-sm font-semibold">{tool_pages_pdf_to_text_result({ chars: text.length })}</p>
 				<div class="flex gap-2">
 					<button class="btn text-sm px-3 py-1.5" onclick={copyText}>
 						{#if copied}<CheckIcon size={14} />{:else}<CopyIcon size={14} />{/if}
-						{copied ? m['tool_pages.pdf_to_text.copied']() : m['tool_pages.pdf_to_text.copy']()}
+						{copied ? tool_pages_pdf_to_text_copied() : tool_pages_pdf_to_text_copy()}
 					</button>
 					<button class="btn text-sm px-3 py-1.5" onclick={downloadTxt}>
-						{m['tool_pages.pdf_to_text.download_txt']()}
+						{tool_pages_pdf_to_text_download_txt()}
 					</button>
 				</div>
 			</div>
@@ -109,14 +110,14 @@
 	{#if toolSeo['pdf-to-text']}
 		<ToolSeoBlock
 			faqs={toolSeo['pdf-to-text'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['pdf-to-text'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-text'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['pdf-to-text'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-text'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_pdf_to_text_seo_faq1_q?.() ?? '', a: tool_pages_pdf_to_text_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_pdf_to_text_seo_faq2_q?.() ?? '', a: tool_pages_pdf_to_text_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['pdf-to-text'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['pdf-to-text'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

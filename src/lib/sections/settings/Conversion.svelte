@@ -12,7 +12,7 @@
 		SAMPLE_RATES,
 		type SampleRate,
 	} from "$lib/converters/audio-constants";
-	import { m } from "$lib/paraglide/messages";
+	import { settings_conversion_filename_format, settings_conversion_filename_description, settings_conversion_filename_prefix, settings_conversion_filename_var_name, settings_conversion_filename_var_date, settings_conversion_filename_preview, settings_conversion_advanced_settings, settings_conversion_default_format, settings_conversion_default_format_description, settings_conversion_default_format_enable, settings_conversion_default_format_disable, settings_conversion_default_format_image, settings_conversion_default_format_audio, settings_conversion_default_format_video, settings_conversion_default_format_document, settings_conversion_metadata, settings_conversion_metadata_description, settings_conversion_keep, settings_conversion_remove, settings_conversion_quality, settings_conversion_quality_description, settings_conversion_quality_images, settings_conversion_quality_audio, settings_conversion_rate } from "$lib/paraglide/messages/_barrel.js";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import FancyInput from "$lib/components/functional/FancyInput.svelte";
 	import { effects } from "$lib/store/index.svelte";
@@ -78,10 +78,10 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.conversion.filename_format"]()}
+				{settings_conversion_filename_format()}
 			</p>
 			<p class="text-sm text-muted font-normal">
-				{m["settings.conversion.filename_description"]()}
+				{settings_conversion_filename_description()}
 			</p>
 		</div>
 
@@ -89,7 +89,7 @@
 		<div class="fn-builder">
 			<!-- Prefix segment -->
 			<div class="fn-segment fn-segment--active">
-				<label class="fn-segment-label">{m["settings.conversion.filename_prefix"]()}</label>
+				<label class="fn-segment-label">{settings_conversion_filename_prefix()}</label>
 				<input
 					type="text"
 					class="fn-segment-input"
@@ -107,7 +107,7 @@
 				class:fn-segment--inactive={!includeName}
 				onclick={() => includeName = !includeName}
 			>
-				<span class="fn-segment-label">{m["settings.conversion.filename_var_name"]()}</span>
+				<span class="fn-segment-label">{settings_conversion_filename_var_name()}</span>
 				<span class="fn-segment-value">
 					<FileTextIcon size="14" strokeWidth={2} />
 					%name%
@@ -123,7 +123,7 @@
 				class:fn-segment--inactive={!includeDate}
 				onclick={() => includeDate = !includeDate}
 			>
-				<span class="fn-segment-label">{m["settings.conversion.filename_var_date"]()}</span>
+				<span class="fn-segment-label">{settings_conversion_filename_var_date()}</span>
 				<span class="fn-segment-value">
 					<CalendarIcon size="14" strokeWidth={2} />
 					%date%
@@ -135,7 +135,7 @@
 
 		<!-- Live preview -->
 		<div class="fn-preview">
-			<span class="fn-preview-label">{m["settings.conversion.filename_preview"]()}</span>
+			<span class="fn-preview-label">{settings_conversion_filename_preview()}</span>
 			<code class="fn-preview-value">{preview}</code>
 		</div>
 	</div>
@@ -143,17 +143,17 @@
 	<!-- Advanced settings -->
 	<div class="flex flex-col gap-6">
 		<div class="border-t border-separator pt-2">
-			<p class="text-base font-bold">{m["settings.conversion.advanced_settings"]()}</p>
+			<p class="text-base font-bold">{settings_conversion_advanced_settings()}</p>
 		</div>
 
 		<!-- Default format -->
 		<div class="flex flex-col gap-4">
 			<div class="flex flex-col gap-2">
 				<p class="text-base font-bold">
-					{m["settings.conversion.default_format"]()}
+					{settings_conversion_default_format()}
 				</p>
 				<p class="text-sm text-muted font-normal">
-					{m["settings.conversion.default_format_description"]()}
+					{settings_conversion_default_format_description()}
 				</p>
 			</div>
 			<div class="flex gap-3 w-full">
@@ -166,7 +166,7 @@
 						: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
 					<CheckIcon size="24" class="inline-block mr-2" />
-					{m["settings.conversion.default_format_enable"]()}
+					{settings_conversion_default_format_enable()}
 				</button>
 
 				<button
@@ -178,7 +178,7 @@
 						: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
 					<XIcon size="24" class="inline-block mr-2" />
-					{m["settings.conversion.default_format_disable"]()}
+					{settings_conversion_default_format_disable()}
 				</button>
 			</div>
 			<div
@@ -187,7 +187,7 @@
 			>
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.default_format_image"]()}
+						{settings_conversion_default_format_image()}
 					</p>
 					<FormatDropdown
 						categories={{ image: categories.image }}
@@ -198,7 +198,7 @@
 				</div>
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.default_format_audio"]()}
+						{settings_conversion_default_format_audio()}
 					</p>
 					<FormatDropdown
 						categories={{ audio: categories.audio }}
@@ -209,7 +209,7 @@
 				</div>
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.default_format_video"]()}
+						{settings_conversion_default_format_video()}
 					</p>
 					<FormatDropdown
 						categories={{ video: categories.video }}
@@ -220,7 +220,7 @@
 				</div>
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.default_format_document"]()}
+						{settings_conversion_default_format_document()}
 					</p>
 					<FormatDropdown
 						categories={{ doc: categories.doc }}
@@ -236,10 +236,10 @@
 		<div class="flex flex-col gap-4">
 			<div class="flex flex-col gap-2">
 				<p class="text-base font-bold">
-					{m["settings.conversion.metadata"]()}
+					{settings_conversion_metadata()}
 				</p>
 				<p class="text-sm text-muted font-normal">
-					{m["settings.conversion.metadata_description"]()}
+					{settings_conversion_metadata_description()}
 				</p>
 			</div>
 			<div class="flex gap-3 w-full">
@@ -252,7 +252,7 @@
 						: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
 					<CheckIcon size="24" class="inline-block mr-2" />
-					{m["settings.conversion.keep"]()}
+					{settings_conversion_keep()}
 				</button>
 
 				<button
@@ -264,7 +264,7 @@
 						: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
 					<XIcon size="24" class="inline-block mr-2" />
-					{m["settings.conversion.remove"]()}
+					{settings_conversion_remove()}
 				</button>
 			</div>
 		</div>
@@ -273,16 +273,16 @@
 		<div class="flex flex-col gap-4">
 			<div class="flex flex-col gap-2">
 				<p class="text-base font-bold">
-					{m["settings.conversion.quality"]()}
+					{settings_conversion_quality()}
 				</p>
 				<p class="text-sm text-muted font-normal">
-					{m["settings.conversion.quality_description"]()}
+					{settings_conversion_quality_description()}
 				</p>
 			</div>
 			<div class="grid grid-cols-2 gap-3">
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.quality_images"]()}
+						{settings_conversion_quality_images()}
 					</p>
 					<FancyInput
 						bind:value={settings.magickQuality as unknown as string}
@@ -295,7 +295,7 @@
 				</div>
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.quality_audio"]()}
+						{settings_conversion_quality_audio()}
 					</p>
 					<Dropdown
 						options={CONVERSION_BITRATES.map((b) => b.toString())}
@@ -309,7 +309,7 @@
 			<div class="grid grid-cols-2 gap-3">
 				<div class="flex flex-col gap-2">
 					<p class="text-sm font-bold">
-						{m["settings.conversion.rate"]()}
+						{settings_conversion_rate()}
 					</p>
 					<Dropdown
 						options={SAMPLE_RATES.map((r) => r.toString())}

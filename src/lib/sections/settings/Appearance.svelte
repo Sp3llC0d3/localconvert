@@ -14,7 +14,7 @@
 		SunIcon,
 	} from "lucide-svelte";
 	import { onMount, onDestroy } from "svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { settings_appearance_brightness_theme, settings_appearance_brightness_description, settings_appearance_light, settings_appearance_dark, settings_appearance_effect_settings, settings_appearance_effect_description, settings_appearance_enable, settings_appearance_disable, settings_language_title, settings_language_description } from "$lib/paraglide/messages/_barrel.js";
 	import { getLocale } from "$lib/paraglide/runtime";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 
@@ -96,10 +96,10 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.appearance.brightness_theme"]()}
+				{settings_appearance_brightness_theme()}
 			</p>
 			<p class="text-sm text-muted font-normal italic">
-				{m["settings.appearance.brightness_description"]()}
+				{settings_appearance_brightness_description()}
 			</p>
 		</div>
 		<div class="flex gap-3 w-full">
@@ -111,7 +111,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 			>
 				<SunIcon size="24" class="inline-block mr-2" />
-				{m["settings.appearance.light"]()}
+				{settings_appearance_light()}
 			</button>
 
 			<button
@@ -122,7 +122,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black flex items-center justify-center"
 			>
 				<MoonIcon size="24" class="inline-block mr-2" />
-				{m["settings.appearance.dark"]()}
+				{settings_appearance_dark()}
 			</button>
 		</div>
 	</div>
@@ -130,10 +130,10 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.appearance.effect_settings"]()}
+				{settings_appearance_effect_settings()}
 			</p>
 			<p class="text-sm text-muted font-normal italic">
-				{m["settings.appearance.effect_description"]()}
+				{settings_appearance_effect_description()}
 			</p>
 		</div>
 		<div class="flex gap-3 w-full">
@@ -145,7 +145,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 			>
 				<CheckIcon size="24" class="inline-block mr-2" />
-				{m["settings.appearance.enable"]()}
+				{settings_appearance_enable()}
 			</button>
 
 			<button
@@ -156,7 +156,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 			>
 				<XIcon size="24" class="inline-block mr-2" />
-				{m["settings.appearance.disable"]()}
+				{settings_appearance_disable()}
 			</button>
 		</div>
 	</div>
@@ -164,11 +164,11 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
 			<p class="text-base font-bold">
-				{m["settings.language.title"]()}
+				{settings_language_title()}
 				{#if currentLocale !== "en"} (Language){/if}
 			</p>
 			<p class="text-sm text-muted font-normal italic">
-				{m["settings.language.description"]()}
+				{settings_language_description()}
 			</p>
 		</div>
 		<div class="flex flex-col gap-3 w-full">

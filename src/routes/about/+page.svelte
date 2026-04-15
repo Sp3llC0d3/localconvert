@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { GITHUB_URL, GITHUB_URL_VERT, CONTACT_EMAIL } from "$lib/util/consts";
-	import { m } from "$lib/paraglide/messages";
+	import { about_title, about_hero_title, about_why_description, about_stats_tools, about_stats_format_conversions, about_stats_languages, about_stats_bytes_uploaded, about_principles_label, about_principles_p1_title, about_principles_p1_desc, about_principles_p2_title, about_principles_p2_desc, about_principles_p3_title, about_principles_p3_desc, about_inside_label, about_inside_title, landing_toolkit_pdf_title, landing_toolkit_pdf_count, landing_toolkit_image_title, landing_toolkit_image_count, landing_toolkit_dev_title, landing_toolkit_dev_count, about_stack_label, about_stack_title, about_stack_imagemagick, about_stack_ffmpeg, about_stack_webcodecs, about_stack_pandoc, about_stack_pdflib, about_stack_sveltekit, about_credits_title, about_origin_title, about_origin_description, about_credit_groups_engines, about_credit_groups_engines_ffmpeg, about_credit_groups_engines_imagemagick, about_credit_groups_engines_pandoc, about_credit_groups_engines_mediabunny, about_credit_groups_engines_webdemuxer, about_credit_groups_pdf_toolkit, about_credit_groups_pdf_pdflib, about_credit_groups_pdf_pdfjs, about_credit_groups_pdf_encrypt, about_credit_groups_pdf_pptx, about_credit_groups_tool_libs, about_credit_groups_tool_qrcode, about_credit_groups_tool_marked, about_credit_groups_framework, about_credit_groups_fw_sveltekit, about_credit_groups_fw_tailwind, about_credit_groups_fw_lucide, about_credit_groups_fw_paraglide, about_links_source_code, about_links_privacy_policy } from "$lib/paraglide/messages/_barrel.js";
 	import { sanitize } from "$lib/util/sanitize";
 	import { GithubIcon, MailIcon, ShieldIcon, ExternalLinkIcon, ZapIcon, FileTextIcon, ImageIcon, CodeIcon, ArrowRight } from "lucide-svelte";
 </script>
@@ -18,10 +18,10 @@
 
 	<!-- ═══ HERO ═══ -->
 	<section class="about-hero">
-		<span class="about-mono-label">{m["about.title"]()}</span>
-		<h1 class="about-title">{m["about.hero_title"]()}</h1>
+		<span class="about-mono-label">{about_title()}</span>
+		<h1 class="about-title">{about_hero_title()}</h1>
 		<p class="about-lead">
-			{@html sanitize(m["about.why.description"]())}
+			{@html sanitize(about_why_description())}
 		</p>
 	</section>
 
@@ -29,48 +29,48 @@
 	<section class="about-numbers">
 		<div class="about-stat">
 			<span class="about-stat-number">39</span>
-			<span class="about-stat-label">{m["about.stats.tools"]()}</span>
+			<span class="about-stat-label">{about_stats_tools()}</span>
 		</div>
 		<div class="about-stat-sep"></div>
 		<div class="about-stat">
 			<span class="about-stat-number">200+</span>
-			<span class="about-stat-label">{m["about.stats.format_conversions"]()}</span>
+			<span class="about-stat-label">{about_stats_format_conversions()}</span>
 		</div>
 		<div class="about-stat-sep"></div>
 		<div class="about-stat">
 			<span class="about-stat-number">28</span>
-			<span class="about-stat-label">{m["about.stats.languages"]()}</span>
+			<span class="about-stat-label">{about_stats_languages()}</span>
 		</div>
 		<div class="about-stat-sep"></div>
 		<div class="about-stat">
 			<span class="about-stat-number">0</span>
-			<span class="about-stat-label">{m["about.stats.bytes_uploaded"]()}</span>
+			<span class="about-stat-label">{about_stats_bytes_uploaded()}</span>
 		</div>
 	</section>
 
 	<!-- ═══ PRINCIPLES ═══ -->
 	<section class="about-section">
-		<span class="about-mono-label">{m["about.principles.label"]()}</span>
+		<span class="about-mono-label">{about_principles_label()}</span>
 		<div class="about-principles">
 			<div class="about-principle">
 				<span class="about-principle-num">01</span>
 				<div>
-					<h3 class="about-principle-title">{m["about.principles.p1_title"]()}</h3>
-					<p class="about-principle-desc">{m["about.principles.p1_desc"]()}</p>
+					<h3 class="about-principle-title">{about_principles_p1_title()}</h3>
+					<p class="about-principle-desc">{about_principles_p1_desc()}</p>
 				</div>
 			</div>
 			<div class="about-principle">
 				<span class="about-principle-num">02</span>
 				<div>
-					<h3 class="about-principle-title">{m["about.principles.p2_title"]()}</h3>
-					<p class="about-principle-desc">{m["about.principles.p2_desc"]()}</p>
+					<h3 class="about-principle-title">{about_principles_p2_title()}</h3>
+					<p class="about-principle-desc">{about_principles_p2_desc()}</p>
 				</div>
 			</div>
 			<div class="about-principle">
 				<span class="about-principle-num">03</span>
 				<div>
-					<h3 class="about-principle-title">{m["about.principles.p3_title"]()}</h3>
-					<p class="about-principle-desc">{m["about.principles.p3_desc"]()}</p>
+					<h3 class="about-principle-title">{about_principles_p3_title()}</h3>
+					<p class="about-principle-desc">{about_principles_p3_desc()}</p>
 				</div>
 			</div>
 		</div>
@@ -78,31 +78,31 @@
 
 	<!-- ═══ WHAT'S INSIDE ═══ -->
 	<section class="about-section">
-		<span class="about-mono-label">{m["about.inside.label"]()}</span>
-		<h2 class="about-section-title">{m["about.inside.title"]()}</h2>
+		<span class="about-mono-label">{about_inside_label()}</span>
+		<h2 class="about-section-title">{about_inside_title()}</h2>
 
 		<div class="about-tools-grid">
 			<a href="/pdf-tools/" class="about-tool-card" style="--tool-color: var(--accent-green)">
 				<FileTextIcon size={20} />
 				<div>
-					<span class="about-tool-name">{m["landing.toolkit.pdf_title"]()}</span>
-					<span class="about-tool-count">{m["landing.toolkit.pdf_count"]()}</span>
+					<span class="about-tool-name">{landing_toolkit_pdf_title()}</span>
+					<span class="about-tool-count">{landing_toolkit_pdf_count()}</span>
 				</div>
 				<ArrowRight size={14} class="about-tool-arrow" />
 			</a>
 			<a href="/image-tools/" class="about-tool-card" style="--tool-color: var(--accent-blue)">
 				<ImageIcon size={20} />
 				<div>
-					<span class="about-tool-name">{m["landing.toolkit.image_title"]()}</span>
-					<span class="about-tool-count">{m["landing.toolkit.image_count"]()}</span>
+					<span class="about-tool-name">{landing_toolkit_image_title()}</span>
+					<span class="about-tool-count">{landing_toolkit_image_count()}</span>
 				</div>
 				<ArrowRight size={14} class="about-tool-arrow" />
 			</a>
 			<a href="/dev-tools/" class="about-tool-card" style="--tool-color: var(--accent-purple)">
 				<CodeIcon size={20} />
 				<div>
-					<span class="about-tool-name">{m["landing.toolkit.dev_title"]()}</span>
-					<span class="about-tool-count">{m["landing.toolkit.dev_count"]()}</span>
+					<span class="about-tool-name">{landing_toolkit_dev_title()}</span>
+					<span class="about-tool-count">{landing_toolkit_dev_count()}</span>
 				</div>
 				<ArrowRight size={14} class="about-tool-arrow" />
 			</a>
@@ -111,65 +111,65 @@
 
 	<!-- ═══ TECH STACK ═══ -->
 	<section class="about-section">
-		<span class="about-mono-label">{m["about.stack.label"]()}</span>
-		<h2 class="about-section-title">{m["about.stack.title"]()}</h2>
+		<span class="about-mono-label">{about_stack_label()}</span>
+		<h2 class="about-section-title">{about_stack_title()}</h2>
 
 		<div class="about-stack">
-			<div class="about-stack-item"><span class="about-stack-name">ImageMagick</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.imagemagick"]()}</span></div>
-			<div class="about-stack-item"><span class="about-stack-name">FFmpeg</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.ffmpeg"]()}</span></div>
-			<div class="about-stack-item"><span class="about-stack-name">WebCodecs <ZapIcon size={11} class="about-stack-gpu" /></span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.webcodecs"]()}</span></div>
-			<div class="about-stack-item"><span class="about-stack-name">Pandoc</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.pandoc"]()}</span></div>
-			<div class="about-stack-item"><span class="about-stack-name">pdf-lib + pdf.js</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.pdflib"]()}</span></div>
-			<div class="about-stack-item"><span class="about-stack-name">SvelteKit</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.stack.sveltekit"]()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">ImageMagick</span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_imagemagick()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">FFmpeg</span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_ffmpeg()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">WebCodecs <ZapIcon size={11} class="about-stack-gpu" /></span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_webcodecs()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">Pandoc</span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_pandoc()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">pdf-lib + pdf.js</span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_pdflib()}</span></div>
+			<div class="about-stack-item"><span class="about-stack-name">SvelteKit</span><span class="about-stack-line"></span><span class="about-stack-role">{about_stack_sveltekit()}</span></div>
 		</div>
 	</section>
 
 	<!-- ═══ CREDITS ═══ -->
 	<section class="about-section">
-		<span class="about-mono-label">{m["about.credits.title"]()}</span>
+		<span class="about-mono-label">{about_credits_title()}</span>
 
 		<div class="about-credits">
 			<div class="about-credit-block">
-				<h3 class="about-credit-heading">{m["about.origin.title"]()}</h3>
-				<p class="about-credit-text">{m["about.origin.description"]()}</p>
+				<h3 class="about-credit-heading">{about_origin_title()}</h3>
+				<p class="about-credit-text">{about_origin_description()}</p>
 			</div>
 
 			<div class="about-credit-block">
-				<h3 class="about-credit-heading">{m["about.credit_groups.engines"]()}</h3>
+				<h3 class="about-credit-heading">{about_credit_groups_engines()}</h3>
 				<div class="about-stack about-stack--compact">
-					<div class="about-stack-item"><span class="about-stack-name">FFmpeg</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.engines_ffmpeg"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">ImageMagick</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.engines_imagemagick"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">Pandoc</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.engines_pandoc"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">Mediabunny</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.engines_mediabunny"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">web-demuxer</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.engines_webdemuxer"]()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">FFmpeg</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_engines_ffmpeg()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">ImageMagick</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_engines_imagemagick()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">Pandoc</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_engines_pandoc()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">Mediabunny</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_engines_mediabunny()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">web-demuxer</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_engines_webdemuxer()}</span></div>
 				</div>
 			</div>
 
 			<div class="about-credit-block">
-				<h3 class="about-credit-heading">{m["about.credit_groups.pdf_toolkit"]()}</h3>
+				<h3 class="about-credit-heading">{about_credit_groups_pdf_toolkit()}</h3>
 				<div class="about-stack about-stack--compact">
-					<div class="about-stack-item"><span class="about-stack-name">pdf-lib</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.pdf_pdflib"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">pdfjs-dist</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.pdf_pdfjs"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">pdf-lib-plus-encrypt</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.pdf_encrypt"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">pptxgenjs</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.pdf_pptx"]()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">pdf-lib</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_pdf_pdflib()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">pdfjs-dist</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_pdf_pdfjs()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">pdf-lib-plus-encrypt</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_pdf_encrypt()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">pptxgenjs</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_pdf_pptx()}</span></div>
 				</div>
 			</div>
 
 			<div class="about-credit-block">
-				<h3 class="about-credit-heading">{m["about.credit_groups.tool_libs"]()}</h3>
+				<h3 class="about-credit-heading">{about_credit_groups_tool_libs()}</h3>
 				<div class="about-stack about-stack--compact">
-					<div class="about-stack-item"><span class="about-stack-name">qrcode</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.tool_qrcode"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">marked</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.tool_marked"]()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">qrcode</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_tool_qrcode()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">marked</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_tool_marked()}</span></div>
 				</div>
 			</div>
 
 			<div class="about-credit-block">
-				<h3 class="about-credit-heading">{m["about.credit_groups.framework"]()}</h3>
+				<h3 class="about-credit-heading">{about_credit_groups_framework()}</h3>
 				<div class="about-stack about-stack--compact">
-					<div class="about-stack-item"><span class="about-stack-name">SvelteKit</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.fw_sveltekit"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">Tailwind CSS</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.fw_tailwind"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">Lucide</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.fw_lucide"]()}</span></div>
-					<div class="about-stack-item"><span class="about-stack-name">Paraglide-JS</span><span class="about-stack-line"></span><span class="about-stack-role">{m["about.credit_groups.fw_paraglide"]()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">SvelteKit</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_fw_sveltekit()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">Tailwind CSS</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_fw_tailwind()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">Lucide</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_fw_lucide()}</span></div>
+					<div class="about-stack-item"><span class="about-stack-name">Paraglide-JS</span><span class="about-stack-line"></span><span class="about-stack-role">{about_credit_groups_fw_paraglide()}</span></div>
 				</div>
 			</div>
 		</div>
@@ -180,7 +180,7 @@
 		<div class="about-links">
 			<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="about-link">
 				<GithubIcon size={18} />
-				<span>{m["about.links.source_code"]()}</span>
+				<span>{about_links_source_code()}</span>
 				<ExternalLinkIcon size={12} class="about-link-ext" />
 			</a>
 			<a href="mailto:{CONTACT_EMAIL}" class="about-link">
@@ -190,7 +190,7 @@
 			</a>
 			<a href="/privacy/" class="about-link">
 				<ShieldIcon size={18} />
-				<span>{m["about.links.privacy_policy"]()}</span>
+				<span>{about_links_privacy_policy()}</span>
 				<ArrowRight size={12} class="about-link-ext" />
 			</a>
 		</div>

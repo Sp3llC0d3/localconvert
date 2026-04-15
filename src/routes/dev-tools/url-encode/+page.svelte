@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.base64_name': dev_tools_tools_base64_name, 'dev_tools.tools.hash_name': dev_tools_tools_hash_name, 'dev_tools.tools.json_name': dev_tools_tools_json_name};
+	import { tool_pages_url_encode_title, tool_pages_url_encode_desc, tools_common_back_dev, tool_pages_base64_btn_encode, tool_pages_base64_btn_decode, tool_pages_json_formatter_btn_copy, tools_common_privacy_note_browser, tool_pages_dev_url_encode_seo_faq1_q, tool_pages_dev_url_encode_seo_faq1_a, tool_pages_dev_url_encode_seo_faq2_q, tool_pages_dev_url_encode_seo_faq2_a, dev_tools_tools_base64_name, dev_tools_tools_hash_name, dev_tools_tools_json_name } from "$lib/paraglide/messages/_barrel.js";
 	import { LinkIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -45,16 +46,16 @@
 <div class="url-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.url_encode.title']()}
-		description={m['tool_pages.url_encode.desc']()}
+		title={tool_pages_url_encode_title()}
+		description={tool_pages_url_encode_desc()}
 		icon={LinkIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
 	<div class="flex gap-2">
-		<button class="btn text-sm px-3 py-1.5 {mode === 'encode' ? 'highlight' : ''}" onclick={() => { mode = 'encode'; input = ''; }}>{m['tool_pages.base64.btn_encode']()}</button>
-		<button class="btn text-sm px-3 py-1.5 {mode === 'decode' ? 'highlight' : ''}" onclick={() => { mode = 'decode'; input = ''; }}>{m['tool_pages.base64.btn_decode']()}</button>
+		<button class="btn text-sm px-3 py-1.5 {mode === 'encode' ? 'highlight' : ''}" onclick={() => { mode = 'encode'; input = ''; }}>{tool_pages_base64_btn_encode()}</button>
+		<button class="btn text-sm px-3 py-1.5 {mode === 'decode' ? 'highlight' : ''}" onclick={() => { mode = 'decode'; input = ''; }}>{tool_pages_base64_btn_decode()}</button>
 	</div>
 
 	<div class="panel">
@@ -70,22 +71,22 @@
 				<label class="panel-label">{mode === 'encode' ? 'Encoded' : 'Decoded'}</label>
 				<button class="copy-btn" onclick={copyOutput}>
 					{#if copied}<CheckIcon size={14} />{:else}<CopyIcon size={14} />{/if}
-					{m['tool_pages.json_formatter.btn_copy']()}
+					{tool_pages_json_formatter_btn_copy()}
 				</button>
 			</div>
 			<textarea readonly value={output} class="code-area out" spellcheck="false"></textarea>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-url-encode']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-url-encode'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-url-encode'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-url-encode'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-url-encode'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-url-encode'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_url_encode_seo_faq1_q?.() ?? '', a: tool_pages_dev_url_encode_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_url_encode_seo_faq2_q?.() ?? '', a: tool_pages_dev_url_encode_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-url-encode'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-url-encode'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

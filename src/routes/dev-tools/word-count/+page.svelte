@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.markdown_name': dev_tools_tools_markdown_name, 'dev_tools.tools.json_name': dev_tools_tools_json_name};
+	import { tool_pages_word_count_title, tool_pages_word_count_desc, tools_common_back_dev, tool_pages_word_count_placeholder, tool_pages_word_count_words, tool_pages_word_count_characters, tool_pages_word_count_chars_no_spaces, tool_pages_word_count_sentences, tool_pages_word_count_paragraphs, tool_pages_word_count_reading_time, tools_common_privacy_note_browser, tool_pages_dev_word_count_seo_faq1_q, tool_pages_dev_word_count_seo_faq1_a, tool_pages_dev_word_count_seo_faq2_q, tool_pages_dev_word_count_seo_faq2_a, dev_tools_tools_diff_name, dev_tools_tools_markdown_name, dev_tools_tools_json_name } from "$lib/paraglide/messages/_barrel.js";
 	import { TypeIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -32,51 +33,51 @@
 <div class="wc-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.word_count.title']()}
-		description={m['tool_pages.word_count.desc']()}
+		title={tool_pages_word_count_title()}
+		description={tool_pages_word_count_desc()}
 		icon={TypeIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
-	<textarea bind:value={text} class="text-area" placeholder={m['tool_pages.word_count.placeholder']()} spellcheck="false"></textarea>
+	<textarea bind:value={text} class="text-area" placeholder={tool_pages_word_count_placeholder()} spellcheck="false"></textarea>
 
 	<div class="stats-grid">
 		<div class="stat-card">
 			<span class="stat-value">{stats.words}</span>
-			<span class="stat-label">{m['tool_pages.word_count.words']()}</span>
+			<span class="stat-label">{tool_pages_word_count_words()}</span>
 		</div>
 		<div class="stat-card">
 			<span class="stat-value">{stats.chars}</span>
-			<span class="stat-label">{m['tool_pages.word_count.characters']()}</span>
+			<span class="stat-label">{tool_pages_word_count_characters()}</span>
 		</div>
 		<div class="stat-card">
 			<span class="stat-value">{stats.charsNoSpaces}</span>
-			<span class="stat-label">{m['tool_pages.word_count.chars_no_spaces']()}</span>
+			<span class="stat-label">{tool_pages_word_count_chars_no_spaces()}</span>
 		</div>
 		<div class="stat-card">
 			<span class="stat-value">{stats.sentences}</span>
-			<span class="stat-label">{m['tool_pages.word_count.sentences']()}</span>
+			<span class="stat-label">{tool_pages_word_count_sentences()}</span>
 		</div>
 		<div class="stat-card">
 			<span class="stat-value">{stats.paragraphs}</span>
-			<span class="stat-label">{m['tool_pages.word_count.paragraphs']()}</span>
+			<span class="stat-label">{tool_pages_word_count_paragraphs()}</span>
 		</div>
 		<div class="stat-card">
 			<span class="stat-value">{stats.readingTime}</span>
-			<span class="stat-label">{m['tool_pages.word_count.reading_time']()}</span>
+			<span class="stat-label">{tool_pages_word_count_reading_time()}</span>
 		</div>
 	</div>
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-word-count']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-word-count'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-word-count'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-word-count'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-word-count'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-word-count'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_word_count_seo_faq1_q?.() ?? '', a: tool_pages_dev_word_count_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_word_count_seo_faq2_q?.() ?? '', a: tool_pages_dev_word_count_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-word-count'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-word-count'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.meme_name': image_tools_tools_meme_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
+	import { tools_common_failed, tool_pages_watermark_image_title, tool_pages_watermark_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_watermark_seo_faq1_q, tool_pages_img_watermark_seo_faq1_a, tool_pages_img_watermark_seo_faq2_q, tool_pages_img_watermark_seo_faq2_a, image_tools_tools_meme_name, image_tools_tools_crop_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -99,7 +100,7 @@
 			beforeUrl = URL.createObjectURL(files[0]);
 			afterUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 	}
 
@@ -130,49 +131,49 @@
 <div class="tool-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.watermark_image.title']()}
-		description={m['tool_pages.watermark_image.desc']()}
+		title={tool_pages_watermark_image_title()}
+		description={tool_pages_watermark_image_desc()}
 		icon={DropletIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
 		<canvas bind:this={previewCanvas} class="live-preview"></canvas>
 
 		<div class="opt-section">
 			<div class="opt-row">
-				<label class="opt-label" for="wm-text">{m['tools_common.text']()}</label>
+				<label class="opt-label" for="wm-text">{tools_common_text()}</label>
 				<input id="wm-text" type="text" bind:value={text} placeholder="CONFIDENTIAL" class="opt-input flex-1" maxlength={80} />
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.opacity']()}</span>
+				<span class="opt-label">{tools_common_opacity()}</span>
 				<input type="range" min={5} max={80} bind:value={opacity} class="slider flex-1" aria-label="Opacity" />
 				<span class="val">{opacity}%</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.font_size']()}</span>
+				<span class="opt-label">{tools_common_font_size()}</span>
 				<input type="range" min={16} max={120} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
 				<span class="val">{fontSize}px</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.rotation']()}</span>
+				<span class="opt-label">{tools_common_rotation()}</span>
 				<input type="range" min={-90} max={90} bind:value={rotation} class="slider flex-1" aria-label="Rotation" />
 				<span class="val">{rotation}°</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.position']()}</span>
+				<span class="opt-label">{tools_common_position()}</span>
 				<div class="flex gap-2">
-					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>{m['tools_common.center']()}</button>
-					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>{m['tools_common.tile']()}</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'center' ? 'highlight' : ''}" onclick={() => position = 'center'}>{tools_common_center()}</button>
+					<button class="btn text-sm px-3 py-1.5 {position === 'tile' ? 'highlight' : ''}" onclick={() => position = 'tile'}>{tools_common_tile()}</button>
 				</div>
 			</div>
 		</div>
 
 		<button class="btn highlight" onclick={save} disabled={!text.trim()}>
-			{m['tool_pages.watermark_image.save']()}
+			{tool_pages_watermark_image_save()}
 		</button>
 	{/if}
 
@@ -183,20 +184,20 @@
 			<BeforeAfter beforeSrc={beforeUrl} afterSrc={afterUrl} />
 		{/if}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-watermark']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-watermark'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-watermark'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-watermark'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-watermark'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-watermark'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_watermark_seo_faq1_q?.() ?? '', a: tool_pages_img_watermark_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_watermark_seo_faq2_q?.() ?? '', a: tool_pages_img_watermark_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-watermark'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-watermark'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

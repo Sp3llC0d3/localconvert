@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.pdf_to_text_name': pdf_tools_tools_pdf_to_text_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name};
+	import { tools_common_failed, tool_pages_pdf_to_ppt_title, tool_pages_pdf_to_ppt_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_ppt_slide_size, tool_pages_pdf_to_ppt_widescreen, tool_pages_pdf_to_ppt_standard, tool_pages_pdf_to_ppt_btn_busy, tool_pages_pdf_to_ppt_btn, tools_common_ready, tools_common_output, tool_pages_pdf_to_ppt_save, tools_common_privacy_note, tool_pages_pdf_to_ppt_seo_faq1_q, tool_pages_pdf_to_ppt_seo_faq1_a, tool_pages_pdf_to_ppt_seo_faq2_q, tool_pages_pdf_to_ppt_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_images_name } from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToPpt } from '$lib/pdf/pdf-to-ppt';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -29,7 +30,7 @@
 				total = tot;
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -53,28 +54,28 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.pdf_to_ppt.title']()}
-		description={m['tool_pages.pdf_to_ppt.desc']()}
+		title={tool_pages_pdf_to_ppt_title()}
+		description={tool_pages_pdf_to_ppt_desc()}
 		icon={PresentationIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	<div class="opt-section">
 		<div class="opt-row">
-			<span class="opt-label">{m['tool_pages.pdf_to_ppt.slide_size']()}</span>
+			<span class="opt-label">{tool_pages_pdf_to_ppt_slide_size()}</span>
 			<div class="flex gap-2">
-				<button class="btn text-sm px-3 py-1.5 {slideSize === '16:9' ? 'highlight' : ''}" onclick={() => slideSize = '16:9'}>{m['tool_pages.pdf_to_ppt.widescreen']()}</button>
-				<button class="btn text-sm px-3 py-1.5 {slideSize === '4:3' ? 'highlight' : ''}" onclick={() => slideSize = '4:3'}>{m['tool_pages.pdf_to_ppt.standard']()}</button>
+				<button class="btn text-sm px-3 py-1.5 {slideSize === '16:9' ? 'highlight' : ''}" onclick={() => slideSize = '16:9'}>{tool_pages_pdf_to_ppt_widescreen()}</button>
+				<button class="btn text-sm px-3 py-1.5 {slideSize === '4:3' ? 'highlight' : ''}" onclick={() => slideSize = '4:3'}>{tool_pages_pdf_to_ppt_standard()}</button>
 			</div>
 		</div>
 	</div>
 
 	{#if files.length > 0}
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? m['tool_pages.pdf_to_ppt.btn_busy']({ progress, total }) : m['tool_pages.pdf_to_ppt.btn']()}
+			{processing ? tool_pages_pdf_to_ppt_btn_busy({ progress, total }) : tool_pages_pdf_to_ppt_btn()}
 		</button>
 	{/if}
 
@@ -88,8 +89,8 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.pdf_to_ppt.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} {tools_common_output()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_pdf_to_ppt_save()}</button>
 		</div>
 	{/if}
 
@@ -97,14 +98,14 @@
 	{#if toolSeo['pdf-to-ppt']}
 		<ToolSeoBlock
 			faqs={toolSeo['pdf-to-ppt'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['pdf-to-ppt'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_pdf_to_ppt_seo_faq1_q?.() ?? '', a: tool_pages_pdf_to_ppt_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_pdf_to_ppt_seo_faq2_q?.() ?? '', a: tool_pages_pdf_to_ppt_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['pdf-to-ppt'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['pdf-to-ppt'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style lang="postcss">

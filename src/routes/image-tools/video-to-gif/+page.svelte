@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
+	import { tools_common_failed, tool_pages_video_to_gif_title, tool_pages_video_to_gif_desc, tools_common_back_image, tool_pages_video_to_gif_upload, upload_uploader_browse, tool_pages_video_to_gif_width, tool_pages_video_to_gif_start, tool_pages_video_to_gif_duration, tool_pages_video_to_gif_btn_busy, tool_pages_video_to_gif_btn, tools_common_ready, tool_pages_video_to_gif_save, tools_common_privacy_note, tool_pages_img_video_to_gif_seo_faq1_q, tool_pages_img_video_to_gif_seo_faq1_a, tool_pages_img_video_to_gif_seo_faq2_q, tool_pages_img_video_to_gif_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { videoToGif } from '$lib/converters/video-to-gif';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -60,7 +61,7 @@
 			if (previewUrl) URL.revokeObjectURL(previewUrl);
 			previewUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -84,11 +85,11 @@
 <div class="gif-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.video_to_gif.title']()}
-		description={m['tool_pages.video_to_gif.desc']()}
+		title={tool_pages_video_to_gif_title()}
+		description={tool_pages_video_to_gif_desc()}
 		icon={FilmIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
 	<!-- File upload -->
@@ -103,8 +104,8 @@
 			<p class="text-sm font-medium">{files[0].name}</p>
 			<p class="text-xs text-muted">{formatFileSize(files[0].size)}</p>
 		{:else}
-			<p class="text-sm">{m['tool_pages.video_to_gif.upload']()}</p>
-			<p class="text-xs text-muted">{m['upload.uploader.browse']()}</p>
+			<p class="text-sm">{tool_pages_video_to_gif_upload()}</p>
+			<p class="text-xs text-muted">{upload_uploader_browse()}</p>
 		{/if}
 	</button>
 
@@ -119,7 +120,7 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.video_to_gif.width']()}</span>
+				<span class="opt-label">{tool_pages_video_to_gif_width()}</span>
 				<div class="flex gap-2">
 					{#each [{ label: 'Original', value: 0 }, { label: '480px', value: 480 }, { label: '320px', value: 320 }, { label: '240px', value: 240 }] as w}
 						<button class="btn text-sm px-3 py-1.5 {width === w.value ? 'highlight' : ''}" onclick={() => width = w.value}>{w.label}</button>
@@ -127,19 +128,19 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.video_to_gif.start']()}</span>
+				<span class="opt-label">{tool_pages_video_to_gif_start()}</span>
 				<input type="number" min={0} step={0.5} bind:value={startTime} class="num-input" aria-label="Start time" />
 				<span class="text-xs text-muted">sec</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.video_to_gif.duration']()}</span>
+				<span class="opt-label">{tool_pages_video_to_gif_duration()}</span>
 				<input type="number" min={0} step={0.5} bind:value={duration} class="num-input" aria-label="Duration" />
 				<span class="text-xs text-muted">sec (0 = full)</span>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={convert}>
-			{processing ? `${m['tool_pages.video_to_gif.btn_busy']()} ${progress}%` : m['tool_pages.video_to_gif.btn']()}
+			{processing ? `${tool_pages_video_to_gif_btn_busy()} ${progress}%` : tool_pages_video_to_gif_btn()}
 		</button>
 
 		{#if processing}
@@ -155,21 +156,21 @@
 		<div class="result-section">
 			<img src={previewUrl} alt="GIF preview" class="gif-preview" />
 			<div class="result-box">
-				<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-				<button class="btn" onclick={download}>{m['tool_pages.video_to_gif.save']()}</button>
+				<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBlob.size)}</b></p>
+				<button class="btn" onclick={download}>{tool_pages_video_to_gif_save()}</button>
 			</div>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-video-to-gif']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-video-to-gif'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-video-to-gif'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-video-to-gif'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-video-to-gif'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-video-to-gif'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_video_to_gif_seo_faq1_q?.() ?? '', a: tool_pages_img_video_to_gif_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_video_to_gif_seo_faq2_q?.() ?? '', a: tool_pages_img_video_to_gif_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-video-to-gif'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-video-to-gif'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

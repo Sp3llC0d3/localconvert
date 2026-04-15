@@ -1,4 +1,5 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.watermark_name': pdf_tools_tools_watermark_name, 'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.rotate_name': pdf_tools_tools_rotate_name};
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { addPageNumbers, type NumberPosition, type NumberFormat } from '$lib/pdf/page-numbers';
@@ -7,7 +8,7 @@
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tool_pages_page_numbers_bottom_left, tool_pages_page_numbers_bottom_center, tool_pages_page_numbers_bottom_right, tool_pages_page_numbers_top_left, tool_pages_page_numbers_top_center, tool_pages_page_numbers_top_right, tools_common_failed_read_pdf, tools_common_failed, tool_pages_page_numbers_title, tool_pages_page_numbers_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_page_of, tool_pages_page_numbers_position, tools_common_format, tools_common_font_size, tool_pages_page_numbers_start_from, tool_pages_page_numbers_skip_first, tool_pages_page_numbers_btn_busy, tool_pages_page_numbers_btn, tools_common_ready, tool_pages_page_numbers_save, tools_common_privacy_note, tool_pages_page_numbers_seo_faq1_q, tool_pages_page_numbers_seo_faq1_a, tool_pages_page_numbers_seo_faq2_q, tool_pages_page_numbers_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_organize_name, pdf_tools_tools_rotate_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -32,12 +33,12 @@
 	let rafId: number | null = null;
 
 	const positions = $derived<{ value: NumberPosition; label: string }[]>([
-		{ value: 'bottom-left', label: m['tool_pages.page_numbers.bottom_left']() },
-		{ value: 'bottom-center', label: m['tool_pages.page_numbers.bottom_center']() },
-		{ value: 'bottom-right', label: m['tool_pages.page_numbers.bottom_right']() },
-		{ value: 'top-left', label: m['tool_pages.page_numbers.top_left']() },
-		{ value: 'top-center', label: m['tool_pages.page_numbers.top_center']() },
-		{ value: 'top-right', label: m['tool_pages.page_numbers.top_right']() },
+		{ value: 'bottom-left', label: tool_pages_page_numbers_bottom_left() },
+		{ value: 'bottom-center', label: tool_pages_page_numbers_bottom_center() },
+		{ value: 'bottom-right', label: tool_pages_page_numbers_bottom_right() },
+		{ value: 'top-left', label: tool_pages_page_numbers_top_left() },
+		{ value: 'top-center', label: tool_pages_page_numbers_top_center() },
+		{ value: 'top-right', label: tool_pages_page_numbers_top_right() },
 	]);
 
 	const formats: { value: NumberFormat; label: string }[] = [
@@ -76,7 +77,7 @@
 			await renderCurrentPage();
 		} catch {
 			if (lastFileRef !== file) return;
-			error = m['tools_common.failed_read_pdf']();
+			error = tools_common_failed_read_pdf();
 		}
 	}
 
@@ -188,7 +189,7 @@
 				skipFirstPage: skipFirst,
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -212,14 +213,14 @@
 <div class="pn-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.page_numbers.title']()}
-		description={m['tool_pages.page_numbers.desc']()}
+		title={tool_pages_page_numbers_title()}
+		description={tool_pages_page_numbers_desc()}
 		icon={ListOrderedIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<!-- Live preview -->
@@ -230,7 +231,7 @@
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label="Previous page">
 						<ChevronLeftIcon size={16} />
 					</button>
-					<span class="text-xs text-muted">{m['tools_common.page_of']({ currentPage, pageCount })}</span>
+					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label="Next page">
 						<ChevronRightIcon size={16} />
 					</button>
@@ -241,7 +242,7 @@
 		<!-- Options -->
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.page_numbers.position']()}</span>
+				<span class="opt-label">{tool_pages_page_numbers_position()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each positions as pos}
 						<button class="btn text-sm px-3 py-1.5 {position === pos.value ? 'highlight' : ''}" onclick={() => position = pos.value}>{pos.label}</button>
@@ -249,7 +250,7 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.format']()}</span>
+				<span class="opt-label">{tools_common_format()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each formats as fmt}
 						<button class="btn text-sm px-3 py-1.5 {format === fmt.value ? 'highlight' : ''}" onclick={() => format = fmt.value}>{fmt.label}</button>
@@ -257,24 +258,24 @@
 				</div>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.font_size']()}</span>
+				<span class="opt-label">{tools_common_font_size()}</span>
 				<input type="range" min={8} max={24} bind:value={fontSize} class="slider flex-1" aria-label="Font size" />
 				<span class="val">{fontSize}pt</span>
 			</div>
 			<div class="opt-row">
-				<span class="opt-label">{m['tool_pages.page_numbers.start_from']()}</span>
+				<span class="opt-label">{tool_pages_page_numbers_start_from()}</span>
 				<input type="number" min={1} max={9999} bind:value={startFrom} class="num-input" aria-label="Starting page number" />
 			</div>
 			<div class="opt-row">
 				<label class="flex items-center gap-2 cursor-pointer text-sm">
 					<input type="checkbox" bind:checked={skipFirst} />
-					{m['tool_pages.page_numbers.skip_first']()}
+					{tool_pages_page_numbers_skip_first()}
 				</label>
 			</div>
 		</div>
 
 		<button class="btn highlight" disabled={processing} onclick={apply}>
-			{processing ? m['tool_pages.page_numbers.btn_busy']() : m['tool_pages.page_numbers.btn']()}
+			{processing ? tool_pages_page_numbers_btn_busy() : tool_pages_page_numbers_btn()}
 		</button>
 	{/if}
 
@@ -282,8 +283,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.page_numbers.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_page_numbers_save()}</button>
 		</div>
 	{/if}
 
@@ -291,14 +292,14 @@
 	{#if toolSeo['page-numbers']}
 		<ToolSeoBlock
 			faqs={toolSeo['page-numbers'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['page-numbers'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['page-numbers'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['page-numbers'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['page-numbers'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_page_numbers_seo_faq1_q?.() ?? '', a: tool_pages_page_numbers_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_page_numbers_seo_faq2_q?.() ?? '', a: tool_pages_page_numbers_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['page-numbers'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['page-numbers'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

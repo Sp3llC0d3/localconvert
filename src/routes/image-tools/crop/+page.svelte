@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name};
+	import { tool_pages_crop_image_free, tool_pages_crop_image_err_area, tools_common_failed, tool_pages_crop_image_title, tool_pages_crop_image_desc, tools_common_back_image, tools_common_upload_image, tool_pages_crop_image_circle, tools_common_reset, tool_pages_crop_image_btn_busy, tool_pages_crop_image_btn, tools_common_ready, tools_common_output, tool_pages_crop_image_save, tools_common_privacy_note, tool_pages_img_crop_seo_faq1_q, tool_pages_img_crop_seo_faq1_a, tool_pages_img_crop_seo_faq2_q, tool_pages_img_crop_seo_faq2_a, image_tools_tools_rotate_name, image_tools_tools_watermark_name, image_tools_tools_filters_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { cropImage, type CropRect } from '$lib/image/crop';
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -33,7 +34,7 @@
 	let aspectRatio = $state<string>('free');
 	let circleMode = $state(false);
 	const ratios: { label: string; value: string }[] = [
-		{ label: m['tool_pages.crop_image.free'](), value: 'free' },
+		{ label: tool_pages_crop_image_free(), value: 'free' },
 		{ label: '1:1', value: '1' },
 		{ label: '4:3', value: '1.333' },
 		{ label: '16:9', value: '1.778' },
@@ -241,7 +242,7 @@
 
 	async function apply() {
 		if (files.length === 0 || crop.width < 4 || crop.height < 4) {
-			error = m['tool_pages.crop_image.err_area']();
+			error = tool_pages_crop_image_err_area();
 			return;
 		}
 		error = '';
@@ -250,7 +251,7 @@
 		try {
 			resultBlob = await cropImage(files[0], crop, circleMode);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -282,14 +283,14 @@
 <div class="tool-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.crop_image.title']()}
-		description={m['tool_pages.crop_image.desc']()}
+		title={tool_pages_crop_image_title()}
+		description={tool_pages_crop_image_desc()}
 		icon={CropIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl && previewUrl}
 		<!-- Shape & aspect ratio presets -->
@@ -297,14 +298,14 @@
 			<button
 				class="btn text-sm px-3 py-1.5 {!circleMode ? '' : 'highlight'}"
 				onclick={() => { circleMode = !circleMode; if (circleMode) aspectRatio = '1'; }}
-			>{m['tool_pages.crop_image.circle']()}</button>
+			>{tool_pages_crop_image_circle()}</button>
 			{#each ratios as r}
 				<button
 					class="btn text-sm px-3 py-1.5 {!circleMode && aspectRatio === r.value ? 'highlight' : ''}"
 					onclick={() => { circleMode = false; aspectRatio = r.value; }}
 				>{r.label}</button>
 			{/each}
-			<button class="btn text-sm px-3 py-1.5" onclick={() => { circleMode = false; resetCrop(); }}>{m['tools_common.reset']()}</button>
+			<button class="btn text-sm px-3 py-1.5" onclick={() => { circleMode = false; resetCrop(); }}>{tools_common_reset()}</button>
 		</div>
 
 		<!-- Crop workspace -->
@@ -382,7 +383,7 @@
 		</div>
 
 		<button class="btn highlight" disabled={processing || crop.width < 4} onclick={apply}>
-			{processing ? m['tool_pages.crop_image.btn_busy']() : m['tool_pages.crop_image.btn']()}
+			{processing ? tool_pages_crop_image_btn_busy() : tool_pages_crop_image_btn()}
 		</button>
 	{/if}
 
@@ -390,20 +391,20 @@
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} {m['tools_common.output']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.crop_image.save']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} {tools_common_output()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_crop_image_save()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-crop']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-crop'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-crop'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-crop'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-crop'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-crop'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_crop_seo_faq1_q?.() ?? '', a: tool_pages_img_crop_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_crop_seo_faq2_q?.() ?? '', a: tool_pages_img_crop_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-crop'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-crop'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

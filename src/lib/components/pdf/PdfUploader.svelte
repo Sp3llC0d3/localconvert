@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { validateFileSize } from '$lib/pdf/utils';
-	import { m } from '$lib/paraglide/messages';
+	import { upload_uploader_browse } from "$lib/paraglide/messages/_barrel.js";
 	import { dropping } from '$lib/store/index.svelte';
 
 	type Props = {
@@ -78,7 +78,7 @@
 		<polyline points="11,12 9,14 11,16" />
 	</svg>
 	<p class="drop-label">{label}</p>
-	<p class="drop-sub">{m['upload.uploader.browse']()}</p>
+	<p class="drop-sub">{upload_uploader_browse()}</p>
 </button>
 
 {#if warnings.length > 0}

@@ -1,6 +1,6 @@
 import { browser } from "$app/environment";
 import { error, log } from "$lib/util/logger";
-import { m } from "$lib/paraglide/messages";
+import { workers_errors_magick } from "$lib/paraglide/messages/_barrel.js";
 import { VertFile, type WorkerMessage } from "$lib/types";
 import MagickWorker from "$lib/workers/magick?worker&url";
 import { Converter, FormatInfo } from "./converter.svelte";
@@ -107,7 +107,7 @@ export class MagickConverter extends Converter {
 
 			ToastManager.add({
 				type: "error",
-				message: m["workers.errors.magick"](),
+				message: workers_errors_magick(),
 			});
 		}
 	}

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.color_picker_name': image_tools_tools_color_picker_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'dev_tools.tools.base64_name': dev_tools_tools_base64_name};
+	import { tools_common_failed, tool_pages_qr_low, tool_pages_qr_medium, tool_pages_qr_quartile, tool_pages_qr_high, tool_pages_qr_title, tool_pages_qr_desc, tools_common_back_image, tool_pages_qr_text_url, tools_common_size, tools_common_foreground, tools_common_background, tool_pages_qr_error_correction, tool_pages_qr_save, tools_common_ready, tool_pages_qr_save_file, tools_common_privacy_note_browser, tool_pages_img_qr_seo_faq1_q, tool_pages_img_qr_seo_faq1_a, tool_pages_img_qr_seo_faq2_q, tool_pages_img_qr_seo_faq2_a, image_tools_tools_color_picker_name, image_tools_tools_watermark_name, dev_tools_tools_base64_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { canvasToBlob, downloadBlob, getOutputName } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
@@ -45,7 +46,7 @@
 			});
 			error = '';
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 	}
 
@@ -54,7 +55,7 @@
 		try {
 			resultBlob = await canvasToBlob(previewCanvas, 'png');
 		} catch {
-			error = m['tools_common.failed']();
+			error = tools_common_failed();
 		}
 	}
 
@@ -64,10 +65,10 @@
 	}
 
 	const levels = [
-		{ value: 'L' as const, label: m['tool_pages.qr.low']() },
-		{ value: 'M' as const, label: m['tool_pages.qr.medium']() },
-		{ value: 'Q' as const, label: m['tool_pages.qr.quartile']() },
-		{ value: 'H' as const, label: m['tool_pages.qr.high']() },
+		{ value: 'L' as const, label: tool_pages_qr_low() },
+		{ value: 'M' as const, label: tool_pages_qr_medium() },
+		{ value: 'Q' as const, label: tool_pages_qr_quartile() },
+		{ value: 'H' as const, label: tool_pages_qr_high() },
 	];
 </script>
 
@@ -84,11 +85,11 @@
 <div class="qr-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.qr.title']()}
-		description={m['tool_pages.qr.desc']()}
+		title={tool_pages_qr_title()}
+		description={tool_pages_qr_desc()}
 		icon={QrCodeIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
 	<!-- Preview -->
@@ -99,22 +100,22 @@
 	<!-- Options -->
 	<div class="opt-section">
 		<div class="field">
-			<label for="qr-text" class="field-label">{m['tool_pages.qr.text_url']()}</label>
+			<label for="qr-text" class="field-label">{tool_pages_qr_text_url()}</label>
 			<input id="qr-text" type="text" bind:value={text} placeholder="https://example.com" class="field-input" />
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">{m['tools_common.size']()}</span>
+			<span class="opt-label">{tools_common_size()}</span>
 			<input type="range" min={100} max={800} step={50} bind:value={size} class="slider flex-1" aria-label="QR code size" />
 			<span class="val">{size}px</span>
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">{m['tools_common.foreground']()}</span>
+			<span class="opt-label">{tools_common_foreground()}</span>
 			<input type="color" bind:value={fgColor} class="color-input" aria-label="Foreground color" />
-			<span class="opt-label">{m['tools_common.background']()}</span>
+			<span class="opt-label">{tools_common_background()}</span>
 			<input type="color" bind:value={bgColor} class="color-input" aria-label="Background color" />
 		</div>
 		<div class="opt-row">
-			<span class="opt-label">{m['tool_pages.qr.error_correction']()}</span>
+			<span class="opt-label">{tool_pages_qr_error_correction()}</span>
 			<div class="flex gap-2 flex-wrap">
 				{#each levels as lvl}
 					<button class="btn text-xs px-2.5 py-1 {errorLevel === lvl.value ? 'highlight' : ''}" onclick={() => errorLevel = lvl.value}>{lvl.label}</button>
@@ -124,27 +125,27 @@
 	</div>
 
 	<button class="btn highlight" disabled={!text.trim()} onclick={save}>
-		{m['tool_pages.qr.save']()}
+		{tool_pages_qr_save()}
 	</button>
 
 	{#if error}<p class="text-sm text-failure">{error}</p>{/if}
 
 	{#if resultBlob}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()}</p>
-			<button class="btn" onclick={download}>{m['tool_pages.qr.save_file']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()}</p>
+			<button class="btn" onclick={download}>{tool_pages_qr_save_file()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['img-qr']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-qr'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-qr'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-qr'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-qr'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-qr'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_qr_seo_faq1_q?.() ?? '', a: tool_pages_img_qr_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_qr_seo_faq2_q?.() ?? '', a: tool_pages_img_qr_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-qr'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-qr'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

@@ -1,10 +1,11 @@
 <script lang="ts">
+	const __nkm = {'pdf_tools.tools.unlock_name': pdf_tools_tools_unlock_name, 'pdf_tools.tools.metadata_name': pdf_tools_tools_metadata_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { protectPdf } from '$lib/pdf/password';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { tool_pages_password_err_pdf, tool_pages_password_err_password, tool_pages_password_err_min_length, tool_pages_password_err_fail, tool_pages_password_title, tool_pages_password_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_password_password_label, tool_pages_password_password_placeholder, tools_common_hide, tools_common_show, tool_pages_password_owner_toggle, tool_pages_password_owner_label, tool_pages_password_owner_placeholder, tool_pages_password_owner_help, tool_pages_password_permissions_label, tool_pages_password_allow_printing, tool_pages_password_allow_copying, tool_pages_password_allow_editing, tool_pages_password_info, tool_pages_password_btn_busy, tool_pages_password_btn, tool_pages_password_result, tool_pages_password_save, tools_common_privacy_note, tool_pages_password_seo_faq1_q, tool_pages_password_seo_faq1_a, tool_pages_password_seo_faq2_q, tool_pages_password_seo_faq2_a, pdf_tools_tools_unlock_name, pdf_tools_tools_metadata_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -28,9 +29,9 @@
 	});
 
 	async function apply() {
-		if (files.length === 0) { error = m['tool_pages.password.err_pdf'](); return; }
-		if (!userPassword.trim()) { error = m['tool_pages.password.err_password'](); return; }
-		if (userPassword.trim().length < 4) { error = m['tool_pages.password.err_min_length'](); return; }
+		if (files.length === 0) { error = tool_pages_password_err_pdf(); return; }
+		if (!userPassword.trim()) { error = tool_pages_password_err_password(); return; }
+		if (userPassword.trim().length < 4) { error = tool_pages_password_err_min_length(); return; }
 		error = '';
 		processing = true;
 		resultBytes = null;
@@ -46,7 +47,7 @@
 				},
 			});
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tool_pages.password.err_fail']();
+			error = e instanceof Error ? e.message : tool_pages_password_err_fail();
 		}
 		processing = false;
 	}
@@ -70,78 +71,78 @@
 <div class="pw-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.password.title']()}
-		description={m['tool_pages.password.desc']()}
+		title={tool_pages_password_title()}
+		description={tool_pages_password_desc()}
 		icon={LockIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if files.length > 0}
 		<div class="opt-section">
 			<div class="field">
-				<label for="pw-user" class="field-label">{m['tool_pages.password.password_label']()}</label>
+				<label for="pw-user" class="field-label">{tool_pages_password_password_label()}</label>
 				<div class="pw-row">
 					<input
 						id="pw-user"
 						type={showPassword ? 'text' : 'password'}
 						bind:value={userPassword}
-						placeholder={m['tool_pages.password.password_placeholder']()}
+						placeholder={tool_pages_password_password_placeholder()}
 						class="field-input"
 						autocomplete="new-password"
 					/>
 					<button class="show-btn" onclick={() => showPassword = !showPassword} type="button">
-						{showPassword ? m['tools_common.hide']() : m['tools_common.show']()}
+						{showPassword ? tools_common_hide() : tools_common_show()}
 					</button>
 				</div>
 			</div>
 
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={useOwnerPassword} />
-				{m['tool_pages.password.owner_toggle']()}
+				{tool_pages_password_owner_toggle()}
 			</label>
 
 			{#if useOwnerPassword}
 				<div class="field">
-					<label for="pw-owner" class="field-label">{m['tool_pages.password.owner_label']()}</label>
+					<label for="pw-owner" class="field-label">{tool_pages_password_owner_label()}</label>
 					<input
 						id="pw-owner"
 						type={showPassword ? 'text' : 'password'}
 						bind:value={ownerPassword}
-						placeholder={m['tool_pages.password.owner_placeholder']()}
+						placeholder={tool_pages_password_owner_placeholder()}
 						class="field-input"
 						autocomplete="new-password"
 					/>
-					<p class="text-xs text-muted mt-1">{m['tool_pages.password.owner_help']()}</p>
+					<p class="text-xs text-muted mt-1">{tool_pages_password_owner_help()}</p>
 				</div>
 			{/if}
 		</div>
 
 		<div class="opt-section">
-			<p class="field-label">{m['tool_pages.password.permissions_label']()}</p>
+			<p class="field-label">{tool_pages_password_permissions_label()}</p>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowPrinting} />
-				{m['tool_pages.password.allow_printing']()}
+				{tool_pages_password_allow_printing()}
 			</label>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowCopying} />
-				{m['tool_pages.password.allow_copying']()}
+				{tool_pages_password_allow_copying()}
 			</label>
 			<label class="flex items-center gap-2 cursor-pointer text-sm">
 				<input type="checkbox" bind:checked={allowModifying} />
-				{m['tool_pages.password.allow_editing']()}
+				{tool_pages_password_allow_editing()}
 			</label>
 		</div>
 
 		<div class="info-box">
 			<ShieldCheckIcon size={16} class="flex-shrink-0 mt-0.5" />
-			<p class="text-sm">{m['tool_pages.password.info']()}</p>
+			<p class="text-sm">{tool_pages_password_info()}</p>
 		</div>
 
 		<button class="btn highlight" disabled={processing || !userPassword.trim()} onclick={apply}>
-			{processing ? m['tool_pages.password.btn_busy']() : m['tool_pages.password.btn']()}
+			{processing ? tool_pages_password_btn_busy() : tool_pages_password_btn()}
 		</button>
 	{/if}
 
@@ -149,8 +150,8 @@
 
 	{#if resultBytes}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tool_pages.password.result']()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
-			<button class="btn" onclick={download}>{m['tool_pages.password.save']()}</button>
+			<p class="text-sm font-medium">{tool_pages_password_result()} <b>{formatFileSize(resultBytes.byteLength)}</b></p>
+			<button class="btn" onclick={download}>{tool_pages_password_save()}</button>
 		</div>
 	{/if}
 
@@ -158,14 +159,14 @@
 	{#if toolSeo['password']}
 		<ToolSeoBlock
 			faqs={toolSeo['password'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['password'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['password'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['password'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['password'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_password_seo_faq1_q?.() ?? '', a: tool_pages_password_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_password_seo_faq2_q?.() ?? '', a: tool_pages_password_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['password'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['password'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

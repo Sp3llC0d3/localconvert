@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { duration, fade, transition } from "$lib/util/animation";
-	import { m } from "$lib/paraglide/messages";
+	import { convert_dropdown_placeholder, convert_dropdown_no_results, convert_dropdown_no_formats, convert_archive_file_extract, convert_dropdown_audio, convert_dropdown_video, convert_dropdown_doc, convert_dropdown_image } from "$lib/paraglide/messages/_barrel.js";
 	import { isMobile, files, dropdownStates } from "$lib/store/index.svelte";
 	import type { Categories } from "$lib/types";
 	import clsx from "clsx";
@@ -440,7 +440,7 @@
 				<div class="relative">
 					<input
 						type="text"
-						placeholder={m["convert.dropdown.placeholder"]()}
+						placeholder={convert_dropdown_placeholder()}
 						class="flex-grow w-full !pl-11 !pr-3 rounded-lg bg-panel text-foreground"
 						bind:value={searchQuery}
 						oninput={handleSearch}
@@ -478,7 +478,7 @@
 								: 'border-b-separator text-muted'}"
 							onclick={() => selectCategory(category)}
 						>
-							{(m as any)[`convert.dropdown.${category}`]?.()}
+							{({audio: convert_dropdown_audio, video: convert_dropdown_video, doc: convert_dropdown_doc, image: convert_dropdown_image})[category]?.()}
 						</button>
 					{/each}
 				</div>
@@ -503,8 +503,8 @@
 					{:else}
 						<div class="col-span-3 text-center p-4 text-muted">
 							{searchQuery
-								? m["convert.dropdown.no_results"]()
-								: m["convert.dropdown.no_formats"]()}
+								? convert_dropdown_no_results()
+								: convert_dropdown_no_formats()}
 						</div>
 					{/if}
 				</div>
@@ -536,7 +536,7 @@
 						class="w-full p-2 text-center rounded-lg bg-accent text-black"
 						onclick={() => extract()}
 					>
-						{m["convert.archive_file.extract"]()}
+						{convert_archive_file_extract()}
 					</button>
 				</div>
 			{/if}

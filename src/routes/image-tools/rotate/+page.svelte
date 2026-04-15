@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
+	import { tools_common_failed, tool_pages_rotate_image_title, tool_pages_rotate_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_angle, tool_pages_rotate_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_rotate_seo_faq1_q, tool_pages_img_rotate_seo_faq1_a, tool_pages_img_rotate_seo_faq2_q, tool_pages_img_rotate_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -69,7 +70,7 @@
 			beforeUrl = URL.createObjectURL(files[0]);
 			afterUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 	}
 
@@ -99,21 +100,21 @@
 <div class="tool-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.rotate_image.title']()}
-		description={m['tool_pages.rotate_image.desc']()}
+		title={tool_pages_rotate_image_title()}
+		description={tool_pages_rotate_image_desc()}
 		icon={RotateCwIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
 		<canvas bind:this={previewCanvas} class="live-preview"></canvas>
 
 		<div class="opt-section">
 			<div class="opt-row">
-				<span class="opt-label">{m['tools_common.angle']()}</span>
+				<span class="opt-label">{tools_common_angle()}</span>
 				<div class="flex gap-2 flex-wrap">
 					{#each [90, 180, 270] as a}
 						<button class="btn text-sm px-4 py-1.5 {angle === a ? 'highlight' : ''}" onclick={() => angle = a as RotationAngle}>{a}°</button>
@@ -123,7 +124,7 @@
 		</div>
 
 		<button class="btn highlight" onclick={save}>
-			{m['tool_pages.rotate_image.save']()}
+			{tool_pages_rotate_image_save()}
 		</button>
 	{/if}
 
@@ -134,20 +135,20 @@
 			<BeforeAfter beforeSrc={beforeUrl} afterSrc={afterUrl} />
 		{/if}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-rotate']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-rotate'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-rotate'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-rotate'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-rotate'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-rotate'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_rotate_seo_faq1_q?.() ?? '', a: tool_pages_img_rotate_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_rotate_seo_faq2_q?.() ?? '', a: tool_pages_img_rotate_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-rotate'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-rotate'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

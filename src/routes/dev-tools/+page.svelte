@@ -1,24 +1,24 @@
 <script lang="ts">
 	import { CodeIcon, BracesIcon, HashIcon, Binary, FileTextIcon, GitCompareArrowsIcon, TypeIcon, LinkIcon, ShieldCheckIcon } from 'lucide-svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { dev_tools_categories_format, dev_tools_tools_json_name, dev_tools_tools_json_desc, dev_tools_tools_base64_name, dev_tools_tools_base64_desc, dev_tools_tools_url_encode_name, dev_tools_tools_url_encode_desc, dev_tools_tools_css_minify_name, dev_tools_tools_css_minify_desc, dev_tools_categories_analyze, dev_tools_tools_hash_name, dev_tools_tools_hash_desc, dev_tools_tools_diff_name, dev_tools_tools_diff_desc, dev_tools_tools_word_count_name, dev_tools_tools_word_count_desc, dev_tools_tools_markdown_name, dev_tools_tools_markdown_desc, dev_tools_title, dev_tools_subtitle, dev_tools_badge } from "$lib/paraglide/messages/_barrel.js";
 
 	const categories = $derived([
 		{
-			label: m['dev_tools.categories.format'](),
+			label: dev_tools_categories_format(),
 			tools: [
-				{ href: '/dev-tools/json/', icon: BracesIcon, name: m['dev_tools.tools.json_name'](), desc: m['dev_tools.tools.json_desc']() },
-				{ href: '/dev-tools/base64/', icon: Binary, name: m['dev_tools.tools.base64_name'](), desc: m['dev_tools.tools.base64_desc']() },
-				{ href: '/dev-tools/url-encode/', icon: LinkIcon, name: m['dev_tools.tools.url_encode_name'](), desc: m['dev_tools.tools.url_encode_desc']() },
-				{ href: '/dev-tools/css-minify/', icon: CodeIcon, name: m['dev_tools.tools.css_minify_name'](), desc: m['dev_tools.tools.css_minify_desc']() },
+				{ href: '/dev-tools/json/', icon: BracesIcon, name: dev_tools_tools_json_name(), desc: dev_tools_tools_json_desc() },
+				{ href: '/dev-tools/base64/', icon: Binary, name: dev_tools_tools_base64_name(), desc: dev_tools_tools_base64_desc() },
+				{ href: '/dev-tools/url-encode/', icon: LinkIcon, name: dev_tools_tools_url_encode_name(), desc: dev_tools_tools_url_encode_desc() },
+				{ href: '/dev-tools/css-minify/', icon: CodeIcon, name: dev_tools_tools_css_minify_name(), desc: dev_tools_tools_css_minify_desc() },
 			],
 		},
 		{
-			label: m['dev_tools.categories.analyze'](),
+			label: dev_tools_categories_analyze(),
 			tools: [
-				{ href: '/dev-tools/hash/', icon: HashIcon, name: m['dev_tools.tools.hash_name'](), desc: m['dev_tools.tools.hash_desc']() },
-				{ href: '/dev-tools/diff/', icon: GitCompareArrowsIcon, name: m['dev_tools.tools.diff_name'](), desc: m['dev_tools.tools.diff_desc']() },
-				{ href: '/dev-tools/word-count/', icon: TypeIcon, name: m['dev_tools.tools.word_count_name'](), desc: m['dev_tools.tools.word_count_desc']() },
-				{ href: '/dev-tools/markdown/', icon: FileTextIcon, name: m['dev_tools.tools.markdown_name'](), desc: m['dev_tools.tools.markdown_desc']() },
+				{ href: '/dev-tools/hash/', icon: HashIcon, name: dev_tools_tools_hash_name(), desc: dev_tools_tools_hash_desc() },
+				{ href: '/dev-tools/diff/', icon: GitCompareArrowsIcon, name: dev_tools_tools_diff_name(), desc: dev_tools_tools_diff_desc() },
+				{ href: '/dev-tools/word-count/', icon: TypeIcon, name: dev_tools_tools_word_count_name(), desc: dev_tools_tools_word_count_desc() },
+				{ href: '/dev-tools/markdown/', icon: FileTextIcon, name: dev_tools_tools_markdown_name(), desc: dev_tools_tools_markdown_desc() },
 			],
 		},
 	]);
@@ -43,13 +43,13 @@
 			<CodeIcon size={28} />
 		</div>
 		<div class="flex items-center gap-3">
-			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['dev_tools.title']()}</h1>
+			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{dev_tools_title()}</h1>
 			<span class="tool-count tool-count--purple">8</span>
 		</div>
-		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">{m['dev_tools.subtitle']()}</p>
+		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">{dev_tools_subtitle()}</p>
 		<div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style="background: var(--bg-badge); color: var(--fg-on-badge)">
 			<ShieldCheckIcon size={14} />
-			{m['dev_tools.badge']()}
+			{dev_tools_badge()}
 		</div>
 	</div>
 

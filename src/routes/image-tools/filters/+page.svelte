@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
+	import { tools_common_failed, tool_pages_filters_brightness, tool_pages_filters_contrast, tool_pages_filters_saturation, tool_pages_filters_sepia, tool_pages_filters_hue, tool_pages_filters_title, tool_pages_filters_desc, tools_common_back_image, tools_common_upload_image, tools_common_reset, tool_pages_filters_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_filters_seo_faq1_q, tool_pages_img_filters_seo_faq1_a, tool_pages_img_filters_seo_faq2_q, tool_pages_img_filters_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_rotate_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { buildFilterString, DEFAULT_FILTERS, type FilterOptions } from '$lib/image/filters';
@@ -74,7 +75,7 @@
 			beforeUrl = URL.createObjectURL(files[0]);
 			afterUrl = URL.createObjectURL(resultBlob);
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 	}
 
@@ -84,11 +85,11 @@
 	}
 
 	const sliders = [
-		{ key: 'brightness' as const, label: () => m['tool_pages.filters.brightness'](), min: 0, max: 200, unit: '%' },
-		{ key: 'contrast' as const, label: () => m['tool_pages.filters.contrast'](), min: 0, max: 200, unit: '%' },
-		{ key: 'saturation' as const, label: () => m['tool_pages.filters.saturation'](), min: 0, max: 200, unit: '%' },
-		{ key: 'sepia' as const, label: () => m['tool_pages.filters.sepia'](), min: 0, max: 100, unit: '%' },
-		{ key: 'hue' as const, label: () => m['tool_pages.filters.hue'](), min: 0, max: 360, unit: '°' },
+		{ key: 'brightness' as const, label: () => tool_pages_filters_brightness(), min: 0, max: 200, unit: '%' },
+		{ key: 'contrast' as const, label: () => tool_pages_filters_contrast(), min: 0, max: 200, unit: '%' },
+		{ key: 'saturation' as const, label: () => tool_pages_filters_saturation(), min: 0, max: 200, unit: '%' },
+		{ key: 'sepia' as const, label: () => tool_pages_filters_sepia(), min: 0, max: 100, unit: '%' },
+		{ key: 'hue' as const, label: () => tool_pages_filters_hue(), min: 0, max: 360, unit: '°' },
 	];
 </script>
 
@@ -105,14 +106,14 @@
 <div class="filter-page">
 	<ToolPageHeader
 		category="image"
-		title={m['tool_pages.filters.title']()}
-		description={m['tool_pages.filters.desc']()}
+		title={tool_pages_filters_title()}
+		description={tool_pages_filters_desc()}
 		icon={SlidersHorizontalIcon}
 		backHref="/image-tools/"
-		backLabel={m['tools_common.back_image']()}
+		backLabel={tools_common_back_image()}
 	/>
 
-	<ImageUploader bind:files label={m['tools_common.upload_image']()} />
+	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
 		<canvas bind:this={previewCanvas} class="live-preview"></canvas>
@@ -125,11 +126,11 @@
 					<span class="val">{filters[s.key]}{s.unit}</span>
 				</div>
 			{/each}
-			<button class="btn text-sm px-3 py-1.5" onclick={resetFilters}>{m['tools_common.reset']()}</button>
+			<button class="btn text-sm px-3 py-1.5" onclick={resetFilters}>{tools_common_reset()}</button>
 		</div>
 
 		<button class="btn highlight" onclick={save}>
-			{m['tool_pages.filters.save']()}
+			{tool_pages_filters_save()}
 		</button>
 	{/if}
 
@@ -140,20 +141,20 @@
 			<BeforeAfter beforeSrc={beforeUrl} afterSrc={afterUrl} />
 		{/if}
 		<div class="result-box">
-			<p class="text-sm font-medium">{m['tools_common.ready']()} <b>{formatFileSize(resultBlob.size)}</b></p>
-			<button class="btn" onclick={download}>{m['tools_common.download']()}</button>
+			<p class="text-sm font-medium">{tools_common_ready()} <b>{formatFileSize(resultBlob.size)}</b></p>
+			<button class="btn" onclick={download}>{tools_common_download()}</button>
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 
 	{#if toolSeo['img-filters']}
 		<ToolSeoBlock
 			faqs={toolSeo['img-filters'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['img-filters'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['img-filters'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['img-filters'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['img-filters'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_img_filters_seo_faq1_q?.() ?? '', a: tool_pages_img_filters_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_img_filters_seo_faq2_q?.() ?? '', a: tool_pages_img_filters_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['img-filters'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['img-filters'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

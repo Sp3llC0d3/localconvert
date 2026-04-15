@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Panel from "$lib/components/visual/Panel.svelte";
 	import { HeartIcon } from "lucide-svelte";
-	import { m } from "$lib/paraglide/messages";
+	import { about_credits_title, about_credits_libraries, about_credits_libraries_description } from "$lib/paraglide/messages/_barrel.js";
 	import { sanitize } from "$lib/util/sanitize";
 	import { GITHUB_URL_VERT } from "$lib/util/consts";
 </script>
@@ -13,14 +13,14 @@
 		>
 			<HeartIcon />
 		</div>
-		{m["about.credits.title"]()}
+		{about_credits_title()}
 	</h2>
 
 	<div class="flex flex-col gap-4 text-lg font-normal">
 		<div>
-			<b>{m["about.credits.libraries"]()}</b>
+			<b>{about_credits_libraries()}</b>
 			<p>
-				{@html sanitize(m["about.credits.libraries_description"]())}
+				{@html sanitize(about_credits_libraries_description())}
 			</p>
 		</div>
 

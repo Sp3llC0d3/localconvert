@@ -7,7 +7,7 @@
 	import ProgressBar from "../visual/ProgressBar.svelte";
 	import FormatDropdown from "./FormatDropdown.svelte";
 	import { categories } from "$lib/converters";
-	import { m } from "$lib/paraglide/messages";
+	import { convert_panel_convert_all, convert_panel_download_all, convert_panel_remove_all, convert_panel_set_all_to, convert_panel_na } from "$lib/paraglide/messages/_barrel.js";
 
 	const length = $derived(files.files.length);
 	const progress = $derived(files.files.filter((f) => f.result).length);
@@ -28,7 +28,7 @@
 				disabled={!files.ready}
 			>
 				<RefreshCw size="24" />
-				<p>{m["convert.panel.convert_all"]()}</p>
+				<p>{convert_panel_convert_all()}</p>
 			</button>
 			<button
 				class="btn {$effects
@@ -38,7 +38,7 @@
 				onclick={() => files.downloadAll()}
 			>
 				<FolderArchiveIcon size="24" />
-				<p>{m["convert.panel.download_all"]()}</p>
+				<p>{convert_panel_download_all()}</p>
 			</button>
 			{#if $isMobile}
 				<button
@@ -49,11 +49,11 @@
 					onclick={() => (files.files = [])}
 				>
 					<Trash2Icon size="24" />
-					<p>{m["convert.panel.remove_all"]()}</p>
+					<p>{convert_panel_remove_all()}</p>
 				</button>
 			{:else}
 				<Tooltip
-					text={m["convert.panel.remove_all"]()}
+					text={convert_panel_remove_all()}
 					position="right"
 				>
 					<button
@@ -71,7 +71,7 @@
 		<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 		<div class="flex items-center gap-2">
 			<p class="whitespace-nowrap text-sm font-medium text-muted">
-				{m["convert.panel.set_all_to"]()}
+				{convert_panel_set_all_to()}
 			</p>
 			<div class="w-48 md:max-w-[6.5rem]">
 				<!-- check if all files have the same converters -->
@@ -87,7 +87,7 @@
 						dropdownSize={"large"}
 					/>
 				{:else}
-					<Dropdown options={[m["convert.panel.na"]()]} disabled />
+					<Dropdown options={[convert_panel_na()]} disabled />
 				{/if}
 			</div>
 		</div>

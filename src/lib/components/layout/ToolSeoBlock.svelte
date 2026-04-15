@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_seo_how_title, tools_common_seo_step1, tools_common_seo_step2, tools_common_seo_step3, tools_common_seo_why_title, tools_common_seo_why_private, tools_common_seo_why_free, tools_common_seo_why_offline, tools_common_seo_faq_title, tools_common_seo_related_title } from "$lib/paraglide/messages/_barrel.js";
 	import type { Component } from 'svelte';
 
 	type RelatedTool = {
@@ -24,28 +24,28 @@
 <div class="seo-block">
 	<!-- How it works -->
 	<details class="seo-section" open>
-		<summary class="seo-heading">{m['tools_common.seo_how_title']()}</summary>
+		<summary class="seo-heading">{tools_common_seo_how_title()}</summary>
 		<ol class="seo-steps">
-			<li>{m['tools_common.seo_step1']()}</li>
-			<li>{m['tools_common.seo_step2']()}</li>
-			<li>{m['tools_common.seo_step3']()}</li>
+			<li>{tools_common_seo_step1()}</li>
+			<li>{tools_common_seo_step2()}</li>
+			<li>{tools_common_seo_step3()}</li>
 		</ol>
 	</details>
 
 	<!-- Why LocalConvert -->
 	<details class="seo-section">
-		<summary class="seo-heading">{m['tools_common.seo_why_title']()}</summary>
+		<summary class="seo-heading">{tools_common_seo_why_title()}</summary>
 		<ul class="seo-list">
-			<li>{m['tools_common.seo_why_private']()}</li>
-			<li>{m['tools_common.seo_why_free']()}</li>
-			<li>{m['tools_common.seo_why_offline']()}</li>
+			<li>{tools_common_seo_why_private()}</li>
+			<li>{tools_common_seo_why_free()}</li>
+			<li>{tools_common_seo_why_offline()}</li>
 		</ul>
 	</details>
 
 	<!-- FAQ -->
 	{#if faqs.length > 0}
 		<details class="seo-section">
-			<summary class="seo-heading">{m['tools_common.seo_faq_title']()}</summary>
+			<summary class="seo-heading">{tools_common_seo_faq_title()}</summary>
 			<div class="seo-faqs">
 				{#each faqs as faq}
 					<div class="seo-faq">
@@ -60,7 +60,7 @@
 	<!-- Related tools -->
 	{#if relatedTools.length > 0}
 		<div class="seo-section">
-			<p class="seo-heading">{m['tools_common.seo_related_title']()}</p>
+			<p class="seo-heading">{tools_common_seo_related_title()}</p>
 			<div class="seo-related">
 				{#each relatedTools as tool}
 					{@const Icon = tool.icon}

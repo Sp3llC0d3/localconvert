@@ -3,7 +3,7 @@
 	import { SearchIcon } from 'lucide-svelte';
 	import { fade } from '$lib/util/animation';
 	import { commandPalette } from '$lib/store/commandPalette.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { pdf_tools_tools_merge_name, pdf_tools_tools_merge_desc, pdf_tools_tools_split_name, pdf_tools_tools_split_desc, pdf_tools_tools_rotate_name, pdf_tools_tools_rotate_desc, pdf_tools_tools_organize_name, pdf_tools_tools_organize_desc, pdf_tools_tools_compress_name, pdf_tools_tools_compress_desc, pdf_tools_tools_watermark_name, pdf_tools_tools_watermark_desc, pdf_tools_tools_page_numbers_name, pdf_tools_tools_page_numbers_desc, pdf_tools_tools_metadata_name, pdf_tools_tools_metadata_desc, pdf_tools_tools_crop_name, pdf_tools_tools_crop_desc, pdf_tools_tools_sign_name, pdf_tools_tools_sign_desc, pdf_tools_tools_edit_name, pdf_tools_tools_edit_desc, pdf_tools_tools_password_name, pdf_tools_tools_password_desc, pdf_tools_tools_unlock_name, pdf_tools_tools_unlock_desc, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_images_to_pdf_desc, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_pdf_to_images_desc, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_pdf_to_ppt_desc, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_text_desc, pdf_tools_tools_grayscale_name, pdf_tools_tools_grayscale_desc, pdf_tools_tools_from_docx_name, pdf_tools_tools_from_docx_desc, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_from_xlsx_desc, pdf_tools_tools_to_docx_name, pdf_tools_tools_to_docx_desc, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, dev_tools_tools_json_name, dev_tools_tools_json_desc, dev_tools_tools_hash_name, dev_tools_tools_hash_desc, dev_tools_tools_base64_name, dev_tools_tools_base64_desc, dev_tools_tools_markdown_name, dev_tools_tools_markdown_desc, dev_tools_tools_diff_name, dev_tools_tools_diff_desc, dev_tools_tools_word_count_name, dev_tools_tools_word_count_desc, dev_tools_tools_url_encode_name, dev_tools_tools_url_encode_desc, dev_tools_tools_css_minify_name, dev_tools_tools_css_minify_desc, command_palette_converter_name, command_palette_converter_desc, footer_pdf_tools_count, pdf_tools_badge, footer_image_tools_count, image_tools_badge, footer_dev_tools_count, dev_tools_badge, command_palette_placeholder, command_palette_no_results } from "$lib/paraglide/messages/_barrel.js";
 
 	let query = $state('');
 	let selectedIndex = $state(0);
@@ -23,52 +23,52 @@
 	const allTools = $derived.by(() => {
 		const tools: { name: string; desc: string; href: string; category: 'pdf' | 'image' | 'dev' | 'convert' }[] = [
 			// PDF Tools
-			{ name: m['pdf_tools.tools.merge_name'](), desc: m['pdf_tools.tools.merge_desc'](), href: '/pdf-tools/merge/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.split_name'](), desc: m['pdf_tools.tools.split_desc'](), href: '/pdf-tools/split/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.rotate_name'](), desc: m['pdf_tools.tools.rotate_desc'](), href: '/pdf-tools/rotate/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.organize_name'](), desc: m['pdf_tools.tools.organize_desc'](), href: '/pdf-tools/organize/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.compress_name'](), desc: m['pdf_tools.tools.compress_desc'](), href: '/pdf-tools/compress/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.watermark_name'](), desc: m['pdf_tools.tools.watermark_desc'](), href: '/pdf-tools/watermark/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.page_numbers_name'](), desc: m['pdf_tools.tools.page_numbers_desc'](), href: '/pdf-tools/page-numbers/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.metadata_name'](), desc: m['pdf_tools.tools.metadata_desc'](), href: '/pdf-tools/metadata/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.crop_name'](), desc: m['pdf_tools.tools.crop_desc'](), href: '/pdf-tools/crop/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.sign_name'](), desc: m['pdf_tools.tools.sign_desc'](), href: '/pdf-tools/sign/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.edit_name'](), desc: m['pdf_tools.tools.edit_desc'](), href: '/pdf-tools/edit/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.password_name'](), desc: m['pdf_tools.tools.password_desc'](), href: '/pdf-tools/password/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.unlock_name'](), desc: m['pdf_tools.tools.unlock_desc'](), href: '/pdf-tools/unlock/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.images_to_pdf_name'](), desc: m['pdf_tools.tools.images_to_pdf_desc'](), href: '/pdf-tools/images-to-pdf/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.pdf_to_images_name'](), desc: m['pdf_tools.tools.pdf_to_images_desc'](), href: '/pdf-tools/pdf-to-images/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.pdf_to_ppt_name'](), desc: m['pdf_tools.tools.pdf_to_ppt_desc'](), href: '/pdf-tools/pdf-to-ppt/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.pdf_to_text_name'](), desc: m['pdf_tools.tools.pdf_to_text_desc'](), href: '/pdf-tools/pdf-to-text/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.grayscale_name'](), desc: m['pdf_tools.tools.grayscale_desc'](), href: '/pdf-tools/grayscale/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.from_docx_name'](), desc: m['pdf_tools.tools.from_docx_desc'](), href: '/pdf-tools/from-docx/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.from_xlsx_name'](), desc: m['pdf_tools.tools.from_xlsx_desc'](), href: '/pdf-tools/from-xlsx/', category: 'pdf' },
-			{ name: m['pdf_tools.tools.to_docx_name'](), desc: m['pdf_tools.tools.to_docx_desc'](), href: '/pdf-tools/to-docx/', category: 'pdf' },
+			{ name: pdf_tools_tools_merge_name(), desc: pdf_tools_tools_merge_desc(), href: '/pdf-tools/merge/', category: 'pdf' },
+			{ name: pdf_tools_tools_split_name(), desc: pdf_tools_tools_split_desc(), href: '/pdf-tools/split/', category: 'pdf' },
+			{ name: pdf_tools_tools_rotate_name(), desc: pdf_tools_tools_rotate_desc(), href: '/pdf-tools/rotate/', category: 'pdf' },
+			{ name: pdf_tools_tools_organize_name(), desc: pdf_tools_tools_organize_desc(), href: '/pdf-tools/organize/', category: 'pdf' },
+			{ name: pdf_tools_tools_compress_name(), desc: pdf_tools_tools_compress_desc(), href: '/pdf-tools/compress/', category: 'pdf' },
+			{ name: pdf_tools_tools_watermark_name(), desc: pdf_tools_tools_watermark_desc(), href: '/pdf-tools/watermark/', category: 'pdf' },
+			{ name: pdf_tools_tools_page_numbers_name(), desc: pdf_tools_tools_page_numbers_desc(), href: '/pdf-tools/page-numbers/', category: 'pdf' },
+			{ name: pdf_tools_tools_metadata_name(), desc: pdf_tools_tools_metadata_desc(), href: '/pdf-tools/metadata/', category: 'pdf' },
+			{ name: pdf_tools_tools_crop_name(), desc: pdf_tools_tools_crop_desc(), href: '/pdf-tools/crop/', category: 'pdf' },
+			{ name: pdf_tools_tools_sign_name(), desc: pdf_tools_tools_sign_desc(), href: '/pdf-tools/sign/', category: 'pdf' },
+			{ name: pdf_tools_tools_edit_name(), desc: pdf_tools_tools_edit_desc(), href: '/pdf-tools/edit/', category: 'pdf' },
+			{ name: pdf_tools_tools_password_name(), desc: pdf_tools_tools_password_desc(), href: '/pdf-tools/password/', category: 'pdf' },
+			{ name: pdf_tools_tools_unlock_name(), desc: pdf_tools_tools_unlock_desc(), href: '/pdf-tools/unlock/', category: 'pdf' },
+			{ name: pdf_tools_tools_images_to_pdf_name(), desc: pdf_tools_tools_images_to_pdf_desc(), href: '/pdf-tools/images-to-pdf/', category: 'pdf' },
+			{ name: pdf_tools_tools_pdf_to_images_name(), desc: pdf_tools_tools_pdf_to_images_desc(), href: '/pdf-tools/pdf-to-images/', category: 'pdf' },
+			{ name: pdf_tools_tools_pdf_to_ppt_name(), desc: pdf_tools_tools_pdf_to_ppt_desc(), href: '/pdf-tools/pdf-to-ppt/', category: 'pdf' },
+			{ name: pdf_tools_tools_pdf_to_text_name(), desc: pdf_tools_tools_pdf_to_text_desc(), href: '/pdf-tools/pdf-to-text/', category: 'pdf' },
+			{ name: pdf_tools_tools_grayscale_name(), desc: pdf_tools_tools_grayscale_desc(), href: '/pdf-tools/grayscale/', category: 'pdf' },
+			{ name: pdf_tools_tools_from_docx_name(), desc: pdf_tools_tools_from_docx_desc(), href: '/pdf-tools/from-docx/', category: 'pdf' },
+			{ name: pdf_tools_tools_from_xlsx_name(), desc: pdf_tools_tools_from_xlsx_desc(), href: '/pdf-tools/from-xlsx/', category: 'pdf' },
+			{ name: pdf_tools_tools_to_docx_name(), desc: pdf_tools_tools_to_docx_desc(), href: '/pdf-tools/to-docx/', category: 'pdf' },
 			// Image Tools
-			{ name: m['image_tools.tools.rotate_name'](), desc: m['image_tools.tools.rotate_desc'](), href: '/image-tools/rotate/', category: 'image' },
-			{ name: m['image_tools.tools.crop_name'](), desc: m['image_tools.tools.crop_desc'](), href: '/image-tools/crop/', category: 'image' },
-			{ name: m['image_tools.tools.watermark_name'](), desc: m['image_tools.tools.watermark_desc'](), href: '/image-tools/watermark/', category: 'image' },
-			{ name: m['image_tools.tools.meme_name'](), desc: m['image_tools.tools.meme_desc'](), href: '/image-tools/meme/', category: 'image' },
-			{ name: m['image_tools.tools.batch_name'](), desc: m['image_tools.tools.batch_desc'](), href: '/image-tools/batch/', category: 'image' },
-			{ name: m['image_tools.tools.qr_name'](), desc: m['image_tools.tools.qr_desc'](), href: '/image-tools/qr/', category: 'image' },
-			{ name: m['image_tools.tools.color_picker_name'](), desc: m['image_tools.tools.color_picker_desc'](), href: '/image-tools/color-picker/', category: 'image' },
-			{ name: m['image_tools.tools.blur_name'](), desc: m['image_tools.tools.blur_desc'](), href: '/image-tools/blur/', category: 'image' },
-			{ name: m['image_tools.tools.filters_name'](), desc: m['image_tools.tools.filters_desc'](), href: '/image-tools/filters/', category: 'image' },
-			{ name: m['image_tools.tools.video_to_gif_name'](), desc: m['image_tools.tools.video_to_gif_desc'](), href: '/image-tools/video-to-gif/', category: 'image' },
+			{ name: image_tools_tools_rotate_name(), desc: image_tools_tools_rotate_desc(), href: '/image-tools/rotate/', category: 'image' },
+			{ name: image_tools_tools_crop_name(), desc: image_tools_tools_crop_desc(), href: '/image-tools/crop/', category: 'image' },
+			{ name: image_tools_tools_watermark_name(), desc: image_tools_tools_watermark_desc(), href: '/image-tools/watermark/', category: 'image' },
+			{ name: image_tools_tools_meme_name(), desc: image_tools_tools_meme_desc(), href: '/image-tools/meme/', category: 'image' },
+			{ name: image_tools_tools_batch_name(), desc: image_tools_tools_batch_desc(), href: '/image-tools/batch/', category: 'image' },
+			{ name: image_tools_tools_qr_name(), desc: image_tools_tools_qr_desc(), href: '/image-tools/qr/', category: 'image' },
+			{ name: image_tools_tools_color_picker_name(), desc: image_tools_tools_color_picker_desc(), href: '/image-tools/color-picker/', category: 'image' },
+			{ name: image_tools_tools_blur_name(), desc: image_tools_tools_blur_desc(), href: '/image-tools/blur/', category: 'image' },
+			{ name: image_tools_tools_filters_name(), desc: image_tools_tools_filters_desc(), href: '/image-tools/filters/', category: 'image' },
+			{ name: image_tools_tools_video_to_gif_name(), desc: image_tools_tools_video_to_gif_desc(), href: '/image-tools/video-to-gif/', category: 'image' },
 			// Dev Tools
-			{ name: m['dev_tools.tools.json_name'](), desc: m['dev_tools.tools.json_desc'](), href: '/dev-tools/json/', category: 'dev' },
-			{ name: m['dev_tools.tools.hash_name'](), desc: m['dev_tools.tools.hash_desc'](), href: '/dev-tools/hash/', category: 'dev' },
-			{ name: m['dev_tools.tools.base64_name'](), desc: m['dev_tools.tools.base64_desc'](), href: '/dev-tools/base64/', category: 'dev' },
-			{ name: m['dev_tools.tools.markdown_name'](), desc: m['dev_tools.tools.markdown_desc'](), href: '/dev-tools/markdown/', category: 'dev' },
-			{ name: m['dev_tools.tools.diff_name'](), desc: m['dev_tools.tools.diff_desc'](), href: '/dev-tools/diff/', category: 'dev' },
-			{ name: m['dev_tools.tools.word_count_name'](), desc: m['dev_tools.tools.word_count_desc'](), href: '/dev-tools/word-count/', category: 'dev' },
-			{ name: m['dev_tools.tools.url_encode_name'](), desc: m['dev_tools.tools.url_encode_desc'](), href: '/dev-tools/url-encode/', category: 'dev' },
-			{ name: m['dev_tools.tools.css_minify_name'](), desc: m['dev_tools.tools.css_minify_desc'](), href: '/dev-tools/css-minify/', category: 'dev' },
+			{ name: dev_tools_tools_json_name(), desc: dev_tools_tools_json_desc(), href: '/dev-tools/json/', category: 'dev' },
+			{ name: dev_tools_tools_hash_name(), desc: dev_tools_tools_hash_desc(), href: '/dev-tools/hash/', category: 'dev' },
+			{ name: dev_tools_tools_base64_name(), desc: dev_tools_tools_base64_desc(), href: '/dev-tools/base64/', category: 'dev' },
+			{ name: dev_tools_tools_markdown_name(), desc: dev_tools_tools_markdown_desc(), href: '/dev-tools/markdown/', category: 'dev' },
+			{ name: dev_tools_tools_diff_name(), desc: dev_tools_tools_diff_desc(), href: '/dev-tools/diff/', category: 'dev' },
+			{ name: dev_tools_tools_word_count_name(), desc: dev_tools_tools_word_count_desc(), href: '/dev-tools/word-count/', category: 'dev' },
+			{ name: dev_tools_tools_url_encode_name(), desc: dev_tools_tools_url_encode_desc(), href: '/dev-tools/url-encode/', category: 'dev' },
+			{ name: dev_tools_tools_css_minify_name(), desc: dev_tools_tools_css_minify_desc(), href: '/dev-tools/css-minify/', category: 'dev' },
 			// Pages
-			{ name: m['command_palette.converter_name'](), desc: m['command_palette.converter_desc'](), href: '/convert', category: 'convert' },
-			{ name: m['footer.pdf_tools_count'](), desc: m['pdf_tools.badge'](), href: '/pdf-tools/', category: 'pdf' },
-			{ name: m['footer.image_tools_count'](), desc: m['image_tools.badge'](), href: '/image-tools/', category: 'image' },
-			{ name: m['footer.dev_tools_count'](), desc: m['dev_tools.badge'](), href: '/dev-tools/', category: 'dev' },
+			{ name: command_palette_converter_name(), desc: command_palette_converter_desc(), href: '/convert', category: 'convert' },
+			{ name: footer_pdf_tools_count(), desc: pdf_tools_badge(), href: '/pdf-tools/', category: 'pdf' },
+			{ name: footer_image_tools_count(), desc: image_tools_badge(), href: '/image-tools/', category: 'image' },
+			{ name: footer_dev_tools_count(), desc: dev_tools_badge(), href: '/dev-tools/', category: 'dev' },
 		];
 		return tools;
 	});
@@ -112,7 +112,7 @@
 	></div>
 
 	<!-- Palette -->
-	<div class="palette" role="dialog" aria-label={m['command_palette.placeholder']()} transition:fade={{ duration: 120 }}>
+	<div class="palette" role="dialog" aria-label={command_palette_placeholder()} transition:fade={{ duration: 120 }}>
 		<div class="palette-input-wrap">
 			<SearchIcon size={16} class="palette-input-icon" />
 			<input
@@ -120,7 +120,7 @@
 				bind:value={query}
 				onkeydown={onKeydown}
 				type="text"
-				placeholder={m['command_palette.placeholder']()}
+				placeholder={command_palette_placeholder()}
 				class="palette-input"
 				autocomplete="off"
 				spellcheck="false"
@@ -146,7 +146,7 @@
 				</button>
 			{/each}
 			{#if filtered.length === 0}
-				<div class="palette-empty">{m['command_palette.no_results']()}</div>
+				<div class="palette-empty">{command_palette_no_results()}</div>
 			{/if}
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name, 'pdf_tools.tools.split_name': pdf_tools_tools_split_name, 'pdf_tools.tools.rotate_name': pdf_tools_tools_rotate_name};
+	import { tool_pages_organize_no_pages, tools_common_failed, tool_pages_organize_title, tool_pages_organize_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_loading_thumbs, tool_pages_organize_drag_reorder, tool_pages_organize_move_up, tool_pages_organize_move_down, tool_pages_organize_delete_page, tools_common_pages_remaining, tool_pages_organize_btn_busy, tool_pages_organize_btn, tools_common_privacy_note, tool_pages_organize_seo_faq1_q, tool_pages_organize_seo_faq1_a, tool_pages_organize_seo_faq2_q, tool_pages_organize_seo_faq2_a, pdf_tools_tools_merge_name, pdf_tools_tools_split_name, pdf_tools_tools_rotate_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { organizePdf } from '$lib/pdf/organize';
@@ -65,7 +66,7 @@
 	}
 
 	async function save() {
-		if (items.length === 0) { error = m['tool_pages.organize.no_pages'](); return; }
+		if (items.length === 0) { error = tool_pages_organize_no_pages(); return; }
 		error = '';
 		processing = true;
 		try {
@@ -73,7 +74,7 @@
 			const bytes = await organizePdf(files[0], order);
 			downloadPdf(bytes, getOutputName(files[0].name, 'organized', 'pdf'));
 		} catch (e: unknown) {
-			error = e instanceof Error ? e.message : m['tools_common.failed']();
+			error = e instanceof Error ? e.message : tools_common_failed();
 		}
 		processing = false;
 	}
@@ -92,18 +93,18 @@
 <div class="pdf-page">
 	<ToolPageHeader
 		category="pdf"
-		title={m['tool_pages.organize.title']()}
-		description={m['tool_pages.organize.desc']()}
+		title={tool_pages_organize_title()}
+		description={tool_pages_organize_desc()}
 		icon={LayoutGridIcon}
 		backHref="/pdf-tools/"
-		backLabel={m['tools_common.back_pdf']()}
+		backLabel={tools_common_back_pdf()}
 	/>
 
-	<PdfUploader bind:files multiple={false} label={m['tools_common.upload_pdf']()} />
+	<PdfUploader bind:files multiple={false} label={tools_common_upload_pdf()} />
 
 	{#if loadingThumbs}
 		<div class="flex flex-col gap-2">
-			<p class="text-sm text-muted">{m['tools_common.loading_thumbs']()} {thumbProgress}%</p>
+			<p class="text-sm text-muted">{tools_common_loading_thumbs()} {thumbProgress}%</p>
 			<div class="h-1.5 rounded-full bg-separator overflow-hidden">
 				<div class="h-full bg-accent transition-all" style="width: {thumbProgress}%"></div>
 			</div>
@@ -117,19 +118,19 @@
 		>
 			{#each items as item, i (item.id)}
 				<div class="org-row" aria-label="Page {item.origIdx + 1}">
-					<div class="drag-handle" aria-label={m['tool_pages.organize.drag_reorder']()}>
+					<div class="drag-handle" aria-label={tool_pages_organize_drag_reorder()}>
 						<GripVerticalIcon size={16} />
 					</div>
 					<img src={thumbs[item.origIdx]} alt="Page {item.origIdx + 1}" class="org-thumb" />
 					<span class="text-sm flex-1">Page {item.origIdx + 1}</span>
 					<div class="flex gap-1">
-						<button class="icon-btn" onclick={() => moveUp(i)} disabled={i === 0} aria-label={m['tool_pages.organize.move_up']()}>
+						<button class="icon-btn" onclick={() => moveUp(i)} disabled={i === 0} aria-label={tool_pages_organize_move_up()}>
 							<ArrowUpIcon size={14} />
 						</button>
-						<button class="icon-btn" onclick={() => moveDown(i)} disabled={i === items.length - 1} aria-label={m['tool_pages.organize.move_down']()}>
+						<button class="icon-btn" onclick={() => moveDown(i)} disabled={i === items.length - 1} aria-label={tool_pages_organize_move_down()}>
 							<ArrowDownIcon size={14} />
 						</button>
-						<button class="icon-btn del-btn" onclick={() => deletePage(i)} aria-label={m['tool_pages.organize.delete_page']()}>
+						<button class="icon-btn del-btn" onclick={() => deletePage(i)} aria-label={tool_pages_organize_delete_page()}>
 							<Trash2Icon size={14} />
 						</button>
 					</div>
@@ -137,10 +138,10 @@
 			{/each}
 		</div>
 
-		<p class="text-xs text-muted">{m['tools_common.pages_remaining']({ count: items.length })}</p>
+		<p class="text-xs text-muted">{tools_common_pages_remaining({ count: items.length })}</p>
 
 		<button class="btn highlight" disabled={processing} onclick={save}>
-			{processing ? m['tool_pages.organize.btn_busy']() : m['tool_pages.organize.btn']()}
+			{processing ? tool_pages_organize_btn_busy() : tool_pages_organize_btn()}
 		</button>
 	{/if}
 
@@ -149,14 +150,14 @@
 	{#if toolSeo['organize']}
 		<ToolSeoBlock
 			faqs={toolSeo['organize'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['organize'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['organize'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['organize'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['organize'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_organize_seo_faq1_q?.() ?? '', a: tool_pages_organize_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_organize_seo_faq2_q?.() ?? '', a: tool_pages_organize_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['organize'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['organize'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note()}</p>
 </div>
 
 <style>

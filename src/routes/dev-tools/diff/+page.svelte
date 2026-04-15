@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.json_name': dev_tools_tools_json_name, 'dev_tools.tools.word_count_name': dev_tools_tools_word_count_name, 'dev_tools.tools.markdown_name': dev_tools_tools_markdown_name};
+	import { tool_pages_diff_title, tool_pages_diff_desc, tools_common_back_dev, tool_pages_diff_original, tool_pages_diff_modified, tool_pages_diff_btn, tools_common_privacy_note_browser, tool_pages_dev_diff_seo_faq1_q, tool_pages_dev_diff_seo_faq1_a, tool_pages_dev_diff_seo_faq2_q, tool_pages_dev_diff_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_word_count_name, dev_tools_tools_markdown_name } from "$lib/paraglide/messages/_barrel.js";
 	import { GitCompareArrowsIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -71,25 +72,25 @@
 <div class="diff-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.diff.title']()}
-		description={m['tool_pages.diff.desc']()}
+		title={tool_pages_diff_title()}
+		description={tool_pages_diff_desc()}
 		icon={GitCompareArrowsIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
 	<div class="panels">
 		<div class="panel">
-			<label class="panel-label">{m['tool_pages.diff.original']()}</label>
+			<label class="panel-label">{tool_pages_diff_original()}</label>
 			<textarea bind:value={textA} class="code-area" spellcheck="false"></textarea>
 		</div>
 		<div class="panel">
-			<label class="panel-label">{m['tool_pages.diff.modified']()}</label>
+			<label class="panel-label">{tool_pages_diff_modified()}</label>
 			<textarea bind:value={textB} class="code-area" spellcheck="false"></textarea>
 		</div>
 	</div>
 
-	<button class="btn highlight" onclick={compare}>{m['tool_pages.diff.btn']()}</button>
+	<button class="btn highlight" onclick={compare}>{tool_pages_diff_btn()}</button>
 
 	{#if diffResult.length > 0}
 		<div class="diff-output">
@@ -103,15 +104,15 @@
 		</div>
 	{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-diff']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-diff'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-diff'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-diff'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-diff'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-diff'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_diff_seo_faq1_q?.() ?? '', a: tool_pages_dev_diff_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_diff_seo_faq2_q?.() ?? '', a: tool_pages_dev_diff_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-diff'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-diff'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

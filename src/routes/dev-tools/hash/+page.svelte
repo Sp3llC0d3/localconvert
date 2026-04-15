@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	const __nkm = {'dev_tools.tools.base64_name': dev_tools_tools_base64_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.url_encode_name': dev_tools_tools_url_encode_name};
+	import { tool_pages_hash_generator_title, tool_pages_hash_generator_desc, tools_common_back_dev, tool_pages_hash_generator_text_mode, tool_pages_hash_generator_file_mode, tool_pages_hash_generator_text_placeholder, tool_pages_hash_generator_file_placeholder, tool_pages_hash_generator_algorithm, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_hash_generator_computing, tools_common_privacy_note_browser, tool_pages_dev_hash_seo_faq1_q, tool_pages_dev_hash_seo_faq1_a, tool_pages_dev_hash_seo_faq2_q, tool_pages_dev_hash_seo_faq2_a, dev_tools_tools_base64_name, dev_tools_tools_diff_name, dev_tools_tools_url_encode_name } from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { HashIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
@@ -81,22 +82,22 @@
 <div class="hash-page">
 	<ToolPageHeader
 		category="dev"
-		title={m['tool_pages.hash_generator.title']()}
-		description={m['tool_pages.hash_generator.desc']()}
+		title={tool_pages_hash_generator_title()}
+		description={tool_pages_hash_generator_desc()}
 		icon={HashIcon}
 		backHref="/dev-tools/"
-		backLabel={m['tools_common.back_dev']()}
+		backLabel={tools_common_back_dev()}
 	/>
 
 	<!-- Mode toggle -->
 	<div class="flex gap-2">
-		<button class="btn text-sm px-3 py-1.5 {mode === 'text' ? 'highlight' : ''}" onclick={() => { mode = 'text'; file = null; }}>{m['tool_pages.hash_generator.text_mode']()}</button>
-		<button class="btn text-sm px-3 py-1.5 {mode === 'file' ? 'highlight' : ''}" onclick={() => { mode = 'file'; textInput = ''; }}>{m['tool_pages.hash_generator.file_mode']()}</button>
+		<button class="btn text-sm px-3 py-1.5 {mode === 'text' ? 'highlight' : ''}" onclick={() => { mode = 'text'; file = null; }}>{tool_pages_hash_generator_text_mode()}</button>
+		<button class="btn text-sm px-3 py-1.5 {mode === 'file' ? 'highlight' : ''}" onclick={() => { mode = 'file'; textInput = ''; }}>{tool_pages_hash_generator_file_mode()}</button>
 	</div>
 
 	<!-- Input -->
 	{#if mode === 'text'}
-		<textarea bind:value={textInput} class="text-area" placeholder={m['tool_pages.hash_generator.text_placeholder']()} spellcheck="false"></textarea>
+		<textarea bind:value={textInput} class="text-area" placeholder={tool_pages_hash_generator_text_placeholder()} spellcheck="false"></textarea>
 	{:else}
 		<div class="file-zone" onclick={() => fileInput?.click()}>
 			<input bind:this={fileInput} type="file" class="hidden" onchange={onFileSelect} />
@@ -104,14 +105,14 @@
 				<p class="text-sm font-medium">{file.name}</p>
 				<p class="text-xs text-muted">{formatFileSize(file.size)}</p>
 			{:else}
-				<p class="text-sm text-muted">{m['tool_pages.hash_generator.file_placeholder']()}</p>
+				<p class="text-sm text-muted">{tool_pages_hash_generator_file_placeholder()}</p>
 			{/if}
 		</div>
 	{/if}
 
 	<!-- Algorithm -->
 	<div class="flex items-center gap-3 flex-wrap">
-		<span class="text-sm font-semibold">{m['tool_pages.hash_generator.algorithm']()}</span>
+		<span class="text-sm font-semibold">{tool_pages_hash_generator_algorithm()}</span>
 		{#each ['SHA-256', 'SHA-1', 'SHA-512'] as algo}
 			<button class="btn text-sm px-3 py-1.5 {algorithm === algo ? 'highlight' : ''}" onclick={() => algorithm = algo as typeof algorithm}>{algo}</button>
 		{/each}
@@ -124,24 +125,24 @@
 				<span class="text-xs font-semibold text-muted">{algorithm}</span>
 				<button class="copy-btn" onclick={copyHash}>
 					{#if copied}<CheckIcon size={14} />{:else}<CopyIcon size={14} />{/if}
-					{copied ? m['tool_pages.pdf_to_text.copied']() : m['tool_pages.json_formatter.btn_copy']()}
+					{copied ? tool_pages_pdf_to_text_copied() : tool_pages_json_formatter_btn_copy()}
 				</button>
 			</div>
 			<code class="hash-output">{hashResult}</code>
 		</div>
 	{/if}
 
-	{#if computing}<p class="text-sm text-muted">{m['tool_pages.hash_generator.computing']()}</p>{/if}
+	{#if computing}<p class="text-sm text-muted">{tool_pages_hash_generator_computing()}</p>{/if}
 
-	<p class="text-xs text-muted mt-2">{m['tools_common.privacy_note_browser']()}</p>
+	<p class="text-xs text-muted mt-2">{tools_common_privacy_note_browser()}</p>
 
 	{#if toolSeo['dev-hash']}
 		<ToolSeoBlock
 			faqs={toolSeo['dev-hash'].faqKeys.length >= 4 ? [
-				{ q: (m as any)[toolSeo['dev-hash'].faqKeys[0]]?.() ?? '', a: (m as any)[toolSeo['dev-hash'].faqKeys[1]]?.() ?? '' },
-				{ q: (m as any)[toolSeo['dev-hash'].faqKeys[2]]?.() ?? '', a: (m as any)[toolSeo['dev-hash'].faqKeys[3]]?.() ?? '' },
+				{ q: tool_pages_dev_hash_seo_faq1_q?.() ?? '', a: tool_pages_dev_hash_seo_faq1_a?.() ?? '' },
+				{ q: tool_pages_dev_hash_seo_faq2_q?.() ?? '', a: tool_pages_dev_hash_seo_faq2_a?.() ?? '' },
 			] : []}
-			relatedTools={toolSeo['dev-hash'].related.map(r => ({ href: r.href, name: (m as any)[r.nameKey]?.() ?? '', icon: r.icon }))}
+			relatedTools={toolSeo['dev-hash'].related.map(r => ({ href: r.href, name: __nkm[r.nameKey]?.() ?? '', icon: r.icon }))}
 		/>
 	{/if}
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/paraglide/messages';
+	import { tools_common_before, tools_common_after } from "$lib/paraglide/messages/_barrel.js";
 
 	type Props = {
 		beforeSrc: string;
@@ -72,8 +72,8 @@
 	</div>
 
 	<!-- Labels -->
-	<span class="ba-label ba-label-before">{m['tools_common.before']()}</span>
-	<span class="ba-label ba-label-after">{m['tools_common.after']()}</span>
+	<span class="ba-label ba-label-before">{tools_common_before()}</span>
+	<span class="ba-label ba-label-after">{tools_common_after()}</span>
 </div>
 
 <style>

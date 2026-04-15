@@ -1,26 +1,26 @@
 <script lang="ts">
 	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, FilmIcon, ShieldCheckIcon } from 'lucide-svelte';
-	import { m } from '$lib/paraglide/messages';
+	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge } from "$lib/paraglide/messages/_barrel.js";
 
 	const categories = $derived([
 		{
-			label: m['image_tools.categories.edit'](),
+			label: image_tools_categories_edit(),
 			tools: [
-				{ href: '/image-tools/rotate/', icon: RotateCwIcon, name: m['image_tools.tools.rotate_name'](), desc: m['image_tools.tools.rotate_desc']() },
-				{ href: '/image-tools/crop/', icon: CropIcon, name: m['image_tools.tools.crop_name'](), desc: m['image_tools.tools.crop_desc']() },
-				{ href: '/image-tools/blur/', icon: EyeOffIcon, name: m['image_tools.tools.blur_name'](), desc: m['image_tools.tools.blur_desc']() },
-				{ href: '/image-tools/filters/', icon: SlidersHorizontalIcon, name: m['image_tools.tools.filters_name'](), desc: m['image_tools.tools.filters_desc']() },
-				{ href: '/image-tools/watermark/', icon: DropletIcon, name: m['image_tools.tools.watermark_name'](), desc: m['image_tools.tools.watermark_desc']() },
+				{ href: '/image-tools/rotate/', icon: RotateCwIcon, name: image_tools_tools_rotate_name(), desc: image_tools_tools_rotate_desc() },
+				{ href: '/image-tools/crop/', icon: CropIcon, name: image_tools_tools_crop_name(), desc: image_tools_tools_crop_desc() },
+				{ href: '/image-tools/blur/', icon: EyeOffIcon, name: image_tools_tools_blur_name(), desc: image_tools_tools_blur_desc() },
+				{ href: '/image-tools/filters/', icon: SlidersHorizontalIcon, name: image_tools_tools_filters_name(), desc: image_tools_tools_filters_desc() },
+				{ href: '/image-tools/watermark/', icon: DropletIcon, name: image_tools_tools_watermark_name(), desc: image_tools_tools_watermark_desc() },
 			],
 		},
 		{
-			label: m['image_tools.categories.create'](),
+			label: image_tools_categories_create(),
 			tools: [
-				{ href: '/image-tools/meme/', icon: SmileIcon, name: m['image_tools.tools.meme_name'](), desc: m['image_tools.tools.meme_desc']() },
-				{ href: '/image-tools/qr/', icon: QrCodeIcon, name: m['image_tools.tools.qr_name'](), desc: m['image_tools.tools.qr_desc']() },
-				{ href: '/image-tools/batch/', icon: LayersIcon, name: m['image_tools.tools.batch_name'](), desc: m['image_tools.tools.batch_desc']() },
-				{ href: '/image-tools/color-picker/', icon: PipetteIcon, name: m['image_tools.tools.color_picker_name'](), desc: m['image_tools.tools.color_picker_desc']() },
-				{ href: '/image-tools/video-to-gif/', icon: FilmIcon, name: m['image_tools.tools.video_to_gif_name'](), desc: m['image_tools.tools.video_to_gif_desc']() },
+				{ href: '/image-tools/meme/', icon: SmileIcon, name: image_tools_tools_meme_name(), desc: image_tools_tools_meme_desc() },
+				{ href: '/image-tools/qr/', icon: QrCodeIcon, name: image_tools_tools_qr_name(), desc: image_tools_tools_qr_desc() },
+				{ href: '/image-tools/batch/', icon: LayersIcon, name: image_tools_tools_batch_name(), desc: image_tools_tools_batch_desc() },
+				{ href: '/image-tools/color-picker/', icon: PipetteIcon, name: image_tools_tools_color_picker_name(), desc: image_tools_tools_color_picker_desc() },
+				{ href: '/image-tools/video-to-gif/', icon: FilmIcon, name: image_tools_tools_video_to_gif_name(), desc: image_tools_tools_video_to_gif_desc() },
 			],
 		},
 	]);
@@ -54,15 +54,15 @@
 			<ImageIcon size={28} />
 		</div>
 		<div class="flex items-center gap-3">
-			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{m['image_tools.title']()}</h1>
+			<h1 class="text-4xl md:text-5xl font-display tracking-tight">{image_tools_title()}</h1>
 			<span class="tool-count tool-count--blue">10</span>
 		</div>
 		<p class="text-lg max-w-xl" style="color: var(--fg-muted)">
-			{m['image_tools.subtitle']()}
+			{image_tools_subtitle()}
 		</p>
 		<div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style="background: var(--bg-badge); color: var(--fg-on-badge)">
 			<ShieldCheckIcon size={14} />
-			{m['image_tools.badge']()}
+			{image_tools_badge()}
 		</div>
 	</div>
 
