@@ -77,7 +77,7 @@
 </script>
 
 <svelte:head>
-	<title>Edit PDF Metadata — LocalConvert</title>
+	<title>{tool_pages_metadata_title()} — LocalConvert</title>
 	<meta name="description" content="View and edit PDF metadata — title, author, subject, keywords. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/metadata/" />
 	<meta property="og:title" content="Edit PDF Metadata — LocalConvert" />

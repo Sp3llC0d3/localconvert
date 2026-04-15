@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page_titles_formats } from '$lib/paraglide/messages/_barrel.js';
 	import { allFormats, categoryMeta, formatMap, type FormatEntry } from '$lib/data/format-map';
 	import { Image, AudioLines, Film, BookText, SearchIcon, ChevronDown, ArrowRight, ZapIcon } from 'lucide-svelte';
 
@@ -61,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>Supported Formats — LocalConvert</title>
+	<title>{page_titles_formats()} — LocalConvert</title>
 	<meta name="description" content="Browse all {allFormats.length} file formats supported by LocalConvert. Images, audio, video, and documents — see what converts to what." />
 	<link rel="canonical" href="https://localconvert.app/formats/" />
 	<meta property="og:title" content="Supported Formats — LocalConvert" />

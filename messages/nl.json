@@ -1268,5 +1268,12 @@
 		"no_results": "Geen gereedschap gevonden",
 		"converter_name": "Bestandsconverter",
 		"converter_desc": "Converteer 200+ formaten"
+	},
+	"page_titles": {
+		"home": "Gratis, privé toolkit voor bestanden en code",
+		"convert": "Bestanden converteren",
+		"formats": "Ondersteunde formaten",
+		"not_found": "Pagina niet gevonden",
+		"error": "Fout"
 	}
 }

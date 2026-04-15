@@ -111,7 +111,7 @@
 </script>
 
 <svelte:head>
-	<title>Watermark Image — LocalConvert</title>
+	<title>{tool_pages_watermark_image_title()} — LocalConvert</title>
 	<meta name="description" content="Add text watermarks to images. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/watermark/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({

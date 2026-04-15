@@ -81,7 +81,7 @@
 </script>
 
 <svelte:head>
-	<title>Organize PDF Pages — LocalConvert</title>
+	<title>{tool_pages_organize_title()} — LocalConvert</title>
 	<meta name="description" content="Drag and drop to reorder PDF pages. Delete unwanted pages. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/organize/" />
 	<meta property="og:title" content="Organize PDF Pages — LocalConvert" />

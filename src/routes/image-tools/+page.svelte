@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Image Tools — LocalConvert</title>
+	<title>{image_tools_title()} — LocalConvert</title>
 	<meta name="description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/" />
 	<meta property="og:title" content="Image Tools — LocalConvert" />

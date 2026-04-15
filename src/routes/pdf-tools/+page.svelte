@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>PDF Tools — LocalConvert</title>
+	<title>{pdf_tools_title()} — LocalConvert</title>
 	<meta name="description" content="Free online PDF tools that run entirely in your browser. Merge, split, rotate, compress, and convert PDFs — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/" />
 	<meta property="og:title" content="PDF Tools — LocalConvert" />

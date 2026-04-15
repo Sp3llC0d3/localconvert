@@ -1268,5 +1268,12 @@
 		"no_results": "未找到工具",
 		"converter_name": "檔案轉換器",
 		"converter_desc": "轉換 200+ 種格式"
+	},
+	"page_titles": {
+		"home": "免費、私密的檔案和程式碼工具箱",
+		"convert": "轉換檔案",
+		"formats": "支援的格式",
+		"not_found": "找不到頁面",
+		"error": "錯誤"
 	}
 }

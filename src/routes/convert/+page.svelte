@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page_titles_convert } from '$lib/paraglide/messages/_barrel.js';
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import FormatDropdown from "$lib/components/functional/FormatDropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
@@ -176,7 +177,7 @@
 </script>
 
 <svelte:head>
-	<title>Convert Files — LocalConvert</title>
+	<title>{page_titles_convert()} — LocalConvert</title>
 	<meta name="description" content="Convert images, audio, video, and documents directly in your browser. 200+ format conversions — free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/convert/" />
 	<meta property="og:title" content="Convert Files — LocalConvert" />

@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>About — LocalConvert</title>
+	<title>{about_title()} — LocalConvert</title>
 	<meta name="description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/about/" />
 	<meta property="og:title" content="About — LocalConvert" />

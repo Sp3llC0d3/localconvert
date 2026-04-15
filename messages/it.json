@@ -1268,5 +1268,12 @@
 		"no_results": "Nessuno strumento trovato",
 		"converter_name": "Convertitore file",
 		"converter_desc": "Converti oltre 200 formati"
+	},
+	"page_titles": {
+		"home": "Toolkit gratuito e privato per file e codice",
+		"convert": "Converti file",
+		"formats": "Formati supportati",
+		"not_found": "Pagina non trovata",
+		"error": "Errore"
 	}
 }

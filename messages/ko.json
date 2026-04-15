@@ -1268,5 +1268,12 @@
 		"no_results": "도구를 찾을 수 없습니다",
 		"converter_name": "파일 변환기",
 		"converter_desc": "200개 이상의 형식 변환"
+	},
+	"page_titles": {
+		"home": "파일과 코드를 위한 무료 프라이빗 툴킷",
+		"convert": "파일 변환",
+		"formats": "지원 형식",
+		"not_found": "페이지를 찾을 수 없습니다",
+		"error": "오류"
 	}
 }

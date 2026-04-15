@@ -243,7 +243,7 @@
 </script>
 
 <svelte:head>
-	<title>Crop PDF — LocalConvert</title>
+	<title>{tool_pages_crop_pdf_title()} — LocalConvert</title>
 	<meta name="description" content="Crop PDF margins with draggable handles. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/crop/" />
 	<meta property="og:title" content="Crop PDF — LocalConvert" />

@@ -201,7 +201,7 @@
 </script>
 
 <svelte:head>
-	<title>Add Page Numbers to PDF — LocalConvert</title>
+	<title>{tool_pages_page_numbers_title()} — LocalConvert</title>
 	<meta name="description" content="Add page numbers to any PDF file. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/page-numbers/" />
 	<meta property="og:title" content="Add Page Numbers to PDF — LocalConvert" />

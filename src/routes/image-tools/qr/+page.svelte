@@ -73,7 +73,7 @@
 </script>
 
 <svelte:head>
-	<title>QR Code Generator — LocalConvert</title>
+	<title>{tool_pages_qr_title()} — LocalConvert</title>
 	<meta name="description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/qr/" />
 	<meta property="og:title" content="QR Code Generator — LocalConvert" />

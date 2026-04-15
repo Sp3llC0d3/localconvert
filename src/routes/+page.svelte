@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page_titles_home } from '$lib/paraglide/messages/_barrel.js';
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
 	import { Check, ShieldCheck, Code, Ban, ChevronDown, FileText, Palette, Wrench, ZapIcon } from "lucide-svelte";
@@ -100,7 +101,7 @@
 </script>
 
 <svelte:head>
-	<title>LocalConvert — Free, Private Toolkit for Files & Code</title>
+	<title>LocalConvert — {page_titles_home()}</title>
 	<meta name="description" content="39 free tools for PDFs, images, and code — all running in your browser. No uploads, no server, no signup. Works offline." />
 	<link rel="canonical" href="https://localconvert.app/" />
 	<meta property="og:title" content="LocalConvert — Free, Private Toolkit for Files & Code" />

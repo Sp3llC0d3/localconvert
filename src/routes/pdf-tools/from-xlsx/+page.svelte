@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>Excel to PDF — LocalConvert</title>
+	<title>{tool_pages_from_xlsx_title()} — LocalConvert</title>
 	<meta name="description" content="Convert Excel spreadsheets (XLSX, XLS, ODS, CSV) to PDF. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-xlsx/" />
 	<meta property="og:title" content="Excel to PDF — LocalConvert" />

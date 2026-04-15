@@ -254,7 +254,7 @@
 </script>
 
 <svelte:head>
-	<title>Edit PDF — LocalConvert</title>
+	<title>{tool_pages_edit_title()} — LocalConvert</title>
 	<meta name="description" content="Click anywhere on a PDF page to add text. Drag to reposition. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/edit/" />
 	<meta property="og:title" content="Edit PDF — LocalConvert" />

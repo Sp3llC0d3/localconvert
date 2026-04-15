@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>PDF to Text — LocalConvert</title>
+	<title>{tool_pages_pdf_to_text_title()} — LocalConvert</title>
 	<meta name="description" content="Extract text from any PDF file. Copy or download as .txt. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-text/" />
 	<meta property="og:title" content="PDF to Text — LocalConvert" />

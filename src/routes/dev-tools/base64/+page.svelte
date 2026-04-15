@@ -68,7 +68,7 @@
 </script>
 
 <svelte:head>
-	<title>Base64 Encode / Decode — LocalConvert</title>
+	<title>{tool_pages_base64_title()} — LocalConvert</title>
 	<meta name="description" content="Encode and decode Base64 strings. Convert files to Base64. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/base64/" />
 	<meta property="og:title" content="Base64 Encode / Decode — LocalConvert" />

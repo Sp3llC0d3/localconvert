@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>Markdown Preview — LocalConvert</title>
+	<title>{tool_pages_markdown_title()} — LocalConvert</title>
 	<meta name="description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/markdown/" />
 	<meta property="og:title" content="Markdown Preview — LocalConvert" />

@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<title>Word to PDF — LocalConvert</title>
+	<title>{tool_pages_from_docx_title()} — LocalConvert</title>
 	<meta name="description" content="Convert Word documents (DOCX, DOC) to PDF. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-docx/" />
 	<meta property="og:title" content="Word to PDF — LocalConvert" />

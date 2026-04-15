@@ -84,7 +84,7 @@
 </script>
 
 <svelte:head>
-	<title>Split PDF — LocalConvert</title>
+	<title>{tool_pages_split_title()} — LocalConvert</title>
 	<meta name="description" content="Split a PDF into individual pages or extract a page range. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/split/" />
 	<meta property="og:title" content="Split PDF — LocalConvert" />

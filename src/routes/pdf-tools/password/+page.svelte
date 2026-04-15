@@ -59,7 +59,7 @@
 </script>
 
 <svelte:head>
-	<title>Password Protect PDF — LocalConvert</title>
+	<title>{tool_pages_password_title()} — LocalConvert</title>
 	<meta name="description" content="Add password protection to any PDF. Set permissions for printing, copying, and editing. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/password/" />
 	<meta property="og:title" content="Password Protect PDF — LocalConvert" />

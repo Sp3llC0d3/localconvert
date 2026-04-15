@@ -94,7 +94,7 @@
 </script>
 
 <svelte:head>
-	<title>Image Filters — LocalConvert</title>
+	<title>{tool_pages_filters_title()} — LocalConvert</title>
 	<meta name="description" content="Adjust brightness, contrast, saturation, sepia, and hue of any image. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/filters/" />
 	<meta property="og:title" content="Image Filters — LocalConvert" />

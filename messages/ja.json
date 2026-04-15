@@ -1268,5 +1268,12 @@
 		"no_results": "ツールが見つかりません",
 		"converter_name": "ファイルコンバーター",
 		"converter_desc": "200以上の形式を変換"
+	},
+	"page_titles": {
+		"home": "ファイルとコードのための無料プライベートツールキット",
+		"convert": "ファイルを変換",
+		"formats": "対応フォーマット",
+		"not_found": "ページが見つかりません",
+		"error": "エラー"
 	}
 }

@@ -263,7 +263,7 @@
 </script>
 
 <svelte:head>
-	<title>Crop Image — LocalConvert</title>
+	<title>{tool_pages_crop_image_title()} — LocalConvert</title>
 	<meta name="description" content="Crop images with interactive handles. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/crop/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({

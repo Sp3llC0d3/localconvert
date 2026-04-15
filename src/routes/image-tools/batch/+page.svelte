@@ -107,7 +107,7 @@
 </script>
 
 <svelte:head>
-	<title>Batch Image Processing — LocalConvert</title>
+	<title>{tool_pages_batch_title()} — LocalConvert</title>
 	<meta name="description" content="Apply the same operation to multiple images at once. Rotate or watermark in bulk. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/batch/" />
 	<meta property="og:title" content="Batch Image Processing — LocalConvert" />

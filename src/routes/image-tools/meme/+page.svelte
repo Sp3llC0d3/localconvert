@@ -103,7 +103,7 @@
 </script>
 
 <svelte:head>
-	<title>Meme Generator — LocalConvert</title>
+	<title>{tool_pages_meme_title()} — LocalConvert</title>
 	<meta name="description" content="Create memes with custom top and bottom text. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/meme/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({

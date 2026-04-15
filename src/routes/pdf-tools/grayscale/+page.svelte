@@ -82,7 +82,7 @@
 </script>
 
 <svelte:head>
-	<title>PDF to Grayscale — LocalConvert</title>
+	<title>{tool_pages_grayscale_title()} — LocalConvert</title>
 	<meta name="description" content="Convert PDF pages to black and white. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/grayscale/" />
 	<meta property="og:title" content="PDF to Grayscale — LocalConvert" />

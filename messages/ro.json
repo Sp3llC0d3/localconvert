@@ -1268,5 +1268,12 @@
 		"no_results": "Nu au fost găsite instrumente",
 		"converter_name": "Convertor de fișiere",
 		"converter_desc": "Convertește peste 200 de formate"
+	},
+	"page_titles": {
+		"home": "Set de instrumente gratuit și privat pentru fișiere și cod",
+		"convert": "Convertește fișiere",
+		"formats": "Formate suportate",
+		"not_found": "Pagina nu a fost găsită",
+		"error": "Eroare"
 	}
 }

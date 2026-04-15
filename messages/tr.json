@@ -1268,5 +1268,12 @@
 		"no_results": "Araç bulunamadı",
 		"converter_name": "Dosya Dönüştürücü",
 		"converter_desc": "200+ format dönüştür"
+	},
+	"page_titles": {
+		"home": "Dosyalar ve kod için ücretsiz, özel araç seti",
+		"convert": "Dosyaları dönüştür",
+		"formats": "Desteklenen formatlar",
+		"not_found": "Sayfa bulunamadı",
+		"error": "Hata"
 	}
 }

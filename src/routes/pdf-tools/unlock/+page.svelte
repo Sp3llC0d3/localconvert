@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-	<title>Unlock PDF — LocalConvert</title>
+	<title>{tool_pages_unlock_title()} — LocalConvert</title>
 	<meta name="description" content="Remove password protection from PDF files. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/unlock/" />
 	<meta property="og:title" content="Unlock PDF — LocalConvert" />

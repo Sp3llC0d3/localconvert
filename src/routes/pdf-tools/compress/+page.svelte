@@ -87,7 +87,7 @@
 </script>
 
 <svelte:head>
-	<title>Compress PDF — LocalConvert</title>
+	<title>{tool_pages_compress_title()} — LocalConvert</title>
 	<meta name="description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/compress/" />
 	<meta property="og:title" content="Compress PDF — LocalConvert" />

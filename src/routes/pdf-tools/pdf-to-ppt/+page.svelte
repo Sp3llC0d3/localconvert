@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>PDF to PowerPoint — LocalConvert</title>
+	<title>{tool_pages_pdf_to_ppt_title()} — LocalConvert</title>
 	<meta name="description" content="Convert PDF to PowerPoint presentation. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-ppt/" />
 	<meta property="og:title" content="PDF to PowerPoint — LocalConvert" />

@@ -60,7 +60,7 @@
 </script>
 
 <svelte:head>
-	<title>Text Diff — LocalConvert</title>
+	<title>{tool_pages_diff_title()} — LocalConvert</title>
 	<meta name="description" content="Compare two texts and see the differences highlighted. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/diff/" />
 	<meta property="og:title" content="Text Diff — LocalConvert" />

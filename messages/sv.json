@@ -1268,5 +1268,12 @@
 		"no_results": "Inga verktyg hittades",
 		"converter_name": "Filkonverterare",
 		"converter_desc": "Konvertera 200+ format"
+	},
+	"page_titles": {
+		"home": "Gratis, privat verktygslåda för filer och kod",
+		"convert": "Konvertera filer",
+		"formats": "Format som stöds",
+		"not_found": "Sidan hittades inte",
+		"error": "Fel"
 	}
 }

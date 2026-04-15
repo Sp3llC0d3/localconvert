@@ -1,5 +1,12 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"page_titles": {
+		"home": "Free, Private Toolkit for Files & Code",
+		"convert": "Convert Files",
+		"formats": "Supported Formats",
+		"not_found": "Page Not Found",
+		"error": "Error"
+	},
 	"navbar": {
 		"home": "Home",
 		"convert": "Convert",

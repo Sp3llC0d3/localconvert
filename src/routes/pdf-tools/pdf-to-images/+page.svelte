@@ -54,7 +54,7 @@
 </script>
 
 <svelte:head>
-	<title>PDF to Images — LocalConvert</title>
+	<title>{tool_pages_pdf_to_images_title()} — LocalConvert</title>
 	<meta name="description" content="Export each PDF page as a JPG or PNG image. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-images/" />
 	<meta property="og:title" content="PDF to Images — LocalConvert" />

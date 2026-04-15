@@ -2,10 +2,11 @@
 	import { page } from "$app/state";
 	import error404 from "$lib/assets/errors/error-404.png";
 	import errorConversion from "$lib/assets/errors/error-conversion.png";
+	import { page_titles_not_found, page_titles_error } from "$lib/paraglide/messages/_barrel.js";
 </script>
 
 <svelte:head>
-	<title>{page.status === 404 ? "Page Not Found" : "Error"} — LocalConvert</title>
+	<title>{page.status === 404 ? page_titles_not_found() : page_titles_error()} — LocalConvert</title>
 </svelte:head>
 
 <div class="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center gap-6 py-16">

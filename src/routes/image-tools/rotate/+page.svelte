@@ -81,7 +81,7 @@
 </script>
 
 <svelte:head>
-	<title>Rotate Image — LocalConvert</title>
+	<title>{tool_pages_rotate_image_title()} — LocalConvert</title>
 	<meta name="description" content="Rotate images 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/rotate/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({

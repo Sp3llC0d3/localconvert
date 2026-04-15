@@ -288,7 +288,7 @@
 <svelte:window onkeydown={onKeyDown} />
 
 <svelte:head>
-	<title>Sign PDF — LocalConvert</title>
+	<title>{tool_pages_sign_title()} — LocalConvert</title>
 	<meta name="description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/sign/" />
 	<meta property="og:title" content="Sign PDF — LocalConvert" />

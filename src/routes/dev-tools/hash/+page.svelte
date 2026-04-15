@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-	<title>Hash Generator — LocalConvert</title>
+	<title>{tool_pages_hash_generator_title()} — LocalConvert</title>
 	<meta name="description" content="Generate SHA-256, SHA-1, SHA-512 hashes for text or files. Free, private, runs in your browser." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/hash/" />
 	<meta property="og:title" content="Hash Generator — LocalConvert" />

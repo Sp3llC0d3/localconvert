@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Developer Tools — LocalConvert</title>
+	<title>{dev_tools_title()} — LocalConvert</title>
 	<meta name="description" content="Free browser-based developer tools. JSON formatter, hash generator, Base64 encoder. No uploads, no server." />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/" />
 	<meta property="og:title" content="Developer Tools — LocalConvert" />

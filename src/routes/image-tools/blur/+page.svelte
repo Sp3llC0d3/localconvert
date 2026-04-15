@@ -325,7 +325,7 @@
 </script>
 
 <svelte:head>
-	<title>Blur Region — LocalConvert</title>
+	<title>{tool_pages_blur_title()} — LocalConvert</title>
 	<meta name="description" content="Blur regions of any image for privacy. Rectangle or ellipse shapes, multiple regions, adjustable strength. Free, private, no uploads." />
 	<link rel="canonical" href="https://localconvert.app/image-tools/blur/" />
 	<meta property="og:title" content="Blur Region — LocalConvert" />
