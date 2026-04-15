@@ -137,7 +137,7 @@
 	.diff-line.same { background: var(--bg-panel); }
 	.diff-line.add { background: hsla(140, 60%, 40%, 0.15); }
 	.diff-line.remove { background: hsla(0, 60%, 45%, 0.15); }
-	.line-num { width: 2rem; color: var(--fg-muted); text-align: right; margin-right: 0.5rem; flex-shrink: 0; }
+	.line-num { width: 2rem; color: var(--fg-muted); text-align: end; margin-inline-end: 0.5rem; flex-shrink: 0; }
 	.line-prefix { width: 1rem; font-weight: bold; flex-shrink: 0; }
 	.diff-line.add .line-prefix { color: hsl(140, 60%, 40%); }
 	.diff-line.remove .line-prefix { color: hsl(0, 60%, 45%); }

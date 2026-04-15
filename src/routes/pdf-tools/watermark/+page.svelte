@@ -233,11 +233,11 @@
 			{#if pageCount > 1}
 				<div class="page-nav">
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label={aria_previous_page()}>
-						<ChevronLeftIcon size={16} />
+						<ChevronLeftIcon size={16} class="icon-flip" />
 					</button>
 					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label={aria_next_page()}>
-						<ChevronRightIcon size={16} />
+						<ChevronRightIcon size={16} class="icon-flip" />
 					</button>
 				</div>
 			{/if}
@@ -334,7 +334,7 @@
 	.opt-input { border-radius: 0.5rem; padding: 0.375rem 0.75rem; font-size: 0.875rem; border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg); flex: 1; }
 	.opt-input:focus { outline: 1.5px solid var(--accent); }
 	.slider { height: 6px; appearance: none; border-radius: 9999px; cursor: pointer; background: var(--bg-separator); accent-color: var(--accent); }
-	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: right; flex-shrink: 0; }
+	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: end; flex-shrink: 0; }
 	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.preview-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 	.preview-canvas { max-width: 100%; max-height: 28rem; border-radius: 0.5rem; box-shadow: var(--shadow-panel); }

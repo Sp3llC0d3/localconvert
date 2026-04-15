@@ -16,6 +16,6 @@
 		class="inline-flex items-center gap-1.5 text-sm font-semibold underline underline-offset-2"
 	>
 		{convert_errors_pdf_redirect_button()}
-		<ArrowRightIcon size="14" />
+		<ArrowRightIcon size="14" class="icon-flip" />
 	</a>
 </div>

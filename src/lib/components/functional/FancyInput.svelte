@@ -33,18 +33,18 @@
 		{placeholder}
 		{disabled}
 		class="w-full p-3 rounded-lg bg-panel border-2 border-button
-            {prefix ? 'pl-[2rem]' : 'pl-3'} 
-            {extension ? 'pr-[4rem]' : 'pr-3'}
+            {prefix ? 'ps-[2rem]' : 'ps-3'}
+            {extension ? 'pe-[4rem]' : 'pe-3'}
 			{disabled && 'opacity-50 cursor-not-allowed'}"
 	/>
 	{#if prefix}
-		<div class="absolute left-0 top-0 bottom-0 flex items-center px-2">
+		<div class="absolute start-0 top-0 bottom-0 flex items-center px-2">
 			<span class="text-sm text-gray-400 px-2 py-1 rounded">{prefix}</span
 			>
 		</div>
 	{/if}
 	{#if extension}
-		<div class="absolute right-0 top-0 bottom-0 flex items-center px-4">
+		<div class="absolute end-0 top-0 bottom-0 flex items-center px-4">
 			<span
 				class="text-sm bg-button text-black dynadark:text-white px-2 py-1 rounded"
 				>{extension}</span

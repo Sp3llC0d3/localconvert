@@ -181,7 +181,7 @@
 		.palette {
 			top: auto;
 			bottom: 0;
-			left: 0;
+			inset-inline-start: 0;
 			transform: none;
 			width: 100vw;
 			border-radius: 1rem 1rem 0 0;
@@ -268,7 +268,7 @@
 		border: none;
 		background: none;
 		cursor: pointer;
-		text-align: left;
+		text-align: start;
 		transition: background 0.1s;
 		color: var(--fg);
 	}

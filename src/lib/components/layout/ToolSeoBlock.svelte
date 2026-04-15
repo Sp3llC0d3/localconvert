@@ -117,7 +117,7 @@
 
 	.seo-steps {
 		margin: 0.5rem 0 0;
-		padding-left: 1.25rem;
+		padding-inline-start: 1.25rem;
 	}
 
 	.seo-steps li {
@@ -126,7 +126,7 @@
 
 	.seo-list {
 		margin: 0.5rem 0 0;
-		padding-left: 1.25rem;
+		padding-inline-start: 1.25rem;
 		list-style: disc;
 	}
 

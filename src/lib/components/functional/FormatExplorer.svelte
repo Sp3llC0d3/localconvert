@@ -154,7 +154,7 @@
 		<div class="explorer-flow" class:explorer-flow--active={selectedFormat}>
 			<div class="explorer-flow-line" style="--flow-color: var(--accent-{selectedColor})"></div>
 			<div class="explorer-flow-arrow" style="--flow-color: var(--accent-{selectedColor})">
-				<ArrowRight size={16} />
+				<ArrowRight size={16} class="icon-flip" />
 			</div>
 		</div>
 
@@ -375,7 +375,7 @@
 		.explorer-input {
 			width: 11rem;
 			border-bottom: none;
-			border-right: 1px solid var(--bg-separator);
+			border-inline-end: 1px solid var(--bg-separator);
 		}
 	}
 
@@ -487,7 +487,7 @@
 		color: var(--fg-muted);
 		cursor: pointer;
 		transition: background 0.15s ease;
-		text-align: left;
+		text-align: start;
 		white-space: nowrap;
 	}
 

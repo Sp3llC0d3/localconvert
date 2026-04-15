@@ -32,8 +32,8 @@
 	}
 
 	@keyframes indeterminate {
-		0%   { left: -40%; }
-		60%  { left: 100%; }
-		100% { left: 100%; }
+		0%   { inset-inline-start: -40%; }
+		60%  { inset-inline-start: 100%; }
+		100% { inset-inline-start: 100%; }
 	}
 </style>

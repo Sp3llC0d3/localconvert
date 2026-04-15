@@ -84,7 +84,7 @@
 						easing: quintOut,
 					}}
 					class="col-start-1 row-start-1 {settingsStyle
-						? 'text-left'
+						? 'text-start'
 						: 'text-center'} font-body {settingsStyle
 						? 'font-normal'
 						: 'font-medium'}"
@@ -101,7 +101,7 @@
 			{/each}
 		</div>
 		<ChevronDown
-			class="w-4 h-4 ml-3 mt-0.5 flex-shrink-0"
+			class="w-4 h-4 ms-3 mt-0.5 flex-shrink-0"
 			style="transform: rotate({open
 				? 180
 				: 0}deg); transition: transform {duration}ms {transition};"
@@ -114,11 +114,11 @@
 				duration,
 				easing: quintOut,
 			}}
-			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 left-0 z-50 bg-background rounded-xl max-h-[30vh] overflow-y-auto"
+			class="w-full shadow-xl bg-panel-alt shadow-black/25 absolute overflow-hidden top-full mt-1 start-0 z-50 bg-background rounded-xl max-h-[30vh] overflow-y-auto"
 		>
 			{#each options as option}
 				<button
-					class="w-full p-2 px-4 text-left hover:bg-panel"
+					class="w-full p-2 px-4 text-start hover:bg-panel"
 					onclick={() => select(option)}
 				>
 					{option}

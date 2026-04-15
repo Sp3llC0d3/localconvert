@@ -104,7 +104,7 @@
 				{copied ? tool_pages_pdf_to_text_copied() : tool_pages_json_formatter_btn_copy()}
 			</button>
 		{/if}
-		<div class="flex items-center gap-2 ml-auto">
+		<div class="flex items-center gap-2 ms-auto">
 			<span class="text-xs text-muted">{tool_pages_json_formatter_indent()}</span>
 			{#each [2, 4] as n}
 				<button class="btn text-xs px-2 py-1 {indent === n ? 'highlight' : ''}" onclick={() => indent = n}>{n}</button>

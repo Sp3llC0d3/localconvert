@@ -131,7 +131,7 @@
 	<ImageUploader bind:files label={tools_common_upload_image()} />
 
 	{#if imgEl}
-		<div class="canvas-wrap">
+		<div class="canvas-wrap" dir="ltr">
 			<canvas
 				bind:this={canvasEl}
 				class="picker-canvas"

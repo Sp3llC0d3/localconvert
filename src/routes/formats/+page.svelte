@@ -165,7 +165,7 @@
 							<div class="fmt-card-body">
 								<div class="fmt-card-flow">
 									<span class="fmt-card-from" style="background: var(--accent-{meta.color})">{fmt.displayName}</span>
-									<ArrowRight size={12} class="fmt-card-flow-arrow" />
+									<ArrowRight size={12} class="fmt-card-flow-arrow icon-flip" />
 								</div>
 								<div class="fmt-card-outputs">
 									{#each fmt.outputFormats as outName, i}
@@ -403,7 +403,7 @@
 		background: none;
 		cursor: pointer;
 		color: var(--fg);
-		text-align: left;
+		text-align: start;
 		transition: background 0.1s ease;
 	}
 
@@ -425,7 +425,7 @@
 		border-radius: 4px;
 		background: var(--bg-panel-highlight);
 		color: var(--fg-muted);
-		margin-left: auto;
+		margin-inline-start: auto;
 		white-space: nowrap;
 	}
 

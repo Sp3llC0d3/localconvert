@@ -309,7 +309,7 @@
 		</div>
 
 		<!-- Crop workspace -->
-		<div class="crop-workspace">
+		<div class="crop-workspace" dir="ltr">
 			<div
 				bind:this={containerEl}
 				class="crop-container"

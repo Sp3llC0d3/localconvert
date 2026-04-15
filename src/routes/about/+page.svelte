@@ -89,7 +89,7 @@
 					<span class="about-tool-name">{landing_toolkit_pdf_title()}</span>
 					<span class="about-tool-count">{landing_toolkit_pdf_count()}</span>
 				</div>
-				<ArrowRight size={14} class="about-tool-arrow" />
+				<ArrowRight size={14} class="about-tool-arrow icon-flip" />
 			</a>
 			<a href={localizeHref("/image-tools/")} class="about-tool-card" style="--tool-color: var(--accent-blue)">
 				<ImageIcon size={20} />
@@ -97,7 +97,7 @@
 					<span class="about-tool-name">{landing_toolkit_image_title()}</span>
 					<span class="about-tool-count">{landing_toolkit_image_count()}</span>
 				</div>
-				<ArrowRight size={14} class="about-tool-arrow" />
+				<ArrowRight size={14} class="about-tool-arrow icon-flip" />
 			</a>
 			<a href={localizeHref("/dev-tools/")} class="about-tool-card" style="--tool-color: var(--accent-purple)">
 				<CodeIcon size={20} />
@@ -105,7 +105,7 @@
 					<span class="about-tool-name">{landing_toolkit_dev_title()}</span>
 					<span class="about-tool-count">{landing_toolkit_dev_count()}</span>
 				</div>
-				<ArrowRight size={14} class="about-tool-arrow" />
+				<ArrowRight size={14} class="about-tool-arrow icon-flip" />
 			</a>
 		</div>
 	</section>
@@ -192,7 +192,7 @@
 			<a href={localizeHref("/privacy/")} class="about-link">
 				<ShieldIcon size={18} />
 				<span>{about_links_privacy_policy()}</span>
-				<ArrowRight size={12} class="about-link-ext" />
+				<ArrowRight size={12} class="about-link-ext icon-flip" />
 			</a>
 		</div>
 	</section>

@@ -183,7 +183,7 @@
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 4rem; flex-shrink: 0; }
 	.slider { height: 6px; appearance: none; border-radius: 9999px; cursor: pointer; background: var(--bg-separator); accent-color: var(--accent); }
-	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: right; flex-shrink: 0; }
+	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: end; flex-shrink: 0; }
 	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.compare-section { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 	.compare-toggle { display: flex; gap: 0.25rem; padding: 0.25rem; border-radius: 0.5rem; background: var(--bg-panel-alt); }

@@ -54,7 +54,7 @@
 </script>
 
 <div
-	class="flex flex-col max-w-[100%] md:max-w-md p-4 gap-2 bg-accent-{color} border-accent-{color}-alt border-l-4 rounded-lg shadow-md"
+	class="flex flex-col max-w-[100%] md:max-w-md p-4 gap-2 bg-accent-{color} border-accent-{color}-alt border-s-4 rounded-lg shadow-md"
 	in:fly={{
 		duration: durations.enter,
 		easing: quintOut,

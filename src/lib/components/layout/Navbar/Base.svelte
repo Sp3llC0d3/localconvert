@@ -284,7 +284,7 @@
 						<Icon size={20} />
 						{#if item.badge}
 							<div
-								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1.5 font-display -right-2 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
+								class="absolute overflow-hidden grid grid-rows-1 grid-cols-1 -top-1.5 font-display -end-2 w-fit px-1.5 h-4 rounded-full bg-badge text-on-badge font-medium"
 								style="font-size: 0.65rem;"
 								transition:fade={{ duration, easing: quintOut }}
 							>
@@ -614,7 +614,7 @@
 		position: absolute;
 		z-index: 50;
 		bottom: calc(100% + 0.5rem);
-		right: 0;
+		inset-inline-end: 0;
 		background: var(--bg-panel);
 		border: 1px solid var(--bg-separator);
 		border-radius: 0.75rem;

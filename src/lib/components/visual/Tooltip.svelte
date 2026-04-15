@@ -129,7 +129,7 @@
 
 	.tooltip-top::before {
 		border-width: calc(var(--border-size) + 8px);
-		margin-left: calc(-1 * (var(--border-size) + 8px));
+		margin-inline-start: calc(-1 * (var(--border-size) + 8px));
 		@apply content-[""] absolute top-full left-1/2 border-x-transparent border-b-transparent border-t-inherit;
 	}
 
@@ -138,12 +138,12 @@
 	}
 
 	.tooltip-bottom::after {
-		@apply content-[""] absolute bottom-full left-1/2 -ml-2 border-8 border-x-transparent border-t-transparent;
+		@apply content-[""] absolute bottom-full left-1/2 -ms-2 border-8 border-x-transparent border-t-transparent;
 	}
 
 	.tooltip-bottom::before {
 		border-width: calc(var(--border-size) + 8px);
-		margin-left: calc(-1 * (var(--border-size) + 8px));
+		margin-inline-start: calc(-1 * (var(--border-size) + 8px));
 		@apply content-[""] absolute bottom-full left-1/2 border-x-transparent border-t-transparent border-b-inherit;
 	}
 
@@ -160,12 +160,12 @@
 	}
 
 	.tooltip-right::after {
-		margin-right: -2px;
+		margin-inline-end: -2px;
 		@apply content-[""] absolute top-1/2 right-full -mt-2 border-8 border-y-transparent border-l-transparent;
 	}
 
 	.tooltip-right::before {
-		margin-right: -2px;
+		margin-inline-end: -2px;
 		border-width: calc(var(--border-size) + 8px);
 		margin-top: calc(-1 * (var(--border-size) + 8px));
 		@apply content-[""] absolute top-1/2 right-full border-y-transparent border-l-transparent border-r-inherit;

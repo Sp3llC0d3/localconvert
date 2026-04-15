@@ -165,7 +165,7 @@
 						? 'selected'
 						: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
-					<CheckIcon size="24" class="inline-block mr-2" />
+					<CheckIcon size="24" class="inline-block me-2" />
 					{settings_conversion_default_format_enable()}
 				</button>
 
@@ -177,7 +177,7 @@
 						? ''
 						: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
-					<XIcon size="24" class="inline-block mr-2" />
+					<XIcon size="24" class="inline-block me-2" />
 					{settings_conversion_default_format_disable()}
 				</button>
 			</div>
@@ -251,7 +251,7 @@
 						? 'selected'
 						: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
-					<CheckIcon size="24" class="inline-block mr-2" />
+					<CheckIcon size="24" class="inline-block me-2" />
 					{settings_conversion_keep()}
 				</button>
 
@@ -263,7 +263,7 @@
 						? ''
 						: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				>
-					<XIcon size="24" class="inline-block mr-2" />
+					<XIcon size="24" class="inline-block me-2" />
 					{settings_conversion_remove()}
 				</button>
 			</div>
@@ -361,7 +361,7 @@
 
 	.fn-segment--toggle {
 		cursor: pointer;
-		text-align: left;
+		text-align: start;
 	}
 
 	.fn-segment--toggle:hover {
@@ -438,7 +438,7 @@
 		color: var(--fg-muted);
 		align-self: flex-end;
 		padding-bottom: 0.55rem;
-		padding-left: 0.15rem;
+		padding-inline-start: 0.15rem;
 	}
 
 	/* ── Preview ── */

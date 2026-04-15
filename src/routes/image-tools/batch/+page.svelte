@@ -260,7 +260,7 @@
 	}
 	.opt-input:focus { outline: 1.5px solid var(--accent); }
 	.slider { height: 6px; appearance: none; border-radius: 9999px; cursor: pointer; background: var(--bg-separator); accent-color: var(--accent); }
-	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: right; flex-shrink: 0; }
+	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: end; flex-shrink: 0; }
 	.file-list { display: flex; flex-direction: column; gap: 0.375rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 	.file-row { display: flex; align-items: center; gap: 0.5rem; }
 	.remove-btn {

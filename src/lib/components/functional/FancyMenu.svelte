@@ -50,7 +50,7 @@
 	{#each links as { name, url } (url)}
 		<a
 			class={clsx(
-				"w-1/2 px-2 ml-1 h-[calc(100%-8px)] mr-1 flex items-center justify-center rounded-xl relative overflow-hidden font-medium",
+				"w-1/2 px-2 ms-1 h-[calc(100%-8px)] me-1 flex items-center justify-center rounded-xl relative overflow-hidden font-medium",
 				{
 					"bg-foreground": $page.url.pathname === url && !browser,
 				},

@@ -17,6 +17,9 @@ I18N_ACCESSIBILITY_PLAN.md
 LOCALE_ROUTING_RESEARCH.md
 LOCALE_ROUTING_PLAN.md
 LOCALE_ROUTING_AUDIT.md
+RTL_RESEARCH.md
+RTL_FIX_PLAN.md
+RTL_AUDIT.md
 
 # Preview/concept pages (local dev only)
 src/routes/logo-preview/

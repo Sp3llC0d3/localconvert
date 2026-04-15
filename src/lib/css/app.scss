@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── RTL support ────────────────────────────────────────────────── */
+
+/* Force LTR on inherently-directional inputs */
+input[type="number"],
+input[type="range"],
+input[type="email"],
+input[type="url"],
+input[type="tel"] {
+	direction: ltr;
+}
+
+/* Code is always LTR */
+code, pre, kbd {
+	direction: ltr;
+	text-align: start;
+}
+
+/* Arabic/Farsi: letter-spacing breaks connected cursive script */
+[dir="rtl"] {
+	letter-spacing: 0 !important;
+	text-decoration-skip-ink: auto;
+}
+
+/* Flip directional icons in RTL */
+[dir="rtl"] .icon-flip {
+	transform: scaleX(-1);
+}
+
+/* ── End RTL support ────────────────────────────────────────────── */
+
 @import "@fontsource/azeret-mono/700.css";
 @import "@fontsource/lexend/400.css";
 @import "@fontsource/lexend/600.css";

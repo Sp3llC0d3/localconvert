@@ -407,7 +407,7 @@
 			{/if}
 		</div>
 		<ChevronDown
-			class="w-4 h-4 ml-3 mt-0.5 flex-shrink-0"
+			class="w-4 h-4 ms-3 mt-0.5 flex-shrink-0"
 			style="transform: rotate({open
 				? 180
 				: 0}deg); transition: transform {duration}ms {transition};"
@@ -431,8 +431,8 @@
 				},
 				!$isMobile && {
 					"-translate-x-1/2 left-1/2": dropdownPosition === "center",
-					"left-0": dropdownPosition === "left",
-					"right-0": dropdownPosition === "right",
+					"start-0": dropdownPosition === "left",
+					"end-0": dropdownPosition === "right",
 				},
 			)}
 		>
@@ -441,7 +441,7 @@
 					<input
 						type="text"
 						placeholder={convert_dropdown_placeholder()}
-						class="flex-grow w-full !pl-11 !pr-3 rounded-lg bg-panel text-foreground"
+						class="flex-grow w-full !ps-11 !pe-3 rounded-lg bg-panel text-foreground"
 						bind:value={searchQuery}
 						oninput={handleSearch}
 						onkeydown={onEnter}
@@ -450,13 +450,13 @@
 						autocomplete="off"
 					/>
 					<span
-						class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center"
+						class="absolute start-4 top-1/2 -translate-y-1/2 flex items-center"
 					>
 						<SearchIcon class="w-4 h-4" />
 					</span>
 					{#if searchQuery}
 						<span
-							class="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-muted"
+							class="absolute end-2 top-1/2 -translate-y-1/2 text-xs text-muted"
 							style="font-size: 0.7rem;"
 						>
 							{filteredData.formats.length}

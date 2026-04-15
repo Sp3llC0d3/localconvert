@@ -13,7 +13,7 @@
 
 <div class="flex flex-col h-full items-center">
 	<h1 class="text-2xl md:text-[40px] tracking-tight md:leading-[72px] leading-tight mb-4 md:mb-6">
-		<ShieldCheckIcon size="40" class="inline-block -mt-2 mr-2" />
+		<ShieldCheckIcon size="40" class="inline-block -mt-2 me-2" />
 		{privacy_title()}
 	</h1>
 

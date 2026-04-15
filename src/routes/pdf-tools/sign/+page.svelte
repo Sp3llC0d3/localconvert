@@ -359,7 +359,7 @@
 				</div>
 			{/if}
 
-			<div class="page-workspace">
+			<div class="page-workspace" dir="ltr">
 				<div
 					bind:this={pageContainer}
 					class="page-container"

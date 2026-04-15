@@ -40,6 +40,7 @@
 <div
 	bind:this={containerEl}
 	class="ba-container"
+	dir="ltr"
 	onmousedown={onDown}
 	onmousemove={onMove}
 	onmouseup={onUp}
@@ -154,6 +155,6 @@
 		pointer-events: none;
 	}
 
-	.ba-label-before { left: 8px; }
-	.ba-label-after { right: 8px; }
+	.ba-label-before { inset-inline-start: 8px; }
+	.ba-label-after { inset-inline-end: 8px; }
 </style>

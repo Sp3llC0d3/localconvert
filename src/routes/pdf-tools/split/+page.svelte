@@ -115,9 +115,9 @@
 				class="btn text-sm px-4 py-2 {mode === 'all' ? 'highlight' : ''}"
 				onclick={() => mode = 'all'}
 			>{tool_pages_split_split_all()}</button>
-			<button class="icon-btn ml-2" onclick={() => { files = []; thumbs = []; selectedPages = new Set(); }}>
+			<button class="icon-btn ms-2" onclick={() => { files = []; thumbs = []; selectedPages = new Set(); }}>
 				<XIcon size={14} />
-				<span class="text-xs ml-1">{tools_common_clear()}</span>
+				<span class="text-xs ms-1">{tools_common_clear()}</span>
 			</button>
 		</div>
 

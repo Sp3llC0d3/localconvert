@@ -266,7 +266,7 @@
 
 	{#if files.length > 0}
 		<!-- Interactive preview -->
-		<div class="preview-wrap" class:hidden={!baseImageData || displayW <= 0}>
+		<div class="preview-wrap" dir="ltr" class:hidden={!baseImageData || displayW <= 0}>
 			<div
 				bind:this={previewContainer}
 				class="preview-container"

@@ -15,7 +15,7 @@
 <Panel class="flex flex-col gap-4 p-6">
 	<h2 class="text-2xl font-bold flex items-center">
 		<div
-			class="rounded-full bg-accent p-2 inline-block mr-3 w-10 h-10 text-on-accent"
+			class="rounded-full bg-accent p-2 inline-block me-3 w-10 h-10 text-on-accent"
 		>
 			<LinkIcon />
 		</div>
@@ -30,7 +30,7 @@
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
-			<GithubIcon size="20" class="inline-block mr-2" />
+			<GithubIcon size="20" class="inline-block me-2" />
 			{about_resources_source()}
 		</a>
 		<a
@@ -41,7 +41,7 @@
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
-			<MailIcon size="20" class="inline-block mr-2" />
+			<MailIcon size="20" class="inline-block me-2" />
 			{about_resources_email()}
 		</a>
 		<a
@@ -50,7 +50,7 @@
 				? ''
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
-			<ShieldIcon size="20" class="inline-block mr-2" />
+			<ShieldIcon size="20" class="inline-block me-2" />
 			{footer_privacy_policy()}
 		</a>
 	</div>

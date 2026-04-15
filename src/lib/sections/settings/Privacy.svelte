@@ -169,7 +169,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				disabled={isLoadingCache}
 			>
-				<RefreshCwIcon size="24" class="inline-block mr-2" />
+				<RefreshCwIcon size="24" class="inline-block me-2" />
 				{settings_privacy_refresh_cache()}
 			</button>
 			<button
@@ -179,7 +179,7 @@
 					: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 				disabled={isLoadingCache}
 			>
-				<Trash2Icon size="24" class="inline-block mr-2" />
+				<Trash2Icon size="24" class="inline-block me-2" />
 				{settings_privacy_clear_cache()}
 			</button>
 		</div>
@@ -203,7 +203,7 @@
 				: '!scale-100'} w-full p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 			disabled={isLoadingCache}
 		>
-			<Trash2Icon size="24" class="inline-block mr-2" />
+			<Trash2Icon size="24" class="inline-block me-2" />
 			{settings_privacy_clear_all_data()}
 		</button>
 	</div>

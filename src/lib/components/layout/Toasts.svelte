@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="fixed bottom-28 md:bottom-0 right-0 p-4 flex flex-col-reverse gap-4 z-50 pointer-events-none"
+	class="fixed bottom-28 md:bottom-0 end-0 p-4 flex flex-col-reverse gap-4 z-50 pointer-events-none"
 	role="status"
 	aria-live="polite"
 >

@@ -229,11 +229,11 @@
 			{#if pageCount > 1}
 				<div class="page-nav">
 					<button class="nav-btn" onclick={prevPage} disabled={currentPage <= 1} aria-label={aria_previous_page()}>
-						<ChevronLeftIcon size={16} />
+						<ChevronLeftIcon size={16} class="icon-flip" />
 					</button>
 					<span class="text-xs text-muted">{tools_common_page_of({ currentPage, pageCount })}</span>
 					<button class="nav-btn" onclick={nextPage} disabled={currentPage >= pageCount} aria-label={aria_next_page()}>
-						<ChevronRightIcon size={16} />
+						<ChevronRightIcon size={16} class="icon-flip" />
 					</button>
 				</div>
 			{/if}
@@ -308,7 +308,7 @@
 	.opt-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 	.opt-label { font-size: 0.8125rem; font-weight: 600; width: 5rem; flex-shrink: 0; }
 	.slider { height: 6px; appearance: none; border-radius: 9999px; cursor: pointer; background: var(--bg-separator); accent-color: var(--accent); }
-	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: right; flex-shrink: 0; }
+	.val { font-size: 0.8125rem; color: var(--fg-muted); width: 2.5rem; text-align: end; flex-shrink: 0; }
 	.num-input {
 		width: 5rem; padding: 0.375rem 0.5rem; border-radius: 0.5rem; font-size: 0.875rem;
 		border: 1px solid var(--bg-separator); background: var(--bg-panel-alt, var(--bg-panel)); color: var(--fg);

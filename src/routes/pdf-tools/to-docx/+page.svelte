@@ -134,7 +134,7 @@
 		box-shadow: var(--shadow-panel);
 	}
 	.limitation-title { font-weight: 700; margin: 0 0 0.4rem; }
-	ul { margin: 0; padding-left: 1.2rem; }
+	ul { margin: 0; padding-inline-start: 1.2rem; }
 	li { color: var(--fg-muted); }
 	.result-box { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: 1rem; background: var(--bg-panel); box-shadow: var(--shadow-panel); }
 </style>

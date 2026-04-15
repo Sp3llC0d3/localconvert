@@ -535,7 +535,7 @@
 	border-radius: 1rem;
 	background: var(--bg-panel);
 	border: 1px solid var(--bg-separator);
-	border-left: 3px solid var(--accent-red);
+	border-inline-start: 3px solid var(--accent-red);
 	box-shadow: var(--shadow-panel);
 }
 
@@ -621,8 +621,8 @@
 
 @media (min-width: 768px) {
 	.gpu-schematic {
-		border-left: 1px solid var(--bg-separator);
-		padding-left: 1.5rem;
+		border-inline-start: 1px solid var(--bg-separator);
+		padding-inline-start: 1.5rem;
 	}
 }
 

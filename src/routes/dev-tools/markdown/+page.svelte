@@ -102,11 +102,11 @@
 	.preview-box :global(h2) { font-size: 1.25rem; font-weight: bold; margin: 0.5rem 0; }
 	.preview-box :global(h3) { font-size: 1.1rem; font-weight: bold; margin: 0.5rem 0; }
 	.preview-box :global(p) { margin: 0.5rem 0; }
-	.preview-box :global(ul), .preview-box :global(ol) { padding-left: 1.5rem; margin: 0.5rem 0; }
+	.preview-box :global(ul), .preview-box :global(ol) { padding-inline-start: 1.5rem; margin: 0.5rem 0; }
 	.preview-box :global(code) { background: var(--bg-panel-alt); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.8125rem; }
 	.preview-box :global(pre) { background: var(--bg-panel-alt); padding: 0.75rem; border-radius: 0.5rem; overflow-x: auto; margin: 0.5rem 0; }
 	.preview-box :global(pre code) { background: none; padding: 0; }
-	.preview-box :global(blockquote) { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 0.5rem 0; color: var(--fg-muted); }
+	.preview-box :global(blockquote) { border-inline-start: 3px solid var(--accent); padding-inline-start: 1rem; margin: 0.5rem 0; color: var(--fg-muted); }
 	.preview-box :global(a) { color: var(--accent); text-decoration: underline; }
 	.copy-btn {
 		display: flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.5rem; border-radius: 0.375rem;
