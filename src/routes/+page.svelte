@@ -250,7 +250,7 @@
 <section class="privacy-section">
 	<div class="privacy-inner max-w-5xl mx-auto px-6 md:px-8">
 		<div class="privacy-badge-wrap">
-			<img src={privacyBadge} alt="Privacy badge" class="privacy-badge" />
+			<img src={privacyBadge} alt="Privacy badge" class="privacy-badge" width="196" height="196" loading="lazy" decoding="async" />
 		</div>
 		<div class="privacy-content">
 			<div class="section-label privacy-label">{landing_privacy_label()}</div>
@@ -309,7 +309,7 @@
 }
 
 .hero-bg {
-	background-image: url('/bg-dark.png');
+	background-image: url('/bg-dark.webp');
 	background-size: cover;
 	background-position: center top;
 }

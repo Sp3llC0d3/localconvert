@@ -21,6 +21,8 @@ RTL_RESEARCH.md
 RTL_FIX_PLAN.md
 RTL_AUDIT.md
 SEO_AUDIT_PLAN.md
+PERFORMANCE_PLAN.md
+bundle-stats.html
 
 # Preview/concept pages (local dev only)
 src/routes/logo-preview/

@@ -4,6 +4,7 @@ import { defineConfig, type PluginOption } from "vite";
 import svg from "@poppanator/sveltekit-svg";
 import wasm from "vite-plugin-wasm";
 import { execSync } from "child_process";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // coollify removes the .git folder but exposes commit via SOURCE_COMMIT env variable
 let commitHash = process.env.SOURCE_COMMIT
@@ -45,6 +46,17 @@ export default defineConfig(({ command }) => {
 			},
 		}),
 	];
+
+	if (command === "build" && process.env.ANALYZE) {
+		plugins.push(
+			visualizer({
+				filename: "bundle-stats.html",
+				template: "treemap",
+				gzipSize: true,
+				brotliSize: true,
+			}) as PluginOption,
+		);
+	}
 
 	if (command === "serve") {
 		plugins.unshift(wasm());
