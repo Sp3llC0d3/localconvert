@@ -29,10 +29,10 @@
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
 	import Panel from "../../visual/Panel.svelte";
-	import { beforeNavigate, goto } from "$app/navigation";
+	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { navbar_home, navbar_convert, navbar_pdf_tools, navbar_image_tools, navbar_dev_tools, navbar_settings, navbar_about, navbar_tools, navbar_toggle_theme, about_install, aria_tools_menu, aria_search_tools, aria_select_language } from "$lib/paraglide/messages/_barrel.js";
-	import { localizeHref, deLocalizeHref, getLocale } from "$lib/paraglide/runtime";
+	import { localizeHref, deLocalizeHref, getLocale, setLocale } from "$lib/paraglide/runtime";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { onMount, onDestroy } from "svelte";
 
@@ -49,9 +49,8 @@
 	});
 
 	function selectLocale(newLocale: string) {
-		const currentPath = deLocalizeHref(page.url.pathname);
-		goto(localizeHref(currentPath, { locale: newLocale as any }));
 		showLangPicker = false;
+		setLocale(newLocale as any);
 	}
 
 	if (browser) {
@@ -310,7 +309,7 @@
 	</a>
 {/snippet}
 
-<div bind:this={container}>
+<div bind:this={container} dir="ltr">
 	<Panel class="max-w-[960px] w-screen h-[4.5rem] md:h-[4.25rem] flex items-center gap-0 md:gap-1 relative">
 		{@const linkRect = linkRects.at(selectedLinkIndex) || linkRects[0]}
 		{#if linkRect && isInitialized}

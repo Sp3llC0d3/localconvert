@@ -4,7 +4,6 @@
 		effects,
 		setEffects,
 		setTheme,
-		updateLocale,
 		availableLocales,
 	} from "$lib/store/index.svelte";
 	import {
@@ -15,7 +14,7 @@
 	} from "lucide-svelte";
 	import { onMount, onDestroy } from "svelte";
 	import { settings_appearance_brightness_theme, settings_appearance_brightness_description, settings_appearance_light, settings_appearance_dark, settings_appearance_effect_settings, settings_appearance_effect_description, settings_appearance_enable, settings_appearance_disable, settings_language_title, settings_language_description } from "$lib/paraglide/messages/_barrel.js";
-	import { getLocale } from "$lib/paraglide/runtime";
+	import { getLocale, setLocale } from "$lib/paraglide/runtime";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 
 	let currentLocale = $state("en");
@@ -87,7 +86,7 @@
 
 		if (selectedLocale && selectedLocale !== currentLocale) {
 			currentLocale = selectedLocale;
-			updateLocale(selectedLocale);
+			setLocale(selectedLocale as any);
 		}
 	}
 </script>

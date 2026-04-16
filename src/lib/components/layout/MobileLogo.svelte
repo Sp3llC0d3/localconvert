@@ -3,7 +3,7 @@
 	import { localizeHref } from "$lib/paraglide/runtime";
 </script>
 
-<div class="flex justify-center items-center pb-6 md:pb-0 pt-4 md:pt-0">
+<div class="flex justify-center items-center pb-6 md:pb-0 pt-4 md:pt-0" dir="ltr">
 	<a
 		class="flex items-center justify-center p-1.5 md:p-1 rounded-2xl md:rounded-xl"
 		href={localizeHref("/")}
