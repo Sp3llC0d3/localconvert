@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, FilmIcon, ShieldCheckIcon } from 'lucide-svelte';
-	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge , meta_descriptions_image_tools} from "$lib/paraglide/messages/_barrel.js";
+	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge , meta_descriptions_image_tools, navbar_home} from "$lib/paraglide/messages/_barrel.js";
 	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
@@ -44,6 +44,7 @@
 		"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
 		"description": "Free online image tools — rotate, crop, watermark, and create memes. All processing runs in your browser."
 	})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":image_tools_title()}]})}</script>`}
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">

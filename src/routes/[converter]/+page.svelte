@@ -2,7 +2,7 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { localizeHref } from "$lib/paraglide/runtime";
 	import { ShieldCheck, Zap, Ban, Code } from "lucide-svelte";
-	import { meta_descriptions_converter_jpg, meta_descriptions_converter_png, meta_descriptions_converter_webp, meta_descriptions_converter_gif, meta_descriptions_converter_bmp, meta_descriptions_converter_tiff, meta_descriptions_converter_svg, meta_descriptions_converter_avif, meta_descriptions_converter_ico, meta_descriptions_converter_mp3, meta_descriptions_converter_wav, meta_descriptions_converter_ogg, meta_descriptions_converter_flac, meta_descriptions_converter_aac, meta_descriptions_converter_mp4, meta_descriptions_converter_webm, meta_descriptions_converter_mkv, meta_descriptions_converter_avi, meta_descriptions_converter_mov, meta_descriptions_converter_docx, meta_descriptions_converter_md, meta_descriptions_converter_html, meta_descriptions_converter_epub, meta_descriptions_converter_odt, meta_descriptions_converter_headline } from "$lib/paraglide/messages/_barrel.js";
+	import { meta_descriptions_converter_jpg, meta_descriptions_converter_png, meta_descriptions_converter_webp, meta_descriptions_converter_gif, meta_descriptions_converter_bmp, meta_descriptions_converter_tiff, meta_descriptions_converter_svg, meta_descriptions_converter_avif, meta_descriptions_converter_ico, meta_descriptions_converter_mp3, meta_descriptions_converter_wav, meta_descriptions_converter_ogg, meta_descriptions_converter_flac, meta_descriptions_converter_aac, meta_descriptions_converter_mp4, meta_descriptions_converter_webm, meta_descriptions_converter_mkv, meta_descriptions_converter_avi, meta_descriptions_converter_mov, meta_descriptions_converter_docx, meta_descriptions_converter_md, meta_descriptions_converter_html, meta_descriptions_converter_epub, meta_descriptions_converter_odt, meta_descriptions_converter_headline, navbar_home, navbar_convert } from "$lib/paraglide/messages/_barrel.js";
 
 	const converterDescriptions: Record<string, () => string> = {
 		jpg: meta_descriptions_converter_jpg, png: meta_descriptions_converter_png, webp: meta_descriptions_converter_webp,
@@ -81,6 +81,7 @@
 	<link rel="canonical" href="https://localconvert.app/{info.format}-converter/" />
 	{@html `<script type="application/ld+json">${howToSchema}</script>`}
 	{@html `<script type="application/ld+json">${faqSchema}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_convert(),"item":"https://localconvert.app"+localizeHref("/convert/")},{"@type":"ListItem","position":3,"name":converterTitle}]})}</script>`}
 </svelte:head>
 
 <!-- Hero -->

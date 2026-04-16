@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_video_to_gif_title, tool_pages_video_to_gif_desc, tools_common_back_image, tool_pages_video_to_gif_upload, upload_uploader_browse, tool_pages_video_to_gif_width, tool_pages_video_to_gif_start, tool_pages_video_to_gif_duration, tool_pages_video_to_gif_btn_busy, tool_pages_video_to_gif_btn, tools_common_ready, tool_pages_video_to_gif_save, tools_common_privacy_note, tool_pages_img_video_to_gif_seo_faq1_q, tool_pages_img_video_to_gif_seo_faq1_a, tool_pages_img_video_to_gif_seo_faq2_q, tool_pages_img_video_to_gif_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name, aria_start_time, aria_duration , meta_descriptions_image_video_to_gif} from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_video_to_gif_title, tool_pages_video_to_gif_desc, tools_common_back_image, tool_pages_video_to_gif_upload, upload_uploader_browse, tool_pages_video_to_gif_width, tool_pages_video_to_gif_start, tool_pages_video_to_gif_duration, tool_pages_video_to_gif_btn_busy, tool_pages_video_to_gif_btn, tools_common_ready, tool_pages_video_to_gif_save, tools_common_privacy_note, tool_pages_img_video_to_gif_seo_faq1_q, tool_pages_img_video_to_gif_seo_faq1_a, tool_pages_img_video_to_gif_seo_faq2_q, tool_pages_img_video_to_gif_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name, aria_start_time, aria_duration , navbar_home, navbar_image_tools, meta_descriptions_image_video_to_gif} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { browser } from '$app/environment';
 	import { videoToGif } from '$lib/converters/video-to-gif';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -80,6 +81,7 @@
 	<meta property="og:description" content={meta_descriptions_image_video_to_gif()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/video-to-gif/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Video to GIF","step":[{"@type":"HowToStep","text":"Select a video file from your device"},{"@type":"HowToStep","text":"Set the start time, duration, and frame rate"},{"@type":"HowToStep","text":"Convert and save the GIF animation"}]}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_image_tools(),"item":"https://localconvert.app"+localizeHref("/image-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_video_to_gif_title()}]})}</script>`}
 </svelte:head>
 
 <div class="gif-page">

@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name, 'dev_tools.tools.css_minify_name': dev_tools_tools_css_minify_name};
-	import { tool_pages_color_picker_title, tool_pages_color_picker_desc, tools_common_back_image, tools_common_upload_image, tools_common_privacy_note, tool_pages_img_color_picker_seo_faq1_q, tool_pages_img_color_picker_seo_faq1_a, tool_pages_img_color_picker_seo_faq2_q, tool_pages_img_color_picker_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_crop_name, dev_tools_tools_css_minify_name , meta_descriptions_image_color_picker} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_color_picker_title, tool_pages_color_picker_desc, tools_common_back_image, tools_common_upload_image, tools_common_privacy_note, tool_pages_img_color_picker_seo_faq1_q, tool_pages_img_color_picker_seo_faq1_a, tool_pages_img_color_picker_seo_faq2_q, tool_pages_img_color_picker_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_crop_name, dev_tools_tools_css_minify_name , navbar_home, navbar_image_tools, meta_descriptions_image_color_picker} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { loadImage } from '$lib/image/utils';
 	import { PipetteIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
@@ -116,6 +117,7 @@
 	<meta property="og:description" content={meta_descriptions_image_color_picker()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/color-picker/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Pick Colors from an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Click anywhere on the image to pick a color"},{"@type":"HowToStep","text":"Copy the color code in HEX, RGB, or HSL format"}]}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_image_tools(),"item":"https://localconvert.app"+localizeHref("/image-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_color_picker_title()}]})}</script>`}
 </svelte:head>
 
 <div class="picker-page">

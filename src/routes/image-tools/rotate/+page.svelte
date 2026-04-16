@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_rotate_image_title, tool_pages_rotate_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_angle, tool_pages_rotate_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_rotate_seo_faq1_q, tool_pages_img_rotate_seo_faq1_a, tool_pages_img_rotate_seo_faq2_q, tool_pages_img_rotate_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name , meta_descriptions_image_rotate} from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_rotate_image_title, tool_pages_rotate_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_angle, tool_pages_rotate_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_rotate_seo_faq1_q, tool_pages_img_rotate_seo_faq1_a, tool_pages_img_rotate_seo_faq2_q, tool_pages_img_rotate_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name , navbar_home, navbar_image_tools, meta_descriptions_image_rotate} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -95,6 +96,7 @@
 	<meta property="og:title" content="{tool_pages_rotate_image_title()} — LocalConvert" />
 	<meta property="og:description" content={meta_descriptions_image_rotate()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/rotate/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_image_tools(),"item":"https://localconvert.app"+localizeHref("/image-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_rotate_image_title()}]})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

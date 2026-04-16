@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.meme_name': image_tools_tools_meme_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_watermark_image_title, tool_pages_watermark_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_watermark_seo_faq1_q, tool_pages_img_watermark_seo_faq1_a, tool_pages_img_watermark_seo_faq2_q, tool_pages_img_watermark_seo_faq2_a, image_tools_tools_meme_name, image_tools_tools_crop_name, image_tools_tools_batch_name, aria_watermark_placeholder, aria_opacity, aria_font_size, aria_rotation , meta_descriptions_image_watermark} from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_watermark_image_title, tool_pages_watermark_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_rotation, tools_common_position, tools_common_center, tools_common_tile, tool_pages_watermark_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_watermark_seo_faq1_q, tool_pages_img_watermark_seo_faq1_a, tool_pages_img_watermark_seo_faq2_q, tool_pages_img_watermark_seo_faq2_a, image_tools_tools_meme_name, image_tools_tools_crop_name, image_tools_tools_batch_name, aria_watermark_placeholder, aria_opacity, aria_font_size, aria_rotation , navbar_home, navbar_image_tools, meta_descriptions_image_watermark} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -126,6 +127,7 @@
 	<meta property="og:title" content="{tool_pages_watermark_image_title()} — LocalConvert" />
 	<meta property="og:description" content={meta_descriptions_image_watermark()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/watermark/" />
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_image_tools(),"item":"https://localconvert.app"+localizeHref("/image-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_watermark_image_title()}]})}</script>`}
 </svelte:head>
 
 <div class="tool-page">

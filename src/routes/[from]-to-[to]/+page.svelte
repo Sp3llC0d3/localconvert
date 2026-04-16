@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Uploader from '$lib/components/functional/Uploader.svelte';
 	import { ShieldCheck, Zap, Ban, Code } from 'lucide-svelte';
-	import { meta_descriptions_format_pair, meta_descriptions_format_pair_video_audio } from '$lib/paraglide/messages/_barrel.js';
+	import { meta_descriptions_format_pair, meta_descriptions_format_pair_video_audio, navbar_home, navbar_convert } from '$lib/paraglide/messages/_barrel.js';
+	import { localizeHref } from '$lib/paraglide/runtime';
 
 	let { data } = $props();
 	const from = $derived(data.from);
@@ -100,6 +101,7 @@
 	<!-- JSON-LD -->
 	{@html `<script type="application/ld+json">${howToSchema}</script>`}
 	{@html `<script type="application/ld+json">${faqSchema}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_convert(),"item":"https://localconvert.app"+localizeHref("/convert/")},{"@type":"ListItem","position":3,"name":`${fromLabel} → ${toLabel}`}]})}</script>`}
 </svelte:head>
 
 <!-- Hero -->

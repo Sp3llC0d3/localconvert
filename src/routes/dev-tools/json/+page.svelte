@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.css_minify_name': dev_tools_tools_css_minify_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.base64_name': dev_tools_tools_base64_name};
-	import { tool_pages_json_formatter_title, tool_pages_json_formatter_desc, tools_common_back_dev, tool_pages_json_formatter_input_label, tool_pages_json_formatter_output_label, tool_pages_json_formatter_btn_format, tool_pages_json_formatter_btn_minify, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_json_formatter_indent, tools_common_privacy_note_browser, tool_pages_dev_json_seo_faq1_q, tool_pages_dev_json_seo_faq1_a, tool_pages_dev_json_seo_faq2_q, tool_pages_dev_json_seo_faq2_a, dev_tools_tools_css_minify_name, dev_tools_tools_diff_name, dev_tools_tools_base64_name , meta_descriptions_dev_json} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_json_formatter_title, tool_pages_json_formatter_desc, tools_common_back_dev, tool_pages_json_formatter_input_label, tool_pages_json_formatter_output_label, tool_pages_json_formatter_btn_format, tool_pages_json_formatter_btn_minify, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_json_formatter_indent, tools_common_privacy_note_browser, tool_pages_dev_json_seo_faq1_q, tool_pages_dev_json_seo_faq1_a, tool_pages_dev_json_seo_faq2_q, tool_pages_dev_json_seo_faq2_a, dev_tools_tools_css_minify_name, dev_tools_tools_diff_name, dev_tools_tools_base64_name , navbar_home, navbar_dev_tools, meta_descriptions_dev_json} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { BracesIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -64,6 +65,7 @@
 	<meta property="og:description" content={meta_descriptions_dev_json()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/json/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Format JSON Online","step":[{"@type":"HowToStep","text":"Paste your JSON data into the editor"},{"@type":"HowToStep","text":"Click format to beautify with proper indentation"},{"@type":"HowToStep","text":"Copy the formatted JSON or minify it"}]}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_dev_tools(),"item":"https://localconvert.app"+localizeHref("/dev-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_json_formatter_title()}]})}</script>`}
 </svelte:head>
 
 <div class="json-page">

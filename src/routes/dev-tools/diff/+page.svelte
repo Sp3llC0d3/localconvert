@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.json_name': dev_tools_tools_json_name, 'dev_tools.tools.word_count_name': dev_tools_tools_word_count_name, 'dev_tools.tools.markdown_name': dev_tools_tools_markdown_name};
-	import { tool_pages_diff_title, tool_pages_diff_desc, tools_common_back_dev, tool_pages_diff_original, tool_pages_diff_modified, tool_pages_diff_btn, tools_common_privacy_note_browser, tool_pages_dev_diff_seo_faq1_q, tool_pages_dev_diff_seo_faq1_a, tool_pages_dev_diff_seo_faq2_q, tool_pages_dev_diff_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_word_count_name, dev_tools_tools_markdown_name , meta_descriptions_dev_diff} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_diff_title, tool_pages_diff_desc, tools_common_back_dev, tool_pages_diff_original, tool_pages_diff_modified, tool_pages_diff_btn, tools_common_privacy_note_browser, tool_pages_dev_diff_seo_faq1_q, tool_pages_dev_diff_seo_faq1_a, tool_pages_dev_diff_seo_faq2_q, tool_pages_dev_diff_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_word_count_name, dev_tools_tools_markdown_name , navbar_home, navbar_dev_tools, meta_descriptions_dev_diff} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { GitCompareArrowsIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -67,6 +68,7 @@
 	<meta property="og:description" content={meta_descriptions_dev_diff()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/diff/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Compare Text Online","step":[{"@type":"HowToStep","text":"Paste the original text on the left side"},{"@type":"HowToStep","text":"Paste the modified text on the right side"},{"@type":"HowToStep","text":"View highlighted differences between the two texts"}]}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_dev_tools(),"item":"https://localconvert.app"+localizeHref("/dev-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_diff_title()}]})}</script>`}
 </svelte:head>
 
 <div class="diff-page">

@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.pdf_to_text_name': pdf_tools_tools_pdf_to_text_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name};
-	import { tools_common_failed, tool_pages_pdf_to_ppt_title, tool_pages_pdf_to_ppt_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_ppt_slide_size, tool_pages_pdf_to_ppt_widescreen, tool_pages_pdf_to_ppt_standard, tool_pages_pdf_to_ppt_btn_busy, tool_pages_pdf_to_ppt_btn, tools_common_ready, tools_common_output, tool_pages_pdf_to_ppt_save, tools_common_privacy_note, tool_pages_pdf_to_ppt_seo_faq1_q, tool_pages_pdf_to_ppt_seo_faq1_a, tool_pages_pdf_to_ppt_seo_faq2_q, tool_pages_pdf_to_ppt_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_images_name , meta_descriptions_pdf_pdf_to_ppt} from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_pdf_to_ppt_title, tool_pages_pdf_to_ppt_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_ppt_slide_size, tool_pages_pdf_to_ppt_widescreen, tool_pages_pdf_to_ppt_standard, tool_pages_pdf_to_ppt_btn_busy, tool_pages_pdf_to_ppt_btn, tools_common_ready, tools_common_output, tool_pages_pdf_to_ppt_save, tools_common_privacy_note, tool_pages_pdf_to_ppt_seo_faq1_q, tool_pages_pdf_to_ppt_seo_faq1_a, tool_pages_pdf_to_ppt_seo_faq2_q, tool_pages_pdf_to_ppt_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_images_name , navbar_home, navbar_pdf_tools, meta_descriptions_pdf_pdf_to_ppt} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToPpt } from '$lib/pdf/pdf-to-ppt';
 	import { downloadBlob, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -49,6 +50,7 @@
 	<meta property="og:description" content={meta_descriptions_pdf_pdf_to_ppt()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-ppt/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to PowerPoint","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Each page becomes a presentation slide"},{"@type":"HowToStep","text":"Click convert to create the PPTX"},{"@type":"HowToStep","text":"Save the PowerPoint file"}]})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_pdf_tools(),"item":"https://localconvert.app"+localizeHref("/pdf-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_pdf_to_ppt_title()}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

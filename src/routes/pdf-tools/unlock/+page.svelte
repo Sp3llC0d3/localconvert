@@ -5,7 +5,8 @@
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockOpenIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { tool_pages_unlock_err_pdf, tool_pages_unlock_err_fail, tool_pages_unlock_title, tool_pages_unlock_desc, tools_common_back_pdf, tools_common_upload_pdf_protected, tool_pages_unlock_info, tool_pages_unlock_password_label, tool_pages_unlock_password_placeholder, tool_pages_unlock_password_hint, tool_pages_unlock_btn_busy, tool_pages_unlock_btn, tool_pages_unlock_result, tool_pages_unlock_save, tools_common_privacy_note, tool_pages_unlock_seo_faq1_q, tool_pages_unlock_seo_faq1_a, tool_pages_unlock_seo_faq2_q, tool_pages_unlock_seo_faq2_a, pdf_tools_tools_password_name, pdf_tools_tools_metadata_name, pdf_tools_tools_edit_name , meta_descriptions_pdf_unlock} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_unlock_err_pdf, tool_pages_unlock_err_fail, tool_pages_unlock_title, tool_pages_unlock_desc, tools_common_back_pdf, tools_common_upload_pdf_protected, tool_pages_unlock_info, tool_pages_unlock_password_label, tool_pages_unlock_password_placeholder, tool_pages_unlock_password_hint, tool_pages_unlock_btn_busy, tool_pages_unlock_btn, tool_pages_unlock_result, tool_pages_unlock_save, tools_common_privacy_note, tool_pages_unlock_seo_faq1_q, tool_pages_unlock_seo_faq1_a, tool_pages_unlock_seo_faq2_q, tool_pages_unlock_seo_faq2_a, pdf_tools_tools_password_name, pdf_tools_tools_metadata_name, pdf_tools_tools_edit_name , navbar_home, navbar_pdf_tools, meta_descriptions_pdf_unlock} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -48,6 +49,7 @@
 	<meta property="og:description" content={meta_descriptions_pdf_unlock()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/unlock/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Unlock a PDF","step":[{"@type":"HowToStep","text":"Select a password-protected PDF"},{"@type":"HowToStep","text":"Enter the current password"},{"@type":"HowToStep","text":"Click unlock to remove protection"},{"@type":"HowToStep","text":"Save the unlocked PDF"}]})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_pdf_tools(),"item":"https://localconvert.app"+localizeHref("/pdf-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_unlock_title()}]})}</script>`}
 </svelte:head>
 
 <div class="unlock-page">

@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name, 'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name};
-	import { tool_pages_images_to_pdf_err_min, tool_pages_images_to_pdf_err_fail, tool_pages_images_to_pdf_title, tool_pages_images_to_pdf_desc, tools_common_back_pdf, tools_common_upload_images_pdf, tool_pages_images_to_pdf_btn_busy, tool_pages_images_to_pdf_btn, tools_common_ready, tools_common_output, tool_pages_images_to_pdf_save, tools_common_privacy_note, tool_pages_images_to_pdf_seo_faq1_q, tool_pages_images_to_pdf_seo_faq1_a, tool_pages_images_to_pdf_seo_faq2_q, tool_pages_images_to_pdf_seo_faq2_a, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_compress_name, pdf_tools_tools_merge_name , meta_descriptions_pdf_images_to_pdf} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_images_to_pdf_err_min, tool_pages_images_to_pdf_err_fail, tool_pages_images_to_pdf_title, tool_pages_images_to_pdf_desc, tools_common_back_pdf, tools_common_upload_images_pdf, tool_pages_images_to_pdf_btn_busy, tool_pages_images_to_pdf_btn, tools_common_ready, tools_common_output, tool_pages_images_to_pdf_save, tools_common_privacy_note, tool_pages_images_to_pdf_seo_faq1_q, tool_pages_images_to_pdf_seo_faq1_a, tool_pages_images_to_pdf_seo_faq2_q, tool_pages_images_to_pdf_seo_faq2_a, pdf_tools_tools_pdf_to_images_name, pdf_tools_tools_compress_name, pdf_tools_tools_merge_name , navbar_home, navbar_pdf_tools, meta_descriptions_pdf_images_to_pdf} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { imagesToPdf } from '$lib/pdf/images-to-pdf';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -69,6 +70,7 @@
 	<meta property="og:description" content={meta_descriptions_pdf_images_to_pdf()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/images-to-pdf/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Images to PDF","step":[{"@type":"HowToStep","text":"Select one or more image files (JPG, PNG, WEBP)"},{"@type":"HowToStep","text":"Arrange images in the desired order"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_pdf_tools(),"item":"https://localconvert.app"+localizeHref("/pdf-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_images_to_pdf_title()}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

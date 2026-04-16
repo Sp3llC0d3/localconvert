@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.base64_name': dev_tools_tools_base64_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.url_encode_name': dev_tools_tools_url_encode_name};
-	import { tool_pages_hash_generator_title, tool_pages_hash_generator_desc, tools_common_back_dev, tool_pages_hash_generator_text_mode, tool_pages_hash_generator_file_mode, tool_pages_hash_generator_text_placeholder, tool_pages_hash_generator_file_placeholder, tool_pages_hash_generator_algorithm, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_hash_generator_computing, tools_common_privacy_note_browser, tool_pages_dev_hash_seo_faq1_q, tool_pages_dev_hash_seo_faq1_a, tool_pages_dev_hash_seo_faq2_q, tool_pages_dev_hash_seo_faq2_a, dev_tools_tools_base64_name, dev_tools_tools_diff_name, dev_tools_tools_url_encode_name , meta_descriptions_dev_hash} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_hash_generator_title, tool_pages_hash_generator_desc, tools_common_back_dev, tool_pages_hash_generator_text_mode, tool_pages_hash_generator_file_mode, tool_pages_hash_generator_text_placeholder, tool_pages_hash_generator_file_placeholder, tool_pages_hash_generator_algorithm, tool_pages_pdf_to_text_copied, tool_pages_json_formatter_btn_copy, tool_pages_hash_generator_computing, tools_common_privacy_note_browser, tool_pages_dev_hash_seo_faq1_q, tool_pages_dev_hash_seo_faq1_a, tool_pages_dev_hash_seo_faq2_q, tool_pages_dev_hash_seo_faq2_a, dev_tools_tools_base64_name, dev_tools_tools_diff_name, dev_tools_tools_url_encode_name , navbar_home, navbar_dev_tools, meta_descriptions_dev_hash} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { browser } from '$app/environment';
 	import { HashIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
@@ -77,6 +78,7 @@
 	<meta property="og:description" content={meta_descriptions_dev_hash()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/hash/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate a Hash","step":[{"@type":"HowToStep","text":"Enter the text you want to hash"},{"@type":"HowToStep","text":"Select the hash algorithm (MD5, SHA-1, SHA-256, etc.)"},{"@type":"HowToStep","text":"Copy the generated hash value"}]}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_dev_tools(),"item":"https://localconvert.app"+localizeHref("/dev-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_hash_generator_title()}]})}</script>`}
 </svelte:head>
 
 <div class="hash-page">

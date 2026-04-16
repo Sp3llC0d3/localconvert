@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CodeIcon, BracesIcon, HashIcon, Binary, FileTextIcon, GitCompareArrowsIcon, TypeIcon, LinkIcon, ShieldCheckIcon } from 'lucide-svelte';
-	import { dev_tools_categories_format, dev_tools_tools_json_name, dev_tools_tools_json_desc, dev_tools_tools_base64_name, dev_tools_tools_base64_desc, dev_tools_tools_url_encode_name, dev_tools_tools_url_encode_desc, dev_tools_tools_css_minify_name, dev_tools_tools_css_minify_desc, dev_tools_categories_analyze, dev_tools_tools_hash_name, dev_tools_tools_hash_desc, dev_tools_tools_diff_name, dev_tools_tools_diff_desc, dev_tools_tools_word_count_name, dev_tools_tools_word_count_desc, dev_tools_tools_markdown_name, dev_tools_tools_markdown_desc, dev_tools_title, dev_tools_subtitle, dev_tools_badge , meta_descriptions_dev_tools} from "$lib/paraglide/messages/_barrel.js";
+	import { dev_tools_categories_format, dev_tools_tools_json_name, dev_tools_tools_json_desc, dev_tools_tools_base64_name, dev_tools_tools_base64_desc, dev_tools_tools_url_encode_name, dev_tools_tools_url_encode_desc, dev_tools_tools_css_minify_name, dev_tools_tools_css_minify_desc, dev_tools_categories_analyze, dev_tools_tools_hash_name, dev_tools_tools_hash_desc, dev_tools_tools_diff_name, dev_tools_tools_diff_desc, dev_tools_tools_word_count_name, dev_tools_tools_word_count_desc, dev_tools_tools_markdown_name, dev_tools_tools_markdown_desc, dev_tools_title, dev_tools_subtitle, dev_tools_badge , meta_descriptions_dev_tools, navbar_home} from "$lib/paraglide/messages/_barrel.js";
 	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
@@ -33,6 +33,7 @@
 	<meta property="og:description" content={meta_descriptions_dev_tools()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LocalConvert Developer Tools","url":"https://localconvert.app/dev-tools/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (browser-based)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based developer tools — JSON formatter, hash generator, Base64 encoder, and more. No uploads, no server."}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":dev_tools_title()}]})}</script>`}
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-8">

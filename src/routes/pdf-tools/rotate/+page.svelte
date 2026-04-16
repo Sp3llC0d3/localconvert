@@ -1,6 +1,7 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name, 'pdf_tools.tools.page_numbers_name': pdf_tools_tools_page_numbers_name};
-	import { tool_pages_rotate_pdf_err_fail, tool_pages_rotate_pdf_title, tool_pages_rotate_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_rotate_pdf_rotation, tool_pages_rotate_pdf_apply_to, tool_pages_rotate_pdf_all_pages, tool_pages_rotate_pdf_selected_pages, tools_common_loading_thumbs, tools_common_pages_selected, tool_pages_rotate_pdf_help, tool_pages_rotate_pdf_btn_busy, tools_common_rotate, tools_common_privacy_note, tool_pages_rotate_seo_faq1_q, tool_pages_rotate_seo_faq1_a, tool_pages_rotate_seo_faq2_q, tool_pages_rotate_seo_faq2_a, pdf_tools_tools_organize_name, pdf_tools_tools_crop_name, pdf_tools_tools_page_numbers_name , meta_descriptions_pdf_rotate} from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_rotate_pdf_err_fail, tool_pages_rotate_pdf_title, tool_pages_rotate_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_rotate_pdf_rotation, tool_pages_rotate_pdf_apply_to, tool_pages_rotate_pdf_all_pages, tool_pages_rotate_pdf_selected_pages, tools_common_loading_thumbs, tools_common_pages_selected, tool_pages_rotate_pdf_help, tool_pages_rotate_pdf_btn_busy, tools_common_rotate, tools_common_privacy_note, tool_pages_rotate_seo_faq1_q, tool_pages_rotate_seo_faq1_a, tool_pages_rotate_seo_faq2_q, tool_pages_rotate_seo_faq2_a, pdf_tools_tools_organize_name, pdf_tools_tools_crop_name, pdf_tools_tools_page_numbers_name , navbar_home, navbar_pdf_tools, meta_descriptions_pdf_rotate} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
@@ -61,6 +62,7 @@
 	<meta property="og:description" content={meta_descriptions_pdf_rotate()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/rotate/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Rotate PDF Pages","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the rotation angle (90°, 180°, 270°)"},{"@type":"HowToStep","text":"Apply rotation to selected or all pages"},{"@type":"HowToStep","text":"Save the rotated PDF"}]})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_pdf_tools(),"item":"https://localconvert.app"+localizeHref("/pdf-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_rotate_pdf_title()}]})}</script>`}
 </svelte:head>
 
 <div class="pdf-page">

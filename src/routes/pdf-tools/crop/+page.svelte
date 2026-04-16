@@ -8,7 +8,8 @@
 	import { CropIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { tools_common_failed_read_pdf, tool_pages_crop_pdf_err_margins, tools_common_failed, tool_pages_crop_pdf_title, tool_pages_crop_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_crop_pdf_aria_drag, tools_common_left, tools_common_right, tools_common_top, tools_common_bottom, tools_common_apply_all_pages, tool_pages_crop_pdf_btn_busy, tool_pages_crop_pdf_btn, tools_common_ready, tool_pages_crop_pdf_save, tools_common_privacy_note, tool_pages_crop_seo_faq1_q, tool_pages_crop_seo_faq1_a, tool_pages_crop_seo_faq2_q, tool_pages_crop_seo_faq2_a, pdf_tools_tools_rotate_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name, aria_left_margin, aria_right_margin, aria_top_margin, aria_bottom_margin , meta_descriptions_pdf_crop} from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed_read_pdf, tool_pages_crop_pdf_err_margins, tools_common_failed, tool_pages_crop_pdf_title, tool_pages_crop_pdf_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_crop_pdf_aria_drag, tools_common_left, tools_common_right, tools_common_top, tools_common_bottom, tools_common_apply_all_pages, tool_pages_crop_pdf_btn_busy, tool_pages_crop_pdf_btn, tools_common_ready, tool_pages_crop_pdf_save, tools_common_privacy_note, tool_pages_crop_seo_faq1_q, tool_pages_crop_seo_faq1_a, tool_pages_crop_seo_faq2_q, tool_pages_crop_seo_faq2_a, pdf_tools_tools_rotate_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name, aria_left_margin, aria_right_margin, aria_top_margin, aria_bottom_margin , navbar_home, navbar_pdf_tools, meta_descriptions_pdf_crop} from "$lib/paraglide/messages/_barrel.js";
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -250,6 +251,7 @@
 	<meta property="og:description" content={meta_descriptions_pdf_crop()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/crop/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Crop a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Draw the crop area on the page preview"},{"@type":"HowToStep","text":"Apply the crop to selected or all pages"},{"@type":"HowToStep","text":"Save the cropped PDF"}]})}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":navbar_home(),"item":"https://localconvert.app"+localizeHref("/")},{"@type":"ListItem","position":2,"name":navbar_pdf_tools(),"item":"https://localconvert.app"+localizeHref("/pdf-tools/")},{"@type":"ListItem","position":3,"name":tool_pages_crop_pdf_title()}]})}</script>`}
 </svelte:head>
 
 <div class="crop-page">
