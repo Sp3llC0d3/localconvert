@@ -8,7 +8,7 @@
 	import { ListOrderedIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import { onDestroy } from 'svelte';
-	import { tool_pages_page_numbers_bottom_left, tool_pages_page_numbers_bottom_center, tool_pages_page_numbers_bottom_right, tool_pages_page_numbers_top_left, tool_pages_page_numbers_top_center, tool_pages_page_numbers_top_right, tools_common_failed_read_pdf, tools_common_failed, tool_pages_page_numbers_title, tool_pages_page_numbers_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_page_of, tool_pages_page_numbers_position, tools_common_format, tools_common_font_size, tool_pages_page_numbers_start_from, tool_pages_page_numbers_skip_first, tool_pages_page_numbers_btn_busy, tool_pages_page_numbers_btn, tools_common_ready, tool_pages_page_numbers_save, tools_common_privacy_note, tool_pages_page_numbers_seo_faq1_q, tool_pages_page_numbers_seo_faq1_a, tool_pages_page_numbers_seo_faq2_q, tool_pages_page_numbers_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_organize_name, pdf_tools_tools_rotate_name, aria_previous_page, aria_next_page, aria_font_size, aria_starting_page_number } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_page_numbers_bottom_left, tool_pages_page_numbers_bottom_center, tool_pages_page_numbers_bottom_right, tool_pages_page_numbers_top_left, tool_pages_page_numbers_top_center, tool_pages_page_numbers_top_right, tools_common_failed_read_pdf, tools_common_failed, tool_pages_page_numbers_title, tool_pages_page_numbers_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_page_of, tool_pages_page_numbers_position, tools_common_format, tools_common_font_size, tool_pages_page_numbers_start_from, tool_pages_page_numbers_skip_first, tool_pages_page_numbers_btn_busy, tool_pages_page_numbers_btn, tools_common_ready, tool_pages_page_numbers_save, tools_common_privacy_note, tool_pages_page_numbers_seo_faq1_q, tool_pages_page_numbers_seo_faq1_a, tool_pages_page_numbers_seo_faq2_q, tool_pages_page_numbers_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_organize_name, pdf_tools_tools_rotate_name, aria_previous_page, aria_next_page, aria_font_size, aria_starting_page_number , meta_descriptions_pdf_page_numbers} from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -202,10 +202,10 @@
 
 <svelte:head>
 	<title>{tool_pages_page_numbers_title()} — LocalConvert</title>
-	<meta name="description" content="Add page numbers to any PDF file. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_page_numbers()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/page-numbers/" />
-	<meta property="og:title" content="Add Page Numbers to PDF — LocalConvert" />
-	<meta property="og:description" content="Add page numbers to any PDF file. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_page_numbers_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_page_numbers()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/page-numbers/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Add Page Numbers to a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose numbering position and format"},{"@type":"HowToStep","text":"Preview the page numbers"},{"@type":"HowToStep","text":"Save the numbered PDF"}]})}</script>`}
 </svelte:head>

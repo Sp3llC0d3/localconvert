@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Uploader from '$lib/components/functional/Uploader.svelte';
 	import { ShieldCheck, Zap, Ban, Code } from 'lucide-svelte';
+	import { meta_descriptions_format_pair, meta_descriptions_format_pair_video_audio } from '$lib/paraglide/messages/_barrel.js';
 
 	let { data } = $props();
 	const from = $derived(data.from);
@@ -17,6 +18,12 @@
 	const TO = $derived(to.toUpperCase());
 
 	const canonicalUrl = $derived(`https://localconvert.app/${from}-to-${to}/`);
+	const isVideoToAudio = $derived(fromMeta.type === 'video' && toMeta.type === 'audio');
+	const i18nMetaDesc = $derived(
+		isVideoToAudio
+			? meta_descriptions_format_pair_video_audio({ from: fromLabel, to: toLabel })
+			: meta_descriptions_format_pair({ from: fromLabel, to: toLabel, FROM, TO })
+	);
 
 	const features = [
 		{ icon: Ban, label: 'No server uploads' },
@@ -86,9 +93,9 @@
 
 <svelte:head>
 	<title>{headline}</title>
-	<meta name="description" content={metaDescription} />
+	<meta name="description" content={i18nMetaDesc} />
 	<meta property="og:title" content={headline} />
-	<meta property="og:description" content={metaDescription} />
+	<meta property="og:description" content={i18nMetaDesc} />
 	<link rel="canonical" href={canonicalUrl} />
 	<!-- JSON-LD -->
 	{@html `<script type="application/ld+json">${howToSchema}</script>`}

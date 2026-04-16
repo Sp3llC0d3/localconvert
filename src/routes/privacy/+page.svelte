@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { privacy_title, privacy_summary_title, privacy_summary_description, privacy_conversions_title, privacy_conversions_description, privacy_donations_title, privacy_donations_description, privacy_conversion_errors_title, privacy_conversion_errors_description, privacy_conversion_errors_list_job_id, privacy_conversion_errors_list_format_from, privacy_conversion_errors_list_format_to, privacy_conversion_errors_list_stderr, privacy_conversion_errors_list_video, privacy_conversion_errors_footer, privacy_analytics_title, privacy_analytics_description, privacy_local_storage_title, privacy_local_storage_description, privacy_contact_title, privacy_contact_description, privacy_last_updated } from "$lib/paraglide/messages/_barrel.js";
+	import { privacy_title, privacy_summary_title, privacy_summary_description, privacy_conversions_title, privacy_conversions_description, privacy_donations_title, privacy_donations_description, privacy_conversion_errors_title, privacy_conversion_errors_description, privacy_conversion_errors_list_job_id, privacy_conversion_errors_list_format_from, privacy_conversion_errors_list_format_to, privacy_conversion_errors_list_stderr, privacy_conversion_errors_list_video, privacy_conversion_errors_footer, privacy_analytics_title, privacy_analytics_description, privacy_local_storage_title, privacy_local_storage_description, privacy_contact_title, privacy_contact_description, privacy_last_updated , meta_descriptions_privacy} from "$lib/paraglide/messages/_barrel.js";
 	import { link } from "$lib/store/index.svelte";
 	import { sanitize } from "$lib/util/sanitize";
 	import { ShieldCheckIcon } from "lucide-svelte";
@@ -7,8 +7,11 @@
 
 <svelte:head>
 	<title>{privacy_title()} — LocalConvert</title>
-	<meta name="description" content="LocalConvert is 100% private. Your files never leave your device — all processing happens in your browser. No uploads, no tracking, no accounts." />
+	<meta name="description" content={meta_descriptions_privacy()} />
 	<link rel="canonical" href="https://localconvert.app/privacy/" />
+	<meta property="og:title" content="{privacy_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_privacy()} />
+	<meta property="og:url" content="https://localconvert.app/privacy/" />
 </svelte:head>
 
 <div class="flex flex-col h-full items-center">

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name};
-	import { tool_pages_crop_image_free, tool_pages_crop_image_err_area, tools_common_failed, tool_pages_crop_image_title, tool_pages_crop_image_desc, tools_common_back_image, tools_common_upload_image, tool_pages_crop_image_circle, tools_common_reset, tool_pages_crop_image_btn_busy, tool_pages_crop_image_btn, tools_common_ready, tools_common_output, tool_pages_crop_image_save, tools_common_privacy_note, tool_pages_img_crop_seo_faq1_q, tool_pages_img_crop_seo_faq1_a, tool_pages_img_crop_seo_faq2_q, tool_pages_img_crop_seo_faq2_a, image_tools_tools_rotate_name, image_tools_tools_watermark_name, image_tools_tools_filters_name, aria_image_crop_selection } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_crop_image_free, tool_pages_crop_image_err_area, tools_common_failed, tool_pages_crop_image_title, tool_pages_crop_image_desc, tools_common_back_image, tools_common_upload_image, tool_pages_crop_image_circle, tools_common_reset, tool_pages_crop_image_btn_busy, tool_pages_crop_image_btn, tools_common_ready, tools_common_output, tool_pages_crop_image_save, tools_common_privacy_note, tool_pages_img_crop_seo_faq1_q, tool_pages_img_crop_seo_faq1_a, tool_pages_img_crop_seo_faq2_q, tool_pages_img_crop_seo_faq2_a, image_tools_tools_rotate_name, image_tools_tools_watermark_name, image_tools_tools_filters_name, aria_image_crop_selection , meta_descriptions_image_crop} from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { cropImage, type CropRect } from '$lib/image/crop';
 	import { loadImage, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -264,7 +264,7 @@
 
 <svelte:head>
 	<title>{tool_pages_crop_image_title()} — LocalConvert</title>
-	<meta name="description" content="Crop images with interactive handles. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_image_crop()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/crop/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Crop an Image",
@@ -275,8 +275,8 @@
 			{"@type": "HowToStep", "text": "Save the cropped image"}
 		]
 	})}</script>`}
-	<meta property="og:title" content="Crop Image — LocalConvert" />
-	<meta property="og:description" content="Crop images with interactive handles. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_crop_image_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_crop()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/crop/" />
 </svelte:head>
 

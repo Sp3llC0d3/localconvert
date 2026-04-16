@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_titles_formats, aria_search_formats, aria_gpu_full, aria_gpu_partial } from '$lib/paraglide/messages/_barrel.js';
+	import { page_titles_formats, aria_search_formats, aria_gpu_full, aria_gpu_partial , meta_descriptions_formats} from '$lib/paraglide/messages/_barrel.js';
 	import { allFormats, categoryMeta, formatMap, type FormatEntry } from '$lib/data/format-map';
 	import { Image, AudioLines, Film, BookText, SearchIcon, ChevronDown, ArrowRight, ZapIcon } from 'lucide-svelte';
 
@@ -63,10 +63,10 @@
 
 <svelte:head>
 	<title>{page_titles_formats()} — LocalConvert</title>
-	<meta name="description" content="Browse all {allFormats.length} file formats supported by LocalConvert. Images, audio, video, and documents — see what converts to what." />
+	<meta name="description" content={meta_descriptions_formats()} />
 	<link rel="canonical" href="https://localconvert.app/formats/" />
-	<meta property="og:title" content="Supported Formats — LocalConvert" />
-	<meta property="og:description" content="Browse all file formats supported by LocalConvert. Images, audio, video, and documents — see what converts to what." />
+	<meta property="og:title" content="{page_titles_formats()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_formats()} />
 	<meta property="og:url" content="https://localconvert.app/formats/" />
 	{@html `<script type="application/ld+json">${schemaData}</script>`}
 </svelte:head>

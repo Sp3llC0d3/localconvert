@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ImageIcon, RotateCwIcon, CropIcon, DropletIcon, SmileIcon, LayersIcon, QrCodeIcon, PipetteIcon, EyeOffIcon, SlidersHorizontalIcon, FilmIcon, ShieldCheckIcon } from 'lucide-svelte';
-	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge } from "$lib/paraglide/messages/_barrel.js";
+	import { image_tools_categories_edit, image_tools_tools_rotate_name, image_tools_tools_rotate_desc, image_tools_tools_crop_name, image_tools_tools_crop_desc, image_tools_tools_blur_name, image_tools_tools_blur_desc, image_tools_tools_filters_name, image_tools_tools_filters_desc, image_tools_tools_watermark_name, image_tools_tools_watermark_desc, image_tools_categories_create, image_tools_tools_meme_name, image_tools_tools_meme_desc, image_tools_tools_qr_name, image_tools_tools_qr_desc, image_tools_tools_batch_name, image_tools_tools_batch_desc, image_tools_tools_color_picker_name, image_tools_tools_color_picker_desc, image_tools_tools_video_to_gif_name, image_tools_tools_video_to_gif_desc, image_tools_title, image_tools_subtitle, image_tools_badge , meta_descriptions_image_tools} from "$lib/paraglide/messages/_barrel.js";
 	import { localizeHref } from "$lib/paraglide/runtime";
 
 	const categories = $derived([
@@ -29,10 +29,10 @@
 
 <svelte:head>
 	<title>{image_tools_title()} — LocalConvert</title>
-	<meta name="description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
+	<meta name="description" content={meta_descriptions_image_tools()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/" />
-	<meta property="og:title" content="Image Tools — LocalConvert" />
-	<meta property="og:description" content="Free online image tools that run entirely in your browser. Rotate, crop, watermark images — no uploads, no server." />
+	<meta property="og:title" content="{image_tools_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_tools()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",

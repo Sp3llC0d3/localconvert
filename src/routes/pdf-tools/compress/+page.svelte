@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.grayscale_name': pdf_tools_tools_grayscale_name, 'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name, 'pdf_tools.tools.from_docx_name': pdf_tools_tools_from_docx_name};
-	import { tool_pages_compress_preset_low, tool_pages_compress_preset_low_desc, tool_pages_compress_preset_med, tool_pages_compress_preset_med_desc, tool_pages_compress_preset_high, tool_pages_compress_preset_high_desc, tool_pages_compress_err_fail, tool_pages_compress_title, tool_pages_compress_desc, tools_common_back_pdf, tool_pages_compress_note, tool_pages_compress_warning, tools_common_upload_pdf, tool_pages_compress_jpeg_quality, tool_pages_compress_input, tool_pages_compress_btn_busy, tool_pages_compress_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_compress_compressed, tool_pages_compress_save, tools_common_privacy_note, tool_pages_compress_seo_faq1_q, tool_pages_compress_seo_faq1_a, tool_pages_compress_seo_faq2_q, tool_pages_compress_seo_faq2_a, pdf_tools_tools_grayscale_name, pdf_tools_tools_merge_name, pdf_tools_tools_from_docx_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_compress_preset_low, tool_pages_compress_preset_low_desc, tool_pages_compress_preset_med, tool_pages_compress_preset_med_desc, tool_pages_compress_preset_high, tool_pages_compress_preset_high_desc, tool_pages_compress_err_fail, tool_pages_compress_title, tool_pages_compress_desc, tools_common_back_pdf, tool_pages_compress_note, tool_pages_compress_warning, tools_common_upload_pdf, tool_pages_compress_jpeg_quality, tool_pages_compress_input, tool_pages_compress_btn_busy, tool_pages_compress_btn, tools_common_output, tool_pages_compress_saved, tool_pages_compress_original, tool_pages_compress_compressed, tool_pages_compress_save, tools_common_privacy_note, tool_pages_compress_seo_faq1_q, tool_pages_compress_seo_faq1_a, tool_pages_compress_seo_faq2_q, tool_pages_compress_seo_faq2_a, pdf_tools_tools_grayscale_name, pdf_tools_tools_merge_name, pdf_tools_tools_from_docx_name , meta_descriptions_pdf_compress} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { sanitize } from '$lib/util/sanitize';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
@@ -88,10 +88,10 @@
 
 <svelte:head>
 	<title>{tool_pages_compress_title()} — LocalConvert</title>
-	<meta name="description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_compress()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/compress/" />
-	<meta property="og:title" content="Compress PDF — LocalConvert" />
-	<meta property="og:description" content="Reduce PDF file size by re-rendering pages at a lower quality. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_compress_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_compress()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/compress/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Compress a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the compression quality level"},{"@type":"HowToStep","text":"Click compress to reduce file size"},{"@type":"HowToStep","text":"Save the compressed PDF"}]})}</script>`}
 </svelte:head>

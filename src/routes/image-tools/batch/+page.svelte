@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.crop_name': image_tools_tools_crop_name};
-	import { tool_pages_batch_err_images, tool_pages_batch_err_text, tool_pages_batch_err_watermark, tools_common_failed, tool_pages_batch_title, tool_pages_batch_desc, tools_common_back_image, tools_common_upload_images, tools_common_images_selected, tools_common_operation, tools_common_rotate, tools_common_watermark, tools_common_crop, tools_common_meme, tools_common_angle, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_position, tools_common_center, tools_common_tile, tool_pages_batch_trim, tool_pages_batch_trim_help, tool_pages_meme_top_text, tool_pages_meme_bottom_text, tool_pages_batch_btn_busy, tool_pages_batch_btn, tools_common_results_ready, tools_common_save_all, tools_common_save, tools_common_privacy_note, tool_pages_img_batch_seo_faq1_q, tool_pages_img_batch_seo_faq1_a, tool_pages_img_batch_seo_faq2_q, tool_pages_img_batch_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_rotate_name, image_tools_tools_crop_name, aria_remove_file, aria_opacity, aria_font_size, aria_crop_percentage, aria_meme_top_text, aria_meme_bottom_text } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_batch_err_images, tool_pages_batch_err_text, tool_pages_batch_err_watermark, tools_common_failed, tool_pages_batch_title, tool_pages_batch_desc, tools_common_back_image, tools_common_upload_images, tools_common_images_selected, tools_common_operation, tools_common_rotate, tools_common_watermark, tools_common_crop, tools_common_meme, tools_common_angle, tools_common_text, tools_common_opacity, tools_common_font_size, tools_common_position, tools_common_center, tools_common_tile, tool_pages_batch_trim, tool_pages_batch_trim_help, tool_pages_meme_top_text, tool_pages_meme_bottom_text, tool_pages_batch_btn_busy, tool_pages_batch_btn, tools_common_results_ready, tools_common_save_all, tools_common_save, tools_common_privacy_note, tool_pages_img_batch_seo_faq1_q, tool_pages_img_batch_seo_faq1_a, tool_pages_img_batch_seo_faq2_q, tool_pages_img_batch_seo_faq2_a, image_tools_tools_filters_name, image_tools_tools_rotate_name, image_tools_tools_crop_name, aria_remove_file, aria_opacity, aria_font_size, aria_crop_percentage, aria_meme_top_text, aria_meme_bottom_text , meta_descriptions_image_batch} from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import { rotateImage, type RotationAngle } from '$lib/image/rotate';
 	import { watermarkImage } from '$lib/image/watermark';
@@ -108,10 +108,10 @@
 
 <svelte:head>
 	<title>{tool_pages_batch_title()} — LocalConvert</title>
-	<meta name="description" content="Apply the same operation to multiple images at once. Rotate or watermark in bulk. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_image_batch()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/batch/" />
-	<meta property="og:title" content="Batch Image Processing — LocalConvert" />
-	<meta property="og:description" content="Apply the same operation to multiple images at once. Rotate or watermark in bulk. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_batch_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_batch()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/batch/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Batch Process Images","step":[{"@type":"HowToStep","text":"Select multiple images from your device"},{"@type":"HowToStep","text":"Choose the output format and quality settings"},{"@type":"HowToStep","text":"Process all images at once and save the results"}]}</script>`}
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.images_to_pdf_name': pdf_tools_tools_images_to_pdf_name, 'pdf_tools.tools.crop_name': pdf_tools_tools_crop_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
-	import { tool_pages_pdf_to_images_err_fail, tool_pages_pdf_to_images_title, tool_pages_pdf_to_images_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_format, tools_common_quality, tool_pages_pdf_to_images_resolution, tool_pages_pdf_to_images_btn_busy, tool_pages_pdf_to_images_btn, tools_common_ready, tools_common_privacy_note, tool_pages_pdf_to_images_seo_faq1_q, tool_pages_pdf_to_images_seo_faq1_a, tool_pages_pdf_to_images_seo_faq2_q, tool_pages_pdf_to_images_seo_faq2_a, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_crop_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_pdf_to_images_err_fail, tool_pages_pdf_to_images_title, tool_pages_pdf_to_images_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_format, tools_common_quality, tool_pages_pdf_to_images_resolution, tool_pages_pdf_to_images_btn_busy, tool_pages_pdf_to_images_btn, tools_common_ready, tools_common_privacy_note, tool_pages_pdf_to_images_seo_faq1_q, tool_pages_pdf_to_images_seo_faq1_a, tool_pages_pdf_to_images_seo_faq2_q, tool_pages_pdf_to_images_seo_faq2_a, pdf_tools_tools_images_to_pdf_name, pdf_tools_tools_crop_name, pdf_tools_tools_compress_name , meta_descriptions_pdf_pdf_to_images} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToImages } from '$lib/pdf/pdf-to-images';
@@ -55,10 +55,10 @@
 
 <svelte:head>
 	<title>{tool_pages_pdf_to_images_title()} — LocalConvert</title>
-	<meta name="description" content="Export each PDF page as a JPG or PNG image. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_pdf_to_images()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-images/" />
-	<meta property="og:title" content="PDF to Images — LocalConvert" />
-	<meta property="og:description" content="Export each PDF page as a JPG or PNG image. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_pdf_to_images_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_pdf_to_images()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-images/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to Images","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose the output format (JPG or PNG)"},{"@type":"HowToStep","text":"Set the image quality"},{"@type":"HowToStep","text":"Save the extracted images"}]})}</script>`}
 </svelte:head>

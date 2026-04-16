@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_rotate_image_title, tool_pages_rotate_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_angle, tool_pages_rotate_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_rotate_seo_faq1_q, tool_pages_img_rotate_seo_faq1_a, tool_pages_img_rotate_seo_faq2_q, tool_pages_img_rotate_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_rotate_image_title, tool_pages_rotate_image_desc, tools_common_back_image, tools_common_upload_image, tools_common_angle, tool_pages_rotate_image_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_rotate_seo_faq1_q, tool_pages_img_rotate_seo_faq1_a, tool_pages_img_rotate_seo_faq2_q, tool_pages_img_rotate_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_filters_name, image_tools_tools_batch_name , meta_descriptions_image_rotate} from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { loadImage, canvasToBlob, downloadBlob, formatFileSize, getOutputName } from '$lib/image/utils';
@@ -82,7 +82,7 @@
 
 <svelte:head>
 	<title>{tool_pages_rotate_image_title()} — LocalConvert</title>
-	<meta name="description" content="Rotate images 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_image_rotate()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/rotate/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org", "@type": "HowTo", "name": "How to Rotate an Image",
@@ -92,8 +92,8 @@
 			{"@type": "HowToStep", "text": "Save the rotated image"}
 		]
 	})}</script>`}
-	<meta property="og:title" content="Rotate Image — LocalConvert" />
-	<meta property="og:description" content="Rotate images 90°, 180°, or 270°. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_rotate_image_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_rotate()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/rotate/" />
 </svelte:head>
 

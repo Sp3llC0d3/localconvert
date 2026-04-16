@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.color_picker_name': image_tools_tools_color_picker_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'dev_tools.tools.base64_name': dev_tools_tools_base64_name};
-	import { tools_common_failed, tool_pages_qr_low, tool_pages_qr_medium, tool_pages_qr_quartile, tool_pages_qr_high, tool_pages_qr_title, tool_pages_qr_desc, tools_common_back_image, tool_pages_qr_text_url, tools_common_size, tools_common_foreground, tools_common_background, tool_pages_qr_error_correction, tool_pages_qr_save, tools_common_ready, tool_pages_qr_save_file, tools_common_privacy_note_browser, tool_pages_img_qr_seo_faq1_q, tool_pages_img_qr_seo_faq1_a, tool_pages_img_qr_seo_faq2_q, tool_pages_img_qr_seo_faq2_a, image_tools_tools_color_picker_name, image_tools_tools_watermark_name, dev_tools_tools_base64_name, aria_qr_code_size, aria_foreground_color, aria_background_color } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_qr_low, tool_pages_qr_medium, tool_pages_qr_quartile, tool_pages_qr_high, tool_pages_qr_title, tool_pages_qr_desc, tools_common_back_image, tool_pages_qr_text_url, tools_common_size, tools_common_foreground, tools_common_background, tool_pages_qr_error_correction, tool_pages_qr_save, tools_common_ready, tool_pages_qr_save_file, tools_common_privacy_note_browser, tool_pages_img_qr_seo_faq1_q, tool_pages_img_qr_seo_faq1_a, tool_pages_img_qr_seo_faq2_q, tool_pages_img_qr_seo_faq2_a, image_tools_tools_color_picker_name, image_tools_tools_watermark_name, dev_tools_tools_base64_name, aria_qr_code_size, aria_foreground_color, aria_background_color , meta_descriptions_image_qr} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { canvasToBlob, downloadBlob, getOutputName } from '$lib/image/utils';
 	import { QrCodeIcon } from 'lucide-svelte';
@@ -74,10 +74,10 @@
 
 <svelte:head>
 	<title>{tool_pages_qr_title()} — LocalConvert</title>
-	<meta name="description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_image_qr()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/qr/" />
-	<meta property="og:title" content="QR Code Generator — LocalConvert" />
-	<meta property="og:description" content="Generate QR codes from text or URLs. Customize colors, size, and error correction. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_qr_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_qr()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/qr/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate a QR Code","step":[{"@type":"HowToStep","text":"Enter the text or URL you want to encode"},{"@type":"HowToStep","text":"Customize the size and error correction level"},{"@type":"HowToStep","text":"Save the QR code as an image"}]}</script>`}
 </svelte:head>

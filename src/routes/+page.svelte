@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_titles_home } from '$lib/paraglide/messages/_barrel.js';
+	import { page_titles_home, meta_descriptions_home } from '$lib/paraglide/messages/_barrel.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import clsx from "clsx";
@@ -103,10 +103,10 @@
 
 <svelte:head>
 	<title>LocalConvert — {page_titles_home()}</title>
-	<meta name="description" content="39 free tools for PDFs, images, and code — all running in your browser. No uploads, no server, no signup. Works offline." />
+	<meta name="description" content={meta_descriptions_home()} />
 	<link rel="canonical" href="https://localconvert.app/" />
-	<meta property="og:title" content="LocalConvert — Free, Private Toolkit for Files & Code" />
-	<meta property="og:description" content="39 free tools for PDFs, images, and code — all running in your browser. No uploads, no server, no signup." />
+	<meta property="og:title" content="LocalConvert — {page_titles_home()}" />
+	<meta property="og:description" content={meta_descriptions_home()} />
 	<meta property="og:url" content="https://localconvert.app/" />
 	{@html `<script type="application/ld+json">${softwareSchema}</script>`}
 	{@html `<script type="application/ld+json">${websiteSchema}</script>`}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.word_count_name': dev_tools_tools_word_count_name, 'dev_tools.tools.json_name': dev_tools_tools_json_name};
-	import { tool_pages_markdown_title, tool_pages_markdown_desc, tools_common_back_dev, tool_pages_markdown_preview, tool_pages_json_formatter_btn_copy, tools_common_privacy_note_browser, tool_pages_dev_markdown_seo_faq1_q, tool_pages_dev_markdown_seo_faq1_a, tool_pages_dev_markdown_seo_faq2_q, tool_pages_dev_markdown_seo_faq2_a, dev_tools_tools_diff_name, dev_tools_tools_word_count_name, dev_tools_tools_json_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_markdown_title, tool_pages_markdown_desc, tools_common_back_dev, tool_pages_markdown_preview, tool_pages_json_formatter_btn_copy, tools_common_privacy_note_browser, tool_pages_dev_markdown_seo_faq1_q, tool_pages_dev_markdown_seo_faq1_a, tool_pages_dev_markdown_seo_faq2_q, tool_pages_dev_markdown_seo_faq2_a, dev_tools_tools_diff_name, dev_tools_tools_word_count_name, dev_tools_tools_json_name , meta_descriptions_dev_markdown} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import { sanitize } from '$lib/util/sanitize';
 	import { FileTextIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
@@ -31,10 +31,10 @@
 
 <svelte:head>
 	<title>{tool_pages_markdown_title()} — LocalConvert</title>
-	<meta name="description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
+	<meta name="description" content={meta_descriptions_dev_markdown()} />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/markdown/" />
-	<meta property="og:title" content="Markdown Preview — LocalConvert" />
-	<meta property="og:description" content="Write markdown and see rendered HTML live. Copy HTML output. Free, private, runs in your browser." />
+	<meta property="og:title" content="{tool_pages_markdown_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_dev_markdown()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/markdown/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Preview Markdown","step":[{"@type":"HowToStep","text":"Type or paste Markdown text in the editor"},{"@type":"HowToStep","text":"See the rendered HTML preview in real time"},{"@type":"HowToStep","text":"Copy or adjust your Markdown as needed"}]}</script>`}
 </svelte:head>

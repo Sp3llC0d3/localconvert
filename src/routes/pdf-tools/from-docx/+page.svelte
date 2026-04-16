@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.from_xlsx_name': pdf_tools_tools_from_xlsx_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
-	import { tool_pages_from_docx_invalid_file, tools_common_failed, tool_pages_from_docx_title, tool_pages_from_docx_desc, tools_common_back_pdf, tool_pages_from_docx_drop_hint, tools_common_converting_progress, tools_common_convert_to_pdf, tool_pages_from_docx_disclaimer, tools_common_output, tools_common_save_pdf, tools_common_privacy_note, tool_pages_from_docx_seo_faq1_q, tool_pages_from_docx_seo_faq1_a, tool_pages_from_docx_seo_faq2_q, tool_pages_from_docx_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_from_docx_invalid_file, tools_common_failed, tool_pages_from_docx_title, tool_pages_from_docx_desc, tools_common_back_pdf, tool_pages_from_docx_drop_hint, tools_common_converting_progress, tools_common_convert_to_pdf, tool_pages_from_docx_disclaimer, tools_common_output, tools_common_save_pdf, tools_common_privacy_note, tool_pages_from_docx_seo_faq1_q, tool_pages_from_docx_seo_faq1_a, tool_pages_from_docx_seo_faq2_q, tool_pages_from_docx_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_from_xlsx_name, pdf_tools_tools_compress_name , meta_descriptions_pdf_from_docx} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { convertDocxToPdf } from '$lib/pdf/from-docx';
@@ -52,10 +52,10 @@
 
 <svelte:head>
 	<title>{tool_pages_from_docx_title()} — LocalConvert</title>
-	<meta name="description" content="Convert Word documents (DOCX, DOC) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_from_docx()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-docx/" />
-	<meta property="og:title" content="Word to PDF — LocalConvert" />
-	<meta property="og:description" content="Convert Word documents (DOCX, DOC) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_from_docx_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_from_docx()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/from-docx/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Word to PDF","step":[{"@type":"HowToStep","text":"Select a DOCX or DOC file"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Review the conversion result"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.from_docx_name': pdf_tools_tools_from_docx_name, 'pdf_tools.tools.pdf_to_text_name': pdf_tools_tools_pdf_to_text_name, 'pdf_tools.tools.pdf_to_ppt_name': pdf_tools_tools_pdf_to_ppt_name};
-	import { tools_common_failed, tool_pages_to_docx_title, tool_pages_to_docx_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_to_docx_expect_title, tool_pages_to_docx_expect_text, tool_pages_to_docx_expect_headings, tool_pages_to_docx_expect_tables, tool_pages_to_docx_expect_scanned, tool_pages_to_docx_progress_label, tool_pages_to_docx_btn, tools_common_output, tool_pages_to_docx_save, tools_common_privacy_note, tool_pages_to_docx_seo_faq1_q, tool_pages_to_docx_seo_faq1_a, tool_pages_to_docx_seo_faq2_q, tool_pages_to_docx_seo_faq2_a, pdf_tools_tools_from_docx_name, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_ppt_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_to_docx_title, tool_pages_to_docx_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_to_docx_expect_title, tool_pages_to_docx_expect_text, tool_pages_to_docx_expect_headings, tool_pages_to_docx_expect_tables, tool_pages_to_docx_expect_scanned, tool_pages_to_docx_progress_label, tool_pages_to_docx_btn, tools_common_output, tool_pages_to_docx_save, tools_common_privacy_note, tool_pages_to_docx_seo_faq1_q, tool_pages_to_docx_seo_faq1_a, tool_pages_to_docx_seo_faq2_q, tool_pages_to_docx_seo_faq2_a, pdf_tools_tools_from_docx_name, pdf_tools_tools_pdf_to_text_name, pdf_tools_tools_pdf_to_ppt_name , meta_descriptions_pdf_to_docx} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { convertPdfToDocx } from '$lib/pdf/to-docx';
@@ -52,10 +52,10 @@
 
 <svelte:head>
 	<title>{tool_pages_to_docx_title()} — LocalConvert</title>
-	<meta name="description" content="Convert PDF to editable Word (DOCX) files. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_to_docx()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/to-docx/" />
-	<meta property="og:title" content="PDF to Word — LocalConvert" />
-	<meta property="og:description" content="Convert PDF to editable Word (DOCX) files. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_to_docx_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_to_docx()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/to-docx/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert PDF to Word","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Click convert to extract text as DOCX"},{"@type":"HowToStep","text":"Review the converted document"},{"@type":"HowToStep","text":"Save the Word file"}]})}</script>`}
 </svelte:head>

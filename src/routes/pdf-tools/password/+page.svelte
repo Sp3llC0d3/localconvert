@@ -5,7 +5,7 @@
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { LockIcon, ShieldCheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { tool_pages_password_err_pdf, tool_pages_password_err_password, tool_pages_password_err_min_length, tool_pages_password_err_fail, tool_pages_password_title, tool_pages_password_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_password_password_label, tool_pages_password_password_placeholder, tools_common_hide, tools_common_show, tool_pages_password_owner_toggle, tool_pages_password_owner_label, tool_pages_password_owner_placeholder, tool_pages_password_owner_help, tool_pages_password_permissions_label, tool_pages_password_allow_printing, tool_pages_password_allow_copying, tool_pages_password_allow_editing, tool_pages_password_info, tool_pages_password_btn_busy, tool_pages_password_btn, tool_pages_password_result, tool_pages_password_save, tools_common_privacy_note, tool_pages_password_seo_faq1_q, tool_pages_password_seo_faq1_a, tool_pages_password_seo_faq2_q, tool_pages_password_seo_faq2_a, pdf_tools_tools_unlock_name, pdf_tools_tools_metadata_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_password_err_pdf, tool_pages_password_err_password, tool_pages_password_err_min_length, tool_pages_password_err_fail, tool_pages_password_title, tool_pages_password_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_password_password_label, tool_pages_password_password_placeholder, tools_common_hide, tools_common_show, tool_pages_password_owner_toggle, tool_pages_password_owner_label, tool_pages_password_owner_placeholder, tool_pages_password_owner_help, tool_pages_password_permissions_label, tool_pages_password_allow_printing, tool_pages_password_allow_copying, tool_pages_password_allow_editing, tool_pages_password_info, tool_pages_password_btn_busy, tool_pages_password_btn, tool_pages_password_result, tool_pages_password_save, tools_common_privacy_note, tool_pages_password_seo_faq1_q, tool_pages_password_seo_faq1_a, tool_pages_password_seo_faq2_q, tool_pages_password_seo_faq2_a, pdf_tools_tools_unlock_name, pdf_tools_tools_metadata_name, pdf_tools_tools_compress_name , meta_descriptions_pdf_password} from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -60,10 +60,10 @@
 
 <svelte:head>
 	<title>{tool_pages_password_title()} — LocalConvert</title>
-	<meta name="description" content="Add password protection to any PDF. Set permissions for printing, copying, and editing. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_pdf_password()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/password/" />
-	<meta property="og:title" content="Password Protect PDF — LocalConvert" />
-	<meta property="og:description" content="Add password protection to any PDF. Set permissions for printing, copying, and editing. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_password_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_password()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/password/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Password Protect a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Enter a password for encryption"},{"@type":"HowToStep","text":"Choose permission settings"},{"@type":"HowToStep","text":"Save the protected PDF"}]})}</script>`}
 </svelte:head>

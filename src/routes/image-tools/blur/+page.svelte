@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.watermark_name': image_tools_tools_watermark_name, 'image_tools.tools.filters_name': image_tools_tools_filters_name};
-	import { tool_pages_blur_err_area, tools_common_failed, tool_pages_blur_title, tool_pages_blur_desc, tools_common_back_image, tools_common_upload_image, tool_pages_blur_shape, tool_pages_blur_radius, tool_pages_blur_help, tool_pages_blur_btn_busy, tool_pages_blur_btn, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_blur_seo_faq1_q, tool_pages_img_blur_seo_faq1_a, tool_pages_img_blur_seo_faq2_q, tool_pages_img_blur_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_watermark_name, image_tools_tools_filters_name, aria_blur_radius, aria_draw_blur_regions } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_blur_err_area, tools_common_failed, tool_pages_blur_title, tool_pages_blur_desc, tools_common_back_image, tools_common_upload_image, tool_pages_blur_shape, tool_pages_blur_radius, tool_pages_blur_help, tool_pages_blur_btn_busy, tool_pages_blur_btn, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_blur_seo_faq1_q, tool_pages_img_blur_seo_faq1_a, tool_pages_img_blur_seo_faq2_q, tool_pages_img_blur_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_watermark_name, image_tools_tools_filters_name, aria_blur_radius, aria_draw_blur_regions , meta_descriptions_image_blur} from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { blurRegions, type BlurRegion } from '$lib/image/blur';
@@ -326,10 +326,10 @@
 
 <svelte:head>
 	<title>{tool_pages_blur_title()} — LocalConvert</title>
-	<meta name="description" content="Blur regions of any image for privacy. Rectangle or ellipse shapes, multiple regions, adjustable strength. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_image_blur()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/blur/" />
-	<meta property="og:title" content="Blur Region — LocalConvert" />
-	<meta property="og:description" content="Blur regions of any image for privacy. Rectangle or ellipse shapes, multiple regions, adjustable strength. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_blur_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_blur()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/blur/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Blur a Region in an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Draw blur regions on the areas you want to hide"},{"@type":"HowToStep","text":"Adjust blur intensity and save the result"}]}</script>`}
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.split_name': pdf_tools_tools_split_name, 'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
-	import { tool_pages_merge_err_min, tool_pages_merge_err_fail, tool_pages_merge_title, tool_pages_merge_desc, tools_common_back_pdf, tools_common_upload_pdfs, tool_pages_merge_btn_busy, tool_pages_merge_btn, tools_common_ready, tools_common_output, tool_pages_merge_save, tools_common_privacy_note, tool_pages_merge_seo_faq1_q, tool_pages_merge_seo_faq1_a, tool_pages_merge_seo_faq2_q, tool_pages_merge_seo_faq2_a, pdf_tools_tools_split_name, pdf_tools_tools_organize_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_merge_err_min, tool_pages_merge_err_fail, tool_pages_merge_title, tool_pages_merge_desc, tools_common_back_pdf, tools_common_upload_pdfs, tool_pages_merge_btn_busy, tool_pages_merge_btn, tools_common_ready, tools_common_output, tool_pages_merge_save, tools_common_privacy_note, tool_pages_merge_seo_faq1_q, tool_pages_merge_seo_faq1_a, tool_pages_merge_seo_faq2_q, tool_pages_merge_seo_faq2_a, pdf_tools_tools_split_name, pdf_tools_tools_organize_name, pdf_tools_tools_compress_name , meta_descriptions_pdf_merge} from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { mergePdfs } from '$lib/pdf/merge';
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
@@ -54,10 +54,10 @@
 
 <svelte:head>
 	<title>{tool_pages_merge_title()} — LocalConvert</title>
-	<meta name="description" content="Combine multiple PDF files into one. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_merge()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/merge/" />
-	<meta property="og:title" content="Merge PDF — LocalConvert" />
-	<meta property="og:description" content="Combine multiple PDF files into one. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_merge_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_merge()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/merge/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Merge PDF Files","step":[{"@type":"HowToStep","text":"Select multiple PDF files"},{"@type":"HowToStep","text":"Arrange them in the desired order"},{"@type":"HowToStep","text":"Click merge to combine into one PDF"},{"@type":"HowToStep","text":"Save the merged PDF"}]})}</script>`}
 </svelte:head>

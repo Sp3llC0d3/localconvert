@@ -5,7 +5,7 @@
 	import { downloadPdf, formatFileSize, getOutputName } from '$lib/pdf/utils';
 	import { FileTextIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { tool_pages_metadata_err_read, tool_pages_metadata_err_update, tool_pages_metadata_title, tool_pages_metadata_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_metadata_reading, tool_pages_metadata_field_title, tool_pages_metadata_field_author, tool_pages_metadata_field_subject, tool_pages_metadata_field_keywords, tool_pages_metadata_keywords_placeholder, tool_pages_metadata_field_creator, tool_pages_metadata_producer, tool_pages_metadata_none, tool_pages_metadata_created, tool_pages_metadata_modified, tool_pages_metadata_btn_busy, tool_pages_metadata_btn, tools_common_ready, tools_common_output, tool_pages_metadata_save, tools_common_privacy_note, tool_pages_metadata_seo_faq1_q, tool_pages_metadata_seo_faq1_a, tool_pages_metadata_seo_faq2_q, tool_pages_metadata_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_password_name, pdf_tools_tools_unlock_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_metadata_err_read, tool_pages_metadata_err_update, tool_pages_metadata_title, tool_pages_metadata_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_metadata_reading, tool_pages_metadata_field_title, tool_pages_metadata_field_author, tool_pages_metadata_field_subject, tool_pages_metadata_field_keywords, tool_pages_metadata_keywords_placeholder, tool_pages_metadata_field_creator, tool_pages_metadata_producer, tool_pages_metadata_none, tool_pages_metadata_created, tool_pages_metadata_modified, tool_pages_metadata_btn_busy, tool_pages_metadata_btn, tools_common_ready, tools_common_output, tool_pages_metadata_save, tools_common_privacy_note, tool_pages_metadata_seo_faq1_q, tool_pages_metadata_seo_faq1_a, tool_pages_metadata_seo_faq2_q, tool_pages_metadata_seo_faq2_a, pdf_tools_tools_compress_name, pdf_tools_tools_password_name, pdf_tools_tools_unlock_name , meta_descriptions_pdf_metadata} from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -78,10 +78,10 @@
 
 <svelte:head>
 	<title>{tool_pages_metadata_title()} — LocalConvert</title>
-	<meta name="description" content="View and edit PDF metadata — title, author, subject, keywords. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_pdf_metadata()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/metadata/" />
-	<meta property="og:title" content="Edit PDF Metadata — LocalConvert" />
-	<meta property="og:description" content="View and edit PDF metadata — title, author, subject, keywords. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_metadata_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_metadata()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/metadata/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Edit PDF Metadata","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Edit the title, author, and other properties"},{"@type":"HowToStep","text":"Review the changes"},{"@type":"HowToStep","text":"Save the updated PDF"}]})}</script>`}
 </svelte:head>

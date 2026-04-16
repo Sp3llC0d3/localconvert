@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page_titles_convert, aria_remove_file, aria_image_quality, aria_width_pixels, aria_height_pixels, aria_audio_bitrate, aria_trim_start, aria_trim_end } from '$lib/paraglide/messages/_barrel.js';
+	import { page_titles_convert, aria_remove_file, aria_image_quality, aria_width_pixels, aria_height_pixels, aria_audio_bitrate, aria_trim_start, aria_trim_end , meta_descriptions_convert} from '$lib/paraglide/messages/_barrel.js';
 	import ConversionPanel from "$lib/components/functional/ConversionPanel.svelte";
 	import FormatDropdown from "$lib/components/functional/FormatDropdown.svelte";
 	import Uploader from "$lib/components/functional/Uploader.svelte";
@@ -178,10 +178,10 @@
 
 <svelte:head>
 	<title>{page_titles_convert()} — LocalConvert</title>
-	<meta name="description" content="Convert images, audio, video, and documents directly in your browser. 200+ format conversions — free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_convert()} />
 	<link rel="canonical" href="https://localconvert.app/convert/" />
-	<meta property="og:title" content="Convert Files — LocalConvert" />
-	<meta property="og:description" content="Convert images, audio, video, and documents directly in your browser. 200+ format conversions — free, private, no uploads." />
+	<meta property="og:title" content="{page_titles_convert()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_convert()} />
 	<meta property="og:url" content="https://localconvert.app/convert/" />
 </svelte:head>
 

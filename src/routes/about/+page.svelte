@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { GITHUB_URL, GITHUB_URL_VERT, CONTACT_EMAIL } from "$lib/util/consts";
-	import { about_title, about_hero_title, about_why_description, about_stats_tools, about_stats_format_conversions, about_stats_languages, about_stats_bytes_uploaded, about_principles_label, about_principles_p1_title, about_principles_p1_desc, about_principles_p2_title, about_principles_p2_desc, about_principles_p3_title, about_principles_p3_desc, about_inside_label, about_inside_title, landing_toolkit_pdf_title, landing_toolkit_pdf_count, landing_toolkit_image_title, landing_toolkit_image_count, landing_toolkit_dev_title, landing_toolkit_dev_count, about_stack_label, about_stack_title, about_stack_imagemagick, about_stack_ffmpeg, about_stack_webcodecs, about_stack_pandoc, about_stack_pdflib, about_stack_sveltekit, about_credits_title, about_origin_title, about_origin_description, about_credit_groups_engines, about_credit_groups_engines_ffmpeg, about_credit_groups_engines_imagemagick, about_credit_groups_engines_pandoc, about_credit_groups_engines_mediabunny, about_credit_groups_engines_webdemuxer, about_credit_groups_pdf_toolkit, about_credit_groups_pdf_pdflib, about_credit_groups_pdf_pdfjs, about_credit_groups_pdf_encrypt, about_credit_groups_pdf_pptx, about_credit_groups_tool_libs, about_credit_groups_tool_qrcode, about_credit_groups_tool_marked, about_credit_groups_framework, about_credit_groups_fw_sveltekit, about_credit_groups_fw_tailwind, about_credit_groups_fw_lucide, about_credit_groups_fw_paraglide, about_links_source_code, about_links_privacy_policy } from "$lib/paraglide/messages/_barrel.js";
+	import { about_title, about_hero_title, about_why_description, about_stats_tools, about_stats_format_conversions, about_stats_languages, about_stats_bytes_uploaded, about_principles_label, about_principles_p1_title, about_principles_p1_desc, about_principles_p2_title, about_principles_p2_desc, about_principles_p3_title, about_principles_p3_desc, about_inside_label, about_inside_title, landing_toolkit_pdf_title, landing_toolkit_pdf_count, landing_toolkit_image_title, landing_toolkit_image_count, landing_toolkit_dev_title, landing_toolkit_dev_count, about_stack_label, about_stack_title, about_stack_imagemagick, about_stack_ffmpeg, about_stack_webcodecs, about_stack_pandoc, about_stack_pdflib, about_stack_sveltekit, about_credits_title, about_origin_title, about_origin_description, about_credit_groups_engines, about_credit_groups_engines_ffmpeg, about_credit_groups_engines_imagemagick, about_credit_groups_engines_pandoc, about_credit_groups_engines_mediabunny, about_credit_groups_engines_webdemuxer, about_credit_groups_pdf_toolkit, about_credit_groups_pdf_pdflib, about_credit_groups_pdf_pdfjs, about_credit_groups_pdf_encrypt, about_credit_groups_pdf_pptx, about_credit_groups_tool_libs, about_credit_groups_tool_qrcode, about_credit_groups_tool_marked, about_credit_groups_framework, about_credit_groups_fw_sveltekit, about_credit_groups_fw_tailwind, about_credit_groups_fw_lucide, about_credit_groups_fw_paraglide, about_links_source_code, about_links_privacy_policy , meta_descriptions_about} from "$lib/paraglide/messages/_barrel.js";
 	import { localizeHref } from "$lib/paraglide/runtime";
 	import { sanitize } from "$lib/util/sanitize";
 	import { GithubIcon, MailIcon, ShieldIcon, ExternalLinkIcon, ZapIcon, FileTextIcon, ImageIcon, CodeIcon, ArrowRight } from "lucide-svelte";
@@ -8,10 +8,10 @@
 
 <svelte:head>
 	<title>{about_title()} — LocalConvert</title>
-	<meta name="description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
+	<meta name="description" content={meta_descriptions_about()} />
 	<link rel="canonical" href="https://localconvert.app/about/" />
-	<meta property="og:title" content="About — LocalConvert" />
-	<meta property="og:description" content="LocalConvert is a privacy-first toolkit with 39 tools for files and code. Everything runs in your browser — no uploads, no server." />
+	<meta property="og:title" content="{about_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_about()} />
 	<meta property="og:url" content="https://localconvert.app/about/" />
 </svelte:head>
 

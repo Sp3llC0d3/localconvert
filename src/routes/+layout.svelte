@@ -19,7 +19,7 @@
 	import "$lib/css/app.scss";
 	import { initStores as initAnimStores } from "$lib/util/animation.js";
 	import { ToastManager } from "$lib/util/toast.svelte.js";
-	import { toast_insecure_context } from "$lib/paraglide/messages/_barrel.js";
+	import { toast_insecure_context, meta_descriptions_site_title, meta_descriptions_site_description } from "$lib/paraglide/messages/_barrel.js";
 	import { log } from "$lib/util/logger.js";
 	import { commandPalette } from "$lib/store/commandPalette.svelte";
 	import { loadFontForLocale } from "$lib/util/fonts.js";
@@ -116,33 +116,39 @@
 	<meta name="theme-color" content="#0F6E56" />
 	<meta
 		name="title"
-		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
+		content="{VERT_NAME} — {meta_descriptions_site_title()}"
 	/>
 	<meta
 		name="description"
-		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content={meta_descriptions_site_description()}
 	/>
-	<meta property="og:url" content="https://localconvert.app" />
+	<meta property="og:url" content="https://localconvert.app{page.url.pathname}" />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
+		content="{VERT_NAME} — {meta_descriptions_site_title()}"
 	/>
 	<meta
 		property="og:description"
-		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content={meta_descriptions_site_description()}
 	/>
 	<meta property="og:image" content={featuredImage} />
+	<meta property="og:locale" content={getLocale().replace('-', '_')} />
+	{#each locales as loc}
+		{#if loc !== getLocale()}
+			<meta property="og:locale:alternate" content={loc.replace('-', '_')} />
+		{/if}
+	{/each}
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="localconvert.app" />
-	<meta property="twitter:url" content="https://localconvert.app" />
+	<meta property="twitter:url" content="https://localconvert.app{page.url.pathname}" />
 	<meta
 		property="twitter:title"
-		content="{VERT_NAME} — Free, Private Toolkit for Files & Code"
+		content="{VERT_NAME} — {meta_descriptions_site_title()}"
 	/>
 	<meta
 		property="twitter:description"
-		content="39 tools for PDFs, images, and developer workflows — all running in your browser. No uploads, no accounts, no file size limits. Free and open source."
+		content={meta_descriptions_site_description()}
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	{#each locales as loc}

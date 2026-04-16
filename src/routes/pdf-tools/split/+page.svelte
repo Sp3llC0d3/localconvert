@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name, 'pdf_tools.tools.organize_name': pdf_tools_tools_organize_name, 'pdf_tools.tools.pdf_to_images_name': pdf_tools_tools_pdf_to_images_name};
-	import { tool_pages_split_err_extract, tool_pages_split_err_select, tool_pages_split_err_fail, tool_pages_split_title, tool_pages_split_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_split_select_pages, tool_pages_split_split_all, tools_common_clear, tools_common_loading_thumbs, tools_common_pages_selected, tool_pages_split_help, tool_pages_split_btn_busy, tool_pages_split_download_selected, tools_common_privacy_note, tool_pages_split_seo_faq1_q, tool_pages_split_seo_faq1_a, tool_pages_split_seo_faq2_q, tool_pages_split_seo_faq2_a, pdf_tools_tools_merge_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_split_err_extract, tool_pages_split_err_select, tool_pages_split_err_fail, tool_pages_split_title, tool_pages_split_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_split_select_pages, tool_pages_split_split_all, tools_common_clear, tools_common_loading_thumbs, tools_common_pages_selected, tool_pages_split_help, tool_pages_split_btn_busy, tool_pages_split_download_selected, tools_common_privacy_note, tool_pages_split_seo_faq1_q, tool_pages_split_seo_faq1_a, tool_pages_split_seo_faq2_q, tool_pages_split_seo_faq2_a, pdf_tools_tools_merge_name, pdf_tools_tools_organize_name, pdf_tools_tools_pdf_to_images_name , meta_descriptions_pdf_split} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import PdfPageThumbnail from '$lib/components/pdf/PdfPageThumbnail.svelte';
@@ -85,10 +85,10 @@
 
 <svelte:head>
 	<title>{tool_pages_split_title()} — LocalConvert</title>
-	<meta name="description" content="Split a PDF into individual pages or extract a page range. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_split()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/split/" />
-	<meta property="og:title" content="Split PDF — LocalConvert" />
-	<meta property="og:description" content="Split a PDF into individual pages or extract a page range. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_split_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_split()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/split/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Split a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Choose which pages to extract"},{"@type":"HowToStep","text":"Click split to separate pages"},{"@type":"HowToStep","text":"Save the split PDFs"}]})}</script>`}
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.pdf_to_ppt_name': pdf_tools_tools_pdf_to_ppt_name, 'pdf_tools.tools.edit_name': pdf_tools_tools_edit_name};
-	import { tool_pages_pdf_to_text_no_text, tools_common_failed, tool_pages_pdf_to_text_title, tool_pages_pdf_to_text_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_text_btn_busy, tool_pages_pdf_to_text_btn, tool_pages_pdf_to_text_result, tool_pages_pdf_to_text_copied, tool_pages_pdf_to_text_copy, tool_pages_pdf_to_text_download_txt, tools_common_privacy_note, tool_pages_pdf_to_text_seo_faq1_q, tool_pages_pdf_to_text_seo_faq1_a, tool_pages_pdf_to_text_seo_faq2_q, tool_pages_pdf_to_text_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_edit_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_pdf_to_text_no_text, tools_common_failed, tool_pages_pdf_to_text_title, tool_pages_pdf_to_text_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_pdf_to_text_btn_busy, tool_pages_pdf_to_text_btn, tool_pages_pdf_to_text_result, tool_pages_pdf_to_text_copied, tool_pages_pdf_to_text_copy, tool_pages_pdf_to_text_download_txt, tools_common_privacy_note, tool_pages_pdf_to_text_seo_faq1_q, tool_pages_pdf_to_text_seo_faq1_a, tool_pages_pdf_to_text_seo_faq2_q, tool_pages_pdf_to_text_seo_faq2_a, pdf_tools_tools_to_docx_name, pdf_tools_tools_pdf_to_ppt_name, pdf_tools_tools_edit_name , meta_descriptions_pdf_pdf_to_text} from "$lib/paraglide/messages/_barrel.js";
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { pdfToText } from '$lib/pdf/pdf-to-text';
 	import { downloadBlob, getOutputName } from '$lib/pdf/utils';
@@ -54,10 +54,10 @@
 
 <svelte:head>
 	<title>{tool_pages_pdf_to_text_title()} — LocalConvert</title>
-	<meta name="description" content="Extract text from any PDF file. Copy or download as .txt. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_pdf_to_text()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/pdf-to-text/" />
-	<meta property="og:title" content="PDF to Text — LocalConvert" />
-	<meta property="og:description" content="Extract text from any PDF file. Copy or download as .txt. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_pdf_to_text_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_pdf_to_text()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/pdf-to-text/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Extract Text from a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Click extract to pull all text content"},{"@type":"HowToStep","text":"Copy the text or save as .txt file"},{"@type":"HowToStep","text":"Use the extracted text anywhere"}]})}</script>`}
 </svelte:head>

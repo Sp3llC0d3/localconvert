@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.merge_name': pdf_tools_tools_merge_name, 'pdf_tools.tools.split_name': pdf_tools_tools_split_name, 'pdf_tools.tools.rotate_name': pdf_tools_tools_rotate_name};
-	import { tool_pages_organize_no_pages, tools_common_failed, tool_pages_organize_title, tool_pages_organize_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_loading_thumbs, tool_pages_organize_drag_reorder, tool_pages_organize_move_up, tool_pages_organize_move_down, tool_pages_organize_delete_page, tools_common_pages_remaining, tool_pages_organize_btn_busy, tool_pages_organize_btn, tools_common_privacy_note, tool_pages_organize_seo_faq1_q, tool_pages_organize_seo_faq1_a, tool_pages_organize_seo_faq2_q, tool_pages_organize_seo_faq2_a, pdf_tools_tools_merge_name, pdf_tools_tools_split_name, pdf_tools_tools_rotate_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_organize_no_pages, tools_common_failed, tool_pages_organize_title, tool_pages_organize_desc, tools_common_back_pdf, tools_common_upload_pdf, tools_common_loading_thumbs, tool_pages_organize_drag_reorder, tool_pages_organize_move_up, tool_pages_organize_move_down, tool_pages_organize_delete_page, tools_common_pages_remaining, tool_pages_organize_btn_busy, tool_pages_organize_btn, tools_common_privacy_note, tool_pages_organize_seo_faq1_q, tool_pages_organize_seo_faq1_a, tool_pages_organize_seo_faq2_q, tool_pages_organize_seo_faq2_a, pdf_tools_tools_merge_name, pdf_tools_tools_split_name, pdf_tools_tools_rotate_name , meta_descriptions_pdf_organize} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { organizePdf } from '$lib/pdf/organize';
@@ -82,10 +82,10 @@
 
 <svelte:head>
 	<title>{tool_pages_organize_title()} — LocalConvert</title>
-	<meta name="description" content="Drag and drop to reorder PDF pages. Delete unwanted pages. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_organize()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/organize/" />
-	<meta property="og:title" content="Organize PDF Pages — LocalConvert" />
-	<meta property="og:description" content="Drag and drop to reorder PDF pages. Delete unwanted pages. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_organize_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_organize()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/organize/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Organize PDF Pages","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Drag and drop pages to reorder them"},{"@type":"HowToStep","text":"Delete any unwanted pages"},{"@type":"HowToStep","text":"Save the organized PDF"}]})}</script>`}
 </svelte:head>

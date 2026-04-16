@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'pdf_tools.tools.from_docx_name': pdf_tools_tools_from_docx_name, 'pdf_tools.tools.to_docx_name': pdf_tools_tools_to_docx_name, 'pdf_tools.tools.compress_name': pdf_tools_tools_compress_name};
-	import { tool_pages_from_xlsx_invalid_file, tools_common_failed, tool_pages_from_xlsx_title, tool_pages_from_xlsx_desc, tools_common_back_pdf, tool_pages_from_xlsx_drop_hint, tool_pages_from_xlsx_page_orientation, tool_pages_from_xlsx_landscape, tool_pages_from_xlsx_portrait, tools_common_converting_progress, tools_common_convert_to_pdf, tool_pages_from_xlsx_disclaimer, tools_common_output, tools_common_save_pdf, tools_common_privacy_note, tool_pages_from_xlsx_seo_faq1_q, tool_pages_from_xlsx_seo_faq1_a, tool_pages_from_xlsx_seo_faq2_q, tool_pages_from_xlsx_seo_faq2_a, pdf_tools_tools_from_docx_name, pdf_tools_tools_to_docx_name, pdf_tools_tools_compress_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_from_xlsx_invalid_file, tools_common_failed, tool_pages_from_xlsx_title, tool_pages_from_xlsx_desc, tools_common_back_pdf, tool_pages_from_xlsx_drop_hint, tool_pages_from_xlsx_page_orientation, tool_pages_from_xlsx_landscape, tool_pages_from_xlsx_portrait, tools_common_converting_progress, tools_common_convert_to_pdf, tool_pages_from_xlsx_disclaimer, tools_common_output, tools_common_save_pdf, tools_common_privacy_note, tool_pages_from_xlsx_seo_faq1_q, tool_pages_from_xlsx_seo_faq1_a, tool_pages_from_xlsx_seo_faq2_q, tool_pages_from_xlsx_seo_faq2_a, pdf_tools_tools_from_docx_name, pdf_tools_tools_to_docx_name, pdf_tools_tools_compress_name , meta_descriptions_pdf_from_xlsx} from "$lib/paraglide/messages/_barrel.js";
 	import { browser } from '$app/environment';
 	import PdfUploader from '$lib/components/pdf/PdfUploader.svelte';
 	import { convertXlsxToPdf } from '$lib/pdf/from-xlsx';
@@ -54,10 +54,10 @@
 
 <svelte:head>
 	<title>{tool_pages_from_xlsx_title()} — LocalConvert</title>
-	<meta name="description" content="Convert Excel spreadsheets (XLSX, XLS, ODS, CSV) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta name="description" content={meta_descriptions_pdf_from_xlsx()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/from-xlsx/" />
-	<meta property="og:title" content="Excel to PDF — LocalConvert" />
-	<meta property="og:description" content="Convert Excel spreadsheets (XLSX, XLS, ODS, CSV) to PDF. Free, private, no uploads — runs entirely in your browser." />
+	<meta property="og:title" content="{tool_pages_from_xlsx_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_from_xlsx()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/from-xlsx/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Excel to PDF","step":[{"@type":"HowToStep","text":"Select an XLSX, XLS, ODS, or CSV file"},{"@type":"HowToStep","text":"Choose page orientation (landscape or portrait)"},{"@type":"HowToStep","text":"Click convert to create the PDF"},{"@type":"HowToStep","text":"Save the PDF file"}]})}</script>`}
 </svelte:head>

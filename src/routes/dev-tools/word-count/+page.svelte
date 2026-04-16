@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.markdown_name': dev_tools_tools_markdown_name, 'dev_tools.tools.json_name': dev_tools_tools_json_name};
-	import { tool_pages_word_count_title, tool_pages_word_count_desc, tools_common_back_dev, tool_pages_word_count_placeholder, tool_pages_word_count_words, tool_pages_word_count_characters, tool_pages_word_count_chars_no_spaces, tool_pages_word_count_sentences, tool_pages_word_count_paragraphs, tool_pages_word_count_reading_time, tools_common_privacy_note_browser, tool_pages_dev_word_count_seo_faq1_q, tool_pages_dev_word_count_seo_faq1_a, tool_pages_dev_word_count_seo_faq2_q, tool_pages_dev_word_count_seo_faq2_a, dev_tools_tools_diff_name, dev_tools_tools_markdown_name, dev_tools_tools_json_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_word_count_title, tool_pages_word_count_desc, tools_common_back_dev, tool_pages_word_count_placeholder, tool_pages_word_count_words, tool_pages_word_count_characters, tool_pages_word_count_chars_no_spaces, tool_pages_word_count_sentences, tool_pages_word_count_paragraphs, tool_pages_word_count_reading_time, tools_common_privacy_note_browser, tool_pages_dev_word_count_seo_faq1_q, tool_pages_dev_word_count_seo_faq1_a, tool_pages_dev_word_count_seo_faq2_q, tool_pages_dev_word_count_seo_faq2_a, dev_tools_tools_diff_name, dev_tools_tools_markdown_name, dev_tools_tools_json_name , meta_descriptions_dev_word_count} from "$lib/paraglide/messages/_barrel.js";
 	import { TypeIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -22,10 +22,10 @@
 
 <svelte:head>
 	<title>{tool_pages_word_count_title()} — LocalConvert</title>
-	<meta name="description" content="Count words, characters, sentences, and estimate reading time. Free, private, runs in your browser." />
+	<meta name="description" content={meta_descriptions_dev_word_count()} />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/word-count/" />
-	<meta property="og:title" content="Word Counter — LocalConvert" />
-	<meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Free, private, runs in your browser." />
+	<meta property="og:title" content="{tool_pages_word_count_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_dev_word_count()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/word-count/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Count Words Online","step":[{"@type":"HowToStep","text":"Paste or type your text into the editor"},{"@type":"HowToStep","text":"View word count, character count, and reading time instantly"},{"@type":"HowToStep","text":"Use the stats to check document requirements"}]}</script>`}
 </svelte:head>

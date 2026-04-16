@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'dev_tools.tools.json_name': dev_tools_tools_json_name, 'dev_tools.tools.diff_name': dev_tools_tools_diff_name, 'dev_tools.tools.word_count_name': dev_tools_tools_word_count_name};
-	import { tool_pages_css_minify_title, tool_pages_css_minify_desc, tools_common_back_dev, tool_pages_css_minify_input_label, tool_pages_css_minify_btn, tool_pages_css_minify_output_label, tool_pages_json_formatter_btn_copy, tool_pages_css_minify_saved, tools_common_privacy_note_browser, tool_pages_dev_css_minify_seo_faq1_q, tool_pages_dev_css_minify_seo_faq1_a, tool_pages_dev_css_minify_seo_faq2_q, tool_pages_dev_css_minify_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_diff_name, dev_tools_tools_word_count_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tool_pages_css_minify_title, tool_pages_css_minify_desc, tools_common_back_dev, tool_pages_css_minify_input_label, tool_pages_css_minify_btn, tool_pages_css_minify_output_label, tool_pages_json_formatter_btn_copy, tool_pages_css_minify_saved, tools_common_privacy_note_browser, tool_pages_dev_css_minify_seo_faq1_q, tool_pages_dev_css_minify_seo_faq1_a, tool_pages_dev_css_minify_seo_faq2_q, tool_pages_dev_css_minify_seo_faq2_a, dev_tools_tools_json_name, dev_tools_tools_diff_name, dev_tools_tools_word_count_name , meta_descriptions_dev_css_minify} from "$lib/paraglide/messages/_barrel.js";
 	import { CodeIcon, CopyIcon, CheckIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
@@ -46,10 +46,10 @@
 
 <svelte:head>
 	<title>{tool_pages_css_minify_title()} — LocalConvert</title>
-	<meta name="description" content="Minify CSS by removing comments and whitespace. Free, private, runs in your browser." />
+	<meta name="description" content={meta_descriptions_dev_css_minify()} />
 	<link rel="canonical" href="https://localconvert.app/dev-tools/css-minify/" />
-	<meta property="og:title" content="CSS Minifier — LocalConvert" />
-	<meta property="og:description" content="Minify CSS by removing comments and whitespace. Free, private, runs in your browser." />
+	<meta property="og:title" content="{tool_pages_css_minify_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_dev_css_minify()} />
 	<meta property="og:url" content="https://localconvert.app/dev-tools/css-minify/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Minify CSS","step":[{"@type":"HowToStep","text":"Paste your CSS code into the editor"},{"@type":"HowToStep","text":"Click minify to remove whitespace and comments"},{"@type":"HowToStep","text":"Copy the minified CSS output"}]}</script>`}
 </svelte:head>

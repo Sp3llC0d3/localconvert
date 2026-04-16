@@ -7,7 +7,7 @@
 	import { downloadPdf, formatFileSize, getOutputName, getPdfJs } from '$lib/pdf/utils';
 	import { PenToolIcon } from 'lucide-svelte';
 	import ToolPageHeader from '$lib/components/layout/ToolPageHeader.svelte';
-	import { tools_common_failed_read_pdf, tool_pages_sign_err_pdf, tool_pages_sign_err_sig, tool_pages_sign_err_place, tools_common_failed, tool_pages_sign_title, tool_pages_sign_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_sign_step1, tool_pages_sign_draw, tool_pages_sign_type, tool_pages_sign_upload, tools_common_clear, tool_pages_sign_your_name, tool_pages_sign_step2, tool_pages_sign_click_place, tool_pages_sign_btn_busy, tool_pages_sign_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_sign_seo_faq1_q, tool_pages_sign_seo_faq1_a, tool_pages_sign_seo_faq2_q, tool_pages_sign_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_edit_name, pdf_tools_tools_password_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed_read_pdf, tool_pages_sign_err_pdf, tool_pages_sign_err_sig, tool_pages_sign_err_place, tools_common_failed, tool_pages_sign_title, tool_pages_sign_desc, tools_common_back_pdf, tools_common_upload_pdf, tool_pages_sign_step1, tool_pages_sign_draw, tool_pages_sign_type, tool_pages_sign_upload, tools_common_clear, tool_pages_sign_your_name, tool_pages_sign_step2, tool_pages_sign_click_place, tool_pages_sign_btn_busy, tool_pages_sign_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_sign_seo_faq1_q, tool_pages_sign_seo_faq1_a, tool_pages_sign_seo_faq2_q, tool_pages_sign_seo_faq2_a, pdf_tools_tools_watermark_name, pdf_tools_tools_edit_name, pdf_tools_tools_password_name , meta_descriptions_pdf_sign} from "$lib/paraglide/messages/_barrel.js";
 	import ToolSeoBlock from '$lib/components/layout/ToolSeoBlock.svelte';
 	import { toolSeo } from '$lib/data/tool-seo';
 
@@ -289,10 +289,10 @@
 
 <svelte:head>
 	<title>{tool_pages_sign_title()} — LocalConvert</title>
-	<meta name="description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
+	<meta name="description" content={meta_descriptions_pdf_sign()} />
 	<link rel="canonical" href="https://localconvert.app/pdf-tools/sign/" />
-	<meta property="og:title" content="Sign PDF — LocalConvert" />
-	<meta property="og:description" content="Add your signature to any PDF. Draw, type, or upload — then click to place. Free, private." />
+	<meta property="og:title" content="{tool_pages_sign_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_pdf_sign()} />
 	<meta property="og:url" content="https://localconvert.app/pdf-tools/sign/" />
 	{@html `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Sign a PDF","step":[{"@type":"HowToStep","text":"Select a PDF file"},{"@type":"HowToStep","text":"Draw, type, or upload your signature"},{"@type":"HowToStep","text":"Place the signature on the desired page"},{"@type":"HowToStep","text":"Save the signed PDF"}]})}</script>`}
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	const __nkm = {'image_tools.tools.crop_name': image_tools_tools_crop_name, 'image_tools.tools.rotate_name': image_tools_tools_rotate_name, 'image_tools.tools.batch_name': image_tools_tools_batch_name};
-	import { tools_common_failed, tool_pages_filters_brightness, tool_pages_filters_contrast, tool_pages_filters_saturation, tool_pages_filters_sepia, tool_pages_filters_hue, tool_pages_filters_title, tool_pages_filters_desc, tools_common_back_image, tools_common_upload_image, tools_common_reset, tool_pages_filters_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_filters_seo_faq1_q, tool_pages_img_filters_seo_faq1_a, tool_pages_img_filters_seo_faq2_q, tool_pages_img_filters_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_rotate_name, image_tools_tools_batch_name } from "$lib/paraglide/messages/_barrel.js";
+	import { tools_common_failed, tool_pages_filters_brightness, tool_pages_filters_contrast, tool_pages_filters_saturation, tool_pages_filters_sepia, tool_pages_filters_hue, tool_pages_filters_title, tool_pages_filters_desc, tools_common_back_image, tools_common_upload_image, tools_common_reset, tool_pages_filters_save, tools_common_ready, tools_common_download, tools_common_privacy_note, tool_pages_img_filters_seo_faq1_q, tool_pages_img_filters_seo_faq1_a, tool_pages_img_filters_seo_faq2_q, tool_pages_img_filters_seo_faq2_a, image_tools_tools_crop_name, image_tools_tools_rotate_name, image_tools_tools_batch_name , meta_descriptions_image_filters} from "$lib/paraglide/messages/_barrel.js";
 	import ImageUploader from '$lib/components/image/ImageUploader.svelte';
 	import BeforeAfter from '$lib/components/image/BeforeAfter.svelte';
 	import { buildFilterString, DEFAULT_FILTERS, type FilterOptions } from '$lib/image/filters';
@@ -95,10 +95,10 @@
 
 <svelte:head>
 	<title>{tool_pages_filters_title()} — LocalConvert</title>
-	<meta name="description" content="Adjust brightness, contrast, saturation, sepia, and hue of any image. Free, private, no uploads." />
+	<meta name="description" content={meta_descriptions_image_filters()} />
 	<link rel="canonical" href="https://localconvert.app/image-tools/filters/" />
-	<meta property="og:title" content="Image Filters — LocalConvert" />
-	<meta property="og:description" content="Adjust brightness, contrast, saturation, sepia, and hue of any image. Free, private, no uploads." />
+	<meta property="og:title" content="{tool_pages_filters_title()} — LocalConvert" />
+	<meta property="og:description" content={meta_descriptions_image_filters()} />
 	<meta property="og:url" content="https://localconvert.app/image-tools/filters/" />
 	{@html `<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Apply Filters to an Image","step":[{"@type":"HowToStep","text":"Select an image from your device"},{"@type":"HowToStep","text":"Browse and apply visual filters like grayscale, sepia, or blur"},{"@type":"HowToStep","text":"Adjust intensity and save the filtered image"}]}</script>`}
 </svelte:head>

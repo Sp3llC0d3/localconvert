@@ -2,6 +2,21 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { localizeHref } from "$lib/paraglide/runtime";
 	import { ShieldCheck, Zap, Ban, Code } from "lucide-svelte";
+	import { meta_descriptions_converter_jpg, meta_descriptions_converter_png, meta_descriptions_converter_webp, meta_descriptions_converter_gif, meta_descriptions_converter_bmp, meta_descriptions_converter_tiff, meta_descriptions_converter_svg, meta_descriptions_converter_avif, meta_descriptions_converter_ico, meta_descriptions_converter_mp3, meta_descriptions_converter_wav, meta_descriptions_converter_ogg, meta_descriptions_converter_flac, meta_descriptions_converter_aac, meta_descriptions_converter_mp4, meta_descriptions_converter_webm, meta_descriptions_converter_mkv, meta_descriptions_converter_avi, meta_descriptions_converter_mov, meta_descriptions_converter_docx, meta_descriptions_converter_md, meta_descriptions_converter_html, meta_descriptions_converter_epub, meta_descriptions_converter_odt, meta_descriptions_converter_headline } from "$lib/paraglide/messages/_barrel.js";
+
+	const converterDescriptions: Record<string, () => string> = {
+		jpg: meta_descriptions_converter_jpg, png: meta_descriptions_converter_png, webp: meta_descriptions_converter_webp,
+		gif: meta_descriptions_converter_gif, bmp: meta_descriptions_converter_bmp, tiff: meta_descriptions_converter_tiff,
+		svg: meta_descriptions_converter_svg, avif: meta_descriptions_converter_avif, ico: meta_descriptions_converter_ico,
+		mp3: meta_descriptions_converter_mp3, wav: meta_descriptions_converter_wav, ogg: meta_descriptions_converter_ogg,
+		flac: meta_descriptions_converter_flac, aac: meta_descriptions_converter_aac, mp4: meta_descriptions_converter_mp4,
+		webm: meta_descriptions_converter_webm, mkv: meta_descriptions_converter_mkv, avi: meta_descriptions_converter_avi,
+		mov: meta_descriptions_converter_mov, docx: meta_descriptions_converter_docx, md: meta_descriptions_converter_md,
+		html: meta_descriptions_converter_html, epub: meta_descriptions_converter_epub, odt: meta_descriptions_converter_odt,
+	};
+
+	const converterDesc = $derived(converterDescriptions[info.format]?.() ?? info.description);
+	const converterTitle = $derived(meta_descriptions_converter_headline({ format: info.label }));
 
 	let { data } = $props();
 	const info = $derived(data.info);
@@ -59,10 +74,10 @@
 </script>
 
 <svelte:head>
-	<title>Free {info.label} Converter — LocalConvert</title>
-	<meta name="description" content={info.description} />
-	<meta property="og:title" content="Free {info.label} Converter — LocalConvert" />
-	<meta property="og:description" content={info.description} />
+	<title>{converterTitle} — LocalConvert</title>
+	<meta name="description" content={converterDesc} />
+	<meta property="og:title" content="{converterTitle} — LocalConvert" />
+	<meta property="og:description" content={converterDesc} />
 	<link rel="canonical" href="https://localconvert.app/{info.format}-converter/" />
 	{@html `<script type="application/ld+json">${howToSchema}</script>`}
 	{@html `<script type="application/ld+json">${faqSchema}</script>`}
