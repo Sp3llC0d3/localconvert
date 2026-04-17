@@ -34,6 +34,7 @@ src/lib/components/visual/svg/logo-concepts/
 .vercel
 /.svelte-kit
 /build
+/.build-tmp
 
 # OS
 .DS_Store
