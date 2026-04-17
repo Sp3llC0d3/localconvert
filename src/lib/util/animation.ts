@@ -12,6 +12,19 @@ import {
 let effectsEnabled = true;
 let isMobileDevice = false;
 
+// Skip transitions on the very first client render (SSR hydration) so the
+// initial page content stays at opacity 1 / transform 0 — ensures Chrome
+// has a valid LCP candidate during Lighthouse's measurement window.
+let isInitialLoad = true;
+if (typeof window !== "undefined") {
+	// Flip the flag after the browser has a chance to paint the initial frame.
+	requestAnimationFrame(() => {
+		requestAnimationFrame(() => {
+			isInitialLoad = false;
+		});
+	});
+}
+
 export function initStores() {
 	effects.subscribe((value) => {
 		effectsEnabled = value;
@@ -27,13 +40,13 @@ export const transition =
 export const duration = 500;
 
 export function fade(node: HTMLElement, options: FadeParams) {
-	if (!effectsEnabled) return {};
+	if (!effectsEnabled || isInitialLoad) return {};
 	const animation = svelteFade(node, options);
 	return animation;
 }
 
 export function fly(node: HTMLElement, options: FlyParams) {
-	if (!effectsEnabled || isMobileDevice) return {};
+	if (!effectsEnabled || isMobileDevice || isInitialLoad) return {};
 	const animation = svelteFly(node, options);
 	return animation;
 }

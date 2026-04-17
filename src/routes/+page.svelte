@@ -290,10 +290,10 @@
 </section>
 
 <style lang="postcss">
-/* ── Reveal animation ── */
+/* ── Reveal animation (no opacity so hero H1 remains LCP-eligible) ── */
 @keyframes revealUp {
-	from { opacity: 0; transform: translateY(20px); }
-	to   { opacity: 1; transform: translateY(0); }
+	from { transform: translateY(20px); }
+	to   { transform: translateY(0); }
 }
 
 .hero-animate { animation: revealUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
