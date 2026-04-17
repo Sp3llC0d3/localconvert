@@ -5,7 +5,7 @@
 	"scripts": {
 		"predev": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide --strategy url cookie localStorage baseLocale && node scripts/patch-paraglide.cjs",
 		"dev": "vite dev",
-		"build": "node scripts/generate-sitemap.js && node scripts/build-per-locale.js && node scripts/merge-locale-builds.js && node scripts/inject-font-preloads.js",
+		"build": "rm -rf src/lib/paraglide && paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide --strategy url cookie localStorage baseLocale && node scripts/patch-paraglide.cjs && node scripts/generate-sitemap.js && node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js build && node scripts/inject-font-preloads.js",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

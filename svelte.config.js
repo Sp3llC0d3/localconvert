@@ -49,30 +49,18 @@ const localeEntries = locales.flatMap((l) => [
 	...dynamicPaths.map((p) => `/${l}${p}`),
 ]);
 
-// When PER_LOCALE_BUILD is set, restrict prerender to that single locale's URLs
-// AND write output to a per-locale directory so passes don't overwrite each other.
-// scripts/build-per-locale.js drives 28 passes this way.
-const perLocale = process.env.PER_LOCALE_BUILD;
-const prerenderEntries = perLocale === "en"
-	? ["*", ...dynamicPaths]                             // base locale: no URL prefix
-	: perLocale
-		? [`/${perLocale}/`, ...dynamicPaths.map((p) => `/${perLocale}${p}`)]
-		: ["*", ...localeEntries];                        // default: all locales (legacy single-pass)
-const adapterOutDir = perLocale ? `.build-tmp/build-${perLocale}` : "build";
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({ pages: adapterOutDir, assets: adapterOutDir }),
+		adapter: adapter(),
 		inlineStyleThreshold: 12000,
 		paths: {
 			relative: false,
 		},
 		prerender: {
-			entries: prerenderEntries,
-			handleUnseenRoutes: perLocale ? "warn" : "fail",
+			entries: ["*", ...localeEntries],
 		},
 		env: {
 			publicPrefix: "PUB_",
