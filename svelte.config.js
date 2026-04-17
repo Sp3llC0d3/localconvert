@@ -55,6 +55,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		inlineStyleThreshold: 12000,
 		paths: {
 			relative: false,
 		},
