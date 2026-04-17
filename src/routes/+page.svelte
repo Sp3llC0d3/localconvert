@@ -130,8 +130,8 @@
 			{/each}
 		</div>
 
-		<!-- Headline -->
-		<h1 class="hero-headline hero-animate delay-1">
+		<!-- Headline (no animation; stays in final position so it's an instant LCP candidate) -->
+		<h1 class="hero-headline">
 			{upload_title()}
 		</h1>
 
