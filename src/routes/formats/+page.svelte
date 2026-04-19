@@ -263,7 +263,7 @@
 		flex: 1;
 		background: none !important;
 		border: none !important;
-		outline: none !important;
+		outline: none;
 		padding: 0 !important;
 		font-size: 0.875rem;
 		color: var(--fg);
@@ -274,8 +274,10 @@
 		color: var(--fg-muted);
 	}
 
-	.fmt-search:focus {
-		outline: none !important;
+	.fmt-search:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 
 	.fmt-filters {

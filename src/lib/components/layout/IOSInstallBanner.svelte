@@ -48,7 +48,7 @@
 			</div>
 			<button
 				onclick={dismiss}
-				class="shrink-0 p-1 rounded-full hover:bg-panel-highlight transition-colors"
+				class="shrink-0 min-w-11 min-h-11 flex items-center justify-center rounded-full hover:bg-panel-highlight transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2"
 				aria-label={aria_dismiss()}
 			>
 				<XIcon size={18} />

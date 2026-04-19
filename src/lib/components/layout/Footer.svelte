@@ -91,10 +91,18 @@
 	@apply flex items-center gap-1.5 text-muted font-normal no-underline;
 	font-size: 0.7rem;
 	transition: color 0.15s ease;
+	min-height: 44px;
+	padding: 0 0.5rem;
+	border-radius: 0.25rem;
 }
 
 .footer-tool-link:hover {
 	color: var(--fg);
+}
+
+.footer-tool-link:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
 }
 
 .footer-links {

@@ -291,6 +291,7 @@
 						max={100}
 						placeholder={"100"}
 						extension={"%"}
+						ariaLabel={settings_conversion_quality_images()}
 					/>
 				</div>
 				<div class="flex flex-col gap-2">
@@ -331,6 +332,7 @@
 						placeholder={"44100"}
 						extension={"Hz"}
 						disabled={settings.ffmpegSampleRate !== "custom"}
+						ariaLabel={settings_conversion_rate()}
 					/>
 				</div>
 			</div>
@@ -403,6 +405,12 @@
 		padding: 0;
 		width: 10ch;
 		min-width: 6ch;
+	}
+
+	.fn-segment-input:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 
 	.fn-segment-input::placeholder {

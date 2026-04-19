@@ -372,7 +372,7 @@
 	bind:this={dropdown}
 >
 	<button
-		class="relative flex items-center justify-center w-full font-display px-3 py-3.5 bg-button rounded-full overflow-hidden cursor-pointer focus:!outline-none
+		class="relative flex items-center justify-center w-full font-display px-3 py-3.5 bg-button rounded-full overflow-hidden cursor-pointer focus:outline-none focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2
 		{disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}"
 		onclick={() => clickDropdown()}
 		{disabled}

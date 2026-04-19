@@ -23,6 +23,9 @@ RTL_AUDIT.md
 SEO_AUDIT_PLAN.md
 PERFORMANCE_PLAN.md
 bundle-stats.html
+WEBCODECS_WEBGPU_RESEARCH.md
+WEBGPU_ROADMAP.md
+A11Y_AUDIT.md
 
 # Preview/concept pages (local dev only)
 src/routes/logo-preview/

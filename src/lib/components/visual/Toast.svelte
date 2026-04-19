@@ -9,6 +9,7 @@
 	} from "lucide-svelte";
 	import { quintOut } from "svelte/easing";
 	import { ToastManager } from "$lib/util/toast.svelte";
+	import { aria_close } from "$lib/paraglide/messages/_barrel.js";
 	import type { ToastProps } from "$lib/util/toast.svelte";
 	import type { SvelteComponent } from "svelte";
 	import clsx from "clsx";
@@ -83,8 +84,9 @@
 			</p>
 		</div>
 		<button
-			class="text-gray-600 hover:text-black flex-shrink-0"
+			class="text-gray-600 hover:text-black flex-shrink-0 min-w-11 min-h-11 flex items-center justify-center rounded focus:outline-none focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2"
 			onclick={() => ToastManager.remove(id)}
+			aria-label={aria_close()}
 		>
 			<XIcon size="16" />
 		</button>

@@ -65,7 +65,7 @@
 			? 'opacity-50 cursor-auto'
 			: 'cursor-pointer'} flex items-center {settingsStyle
 			? 'rounded-xl'
-			: 'rounded-full'} focus:!outline-none"
+			: 'rounded-full'} focus:outline-none focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2"
 		onclick={toggle}
 		onmouseenter={() => (hover = true)}
 		onmouseleave={() => (hover = false)}

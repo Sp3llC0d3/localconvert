@@ -9,6 +9,7 @@
 		type?: string;
 		min?: number;
 		max?: number;
+		ariaLabel?: string;
 	};
 
 	let {
@@ -21,6 +22,7 @@
 		type = "text",
 		min = 0,
 		max = 100,
+		ariaLabel,
 	}: Props = $props();
 </script>
 
@@ -32,6 +34,7 @@
 		bind:value
 		{placeholder}
 		{disabled}
+		aria-label={ariaLabel}
 		class="w-full p-3 rounded-lg bg-panel border-2 border-button
             {prefix ? 'ps-[2rem]' : 'ps-3'}
             {extension ? 'pe-[4rem]' : 'pe-3'}

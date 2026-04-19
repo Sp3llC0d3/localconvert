@@ -217,7 +217,7 @@
 		flex: 1;
 		background: none !important;
 		border: none !important;
-		outline: none !important;
+		outline: none;
 		padding: 0 !important;
 		font-size: 0.9375rem;
 		font-weight: 400;
@@ -225,8 +225,10 @@
 		font-family: var(--font-body);
 	}
 
-	.palette-input:focus {
-		outline: none !important;
+	.palette-input:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 
 	.palette-input::placeholder {
@@ -239,6 +241,17 @@
 		background: none;
 		border: none;
 		padding: 0;
+		min-height: 44px;
+		min-width: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+	}
+
+	.palette-close:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
 	}
 
 	.palette-kbd {

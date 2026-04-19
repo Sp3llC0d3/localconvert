@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { formatsByCategory, categoryMeta, formatMap, allInputFormats, type FormatEntry } from '$lib/data/format-map';
-	import { aria_search_formats, aria_gpu_acceleration } from '$lib/paraglide/messages/_barrel.js';
+	import { aria_search_formats, aria_gpu_acceleration, aria_close } from '$lib/paraglide/messages/_barrel.js';
 	import { Image, AudioLines, Film, BookText, ArrowRight, SearchIcon, ZapIcon } from 'lucide-svelte';
 
 	const icons = { image: Image, audio: AudioLines, video: Film, doc: BookText };
@@ -119,7 +119,7 @@
 			spellcheck="false"
 		/>
 		{#if isSearching}
-			<button class="explorer-search-clear" onclick={() => searchQuery = ''}>
+			<button class="explorer-search-clear" onclick={() => searchQuery = ''} aria-label={aria_close()}>
 				&times;
 			</button>
 		{/if}
@@ -321,7 +321,7 @@
 		flex: 1;
 		background: none !important;
 		border: none !important;
-		outline: none !important;
+		outline: none;
 		padding: 0 !important;
 		font-size: 0.8125rem;
 		color: var(--fg);
@@ -333,8 +333,10 @@
 		color: var(--fg-muted);
 	}
 
-	.explorer-search:focus {
-		outline: none !important;
+	.explorer-search:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 
 	.explorer-search-clear {
@@ -346,6 +348,17 @@
 		cursor: pointer;
 		padding: 0 0.25rem;
 		transition: color 0.15s ease;
+		min-height: 44px;
+		min-width: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+	}
+
+	.explorer-search-clear:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
 	}
 
 	.explorer-search-clear:hover {

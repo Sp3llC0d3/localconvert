@@ -91,11 +91,11 @@ code, pre, kbd {
 
 	/* ── Foregrounds ── */
 	--fg: hsl(220, 18%, 8%);
-	--fg-muted: hsla(220, 10%, 15%, 0.65);
+	--fg-muted: hsl(220, 10%, 35%);
 	--fg-on-accent: hsl(0, 0%, 100%);
 	--fg-on-badge: hsl(162, 72%, 18%);
 	--fg-accent: var(--accent-base-muted);
-	--fg-failure: hsl(0, 72%, 50%);
+	--fg-failure: hsl(0, 72%, 42%);
 
 	/* ── Backgrounds ── */
 	--bg: hsl(38, 20%, 96%);
@@ -184,7 +184,7 @@ code, pre, kbd {
 
 	/* ── Foregrounds ── */
 	--fg: hsl(32, 12%, 94%);
-	--fg-muted: hsla(32, 8%, 90%, 0.62);
+	--fg-muted: hsl(32, 8%, 75%);
 	--fg-on-accent: hsl(220, 28%, 7%);
 	--fg-on-badge: hsl(162, 30%, 88%);
 	--fg-accent: var(--accent);

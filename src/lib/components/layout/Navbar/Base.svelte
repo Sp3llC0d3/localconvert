@@ -636,6 +636,8 @@
 	}
 
 	.lang-btn {
+		min-height: 44px;
+		min-width: 44px;
 		padding: 0.375rem 0.5rem;
 		border-radius: 0.5rem;
 		font-size: 0.75rem;
@@ -649,6 +651,9 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.lang-btn:hover {
