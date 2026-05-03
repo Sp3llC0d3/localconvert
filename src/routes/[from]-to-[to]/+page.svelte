@@ -1,7 +1,37 @@
 <script lang="ts">
 	import Uploader from '$lib/components/functional/Uploader.svelte';
 	import { ShieldCheck, Zap, Ban, Code } from 'lucide-svelte';
-	import { meta_descriptions_format_pair, meta_descriptions_format_pair_video_audio, navbar_home, navbar_convert } from '$lib/paraglide/messages/_barrel.js';
+	import {
+		meta_descriptions_format_pair,
+		meta_descriptions_format_pair_video_audio,
+		navbar_home,
+		navbar_convert,
+		format_pair_headline,
+		format_pair_description_default,
+		format_pair_description_video_audio,
+		format_pair_type_badge,
+		format_pair_how_to_heading,
+		format_pair_step_select_title,
+		format_pair_step_select_body,
+		format_pair_step_convert_title,
+		format_pair_step_convert_body,
+		format_pair_step_save_title,
+		format_pair_step_save_body,
+		format_pair_faq_heading,
+		format_pair_faq_q_free,
+		format_pair_faq_a_free,
+		format_pair_faq_q_safe,
+		format_pair_faq_a_safe,
+		format_pair_faq_q_time,
+		format_pair_faq_a_time,
+		format_pair_faq_q_difference,
+		format_pair_faq_a_difference,
+		feature_no_uploads,
+		feature_private,
+		feature_gpu,
+		feature_open_source,
+	} from '$lib/paraglide/messages/_barrel.js';
+	import * as M from '$lib/paraglide/messages/_barrel.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
 
 	let { data } = $props();
@@ -9,51 +39,64 @@
 	const to = $derived(data.to);
 	const fromMeta = $derived(data.fromMeta);
 	const toMeta = $derived(data.toMeta);
-	const headline = $derived(data.headline);
-	const description = $derived(data.description);
-	const metaDescription = $derived(data.metaDescription);
 
 	const fromLabel = $derived(fromMeta.label);
 	const toLabel = $derived(toMeta.label);
 	const FROM = $derived(from.toUpperCase());
 	const TO = $derived(to.toUpperCase());
 
+	// Per-format descriptive blurbs ("a widely-used lossy image format, ideal for photos")
+	// — keyed by format slug; falls back to empty string if a format has no entry.
+	const formatDesc = (fmt: string): string => {
+		const fn = (M as Record<string, undefined | (() => string)>)[`format_desc_${fmt}`];
+		return fn ? fn() : '';
+	};
+	const fromDesc = $derived(formatDesc(from));
+	const toDesc = $derived(formatDesc(to));
+
 	const canonicalUrl = $derived(`https://localconvert.app/${from}-to-${to}/`);
 	const isVideoToAudio = $derived(fromMeta.type === 'video' && toMeta.type === 'audio');
+
+	const headline = $derived(format_pair_headline({ fromLabel, toLabel }));
+	const description = $derived(
+		isVideoToAudio
+			? format_pair_description_video_audio({ fromLabel, toLabel })
+			: format_pair_description_default({ fromLabel, toLabel, fromDesc, toDesc })
+	);
 	const i18nMetaDesc = $derived(
 		isVideoToAudio
 			? meta_descriptions_format_pair_video_audio({ from: fromLabel, to: toLabel })
 			: meta_descriptions_format_pair({ from: fromLabel, to: toLabel, FROM, TO })
 	);
 
-	const features = [
-		{ icon: Ban, label: 'No server uploads' },
-		{ icon: ShieldCheck, label: '100% private' },
-		{ icon: Zap, label: 'GPU accelerated' },
-		{ icon: Code, label: 'Open source' },
-	];
+	const features = $derived([
+		{ icon: Ban, label: feature_no_uploads() },
+		{ icon: ShieldCheck, label: feature_private() },
+		{ icon: Zap, label: feature_gpu() },
+		{ icon: Code, label: feature_open_source() },
+	]);
 
-	// JSON-LD structured data
+	// JSON-LD structured data — re-evaluated on locale change via $derived
 	const howToSchema = $derived(JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'HowTo',
-		name: `How to convert ${fromLabel} to ${toLabel}`,
-		description: `Convert ${FROM} files to ${TO} format for free, directly in your browser.`,
+		name: format_pair_how_to_heading({ fromLabel, toLabel }),
+		description,
 		step: [
 			{
 				'@type': 'HowToStep',
-				name: 'Select your file',
-				text: `Click or drag your ${FROM} file onto the converter.`,
+				name: format_pair_step_select_title({ FROM }),
+				text: format_pair_step_select_body({ FROM }),
 			},
 			{
 				'@type': 'HowToStep',
-				name: `Select ${toLabel} format`,
-				text: `The converter will automatically set the output to ${toLabel}. Adjust if needed.`,
+				name: format_pair_step_convert_title({ TO }),
+				text: format_pair_step_convert_body({ toLabel }),
 			},
 			{
 				'@type': 'HowToStep',
-				name: 'Save the result',
-				text: `Click Convert, then save your ${TO} file to your device instantly.`,
+				name: format_pair_step_save_title(),
+				text: format_pair_step_save_body({ TO }),
 			},
 		],
 		tool: [{ '@type': 'HowToTool', name: 'LocalConvert' }],
@@ -66,30 +109,39 @@
 		mainEntity: [
 			{
 				'@type': 'Question',
-				name: `Is the ${fromLabel} to ${toLabel} converter really free?`,
-				acceptedAnswer: {
-					'@type': 'Answer',
-					text: `Yes — completely free, no account required, no watermarks, no file size limits. LocalConvert is open source.`,
-				},
+				name: format_pair_faq_q_free({ fromLabel, toLabel }),
+				acceptedAnswer: { '@type': 'Answer', text: format_pair_faq_a_free() },
 			},
 			{
 				'@type': 'Question',
-				name: `Are my ${FROM} files safe?`,
-				acceptedAnswer: {
-					'@type': 'Answer',
-					text: `Your files never leave your browser. All ${FROM} to ${TO} conversion happens using WebAssembly running locally on your device.`,
-				},
+				name: format_pair_faq_q_safe({ FROM }),
+				acceptedAnswer: { '@type': 'Answer', text: format_pair_faq_a_safe({ FROM, TO }) },
 			},
 			{
 				'@type': 'Question',
-				name: `How long does ${fromLabel} to ${toLabel} conversion take?`,
-				acceptedAnswer: {
-					'@type': 'Answer',
-					text: `Most conversions complete in seconds. Larger files may take a little longer depending on your device.`,
-				},
+				name: format_pair_faq_q_time({ fromLabel, toLabel }),
+				acceptedAnswer: { '@type': 'Answer', text: format_pair_faq_a_time() },
+			},
+			{
+				'@type': 'Question',
+				name: format_pair_faq_q_difference({ fromLabel, toLabel }),
+				acceptedAnswer: { '@type': 'Answer', text: format_pair_faq_a_difference({ fromLabel, toLabel, fromDesc, toDesc }) },
 			},
 		],
 	}));
+
+	const steps = $derived([
+		{ n: '1', title: format_pair_step_select_title({ FROM }), body: format_pair_step_select_body({ FROM }) },
+		{ n: '2', title: format_pair_step_convert_title({ TO }), body: format_pair_step_convert_body({ toLabel }) },
+		{ n: '3', title: format_pair_step_save_title(), body: format_pair_step_save_body({ TO }) },
+	]);
+
+	const faqs = $derived([
+		{ q: format_pair_faq_q_free({ fromLabel, toLabel }), a: format_pair_faq_a_free() },
+		{ q: format_pair_faq_q_safe({ FROM }), a: format_pair_faq_a_safe({ FROM, TO }) },
+		{ q: format_pair_faq_q_time({ fromLabel, toLabel }), a: format_pair_faq_a_time() },
+		{ q: format_pair_faq_q_difference({ fromLabel, toLabel }), a: format_pair_faq_a_difference({ fromLabel, toLabel, fromDesc, toDesc }) },
+	]);
 </script>
 
 <svelte:head>
@@ -108,7 +160,7 @@
 <section class="converter-hero w-full">
 	<div class="max-w-4xl mx-auto px-6 md:px-8 pt-10 md:pt-16 pb-12 md:pb-20 flex flex-col items-center">
 		<!-- breadcrumb badge -->
-		<span class="type-badge mb-5">{fromLabel} → {toLabel} Converter</span>
+		<span class="type-badge mb-5">{format_pair_type_badge({ fromLabel, toLabel })}</span>
 
 		<h1 class="text-3xl md:text-5xl text-center font-display tracking-tight leading-tight mb-4 max-w-2xl">
 			{headline}
@@ -133,14 +185,10 @@
 <!-- How to convert -->
 <section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-8">
-		How to convert {fromLabel} to {toLabel}
+		{format_pair_how_to_heading({ fromLabel, toLabel })}
 	</h2>
 	<ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
-		{#each [
-			{ n: '1', title: `Select your ${FROM} file`, body: `Click or drag your ${FROM} file onto the converter above.` },
-			{ n: '2', title: `Convert to ${TO}`, body: `The output format is pre-set to ${toLabel}. Click the convert button to process your file.` },
-			{ n: '3', title: 'Save instantly', body: `Your converted ${TO} file is ready — save it to your device, no email required.` },
-		] as step}
+		{#each steps as step}
 			<li class="step-card">
 				<span class="step-num">{step.n}</span>
 				<h3 class="font-semibold text-base mb-1">{step.title}</h3>
@@ -153,27 +201,10 @@
 <!-- FAQ -->
 <section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">
-		{fromLabel} to {toLabel} — FAQ
+		{format_pair_faq_heading({ fromLabel, toLabel })}
 	</h2>
 	<div class="flex flex-col gap-3 max-w-2xl mx-auto">
-		{#each [
-			{
-				q: `Is the ${fromLabel} to ${toLabel} converter really free?`,
-				a: `Yes, completely free. No hidden fees, no watermarks, no file size limits. LocalConvert is open source and free forever.`,
-			},
-			{
-				q: `Are my ${FROM} files safe?`,
-				a: `Absolutely. Your files never leave your browser. All ${FROM} to ${TO} conversion happens using WebAssembly running locally on your device — no uploads, ever.`,
-			},
-			{
-				q: `How long does ${fromLabel} to ${toLabel} conversion take?`,
-				a: `Most conversions finish in seconds. Larger files may take a little longer depending on your device's speed and memory.`,
-			},
-			{
-				q: `What's the difference between ${fromLabel} and ${toLabel}?`,
-				a: `${fromLabel} is ${fromMeta.desc}. ${toLabel} is ${toMeta.desc}.`,
-			},
-		] as faq}
+		{#each faqs as faq}
 			<details class="faq-item">
 				<summary class="faq-q">
 					<span>{faq.q}</span>

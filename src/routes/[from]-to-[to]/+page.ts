@@ -96,9 +96,6 @@ export type PairInfo = {
 	fromMeta: (typeof formatMeta)[string];
 	to: string;
 	toMeta: (typeof formatMeta)[string];
-	headline: string;
-	description: string;
-	metaDescription: string;
 };
 
 export const load: PageLoad = ({ params }) => {
@@ -111,18 +108,5 @@ export const load: PageLoad = ({ params }) => {
 		error(404, `No converter found for "${from}" to "${to}"`);
 	}
 
-	const isVideoToAudio =
-		fromMeta.type === 'video' && toMeta.type === 'audio';
-
-	const headline = `Convert ${fromMeta.label} to ${toMeta.label} — Free & Private`;
-
-	const description = isVideoToAudio
-		? `Extract ${toMeta.label} audio from ${fromMeta.label} video files directly in your browser. No uploads, no accounts, completely free.`
-		: `Convert ${fromMeta.label} to ${toMeta.label} online for free. ${fromMeta.label} is ${fromMeta.desc}; ${toMeta.label} is ${toMeta.desc}. All processing happens locally in your browser — your files never leave your device.`;
-
-	const metaDescription = isVideoToAudio
-		? `Free ${fromMeta.label} to ${toMeta.label} converter. Extract audio from video locally in your browser — no uploads, no limits.`
-		: `Free ${fromMeta.label} to ${toMeta.label} converter. Convert ${from.toUpperCase()} to ${to.toUpperCase()} locally in your browser — no uploads, no watermarks, no file size limit.`;
-
-	return { from, to, fromMeta, toMeta, headline, description, metaDescription } satisfies PairInfo & { from: string; to: string };
+	return { from, to, fromMeta, toMeta } satisfies PairInfo;
 };

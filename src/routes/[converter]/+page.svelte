@@ -2,7 +2,46 @@
 	import Uploader from "$lib/components/functional/Uploader.svelte";
 	import { localizeHref } from "$lib/paraglide/runtime";
 	import { ShieldCheck, Zap, Ban, Code } from "lucide-svelte";
-	import { meta_descriptions_converter_jpg, meta_descriptions_converter_png, meta_descriptions_converter_webp, meta_descriptions_converter_gif, meta_descriptions_converter_bmp, meta_descriptions_converter_tiff, meta_descriptions_converter_svg, meta_descriptions_converter_avif, meta_descriptions_converter_ico, meta_descriptions_converter_mp3, meta_descriptions_converter_wav, meta_descriptions_converter_ogg, meta_descriptions_converter_flac, meta_descriptions_converter_aac, meta_descriptions_converter_mp4, meta_descriptions_converter_webm, meta_descriptions_converter_mkv, meta_descriptions_converter_avi, meta_descriptions_converter_mov, meta_descriptions_converter_docx, meta_descriptions_converter_md, meta_descriptions_converter_html, meta_descriptions_converter_epub, meta_descriptions_converter_odt, meta_descriptions_converter_headline, navbar_home, navbar_convert } from "$lib/paraglide/messages/_barrel.js";
+	import {
+		meta_descriptions_converter_jpg, meta_descriptions_converter_png, meta_descriptions_converter_webp,
+		meta_descriptions_converter_gif, meta_descriptions_converter_bmp, meta_descriptions_converter_tiff,
+		meta_descriptions_converter_svg, meta_descriptions_converter_avif, meta_descriptions_converter_ico,
+		meta_descriptions_converter_mp3, meta_descriptions_converter_wav, meta_descriptions_converter_ogg,
+		meta_descriptions_converter_flac, meta_descriptions_converter_aac, meta_descriptions_converter_mp4,
+		meta_descriptions_converter_webm, meta_descriptions_converter_mkv, meta_descriptions_converter_avi,
+		meta_descriptions_converter_mov, meta_descriptions_converter_docx, meta_descriptions_converter_md,
+		meta_descriptions_converter_html, meta_descriptions_converter_epub, meta_descriptions_converter_odt,
+		meta_descriptions_converter_headline,
+		navbar_home, navbar_convert,
+		converter_page_type_badge,
+		converter_page_how_to_heading,
+		converter_page_step_choose_title,
+		converter_page_step_choose_body,
+		converter_page_step_pick_title,
+		converter_page_step_pick_body,
+		converter_page_step_save_title,
+		converter_page_step_save_body,
+		converter_page_supported_inputs_heading,
+		converter_page_faq_heading,
+		converter_page_faq_q_free,
+		converter_page_faq_a_free,
+		converter_page_faq_q_safe,
+		converter_page_faq_a_safe,
+		converter_page_faq_q_inputs,
+		converter_page_faq_a_inputs,
+		format_type_image,
+		format_type_audio,
+		format_type_video,
+		format_type_doc,
+		feature_no_uploads,
+		feature_private,
+		feature_gpu,
+		feature_open_source,
+	} from "$lib/paraglide/messages/_barrel.js";
+
+	let { data } = $props();
+	const info = $derived(data.info);
+	const validFormats = $derived(new Set(data.validFormats));
 
 	const converterDescriptions: Record<string, () => string> = {
 		jpg: meta_descriptions_converter_jpg, png: meta_descriptions_converter_png, webp: meta_descriptions_converter_webp,
@@ -15,36 +54,56 @@
 		html: meta_descriptions_converter_html, epub: meta_descriptions_converter_epub, odt: meta_descriptions_converter_odt,
 	};
 
-	const converterDesc = $derived(converterDescriptions[info.format]?.() ?? info.description);
+	const converterDesc = $derived(converterDescriptions[info.format]?.() ?? "");
 	const converterTitle = $derived(meta_descriptions_converter_headline({ format: info.label }));
 
-	let { data } = $props();
-	const info = $derived(data.info);
-	const validFormats = $derived(new Set(data.validFormats));
+	// Hero h1: same translated string as <title>; previously sourced from English info.headline.
+	const headline = $derived(converterTitle);
+	// Hero description: reuse existing translated meta-description key.
+	const description = $derived(converterDesc);
 
-	const typeLabel: Record<string, string> = {
-		image: "Image",
-		audio: "Audio",
-		video: "Video",
-		doc: "Document",
+	// Localized type badge label ("Image", "Audio", "Video", "Document").
+	const typeLabelMap: Record<string, () => string> = {
+		image: format_type_image,
+		audio: format_type_audio,
+		video: format_type_video,
+		doc: format_type_doc,
 	};
+	const typeLabel = $derived(typeLabelMap[info.type]?.() ?? "");
 
-	const features = [
-		{ icon: Ban, label: "No server uploads" },
-		{ icon: ShieldCheck, label: "100% private" },
-		{ icon: Zap, label: "GPU accelerated" },
-		{ icon: Code, label: "Open source" },
-	];
+	// "JPG, PNG, WEBP" — top 3 input formats for step body interpolation.
+	const topInputs = $derived(info.inputFormats.slice(0, 3).join(", ").toUpperCase());
+	// "JPG, PNG, WEBP, ..." — full list for FAQ inputs answer.
+	const inputFormats = $derived(info.inputFormats.map((f: string) => f.toUpperCase()).join(", "));
+
+	const features = $derived([
+		{ icon: Ban, label: feature_no_uploads() },
+		{ icon: ShieldCheck, label: feature_private() },
+		{ icon: Zap, label: feature_gpu() },
+		{ icon: Code, label: feature_open_source() },
+	]);
 
 	const howToSchema = $derived(JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "HowTo",
-		name: `How to convert to ${info.label}`,
-		description: info.description,
+		name: converter_page_how_to_heading({ label: info.label }),
+		description,
 		step: [
-			{ "@type": "HowToStep", name: "Select your file", text: `Click or drag your file onto the converter. Supported formats: ${info.inputFormats.map(f => f.toUpperCase()).join(", ")}.` },
-			{ "@type": "HowToStep", name: `Select ${info.label}`, text: `Choose ${info.label} as the output format in the converter.` },
-			{ "@type": "HowToStep", name: "Save", text: `Click Convert, then save your ${info.label} file to your device instantly.` },
+			{
+				"@type": "HowToStep",
+				name: converter_page_step_choose_title(),
+				text: converter_page_step_choose_body({ topInputs }),
+			},
+			{
+				"@type": "HowToStep",
+				name: converter_page_step_pick_title({ label: info.label }),
+				text: converter_page_step_pick_body({ label: info.label }),
+			},
+			{
+				"@type": "HowToStep",
+				name: converter_page_step_save_title(),
+				text: converter_page_step_save_body({ label: info.label }),
+			},
 		],
 		tool: [{ "@type": "HowToTool", name: "LocalConvert" }],
 		totalTime: "PT1M",
@@ -56,21 +115,33 @@
 		mainEntity: [
 			{
 				"@type": "Question",
-				name: `Is the ${info.label} converter really free?`,
-				acceptedAnswer: { "@type": "Answer", text: "Yes — completely free, no account required, no watermarks, no file size limits. LocalConvert is open source." },
+				name: converter_page_faq_q_free({ label: info.label }),
+				acceptedAnswer: { "@type": "Answer", text: converter_page_faq_a_free() },
 			},
 			{
 				"@type": "Question",
-				name: "Are my files safe?",
-				acceptedAnswer: { "@type": "Answer", text: "Your files never leave your browser. All conversion happens using WebAssembly running locally on your device." },
+				name: converter_page_faq_q_safe(),
+				acceptedAnswer: { "@type": "Answer", text: converter_page_faq_a_safe() },
 			},
 			{
 				"@type": "Question",
-				name: `What files can I convert to ${info.label}?`,
-				acceptedAnswer: { "@type": "Answer", text: `You can convert ${info.inputFormats.map(f => f.toUpperCase()).join(", ")} files to ${info.label}.` },
+				name: converter_page_faq_q_inputs({ label: info.label }),
+				acceptedAnswer: { "@type": "Answer", text: converter_page_faq_a_inputs({ label: info.label, inputFormats }) },
 			},
 		],
 	}));
+
+	const steps = $derived([
+		{ n: "1", title: converter_page_step_choose_title(), body: converter_page_step_choose_body({ topInputs }) },
+		{ n: "2", title: converter_page_step_pick_title({ label: info.label }), body: converter_page_step_pick_body({ label: info.label }) },
+		{ n: "3", title: converter_page_step_save_title(), body: converter_page_step_save_body({ label: info.label }) },
+	]);
+
+	const faqs = $derived([
+		{ q: converter_page_faq_q_free({ label: info.label }), a: converter_page_faq_a_free() },
+		{ q: converter_page_faq_q_safe(), a: converter_page_faq_a_safe() },
+		{ q: converter_page_faq_q_inputs({ label: info.label }), a: converter_page_faq_a_inputs({ label: info.label, inputFormats }) },
+	]);
 </script>
 
 <svelte:head>
@@ -87,13 +158,13 @@
 <!-- Hero -->
 <section class="converter-hero w-full">
 	<div class="max-w-4xl mx-auto px-6 md:px-8 pt-10 md:pt-16 pb-12 md:pb-20 flex flex-col items-center">
-		<span class="type-badge mb-5">{typeLabel[info.type]} Converter</span>
+		<span class="type-badge mb-5">{converter_page_type_badge({ typeLabel })}</span>
 
 		<h1 class="text-3xl md:text-5xl text-center font-display tracking-tight leading-tight mb-4 max-w-2xl">
-			{info.headline}
+			{headline}
 		</h1>
 		<p class="text-base md:text-lg text-center text-muted max-w-xl mb-8">
-			{info.description}
+			{description}
 		</p>
 
 		<!-- Feature pills -->
@@ -114,14 +185,10 @@
 <!-- How to convert -->
 <section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-8">
-		How to convert to {info.label}
+		{converter_page_how_to_heading({ label: info.label })}
 	</h2>
 	<ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
-		{#each [
-			{ n: "1", title: "Choose your file", body: `Click or drag any ${info.inputFormats.slice(0, 3).join(", ").toUpperCase()} file onto the uploader above.` },
-			{ n: "2", title: "Pick " + info.label + " format", body: "Select " + info.label + " from the format dropdown in the converter." },
-			{ n: "3", title: "Save", body: "Hit the convert button, then save your " + info.label + " file to your device instantly." },
-		] as step}
+		{#each steps as step}
 			<li class="step-card">
 				<span class="step-num">{step.n}</span>
 				<h3 class="font-semibold text-base mb-1">{step.title}</h3>
@@ -134,7 +201,7 @@
 <!-- Supported input formats -->
 <section class="max-w-4xl mx-auto px-6 md:px-8 pb-8 w-full">
 	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">
-		Supported input formats
+		{converter_page_supported_inputs_heading()}
 	</h2>
 	<div class="flex flex-wrap justify-center gap-2">
 		{#each info.inputFormats as fmt}
@@ -149,22 +216,9 @@
 
 <!-- FAQ -->
 <section class="max-w-4xl mx-auto px-6 md:px-8 py-8 w-full">
-	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">FAQ</h2>
+	<h2 class="text-2xl md:text-3xl font-display text-center mb-6">{converter_page_faq_heading()}</h2>
 	<div class="flex flex-col gap-3 max-w-2xl mx-auto">
-		{#each [
-			{
-				q: `Is the ${info.label} converter really free?`,
-				a: `Yes, completely free. No hidden fees, no watermarks, no file size limits. LocalConvert is open source and free forever.`,
-			},
-			{
-				q: `Are my files safe?`,
-				a: `Absolutely. Your files never leave your browser. All conversion happens using WebAssembly running locally on your device — no uploads, ever.`,
-			},
-			{
-				q: `What files can I convert to ${info.label}?`,
-				a: `You can convert ${info.inputFormats.map(f => f.toUpperCase()).join(", ")} files to ${info.label}.`,
-			},
-		] as faq}
+		{#each faqs as faq}
 			<details class="faq-item">
 				<summary class="faq-q">
 					<span>{faq.q}</span>
